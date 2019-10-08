@@ -1,5 +1,5 @@
-import com.company.input.Input;
-import com.company.algorithm.LZ78;
+import com.company.input.*;
+import com.company.algorithm.*;
 
 public class Main {
 
