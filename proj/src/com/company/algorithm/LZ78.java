@@ -11,7 +11,7 @@ public class LZ78
     
 	public LZ78(String a) 
 	{
-        Map<Integer, Character> map = new HashMap<Integer, Character>();
+        Map<Character, Integer> map = new HashMap<Character, Integer>();
         
 		Input = a;
 		
