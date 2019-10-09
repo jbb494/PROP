@@ -24,7 +24,7 @@ public class LZW {
 			}
 			else {
 				//We add the next value to the compressed_file
-				result.add(pos);
+				result.add(table.get(old));
 
 				//We add the word to the table
 				table.put(aux, pos++);
@@ -45,7 +45,7 @@ public class LZW {
 	public static String decompression(ArrayList<Integer> file) {
 		Map<Integer, String> table = new HashMap<Integer, String>();
 
-		//We initialize the table with the ASCII table (Integer as key)
+		//We initialize the map with the ASCII table (Integer as key)
 		for (int i = 0; i < 256; ++i) 
 			table.put(i, "" + (char)i);
 
@@ -55,34 +55,41 @@ public class LZW {
 		Integer pos = 256;
 		String s = table.get(old);
 		String c = "" + s.charAt(0);
-		String result = "";
+		String result = s;
 	
 
-		for (Integer new_num = 1; new_num < file.size(); ++new_num) {
-			if (!table.containsKey(new_num)) {
+		for (Integer i = 1; i < file.size(); ++i) {
+			Integer aux = file.get(i);
+			if (!table.containsKey(aux)) {
 				s = table.get(old) + c;
 			}
 			else {
-				s = table.get(new_num);
+				s = table.get(aux);
 			}
 			result += s;
 
 			c = "" + s.charAt(0);
 			table.put(pos++, table.get(old) + c);
-			old = new_num;			
+			old = aux;			
 		}
 
 		return result;
 	}
 
 	public static void main(String[] args) {
+<<<<<<< HEAD
 		ArrayList<Integer> v = compression("Hola me llamo Miguel");
 		System.out.println("Vamos a comprimir la frase: Hola me llamo Rata");
+=======
+		ArrayList<Integer> v = compression(args[0]);
+>>>>>>> 327cdc169deebd045b23828934f083e1d97db3ed
 		for (int i : v) 
 			System.out.println(i);
 
 		System.out.println("Vamos a descomprimir ese mismo fichero:");
 		System.out.println(decompression(v));
+
+		System.out.println("Las estadísticas son las siguientes. Número de letras: " + args[0].length() + ". Numero de posiciones en el vector: " + v.size());
 	}
 
 
