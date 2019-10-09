@@ -21,35 +21,53 @@ public class LZ78
 		
 		Integer i = 0;
 		
-		String aux = "";
+		String seq = "";
 
 		Integer punterMap = 0;
 		
+		System.out.println("Inicial: \n:" + Input);
+		
+		Integer mida = 0;
+
 		while(i < a.length())
 		{
-            nextChar = a.charAt(i);
-			String nextCharS = nextChar.toString();
+			nextChar = a.charAt(i);
+			String nextCharS;
+			if(nextChar == ' ')nextCharS = "\\s";
+			else nextCharS = nextChar.toString();
 
-			String novaEntrada = aux.concat(nextCharS);
+			String novaEntrada = seq.concat(nextCharS);
 			
             if(map.containsKey(novaEntrada))
             {
-				Output.concat(punterMap.toString());
-				aux.concat(nextCharS);
+				seq = seq.concat(nextCharS);
 
             }else
             {
-				Integer punterActual = map.get(aux);
+				if(seq.length() >= 1){
+					Integer punterActual = map.get(seq) +1;
+					
+					String pAS = punterActual.toString();
 
-                Output.concat(punterActual.toString()).concat(nextCharS);
+					Output = Output.concat(pAS);
+
+				}else{
+					Output = Output.concat("0");
+				}
+
+				Output = Output.concat(nextCharS);
+
 				map.put(novaEntrada, punterMap);
 
-				aux = "";
+				seq = "";
 				punterMap++;
-            }
-            aux = novaEntrada;
+			}
             i++;
 		}
+		System.out.println("Final: \n:" + Output);
+
+		System.out.println(map.entrySet());
+
 	}
 	
 	public String print()
