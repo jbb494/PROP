@@ -6,7 +6,7 @@ public class LZW {
 	public static ArrayList<Integer> compression(String file) {
 		Map<String,Integer> table = new HashMap<String, Integer>();
 		
-		//We initialize the map with the ASCII table 
+		//We initialize the map with the ASCII table (String as key)
 		for (int i = 0; i < 256; ++i) {
 			table.put("" + (char)i, i);
 		}
@@ -43,8 +43,17 @@ public class LZW {
 
 
 	public static String decompression(ArrayList<Integer> file) {
-		
+		Map<Integer, String> table = new HashMap<Integer, String>();
 
+		//We initialize the table with the ASCII table (Integer as key)
+		for (int i = 0; i < 256; ++i) 
+			table.put(i, "" + (char)i);
+
+		
+		//We prepare the variables before the main loop
+		
+			
+		
 		return result;
 	}
 
