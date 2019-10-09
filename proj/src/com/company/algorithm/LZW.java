@@ -10,7 +10,7 @@ public class LZW {
 			table.put("" + (char)i, i);
 		}
 		
-		Integer pos = 256;
+		Integer pos = 255;
 		String old = "";
 		for (char new_c : file.toCharArray()) {
 			String aux = old + new_c;
@@ -19,9 +19,8 @@ public class LZW {
 				old = aux;
 			}
 			else {
-				table.put(aux, pos);
+				table.put(aux, ++pos);
 				old = "" + new_c;
-				++pos;
 			}
 
 		}
