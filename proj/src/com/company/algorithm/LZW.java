@@ -45,7 +45,7 @@ public class LZW {
 	public static String decompression(ArrayList<Integer> file) {
 		Map<Integer, String> table = new HashMap<Integer, String>();
 
-		//We initialize the table with the ASCII table (Integer as key)
+		//We initialize the map with the ASCII table (Integer as key)
 		for (int i = 0; i < 256; ++i) 
 			table.put(i, "" + (char)i);
 
@@ -59,17 +59,18 @@ public class LZW {
 	
 
 		for (Integer i = 1; i < file.size(); ++i) {
-			if (!table.containsKey(file.get(i))) {
+			Integer aux = file.get(i);
+			if (!table.containsKey(aux)) {
 				s = table.get(old) + c;
 			}
 			else {
-				s = table.get(file.get(i));
+				s = table.get(aux);
 			}
 			result += s;
 
 			c = "" + s.charAt(0);
 			table.put(pos++, table.get(old) + c);
-			old = file.get(i);			
+			old = aux;			
 		}
 
 		return result;
