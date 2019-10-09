@@ -3,7 +3,7 @@ import java.util.*;
 
 public class LZW {
 	
-	public static ArrayList<Integer> compresser(String file) {
+	public static ArrayList<Integer> compression(String file) {
 		Map<String,Integer> table = new HashMap<String, Integer>();
 		
 		//We initialize the map with the ASCII table 
@@ -39,7 +39,13 @@ public class LZW {
 		}
 
 		return result;
+	}
+
+
+	public static String decompression(ArrayList<Integer> file) {
 		
+
+		return result;
 	}
 
 
