@@ -17,7 +17,6 @@ public class LZSS
     
     public LZSS(String file)
     {
-        System.out.println("Rata");
         Output = compresser(file);
     }
 
@@ -34,17 +33,19 @@ public class LZSS
         for (int i = 0; i < file.length(); i++)
         {
             nextChar = file.charAt(i);
-            System.out.println(nextChar);
-            aux.concat(String.valueOf(nextChar));
+            aux = aux.concat(String.valueOf(nextChar));
             if(vc.containsValue(nextChar))
             {
-                ArrayList<Integer> keys = GetKey(vc, aux.charAt(0));
+                ArrayList<Integer> keys;
+                if(aux != "") keys = GetKey(vc, aux.charAt(0));
+                else keys = GetKey(vc, nextChar);
                 boolean found = false;
+                if(aux == "") aux = String.valueOf(nextChar);
                 for(int j = 0; j < keys.size() && !found; j++)
                 {
                     int ji = 0;
                     int pivot = keys.get(j);
-                    while(!found && aux.charAt(ji) == vc.get(pivot + ji))
+                    while(!found && (pivot + ji) < vc.size() && (ji < aux.length()) && aux.charAt(ji) == vc.get(pivot + ji))
                     {
                         ji++;
                         if(ji == aux.length()) found = true;
@@ -53,7 +54,7 @@ public class LZSS
                 if(!found && aux.length() >= 3)
                 {
                     aux = String.valueOf(nextChar);
-                    out.concat("COMPRESSED");
+                    out = out.concat("x");
                 }
             }
             else
@@ -62,16 +63,17 @@ public class LZSS
                 {
                     if(aux.length() >= 3)
                     {
-                        out.concat("COMPRESSED");
-                        aux = String.valueOf(nextChar);
+                        out = out.concat("x");
+                        out = out.concat(String.valueOf(nextChar));
+                        aux = "";
                     }
                     else
                     {
-                        out.concat(aux);
+                        out = out.concat(aux);
                         aux = "";
                     }
                 }
-                else out.concat(String.valueOf(nextChar));
+                else out = out.concat(String.valueOf(nextChar)); 
             }
             vc.put(i, nextChar);
         }
