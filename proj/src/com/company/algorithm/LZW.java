@@ -54,8 +54,7 @@ public class LZW {
 		String result = "";
 		Integer old = 0;
 
-				
-		
+
 		return result;
 	}
 
