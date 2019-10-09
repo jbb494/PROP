@@ -51,9 +51,27 @@ public class LZW {
 
 		
 		//We prepare the variables before the main loop
+		Integer old = file.get(0);
+		Integer pos = 256;
+		String s = table.get(old);
+		String c = "" + s.charAt(0);
 		String result = "";
-		Integer old = 0;
+	
 
+		for (Integer new_num = 1; new_num < file.size(); ++new_num) {
+			if (!table.containsKey(new_num)) {
+				s = table.get(old) + c;
+			}
+			else {
+				s = table.get(new_num);
+			}
+			result += s;
+
+			c = "" + s.charAt(0);
+			table.put(pos++, table.get(old) + c);
+			old = new_num;
+			
+		}
 
 		return result;
 	}
