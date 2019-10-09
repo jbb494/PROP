@@ -78,7 +78,7 @@ public class LZW {
 
 	public static void main(String[] args) {
 		ArrayList<Integer> v = compression(args[0]);
-		System.out.println("Vamos a comprimir la frase: Hola me llamo Miguel");
+		System.out.println("Vamos a comprimir la frase: ");
 		for (int i : v) 
 			System.out.println(i);
 
