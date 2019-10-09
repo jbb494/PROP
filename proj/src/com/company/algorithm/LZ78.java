@@ -2,6 +2,7 @@ package com.company.algorithm;
 
 import java.util.*;
 
+//import javax.*;
 
 public class LZ78
 {
@@ -25,10 +26,6 @@ public class LZ78
 
 		Integer punterMap = 0;
 		
-		System.out.println("Inicial: \n:" + Input);
-		
-		Integer mida = 0;
-
 		while(i < a.length())
 		{
 			nextChar = a.charAt(i);
@@ -64,10 +61,6 @@ public class LZ78
 			}
             i++;
 		}
-		System.out.println("Final: \n:" + Output);
-
-		System.out.println(map.entrySet());
-
 	}
 	
 	public String print()

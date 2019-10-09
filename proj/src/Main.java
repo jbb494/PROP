@@ -9,13 +9,17 @@ public class Main {
         
         String aux = instance.getString();
 
-        //System.out.println("Inicial: \n:" + aux);
+        System.out.println("Inicial: \n:" + aux);
         
         LZ78 alg = new LZ78(aux);
         
-       // aux = alg.print();
+        aux = alg.print();
         
-        //System.out.println("Final: \n:" + aux);
+        System.out.println("Final: \n:" + aux);
+
+        Byte a = 127;
+    
+        System.out.println(a);
         
     }
 
