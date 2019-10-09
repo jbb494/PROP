@@ -51,8 +51,10 @@ public class LZW {
 
 		
 		//We prepare the variables before the main loop
-		
-			
+		String result = "";
+		Integer old = 0;
+
+				
 		
 		return result;
 	}
