@@ -11,8 +11,8 @@ public class JPEG {
 				byte r, g, b;
 				r = inRGB[i][j][0]; g = inRGB[i][j][1]; b = inRGB[i][j][2];
 				byte y, cb, cr;
-				// ni puta idea de com es fa la conversió
-				// cada font ho fa diferent
+				// https://sistenix.com/rgb2ycbcr.html
+				 
 			}
 		}
 	}
