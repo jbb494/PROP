@@ -3,6 +3,9 @@ package com.company.input;
 import java.util.Scanner;
 import java.io.File;
 
+// Necesitaremos inputreader y bufferreader
+// https://funnelgarden.com/java_read_file/ --> FileInputStream
+
 public class Input {
 
     File fitxer;
