@@ -3,8 +3,8 @@
 
 public class JPEG {
 	public byte[][][] convert(byte inRGB[][][]) {
-		int n = in.length;
-		int m = in[0].length;
+		int n = inRGB.length;
+		int m = inRGB.[0].length;
 		byte inYCbCr[n][m][3];
 		for (int i = 0; i < n; ++i) {
 			for (int j = 0; j < m; ++j) {
@@ -22,3 +22,5 @@ public class JPEG {
 			for (int i[] : a) System.out.println(i.length);
 	}*/
 }
+
+///github
