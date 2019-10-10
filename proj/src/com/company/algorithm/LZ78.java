@@ -26,7 +26,7 @@ public class LZ78
 
 		Integer punterMap = 0;
 		
-		while(i < a.length())
+		while(i < a.length() -1)
 		{
 			nextChar = a.charAt(i);
 			String nextCharS;
