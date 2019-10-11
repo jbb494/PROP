@@ -2,11 +2,41 @@
 
 
 public class JPEG {
-	private void f(double[][] mat) {
-		mat[0][0] = 1.0;
+
+	private static double alpha(int x) { // only used in discrete_cosine_transform
+		if (x == 0) return 1.0 / Math.sqrt(2);
+		return 1.0;
 	}
 
-	public byte[][][] convert(byte[][][] inRGB) {
+	private static void discrete_cosine_transform(double[][] mat1, int x0, int y0) {
+		//int n = 8;
+		//int m = 8;
+		
+		double[][] mat2 = new double[8][8];
+
+		for (int i = 0; i < 8; i++) {
+			for (int j = 0; j < 8; ++j) {
+
+				double sum = 0;
+				for (int x = 0; x < 8; ++x) { 
+                    for (int y = 0; y < 8; ++y)  { 
+                        sum += mat1[x0 + x][y0 + y] *  
+                               Math.cos((2*x + 1) * i * Math.PI / (2*8)) *  
+                               Math.cos((2*y + 1) * j * Math.PI / (2*8)); 
+                    } 
+				}
+				mat2[i][j] = (1.0/4.0) * alpha(i) * alpha(j) * sum;
+			}
+		}
+
+		for (int x = 0; x < 8; x++) {
+			for (int y = 0; y < 8; ++y) { 
+				mat1[x0 + x][y0 + y] = mat2[x][y];
+			}
+		}
+	}
+
+	public static byte[][][] convert(byte[][][] inRGB) {
 		int n = inRGB.length;
 		int m = inRGB[0].length;
 		
@@ -30,7 +60,7 @@ public class JPEG {
 			//3. Block splitting
 			for (int i = 0; i+7 < n; i += 8) {
 				for (int j = 0; j+7 < m; j += 8) {
-					//f();
+					discrete_cosine_transform(YCbCr[k], i, j);
 				}
 			}
 		}
