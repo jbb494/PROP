@@ -3,6 +3,8 @@ package com.company.output;
 import java.util.*;
 import java.util.stream.Collectors;
 import java.io.DataOutputStream;
+import java.io.OutputStreamWriter;
+
 import java.io.IOException;
 import java.lang.reflect.Array;
 import java.io.FileNotFoundException;
@@ -13,17 +15,12 @@ public class Output {
     ArrayList<Byte> Out;
     Integer Pos;
 
-    DataOutputStream dataOutputStream;
+    String path;
 
     public Output(String path) {
         Out = new ArrayList<>();
         Pos = 0;
-
-        try {
-            dataOutputStream = new DataOutputStream(new FileOutputStream(path));
-        } catch (FileNotFoundException e) {
-            e.printStackTrace();
-        }
+        this.path = path;
     }
     public void add(byte b, int n_bits)
     {
@@ -51,8 +48,15 @@ public class Output {
             if(Pos > 7) Pos = 0;
         }
     }
+   
     public void print()
     {
+        DataOutputStream dataOutputStream = null;
+        try {
+            dataOutputStream = new DataOutputStream(new FileOutputStream(path));
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        }
 
         byte[] bArray = new byte[Out.size()];
         for (int i = 0; i < bArray.length; i++)
@@ -64,6 +68,33 @@ public class Output {
         
         try {
             dataOutputStream.write(bArray, 0, bArray.length);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        
+        //for(Byte b: Out) System.out.println(String.format("%8s", Integer.toBinaryString(b & 0xFF)).replace(' ', '0'));
+
+    }
+
+    public void printString()
+    {
+        OutputStreamWriter outputStreamWriter = null;
+        try {
+            outputStreamWriter = new OutputStreamWriter(new FileOutputStream(path));
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        }
+
+        char[] cArray = new char[Out.size()];
+        for (int i = 0; i < cArray.length; i++)
+        {
+            char cAux = (char)(byte)Out.get(i);
+
+            cArray[i] = cAux;
+        }
+        
+        try {
+            outputStreamWriter.write(cArray, 0, cArray.length);
         } catch (IOException e) {
             e.printStackTrace();
         }
