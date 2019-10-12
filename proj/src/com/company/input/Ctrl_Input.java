@@ -4,8 +4,6 @@ import java.util.regex.Pattern;
 import java.util.AbstractMap;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Map;
-
 import com.company.input.Input;
 import com.company.utils.byteToConversion;
 
@@ -72,4 +70,37 @@ public class Ctrl_Input {
 
         return ret;
     }
+
+    public ArrayList<Integer> getLZW() {
+        ArrayList<Integer> ret = new ArrayList<Integer>();
+        ArrayList<Byte> arrayByte = Input_class.getIn();
+
+        for (int i = 0; i < arrayByte.size(); i += 4) {
+            
+            List<Byte> aux = arrayByte.subList(i, i+4);
+            
+            ret.add(byteToConversion.byteToInteger(aux));
+        
+        }
+
+        return ret;
+    }
+
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

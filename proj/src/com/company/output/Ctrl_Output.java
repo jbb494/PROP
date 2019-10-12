@@ -55,4 +55,9 @@ public class Ctrl_Output {
         Output_Class.print();
     }
 
+    public void printString()
+    {
+        Output_Class.printString();
+    }
+
 }

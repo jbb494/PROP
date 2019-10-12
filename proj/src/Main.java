@@ -1,6 +1,3 @@
-import java.util.AbstractMap;
-import java.util.ArrayList;
-
 import com.company.algorithm.LZ78;
 import com.company.input.Ctrl_Input;
 import com.company.output.Ctrl_Output;
@@ -9,8 +6,8 @@ public class Main {
 
     public static void main(String[] args) 
     {
-        /*
-        Ctrl_Input instance = new Ctrl_Input("hello.txt");
+        
+        Ctrl_Input instance = new Ctrl_Input("../hello.txt");
         
         String aux = instance.getText();
 
@@ -22,9 +19,10 @@ public class Main {
         
         System.out.println("Final: \n");
 
-        outp.print();
-        */
-        Ctrl_Input instance = new Ctrl_Input("LZ78.out");
+        outp.printString();
+        
+        /*
+        Ctrl_Input instance = new Ctrl_Input("./LZ78.out");
 
         ArrayList< AbstractMap.SimpleEntry <Integer, Character> > aux = instance.getLZ78();
 
@@ -32,5 +30,6 @@ public class Main {
         {
             System.out.println("Int: " + entr.getKey() + "Char: " + entr.getValue());
         }
+        */
     }
 }
