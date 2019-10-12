@@ -41,5 +41,9 @@ public class Ctrl_Output {
         aux = mida & 0x1F;
         Output_Class.add((byte)aux, 5);
     }
+    public void print()
+    {
+        Output_Class.print();
+    }
 
 }
