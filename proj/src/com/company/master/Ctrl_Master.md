@@ -11,13 +11,7 @@ Depenent del seu valor realitzarem una funció o una altre:
 
 ```java
 Integer Function;
-```
-
-### Auto
-
-```java
-Boolean Auto;
-```
+```https://www.saba.es/es/productos-y-abonos/saba-multidia
 
 ### Path
 
