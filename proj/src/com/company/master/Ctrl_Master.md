@@ -11,7 +11,7 @@ Depenent del seu valor realitzarem una funció o una altre:
 
 ```java
 Integer Function;
-```https://www.saba.es/es/productos-y-abonos/saba-multidia
+```
 
 ### Path
 
@@ -19,16 +19,16 @@ Integer Function;
 String Path;
 ```
 
-### Input
+### Inp
 
 ```java
-Input Inp;
+Ctrl_Input Inp;
 ```
 
-### Output
+### Out
 
 ```java
-Output Out;
+Ctrl_Output Out;
 ```
 
 
