@@ -1,13 +1,14 @@
 package com.company.algorithm;
 
+import com.company.output.Ctrl_Output;
+
 import java.util.*;
 
-//import javax.*;
 
 public class LZ78
 {
     String Input;
-    String Output;
+    Ctrl_Output Output;
     
     
 	public LZ78(String a) 
@@ -16,7 +17,7 @@ public class LZ78
         
 		Input = a;
 		
-		Output = "";
+		Output = new Ctrl_Output("LZ78.out");
 		
 		Character nextChar;
 		
@@ -44,15 +45,13 @@ public class LZ78
 				if(seq.length() >= 1){
 					Integer punterActual = map.get(seq) +1;
 					
-					String pAS = punterActual.toString();
-
-					Output = Output.concat(pAS);
+					Output.add(punterActual);
 
 				}else{
-					Output = Output.concat("0");
+					Output.add(0);
 				}
 
-				Output = Output.concat(nextCharS);
+				Output.add(nextChar);
 
 				map.put(novaEntrada, punterMap);
 
@@ -63,7 +62,7 @@ public class LZ78
 		}
 	}
 	
-	public String print()
+	public Ctrl_Output print()
 	{
         return Output;
 	}
