@@ -1,5 +1,7 @@
 package com.company.output;
 
+import java.nio.ByteBuffer;
+
 public class Ctrl_Output {
     
     //Attributes
@@ -26,7 +28,10 @@ public class Ctrl_Output {
     }
 
     public void add(Integer x) {
-        
+        ByteBuffer bb = ByteBuffer.allocate(4); 
+        bb.putInt(x.intValue());
+        for (byte b : bb.array()) 
+            add(b,8);
     }
 
 }
