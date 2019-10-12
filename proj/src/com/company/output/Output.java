@@ -1,12 +1,10 @@
 package com.company.output;
 
 import java.util.*;
-import java.util.stream.Collectors;
 import java.io.DataOutputStream;
 import java.io.OutputStreamWriter;
 
 import java.io.IOException;
-import java.lang.reflect.Array;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;;
 

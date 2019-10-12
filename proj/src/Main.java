@@ -1,6 +1,3 @@
-import java.util.AbstractMap;
-import java.util.ArrayList;
-
 import com.company.algorithm.LZ78;
 import com.company.input.Ctrl_Input;
 import com.company.output.Ctrl_Output;

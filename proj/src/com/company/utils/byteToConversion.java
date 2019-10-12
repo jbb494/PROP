@@ -1,7 +1,6 @@
 package com.company.utils;
 
 import java.util.*;
-import java.util.function.BinaryOperator;
 
 public class byteToConversion {
 
