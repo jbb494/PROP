@@ -1,25 +1,23 @@
 import com.company.input.*;
 import com.company.algorithm.*;
 
+import java.util.ArrayList;
+
 public class Main {
 
     public static void main(String[] args) 
     {
-        Input instance = new Input("Hello.txt");
+        Ctrl_Input instance = new Ctrl_Input("hello.txt");
         
-        String aux = instance.getString();
+        String aux = instance.getText();
 
-        System.out.println("Inicial: \n:" + aux);
-        
+        System.out.println("Inicial: \n" + aux);
+
         LZ78 alg = new LZ78(aux);
         
         aux = alg.print();
         
-        System.out.println("Final: \n:" + aux);
-
-        Byte a = 127;
-    
-        System.out.println(a);
+        System.out.println("Final: \n" + aux);
         
     }
 

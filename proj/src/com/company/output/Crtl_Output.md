@@ -19,7 +19,7 @@ Output Output_class;
 Inicialitzarà *Output_class*;
 
 ``` java
-public static Ctrl_Output();
+public Ctrl_Output();
 ```
 
 

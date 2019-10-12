@@ -1,49 +1,58 @@
 package com.company.input;
 
-import java.util.Scanner;
+import java.io.InputStreamReader;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.IOException;
 import java.io.File;
+import java.util.ArrayList;
 
 // Necesitaremos inputreader y bufferreader
 // https://funnelgarden.com/java_read_file/ --> FileInputStream
 
 public class Input {
 
-    File fitxer;
-    String paraula;
-    Scanner s;
+    ArrayList<Byte> arrayByte;
+    private InputStreamReader inputStreamReader;
+
     /* write your code here */
     // Scanner obtenerNumero = new Scanner(System.in);
-    public Input(String path)
-    {
-        fitxer = new File("../hello.txt");
-        paraula = new String();
-        s = null;
-    }
-
-    public String getString()
-    {
-        try { 
-            s = new Scanner(fitxer);
-            while(s.hasNextLine()) {
-                paraula+=s.nextLine();
-                paraula+='\n';
-            }
-            return paraula;          
-    
-        }
-        catch (Exception ex){
-            System.out.println("Msg: " + ex.getMessage());
-        }
-        finally {
-            try{
-                if(s != null) s.close();
-            }
-            catch (Exception ex2)
-            {
+    public Input(String path) {
+        try {
+            FileInputStream fitxerInputStream = new FileInputStream(new File("../" + path));
+            arrayByte = new ArrayList<Byte>(0);
+            inputStreamReader = new InputStreamReader(fitxerInputStream);
+            read();
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        } finally {
+            try {
+                if (inputStreamReader != null)
+                    inputStreamReader.close();
+            } catch (Exception ex2) {
                 System.out.println("Msg 2: " + ex2.getMessage());
             }
         }
-        return null;
-    } 
 
+    }
+
+    private void read() {
+        Integer c;
+        try {
+            while ((c = inputStreamReader.read()) != -1) {
+                Byte aux = c.byteValue();
+                arrayByte.add(aux);
+
+            }
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+   
+    }
+
+    public ArrayList<Byte> getIn()
+    {
+        return arrayByte;
+
+    }
 }
