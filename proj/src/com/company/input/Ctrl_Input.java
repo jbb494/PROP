@@ -4,8 +4,6 @@ import java.util.regex.Pattern;
 import java.util.AbstractMap;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Map;
-
 import com.company.input.Input;
 import com.company.utils.byteToConversion;
 
@@ -84,7 +82,7 @@ public class Ctrl_Input {
             ret.add(byteToConversion.byteToInteger(aux));
         
         }
-        
+
         return ret;
     }
 
