@@ -1,7 +1,5 @@
-import com.company.input.*;
-import com.company.algorithm.*;
-
-import java.util.ArrayList;
+import com.company.algorithm.LZ78;
+import com.company.input.Ctrl_Input;
 
 public class Main {
 
