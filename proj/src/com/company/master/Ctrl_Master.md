@@ -2,7 +2,7 @@
 
 ## Atributs
 
-### Funcio
+### Function
 
 Depenent del seu valor realitzarem una funció o una altre:
 - 1 -> Comprimir
