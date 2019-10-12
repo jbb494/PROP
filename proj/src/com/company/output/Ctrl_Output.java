@@ -19,15 +19,18 @@ public class Ctrl_Output {
         Output_Class.add(b, n_bits);
     }
 
+
     public void add(String s) {
         byte[] bytearray = s.getBytes();
         for (byte b : bytearray) 
             Output_Class.add(b,8);
     }
 
+
     public void add(Character c) {
         add(Character.toString(c));
     }
+
 
     public void add(Integer x) {
         ByteBuffer bb = ByteBuffer.allocate(4); 
@@ -35,6 +38,8 @@ public class Ctrl_Output {
         for (byte b : bb.array()) 
             add(b,8);
     }
+
+
     public void add(Integer despl, Integer mida){
         int aux = despl & 0xFF;
         Output_Class.add((byte)aux, 8);
@@ -43,6 +48,8 @@ public class Ctrl_Output {
         aux = mida & 0x1F;
         Output_Class.add((byte)aux, 5);
     }
+
+    
     public void print()
     {
         Output_Class.print();
