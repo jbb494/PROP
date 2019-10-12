@@ -18,7 +18,7 @@ public class LZSS
     
     public LZSS(String file)
     {
-        Output = new Ctrl_Output(file);
+        Output = new Ctrl_Output("LZSS.out");
         Compresser(file);
     }
 

@@ -1,4 +1,4 @@
-import com.company.algorithm.LZ78;
+import com.company.algorithm.*;
 import com.company.input.Ctrl_Input;
 import com.company.output.Ctrl_Output;
 
@@ -13,7 +13,7 @@ public class Main {
 
         System.out.println("Inicial: \n" + aux);
 
-        LZ78 alg = new LZ78(aux);
+        LZSS alg = new LZSS(aux);
       
         Ctrl_Output outp = alg.print();
         
