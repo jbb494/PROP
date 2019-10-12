@@ -5,9 +5,10 @@
 ### Funcio
 
 Depenent del seu valor realitzarem una funció o una altre:
-    - 1 -> Comprimir
-    - 2 -> Descomprimir 
-    - 3 -> Comprimir de manera manual
+- 1 -> Comprimir
+- 2 -> Descomprimir 
+- 3 -> Comprimir de manera manual
+
 ```java
 Integer Function;
 ```
