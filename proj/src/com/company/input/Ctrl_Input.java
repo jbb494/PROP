@@ -1,11 +1,13 @@
 package com.company.input;
 
-
 import java.util.regex.Pattern;
+import java.util.AbstractMap;
 import java.util.ArrayList;
+import java.util.List;
 import java.util.Map;
 
 import com.company.input.Input;
+import com.company.utils.byteToConversion;
 
 
 public class Ctrl_Input {
@@ -29,40 +31,45 @@ public class Ctrl_Input {
     {
         ArrayList<Byte> arrayByte =  Input_class.getIn();
        
+        System.out.println("Imprimeixo amb Bytes: \n" + arrayByte);
+
         String outputString = "";
-        if (Extensio.equals("txt"))
-        {
-            for(int i = 0; i<arrayByte.size(); i++)
-            {
-                char a = (char)arrayByte.get(i).byteValue();
-                outputString += a ;
-            }
-            return outputString;
-        }
-        return "";
-    }
-
-    public ArrayList< Map.Entry <Integer, Character> > getLZ78()
-    {
-        ArrayList< Map.Entry <Integer, Character> > ret = 
-        new ArrayList< Map.Entry <Integer, Character> > (0);
-
-        ArrayList<Byte> arrayByte =  Input_class.getIn();
-
-        Map.Entry <Integer, Character> entryAux;
 
         for(int i = 0; i<arrayByte.size(); i++)
         {
-            if (i % 2 == 0){
-                //getInt from ArrayList<Byte>
-                //entryAux.setKey();
-            }else{
-                char a = (char)arrayByte.get(i).byteValue();
-                //ret.add() ;
-            }
+            char a = (char)arrayByte.get(i).byteValue();
+            outputString += a ;
+        }
+        return outputString;
+
+    }
+
+    public ArrayList< AbstractMap.SimpleEntry <Integer, Character> > getLZ78()
+    {
+        ArrayList< AbstractMap.SimpleEntry <Integer, Character> > ret = 
+        new ArrayList< AbstractMap.SimpleEntry <Integer, Character> > (0);
+
+        List<Byte> arrayByte =  Input_class.getIn();
+
+        Integer intAux = 0;
+
+        Character charAux = '0';
+
+        for(int i = 0; i<arrayByte.size();)
+        {
+            //System.out.println("arrayByte.get(" + i + ") = " + arrayByte.get(i));
+            
+            List<Byte> arrayAux = arrayByte.subList(i, i+4);
+            i+=4;
+            intAux = byteToConversion.byteToInteger(arrayAux);
+            
+
+            charAux = byteToConversion.byteToCharacter(arrayByte.get(i));
+            i++;
+
+            ret.add(new AbstractMap.SimpleEntry<Integer, Character>(intAux, charAux));
         }
 
         return ret;
     }
-
 }

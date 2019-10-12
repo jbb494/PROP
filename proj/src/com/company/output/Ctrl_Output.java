@@ -1,6 +1,8 @@
 package com.company.output;
 
+
 import java.nio.ByteBuffer;
+
 
 public class Ctrl_Output {
     
@@ -8,8 +10,8 @@ public class Ctrl_Output {
     Output Output_Class;
 
     //Constructor
-    public Ctrl_Output() {
-        Output_Class = new Output();
+    public Ctrl_Output(String path) {
+        Output_Class = new Output(path);
     }
 
     //Functions

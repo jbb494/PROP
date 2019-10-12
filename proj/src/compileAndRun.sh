@@ -10,5 +10,7 @@ else
 fi
 
 if [[ $1 == "-run" || $1 == "-r" ]]; then
+    echo ""
+    echo ""
     java Main
 fi
