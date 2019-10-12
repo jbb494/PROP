@@ -16,12 +16,12 @@ public class Output
     public void add(byte b, int n_bits)
     {
         byte aux, aux2;
-        aux = b << Pos;
+        aux = (byte)(b << Pos);
         if(Pos != 0)
         {
             aux2 = Out.get(Out.size()-1); 
             Out.remove(Out.size()-1);
-            aux = aux | aux2;
+            aux = (byte)(aux | aux2);
         }
         Out.add(aux);
         Pos += n_bits;
@@ -30,7 +30,7 @@ public class Output
         {
             int restants = n_bits - (8-Pos);
             int despl = 8-Pos;
-            aux = b >>> despl;
+            aux = (byte)(b >>> despl);
             add(aux, restants);
         }
     }
