@@ -43,7 +43,6 @@ public void add(Byte, Integer);
 En els següents casos caldrà aplicar la corresponent transformació:
 
 ```java
-//Per cada caràcter al String farem un add(Character)
 public void add(String);
 ```
 
