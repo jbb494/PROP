@@ -1,5 +1,4 @@
 import java.io.*;
-import java.awt.*;
 import java.util.ArrayList;
 import javax.imageio.ImageIO;
 import java.awt.image.BufferedImage;
