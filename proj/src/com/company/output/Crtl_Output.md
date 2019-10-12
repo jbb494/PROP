@@ -32,7 +32,7 @@ public Ctrl_Output();
 
 ### Add
 
-Ens trobem amb quatre possibles casos segons els paràmetres d'entrada, tot i que totes elles ho afegiran a *Output_class* en el format adient:
+Ens trobem amb cinc possibles casos segons els paràmetres d'entrada, tot i que totes elles ho afegiran a *Output_class* en el format adient:
 
 En aquest primer cas no caldrà cap transformació:
 
@@ -54,6 +54,9 @@ public void add(Character);
 public void add(Integer);	
 ```
 
+```java
+public void add(Integer, Integer);	
+```
 
 
   
