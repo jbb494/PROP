@@ -11,7 +11,7 @@ Depenent del seu valor realitzarem una funció o una altre:
 
 ```java
 Integer Function;
-```https://www.saba.es/es/productos-y-abonos/saba-multidia
+```
 
 ### Path
 
