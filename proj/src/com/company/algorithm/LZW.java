@@ -75,20 +75,5 @@ public class LZW {
 
 		return result;
 	}
-
-	public static void main(String[] args) {
-		ArrayList<Integer> v = compression("Hola me llamo Miguel");
-		System.out.println("Vamos a comprimir la frase: Hola me llamo Rata");
-
-		for (int i : v) 
-			System.out.println(i);
-
-		System.out.println("Vamos a descomprimir ese mismo fichero:");
-		System.out.println(decompression(v));
-
-		System.out.println("Las estadísticas son las siguientes. Número de letras: " + args[0].length() + ". Numero de posiciones en el vector: " + v.size());
-	}
-
-
 	
 }
