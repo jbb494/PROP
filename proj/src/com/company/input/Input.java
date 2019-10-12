@@ -19,7 +19,7 @@ public class Input {
     // Scanner obtenerNumero = new Scanner(System.in);
     public Input(String path) {
         try {
-            FileInputStream fitxerInputStream = new FileInputStream(new File("../" + path));
+            FileInputStream fitxerInputStream = new FileInputStream(new File(/*"../" NO*/path));
             arrayByte = new ArrayList<Byte>(0);
             inputStreamReader = new InputStreamReader(fitxerInputStream);
             read();
