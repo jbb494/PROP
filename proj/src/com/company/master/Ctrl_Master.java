@@ -1,5 +1,6 @@
 package com.company.master;
 
+import com.company.algorithm.Ctrl_Algorithm;
 import com.company.input.Ctrl_Input;
 
 public class Ctrl_Master {
@@ -49,7 +50,14 @@ public class Ctrl_Master {
         switch (Function) {
             case 1:
                 //Encara cal implementar la funció per cridar a una compressió JPEG
-                
+                if (Inp.getExtension().equals("txt")) {
+                    String file = Inp.getText();
+                    Ctrl_Algorithm alg = new Ctrl_Algorithm();
+
+                }
+                else {
+
+                }
 
                 break;
             case 2:
