@@ -111,5 +111,7 @@ public class LZSS
             if(vc.size() > 8191) vc.remove(paux++);
             vc.put(i, nextChar);
         }
+        Output.add((byte)1, 1);
+        Output.add(0, 0); //fi del fitxer
     }
 }
