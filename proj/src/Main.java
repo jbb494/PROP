@@ -1,3 +1,6 @@
+import java.util.AbstractMap;
+import java.util.ArrayList;
+
 import com.company.algorithm.*;
 import com.company.input.Ctrl_Input;
 import com.company.output.Ctrl_Output;
@@ -6,30 +9,54 @@ public class Main {
 
     public static void main(String[] args) 
     {
+       Integer n = 0; // n = 0 per els dos
+       if(n == 1 | n == 0){ // n = 0 per comprimir
+
+        String pathCompresio = "../hello.txt";
+
+        System.out.println("Compresio a " + pathCompresio);    
+
+        Ctrl_Input instance = new Ctrl_Input(pathCompresio);
+            
+            String aux = instance.getText();
+
+           // System.out.println("Inicial: \n" + aux);
+
+            LZ78 alg = new LZ78(aux);
+
+            alg.Compressor();
         
-        Ctrl_Input instance = new Ctrl_Input("../hello.txt");
-        
-        String aux = instance.getText();
+            Ctrl_Output outp = alg.print();
+            
+           // System.out.println("Final: \n");
 
-        System.out.println("Inicial: \n" + aux);
+            outp.print();
+       }
+       if (n == 2 | n == 0){
+            String pathDecompresio = "../CompresioLZ78.out";
+            
+            System.out.println("Compresio a " + pathDecompresio);    
 
-        LZSS alg = new LZSS(aux);
-      
-        Ctrl_Output outp = alg.print();
-        
-        System.out.println("Final: \n");
+            Ctrl_Input instance = new Ctrl_Input(pathDecompresio);
 
-        outp.print();
-        
-        /*
-        Ctrl_Input instance = new Ctrl_Input("./LZ78.out");
+            ArrayList< AbstractMap.SimpleEntry <Integer, Character> > aux = instance.getLZ78();
 
-        ArrayList< AbstractMap.SimpleEntry <Integer, Character> > aux = instance.getLZ78();
+            LZ78 alg = new LZ78(aux);
 
-        for (AbstractMap.SimpleEntry <Integer, Character> entr : aux)
-        {
-            System.out.println("Int: " + entr.getKey() + "Char: " + entr.getValue());
+            alg.Decompressor();
+            
+            Ctrl_Output outp = alg.print();
+
+            outp.print();
+
         }
-        */
+
+        /*
+        Output outp = new Output("provaOutput.out");
+        outp.add((byte)128, 8);
+        outp.add((byte)1, 1);
+        outp.add((byte)128, 8);
+        outp.print();
+*/
     }
 }

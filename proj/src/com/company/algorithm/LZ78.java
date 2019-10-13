@@ -9,15 +9,26 @@ public class LZ78
 {
     String Input;
     Ctrl_Output Output;
-    
+    ArrayList< AbstractMap.SimpleEntry <Integer, Character> > InpDesc;
     
 	public LZ78(String a) 
 	{
-        Map<String, Integer> map = new HashMap<String, Integer>();
-        
 		Input = a;
 		
-		Output = new Ctrl_Output("LZ78.out");
+		Output = new Ctrl_Output("../CompresioLZ78.out");
+
+	}
+	public LZ78(ArrayList< AbstractMap.SimpleEntry <Integer, Character> > a) 
+	{
+		InpDesc = a;
+		
+		Output = new Ctrl_Output("../DescompresioLZ78.out");
+
+	}
+
+	public void Compressor()
+	{
+        Map<String, Integer> map = new HashMap<String, Integer>();
 		
 		Character nextChar;
 		
@@ -27,12 +38,13 @@ public class LZ78
 
 		Integer punterMap = 0;
 		
-		while(i < a.length() -1)
+		while(i < Input.length())
 		{
-			nextChar = a.charAt(i);
+			nextChar = Input.charAt(i);
 			String nextCharS;
-			if(nextChar == ' ')nextCharS = "\\s";
-			else nextCharS = nextChar.toString();
+			//if(nextChar == ' ')nextCharS = "\\s";
+			//else nextCharS = nextChar.toString();
+			nextCharS = nextChar.toString();
 
 			String novaEntrada = seq.concat(nextCharS);
 			
@@ -61,10 +73,33 @@ public class LZ78
             i++;
 		}
 	}
-	
+	public void Decompressor() 
+	{
+		Map<Integer, String> map = new HashMap<Integer, String>();
+		Integer punterActual = 0;
+		for (AbstractMap.SimpleEntry <Integer, Character> entr : InpDesc)
+		{
+			//System.out.println("Int: " + entr.getKey() + "Char: " + entr.getValue());
+			Integer punterMap = entr.getKey();
+			Character nextChar = entr.getValue();
+			if(punterMap == 0)
+			{
+				Output.add(nextChar);
+				map.put(punterActual++, nextChar.toString());
+			}else{
+				String seqPunterMap = map.get(punterMap-1);
+				map.put(punterActual++, seqPunterMap.concat(nextChar.toString()));
+				Output.add(seqPunterMap.concat(nextChar.toString()));		
+			}
+
+		}
+		
+	}
+
 	public Ctrl_Output print()
 	{
         return Output;
 	}
+	
 	
 }

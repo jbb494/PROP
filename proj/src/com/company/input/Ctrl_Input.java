@@ -40,7 +40,7 @@ public class Ctrl_Input {
     {
         ArrayList<Byte> arrayByte =  Input_class.getIn();
        
-        System.out.println("Imprimeixo amb Bytes: \n" + arrayByte);
+        //System.out.println("Imprimeixo amb Bytes: \n" + arrayByte);
 
         String outputString = "";
 
@@ -75,7 +75,6 @@ public class Ctrl_Input {
 
             charAux = byteToConversion.byteToCharacter(arrayByte.get(i));
             i++;
-
             ret.add(new AbstractMap.SimpleEntry<Integer, Character>(intAux, charAux));
         }
 

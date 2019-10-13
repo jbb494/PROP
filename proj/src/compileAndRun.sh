@@ -4,7 +4,7 @@ if [[ $1 != "-remove" ]]; then
     echo $ArxiusAcompilar | sed "s/ /\n/g"
     javac $ArxiusAcompilar
 else
-    ArxiusAborrar=$(find | grep .class | tr "\n" " ")
+    ArxiusAborrar=$(find | grep .class | tr "\n" " ")$(find ../ | grep "\.out" | tr "\n" " ")
     echo $ArxiusAborrar | sed "s/ /\n/g"
     rm $ArxiusAborrar
 fi
