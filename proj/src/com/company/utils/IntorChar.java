@@ -2,7 +2,7 @@ package com.company.utils;
 
 public class IntorChar {
 
-    private boolean intochar;
+    private boolean intochar; //false->int --- true->char
     private char caracter;
     private int despl;
     private int mida;
