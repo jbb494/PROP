@@ -1,9 +1,18 @@
 package com.company.algorithm;
 import java.util.*;
 
+import com.company.output.Ctrl_Output;
+
 public class LZW {
+
+	//Attributes
+	Ctrl_Output Output;
+
+	public LZW() {
+		Output = new Ctrl_Output("LZW.out");
+	}
 	
-	public static ArrayList<Integer> compression(String file) {
+	public ArrayList<Integer> compression(String file) {
 		Map<String,Integer> table = new HashMap<String, Integer>();
 		
 		//We initialize the map with the ASCII table (String as key)
@@ -42,7 +51,7 @@ public class LZW {
 	}
 
 
-	public static String decompression(ArrayList<Integer> file) {
+	public String decompression(ArrayList<Integer> file) {
 		Map<Integer, String> table = new HashMap<Integer, String>();
 
 		//We initialize the map with the ASCII table (Integer as key)
@@ -74,6 +83,17 @@ public class LZW {
 		}
 
 		return result;
+	}
+
+
+	public Ctrl_Output print(String file) {
+		ArrayList<Integer> arr = compression(file);
+		
+		for (int i = 0; i < arr.size(); ++i) {
+			Output.add(arr.get(i));
+		}
+
+		return Output;
 	}
 	
 }
