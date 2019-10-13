@@ -2,16 +2,15 @@
 
 ## Atributs
 
-### Comprimir
+### Function
+
+Depenent del seu valor realitzarem una funció o una altre:
+- 1 -> Comprimir
+- 2 -> Descomprimir 
+- 3 -> Comprimir de manera manual
 
 ```java
-Boolean Comprimir;
-```
-
-### Auto
-
-```java
-Boolean Auto;
+Integer Function;
 ```
 
 ### Path
@@ -20,16 +19,16 @@ Boolean Auto;
 String Path;
 ```
 
-### Input
+### Inp
 
 ```java
-Input Inp;
+Ctrl_Input Inp;
 ```
 
-### Output
+### Out
 
 ```java
-Output Out;
+Ctrl_Output Out;
 ```
 
 
