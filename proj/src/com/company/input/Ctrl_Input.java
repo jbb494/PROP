@@ -11,10 +11,13 @@ import com.company.utils.IntorChar;
 
 public class Ctrl_Input {
 
+    //Attributes
     Input Input_class;
 
     String Extensio;
 
+
+    //Constructor
     public Ctrl_Input(String path)
     {
         Input_class = new Input(path);
@@ -26,6 +29,13 @@ public class Ctrl_Input {
         this.Extensio = spl[1];
     }
     
+
+    //Functions
+    public String getExtension() {
+        return Extensio;
+    }
+
+
     public String getText()
     {
         ArrayList<Byte> arrayByte =  Input_class.getIn();
