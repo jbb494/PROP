@@ -19,7 +19,7 @@ public class Main {
         
         System.out.println("Final: \n");
 
-        outp.printString();
+        outp.print();
         
         /*
         Ctrl_Input instance = new Ctrl_Input("./LZ78.out");
