@@ -8,7 +8,9 @@ import java.awt.image.BufferedImage;
 
 public class Input_Img extends Input {
 
-    
+    //Constructor
+    public Input_Img(String path) {}
+
     public static ArrayList< ArrayList < ArrayList <Byte> > > ReadImg(String nomImg) throws IOException
     {
         File file = new File(nomImg);

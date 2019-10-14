@@ -28,11 +28,11 @@ public class Ctrl_Input {
 
         this.Extensio = spl[1];
         
-        if (Extensio.equals("txt"))
+        //if (Extensio.equals("txt"))
 			Input_class = new Input_Text(path);
 			
-		else if (Extensio.equals("ppm"))
-			Input_class = new Input_Img(path);
+		/*else if (Extensio.equals("ppm"))
+			Input_class = new Input_Img(path);*/
     }
     
 

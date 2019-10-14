@@ -17,7 +17,7 @@ public class Input_Text extends Input {
 
     /* write your code here */
     // Scanner obtenerNumero = new Scanner(System.in);
-    public Input(String path) {
+    public Input_Text(String path) {
         try {
             FileInputStream fitxerInputStream = new FileInputStream(new File(/*"../" NO*/path));
             arrayByte = new ArrayList<Byte>(0);
