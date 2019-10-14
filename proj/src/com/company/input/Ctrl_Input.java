@@ -112,7 +112,7 @@ public class Ctrl_Input {
         {
             byte b = arrayByte.get(pos);
             byte aux = (byte)(b << (8-punter));
-            aux = (byte)(aux >>> 7);
+            aux = byteToConversion.shift_right_logic(b, 7);
             punter++;
             if(punter > 7)
             {
@@ -121,7 +121,7 @@ public class Ctrl_Input {
             }
             if(aux == (byte)0) //char
             {
-                aux = (byte)(b >>> punter);
+                aux = byteToConversion.shift_right_logic(b, punter);
                 if(punter != 0)
                 {
                     int mou = 8-punter;
@@ -134,31 +134,59 @@ public class Ctrl_Input {
                 ret.add(ioc);
                 //punter es queda a la mateixa posició
             }
-            else //Punter amb compilació
+            else //Punter
             {
                 List<Byte> lb = new ArrayList<Byte>();
-                aux = (byte)(b >>> punter);
+                aux = byteToConversion.shift_right_logic(b, punter);
                 b = arrayByte.get(++pos);
                 byte aux2 = (byte)(b << (8-punter));
                 aux = (byte)(aux | aux2);
                 lb.add(aux);
-                if(punter <=3)
+                aux = byteToConversion.shift_right_logic(b, punter);
+                if(punter <= 3)
                 {
-                    aux = (byte)(b >>> punter);
                     aux = (byte)(aux << 3);
-                    aux = (byte)(aux >>> 3);
+                    aux = byteToConversion.shift_right_logic(aux, 3);
                 }
                 else
-                {
-                    aux = (byte)(b >>> punter);
+                {                    
                     b = arrayByte.get(++pos);
                     int restants = 5 - (8-punter);
                     aux2 = (byte)(b << (8-restants));
-                    aux2 = (byte)(aux >>> 3);
+                    aux2 = byteToConversion.shift_right_logic(aux, 3);
                     aux = (byte)(aux | aux2);
                 }
                 lb.add(aux);
-
+                punter += 5;
+                if(punter > 7) punter -= 8;
+                int despl = byteToConversion.byteToInteger(lb);
+                IntorChar ioc = new IntorChar(false);
+                ioc.SetDespl(despl);
+                aux = byteToConversion.shift_right_logic(b, punter);
+                if(punter <= 3)
+                {
+                    aux = (byte)(aux << 3);
+                    aux = byteToConversion.shift_right_logic(aux, 3);
+                }
+                else
+                {
+                    b = arrayByte.get(++pos);
+                    int restants = 5 - (8-punter);
+                    aux2 = (byte)(b << (8-restants));
+                    aux2 = byteToConversion.shift_right_logic(aux, 3);
+                    aux = (byte)(aux | aux2);
+                }
+                punter += 5;
+                if(punter > 7) punter -= 8;
+                lb = new ArrayList<Byte>();
+                lb.add(aux);
+                int mida = byteToConversion.byteToInteger(lb);
+                if(mida == 0) end = true;
+                else
+                {
+                    ioc.SetMida(mida);
+                    ret.add(ioc);
+                }
             }
         }
         return ret;

@@ -3,7 +3,7 @@ import java.util.ArrayList;
 
 import com.company.algorithm.*;
 import com.company.input.Ctrl_Input;
-import com.company.output.Ctrl_Output;
+import com.company.output.*;
 
 public class Main {
 
@@ -51,12 +51,12 @@ public class Main {
 
         }
 
-        /*
+        
         Output outp = new Output("provaOutput.out");
-        outp.add((byte)128, 8);
-        outp.add((byte)1, 1);
-        outp.add((byte)128, 8);
+        outp.add((byte)31, 4);
+        outp.add((byte)15, 3);
+        outp.add((byte)127, 8);
         outp.print();
-*/
+
     }
 }
