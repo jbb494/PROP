@@ -42,4 +42,9 @@ public class IntorChar {
         return caracter;
     }
 
+    public boolean IsIntorChar()
+    {
+        return intochar;
+    }
+
 }
