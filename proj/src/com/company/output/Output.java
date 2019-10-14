@@ -23,7 +23,7 @@ public class Output {
     }
 
 
-    public void add(byte b, int n_bits)
+    public void add(byte b, int n_bits) //Pre: El byte b ha de poder expressar-se en n_bits
     {
         if(n_bits != 0)
         {
@@ -44,8 +44,11 @@ public class Output {
                 Pos = 0;
                 add(aux, restants);
             }
-            else 
+            else
+            {
                 Pos += n_bits;
+                if(Pos > 7) Pos -= 8;
+            }
         }
    }
    
