@@ -111,7 +111,7 @@ public class Ctrl_Input {
         while(!end)
         {
             byte b = arrayByte.get(pos);
-            byte aux = (byte)(b << (8-punter));
+            byte aux = (byte)(b << (7-punter));
             aux = byteToConversion.shift_right_logic(b, 7);
             punter++;
             if(punter > 7)
