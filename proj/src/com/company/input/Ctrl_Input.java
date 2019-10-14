@@ -20,13 +20,19 @@ public class Ctrl_Input {
     //Constructor
     public Ctrl_Input(String path)
     {
-        Input_class = new Input(path);
+        
        
         Pattern p = Pattern.compile("\\.");
 
         String spl[] = p.split(path);
 
         this.Extensio = spl[1];
+        
+        if (Extensio.equals("txt"))
+			Input_class = new Input_Text(path);
+			
+		else if (Extensio.equals("ppm"))
+			Input_class = new Input_Img(path);
     }
     
 

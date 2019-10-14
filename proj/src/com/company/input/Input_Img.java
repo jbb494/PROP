@@ -1,9 +1,12 @@
+package com.company.input;
+
 import java.io.*;
 import java.util.ArrayList;
 import javax.imageio.ImageIO;
 import java.awt.image.BufferedImage;
 
-public class Auxiliar {
+
+public class Input_Img extends Input {
 
     
     public static ArrayList< ArrayList < ArrayList <Byte> > > ReadImg(String nomImg) throws IOException
