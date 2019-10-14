@@ -1,5 +1,5 @@
 
-if [[ $1 != "-remove" ]]; then
+if [[ $1 != "-remove" || $1 == "-clean" ]]; then
     ArxiusAcompilar=$(find | grep .java | tr "\n" " ")
     echo $ArxiusAcompilar | sed "s/ /\n/g"
     javac $ArxiusAcompilar
@@ -14,4 +14,3 @@ if [[ $1 == "-run" || $1 == "-r" ]]; then
     echo ""
     java Main
 fi
-#
