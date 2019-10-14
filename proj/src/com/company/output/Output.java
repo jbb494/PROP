@@ -6,7 +6,8 @@ import java.io.OutputStreamWriter;
 
 import java.io.IOException;
 import java.io.FileNotFoundException;
-import java.io.FileOutputStream;;
+import java.io.FileOutputStream;
+import com.company.utils.byteToConversion;
 
 public class Output {
 
@@ -21,9 +22,6 @@ public class Output {
         this.path = path;
     }
 
-    private byte shift_right_logic(byte b, int despl) {
-        return (byte) ((byte) (b >>> despl) &~ (byte) (0xff << (8 - despl)));
-    }
 
     public void add(byte b, int n_bits)
     {
@@ -42,7 +40,7 @@ public class Output {
             {
                 int restants = n_bits - (8-Pos);
                 int despl = 8-Pos;
-                aux = shift_right_logic(b, despl);
+                aux = byteToConversion.shift_right_logic(b, despl);
                 Pos = 0;
                 add(aux, restants);
             }

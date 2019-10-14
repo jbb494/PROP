@@ -32,4 +32,8 @@ public class byteToConversion {
 
         return ret;
     }
+
+    public static byte shift_right_logic(byte b, int despl) {
+        return (byte) ((byte) (b >>> despl) &~ (byte) (0xff << (8 - despl)));
+    }
 }
