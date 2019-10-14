@@ -20,6 +20,11 @@ public class Output {
         Pos = 0;
         this.path = path;
     }
+
+    private byte shift_right_logic(byte b, int despl) {
+        return (byte) ((byte) (b >>> despl) &~ (byte) (0xff << (8 - despl)));
+    }
+
     public void add(byte b, int n_bits)
     {
         if(n_bits != 0)
@@ -37,15 +42,14 @@ public class Output {
             {
                 int restants = n_bits - (8-Pos);
                 int despl = 8-Pos;
-                aux = (byte)(b >>> despl);
-                Pos += n_bits;
-                if(Pos > 7) Pos = 0;
+                aux = shift_right_logic(b, despl);
+                Pos = 0;
                 add(aux, restants);
             }
-            Pos += n_bits;
-            if(Pos > 7) Pos = 0;
+            else 
+                Pos += n_bits;
         }
-    }
+   }
    
     public void print()
     {
