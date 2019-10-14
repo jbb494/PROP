@@ -14,3 +14,4 @@ if [[ $1 == "-run" || $1 == "-r" ]]; then
     echo ""
     java Main
 fi
+#
