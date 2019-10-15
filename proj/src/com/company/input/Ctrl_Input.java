@@ -141,7 +141,7 @@ public class Ctrl_Input {
                 b = arrayByte.get(++pos);
                 byte aux2 = (byte)(b << (8-punter));
                 aux = (byte)(aux | aux2);
-                lb.add(aux);
+                byte aux3 = aux;
                 aux = byteToConversion.shift_right_logic(b, punter);
                 if(punter <= 3)
                 {
@@ -157,6 +157,7 @@ public class Ctrl_Input {
                     aux = (byte)(aux | aux2);
                 }
                 lb.add(aux);
+		lb.add(aux3);
                 punter += 5;
                 if(punter > 7) punter -= 8;
                 int despl = byteToConversion.byteToInteger(lb);
