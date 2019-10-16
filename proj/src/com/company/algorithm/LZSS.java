@@ -2,10 +2,13 @@ package com.company.algorithm;
 
 import java.util.*;
 import com.company.output.Ctrl_Output;
+import com.company.utils.IntorChar;
 
 public class LZSS
 {
     Ctrl_Output Output;
+    String file;
+    ArrayList <IntorChar> InpDesc;
 
     public ArrayList<Integer> GetKey(Map<Integer, Character> map, char value) {
         
@@ -18,8 +21,14 @@ public class LZSS
     
     public LZSS(String file)
     {
-        Output = new Ctrl_Output("LZSS.out");
-        Compresser(file);
+        Output = new Ctrl_Output("../LZSS.out");
+        this.file = file;
+    }
+
+    public LZSS(ArrayList<IntorChar> v)
+    {
+        InpDesc = v;
+        Output = new Ctrl_Output("../LZSS_Desc.out");
     }
 
     public Ctrl_Output print()
@@ -27,7 +36,7 @@ public class LZSS
         return Output;
     }
 
-    public void Compresser(String file)
+    public void Compresser()
     {
         String aux = "";
         Map<Integer, Character> vc = new TreeMap<Integer, Character>();
@@ -108,10 +117,41 @@ public class LZSS
                 aux = "";
                 first = true;
             }
-            if(vc.size() > 8191) vc.remove(paux++);
             vc.put(i, nextChar);
+            if(vc.size() > 8191) vc.remove(paux++);
         }
         Output.add((byte)1, 1);
         Output.add(0, 0); //fi del fitxer
+    }
+
+    public void Decompresser()
+    {
+        Map<Integer, Character> vc = new TreeMap<Integer, Character>();
+        int pos = 0, posmap = 0;
+        for(int i = 0; i < InpDesc.size(); i++)
+        {
+            if(InpDesc.get(i).IsIntorChar())
+            {
+                Character c = InpDesc.get(i).GetChar();
+                Output.add(c);
+                vc.put(posmap++, c);
+                if(vc.size() > 8191) vc.remove(pos++);
+            }
+            else
+            {
+                int despl = InpDesc.get(i).GetDespl();
+                int mida = InpDesc.get(i).GetMida();
+                String aux = "";
+                for(int j = 0; j < mida; j++)
+                {
+                    Character c = vc.get(posmap-despl+j);
+                    aux = aux.concat(c.toString());
+                    vc.put(posmap+j, c);
+                    if(vc.size() > 8191) vc.remove(pos++);
+                }
+                posmap += mida;
+                Output.add(aux);
+            }
+        }
     }
 }

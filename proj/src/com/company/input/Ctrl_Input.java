@@ -157,7 +157,7 @@ public class Ctrl_Input {
                     aux = (byte)(aux | aux2);
                 }
                 lb.add(aux);
-		lb.add(aux3);
+		        lb.add(aux3);
                 punter += 5;
                 if(punter > 7) punter -= 8;
                 int despl = byteToConversion.byteToInteger(lb);
