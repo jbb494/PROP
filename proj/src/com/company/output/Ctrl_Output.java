@@ -50,6 +50,7 @@ public class Ctrl_Output {
         */
         ByteBuffer bb = ByteBuffer.allocate(4); 
         Integer midaAux = mida%8;
+        Double daux = new Double (mida)/8;
         Integer nombreBytes = new Double (Math.ceil(daux)).intValue();
         if(midaAux == 0)midaAux = 8;
         bb.putInt(x.intValue());
