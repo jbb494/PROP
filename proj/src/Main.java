@@ -9,7 +9,7 @@ public class Main {
 
     public static void main(String[] args) 
     {
-       Integer n = 0; // n = 0 per els dos
+       Integer n = 3; // n = 0 per els dos
        if(n == 1 | n == 0){ // n = 0 per comprimir
 
         String pathCompresio = "../hello.txt";
@@ -52,10 +52,11 @@ public class Main {
         }
 
         
-        Output outp = new Output("provaOutput.out");
-        outp.add((byte)31, 4);
-        outp.add((byte)15, 3);
-        outp.add((byte)127, 8);
+        Ctrl_Output outp = new Ctrl_Output("provaOutput.out");
+        outp.add(128, 8);
+        outp.add(1, 1);
+        outp.add(128, 8);
+        outp.add(1,1);
         outp.print();
 
     }
