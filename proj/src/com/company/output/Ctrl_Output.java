@@ -23,7 +23,7 @@ public class Ctrl_Output {
     public void add(String s) {
         byte[] bytearray = s.getBytes();
         for (byte b : bytearray) 
-            add(b,8);
+            Output_Class.add(b,8);
     }
 
 
@@ -41,24 +41,25 @@ public class Ctrl_Output {
 
 
     public void add(Integer x, Integer mida){
-        //Initialize a buffer where each position corresponds to a byte of the Integer
+        /*int aux = despl & 0xFF;
+        Output_Class.add((byte)aux, 8);
+        aux = despl >>> 8;
+        Output_Class.add((byte)aux, 5);
+        aux = mida & 0x1F;
+        Output_Class.add((byte)aux, 5);
+        */
         ByteBuffer bb = ByteBuffer.allocate(4); 
+        Integer midaAux = mida%8;
+        Integer nombreBytes = new Double (Math.ceil(daux)).intValue();
+        if(midaAux == 0)midaAux = 8;
         bb.putInt(x.intValue());
+        for (int i = 4-nombreBytes; i < 4; i++)
+        {
+            byte b = bb.get(i);
+            add(b,midaAux);
+            midaAux = 8;
+        } 
 
-        //Corresponds to the extra bits of the first byte
-        int bit_restants = mida % 8;
-
-        //Corresponds to the byte where we start
-        int byte_inic = 4 - (int)(mida / 8);
-        if (bit_restants != 0) --byte_inic;
-
-        for (int i = byte_inic; i < 4; ++i) {
-            if (i == byte_inic) {
-                add(bb.get(i), bit_restants);
-                continue;
-            }
-            add(bb.get(i),8);
-        }
     }
 
     
