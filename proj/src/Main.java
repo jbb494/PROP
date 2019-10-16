@@ -53,10 +53,9 @@ public class Main {
 
         
         Ctrl_Output outp = new Ctrl_Output("provaOutput.out");
-        outp.add(128, 8);
-        outp.add(1, 1);
-        outp.add(128, 8);
-        outp.add(1,1);
+        outp.add(4, 3);
+        outp.add(5, 4);
+        outp.add(3, 2);
         outp.print();
 
     }
