@@ -88,7 +88,6 @@ public class LZSS
                 {
                     Output.add((byte)1, 1);
                     Output.add(punter - pivnotf, 13);
-                    System.out.println(punter - pivnotf);
                     punter += (aux.length() - 1);
                     Output.add(aux.length() - 3, 5);
                     aux = String.valueOf(nextChar);
@@ -101,8 +100,6 @@ public class LZSS
                     punter++;
                 }
                 found2 = found;
-                System.out.println(i);
-                System.out.println(found);
             }
             else
             {
