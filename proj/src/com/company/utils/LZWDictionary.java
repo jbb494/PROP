@@ -69,10 +69,10 @@ public class LZWDictionary {
             }
 
         }
+        else arr_n.get(i).Modify_First(sz);
 
-        return 0;
+        arr_n.add( new Node(c) );
+        return Limit;
     }
-
-
 
 }
