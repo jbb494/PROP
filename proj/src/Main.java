@@ -2,7 +2,7 @@ import java.util.AbstractMap;
 import java.util.ArrayList;
 
 import com.company.algorithm.*;
-import com.company.input.Ctrl_Input;
+import com.company.input.*;
 import com.company.output.*;
 
 public class Main {
@@ -50,13 +50,5 @@ public class Main {
             outp.print();
 
         }
-
-        
-        Ctrl_Output outp = new Ctrl_Output("provaOutput.out");
-        outp.add(4, 3);
-        outp.add(5, 4);
-        outp.add(3, 2);
-        outp.print();
-
     }
 }

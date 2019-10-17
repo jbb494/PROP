@@ -1,6 +1,6 @@
 package com.company.input;
 
-import java.io.InputStreamReader;
+import java.io.DataInputStream;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.IOException;
@@ -13,15 +13,15 @@ import java.util.ArrayList;
 public class Input_Text extends Input {
 
     ArrayList<Byte> arrayByte;
-    private InputStreamReader inputStreamReader;
+    private DataInputStream inputStreamReader;
 
     /* write your code here */
     // Scanner obtenerNumero = new Scanner(System.in);
     public Input_Text(String path) {
         try {
-            FileInputStream fitxerInputStream = new FileInputStream(new File(/*"../" NO*/path));
+            FileInputStream dataInputStream = new FileInputStream(new File(/*"../" NO*/path));
             arrayByte = new ArrayList<Byte>(0);
-            inputStreamReader = new InputStreamReader(fitxerInputStream);
+            inputStreamReader = new DataInputStream(dataInputStream);
             read();
         } catch (FileNotFoundException e) {
             e.printStackTrace();
@@ -41,6 +41,7 @@ public class Input_Text extends Input {
         try {
             while ((c = inputStreamReader.read()) != -1) {
                 Byte aux = c.byteValue();
+                System.out.println("nou Byte: " +aux);
                 arrayByte.add(aux);
 
             }
