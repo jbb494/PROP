@@ -2,86 +2,83 @@ package com.company.algorithm;
 import java.util.*;
 
 import com.company.output.Ctrl_Output;
+import com.company.utils.LZW_Dict_Decode;
+import com.company.utils.LZW_Dict_Encode;
 
 public class LZW {
 
 	//Attributes
+	final Integer Limit = Integer.MAX_VALUE;
+
 	Ctrl_Output Output;
 
+
+	//Constructor
 	public LZW() {
 		Output = new Ctrl_Output("LZW.out");
 	}
-	
+
+
+	//Functions
 	public ArrayList<Integer> compression(String file) {
-		Map<String,Integer> table = new HashMap<String, Integer>();
-		
-		//We initialize the map with the ASCII table (String as key)
-		for (int i = 0; i < 256; ++i) {
-			table.put("" + (char)i, i);
-		}
-		
-		//We prepare the variables before the main loop
-		Integer pos = 256;
-		String old = "";
-		ArrayList<Integer> result = new ArrayList<Integer>();
-		
-		for (char new_c : file.toCharArray()) {
-			String aux = old + new_c;
-			
-			if (table.containsKey(aux)) {
-				old = aux;
-			}
-			else {
-				//We add the next value to the compressed_file
-				result.add(table.get(old));
+		ArrayList<Integer> result = new ArrayList<>();
 
-				//We add the word to the table
-				table.put(aux, pos++);
+		//We initialize the attributes we need
+		LZW_Dict_Encode table = new LZW_Dict_Encode();
+		Integer i = Limit;
+		
+		for (char c : file.toCharArray()) {
+			Integer aux = i;
 
-				//We update the old value
-				old = "" + new_c;
+			if ( (i = table.search_and_insert_BST(aux, c)) == Limit) {
+				result.add(aux);
+				i = table.Ascii_value(c);
 			}
 		}
-		
-		if (!old.equals("")) {
-			result.add(table.get(old));
-		}
+
+		if (i != Limit)
+			result.add(i);			
 
 		return result;
 	}
 
 
 	public String decompression(ArrayList<Integer> file) {
-		Map<Integer, String> table = new HashMap<Integer, String>();
-
-		//We initialize the map with the ASCII table (Integer as key)
-		for (int i = 0; i < 256; ++i) 
-			table.put(i, "" + (char)i);
-
+		String result = "";
 		
-		//We prepare the variables before the main loop
-		Integer old = file.get(0);
-		Integer pos = 256;
-		String s = table.get(old);
-		String c = "" + s.charAt(0);
-		String result = s;
-	
+		LZW_Dict_Decode table = new LZW_Dict_Decode();
+		Integer i = Limit;
+		
+		for (Integer x : file) {
+			Integer sz = table.getSize();
 
-		for (Integer i = 1; i < file.size(); ++i) {
-			Integer aux = file.get(i);
-			if (!table.containsKey(aux)) {
-				s = table.get(old) + c;
+			//Dictionary's maximum size -> Reset it
+			if (sz == Limit) 
+				table.reset_dictionary();
+
+			/*	
+			if (x > sz)
+				Throw some Exception
+			*/
+
+			String s;
+
+			if (x == sz) {
+				table.add(i, table.getWord(i).charAt(0));
+				s = table.getWord(x);
 			}
+
 			else {
-				s = table.get(aux);
+				s = table.getWord(x);
+
+				if (i != Limit) {
+					table.add(i, s.charAt(0));
+				}
 			}
+
 			result += s;
-
-			c = "" + s.charAt(0);
-			table.put(pos++, table.get(old) + c);
-			old = aux;			
+			i = x;
 		}
-
 		return result;
 	}
 
