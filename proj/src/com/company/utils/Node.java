@@ -29,4 +29,8 @@ public class Node {
         this.Right = i;
     }
 
+    public void Modify_First(Integer i) {
+        this.First = i;
+    }
+
 }
