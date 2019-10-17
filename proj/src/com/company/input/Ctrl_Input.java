@@ -112,7 +112,7 @@ public class Ctrl_Input {
         {
             byte b = arrayByte.get(pos);
             byte aux = (byte)(b << (7-punter));
-            aux = byteToConversion.shift_right_logic(b, 7);
+            aux = byteToConversion.shift_right_logic(aux, 7);
             punter++;
             if(punter > 7)
             {
@@ -129,6 +129,7 @@ public class Ctrl_Input {
                     aux2 = (byte)(aux2 << mou);
                     aux = (byte)(aux | aux2);
                 }
+                else pos++;
                 IntorChar ioc = new IntorChar(true);
                 ioc.SetChar(byteToConversion.byteToCharacter(aux));
                 ret.add(ioc);
@@ -137,16 +138,13 @@ public class Ctrl_Input {
             else //Punter
             {
                 List<Byte> lb = new ArrayList<Byte>();
-                aux = byteToConversion.shift_right_logic(b, punter);
-                b = arrayByte.get(++pos);
-                byte aux2 = (byte)(b << (8-punter));
-                aux = (byte)(aux | aux2);
-                byte aux3 = aux;
+                byte aux2;
                 aux = byteToConversion.shift_right_logic(b, punter);
                 if(punter <= 3)
                 {
                     aux = (byte)(aux << 3);
                     aux = byteToConversion.shift_right_logic(aux, 3);
+                    if(punter == 3) b = arrayByte.get(++pos);
                 }
                 else
                 {                    
@@ -157,9 +155,13 @@ public class Ctrl_Input {
                     aux = (byte)(aux | aux2);
                 }
                 lb.add(aux);
-		        lb.add(aux3);
                 punter += 5;
                 if(punter > 7) punter -= 8;
+                aux = byteToConversion.shift_right_logic(b, punter);
+                b = arrayByte.get(++pos);
+                aux2 = (byte)(b << (8-punter));
+                aux = (byte)(aux | aux2);
+                lb.add(aux);
                 int despl = byteToConversion.byteToInteger(lb);
                 IntorChar ioc = new IntorChar(false);
                 ioc.SetDespl(despl);
@@ -168,6 +170,7 @@ public class Ctrl_Input {
                 {
                     aux = (byte)(aux << 3);
                     aux = byteToConversion.shift_right_logic(aux, 3);
+                    if(punter == 3) pos++;
                 }
                 else
                 {
@@ -181,8 +184,8 @@ public class Ctrl_Input {
                 if(punter > 7) punter -= 8;
                 lb = new ArrayList<Byte>();
                 lb.add(aux);
-                int mida = byteToConversion.byteToInteger(lb);
-                if(mida == 0) end = true;
+                int mida = byteToConversion.byteToInteger(lb) + 2;
+                if(mida == 2) end = true;
                 else
                 {
                     ioc.SetMida(mida);
