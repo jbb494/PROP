@@ -42,6 +42,7 @@ public class LZSS
         Map<Integer, Character> vc = new TreeMap<Integer, Character>();
         char nextChar;
         boolean first = true;
+        boolean found2 = false;
         int paux = 0, punter = 0, pivot = 0, pivnotf = 0;
         for (int i = 0; i < file.length(); i++)
         {
@@ -64,7 +65,7 @@ public class LZSS
                 {
                     int ji = 0;
                     pivot = keys.get(j);
-                    while(!found && (pivot + ji) < vc.size() && (ji < aux.length()) && aux.charAt(ji) == vc.get(pivot + ji))
+                    while(!found  && (pivot+ji) < punter && (pivot + ji) < vc.size() && (ji < aux.length()) && aux.charAt(ji) == vc.get(pivot + ji))
                     {
                         ji++;
                         if(ji == aux.length()) found = true;
@@ -85,9 +86,10 @@ public class LZSS
                 }
                 else if(!found && aux.length() >= 4)
                 {
-                    punter += (aux.length() - 1);
                     Output.add((byte)1, 1);
                     Output.add(punter - pivnotf, 13);
+                    System.out.println(punter - pivnotf);
+                    punter += (aux.length() - 1);
                     Output.add(aux.length() - 3, 5);
                     aux = String.valueOf(nextChar);
                 }
@@ -98,6 +100,9 @@ public class LZSS
                     aux = aux.substring(1);
                     punter++;
                 }
+                found2 = found;
+                System.out.println(i);
+                System.out.println(found);
             }
             else
             {
@@ -122,6 +127,20 @@ public class LZSS
             }
             vc.put(i, nextChar);
             if(vc.size() > 8191) vc.remove(paux++);
+        }
+        if(found2 && aux.length() >= 3 && aux.length() < 33)
+        {
+            Output.add((byte)1, 1);
+            Output.add(punter - pivot, 13);
+            Output.add(aux.length()-2, 5);
+        }
+        else if(!found2 && aux.length() > 0)
+        {
+            for(int j = 0; j < aux.length(); j++)
+            {
+                Output.add((byte)0, 1);
+                Output.add(aux.charAt(j));
+            }
         }
         Output.add((byte)1, 1);
         Output.add(0, 13);
@@ -149,7 +168,7 @@ public class LZSS
                 for(int j = 0; j < mida; j++)
                 {
                     Character c = vc.get(posmap-despl+j);
-                    aux = aux.concat(c.toString());
+                    aux = aux.concat(String.valueOf(c));
                     vc.put(posmap+j, c);
                     if(vc.size() > 8191) vc.remove(pos++);
                 }

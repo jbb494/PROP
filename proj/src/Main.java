@@ -1,15 +1,16 @@
-import java.util.AbstractMap;
+//import java.util.AbstractMap;
 import java.util.ArrayList;
 
 import com.company.algorithm.*;
 import com.company.input.*;
 import com.company.output.*;
+import com.company.utils.IntorChar;
 
 public class Main {
 
     public static void main(String[] args) 
     {
-       Integer n = 3; // n = 0 per els dos
+       Integer n = 0; // n = 0 per els dos
        if(n == 1 | n == 0){ // n = 0 per comprimir
 
         String pathCompresio = "../hello.txt";
@@ -22,7 +23,7 @@ public class Main {
 
            // System.out.println("Inicial: \n" + aux);
 
-            LZ78 alg = new LZ78(aux);
+            LZSS alg = new LZSS(aux);
 
             alg.Compressor();
         
@@ -33,15 +34,15 @@ public class Main {
             outp.print();
        }
        if (n == 2 | n == 0){
-            String pathDecompresio = "../CompresioLZ78.out";
+            String pathDecompresio = "../CompresioLZSS.out";
             
             System.out.println("Compresio a " + pathDecompresio);    
 
             Ctrl_Input instance = new Ctrl_Input(pathDecompresio);
 
-            ArrayList< AbstractMap.SimpleEntry <Integer, Character> > aux = instance.getLZ78();
+            ArrayList< IntorChar > aux = instance.getLZSS();
 
-            LZ78 alg = new LZ78(aux);
+            LZSS alg = new LZSS(aux);
 
             alg.Decompressor();
             

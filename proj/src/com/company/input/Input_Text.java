@@ -41,7 +41,6 @@ public class Input_Text extends Input {
         try {
             while ((c = inputStreamReader.read()) != -1) {
                 Byte aux = c.byteValue();
-                System.out.println("nou Byte: " +aux);
                 arrayByte.add(aux);
 
             }
