@@ -21,14 +21,14 @@ public class LZSS
     
     public LZSS(String file)
     {
-        Output = new Ctrl_Output("../LZSS.out");
+        Output = new Ctrl_Output("../CompresioLZSS.out");
         this.file = file;
     }
 
     public LZSS(ArrayList<IntorChar> v)
     {
         InpDesc = v;
-        Output = new Ctrl_Output("../LZSS_Desc.out");
+        Output = new Ctrl_Output("../DescompresioLZSS.out");
     }
 
     public Ctrl_Output print()
@@ -36,7 +36,7 @@ public class LZSS
         return Output;
     }
 
-    public void Compresser()
+    public void Compressor()
     {
         String aux = "";
         Map<Integer, Character> vc = new TreeMap<Integer, Character>();
@@ -78,7 +78,8 @@ public class LZSS
                 if(found && aux.length() == 33)
                 {
                     Output.add((byte)1, 1);
-                    Output.add(punter - pivot, 31);
+                    Output.add(punter - pivot, 13);
+                    Output.add(31, 5);
                     aux = "";
                     first = true;
                 }
@@ -86,7 +87,8 @@ public class LZSS
                 {
                     punter += (aux.length() - 1);
                     Output.add((byte)1, 1);
-                    Output.add(punter - pivnotf, aux.length() - 3);
+                    Output.add(punter - pivnotf, 13);
+                    Output.add(aux.length() - 3, 5);
                     aux = String.valueOf(nextChar);
                 }
                 else if(!found && aux.length() < 4)
@@ -102,7 +104,8 @@ public class LZSS
                 if(aux.length() >= 4)
                 {
                     Output.add((byte)1, 1);
-                    Output.add(punter - pivnotf, aux.length() - 3);
+                    Output.add(punter - pivnotf, 13);
+                    Output.add(aux.length() - 3, 5);
                     Output.add((byte)0, 1);
                     Output.add(nextChar);
                 }
@@ -121,10 +124,11 @@ public class LZSS
             if(vc.size() > 8191) vc.remove(paux++);
         }
         Output.add((byte)1, 1);
-        Output.add(0, 0); //fi del fitxer
+        Output.add(0, 13);
+        Output.add(0, 5); //fi del fitxer
     }
 
-    public void Decompresser()
+    public void Decompressor()
     {
         Map<Integer, Character> vc = new TreeMap<Integer, Character>();
         int pos = 0, posmap = 0;
