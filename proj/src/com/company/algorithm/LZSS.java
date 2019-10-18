@@ -44,7 +44,7 @@ public class LZSS
         boolean first = true;
         boolean found2 = false;
         int paux = 0, punter = 0, pivot = 0, pivnotf = 0;
-        for (int i = 0; i < file.length(); i++)
+        for (int i = 0; i < file.length()-1; i++)
         {
             nextChar = file.charAt(i);
             aux = aux.concat(String.valueOf(nextChar));
