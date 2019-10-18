@@ -25,11 +25,9 @@ public class byteToConversion {
         for (int i = 0; i < bArg.size(); i++)
         {
             Byte b = bArg.get(i);
-
-            ret += b << (8*(bArg.size() - i -1));
-            //System.out.println(b + " << (8*" + i + ") = " + (b << (8*i)));
+            
+            ret += (b&0xFF) << (8*(bArg.size() - i -1));
         }
-
         return ret;
     }
 
