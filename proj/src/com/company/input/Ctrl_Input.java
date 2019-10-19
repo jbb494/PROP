@@ -18,10 +18,8 @@ public class Ctrl_Input {
 
 
     //Constructor
-    public Ctrl_Input(String path)
-    {
-        
-       
+    public Ctrl_Input(String path){
+  
         Pattern p = Pattern.compile("\\.");
 
         String spl[] = p.split(path);
@@ -58,7 +56,10 @@ public class Ctrl_Input {
         return outputString;
 
     }
-
+    public int get()
+    {
+        return 1;
+    }
     public ArrayList< AbstractMap.SimpleEntry <Integer, Character> > getLZ78()
     {
         ArrayList< AbstractMap.SimpleEntry <Integer, Character> > ret = 
