@@ -7,7 +7,7 @@ import java.util.List;
 import com.company.input.Input;
 import com.company.utils.byteToConversion;
 import com.company.utils.IntorChar;
-
+import java.io.*;
 
 public class Ctrl_Input {
 
@@ -26,11 +26,11 @@ public class Ctrl_Input {
 
         this.Extensio = spl[1];
         
-        //if (Extensio.equals("txt"))
-			Input_class = new Input_Text(path);
-			
-		/*else if (Extensio.equals("ppm"))
-			Input_class = new Input_Img(path);*/
+        if (Extensio.equals("ppm"))
+            Input_class = new Input_Img(path);
+        else
+            Input_class = new Input_Text(path);
+            
     }
     
 
@@ -56,6 +56,25 @@ public class Ctrl_Input {
         return outputString;
 
     }
+
+    public Byte[][][] getImg() {
+        int h = Input_class.getHeight();
+        int w = Input_class.getWidth();
+        ArrayList<Byte> arrayByte =  Input_class.getIn();
+
+        Byte[][][] ret = new Byte[h][w][3];
+        
+        for (int i = 0; i < h; ++i) {
+            for (int j = 0; j < w; ++j) {
+                for (int k = 0; k < 3; ++k) {
+                    ret[i][j][k] = arrayByte.get(k + 3*(j + w*i));
+                }
+            }
+        }
+
+        return ret;
+    }
+
     public int get()
     {
         return 1;

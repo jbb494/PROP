@@ -3,6 +3,22 @@ package com.company.algorithm;
 
 public class JPEG {
 
+	private static int[][] quantization_matrix =
+	{
+		{16, 11, 10, 16, 24, 40, 51, 61},
+		{12, 12, 14, 19, 26, 58, 60, 55},
+		{14, 13, 16, 24, 40, 57, 69, 56},
+		{14, 17, 22, 29, 51, 87, 80, 62},
+		{18, 22, 37, 56, 68, 109, 103, 77},
+		{24, 35, 55, 64, 81, 104, 113, 92},
+		{49, 64, 78, 87, 103, 121, 120, 101},
+		{72, 92, 95, 98, 112, 100, 103, 99}
+	};
+
+	private static int round(double x) {
+		return (int)(x + 0.5);
+	}
+
 	private static double alpha(int x) { // only used in discrete_cosine_transform
 		if (x == 0) return 1.0 / Math.sqrt(2);
 		return 1.0;
@@ -29,12 +45,13 @@ public class JPEG {
 			}
 		}
 
-		for (int x = 0; x < 8; x++) {
+		for (int x = 0; x < 8; ++x) {
 			for (int y = 0; y < 8; ++y) { 
 				mat1[x0 + x][y0 + y] = mat2[x][y];
 			}
 		}
 	}
+
 
 	public static byte[][][] convert(byte[][][] inRGB) {
 		int n = inRGB.length;
@@ -55,12 +72,28 @@ public class JPEG {
 			}
 		}
 		
+		int[][][] outYCbCr = new int[n][m][3];
 		for (int k = 0; k < 3; ++k) {
 
 			//3. Block splitting
 			for (int i = 0; i+7 < n; i += 8) {
 				for (int j = 0; j+7 < m; j += 8) {
+
+					//4. Discrete cosnie transform
+					for(int ii = i; ii < i+8; ++ii) {
+						for (int jj = j; jj < j+8; ++jj) {
+							YCbCr[k][i+ii][j+jj] -= 128;
+						}
+					}
 					discrete_cosine_transform(YCbCr[k], i, j);
+					
+					//5. Quantization
+					//no estic sgur que sigui corecte, no m'ha quedat clar com s'ha de fer
+					for(int ii = i; ii < i+8; ++ii) {
+						for (int jj = j; jj < j+8; ++jj) {
+							outYCbCr[i+ii][j+jj][k] = round(YCbCr[k][i+ii][j+jj] / quantization_matrix[ii][jj]);
+						}
+					}
 				}
 			}
 		}
