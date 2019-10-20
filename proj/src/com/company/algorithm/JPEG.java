@@ -1,5 +1,6 @@
 package com.company.algorithm;
 
+import java.util.ArrayList;
 
 public class JPEG {
 
@@ -15,8 +16,12 @@ public class JPEG {
 		{72, 92, 95, 98, 112, 100, 103, 99}
 	};
 
-	private static int round(double x) {
-		return (int)(x + 0.5);
+	private static Byte sizeOf(Byte b) {
+		return 9;
+	}
+
+	private static Byte round(double x) {
+		return (byte)(x + 0.5);
 	}
 
 	private static double alpha(int x) { // only used in discrete_cosine_transform
@@ -53,7 +58,7 @@ public class JPEG {
 	}
 
 
-	public static byte[][][] convert(byte[][][] inRGB) {
+	public static ArrayList<Byte[]> encode(byte[][][] inRGB) {
 		int n = inRGB.length;
 		int m = inRGB[0].length;
 		
@@ -72,33 +77,61 @@ public class JPEG {
 			}
 		}
 		
-		int[][][] outYCbCr = new int[n][m][3];
-		for (int k = 0; k < 3; ++k) {
+		Byte[][][] outYCbCr = new Byte[n][m][3];
+		ArrayList<Byte[]> ret = new ArrayList<Byte[]>();
 
-			//3. Block splitting
-			for (int i = 0; i+7 < n; i += 8) {
-				for (int j = 0; j+7 < m; j += 8) {
+		//3. Block splitting
+		for (int i = 0; i+7 < n; i += 8) {
+			for (int j = 0; j+7 < m; j += 8) {
+
+				
+				for (int k = 0; k < 3; ++k) {
 
 					//4. Discrete cosnie transform
-					for(int ii = i; ii < i+8; ++ii) {
-						for (int jj = j; jj < j+8; ++jj) {
+					for(int ii = 0; ii < 8; ++ii) {
+						for (int jj = 0; jj < 8; ++jj) {
 							YCbCr[k][i+ii][j+jj] -= 128;
 						}
 					}
 					discrete_cosine_transform(YCbCr[k], i, j);
 					
 					//5. Quantization
-					//no estic sgur que sigui corecte, no m'ha quedat clar com s'ha de fer
-					for(int ii = i; ii < i+8; ++ii) {
-						for (int jj = j; jj < j+8; ++jj) {
+					for(int ii = 0; ii < 8; ++ii) {
+						for (int jj = 0; jj < 8; ++jj) {
 							outYCbCr[i+ii][j+jj][k] = round(YCbCr[k][i+ii][j+jj] / quantization_matrix[ii][jj]);
 						}
 					}
+
+					//6. Entropy coding
+					int ii = 0, jj = 0;
+					boolean up = true;
+					Byte zeros = 0;
+					Byte[] z16 = {15,0,0};
+					for (int aux = 0; aux < 64; ++aux) {
+
+						Byte x = outYCbCr[i+ii][j+jj][k];
+						if (x == 0) {
+							zeros++;
+							if (zeros == 16) {
+								zeros = 0;
+								ret.add(z16);
+							}
+						} else {
+
+						}
+						
+						
+						if      ((ii == 0 && up) || (ii == 7 && !up)) {jj++; up = !up;}
+						else if ((jj == 0 && !up) || (jj == 7 && up)) {ii++; up = !up;}
+						else if (up) {ii--; jj++;}
+						else         {ii++; jj--;}
+					}
+
 				}
 			}
 		}
 
-		return inRGB;
+		return ret;
 	}
 	
 	public static void main(String args[]) {
