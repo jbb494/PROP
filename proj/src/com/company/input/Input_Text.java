@@ -7,6 +7,8 @@ import java.io.IOException;
 import java.io.File;
 import java.util.ArrayList;
 
+import com.company.utils.byteToConversion;
+
 // Necesitaremos inputreader y bufferreader
 // https://funnelgarden.com/java_read_file/ --> FileInputStream
 
@@ -54,9 +56,9 @@ public class Input_Text extends Input {
         byte b = arrayByte.get(pos_byte);
         b = byteToConversion.shift_right_logic(b, 8-pos_bit);
         if(pos_bit + num_bits > 8) 
-            b = getBits(pos_byte+1, 0, pos_bit+num_bits-8) >> (8-pos_bit);
+            b = (byte) (getBits(pos_byte + 1, 0, pos_bit + num_bits - 8) >> (8 - pos_bit));
         else
-            b = b & ~ (byte)(0xff << (pos_bit + num_bits)); //neteja els bits brossa a posiciona altes
+            b = (byte) (b & ~(byte) (0xff << (pos_bit + num_bits))); // neteja els bits brossa a posicions altes
         return b;
     }
 
