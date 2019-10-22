@@ -49,6 +49,20 @@ public class Input_Text extends Input {
         }
    
     }
+    
+    public byte getBits(int pos_byte, int pos_bit, int num_bits) {
+        byte b = arrayByte.get(pos_byte);
+        b = byteToConversion.shift_right_logic(b, 8-pos_bit);
+        if(pos_bit + num_bits > 8) 
+            b = getBits(pos_byte+1, 0, pos_bit+num_bits-8) >> (8-pos_bit);
+        else
+            b = b & ~ (byte)(0xff << (pos_bit + num_bits)); //neteja els bits brossa a posiciona altes
+        return b;
+    }
+
+    public byte getBits(int pos_bit, int num_bits) {
+        return getBits(pos_bit/8, pos_bit%8, num_bits);
+    }
 
     public ArrayList<Byte> getIn()
     {
