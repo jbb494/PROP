@@ -10,7 +10,7 @@ public class LZSS
     String file;
     ArrayList <IntorChar> InpDesc;
 
-    public ArrayList<Integer> GetKey(Map<Integer, Character> map, char value) {
+    private ArrayList<Integer> GetKey(Map<Integer, Character> map, char value) {
         
         ArrayList<Integer> aux = new ArrayList<Integer>();
         for (Map.Entry<Integer, Character> entry : map.entrySet())

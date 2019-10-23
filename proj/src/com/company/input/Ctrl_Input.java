@@ -125,50 +125,28 @@ public class Ctrl_Input {
     public ArrayList< IntorChar > getLZSS()
     {
         ArrayList<IntorChar> ret = new ArrayList<IntorChar>();
-        int punter = 0, pos = 0;
         boolean end = false;
         while(!end)
         {
-            byte aux = Input_class.getBits(pos, punter, 1);
-            punter++;
-            if(punter > 7)
-            {
-                punter = 0;
-                pos++;
-            }
+            byte aux = Input_class.getBits(1);
             if(aux == (byte)0) //char
             {
-                aux = Input_class.getBits(pos, punter, 8);
-                pos++;
+                aux = Input_class.getBits(8);
                 IntorChar ioc = new IntorChar(true);
                 ioc.SetChar(byteToConversion.byteToCharacter(aux));
                 ret.add(ioc);
-                //punter es queda a la mateixa posició
             }
-            else //Punter
+            else
             {
                 List<Byte> lb = new ArrayList<Byte>();
-                aux = Input_class.getBits(pos, punter, 5);
+                aux = Input_class.getBits(5);
                 lb.add(aux);
-                punter += 5;
-                if(punter > 7)
-                {
-                    punter -= 8;
-                    pos++;
-                }
-                aux = Input_class.getBits(pos, punter, 8);
-                pos++;
+                aux = Input_class.getBits(8);
                 lb.add(aux);
                 int despl = byteToConversion.byteToInteger(lb);
                 IntorChar ioc = new IntorChar(false);
                 ioc.SetDespl(despl);
-                aux = Input_class.getBits(pos, punter, 5);
-                punter += 5;
-                if(punter > 7)
-                {
-                    punter -= 8;
-                    pos++;
-                }
+                aux = Input_class.getBits(5);
                 lb = new ArrayList<Byte>();
                 lb.add(aux);
                 int mida = byteToConversion.byteToInteger(lb) + 2;

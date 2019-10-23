@@ -18,7 +18,7 @@ public class Input {
         return 0;
     }
 	
-    public byte getBits(int pos_byte, int pos_bit, int num_bits) {
+    public byte getBits(int num_bits) {
         return 0;
     }
 
