@@ -53,6 +53,7 @@ public class Ctrl_Master {
                 if (Inp.getExtension().equals("txt")) {
                     String file = Inp.getText();
                     Ctrl_Algorithm alg = new Ctrl_Algorithm();
+                    
 
                 }
                 else {
