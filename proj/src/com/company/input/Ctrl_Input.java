@@ -125,31 +125,21 @@ public class Ctrl_Input {
     public ArrayList< IntorChar > getLZSS()
     {
         ArrayList<IntorChar> ret = new ArrayList<IntorChar>();
-        ArrayList<Byte> arrayByte = Input_class.getIn();
         int punter = 0, pos = 0;
         boolean end = false;
         while(!end)
         {
-            byte b = arrayByte.get(pos);
-            byte aux = (byte)(b << (7-punter));
-            aux = byteToConversion.shift_right_logic(aux, 7);
+            byte aux = Input_class.getBits(pos, punter, 1);
             punter++;
             if(punter > 7)
             {
                 punter = 0;
-                b = arrayByte.get(++pos);
+                pos++;
             }
             if(aux == (byte)0) //char
             {
-                aux = byteToConversion.shift_right_logic(b, punter);
-                if(punter != 0)
-                {
-                    int mou = 8-punter;
-                    byte aux2 = arrayByte.get(++pos);
-                    aux2 = (byte)(aux2 << mou);
-                    aux = (byte)(aux | aux2);
-                }
-                else pos++;
+                aux = Input_class.getBits(pos, punter, 8);
+                pos++;
                 IntorChar ioc = new IntorChar(true);
                 ioc.SetChar(byteToConversion.byteToCharacter(aux));
                 ret.add(ioc);
@@ -158,50 +148,27 @@ public class Ctrl_Input {
             else //Punter
             {
                 List<Byte> lb = new ArrayList<Byte>();
-                byte aux2;
-                aux = byteToConversion.shift_right_logic(b, punter);
-                if(punter <= 3)
-                {
-                    aux = (byte)(aux << 3);
-                    aux = byteToConversion.shift_right_logic(aux, 3);
-                    if(punter == 3) b = arrayByte.get(++pos);
-                }
-                else
-                {                    
-                    b = arrayByte.get(++pos);
-                    int restants = 5 - (8-punter);
-                    aux2 = (byte)(b << (8-restants));
-                    aux2 = byteToConversion.shift_right_logic(aux, 3);
-                    aux = (byte)(aux | aux2);
-                }
+                aux = Input_class.getBits(pos, punter, 5);
                 lb.add(aux);
                 punter += 5;
-                if(punter > 7) punter -= 8;
-                aux = byteToConversion.shift_right_logic(b, punter);
-                b = arrayByte.get(++pos);
-                aux2 = (byte)(b << (8-punter));
-                aux = (byte)(aux | aux2);
+                if(punter > 7)
+                {
+                    punter -= 8;
+                    pos++;
+                }
+                aux = Input_class.getBits(pos, punter, 8);
+                pos++;
                 lb.add(aux);
                 int despl = byteToConversion.byteToInteger(lb);
                 IntorChar ioc = new IntorChar(false);
                 ioc.SetDespl(despl);
-                aux = byteToConversion.shift_right_logic(b, punter);
-                if(punter <= 3)
-                {
-                    aux = (byte)(aux << 3);
-                    aux = byteToConversion.shift_right_logic(aux, 3);
-                    if(punter == 3) pos++;
-                }
-                else
-                {
-                    b = arrayByte.get(++pos);
-                    int restants = 5 - (8-punter);
-                    aux2 = (byte)(b << (8-restants));
-                    aux2 = byteToConversion.shift_right_logic(aux, 3);
-                    aux = (byte)(aux | aux2);
-                }
+                aux = Input_class.getBits(pos, punter, 5);
                 punter += 5;
-                if(punter > 7) punter -= 8;
+                if(punter > 7)
+                {
+                    punter -= 8;
+                    pos++;
+                }
                 lb = new ArrayList<Byte>();
                 lb.add(aux);
                 int mida = byteToConversion.byteToInteger(lb) + 2;

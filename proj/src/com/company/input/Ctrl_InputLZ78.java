@@ -13,7 +13,7 @@ public class Ctrl_InputLZ78 extends Ctrl_Input {
         super(path);
     }
 
-    public ArrayList< AbstractMap.SimpleEntry <Integer, Character> > get()
+    /*public ArrayList< AbstractMap.SimpleEntry <Integer, Character> > get()
     {
         ArrayList< AbstractMap.SimpleEntry <Integer, Character> > ret = 
         new ArrayList< AbstractMap.SimpleEntry <Integer, Character> > (0);
@@ -39,5 +39,5 @@ public class Ctrl_InputLZ78 extends Ctrl_Input {
         }
 
         return ret;
-    }
+    }*/
 }

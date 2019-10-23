@@ -54,11 +54,11 @@ public class Input_Text extends Input {
     
     public byte getBits(int pos_byte, int pos_bit, int num_bits) {
         byte b = arrayByte.get(pos_byte);
-        b = byteToConversion.shift_right_logic(b, 8-pos_bit);
+        b = byteToConversion.shift_right_logic(b, pos_bit);
         if(pos_bit + num_bits > 8) 
-            b = (byte) (getBits(pos_byte + 1, 0, pos_bit + num_bits - 8) >> (8 - pos_bit));
+            b = (byte) (b | (getBits(pos_byte + 1, 0, pos_bit + num_bits - 8) << (8 - pos_bit)));
         else
-            b = (byte) (b & ~(byte) (0xff << (pos_bit + num_bits))); // neteja els bits brossa a posicions altes
+            b = (byte) (b & ~(byte) (0xff << num_bits)); // neteja els bits brossa a posicions altes
         return b;
     }
 

@@ -10,7 +10,7 @@ public class Main {
 
     public static void main(String[] args) 
     {
-       Integer n = 3; // n = 0 per els dos
+       Integer n = 0; // n = 0 per els dos
        if(n == 1 | n == 0){ // n = 0 per comprimir
 
         String pathCompresio = "../hello.txt";
@@ -51,8 +51,9 @@ public class Main {
             outp.print();
 
         }   
+        /*
         Ctrl_Input a = new Ctrl_InputLZ78("../hello.txt");
 
-        System.out.println(a.get());
+        System.out.println(a.get());*/
     }
 }
