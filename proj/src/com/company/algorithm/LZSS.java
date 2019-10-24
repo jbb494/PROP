@@ -4,8 +4,7 @@ import java.util.*;
 import com.company.output.Ctrl_Output;
 import com.company.utils.IntorChar;
 
-public class LZSS
-{
+public class LZSS implements Algorithm{
     Ctrl_Output Output;
     String file;
     ArrayList <IntorChar> InpDesc;

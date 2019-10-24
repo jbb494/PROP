@@ -5,7 +5,7 @@ import com.company.output.Ctrl_Output;
 import com.company.utils.LZW_Dict_Decode;
 import com.company.utils.LZW_Dict_Encode;
 
-public class LZW {
+public class LZW implements Algorithm {
 
 	//Attributes
 	final Integer Limit = Integer.MAX_VALUE;
