@@ -1,12 +1,12 @@
 package com.company.utils;
 
 import java.util.ArrayList;
-import com.company.utils.Duo;
+import com.company.utils.Pair;
 
 public class LZW_Dict_Decode {
     //Attributes
     final Integer Limit = Integer.MAX_VALUE;
-    ArrayList<Duo> v;
+    ArrayList<Pair<Integer,Character> > v;
 
 
     //Constructor and reseting it
@@ -19,7 +19,7 @@ public class LZW_Dict_Decode {
         v.ensureCapacity(Limit);
 
         for (int i = 0; i < 256; ++i) {
-            v.add( new Duo(Limit, (char)i) );
+            v.add( new Pair<Integer,Character>(Limit, (char)i) );
         }
     }
 
@@ -49,6 +49,6 @@ public class LZW_Dict_Decode {
     }
 
     public void add(Integer i, char c) {
-        v.add( new Duo(i,c) );
+        v.add( new Pair<Integer,Character>(i,c) );
     }
 }

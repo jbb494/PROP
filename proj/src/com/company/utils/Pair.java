@@ -1,23 +1,23 @@
 package com.company.utils;
 
-public class Duo {
+public class Pair<T1,T2> {
     //Attributes
-    Integer L;
+    T1 L;
     
-    char R;
+    T2 R;
 
     //Constructor
-    public Duo(Integer i, char c) {
+    public Pair(T1 i, T2 c) {
         L = i;
         R = c;
     }
 
     //Functions
-    public Integer getLeft() {
+    public T1 getLeft() {
         return L;
     }
 
-    public char getRight() {
+    public T2 getRight() {
         return R;
     }
 }
