@@ -8,8 +8,8 @@ public class Ctrl_Algorithm {
 
     public Ctrl_Algorithm() {}
 
-    public static String Choose_Encoder(String file, String method) {
-        switch (method) {
+    public String Choose_Encoder(String file, String method) {
+       /* switch (method) {
             case "LZW":
                 Alg = new LZW();
                 break;
@@ -25,7 +25,7 @@ public class Ctrl_Algorithm {
             default:
                 //Hem de decidir l'heuristica amb la que escollirem l'algoritme de manera automàtica 
                 break;
-        }
+        }*/
 
 
         return "still_deciding";
