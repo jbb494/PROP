@@ -1,8 +1,7 @@
 package com.company.algorithm;
 
-public class Algorithm {
+public interface Algorithm {
 
-    public Algorithm(){}
 
 
 }
