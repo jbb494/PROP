@@ -15,7 +15,7 @@ public class Main {
 
         String pathCompresio = "../hello.txt";
 
-        System.out.println("Compresio a " + pathCompresio);    
+        System.out.println("Compresio de " + pathCompresio);    
 
         Ctrl_Input instance = new Ctrl_Input(pathCompresio);
             
@@ -36,7 +36,7 @@ public class Main {
        if (n == 2 | n == 0){
             String pathDecompresio = "../CompresioLZSS.out";
             
-            System.out.println("Compresio a " + pathDecompresio);    
+            System.out.println("Descompresio de " + pathDecompresio);    
 
             Ctrl_Input instance = new Ctrl_Input(pathDecompresio);
 
