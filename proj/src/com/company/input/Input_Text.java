@@ -12,7 +12,7 @@ import com.company.utils.byteToConversion;
 // Necesitaremos inputreader y bufferreader
 // https://funnelgarden.com/java_read_file/ --> FileInputStream
 
-public class Input_Text extends Input {
+public class Input_Text  {
 
     ArrayList<Byte> arrayByte;
     private DataInputStream inputStreamReader;
@@ -91,3 +91,4 @@ public class Input_Text extends Input {
 
     }
 }
+

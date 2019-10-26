@@ -1,4 +1,4 @@
-package com.company.input;
+/*package com.company.input;
 
 import java.io.*;
 import java.util.ArrayList;
@@ -100,5 +100,5 @@ public class Input_Img extends Input {
             }  
         }
         return torn;
-    }  */      
-}
+    }        
+}*/

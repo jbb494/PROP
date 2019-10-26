@@ -4,6 +4,8 @@ import java.util.ArrayList;
 
 public class JPEG {
 
+	public JPEG() {}
+
 	private static int[][] quantization_matrix =
 	{
 		{16, 11, 10, 16, 24, 40, 51, 61},
@@ -17,7 +19,7 @@ public class JPEG {
 	};
 
 	private static Byte sizeOf(Byte b) {
-		return 9;
+		return 9; //num de bits "importants" de b
 	}
 
 	private static Byte round(double x) {
