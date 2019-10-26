@@ -108,7 +108,9 @@ public class JPEG {
 					Byte zeros = 0;
 					Byte[] z16 = {15,0,0};
 					for (int aux = 0; aux < 64; ++aux) {
-
+						//https://en.wikipedia.org/wiki/JPEG#Entropy_coding diu:
+						//"The first value in the matrix is the DC coefficient; it is not encoded the same way."
+						//Però no diu com
 						Byte x = outYCbCr[i+ii][j+jj][k];
 						if (x == 0) {
 							zeros++;
@@ -117,7 +119,9 @@ public class JPEG {
 								ret.add(z16);
 							}
 						} else {
-
+							Byte[] y = {zeros, sizeOf(x), x};
+							ret.add(y);
+							zeros = 0;
 						}
 						
 						
@@ -126,6 +130,11 @@ public class JPEG {
 						else if (up) {ii--; jj++;}
 						else         {ii++; jj--;}
 					}
+					while (!ret.isEmpty() && ret.get(ret.size()-1)[0] == 15 && ret.get(ret.size()-1)[1] == 0) {
+						ret.remove(ret.size()-1);
+					}
+					Byte[] eob = {0,0,0};
+					ret.add(eob);
 
 				}
 			}
@@ -138,4 +147,5 @@ public class JPEG {
 			
 	}
 }
+
 
