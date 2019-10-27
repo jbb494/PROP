@@ -61,7 +61,7 @@ public class Input {
    
     }
     
-    public byte readBits(int num_bits) 
+    public byte getBits(int num_bits) 
     // pre: 1 <= num_bits <= 8        <-- IMPORTANT!!!
     {
         if (end) {
@@ -81,7 +81,7 @@ public class Input {
             int mou = 8 - punter;
             int restants = punter + num_bits - 8;
             punter = 0;
-            b = (byte) (b | (readBits(restants) << mou));
+            b = (byte) (b | (getBits(restants) << mou));
         }
         else if (punter + num_bits == 8) 
         {

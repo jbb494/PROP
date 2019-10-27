@@ -51,7 +51,7 @@ public class Ctrl_Master {
             case 1:
                 //Encara cal implementar la funció per cridar a una compressió JPEG
                 if (Inp.getExtension().equals("txt")) {
-                    String file = Inp.getText();
+                    //String file = Inp.getText();
                     Ctrl_Algorithm alg = new Ctrl_Algorithm();
                     
 

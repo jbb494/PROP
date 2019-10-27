@@ -12,13 +12,13 @@ import java.io.*;
 public class Ctrl_Input {
 
     //Attributes
-    Input Input_class;
+    protected Input Input_class;
 
     String Extensio;
 
 
     //Constructor
-    public Ctrl_Input(String path){
+    public Ctrl_Input(String path) {
   
         Input_class = new Input(path);
 
@@ -28,16 +28,16 @@ public class Ctrl_Input {
 
         this.Extensio = spl[1];
         
-            
     }
     
-
-    //Functions
+    //Function
     public String getExtension() {
         return Extensio;
     }
 
-    
+    /*
+    Agafeu d'aquí la vostra funció, modifiqueu-la convenientment i posau-la al vostre fill de Ctrl_Input
+
     public String getText()
     {
         ArrayList<Byte> arrayByte =  Input_class.getIn();
@@ -126,10 +126,10 @@ public class Ctrl_Input {
         boolean end = false;
         while(!end)
         {
-            byte aux = Input_class.readBits(1);
+            byte aux = Input_class.getBits(1);
             if(aux == (byte)0) //char
             {
-                aux = Input_class.readBits(8);
+                aux = Input_class.getBits(8);
                 IntorChar ioc = new IntorChar(true);
                 ioc.SetChar(byteToConversion.byteToCharacter(aux));
                 ret.add(ioc);
@@ -137,14 +137,14 @@ public class Ctrl_Input {
             else
             {
                 List<Byte> lb = new ArrayList<Byte>();
-                aux = Input_class.readBits(5);
+                aux = Input_class.getBits(5);
                 lb.add(aux);
-                aux = Input_class.readBits(8);
+                aux = Input_class.getBits(8);
                 lb.add(aux);
                 int despl = byteToConversion.byteToInteger(lb);
                 IntorChar ioc = new IntorChar(false);
                 ioc.SetDespl(despl);
-                aux = Input_class.readBits(5);
+                aux = Input_class.getBits(5);
                 lb = new ArrayList<Byte>();
                 lb.add(aux);
                 int mida = byteToConversion.byteToInteger(lb) + 2;
@@ -158,6 +158,7 @@ public class Ctrl_Input {
         }
         return ret;
     }
+    */
 }
 
 
