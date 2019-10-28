@@ -1,3 +1,2 @@
-javac  *.java  com\company\algorithm\*.java  com\company\input\*.java  com\company\master\*.java  com\company\output\*.java  com\company\utils\*.java
-
 cd \Users\Joan\Desktop\UNI\Q5\PROP\repositori\PROP\proj\src
+javac  *.java  com\company\algorithm\*.java  com\company\input\*.java  com\company\master\*.java  com\company\output\*.java  com\company\utils\*.java

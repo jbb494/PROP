@@ -30,7 +30,6 @@ public class Input {
             end = false;
             illegals = 0;
             punter = 0;
-            //pos = 0;
             FileInputStream dataInputStream = new FileInputStream(new File(/*"../" NO*/path));
             inputStreamReader = new DataInputStream(dataInputStream);
         } catch (FileNotFoundException e) {
@@ -95,11 +94,23 @@ public class Input {
         return b;
     }
 
+    public ArrayList<Byte> getMoreBits(int num_bits) 
+    // cap limitació en el valor de num_bits
+    {
+        ArrayList<Byte> al = new ArrayList<Byte>();
+        while (num_bits > 0) {
+            Byte b = getBits(Math.min(num_bits, 8));
+            al.add(b);
+            num_bits -= 8;
+        }
+        return al;
+    }
+
     public boolean finished() {
         return end;
     }
 
-    public int outOfFile() { //nombre de bits que s'han intentat legir però queden fora del fitxer
+    public int outOfFile() { //nombre de bits que s'han intentat llegir però queden fora del fitxer
         return illegals;
     }
 }
