@@ -14,8 +14,12 @@ public class LZW implements Algorithm {
 
 
 	//Constructor
-	public LZW() {
-		Output = new Ctrl_Output("LZW.out");
+	public LZW(boolean b) {
+		if (b)
+			Output = new Ctrl_Output("../CompresioLZW.out");
+
+		else 
+			Output = new Ctrl_Output("../DescompresioLZW.out");
 	}
 
 
@@ -25,18 +29,18 @@ public class LZW implements Algorithm {
 
 		//We initialize the attributes we need
 		LZW_Dict_Encode table = new LZW_Dict_Encode();
-		Integer i = Limit;
+		Integer i = -1;
 		
 		for (char c : file.toCharArray()) {
 			Integer aux = i;
 
-			if ( (i = table.search_and_insert_BST(aux, c)) == Limit) {
+			if ( (i = table.search_and_insert_BST(aux, c)) == -1) {
 				result.add(aux);
 				i = table.Ascii_value(c);
 			}
 		}
 
-		if (i != Limit)
+		if (i != -1)
 			result.add(i);			
 
 		return result;
@@ -47,48 +51,51 @@ public class LZW implements Algorithm {
 		String result = "";
 		
 		LZW_Dict_Decode table = new LZW_Dict_Decode();
-		Integer i = Limit;
+		Integer i = -1;
 		
-		for (Integer x : file) {
+		for (Integer k : file) {
 			Integer sz = table.getSize();
+			String s = "";
 
 			//Dictionary's maximum size -> Reset it
-			if (sz == Limit) 
+			if (sz == Limit) { 
 				table.reset_dictionary();
+			}				
+			else if (k > sz) {
+				System.out.println("Liada");
+			}		
+			else if (k < sz) {
+				s = table.getWord(k);
 
-			/*	
-			if (x > sz)
-				Throw some Exception
-			*/
-
-			String s;
-
-			if (x == sz) {
-				table.add(i, table.getWord(i).charAt(0));
-				s = table.getWord(x);
-			}
-
-			else {
-				s = table.getWord(x);
-
-				if (i != Limit) {
+				if (i != -1) {
 					table.add(i, s.charAt(0));
 				}
 			}
+			else {
+				table.add(i, table.getWord(i).charAt(0));
+				s = table.getWord(k);
+			}
 
 			result += s;
-			i = x;
+			i = k;
 		}
 		return result;
 	}
 
-
-	public Ctrl_Output print(String file) {
+	public Ctrl_Output print_encode(String file) {
 		ArrayList<Integer> arr = compression(file);
 		
 		for (int i = 0; i < arr.size(); ++i) {
 			Output.add(arr.get(i));
 		}
+
+		return Output;
+	}
+
+	public Ctrl_Output print_decode(ArrayList<Integer> file) {
+		String arr = decompression(file);
+		
+		Output.add(arr);
 
 		return Output;
 	}
