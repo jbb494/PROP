@@ -2,9 +2,13 @@ package com.company.algorithm;
 
 import java.util.ArrayList;
 
+import com.company.input.Ctrl_Input_Img;
+
 public class JPEG {
 
 	public JPEG() {}
+
+	Ctrl_Input_Img in;
 
 	private static int[][] quantization_matrix =
 	{
@@ -60,89 +64,91 @@ public class JPEG {
 	}
 
 
-	public static ArrayList<Byte[]> encode(byte[][][] inRGB) {
-		int n = inRGB.length;
-		int m = inRGB[0].length;
+	public void encode() {
 		
-		//1. Color space transformation
-		double[][][] YCbCr = new double[3][n][m];
-		for (int i = 0; i < n; ++i) {
-			for (int j = 0; j < m; ++j) {
-				double r, g, b;
-				r = inRGB[i][j][0]; g = inRGB[i][j][1]; b = inRGB[i][j][2];
-				double y, cb, cr;
-				// https://sistenix.com/rgb2ycbcr.html
-				y = 16 + (65.738*r + 129.057*g + 25.064f*b)/256;
-				cb = 128 + (-37.945*r - 74.494*g + 112.439*b)/256;
-				cr = 128 + (112.439*r - 94.154*g - 18.285*b)/256;
-				YCbCr[0][i][j] = y; YCbCr[1][i][j] = cb; YCbCr[2][i][j] = cr;
-			}
-		}
+		//Block splitting
+		double[][][][] inRGB = in.get();
+		int num_blocks = inRGB.length;
+
 		
-		Byte[][][] outYCbCr = new Byte[n][m][3];
-		ArrayList<Byte[]> ret = new ArrayList<Byte[]>();
+		for (int block = 0; block < num_blocks; block++)  {
 
-		//3. Block splitting
-		for (int i = 0; i+7 < n; i += 8) {
-			for (int j = 0; j+7 < m; j += 8) {
-
-				
-				for (int k = 0; k < 3; ++k) {
-
-					//4. Discrete cosnie transform
-					for(int ii = 0; ii < 8; ++ii) {
-						for (int jj = 0; jj < 8; ++jj) {
-							YCbCr[k][i+ii][j+jj] -= 128;
-						}
-					}
-					discrete_cosine_transform(YCbCr[k], i, j);
-					
-					//5. Quantization
-					for(int ii = 0; ii < 8; ++ii) {
-						for (int jj = 0; jj < 8; ++jj) {
-							outYCbCr[i+ii][j+jj][k] = round(YCbCr[k][i+ii][j+jj] / quantization_matrix[ii][jj]);
-						}
-					}
-
-					//6. Entropy coding
-					int ii = 0, jj = 0;
-					boolean up = true;
-					Byte zeros = 0;
-					Byte[] z16 = {15,0,0};
-					for (int aux = 0; aux < 64; ++aux) {
-						//https://en.wikipedia.org/wiki/JPEG#Entropy_coding diu:
-						//"The first value in the matrix is the DC coefficient; it is not encoded the same way."
-						//Però no diu com
-						Byte x = outYCbCr[i+ii][j+jj][k];
-						if (x == 0) {
-							zeros++;
-							if (zeros == 16) {
-								zeros = 0;
-								ret.add(z16);
-							}
-						} else {
-							Byte[] y = {zeros, sizeOf(x), x};
-							ret.add(y);
-							zeros = 0;
-						}
-						
-						
-						if      ((ii == 0 && up) || (ii == 7 && !up)) {jj++; up = !up;}
-						else if ((jj == 0 && !up) || (jj == 7 && up)) {ii++; up = !up;}
-						else if (up) {ii--; jj++;}
-						else         {ii++; jj--;}
-					}
-					while (!ret.isEmpty() && ret.get(ret.size()-1)[0] == 15 && ret.get(ret.size()-1)[1] == 0) {
-						ret.remove(ret.size()-1);
-					}
-					Byte[] eob = {0,0,0};
-					ret.add(eob);
-
+			//1. Color space transformation
+			double[][][] YCbCr = new double[3][8][8];
+			for (int i = 0; i < 8; ++i) {
+				for (int j = 0; j < 8; ++j) {
+					double r, g, b;
+					r = inRGB[block][i][j][0]; g = inRGB[block][i][j][1]; b = inRGB[block][i][j][2];
+					double y, cb, cr;
+					// https://sistenix.com/rgb2ycbcr.html
+					y = 16 + (65.738*r + 129.057*g + 25.064f*b)/256;
+					cb = 128 + (-37.945*r - 74.494*g + 112.439*b)/256;
+					cr = 128 + (112.439*r - 94.154*g - 18.285*b)/256;
+					YCbCr[0][i][j] = y; YCbCr[1][i][j] = cb; YCbCr[2][i][j] = cr;
 				}
 			}
+			
+			Byte[][][] outYCbCr = new Byte[8][8][3];
+			ArrayList<Byte[]> ret = new ArrayList<Byte[]>();
+					
+			for (int k = 0; k < 3; ++k) {
+
+				//4. Discrete cosnie transform
+				for(int i = 0; i < 8; ++i) {
+					for (int j = 0; j < 8; ++j) {
+						YCbCr[k][i][j] -= 128;
+					}
+				}
+				discrete_cosine_transform(YCbCr[k], 0, 0);
+				
+				//5. Quantization
+				for(int i = 0; i < 8; ++i) {
+					for (int j = 0; j < 8; ++j) {
+						outYCbCr[i][j][k] = round(YCbCr[k][i][j] / quantization_matrix[i][j]);
+					}
+				}
+
+				//6. Entropy coding
+				int i = 0, j = 0;
+				boolean up = true;
+				byte zeros = 0;
+				for (int aux = 0; aux < 64; ++aux) {
+					//https://en.wikipedia.org/wiki/JPEG#Entropy_coding diu:
+					//"The first value in the matrix is the DC coefficient; it is not encoded the same way."
+					//Però no diu com
+					Byte x = outYCbCr[i][j][k];
+					if (x == 0) {
+						zeros++;
+					} else {
+						while (zeros >= 16) {
+							zeros = 0;
+							Byte[] z16_val = {15,0,0};
+							ret.add(z16_val);
+							zeros -= 16;
+						}
+						Byte[] y = {zeros, sizeOf(x), x};
+						ret.add(y);
+						zeros = 0;
+					}
+					
+					
+					if      ((i == 0 && up) || (i == 7 && !up)) {j++; up = !up;}
+					else if ((j == 0 && !up) || (j == 7 && up)) {i++; up = !up;}
+					else if (up) {i--; j++;}
+					else         {i++; j--;}
+				}
+				Byte[] eob = {0,0,0};
+				ret.add(eob);
+
+			}
 		}
 
-		return ret;
+		//return ret;
+	}
+
+	public void decode() {
+		
+
 	}
 	
 	public static void main(String args[]) {
