@@ -1,13 +1,15 @@
 package com.company.algorithm;
 
 import java.util.*;
+
+import com.company.input.Ctrl_Input_LZSS;
+import com.company.input.Ctrl_Input_Text;
 import com.company.output.Ctrl_Output;
 import com.company.utils.IntorChar;
 
-public class LZSS implements Algorithm{
+public class LZSS implements Algorithm
+{
     Ctrl_Output Output;
-    String file;
-    ArrayList <IntorChar> InpDesc;
 
     private ArrayList<Integer> GetKey(Map<Integer, Character> map, char value) {
         
@@ -18,16 +20,9 @@ public class LZSS implements Algorithm{
         return aux;
     }
     
-    public LZSS(String file)
+    public LZSS(String aux)
     {
-        Output = new Ctrl_Output("../CompresioLZSS.out");
-        this.file = file;
-    }
-
-    public LZSS(ArrayList<IntorChar> v)
-    {
-        InpDesc = v;
-        Output = new Ctrl_Output("../DescompresioLZSS.out");
+        Output = new Ctrl_Output(aux);
     }
 
     public Ctrl_Output print()
@@ -35,17 +30,19 @@ public class LZSS implements Algorithm{
         return Output;
     }
 
-    public void Compressor()
+    public void Compressor(Ctrl_Input_Text in)
     {
         String aux = "";
         Map<Integer, Character> vc = new TreeMap<Integer, Character>();
         char nextChar;
         boolean first = true;
         boolean found2 = false;
-        int paux = 0, punter = 0, pivot = 0, pivnotf = 0;
-        for (int i = 0; i < file.length()-1; i++)
+        int paux = 0, punter = 0, pivot = 0, pivnotf = 0, i = 0;
+        while(!in.finished())
         {
-            nextChar = file.charAt(i);
+            nextChar = in.get();
+            System.out.println(nextChar);
+            System.out.println("hola");
             aux = aux.concat(String.valueOf(nextChar));
             if(vc.containsValue(nextChar))
             {
@@ -123,6 +120,7 @@ public class LZSS implements Algorithm{
             }
             vc.put(i, nextChar);
             if(vc.size() > 8191) vc.remove(paux++);
+            i++;
         }
         if(found2 && aux.length() >= 3 && aux.length() < 33)
         {
@@ -143,33 +141,40 @@ public class LZSS implements Algorithm{
         Output.add(0, 5); //fi del fitxer
     }
 
-    public void Decompressor()
+    public void Decompressor(Ctrl_Input_LZSS in)
     {
         Map<Integer, Character> vc = new TreeMap<Integer, Character>();
         int pos = 0, posmap = 0;
-        for(int i = 0; i < InpDesc.size(); i++)
+        boolean end = false;
+        IntorChar ioc;
+        while(!end)
         {
-            if(InpDesc.get(i).IsIntorChar())
+            ioc = in.getLZSS();
+            if(ioc.IsIntorChar())
             {
-                Character c = InpDesc.get(i).GetChar();
+                Character c = ioc.GetChar();
                 Output.add(c);
                 vc.put(posmap++, c);
                 if(vc.size() > 8191) vc.remove(pos++);
             }
             else
             {
-                int despl = InpDesc.get(i).GetDespl();
-                int mida = InpDesc.get(i).GetMida();
-                String aux = "";
-                for(int j = 0; j < mida; j++)
+                int despl = ioc.GetDespl();
+                int mida = ioc.GetMida();
+                if(mida == 2) end = true;
+                else
                 {
-                    Character c = vc.get(posmap-despl+j);
-                    aux = aux.concat(String.valueOf(c));
-                    vc.put(posmap+j, c);
-                    if(vc.size() > 8191) vc.remove(pos++);
+                    String aux = "";
+                    for(int j = 0; j < mida; j++)
+                    {
+                        Character c = vc.get(posmap-despl+j);
+                        aux = aux.concat(String.valueOf(c));
+                        vc.put(posmap+j, c);
+                        if(vc.size() > 8191) vc.remove(pos++);
+                    }
+                    posmap += mida;
+                    Output.add(aux);
                 }
-                posmap += mida;
-                Output.add(aux);
             }
         }
     }

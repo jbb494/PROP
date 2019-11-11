@@ -15,36 +15,36 @@ public class Main {
     public static void main(String[] args) 
     {   
         Integer n = 0;
-        String mode = "LZW";
-        if (mode == "LZW") {
+        String mode = "LZSS";
+        if (mode == "LZSS") {
             if(n == 1 | n == 0){ // n = 0 per comprimir
      
                 String pathCompresio = "../hello.txt";
 
-                System.out.println("Compresio de " + pathCompresio);    
+                System.out.println("Compresio de " + pathCompresio);
 
-                Ctrl_Input instance = new Ctrl_Input(pathCompresio);
-                    
-                String aux = instance.getText();
+                LZSS alg = new LZSS("../CompresioLZSS.out");
 
-                LZW alg = new LZW(true);
+                Ctrl_Input_Text in = new Ctrl_Input_Text(pathCompresio);
 
-                Ctrl_Output outp = alg.print_encode(aux);
+                alg.Compressor(in);
+
+                Ctrl_Output outp = alg.print();
 
                 outp.print();
             }
             if (n == 2 | n == 0){
-                String pathDecompresio = "../CompresioLZW.out";
+                String pathDecompresio = "../CompresioLZSS.out";
                 
-                System.out.println("Compresio de " + pathDecompresio);    
+                System.out.println("Compresio de " + pathDecompresio);
     
-                Ctrl_Input instance = new Ctrl_Input(pathDecompresio);
-    
-                ArrayList<Integer> aux = instance.getLZW();
-    
-                LZW alg = new LZW(false);
+                Ctrl_Input_LZSS in = new Ctrl_Input_LZSS(pathDecompresio);
                 
-                Ctrl_Output outp = alg.print_decode(aux);
+                LZSS alg = new LZSS("../DescompresioLZSS.out");
+                
+                alg.Decompressor(in);
+                
+                Ctrl_Output outp = alg.print();
     
                 outp.print();
              }
