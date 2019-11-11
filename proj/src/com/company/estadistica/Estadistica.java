@@ -12,7 +12,7 @@ public class Estadistica {
         start = Calendar.getInstance();
     }
 
-    public int speed(Calendar i, Calendar f) {
+    private int speed(Calendar i, Calendar f) {
 
         int ti = ((i.get(Calendar.HOUR) * 60) + i.get(Calendar.MINUTE)) * 60 + i.get(Calendar.SECOND);
         int tf = ((f.get(Calendar.HOUR) * 60) + f.get(Calendar.MINUTE)) * 60 + f.get(Calendar.SECOND);

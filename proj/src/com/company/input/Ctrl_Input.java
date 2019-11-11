@@ -1,13 +1,6 @@
 package com.company.input;
 
 import java.util.regex.Pattern;
-import java.util.AbstractMap;
-import java.util.ArrayList;
-import java.util.List;
-import com.company.input.Input;
-import com.company.utils.byteToConversion;
-import com.company.utils.IntorChar;
-import java.io.*;
 
 public class Ctrl_Input {
 
@@ -33,6 +26,10 @@ public class Ctrl_Input {
     //Function
     public String getExtension() {
         return Extensio;
+    }
+
+    public boolean finished() {
+        return Input_class.finished();
     }
 
     /*

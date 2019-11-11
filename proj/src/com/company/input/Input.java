@@ -106,6 +106,7 @@ public class Input {
         return al;
     }
 
+    //Passar la funció a Ctrl_Input
     public boolean finished() {
         return end;
     }

@@ -7,7 +7,7 @@ public class Ctrl_Input_Text extends Ctrl_Input {
     }
 
     public char get() {
-        //No hauriem de treballar amb la funció read?  No tractem final del readbuffer
+        //No hauriem de treballar amb la funcio read?  No tractem final del readbuffer
         return (char)Input_class.getBits(8);
     }
 }
