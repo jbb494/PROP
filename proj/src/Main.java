@@ -46,6 +46,39 @@ public class Main {
                 outp.print();
              }
         }
+
+        else if (mode == "LZW") {
+            if(n == 1 | n == 0){ // n = 0 per comprimir
+     
+                String pathCompresio = "../hello.txt";
+
+                System.out.println("Compresio de " + pathCompresio);
+
+                LZW alg = new LZW(true);
+
+                Ctrl_Input_Text in = new Ctrl_Input_Text(pathCompresio);
+
+                Ctrl_Output outp = alg.print_encode(in);
+
+                outp.print();
+            }
+            if (n == 2 | n == 0){
+
+                String pathDecompresio = "../CompresioLZW.out";
+                
+                System.out.println("Descompresio de " + pathDecompresio);
+                
+                LZW alg = new LZW(false);
+
+                Ctrl_Input_LZW in = new Ctrl_Input_LZW(pathDecompresio);
+                                
+                alg.Decompressor(in);
+                
+                Ctrl_Output outp = alg.print();
+    
+                outp.print();
+             }
+        }
         else {
             /*Integer n = 0; // n = 0 per els dos
             if(n == 1 | n == 0){ // n = 0 per comprimir

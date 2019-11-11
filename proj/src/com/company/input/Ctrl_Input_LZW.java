@@ -11,7 +11,7 @@ public class Ctrl_Input_LZW extends Ctrl_Input {
         super(path);
     }
 
-    public Integer getLZW() {
+    public Integer get() {
         //ATM los valores codificados son de 4 bytes, en un futuro serán de tamaño variable
         //y por lo tanto tendremos que tratarlos de la manera optima.
         
