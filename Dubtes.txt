@@ -1,0 +1,13 @@
+%%%%%%%%%%%%%%%%%%%%%%%%    Ctrl_Input     %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+Haurem de crear funció getNumber y getChar (com a minim) per poder cridar les dels fills no?
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%    Input     %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+--> getBits() 
+    Si hem arribat al final de l'arxiu no és millor fer return de -1? Intueixo que 0 pot ser valor 
+    correcte.
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%    Ctrl_Input_Text     %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+--> Get()
