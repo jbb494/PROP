@@ -33,7 +33,7 @@ public class Main {
             if (n == 2 | n == 0){
                 String pathDecompresio = "../CompresioLZSS.out";
                 
-                System.out.println("Compresio de " + pathDecompresio);
+                System.out.println("Descompresio de " + pathDecompresio);
     
                 Ctrl_Input_LZSS in = new Ctrl_Input_LZSS(pathDecompresio);
                 
