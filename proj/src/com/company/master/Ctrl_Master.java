@@ -1,8 +1,5 @@
 package com.company.master;
 
-import com.company.algorithm.Ctrl_Algorithm;
-import com.company.input.Ctrl_Input;
-
 public class Ctrl_Master {
 
     //Attributes
@@ -30,43 +27,18 @@ public class Ctrl_Master {
             String aux = System.console().readLine().toLowerCase();
             
             if (aux.equals("manual")) {
-                Function = 3;
+                Function = 3;       // Compressió manual
             }
             else {
-                Function = 1; 
+                Function = 1;       // Compressió automàtica
             }
         }
-        else Function = 2;
+        else Function = 2;          // Descompressió
 
 
         //Asking the name of the file we wanna encode / decode
         System.out.println("Quin és el path de l'arxiu amb el que volem treballar?");
         Path = System.console().readLine().toLowerCase();
-    }
-
-
-    public void Read() {
-        Ctrl_Input Inp = new Ctrl_Input(Path);
-        switch (Function) {
-            case 1:
-                //Encara cal implementar la funció per cridar a una compressió JPEG
-                if (Inp.getExtension().equals("txt")) {
-                    String file = Inp.getText();
-                    Ctrl_Algorithm alg = new Ctrl_Algorithm();
-
-                }
-                else {
-
-                }
-
-                break;
-            case 2:
-            
-                break;
-            default:
-
-                break;
-        }
     }
 
 

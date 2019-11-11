@@ -5,8 +5,7 @@ import com.company.output.Ctrl_Output;
 import java.util.*;
 
 
-public class LZ78
-{
+public class LZ78 implements Algorithm {
     String Input;
     Ctrl_Output Output;
     ArrayList< AbstractMap.SimpleEntry <Integer, Character> > InpDesc;

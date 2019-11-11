@@ -1,0 +1,25 @@
+{
+    "configurations": [
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - byteToConversion",
+            "request": "launch",
+            "mainClass": "com.company.utils.byteToConversion",
+            "projectName": "PROP_c7ade387"
+        },
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - stringConversion",
+            "request": "launch",
+            "mainClass": "com.company.utils.stringConversion",
+            "projectName": "PROP_c7ade387"
+        },
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - Main",
+            "request": "launch",
+            "mainClass": "Main",
+            "projectName": "PROP_c7ade387"
+        }
+    ]
+}

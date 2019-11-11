@@ -2,6 +2,7 @@ package com.company.utils;
 
 import java.util.*;
 
+
 public class byteToConversion {
 
     byteToConversion()
@@ -19,6 +20,7 @@ public class byteToConversion {
     }
 
     public static Integer byteToInteger(List<Byte> bArg)
+    //The most significant bytes are first
     {
         Integer ret = 0;
 
@@ -34,4 +36,6 @@ public class byteToConversion {
     public static byte shift_right_logic(byte b, int despl) {
         return (byte) ((byte) (b >>> despl) &~ (byte) (0xff << (8-despl)));
     }
+
+    
 }
