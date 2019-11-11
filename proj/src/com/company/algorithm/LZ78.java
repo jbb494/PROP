@@ -8,8 +8,7 @@ import java.util.*;
 public class LZ78 implements Algorithm {
     String Input;
     Ctrl_Output Output;
-    ArrayList< AbstractMap.SimpleEntry <Integer, Character> > InpDesc;
-    
+    ArrayList< AbstractMap.SimpleEntry <Integer, Character> > InpDesc;	
 	public LZ78(String a) 
 	{
 		Input = a;
@@ -53,13 +52,18 @@ public class LZ78 implements Algorithm {
 
             }else
             {
+									
+				Integer midaPunter = (int)Math.ceil((Math.log((double)punterMap+1)/Math.log(2)));
+
+				//System.out.println("punterMap: " + punterMap + " midaPunter: " + midaPunter);
+				
 				if(seq.length() >= 1){
 					Integer punterActual = map.get(seq) +1;
-					
-					Output.add(punterActual);
+
+					Output.add(punterActual, 32);
 
 				}else{
-					Output.add(0);
+					Output.add(0, 32);
 				}
 
 				Output.add(nextChar);

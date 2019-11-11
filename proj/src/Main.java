@@ -1,10 +1,7 @@
 //import java.util.AbstractMap;
-import java.util.ArrayList;
-
 import com.company.algorithm.*;
 import com.company.input.*;
 import com.company.output.*;
-import com.company.utils.IntorChar;
 
 public class Main {
 

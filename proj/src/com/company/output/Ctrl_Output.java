@@ -41,13 +41,6 @@ public class Ctrl_Output {
 
 
     public void add(Integer x, Integer mida){
-        /*int aux = despl & 0xFF;
-        Output_Class.add((byte)aux, 8);
-        aux = despl >>> 8;
-        Output_Class.add((byte)aux, 5);
-        aux = mida & 0x1F;
-        Output_Class.add((byte)aux, 5);
-        */
         ByteBuffer bb = ByteBuffer.allocate(4); 
         Integer midaAux = mida%8;
         Double daux = new Double (mida)/8;
