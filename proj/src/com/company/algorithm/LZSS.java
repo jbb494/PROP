@@ -41,8 +41,6 @@ public class LZSS implements Algorithm
         while(!in.finished())
         {
             nextChar = in.get();
-            System.out.println(nextChar);
-            System.out.println("hola");
             aux = aux.concat(String.valueOf(nextChar));
             if(vc.containsValue(nextChar))
             {
