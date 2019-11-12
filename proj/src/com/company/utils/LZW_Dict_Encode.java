@@ -1,21 +1,41 @@
+/**
+ * @class LZW_Dict_Encode
+ * @brief Diccionari (amb els mètodes corresponents) emprat per a la compressió amb LZW
+ * @author Miguel Paracuellos Ocaña
+ */
 package com.company.utils;
 
 import com.company.utils.Node;
 import java.util.ArrayList;
 
 public class LZW_Dict_Encode {
+    
     //Attributes
+    /**
+     * @param Limit Nombre màxim d'entrades que pot tenir el diccionari
+     */
     public static final Integer Limit = Integer.MAX_VALUE;
 
+    /**
+     * @param arr_n Diccionari de la classe
+     */
     private ArrayList<Node> arr_n;
 
 
-    //Constructor and reseting de Dictionary
+    /**
+     * @brief Constructor de la classe
+     * @note Inicialitzem el diccionari
+     */
     public LZW_Dict_Encode() {
         arr_n = new ArrayList<Node>();
         reset_dictionary();
     }
 
+    /**
+     * @fn public void reset_dictionary()
+     * @brief Reinicilització del diccionari de la classe
+     * @note Només quan el creem o quan estigui ple
+     */
     public void reset_dictionary() {
         arr_n.clear();
 
@@ -26,11 +46,25 @@ public class LZW_Dict_Encode {
 
 
     //Functions
+
+    /**
+     * @fn public Integer Ascii_value(char c)
+     * @brief Retorna el valor númeric d'un caràcter ASCII
+     * @param c Caràcter que volem passar a valor numeric
+     * @return Valor numeric del caràcter
+    */
     public Integer Ascii_value(char c) {
         int x = (int) c;
         return (Integer)x;
     }
 
+    /**
+     * @fn public Integer search_and_insert_BST(Integer i, char c)
+     * @brief Cada cop que es crida es mira si ja tenim la combinació enter-char al diccionari
+     * @param i Enter que representa una cadena de caràcters
+     * @param c Caràcter actual
+     * @return Retorna l'enter que farà referència a la nova cadena de caràcters
+     */
     public Integer search_and_insert_BST(Integer i, char c) {
 
         //Dictionary's maximum size -> where reset it
@@ -86,6 +120,10 @@ public class LZW_Dict_Encode {
         return -1;
     }
 
+    /**
+     * @fn public Integer getLimit()
+     * @return Retorna el limit d'entrades que pot tenir el diccionari
+     */
     public Integer getLimit() {
         return Limit;
     }
