@@ -16,7 +16,7 @@ public class Main {
         System.out.println(CM.Context());
         /*
         Integer n = 0;
-        String mode = "LZW";
+        String mode = "LZSS";
         if (mode == "LZSS") {
             if(n == 1 | n == 0){ // n = 0 per comprimir
      
