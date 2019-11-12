@@ -11,16 +11,18 @@ public class LZSS implements Algorithm
 {
 
     /**
-       * Instància de la classe Ctrl_Output.
-       * 
-       * Utilitzat per a la compressió i descompressió de fitxers.
-       */
+     * @param Output Utilitzat per a la compressió i descompressió de fitxers.
+     */
     private Ctrl_Output Output;
 
     
     /**
-       * Mètode auxiliar del compressor.
-       */
+     * @fn private ArrayList<Integer> GetKey(Map<Integer, Character> map, char value)
+     * @brief Mètode auxiliar del compressor.
+     * @param map 
+     * @param value
+     * @return llista de coincidència de "value" a "map".
+     */
     private ArrayList<Integer> GetKey(Map<Integer, Character> map, char value) {
         
         ArrayList<Integer> aux = new ArrayList<Integer>();
@@ -31,30 +33,29 @@ public class LZSS implements Algorithm
     }
         
     /**
-       * El constructor.
-       * On el paràmetre inicialitza una instància Ctrl_Output.
-       */
+     * @brief El constructor.
+     * @param aux inicialitza una instància Ctrl_Output.
+     */
     public LZSS(String aux)
     {
         Output = new Ctrl_Output(aux);
     }
 
     /**
-       * Mètode print.
-       * Retorna la instància "Output".
-       */
+     * @fn public Ctrl_Output print()
+     * @brief Mètode print.
+     * @return Retorna l'atribut "Output".
+     */
     public Ctrl_Output print()
     {
         return Output;
     }
 
     /**
-       * Mètode principal per a la compressió.
-       * 
-       * Aquí es tracta tota la compressió LZSS on, el paràmetre
-       * del mètode és per anar agafant informació de la classe
-       * Ctrl_Input_Text.
-       */
+     * @fn public void Compressor(Ctrl_Input_Text in)
+     * @brief Mètode principal per a la compressió.
+     * @param in És per anar agafant informació de la classe Ctrl_Input_Text.
+     */
     public void Compressor(Ctrl_Input_Text in)
     {
         String aux = "";
@@ -166,12 +167,10 @@ public class LZSS implements Algorithm
 
 
     /**
-       * Mètode principal per a la descompressió.
-       * 
-       * Aquí es tracta tota la descompressió LZSS on, el paràmetre
-       * del mètode es per anar agafant informació de la classe
-       * Ctrl_Input_LZSS.
-       */
+     * @fn public void Decompressor(Ctrl_Input_LZSS in)
+     * @brief Mètode principal per a la descompressió.
+     * @param in És per anar agafant informació de la classe Ctrl_Input_LZSS.
+     */
     public void Decompressor(Ctrl_Input_LZSS in)
     {
         Map<Integer, Character> vc = new TreeMap<Integer, Character>();
