@@ -42,7 +42,7 @@ public class Ctrl_Master {
     }
 
 
-    public void Read() {
+    /*public void Read() {
         Ctrl_Input Inp = new Ctrl_Input(Path);
         switch (Function) {
             case 1:
@@ -64,7 +64,7 @@ public class Ctrl_Master {
 
                 break;
         }
-    }
+    }*/
 
 
 }

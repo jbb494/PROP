@@ -1,12 +1,7 @@
-
 //import java.util.AbstractMap;
-import java.util.AbstractMap;
-import java.util.ArrayList;
-
 import com.company.algorithm.*;
 import com.company.input.*;
 import com.company.output.*;
-import com.company.utils.IntorChar;
 
 public class Main {
 
@@ -15,21 +10,88 @@ public class Main {
     }
 
     public static void main(String[] args) 
-    {
-       Integer n = 0; // n = 0 per els dos
-       if(n == 1 | n == 0){ // n = 0 per comprimir
+    {   
+        Integer n = 0;
+        String mode = "LZW";
+        if (mode == "LZSS") {
+            if(n == 1 | n == 0){ // n = 0 per comprimir
+     
+                String pathCompresio = "../hello.txt";
+
+                System.out.println("Compresio de " + pathCompresio);
+
+                LZSS alg = new LZSS("../CompresioLZSS.out");
+
+                Ctrl_Input_Text in = new Ctrl_Input_Text(pathCompresio);
+
+                alg.Compressor(in);
+
+                Ctrl_Output outp = alg.print();
+
+                outp.print();
+            }
+            if (n == 2 | n == 0){
+                String pathDecompresio = "../CompresioLZSS.out";
+                
+                System.out.println("Descompresio de " + pathDecompresio);
+    
+                Ctrl_Input_LZSS in = new Ctrl_Input_LZSS(pathDecompresio);
+                
+                LZSS alg = new LZSS("../DescompresioLZSS.out");
+                
+                alg.Decompressor(in);
+                
+                Ctrl_Output outp = alg.print();
+    
+                outp.print();
+             }
+        }
+
+        else if (mode == "LZW") {
+            if(n == 1 | n == 0){ // n = 0 per comprimir
+     
+                String pathCompresio = "../hello.txt";
+
+                System.out.println("Compresio de " + pathCompresio);
+
+                LZW alg = new LZW(true);
+
+                Ctrl_Input_Text in = new Ctrl_Input_Text(pathCompresio);
+
+                Ctrl_Output outp = alg.print_encode(in);
+
+                outp.print();
+            }
+            if (n == 2 | n == 0){
+
+                String pathDecompresio = "../CompresioLZW.out";
+                
+                System.out.println("Descompresio de " + pathDecompresio);
+                
+                LZW alg = new LZW(false);
+
+                Ctrl_Input_LZW in = new Ctrl_Input_LZW(pathDecompresio);
+                                
+                Ctrl_Output outp = alg.print_decode(in);
+    
+                outp.print();
+             }
+        }
+        else {
+            /*Integer n = 0; // n = 0 per els dos
+            if(n == 1 | n == 0){ // n = 0 per comprimir
 
             String pathCompresio = "../hello.txt";
 
-            System.out.println("Compresio a " + pathCompresio);    
+            System.out.println("Compresio de " + pathCompresio);    
 
             Ctrl_Input instance = new Ctrl_Input(pathCompresio);
-            
+
             String aux = instance.getText();
 
             // System.out.println("Inicial: \n" + aux);
 
-            LZ78 alg = new LZ78(aux);
+            LZSS alg = new LZSS(aux);
 
             alg.Compressor();
 
@@ -38,19 +100,17 @@ public class Main {
             // System.out.println("Final: \n");
 
             outp.print();
-       }
-       if (n == 2 | n == 0){
-            String pathDecompresio = "../CompresioLZ78.out";
-            
-            System.out.println("Compresio a " + pathDecompresio);    
+            }
+            if (n == 2 | n == 0){
+            String pathDecompresio = "../CompresioLZSS.out";
 
             System.out.println("Descompresio de " + pathDecompresio);    
 
             Ctrl_Input instance = new Ctrl_Input(pathDecompresio);
 
-            ArrayList< AbstractMap.SimpleEntry <Integer, Character> > aux = instance.getLZ78();
+            ArrayList< IntorChar > aux = instance.getLZSS();
 
-            LZ78 alg = new LZ78(aux);
+            LZSS alg = new LZSS(aux);
 
             alg.Decompressor();
 
@@ -58,7 +118,14 @@ public class Main {
 
             outp.print();
 
-        }   
-    
+            }*/   
+            String path = "in.txt";
+            Ctrl_Input_Img in = new Ctrl_Input_Img(path);
+            System.out.println(in.getExtension());
+            System.out.println(in.getWidth());
+            System.out.println(in.getHeight());
+        }
+       
+
     }
 }

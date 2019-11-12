@@ -1,6 +1,15 @@
+/**
+ * @class Algoritme LZW
+ * @brief Compressió i descompressió pel mètode LZW
+ * @author Miguel Paracuellos Ocaña 
+ */
+
 package com.company.algorithm;
+
 import java.util.*;
 
+import com.company.input.Ctrl_Input_LZW;
+import com.company.input.Ctrl_Input_Text;
 import com.company.output.Ctrl_Output;
 import com.company.utils.LZW_Dict_Decode;
 import com.company.utils.LZW_Dict_Encode;
@@ -8,12 +17,22 @@ import com.company.utils.LZW_Dict_Encode;
 public class LZW implements Algorithm {
 
 	//Attributes
+	/**
+	 * @param Limit Màxim nombre d'entrades del diccionari
+	 */
 	final Integer Limit = Integer.MAX_VALUE;
 
+	/**
+	 * @param Output Del tipus Ctrl_Output, li passarem el text processat
+	 */
 	Ctrl_Output Output;
 
 
 	//Constructor
+	/**
+	 * @brief Constructor de la clase LZW
+	 * @param b Si es True estaremos comprimiendo, en caso contrario descomprimiendo 
+	 */
 	public LZW(boolean b) {
 		if (b)
 			Output = new Ctrl_Output("../CompresioLZW.out");
@@ -24,14 +43,21 @@ public class LZW implements Algorithm {
 
 
 	//Functions
-	public ArrayList<Integer> compression(String file) {
+	/**
+	 * @fn public ArrayList<Integer> compression(Ctrl_Input_Text inp)
+	 * @brief Comprimim un text amb l'algoritme LZW
+	 * @param inp accés al Controlador d'Input per el text
+	 * @return llista amb els enters que representen el text
+	 */
+	public ArrayList<Integer> compression(Ctrl_Input_Text inp) {
 		ArrayList<Integer> result = new ArrayList<>();
 
 		//We initialize the attributes we need
 		LZW_Dict_Encode table = new LZW_Dict_Encode();
 		Integer i = -1;
 		
-		for (char c : file.toCharArray()) {
+		while (!inp.finished()) {
+			char c = inp.get();
 			Integer aux = i;
 
 			if ( (i = table.search_and_insert_BST(aux, c)) == -1) {
@@ -46,14 +72,21 @@ public class LZW implements Algorithm {
 		return result;
 	}
 
-
-	public String decompression(ArrayList<Integer> file) {
+	/**
+	 * @fn public String decompression(Ctrl_Input_LZW inp)
+	 * @brief Descomprimim un fitxer amb l'algoritme LZW
+	 * @param inp accés al Controlador d'Input pel fitxer comprimit
+	 * @return text que representa el fitxer descomprimit
+	 */
+	public String decompression(Ctrl_Input_LZW inp) {
 		String result = "";
 		
 		LZW_Dict_Decode table = new LZW_Dict_Decode();
 		Integer i = -1;
 		
-		for (Integer k : file) {
+		while (!inp.finished()) {
+			Integer k = inp.get();
+			
 			Integer sz = table.getSize();
 			String s = "";
 
@@ -82,8 +115,14 @@ public class LZW implements Algorithm {
 		return result;
 	}
 
-	public Ctrl_Output print_encode(String file) {
-		ArrayList<Integer> arr = compression(file);
+	/**
+	 * @fn public Ctrl_Output print_encode(Ctrl_Input_Text inp)
+	 * @brief La funció serà cridada quan volguem comprimir un text i obtenir el resultat
+	 * @param inp Controlador d'Input amb l'accés al fitxer
+	 * @return Controlador d'Output per poder esciure el resultat
+	 */
+	public Ctrl_Output print_encode(Ctrl_Input_Text inp) {
+		ArrayList<Integer> arr = compression(inp);
 		
 		for (int i = 0; i < arr.size(); ++i) {
 			Output.add(arr.get(i));
@@ -92,8 +131,14 @@ public class LZW implements Algorithm {
 		return Output;
 	}
 
-	public Ctrl_Output print_decode(ArrayList<Integer> file) {
-		String arr = decompression(file);
+	/**
+	 * @fn public Ctrl_Output print_decode(Ctrl_Input_LZW inp)
+	 * @brief La funció serà cridada quan volguem descomprimir un text i obtenir el resultat
+	 * @param inp Controlador d'Input amb l'accés al fitxer comprimit amb LZW
+	 * @return Controlador d'Output per poder esciure el resultat
+	 */
+	public Ctrl_Output print_decode(Ctrl_Input_LZW inp) {
+		String arr = decompression(inp);
 		
 		Output.add(arr);
 
