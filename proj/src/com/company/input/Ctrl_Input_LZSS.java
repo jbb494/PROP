@@ -8,19 +8,18 @@ import com.company.utils.byteToConversion;
 
 public class Ctrl_Input_LZSS extends Ctrl_Input {
 
-    
     /**
-       * El constructor.
-       * On es crida a la classe pare.
+       * @brief El constructor on es crida a la classe pare.
+       * @param path Conté el path del arxiu.
        */
     public Ctrl_Input_LZSS(String path) {
         super(path);
     }
 
     /**
-       * Mètode per aconseguir la unitat mínima necessària.
-       * 
-       * Tracta d'obtenir o bé un Character o bé dos Integers.
+       * @fn public IntorChar getLZSS()
+       * @brief Mètode per aconseguir la unitat mínima necessària.
+       * @return Tracta d'obtenir o bé un Character o bé dos Integers.
        */
     public IntorChar getLZSS()
     {

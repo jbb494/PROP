@@ -13,9 +13,7 @@ import com.company.utils.byteToConversion;
 // https://funnelgarden.com/java_read_file/ --> FileInputStream
 
 public class Input {
-
     
-
     private DataInputStream inputStreamReader;
     private int punter; 
     // 0 <= punter < 8,  indica el proper bit que ha de ser llegit del byte en qüestió
@@ -112,6 +110,15 @@ public class Input {
 
     public int outOfFile() { //nombre de bits que s'han intentat llegir però queden fora del fitxer
         return illegals;
+    }
+
+    public String getDecodeAlg() //0 si lz78, 1 si lzw o 2 si lzss
+    {
+        byte aux = getBits(2);
+        if(aux == (byte)0) return "lz78";
+        else if(aux == (byte)1) return "lzw";
+        else if(aux == (byte)2) return "lzss";
+        else return "error";
     }
 }
 

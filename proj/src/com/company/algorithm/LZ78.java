@@ -73,11 +73,10 @@ public class LZ78 implements Algorithm {
 				if(in.finished()) return;
 				Integer punterMap = entr.getKey();
 				Character nextChar = entr.getValue();
-				if(punterMap == 0)
-				{
+				if(punterMap == 0){
 					Output.add(nextChar);
 					map.put(punterActual++, nextChar.toString());
-				}else{
+				}else {
 					String seqPunterMap = map.get(punterMap-1);
 					map.put(punterActual++, seqPunterMap.concat(nextChar.toString()));
 					Output.add(seqPunterMap.concat(nextChar.toString()));		
