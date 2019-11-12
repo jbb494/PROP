@@ -57,7 +57,6 @@ public class Input {
         } catch (IOException e) {
             e.printStackTrace();
         }
-   
     }
     
     public byte getBits(int num_bits) 
