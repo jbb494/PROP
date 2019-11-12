@@ -16,7 +16,7 @@ public class Node {
 
     //Constructor
     public Node(char c) {
-        First = Left = Right = Limit;
+        First = Left = Right = -1;
         this.c = c;
     }
 
