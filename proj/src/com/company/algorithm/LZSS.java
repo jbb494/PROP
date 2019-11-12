@@ -9,8 +9,18 @@ import com.company.utils.IntorChar;
 
 public class LZSS implements Algorithm
 {
-    Ctrl_Output Output;
 
+    /**
+       * Instància de la classe Ctrl_Output.
+       * 
+       * Utilitzat per a la compressió i descompressió de fitxers.
+       */
+    private Ctrl_Output Output;
+
+    
+    /**
+       * Mètode auxiliar del compressor.
+       */
     private ArrayList<Integer> GetKey(Map<Integer, Character> map, char value) {
         
         ArrayList<Integer> aux = new ArrayList<Integer>();
@@ -19,17 +29,32 @@ public class LZSS implements Algorithm
                  aux.add(entry.getKey());
         return aux;
     }
-    
+        
+    /**
+       * El constructor.
+       * On el paràmetre inicialitza una instància Ctrl_Output.
+       */
     public LZSS(String aux)
     {
         Output = new Ctrl_Output(aux);
     }
 
+    /**
+       * Mètode print.
+       * Retorna la instància "Output".
+       */
     public Ctrl_Output print()
     {
         return Output;
     }
 
+    /**
+       * Mètode principal per a la compressió.
+       * 
+       * Aquí es tracta tota la compressió LZSS on, el paràmetre
+       * del mètode es per anar agafant informació de la classe
+       * Ctrl_Input_Text.
+       */
     public void Compressor(Ctrl_Input_Text in)
     {
         String aux = "";
@@ -139,6 +164,14 @@ public class LZSS implements Algorithm
         Output.add(0, 5); //fi del fitxer
     }
 
+
+    /**
+       * Mètode principal per a la descompressió.
+       * 
+       * Aquí es tracta tota la descompressió LZSS on, el paràmetre
+       * del mètode es per anar agafant informació de la classe
+       * Ctrl_Input_LZSS.
+       */
     public void Decompressor(Ctrl_Input_LZSS in)
     {
         Map<Integer, Character> vc = new TreeMap<Integer, Character>();
@@ -177,3 +210,13 @@ public class LZSS implements Algorithm
         }
     }
 }
+
+/** @class LZSS 
+ *  @brief Aquesta és la classe del algoritme LZSS.
+ *   
+ *  En aquesta classe es tracta la compressió mitjançant l'algorisme
+ *  LZSS i la descompressió d'un input el qual ha estat comprimit amb
+ *  aquest mateix algoritme.
+ * 
+ *  @author Manel Aguilar
+ */
