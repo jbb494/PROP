@@ -57,10 +57,9 @@ public class Ctrl_Algorithm {
             Ctrl_Input inP = new Ctrl_Input(Path);
             String decide = inP.getAlg();
             if(decide == "lzss")
-            {
-                Ctrl_Input_LZSS in = new Ctrl_Input_LZSS(Path);                
+            {               
                 LZSS alg = new LZSS(prefix + method);        
-                alg.Decompressor(in);
+                alg.Decompressor((Ctrl_Input_LZSS)inP);
                 Ctrl_Output outp = alg.print();
                 outp.print();
             }
