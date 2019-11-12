@@ -12,7 +12,7 @@ public class Main {
     public static void main(String[] args) 
     {   
         Integer n = 0;
-        String mode = "LZSS";
+        String mode = "LZW";
         if (mode == "LZSS") {
             if(n == 1 | n == 0){ // n = 0 per comprimir
      
@@ -72,9 +72,7 @@ public class Main {
 
                 Ctrl_Input_LZW in = new Ctrl_Input_LZW(pathDecompresio);
                                 
-                alg.Decompressor(in);
-                
-                Ctrl_Output outp = alg.print();
+                Ctrl_Output outp = alg.print_decode(in);
     
                 outp.print();
              }
