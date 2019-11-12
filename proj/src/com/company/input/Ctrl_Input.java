@@ -75,10 +75,6 @@ public class Ctrl_Input {
         return ret;
     }
 
-    public int get()
-    {
-        return 1;
-    }
     public ArrayList< AbstractMap.SimpleEntry <Integer, Character> > getLZ78()
     {
         ArrayList< AbstractMap.SimpleEntry <Integer, Character> > ret = 
