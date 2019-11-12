@@ -1,7 +1,7 @@
 /**
  * @class Ctrl_Input_LZW
- * @brief Accés a un arxiu comprimit amb LZW
- * @author Miguel Paracuellos Ocaña
+ * @brief Acces a un arxiu comprimit amb LZW
+ * @author Miguel Paracuellos Ocana
  */
 
 package com.company.input;
@@ -35,6 +35,4 @@ public class Ctrl_Input_LZW extends Ctrl_Input {
         
         return byteToConversion.byteToInteger(arrayByte);
     }
-    
-    
 }

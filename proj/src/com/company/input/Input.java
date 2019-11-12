@@ -13,9 +13,7 @@ import com.company.utils.byteToConversion;
 // https://funnelgarden.com/java_read_file/ --> FileInputStream
 
 public class Input {
-
     
-
     private DataInputStream inputStreamReader;
     private int punter; 
     // 0 <= punter < 8,  indica el proper bit que ha de ser llegit del byte en qüestió
@@ -57,7 +55,6 @@ public class Input {
         } catch (IOException e) {
             e.printStackTrace();
         }
-   
     }
     
     public byte getBits(int num_bits) 
