@@ -235,5 +235,3 @@ public class JPEG {
 	}
 }
 */
-
-*/
