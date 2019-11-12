@@ -1,4 +1,4 @@
-package com.company.algorithm;
+/*package com.company.algorithm;
 
 import java.util.ArrayList;
 
@@ -234,5 +234,5 @@ public class JPEG {
 			
 	}
 }
-
+*/
 

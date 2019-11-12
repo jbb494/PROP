@@ -1,5 +1,10 @@
 package com.company.algorithm;
 
+import com.company.input.Ctrl_Input;
+import com.company.input.Ctrl_Input_LZSS;
+import com.company.input.Ctrl_Input_Text;
+import com.company.output.Ctrl_Output;
+
 public class Ctrl_Algorithm {
 
 
@@ -8,26 +13,67 @@ public class Ctrl_Algorithm {
 
     public Ctrl_Algorithm() {}
 
-    public String Choose_Encoder(String file, String method) {
-       /* switch (method) {
-            case "LZW":
-                Alg = new LZW();
-                break;
+    public String Choose_Encoder(String Path, String method)
+    {
+        int i = Path.lastIndexOf(".");
+        String prefix = Path.substring(0, i+1);
+        if(method == "lzss")
+        {
+            LZSS alg = new LZSS(prefix + method);
+            Ctrl_Input_Text in = new Ctrl_Input_Text(Path);
+            alg.Compressor(in);
+            Ctrl_Output outp = alg.print();
+            outp.print();
+        }
+        else if(method == "lzw")
+        {
 
-            case "LZSS":
-                Alg = new LZSS();    
-                break;
+        }
+        else if(method == "lz78")
+        {
 
-            case "LZ78":
-                Alg = new LZ78(); 
-                break;
+        }
+        else if(method == "ppm")
+        {
 
-            default:
-                //Hem de decidir l'heuristica amb la que escollirem l'algoritme de manera automàtica 
-                break;
-        }*/
+        }
+        return "Compressió de " + Path;
+    }
+    public String Auto_Encoder(String Path)
+    {
 
+        return "";
+    }
+    public String Auto_Decoder(String Path, String method)
+    {
+        int i = Path.lastIndexOf(".");
+        String prefix = Path.substring(0, i+1);
+        if(method == "ppm")
+        {
 
-        return "still_deciding";
+        }
+        else
+        {
+            Ctrl_Input inP = new Ctrl_Input(Path);
+            String decide = inP.getAlg();
+            if(decide == "lzss")
+            {
+                Ctrl_Input_LZSS in = new Ctrl_Input_LZSS(Path);                
+                LZSS alg = new LZSS(prefix + method);        
+                alg.Decompressor(in);
+                Ctrl_Output outp = alg.print();
+                outp.print();
+            }
+            else if(decide == "lzw")
+            {
+
+            }
+            else if(decide == "lz78")
+            {
+
+            }
+            else return decide;
+        }
+        return "Descompressió de " + Path;
     }
 }

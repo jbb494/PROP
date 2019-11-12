@@ -32,6 +32,11 @@ public class Ctrl_Input {
         return Input_class.finished();
     }
 
+    public String getAlg()
+    {
+        return Input_class.getDecodeAlg();
+    }
+
     /*
     Agafeu d'aquí la vostra funció, modifiqueu-la convenientment i posau-la al vostre fill de Ctrl_Input
 

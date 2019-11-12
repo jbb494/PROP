@@ -52,7 +52,7 @@ public class LZSS implements Algorithm
        * Mètode principal per a la compressió.
        * 
        * Aquí es tracta tota la compressió LZSS on, el paràmetre
-       * del mètode es per anar agafant informació de la classe
+       * del mètode és per anar agafant informació de la classe
        * Ctrl_Input_Text.
        */
     public void Compressor(Ctrl_Input_Text in)
