@@ -1,44 +1,32 @@
 package com.company.algorithm;
-
+import com.company.input.*;
 import com.company.output.Ctrl_Output;
 
 import java.util.*;
 
 
 public class LZ78 implements Algorithm {
-    String Input;
     Ctrl_Output Output;
-    ArrayList< AbstractMap.SimpleEntry <Integer, Character> > InpDesc;	
-	public LZ78(String a) 
-	{
-		Input = a;
+   
+	public LZ78(Boolean x){
+		String path;
+		if(x) path = "../DescompresioLZ78.out";
+		else path = "../CompresioLZ78.out";
 		
-		Output = new Ctrl_Output("../CompresioLZ78.out");
-
+		Output = new Ctrl_Output(path);
 	}
-	public LZ78(ArrayList< AbstractMap.SimpleEntry <Integer, Character> > a) 
-	{
-		InpDesc = a;
-		
-		Output = new Ctrl_Output("../DescompresioLZ78.out");
-
-	}
-
-	public void Compressor()
+	public void Compressor(Ctrl_Input_Text in)
 	{
         Map<String, Integer> map = new HashMap<String, Integer>();
 		
 		Character nextChar;
-		
-		Integer i = 0;
-		
+				
 		String seq = "";
 
 		Integer punterMap = 0;
 		
-		while(i < Input.length())
-		{
-			nextChar = Input.charAt(i);
+		while(!in.finished()) {
+			nextChar = in.get();
 			String nextCharS;
 			//if(nextChar == ' ')nextCharS = "\\s";
 			//else nextCharS = nextChar.toString();
@@ -73,30 +61,28 @@ public class LZ78 implements Algorithm {
 				seq = "";
 				punterMap++;
 			}
-            i++;
 		}
 	}
-	public void Decompressor() 
+	public void Decompressor(Ctrl_Input_LZ78 in) 
 	{
 		Map<Integer, String> map = new HashMap<Integer, String>();
 		Integer punterActual = 0;
-		for (AbstractMap.SimpleEntry <Integer, Character> entr : InpDesc)
-		{
-			//System.out.println("Int: " + entr.getKey() + "Char: " + entr.getValue());
-			Integer punterMap = entr.getKey();
-			Character nextChar = entr.getValue();
-			if(punterMap == 0)
-			{
-				Output.add(nextChar);
-				map.put(punterActual++, nextChar.toString());
-			}else{
-				String seqPunterMap = map.get(punterMap-1);
-				map.put(punterActual++, seqPunterMap.concat(nextChar.toString()));
-				Output.add(seqPunterMap.concat(nextChar.toString()));		
+			while(!in.finished()) {
+				//System.out.println("Int: " + entr.getKey() + "Char: " + entr.getValue());
+				AbstractMap.SimpleEntry <Integer, Character> entr = in.get();
+				if(in.finished()) return;
+				Integer punterMap = entr.getKey();
+				Character nextChar = entr.getValue();
+				if(punterMap == 0)
+				{
+					Output.add(nextChar);
+					map.put(punterActual++, nextChar.toString());
+				}else{
+					String seqPunterMap = map.get(punterMap-1);
+					map.put(punterActual++, seqPunterMap.concat(nextChar.toString()));
+					Output.add(seqPunterMap.concat(nextChar.toString()));		
+				}
 			}
-
-		}
-		
 	}
 
 	public Ctrl_Output print()
