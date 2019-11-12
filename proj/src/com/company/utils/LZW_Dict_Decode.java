@@ -11,12 +11,13 @@ public class LZW_Dict_Decode {
 
     //Constructor and reseting it
     public LZW_Dict_Decode() {
+        v = new ArrayList<Pair<Integer,Character> >();
         reset_dictionary();
     }
 
     public void reset_dictionary() {
         v.clear();
-        v.ensureCapacity(Limit);
+        //v.ensureCapacity(Limit);
 
         for (int i = 0; i < 256; ++i) {
             v.add( new Pair<Integer,Character>(Limit, (char)i) );
@@ -28,7 +29,7 @@ public class LZW_Dict_Decode {
     public String getWord(Integer i) {
         ArrayList<Character> result = new ArrayList<>();
         result.clear();
-        result.ensureCapacity(Limit);
+        //result.ensureCapacity(Limit);
 
         while (i != Limit) {
             result.add(0, v.get(i).getRight());

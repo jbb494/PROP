@@ -12,7 +12,8 @@ public class LZW_Dict_Encode {
 
     //Constructor and reseting de Dictionary
     public LZW_Dict_Encode() {
-        arr_n.ensureCapacity(Limit);
+        arr_n = new ArrayList<Node>();
+        reset_dictionary();
     }
 
     public void reset_dictionary() {
@@ -26,7 +27,8 @@ public class LZW_Dict_Encode {
 
     //Functions
     public Integer Ascii_value(char c) {
-        return Character.getNumericValue(c);
+        int x = (int) c;
+        return (Integer)x;
     }
 
     public Integer search_and_insert_BST(Integer i, char c) {
@@ -35,19 +37,21 @@ public class LZW_Dict_Encode {
         if (arr_n.size() == Limit) 
             reset_dictionary();
 
-        if (i == Limit) 
+        if (i == -1) 
             return Ascii_value(c);
 
         Integer pos = arr_n.get(i).First;
         Integer sz = arr_n.size();
 
-        if (pos != Limit) {
-            
+        if (pos != -1) {
             while(true) {
                 if (c < arr_n.get(pos).c) {
                     
-                    if (arr_n.get(pos).Left == Limit) {
-                        arr_n.get(pos).Modify_Left(sz);
+                    if (arr_n.get(pos).Left == -1) {
+                        Node aux = arr_n.get(pos);
+                        aux.Modify_Left(sz);
+                        arr_n.set(pos, aux);
+                        //arr_n.get(pos).Modify_Left(sz);
                         break;
                     }    
                     
@@ -56,8 +60,11 @@ public class LZW_Dict_Encode {
 
                 else if (c > arr_n.get(pos).c) {
 
-                    if (arr_n.get(pos).Right == Limit) {
-                        arr_n.get(pos).Modify_Right(sz);
+                    if (arr_n.get(pos).Right == -1) {
+                        Node aux = arr_n.get(pos);
+                        aux.Modify_Right(sz);
+                        arr_n.set(pos, aux);
+                        //arr_n.get(pos).Modify_Right(sz);
                         break;
                     }
 
@@ -69,10 +76,14 @@ public class LZW_Dict_Encode {
             }
 
         }
-        else arr_n.get(i).Modify_First(sz);
-
+        else {
+            Node aux = arr_n.get(i);
+            aux.Modify_First(sz);
+            arr_n.set(i, aux);
+            //arr_n.get(i).Modify_First(sz);
+        }
         arr_n.add( new Node(c) );
-        return Limit;
+        return -1;
     }
 
     public Integer getLimit() {
