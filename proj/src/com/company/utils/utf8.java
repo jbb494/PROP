@@ -1,6 +1,6 @@
-import java.util.ArrayList;
+package com.company.utils;
+
 import java.util.HashMap;
-import java.util.List;
 import java.util.Map;
 
 public class utf8 {
@@ -74,8 +74,8 @@ public class utf8 {
      * @param text
      * @return
      */
-    public static String uft8Encode(String text) {
-        StringBuilder res = new StringBuilder();
+    public static String uft8Encode(String text) {   
+        StringBuilder res = new StringBuilder();                
         for (char c : text.toCharArray()) {
             int i = (int) c;
             if (i < 128) {
