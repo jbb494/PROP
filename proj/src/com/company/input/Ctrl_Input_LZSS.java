@@ -8,10 +8,20 @@ import com.company.utils.byteToConversion;
 
 public class Ctrl_Input_LZSS extends Ctrl_Input {
 
+    
+    /**
+       * El constructor.
+       * On es crida a la classe pare.
+       */
     public Ctrl_Input_LZSS(String path) {
         super(path);
     }
 
+    /**
+       * Mètode per aconseguir la unitat mínima necessària.
+       * 
+       * Tracta d'obtenir o bé un Character o bé dos Integers.
+       */
     public IntorChar getLZSS()
     {
 
@@ -43,3 +53,11 @@ public class Ctrl_Input_LZSS extends Ctrl_Input {
     }
        
 }
+/** @class Ctrl_Input_LZSS 
+ *  @brief Aquesta és la classe fill del controlador Ctrl_Input.
+ *   
+ *  Aquesta classe tracta d'obtenir la unitat mínima necessària per al
+ *  input de l'algorisme LZSS.
+ * 
+ *  @author Manel Aguilar
+ */
