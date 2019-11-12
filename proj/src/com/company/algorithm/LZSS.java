@@ -15,6 +15,15 @@ public class LZSS implements Algorithm
      */
     private Ctrl_Output Output;
 
+
+     /**
+     * @brief El constructor.
+     * @param aux inicialitza una instància Ctrl_Output.
+     */
+    public LZSS(String aux, boolean b)
+    {
+        Output = new Ctrl_Output(aux, "lzss", b);
+    }
     
     /**
      * @fn private ArrayList<Integer> GetKey(Map<Integer, Character> map, char value)
@@ -32,14 +41,6 @@ public class LZSS implements Algorithm
         return aux;
     }
         
-    /**
-     * @brief El constructor.
-     * @param aux inicialitza una instància Ctrl_Output.
-     */
-    public LZSS(String aux)
-    {
-        Output = new Ctrl_Output(aux);
-    }
 
     /**
      * @fn public Ctrl_Output print()
@@ -67,6 +68,7 @@ public class LZSS implements Algorithm
         while(!in.finished())
         {
             nextChar = in.get();
+            System.out.println(nextChar);
             aux = aux.concat(String.valueOf(nextChar));
             if(vc.containsValue(nextChar))
             {
@@ -177,7 +179,7 @@ public class LZSS implements Algorithm
         int pos = 0, posmap = 0;
         boolean end = false;
         IntorChar ioc;
-        while(!end)
+        while(!in.finished())
         {
             ioc = in.getLZSS();
             if(ioc.IsIntorChar())

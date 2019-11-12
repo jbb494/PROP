@@ -14,6 +14,7 @@ public class Ctrl_Input_LZSS extends Ctrl_Input {
        */
     public Ctrl_Input_LZSS(String path) {
         super(path);
+        getMetadata();
     }
 
     /**

@@ -28,7 +28,7 @@ public class Input {
             end = false;
             illegals = 0;
             punter = 0;
-            FileInputStream dataInputStream = new FileInputStream(new File(/*"../" NO*/path));
+            FileInputStream dataInputStream = new FileInputStream(new File(path));
             inputStreamReader = new DataInputStream(dataInputStream);
         } catch (FileNotFoundException e) {
             e.printStackTrace();
@@ -60,6 +60,7 @@ public class Input {
     public byte getBits(int num_bits) 
     // pre: 1 <= num_bits <= 8        <-- IMPORTANT!!!
     {
+        
         if (end) {
             illegals += num_bits;
             return 0;
@@ -71,6 +72,7 @@ public class Input {
                 return 0;
             }
         }
+        
         byte b = byteToConversion.shift_right_logic(last_byte, punter);
         if(punter + num_bits > 8) 
         {
@@ -121,36 +123,3 @@ public class Input {
         else return "error";
     }
 }
-
-
-
-/*package com.company.input;
-
-import java.util.ArrayList;
-
-public class Input {
-	
-	public Input() {}
-
-	public ArrayList<Byte> getIn() {
-		return null;
-	}
-
-	public int getHeight() {
-        return 0;
-    }
-
-    public int getWidth() {
-        return 0;
-    }
-	
-    public byte getBits(int num_bits) {
-        return 0;
-    }
-
-    public byte getBits(int pos_bit, int num_bits) {
-        return 0;
-    }	
-
-    
-}*/

@@ -31,14 +31,10 @@ public class LZW implements Algorithm {
 	//Constructor
 	/**
 	 * @brief Constructor de la clase LZW
-	 * @param b Si es True estaremos comprimiendo, en caso contrario descomprimiendo 
+	 * @param aux Path de sortida
 	 */
-	public LZW(boolean b) {
-		if (b)
-			Output = new Ctrl_Output("../CompresioLZW.out");
-
-		else 
-			Output = new Ctrl_Output("../DescompresioLZW.out");
+	public LZW(String aux, boolean b) {
+		Output = new Ctrl_Output(aux, "lzw", b);
 	}
 
 
@@ -66,9 +62,10 @@ public class LZW implements Algorithm {
 			}
 		}
 
+		
 		if (i != -1)
 			result.add(i);			
-
+		
 		return result;
 	}
 

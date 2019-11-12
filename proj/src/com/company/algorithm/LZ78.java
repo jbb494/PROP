@@ -21,14 +21,10 @@ public class LZ78 implements Algorithm {
 	//Constructor
 	/**
 	 * @brief Constructor de la clase LZW
-	 * @param x Si es True, estarem comprimint, en cas contrari estarem descomprimint
+	 * @param aux Path de sortida
 	 */
-	public LZ78(Boolean x){
-		String path;
-		if(x) path = "../DescompresioLZ78.out";
-		else path = "../CompresioLZ78.out";
-		
-		Output = new Ctrl_Output(path);
+	public LZ78(String aux, boolean b) {
+		Output = new Ctrl_Output(aux, "lz78", b);
 	}
 
 	//Functions

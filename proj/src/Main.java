@@ -2,6 +2,7 @@
 import com.company.algorithm.*;
 import com.company.input.*;
 import com.company.output.*;
+import com.company.master.Ctrl_Master;
 
 public class Main {
 
@@ -11,6 +12,9 @@ public class Main {
 
     public static void main(String[] args) 
     {   
+        Ctrl_Master CM = new Ctrl_Master();
+        System.out.println(CM.Context());
+        /*
         Integer n = 0;
         String mode = "LZW";
         if (mode == "LZSS") {
@@ -54,7 +58,7 @@ public class Main {
 
                 System.out.println("Compresio de " + pathCompresio);
 
-                LZW alg = new LZW(true);
+                LZW alg = new LZW("../hello.");
 
                 Ctrl_Input_Text in = new Ctrl_Input_Text(pathCompresio);
 
@@ -64,11 +68,11 @@ public class Main {
             }
             if (n == 2 | n == 0){
 
-                String pathDecompresio = "../CompresioLZW.out";
+                String pathDecompresio = "../hello.lzw";
                 
                 System.out.println("Descompresio de " + pathDecompresio);
                 
-                LZW alg = new LZW(false);
+                LZW alg = new LZW("../bye.");
 
                 Ctrl_Input_LZW in = new Ctrl_Input_LZW(pathDecompresio);
                                 
@@ -118,13 +122,14 @@ public class Main {
 
             outp.print();
 
-            }*/   
+            }
             String path = "in.txt";
             Ctrl_Input_Img in = new Ctrl_Input_Img(path);
             System.out.println(in.getExtension());
             System.out.println(in.getWidth());
             System.out.println(in.getHeight());
         }
+        */
        
 
     }
