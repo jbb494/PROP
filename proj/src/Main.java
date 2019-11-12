@@ -117,15 +117,7 @@ public class Main {
             Ctrl_Output outp = alg.print();
 
             outp.print();
-
-            }*/   
-            String path = "in.txt";
-            Ctrl_Input_Img in = new Ctrl_Input_Img(path);
-            System.out.println(in.getExtension());
-            System.out.println(in.getWidth());
-            System.out.println(in.getHeight());
-        }
-       
-
+        }   
+    
     }
 }
