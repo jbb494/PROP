@@ -3,7 +3,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-public class LZW {
+public class utf8 {
     private static int DICT_SIZE = 256;
 
     /** Compress a string to a list of output symbols. */
@@ -120,7 +120,7 @@ public class LZW {
         }
         return res.toString();
     }
-
+/*
     public static void main(String[] args) {
 //        List<Integer> compressed = compress("TOBEORNOTTOBEORTOBEORNOT");
 //        System.out.println(compressed);
@@ -135,4 +135,5 @@ public class LZW {
         //System.out.println(t1);
         //System.out.println(t2);
     }
+    */
 }
