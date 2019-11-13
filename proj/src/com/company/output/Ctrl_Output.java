@@ -14,8 +14,10 @@ public class Ctrl_Output {
         if (!b) {
             if (method.toLowerCase().equals("lzss"))
                 add((byte)2, 2);
-            else 
+            else if(method.toLowerCase().equals("lzw"))
                 add((byte)1, 2);
+            else if(method.toLowerCase().equals("lz78"))
+                add((byte)0, 2);
         }
         /*{
             case "lz78":
@@ -72,7 +74,6 @@ public class Ctrl_Output {
             add(b,midaAux);
             midaAux = 8;
         } 
-
     }
 
     

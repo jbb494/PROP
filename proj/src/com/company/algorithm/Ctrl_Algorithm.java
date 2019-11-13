@@ -3,6 +3,7 @@ package com.company.algorithm;
 import com.company.input.Ctrl_Input;
 import com.company.input.Ctrl_Input_LZSS;
 import com.company.input.Ctrl_Input_LZW;
+import com.company.input.Ctrl_Input_LZ78;
 import com.company.input.Ctrl_Input_Text;
 import com.company.output.Ctrl_Output;
 
@@ -33,9 +34,13 @@ public class Ctrl_Algorithm {
             Ctrl_Output outp = alg.print_encode(in);
             outp.print();
         }
-        else if(method == "lz78")
+        else if(method.toLowerCase().equals("lz78"))
         {
-
+            LZ78 alg = new LZ78(prefix + method, false);
+            Ctrl_Input_Text in = new Ctrl_Input_Text(Path);
+            alg.Compressor(in);
+            Ctrl_Output outp = alg.print();
+            outp.print();
         }
         else if(method == "ppm")
         {
@@ -78,7 +83,11 @@ public class Ctrl_Algorithm {
             }
             else if(decide == "lz78")
             {
-
+                LZ78 alg = new LZ78(prefix + "txt", true);  
+                Ctrl_Input_LZ78 inP2 = new Ctrl_Input_LZ78(Path);
+                alg.Decompressor(inP2);      
+                Ctrl_Output outp = alg.print();
+                outp.print();
             }
             else return decide;
         }
