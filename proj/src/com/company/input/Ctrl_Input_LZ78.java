@@ -21,6 +21,7 @@ public class Ctrl_Input_LZ78 extends Ctrl_Input {
     public Ctrl_Input_LZ78(String path)
     {
         super(path);
+        getMetadata();
     }
 
     /**
