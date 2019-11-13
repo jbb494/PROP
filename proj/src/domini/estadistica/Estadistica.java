@@ -4,30 +4,29 @@
  * @author Miguel Paracuellos Ocaña
  */
 
-
 package domini.estadistica;
 
 import java.io.File;
-import java.util.Calendar;
+import java.util.Date;
 
 public class Estadistica {
 
     /**
      * @param start Instancia del moment en que comencem la compressió
      */
-    Calendar start;
+    Date start;
 
     /**
      * @param end Instancia del moment en que acabem la compressió
      */
-    Calendar end;
+    Date end;
 
     /**
      * @brief Constructor de la classe Estadística
      * @note Generem l'Instancia d'inici de temps de compressió
      */
     public Estadistica() {
-        start = Calendar.getInstance();
+        start = new Date();
     }
 
     //Functions
@@ -39,12 +38,9 @@ public class Estadistica {
      * @param f Instancia del moment en que hem acabat de comprimir
      * @return Temps emprat per comprimir
      */
-    private int speed(Calendar i, Calendar f) {
-
-        int ti = ((i.get(Calendar.HOUR) * 60) + i.get(Calendar.MINUTE)) * 60 + i.get(Calendar.SECOND);
-        int tf = ((f.get(Calendar.HOUR) * 60) + f.get(Calendar.MINUTE)) * 60 + f.get(Calendar.SECOND);
-
-        return tf - ti;
+    private long time(Date i, Date f) {
+        long res = (f.getTime() - i.getTime());
+        return res;
     }
 
     /**
@@ -54,22 +50,25 @@ public class Estadistica {
      * @param out Path de l'arxiu comprimit
      */
     public void show_estadistica(String inp, String out) {
-        end = Calendar.getInstance();
-        int ts = speed(start,end);
-        System.out.println("The text has been compressed in " + ts + " seconds.");
-
+        end = new Date();
+        long ts = time(start,end);
+        
         File input = new File(inp);
         File output = new File(out);
 
-        //Grado de compresión, como lo calculamos?
-        long gc = -1;
-        if (input.exists() && output.exists()) 
-            gc = input.length() / output.length();
+        if (input.exists() && output.exists()) {
+            long spd = input.length() / ts;
+            double gc = (double)input.length() / (double)output.length();
+
+            System.out.println("La velocitat de compressió ha sigut de " + spd + " bytes/ms.");
+            System.out.println("El grau de compressió és de " + String.format("%.3f", gc) + ". \n");
+
+        
+        }
         else
             System.err.println("Generación de estadísticas fallida: Input o output no existe");
 
-        if (gc != -1)
-            System.out.println("El grau de compressió és de " + gc + ".");
+            
     }
 
 
