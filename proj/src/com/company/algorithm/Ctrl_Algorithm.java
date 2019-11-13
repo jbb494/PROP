@@ -58,7 +58,7 @@ public class Ctrl_Algorithm {
             String decide = inP.getAlg();
             if(decide == "lzss")
             {               
-                LZSS alg = new LZSS(prefix + method);        
+                LZSS alg = new LZSS(prefix + "txt");        
                 alg.Decompressor((Ctrl_Input_LZSS)inP);
                 Ctrl_Output outp = alg.print();
                 outp.print();
