@@ -2,6 +2,7 @@
 import com.company.algorithm.*;
 import com.company.input.*;
 import com.company.output.*;
+import com.company.master.Ctrl_Master;
 
 public class Main {
 
@@ -11,7 +12,10 @@ public class Main {
 
     public static void main(String[] args) 
     {   
-        Integer n = 0;
+        Ctrl_Master CM = new Ctrl_Master();
+        System.out.println(CM.Context());
+
+        /*Integer n = 0;
         String mode = "LZW";
         if (mode == "LZSS") {
             if(n == 1 | n == 0){ // n = 0 per comprimir
@@ -118,13 +122,13 @@ public class Main {
 
             outp.print();
 
-            }*/   
+            }
             String path = "in.txt";
             Ctrl_Input_Img in = new Ctrl_Input_Img(path);
             System.out.println(in.getExtension());
             System.out.println(in.getWidth());
             System.out.println(in.getHeight());
-        }
+        }*/
        
 
     }
