@@ -62,9 +62,10 @@ public class LZW implements Algorithm {
 			}
 		}
 
+		
 		if (i != -1)
 			result.add(i);			
-
+		
 		return result;
 	}
 
