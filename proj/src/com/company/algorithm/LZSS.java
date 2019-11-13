@@ -68,7 +68,6 @@ public class LZSS implements Algorithm
         while(!in.finished())
         {
             nextChar = in.get();
-            System.out.println(nextChar);
             aux = aux.concat(String.valueOf(nextChar));
             if(vc.containsValue(nextChar))
             {
@@ -98,7 +97,7 @@ public class LZSS implements Algorithm
                         }
                     }
                 }
-                if(found && aux.length() == 33)
+                if(found && aux.length() == 34)
                 {
                     Output.add((byte)1, 1);
                     Output.add(punter - pivot, 13);
@@ -111,7 +110,7 @@ public class LZSS implements Algorithm
                     Output.add((byte)1, 1);
                     Output.add(punter - pivnotf, 13);
                     punter += (aux.length() - 1);
-                    Output.add(aux.length() - 3, 5);
+                    Output.add(aux.length() - 4, 5);
                     aux = String.valueOf(nextChar);
                 }
                 else if(!found && aux.length() < 4)
@@ -129,7 +128,7 @@ public class LZSS implements Algorithm
                 {
                     Output.add((byte)1, 1);
                     Output.add(punter - pivnotf, 13);
-                    Output.add(aux.length() - 3, 5);
+                    Output.add(aux.length() - 4, 5);
                     Output.add((byte)0, 1);
                     Output.add(nextChar);
                 }
@@ -148,11 +147,11 @@ public class LZSS implements Algorithm
             if(vc.size() > 8191) vc.remove(paux++);
             i++;
         }
-        if(found2 && aux.length() >= 3 && aux.length() < 33)
+        if(found2 && aux.length() >= 3 && aux.length() < 34)
         {
             Output.add((byte)1, 1);
             Output.add(punter - pivot, 13);
-            Output.add(aux.length()-2, 5);
+            Output.add(aux.length()-3, 5);
         }
         else if(!found2 && aux.length() > 0)
         {
@@ -162,9 +161,9 @@ public class LZSS implements Algorithm
                 Output.add(aux.charAt(j));
             }
         }
-        Output.add((byte)1, 1);
+        /*Output.add((byte)1, 1);
         Output.add(0, 13);
-        Output.add(0, 5); //fi del fitxer
+        Output.add(0, 5); //fi del fitxer*/
     }
 
 
@@ -177,7 +176,7 @@ public class LZSS implements Algorithm
     {
         Map<Integer, Character> vc = new TreeMap<Integer, Character>();
         int pos = 0, posmap = 0;
-        boolean end = false;
+        //boolean end = false;
         IntorChar ioc;
         while(!in.finished())
         {
@@ -194,20 +193,16 @@ public class LZSS implements Algorithm
             {
                 int despl = ioc.GetDespl();
                 int mida = ioc.GetMida();
-                if(mida == 2) end = true;
-                else
+                String aux = "";
+                for(int j = 0; j < mida; j++)
                 {
-                    String aux = "";
-                    for(int j = 0; j < mida; j++)
-                    {
-                        Character c = vc.get(posmap-despl+j);
-                        aux = aux.concat(String.valueOf(c));
-                        vc.put(posmap+j, c);
-                        if(vc.size() > 8191) vc.remove(pos++);
-                    }
-                    posmap += mida;
-                    Output.add(aux);
+                    Character c = vc.get(posmap-despl+j);
+                    aux = aux.concat(String.valueOf(c));
+                    vc.put(posmap+j, c);
+                    if(vc.size() > 8191) vc.remove(pos++);
                 }
+                posmap += mida;
+                Output.add(aux);
             }
         }
     }

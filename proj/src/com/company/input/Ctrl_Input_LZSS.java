@@ -46,7 +46,7 @@ public class Ctrl_Input_LZSS extends Ctrl_Input {
             aux = Input_class.getBits(5);
             lb = new ArrayList<Byte>();
             lb.add(aux);
-            int mida = byteToConversion.byteToInteger(lb) + 2;
+            int mida = byteToConversion.byteToInteger(lb) + 3;
             ioc.SetMida(mida);
         }
         return ioc;
