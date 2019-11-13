@@ -1,7 +1,4 @@
-//import java.util.AbstractMap;
-import domini.algorithm.*;
-import persistencia.input.*;
-import persistencia.output.*;
+
 import presentacion.master.Ctrl_Master;
 
 public class Main {
