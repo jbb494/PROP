@@ -182,6 +182,7 @@ public class LZSS implements Algorithm
         while(!in.finished())
         {
             ioc = in.getLZSS();
+            if (in.finished())return;
             if(ioc.IsIntorChar())
             {
                 Character c = ioc.GetChar();
