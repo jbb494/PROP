@@ -1,5 +1,8 @@
-
-import com.company.master.Ctrl_Master;
+//import java.util.AbstractMap;
+import domini.algorithm.*;
+import persistencia.input.*;
+import persistencia.output.*;
+import presentacion.master.Ctrl_Master;
 
 public class Main {
 
@@ -9,8 +12,11 @@ public class Main {
 
     public static void main(String[] args) 
     {   
-        Ctrl_Master CM = new Ctrl_Master();
-        System.out.println(CM.Context());
+        while(true)
+        {
+            Ctrl_Master CM = new Ctrl_Master();
+            System.out.println(CM.Context());
+        }
         /*
         Integer n = 0;
         String mode = "LZSS";
