@@ -1,7 +1,4 @@
-//import java.util.AbstractMap;
-import com.company.algorithm.*;
-import com.company.input.*;
-import com.company.output.*;
+
 import com.company.master.Ctrl_Master;
 
 public class Main {
