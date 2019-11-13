@@ -1,8 +1,6 @@
 package com.company.output;
 
-
 import java.nio.ByteBuffer;
-
 
 public class Ctrl_Output {
     
@@ -10,8 +8,20 @@ public class Ctrl_Output {
     Output Output_Class;
 
     //Constructor
-    public Ctrl_Output(String path) {
+    public Ctrl_Output(String path, String method) {
         Output_Class = new Output(path);
+
+        switch(method.toLowerCase()) {
+            case "lz78":
+                add((byte)0, 2);
+                break;
+            case "lzw":
+                add((byte)1, 2);
+                break;
+            case "lzss":
+                add((byte)2, 2);
+                break;
+        }
     }
 
     //Functions
@@ -43,7 +53,7 @@ public class Ctrl_Output {
     public void add(Integer x, Integer mida){
         ByteBuffer bb = ByteBuffer.allocate(4); 
         Integer midaAux = mida%8;
-        Double daux = new Double (mida)/8;
+        Double daux = new Double(mida)/8;
         Integer nombreBytes = new Double (Math.ceil(daux)).intValue();
         if(midaAux == 0)midaAux = 8;
         bb.putInt(x.intValue());
