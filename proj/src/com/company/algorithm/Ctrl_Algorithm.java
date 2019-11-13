@@ -2,6 +2,7 @@ package com.company.algorithm;
 
 import com.company.input.Ctrl_Input;
 import com.company.input.Ctrl_Input_LZSS;
+import com.company.input.Ctrl_Input_LZW;
 import com.company.input.Ctrl_Input_Text;
 import com.company.output.Ctrl_Output;
 
@@ -17,17 +18,20 @@ public class Ctrl_Algorithm {
     {
         int i = Path.lastIndexOf(".");
         String prefix = Path.substring(0, i+1);
-        if(method == "lzss")
+        if(method.toLowerCase().equals("lzss"))
         {
-            LZSS alg = new LZSS(prefix + method);
+            LZSS alg = new LZSS(prefix + method, false);
             Ctrl_Input_Text in = new Ctrl_Input_Text(Path);
             alg.Compressor(in);
             Ctrl_Output outp = alg.print();
             outp.print();
         }
-        else if(method == "lzw")
+        else if(method.toLowerCase().equals("lzw"))
         {
-
+            LZW alg = new LZW(prefix + method, false);
+            Ctrl_Input_Text in = new Ctrl_Input_Text(Path);
+            Ctrl_Output outp = alg.print_encode(in);
+            outp.print();
         }
         else if(method == "lz78")
         {
@@ -48,7 +52,7 @@ public class Ctrl_Algorithm {
     {
         int i = Path.lastIndexOf(".");
         String prefix = Path.substring(0, i+1);
-        if(method == "ppm")
+        if(method.toLowerCase().equals("ppm"))
         {
 
         }
@@ -56,16 +60,21 @@ public class Ctrl_Algorithm {
         {
             Ctrl_Input inP = new Ctrl_Input(Path);
             String decide = inP.getAlg();
-            if(decide == "lzss")
+            if(decide.toLowerCase().equals("lzss"))
             {               
-                LZSS alg = new LZSS(prefix + "txt");        
-                alg.Decompressor((Ctrl_Input_LZSS)inP);
+                LZSS alg = new LZSS(prefix + "txt", true);  
+                Ctrl_Input_LZSS inP2 = new Ctrl_Input_LZSS(Path);
+                alg.Decompressor(inP2);      
+                //alg.Decompressor((Ctrl_Input_LZSS)inP);
                 Ctrl_Output outp = alg.print();
                 outp.print();
             }
-            else if(decide == "lzw")
+            else if(decide.toLowerCase().equals("lzw"))
             {
-
+                LZW alg = new LZW(prefix + "txt", true);  
+                Ctrl_Input_LZW inP2 = new Ctrl_Input_LZW(Path);
+                Ctrl_Output outp = alg.print_decode(inP2);
+                outp.print();
             }
             else if(decide == "lz78")
             {

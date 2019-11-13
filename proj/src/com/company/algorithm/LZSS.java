@@ -36,9 +36,9 @@ public class LZSS implements Algorithm
      * @brief El constructor.
      * @param aux inicialitza una instància Ctrl_Output.
      */
-    public LZSS(String aux)
+    public LZSS(String aux, boolean b)
     {
-        Output = new Ctrl_Output(aux, "lzss");
+        Output = new Ctrl_Output(aux, "lzss", b);
     }
 
     /**

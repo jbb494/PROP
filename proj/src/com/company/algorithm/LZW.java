@@ -33,8 +33,8 @@ public class LZW implements Algorithm {
 	 * @brief Constructor de la clase LZW
 	 * @param aux Path de sortida
 	 */
-	public LZW(String aux) {
-		Output = new Ctrl_Output(aux, "lzw");
+	public LZW(String aux, boolean b) {
+		Output = new Ctrl_Output(aux, "lzw", b);
 	}
 
 

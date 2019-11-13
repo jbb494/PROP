@@ -8,10 +8,16 @@ public class Ctrl_Output {
     Output Output_Class;
 
     //Constructor
-    public Ctrl_Output(String path, String method) {
+    public Ctrl_Output(String path, String method, boolean b) {
         Output_Class = new Output(path);
-
-        switch(method.toLowerCase()) {
+        
+        if (b) {
+            if (method.toLowerCase().equals("lzss"))
+                add((byte)2, 2);
+            else 
+                add((byte)1, 2);
+        }
+        /*{
             case "lz78":
                 add((byte)0, 2);
                 break;
@@ -21,7 +27,7 @@ public class Ctrl_Output {
             case "lzss":
                 add((byte)2, 2);
                 break;
-        }
+        }*/
     }
 
     //Functions
@@ -68,7 +74,7 @@ public class Ctrl_Output {
 
     
     public void print()
-    {
+    {   
         Output_Class.print();
     }
 

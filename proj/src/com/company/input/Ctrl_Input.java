@@ -37,6 +37,10 @@ public class Ctrl_Input {
         return Input_class.getDecodeAlg();
     }
 
+    public void getMetadata() {
+        Input_class.getBits(2);
+    }
+
     /*
     Agafeu d'aquí la vostra funció, modifiqueu-la convenientment i posau-la al vostre fill de Ctrl_Input
 
