@@ -1,13 +1,8 @@
-<<<<<<< Updated upstream
-
-import com.company.master.Ctrl_Master;
-=======
 //import java.util.AbstractMap;
 import domini.algorithm.*;
 import persistencia.input.*;
 import persistencia.output.*;
 import presentacion.master.Ctrl_Master;
->>>>>>> Stashed changes
 
 public class Main {
 
