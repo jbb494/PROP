@@ -38,7 +38,7 @@ public class LZSS implements Algorithm
      */
     public LZSS(String aux)
     {
-        Output = new Ctrl_Output(aux);
+        Output = new Ctrl_Output(aux, "lzss");
     }
 
     /**
