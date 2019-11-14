@@ -66,13 +66,11 @@ public class Ctrl_Output {
     }
 
     
-    public void print()
-    {   
+    public void print() {   
         Output_Class.print();
     }
 
-    public void printString()
-    {
+    public void printString() {
         Output_Class.printString();
     }
 

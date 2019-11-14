@@ -22,6 +22,7 @@ public class Input {
     private boolean end;
     private int illegals; //nombre de bits que s'han intentat legir però queden fora del fitxer
     
+    private Boolean gotExtension = false;
     // Scanner obtenerNumero = new Scanner(System.in);
     public Input(String path) {
         try {   
@@ -60,7 +61,7 @@ public class Input {
     public byte getBits(int num_bits) 
     // pre: 1 <= num_bits <= 8        <-- IMPORTANT!!!
     {
-        
+        if(num_bits < 1 || num_bits > 8)throw new IllegalArgumentException("num_bits tiene que ser un valor entre 1 y 8 incluidos");
         if (end) {
             illegals += num_bits;
             return 0;
@@ -116,10 +117,14 @@ public class Input {
 
     public String getDecodeAlg() //0 si lz78, 1 si lzw o 2 si lzss
     {
+        if(gotExtension) {
+            throw new IllegalArgumentException("Ya hemos cogido la metada");
+        }
+        this.gotExtension = true;
         byte aux = getBits(2);
         if(aux == (byte)0) return "lz78";
         else if(aux == (byte)1) return "lzw";
         else if(aux == (byte)2) return "lzss";
-        else return "error";
+        else throw new IllegalArgumentException("La metadata no es correcta");
     }
 }
