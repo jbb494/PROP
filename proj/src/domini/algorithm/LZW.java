@@ -11,7 +11,7 @@ import java.util.*;
 import persistencia.input.Ctrl_Input_LZW;
 import persistencia.input.Ctrl_Input_Text;
 import persistencia.output.Ctrl_Output;
-import domini.utils.LZW_Dict_Decode;
+import domini.utils.Dict_Decode;
 import domini.utils.LZW_Dict_Encode;
 
 public class LZW {
@@ -80,7 +80,7 @@ public class LZW {
 	public ArrayList<Byte> decompression(Ctrl_Input_LZW inp) {
 		ArrayList<Byte> result = new ArrayList<>();
 		
-		LZW_Dict_Decode table = new LZW_Dict_Decode();
+		Dict_Decode table = new Dict_Decode(true, -1);
 		Integer i = -1;
 		
 		while (!inp.finished()) {
@@ -93,7 +93,7 @@ public class LZW {
 
 			//Dictionary's maximum size -> Reset it
 			if (sz == Limit) { 
-				table.reset_dictionary();
+				table.reset_dictionary(true);
 			}				
 			else if (k > sz) {
 				System.out.println("Liada");
