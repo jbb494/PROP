@@ -3,7 +3,7 @@ package persistencia.input;
 import java.util.ArrayList;
 import java.util.List;
 
-import domini.utils.IntorChar;
+import domini.utils.IntorByte;
 import domini.utils.byteToConversion;
 
 public class Ctrl_Input_LZSS extends Ctrl_Input {
@@ -22,16 +22,16 @@ public class Ctrl_Input_LZSS extends Ctrl_Input {
        * @brief Mètode per aconseguir la unitat mínima necessària.
        * @return Tracta d'obtenir o bé un Character o bé dos Integers.
        */
-    public IntorChar getLZSS()
+    public IntorByte getLZSS()
     {
 
         byte aux = Input_class.getBits(1);
-        IntorChar ioc;
+        IntorByte ioc;
         if(aux == (byte)0) //char
         {
             aux = Input_class.getBits(8);
-            ioc = new IntorChar(true);
-            ioc.SetChar(byteToConversion.byteToCharacter(aux));
+            ioc = new IntorByte(true);
+            ioc.SetByte(aux);
         }
         else
         {
@@ -41,7 +41,7 @@ public class Ctrl_Input_LZSS extends Ctrl_Input {
             aux = Input_class.getBits(8);
             lb.add(aux);
             int despl = byteToConversion.byteToInteger(lb);
-            ioc = new IntorChar(false);
+            ioc = new IntorByte(false);
             ioc.SetDespl(despl);
             aux = Input_class.getBits(5);
             lb = new ArrayList<Byte>();

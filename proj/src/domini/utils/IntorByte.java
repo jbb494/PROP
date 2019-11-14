@@ -9,17 +9,17 @@
 
 package domini.utils;
 
-public class IntorChar {
+public class IntorByte {
 
    /**
     * @param intochar Bool on false són 2 int i true és un char.
     */
-   private boolean intochar; 
+   private boolean intobyte; 
 
    /**
     * @param caracter Char on té valor si intochar és true.
     */
-   private char caracter;
+   private byte caracter;
 
    /**
     * @param despl Té el valor d'un int si intochar és false.
@@ -35,9 +35,9 @@ public class IntorChar {
     * @brief El constructor.
     * @param b Si és true es un Character, si és false, són dos int's.
     */
-   public IntorChar(boolean b)
+   public IntorByte(boolean b)
    {
-      intochar = b;
+      intobyte = b;
    }
    
    /**
@@ -65,7 +65,7 @@ public class IntorChar {
     * @brief Mètode per establir un possible char.
     * @param c Valor que volem posar al atribut caracter.
     */
-   public void SetChar(char c)
+   public void SetByte(byte c)
    {
       caracter = c;
    }
@@ -95,7 +95,7 @@ public class IntorChar {
     * @brief Mètode per obtenir un possible char.
     * @return valor del atribut caracter.
     */
-   public char GetChar()
+   public byte GetByte()
    {
       return caracter;
    }
@@ -105,9 +105,9 @@ public class IntorChar {
     * @brief Mètode per saber si és un char o 2 int's.
     * @return valor del atribut intochar.
     */
-   public boolean IsIntorChar()
+   public boolean IsIntorByte()
    {
-      return intochar;
+      return intobyte;
    }
 
 }

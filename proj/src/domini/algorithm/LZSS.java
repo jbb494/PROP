@@ -5,7 +5,7 @@ import java.util.*;
 import persistencia.input.Ctrl_Input_LZSS;
 import persistencia.input.Ctrl_Input_Text;
 import persistencia.output.Ctrl_Output;
-import domini.utils.IntorChar;
+import domini.utils.IntorByte;;
 
 public class LZSS {
 
@@ -31,10 +31,10 @@ public class LZSS {
      * @param value
      * @return llista de coincidència de "value" a "map".
      */
-    private ArrayList<Integer> GetKey(Map<Integer, Character> map, char value) {
+    private ArrayList<Integer> GetKey(Map<Integer, Byte> map, byte value) {
         
         ArrayList<Integer> aux = new ArrayList<Integer>();
-        for (Map.Entry<Integer, Character> entry : map.entrySet())
+        for (Map.Entry<Integer, Byte> entry : map.entrySet())
              if (entry.getValue().equals(value))
                  aux.add(entry.getKey());
         return aux;
@@ -58,17 +58,19 @@ public class LZSS {
      */
     public void Compressor(Ctrl_Input_Text in)
     {
-        String aux = "";
-        Map<Integer, Character> vc = new TreeMap<Integer, Character>();
-        char nextChar;
+        ArrayList<Byte> aux = new ArrayList<Byte>(); 
+        //String aux = "";
+        Map<Integer, Byte> vc = new TreeMap<Integer, Byte>();
+        byte nextByte;
         boolean first = true;
         boolean found2 = false;
         int paux = 0, punter = 0, pivot = 0, pivnotf = 0, i = 0;
         while(!in.finished())
         {
-            nextChar = in.get();
-            aux = aux.concat(String.valueOf(nextChar));
-            if(vc.containsValue(nextChar))
+            nextByte = in.get();
+            aux.add(nextByte);
+            //aux = aux.concat(String.valueOf(nextByte));
+            if(vc.containsValue(nextByte))
             {
                 if(first)
                 {
@@ -76,19 +78,23 @@ public class LZSS {
                     punter = i;
                 }
                 ArrayList<Integer> keys;
-                if(aux != "") keys = GetKey(vc, aux.charAt(0));
-                else keys = GetKey(vc, nextChar);
+                if(aux.size() != 0) keys = GetKey(vc, aux.get(0));
+                else keys = GetKey(vc, nextByte);
                 boolean found = false;
-                if(aux == "") aux = String.valueOf(nextChar);
+                if(aux.size() == 0)
+                {
+                    aux = new ArrayList<Byte>();
+                    aux.add(nextByte);
+                } 
                 int max = 0;
                 for(int j = 0; j < keys.size() && !found; j++)
                 {
                     int ji = 0;
                     pivot = keys.get(j);
-                    while(!found  && (pivot+ji) < punter && (pivot + ji) < vc.size() && (ji < aux.length()) && aux.charAt(ji) == vc.get(pivot + ji))
+                    while(!found  && (pivot+ji) < punter && (pivot + ji) < vc.size() && (ji < aux.size()) && aux.get(ji) == vc.get(pivot + ji))
                     {
                         ji++;
-                        if(ji == aux.length()) found = true;
+                        if(ji == aux.size()) found = true;
                         if(max < ji)
                         {
                             max = ji;
@@ -96,68 +102,69 @@ public class LZSS {
                         }
                     }
                 }
-                if(found && aux.length() == 34)
+                if(found && aux.size() == 34)
                 {
                     Output.add((byte)1, 1);
                     Output.add(punter - pivot, 13);
                     Output.add(31, 5);
-                    aux = "";
+                    aux = new ArrayList<Byte>();
                     first = true;
                 }
-                else if(!found && aux.length() >= 4)
+                else if(!found && aux.size() >= 4)
                 {
                     Output.add((byte)1, 1);
                     Output.add(punter - pivnotf, 13);
-                    punter += (aux.length() - 1);
-                    Output.add(aux.length() - 4, 5);
-                    aux = String.valueOf(nextChar);
+                    punter += (aux.size() - 1);
+                    Output.add(aux.size() - 4, 5);
+                    aux = new ArrayList<Byte>();
+                    aux.add(nextByte);
                 }
-                else if(!found && aux.length() < 4)
+                else if(!found && aux.size() < 4)
                 {
                     Output.add((byte)0, 1);
-                    Output.add(aux.charAt(0));
-                    aux = aux.substring(1);
+                    Output.add(aux.get(0), 8);
+                    aux.remove(0);
                     punter++;
                 }
                 found2 = found;
             }
             else
             {
-                if(aux.length() >= 4)
+                if(aux.size() >= 4)
                 {
                     Output.add((byte)1, 1);
                     Output.add(punter - pivnotf, 13);
-                    Output.add(aux.length() - 4, 5);
+                    Output.add(aux.size() - 4, 5);
                     Output.add((byte)0, 1);
-                    Output.add(nextChar);
+                    Output.add(nextByte, 8);
                 }
                 else
                 {
-                    for(int j = 0; j < aux.length(); j++)
+                    for(int j = 0; j < aux.size(); j++)
                     {
                         Output.add((byte)0, 1);
-                        Output.add(aux.charAt(j));
+                        Output.add(aux.get(j), 8);
                     }
                 }
-                aux = "";
+                aux = new ArrayList<Byte>();
                 first = true;
             }
-            vc.put(i, nextChar);
+            vc.put(i, nextByte);
             if(vc.size() > 8191) vc.remove(paux++);
             i++;
         }
-        if(found2 && aux.length() >= 3 && aux.length() < 34)
+        if(found2 && aux.size() >= 3 && aux.size() < 34)
         {
             Output.add((byte)1, 1);
             Output.add(punter - pivot, 13);
-            Output.add(aux.length()-3, 5);
+            Output.add(aux.size()-3, 5);
         }
-        else if(!found2 && aux.length() > 0)
+        else if(!found2 && aux.size() > 0)
         {
-            for(int j = 0; j < aux.length(); j++)
+            for(int j = 0; j < aux.size(); j++)
             {
                 Output.add((byte)0, 1);
-                Output.add(aux.charAt(j));
+                Output.add(aux.get(j),8);
             }
         }
         /*Output.add((byte)1, 1);
@@ -173,18 +180,18 @@ public class LZSS {
      */
     public void Decompressor(Ctrl_Input_LZSS in)
     {
-        Map<Integer, Character> vc = new TreeMap<Integer, Character>();
+        Map<Integer, Byte> vc = new TreeMap<Integer, Byte>();
         int pos = 0, posmap = 0;
         //boolean end = false;
-        IntorChar ioc;
+        IntorByte ioc;
         while(!in.finished())
         {
             ioc = in.getLZSS();
-            if (in.finished())return;
-            if(ioc.IsIntorChar())
+            if (in.finished()) return;
+            if(ioc.IsIntorByte())
             {
-                Character c = ioc.GetChar();
-                Output.add(c);
+                byte c = ioc.GetByte();
+                Output.add(c, 8);
                 vc.put(posmap++, c);
                 if(vc.size() > 8191) vc.remove(pos++);
             }
@@ -192,16 +199,17 @@ public class LZSS {
             {
                 int despl = ioc.GetDespl();
                 int mida = ioc.GetMida();
-                String aux = "";
+                ArrayList<Byte> aux = new ArrayList<Byte>();
                 for(int j = 0; j < mida; j++)
                 {
-                    Character c = vc.get(posmap-despl+j);
-                    aux = aux.concat(String.valueOf(c));
+                    byte c = vc.get(posmap-despl+j);
+                    aux.add(c);
                     vc.put(posmap+j, c);
                     if(vc.size() > 8191) vc.remove(pos++);
                 }
                 posmap += mida;
-                Output.add(aux);
+                for(int w = 0; w < aux.size(); w++)
+                    Output.add(aux.get(w), 8);
             }
         }
     }
