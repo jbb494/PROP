@@ -1,5 +1,5 @@
 /**
- * @class LZW_Dict_Decode
+ * @class Dict_Decode
  * @brief Diccionari (amb els mètodes corresponents) emprat per a la descompressió amb LZW
  * @author Miguel Paracuellos Ocaña
  */
@@ -7,7 +7,7 @@ package domini.utils;
 
 import java.util.ArrayList;
 
-public class LZW_Dict_Decode {
+public class Dict_Decode {
     //Attributes
     /**
      * @param Limit Màxim nombre d'entrades que pot tenir el diccionari
@@ -18,24 +18,27 @@ public class LZW_Dict_Decode {
      * @brief Cada element consta d'un caràcter i un index de la seqüència previa al caràcter
      */
     ArrayList<Pair<Integer,Byte> > v;
+    Integer valorNeutre;
 
     /**
      * @brief Constructor de la classe
      * @note Inicialitzem el vector
+     * @param inicializeAscii És true si inicialitzem només començar el diccionari amb la taula ascii.
      */
-    public LZW_Dict_Decode() {
+    public Dict_Decode(Boolean inicializeAscii, Integer valorNeutre) {
         v = new ArrayList<Pair<Integer,Byte> >();
-        reset_dictionary();
+        reset_dictionary(inicializeAscii);
+        this.valorNeutre = valorNeutre;
     }
 
     /**
      * @brief Reinicialitza el vector
      * @note Es crida quan sigui ple o sigui creat
      */
-    public void reset_dictionary() {
+    public void reset_dictionary(Boolean b) {
         v.clear();
         //v.ensureCapacity(Limit);
-
+        if(!b)return ;
         for (int i = 0; i < 256; ++i) {
             v.add( new Pair<Integer,Byte>(-1, (byte)i) );
         }
@@ -53,13 +56,11 @@ public class LZW_Dict_Decode {
         ArrayList<Byte> result = new ArrayList<>();
         result.clear();
         //result.ensureCapacity(Limit);
-
-        while (i != -1) {
-            result.add(0, v.get(i).getRight());
-            i = v.get(i).getLeft();
+        Integer diff = this.valorNeutre +1;
+        while (i != this.valorNeutre) {
+            result.add(0, v.get(i-diff).getRight());
+            i = v.get(i-diff).getLeft();
         }
-
-        //Collections.reverse(result);
 
         return result;
     }
