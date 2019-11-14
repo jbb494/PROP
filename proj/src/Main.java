@@ -1,7 +1,5 @@
-//import java.util.AbstractMap;
-import com.company.algorithm.*;
-import com.company.input.*;
-import com.company.output.*;
+
+import presentacion.master.Ctrl_Master;
 
 public class Main {
 
@@ -11,6 +9,7 @@ public class Main {
 
     public static void main(String[] args) 
     {   
+<<<<<<< HEAD
         Integer n = 0;
         String mode = "JPEG";
         if (mode == "JPEG") {
@@ -188,8 +187,13 @@ public class Main {
             System.out.println(in.getExtension());
             System.out.println(in.getWidth());
             System.out.println(in.getHeight());
+=======
+        while(true)
+        {
+            Ctrl_Master CM = new Ctrl_Master();
+            CM.Context();
+            System.out.println(CM.Work());
+>>>>>>> 8c0f125e396b99d4ee3f953bd5e92131b877c9ca
         }
-       
-
     }
 }

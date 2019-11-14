@@ -20,7 +20,7 @@
             "type": "java",
             "name": "Debug (Launch)-LZW",
             "request": "launch",
-            "mainClass": "com.company.algorithm.LZW"
+            "mainClass": "domini.algorithm.LZW"
         }
     ]
 }
