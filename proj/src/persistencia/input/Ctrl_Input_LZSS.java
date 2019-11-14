@@ -18,9 +18,9 @@ public class Ctrl_Input_LZSS extends Ctrl_Input {
     }
 
     /**
-       * @fn public IntorChar getLZSS()
+       * @fn public IntorByte getLZSS()
        * @brief Mètode per aconseguir la unitat mínima necessària.
-       * @return Tracta d'obtenir o bé un Character o bé dos Integers.
+       * @return Tracta d'obtenir o bé un Byte o bé dos Integers.
        */
     public IntorByte getLZSS()
     {

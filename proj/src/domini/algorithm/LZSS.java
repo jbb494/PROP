@@ -18,6 +18,7 @@ public class LZSS {
      /**
      * @brief El constructor.
      * @param aux inicialitza una instància Ctrl_Output.
+     * @param b Si false comprimeix else descomprimeix.
      */
     public LZSS(String aux, boolean b)
     {
@@ -25,7 +26,7 @@ public class LZSS {
     }
     
     /**
-     * @fn private ArrayList<Integer> GetKey(Map<Integer, Character> map, char value)
+     * @fn private ArrayList<Integer> GetKey(Map<Integer, Byte> map, byte value)
      * @brief Mètode auxiliar del compressor.
      * @param map 
      * @param value
@@ -58,8 +59,7 @@ public class LZSS {
      */
     public void Compressor(Ctrl_Input_Text in)
     {
-        ArrayList<Byte> aux = new ArrayList<Byte>(); 
-        //String aux = "";
+        ArrayList<Byte> aux = new ArrayList<Byte>();
         Map<Integer, Byte> vc = new TreeMap<Integer, Byte>();
         byte nextByte;
         boolean first = true;
@@ -69,7 +69,6 @@ public class LZSS {
         {
             nextByte = in.get();
             aux.add(nextByte);
-            //aux = aux.concat(String.valueOf(nextByte));
             if(vc.containsValue(nextByte))
             {
                 if(first)
@@ -78,14 +77,8 @@ public class LZSS {
                     punter = i;
                 }
                 ArrayList<Integer> keys;
-                if(aux.size() != 0) keys = GetKey(vc, aux.get(0));
-                else keys = GetKey(vc, nextByte);
+                keys = GetKey(vc, aux.get(0));
                 boolean found = false;
-                if(aux.size() == 0)
-                {
-                    aux = new ArrayList<Byte>();
-                    aux.add(nextByte);
-                } 
                 int max = 0;
                 for(int j = 0; j < keys.size() && !found; j++)
                 {
@@ -167,9 +160,6 @@ public class LZSS {
                 Output.add(aux.get(j),8);
             }
         }
-        /*Output.add((byte)1, 1);
-        Output.add(0, 13);
-        Output.add(0, 5); //fi del fitxer*/
     }
 
 

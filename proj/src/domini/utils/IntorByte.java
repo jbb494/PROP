@@ -1,4 +1,4 @@
-/** @class IntorChar 
+/** @class IntorByte 
  *  @brief Classe auxiliar per l'algorisme LZSS.
  *   
  *  En aquesta classe es tracta de construir un objecte
@@ -12,12 +12,12 @@ package domini.utils;
 public class IntorByte {
 
    /**
-    * @param intochar Bool on false són 2 int i true és un char.
+    * @param intobyte Bool on false són 2 int's i true és un byte.
     */
    private boolean intobyte; 
 
    /**
-    * @param caracter Char on té valor si intochar és true.
+    * @param caracter byte on té valor si intochar és true.
     */
    private byte caracter;
 
@@ -33,7 +33,7 @@ public class IntorByte {
    
    /**
     * @brief El constructor.
-    * @param b Si és true es un Character, si és false, són dos int's.
+    * @param b Si és true es un byte, si és false, són dos int's.
     */
    public IntorByte(boolean b)
    {
@@ -61,8 +61,8 @@ public class IntorByte {
    }
 
    /**
-    * @fn public void SetChar(char c)
-    * @brief Mètode per establir un possible char.
+    * @fn public void SetByte(byte c)
+    * @brief Mètode per establir un possible byte.
     * @param c Valor que volem posar al atribut caracter.
     */
    public void SetByte(byte c)
@@ -91,8 +91,8 @@ public class IntorByte {
    }
 
    /**
-    * @fn public char GetChar()
-    * @brief Mètode per obtenir un possible char.
+    * @fn public byte GetByte()
+    * @brief Mètode per obtenir un possible byte.
     * @return valor del atribut caracter.
     */
    public byte GetByte()
@@ -101,9 +101,9 @@ public class IntorByte {
    }
 
    /**
-    * @fn public boolean IsIntorChar()
-    * @brief Mètode per saber si és un char o 2 int's.
-    * @return valor del atribut intochar.
+    * @fn public boolean IsIntorByte()
+    * @brief Mètode per saber si és un byte o 2 int's.
+    * @return valor del atribut intobyte.
     */
    public boolean IsIntorByte()
    {
