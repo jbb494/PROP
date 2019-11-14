@@ -5,23 +5,27 @@ import java.util.ArrayList;
 class Driver_Trie {
 
     public static void main(String[] args){
-        Trie<Character> t = new Trie<Character>();
-        ArrayList<Character> a = new ArrayList<Character>();
-        a.add('b');
-        ArrayList<Character> b = new ArrayList<Character>();
-        b.add('a');
-        b.add('b');
-        ArrayList<Character> c = new ArrayList<Character>();
-        c.add('c');
+        Trie<Byte> t = new Trie<Byte>();
+        ArrayList<Byte> a = new ArrayList<Byte>();
+        a.add((byte)76);
+        ArrayList<Byte> b = new ArrayList<Byte>();
+        b.add((byte)76);
+        b.add((byte)77);
+        ArrayList<Byte> c = new ArrayList<Byte>();
+        c.add((byte)79);
         
         System.out.println("Inserted: " + a );
-        t.insert(a);   
+        t.insert(a,0);   
         System.out.println("Inserted: " + b );     
-        t.insert(b);
+        t.insert(b,1);
 
-        System.out.println((t.containsNode(a) ? "it does contain" : "it doesn't contain") + ": " + a );
-        System.out.println((t.containsNode(b) ? "it does contain" : "it doesn't contain") + ": " + b );
-        System.out.println((t.containsNode(c) ? "it does contain" : "it doesn't contain") + ": " + c );
+        Integer contains1 = t.indexNode(a);
+        Integer contains2 = t.indexNode(b);
+        Integer contains3 = t.indexNode(c);
+
+        System.out.println((contains1 != -1 ? "It does contain with index " + contains1 : "it doesn't contain") + ": " + a );
+        System.out.println((contains2 != -1 ? "It does contain with index " + contains2 : "it doesn't contain") + ": " + b );
+        System.out.println((contains3 != -1 ? "It does contain with index " + contains3 : "it doesn't contain") + ": " + c );
 
     }
 }

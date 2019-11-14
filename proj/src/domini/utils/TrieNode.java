@@ -5,26 +5,17 @@ import java.util.Map;
 
 class TrieNode<T> {
     private final Map<T, TrieNode<T>> children = new HashMap<>();
-    private boolean endOfWord;
-    // private Integer index;
+    private Integer index;
 
-    /*public TrieNode(Integer arg){
-        this.index = arg;
+    public TrieNode(Integer index){
+        this.index = index;
     }
-*/
-    Map<T, TrieNode<T>> getChildren() {
+
+    public Map<T, TrieNode<T>> getChildren() {
         return children;
     }
 
-    boolean isEndOfWord() {
-        return endOfWord;
-    }
-
-    void setEndOfWord(boolean endOfWord) {
-        this.endOfWord = endOfWord;
-    }
-    /*Integer get_index(){
+    public Integer getIndex(){
         return index;
     }
-    */
 }
