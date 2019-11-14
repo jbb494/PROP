@@ -2,16 +2,9 @@
     "configurations": [
         {
             "type": "java",
-<<<<<<< HEAD
-            "name": "CodeLens (Launch) - Huffman",
-            "request": "launch",
-            "mainClass": "com.company.algorithm.Huffman",
-            "projectName": "PROP_c7ade387"
-=======
             "name": "CodeLens (Launch) - Driver__Input",
             "request": "launch",
             "mainClass": "Driver__Input"
->>>>>>> 8c0f125e396b99d4ee3f953bd5e92131b877c9ca
         },
         {
             "type": "java",
