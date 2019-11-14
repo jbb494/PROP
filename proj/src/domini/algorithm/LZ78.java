@@ -88,6 +88,7 @@ public class LZ78 {
 			Pair <Integer, Byte> entr = in.get();
 			//System.out.println((in.finished() ? "finsihed" : "not Finished")
 			// + " Int: "+ entr.getLeft() + " Byte: " + entr.getRight());
+			if(in.finished()) return;
 			Integer punterMap = entr.getLeft();
 			Byte nextByte = entr.getRight();
 
