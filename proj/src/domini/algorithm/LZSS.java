@@ -76,8 +76,7 @@ public class LZSS {
                     first = false;
                     punter = i;
                 }
-                ArrayList<Integer> keys;
-                keys = GetKey(vc, aux.get(0));
+                ArrayList<Integer> keys = GetKey(vc, aux.get(0));
                 boolean found = false;
                 int max = 0;
                 for(int j = 0; j < keys.size() && !found; j++)
