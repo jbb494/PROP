@@ -16,26 +16,28 @@ public class Ctrl_Input_Text extends Ctrl_Input {
         byte actual = seguent;
         seguent = Input_class.getBits(8);
         String res = "";
-        char c = (char)seguent;
-        int i = (int)seguent; 
+        char c = (char)actual;
+        int i = (int)actual; 
         if (i < 128) {
-            res.concat((char) i + "");
+            res.concat(c + "");
         } else if (i > 127 && i < 2048) {
-            int j = (i >> 6) | 192;
-            res += ((char) j);
-            j = (i & 63) | 128;
-            res += ((char) j);
+            res.concat(c + "");
+            actual = seguent;
+            seguent = Input_class.getBits(8);
+            c = (char)actual;
+            res.concat(c + "");
         } else {
-            int j = (i >> 12) | 224;
-            res += ((char) j);
-            j = ((i >> 6) & 63) | 128;
-            res += ((char) j);
-            j = (c & 63) | 128;
-            res += ((char) j);
+            res.concat(c + "");
+            actual = seguent;
+            seguent = Input_class.getBits(8);
+            c = (char)actual;
+            res.concat(c + "");
+            actual = seguent;
+            seguent = Input_class.getBits(8);
+            c = (char)actual;
+            res.concat(c + "");
         }
-
-        char aux = (char)actual;
-        String ret = utf8.uft8Encode(aux + "");
+        String ret = utf8.uft8Encode(res);
         return ret;
     }
 
