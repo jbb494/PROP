@@ -26,12 +26,10 @@ public class Ctrl_Input_LZ78 extends Ctrl_Input {
      * @fn public Pair<Integer, Character> get()
      * @return Primer enter no llegit de l'arxiu comprimit amb LZ78
      */
-    public Pair <Integer, Character> get()
+    public Pair <Integer, Byte> get()
     {
         Integer intAux = byteToConversion.byteToInteger(Input_class.getMoreBits(32));
-
-        Character charAux = (char)Input_class.getBits(8);
-
-        return new Pair <Integer, Character>(intAux, charAux);
+        Byte byteAux = Input_class.getBits(8);
+        return new Pair <Integer, Byte>(intAux, byteAux);
     }
 }

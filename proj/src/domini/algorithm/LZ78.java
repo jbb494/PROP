@@ -35,26 +35,24 @@ public class LZ78 {
 	 */
 	public void Compressor(Ctrl_Input_Text in)
 	{
-        Map<String, Integer> map = new HashMap<String, Integer>();
+        Map<ArrayList<Byte>, Integer> map = new HashMap<ArrayList<Byte>, Integer>();
 		
-		Character nextChar;
+		Byte nextByte;
 				
-		String seq = "";
+		ArrayList<Byte> seq = new ArrayList<Byte>();
 
 		Integer punterMap = 0;
 		
 		while(!in.finished()) {
-			nextChar = in.get();
-			String nextCharS;
-			//if(nextChar == ' ')nextCharS = "\\s";
-			//else nextCharS = nextChar.toString();
-			nextCharS = nextChar.toString();
+			nextByte = in.get();
 
-			String novaEntrada = seq.concat(nextCharS);
+			ArrayList<Byte> novaEntrada = new ArrayList<Byte> ();
+			novaEntrada.addAll(seq);
+			novaEntrada.add(nextByte);
 			
             if(map.containsKey(novaEntrada))
             {
-				seq = seq.concat(nextCharS);
+				seq.add(nextByte);
 
             }else
             {
@@ -63,7 +61,7 @@ public class LZ78 {
 
 				//System.out.println("punterMap: " + punterMap + " midaPunter: " + midaPunter);
 				
-				if(seq.length() >= 1){
+				if(seq.size() >= 1){
 					Integer punterActual = map.get(seq) +1;
 
 					Output.add(punterActual, 32);
@@ -72,11 +70,11 @@ public class LZ78 {
 					Output.add(0, 32);
 				}
 
-				Output.add(nextChar);
+				Output.add(nextByte, 8);
 
 				map.put(novaEntrada, punterMap);
 
-				seq = "";
+				seq = new ArrayList<Byte>();
 				punterMap++;
 			}
 		}
@@ -89,21 +87,33 @@ public class LZ78 {
 	 */
 	public void Decompressor(Ctrl_Input_LZ78 in) 
 	{
-		Map<Integer, String> map = new HashMap<Integer, String>();
+		Map<Integer, ArrayList<Byte>> map = new HashMap<Integer, ArrayList<Byte>>();
 		Integer punterActual = 0;
 		while(!in.finished()) {
-			//System.out.println("Int: " + entr.getKey() + "Char: " + entr.getValue());
-			Pair <Integer, Character> entr = in.get();
+			Pair <Integer, Byte> entr = in.get();
+			//System.out.println((in.finished() ? "finsihed" : "not Finished")
+			// + " Int: "+ entr.getLeft() + " Byte: " + entr.getRight());
 			if(in.finished()) return;
 			Integer punterMap = entr.getLeft();
-			Character nextChar = entr.getRight();
+			Byte nextByte = entr.getRight();
 			if(punterMap == 0){
-				Output.add(nextChar);
-				map.put(punterActual++, nextChar.toString());
+				Output.add(nextByte,8);
+				ArrayList<Byte> aux = new ArrayList<Byte>();
+				aux.add(nextByte);
+				map.put(punterActual++, aux);
 			}else {
-				String seqPunterMap = map.get(punterMap-1);
-				map.put(punterActual++, seqPunterMap.concat(nextChar.toString()));
-				Output.add(seqPunterMap.concat(nextChar.toString()));		
+				try{
+				ArrayList<Byte> seqPunterMap = map.get(punterMap-1);
+				seqPunterMap.add(nextByte);
+				map.put(punterActual++, seqPunterMap);
+				//System.out.println("Size map: " + map.size() + " punterMap: " + punterMap + " seqPunterMap: " + seqPunterMap);
+				for (byte baux : seqPunterMap){
+					Output.add(baux,8);
+				}
+				// Output.add(seqPunterMap);
+				}catch(Exception e){
+					throw new IllegalArgumentException(e.getMessage());
+				}
 			}
 		}
 	}
