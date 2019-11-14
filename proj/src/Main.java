@@ -1,7 +1,4 @@
-//import java.util.AbstractMap;
-import domini.algorithm.*;
-import persistencia.input.*;
-import persistencia.output.*;
+
 import presentacion.master.Ctrl_Master;
 
 public class Main {
@@ -15,7 +12,8 @@ public class Main {
         while(true)
         {
             Ctrl_Master CM = new Ctrl_Master();
-            System.out.println(CM.Context());
+            CM.Context();
+            System.out.println(CM.Work());
         }
     }
 }

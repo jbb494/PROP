@@ -10,9 +10,6 @@ import persistencia.output.Ctrl_Output;
 public class Ctrl_Algorithm {
 
 
-    //Falta implementar que la classe Algorithm sigui el pare de totes les altres
-    Algorithm Alg;
-
     public Ctrl_Algorithm() {}
 
     public String Choose_Encoder(String Path, String method)

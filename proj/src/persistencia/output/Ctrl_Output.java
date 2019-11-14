@@ -19,17 +19,6 @@ public class Ctrl_Output {
             else if(method.toLowerCase().equals("lz78"))
                 add((byte)0, 2);
         }
-        /*{
-            case "lz78":
-                add((byte)0, 2);
-                break;
-            case "lzw":
-                add((byte)1, 2);
-                break;
-            case "lzss":
-                add((byte)2, 2);
-                break;
-        }*/
     }
 
     //Functions
