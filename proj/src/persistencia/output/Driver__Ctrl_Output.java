@@ -1,6 +1,6 @@
 package persistencia.output;
 
-import persistencia.output.Ctrl_Output;;
+import persistencia.output.Ctrl_Output;
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
 import java.util.ArrayList;
