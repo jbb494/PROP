@@ -62,7 +62,7 @@ public class Estadistica {
 
             System.out.println("La velocitat de compressió ha sigut de " + spd + " bytes/ms.");
             System.out.println("El grau de compressió és de " + String.format("%.6f", gc) + ". \n");
-
+            System.out.println("Temps en comprimir: " + (ts/1000) + " segons.");
         
         }
         else
