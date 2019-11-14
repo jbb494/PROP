@@ -57,6 +57,7 @@ public class Estadistica {
         File output = new File(out);
 
         if (input.exists() && output.exists()) {
+            if (ts == 0) ts = 1;
             long spd = input.length() / ts;
             double gc = (double)input.length() / (double)output.length();
 
