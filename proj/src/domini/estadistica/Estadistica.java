@@ -57,12 +57,13 @@ public class Estadistica {
         File output = new File(out);
 
         if (input.exists() && output.exists()) {
+            if (ts == 0) ts = 1;
             long spd = input.length() / ts;
             double gc = (double)input.length() / (double)output.length();
 
             System.out.println("La velocitat de compressió ha sigut de " + spd + " bytes/ms.");
             System.out.println("El grau de compressió és de " + String.format("%.6f", gc) + ". \n");
-
+            System.out.println("Temps en comprimir: " + (ts/1000) + " segons.");
         
         }
         else

@@ -32,7 +32,7 @@ public class Ctrl_Input_Img extends Ctrl_Input {
         return width;
     }
     
-    //FALTA COMPROVAR
+    
     public double[][][][] get()
     /*  Retorna una matriu ret[width/8][8][8][3],
         on ret[block][x][y][color] 
@@ -51,6 +51,7 @@ public class Ctrl_Input_Img extends Ctrl_Input {
                     ret[j/8][x][j%8][color] = (double)val / (double)max_val * 255.0;
                 }
             }
+            Input_class.getMoreBits((width - 8*n_blocks)*3*bits_per_val);
         }
         return ret;
     }
