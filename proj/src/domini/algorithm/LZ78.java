@@ -33,9 +33,8 @@ public class LZ78 {
 	 * @brief Comprimim un text amb l'algoritme LZ78
 	 * @param in accés al Controlador d'Input per el text
 	 */
-	public void Compressor(Ctrl_Input_Text in)
-	{
-        Map<ArrayList<Byte>, Integer> map = new HashMap<ArrayList<Byte>, Integer>();
+	public void Compressor(Ctrl_Input_Text in) {
+        Trie<Byte> map = new Trie<Byte>();
 		
 		Byte nextByte;
 				
@@ -50,8 +49,7 @@ public class LZ78 {
 			novaEntrada.addAll(seq);
 			novaEntrada.add(nextByte);
 			
-            if(map.containsKey(novaEntrada))
-            {
+            if(map.indexNode(novaEntrada) != -1) {
 				seq.add(nextByte);
             }else
             {
@@ -61,7 +59,7 @@ public class LZ78 {
 				//System.out.println("punterMap: " + punterMap + " midaPunter: " + midaPunter);
 				
 				if(seq.size() >= 1){
-					Integer punterActual = map.get(seq) +1;
+					Integer punterActual = map.indexNode(seq) +1;
 
 					Output.add(punterActual, 32);
 
@@ -71,7 +69,7 @@ public class LZ78 {
 
 				Output.add(nextByte, 8);
 
-				map.put(novaEntrada, punterMap);
+				map.insert(novaEntrada, punterMap);
 
 				seq = new ArrayList<Byte>();
 				punterMap++;
@@ -85,34 +83,22 @@ public class LZ78 {
 	 * @param inp accés al Controlador d'Input pel fitxer comprimit
 	 */
 	public void Decompressor(Ctrl_Input_LZ78 in) {
-		Map<Integer, ArrayList<Byte>> map = new HashMap<Integer, ArrayList<Byte>>();
-		Integer punterActual = 0;
+		Dict_Decode map = new Dict_Decode(false, 0);
 		while(!in.finished()) {
 			Pair <Integer, Byte> entr = in.get();
 			//System.out.println((in.finished() ? "finsihed" : "not Finished")
 			// + " Int: "+ entr.getLeft() + " Byte: " + entr.getRight());
-			if(in.finished()) return;
 			Integer punterMap = entr.getLeft();
 			Byte nextByte = entr.getRight();
-			if(punterMap == 0){
-				Output.add(nextByte,8);
-				ArrayList<Byte> aux = new ArrayList<Byte>();
-				aux.add(nextByte);
-				map.put(punterActual++, aux);
-			}else {
-				try{
-				ArrayList<Byte> seqPunterMap = map.get(punterMap-1);
-				seqPunterMap.add(nextByte);
-				map.put(punterActual++, seqPunterMap);
-				//System.out.println("Size map: " + map.size() + " punterMap: " + punterMap + " seqPunterMap: " + seqPunterMap);
-				for (byte baux : seqPunterMap){
-					Output.add(baux,8);
-				}
-				// Output.add(seqPunterMap);
-				}catch(Exception e){
-					throw new IllegalArgumentException(e.getMessage());
-				}
+
+			ArrayList<Byte> seqPunterMap = map.getWord(punterMap);
+			seqPunterMap.add(nextByte);
+			map.add(punterMap, nextByte);
+			//System.out.println("Size map: " + map.size() + " punterMap: " + punterMap + " seqPunterMap: " + seqPunterMap);
+			for (byte baux : seqPunterMap){
+				Output.add(baux,8);
 			}
+			// Output.add(seqPunterMap);				
 		}
 	}
 
