@@ -12,34 +12,16 @@ public class Ctrl_Input_Text extends Ctrl_Input {
     }
  
     //Passa tots els caràcters a codi ASCII
-    public String get() {
+    public char get() {
         byte actual = seguent;
-        seguent = Input_class.getBits(8);
-        String res = "";
-        char c = (char)actual;
-        int i = (int)actual; 
-        if (i < 128) {
-            res.concat(c + "");
-        } else if (i > 127 && i < 2048) {
-            res.concat(c + "");
-            actual = seguent;
-            seguent = Input_class.getBits(8);
-            c = (char)actual;
-            res.concat(c + "");
-        } else {
-            res.concat(c + "");
-            actual = seguent;
-            seguent = Input_class.getBits(8);
-            c = (char)actual;
-            res.concat(c + "");
-            actual = seguent;
-            seguent = Input_class.getBits(8);
-            c = (char)actual;
-            res.concat(c + "");
-        }
-        String ret = utf8.uft8Encode(res);
-        return ret;
+        seguent = Input_class.getBits(8); 
+        return (char)actual;
+        /*byte actual = seguent;
+        seguent = Input_class.getBits(8); 
+        char aux = (char)actual;
+        String ret = utf8.uft8Encode(aux + "");
+        return ret; */
     }
-
+ 
 
 }

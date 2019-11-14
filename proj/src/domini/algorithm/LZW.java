@@ -14,7 +14,7 @@ import persistencia.output.Ctrl_Output;
 import domini.utils.LZW_Dict_Decode;
 import domini.utils.LZW_Dict_Encode;
 
-public class LZW implements Algorithm {
+public class LZW {
 
 	//Attributes
 	/**

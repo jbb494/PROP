@@ -12,7 +12,7 @@ import domini.utils.*;
 import java.util.*;
 
 
-public class LZ78 implements Algorithm {
+public class LZ78 {
 	/**
      * @param Output Utilitzat per a la compressió i descompressió de fitxers.
      */

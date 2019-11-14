@@ -7,8 +7,7 @@ import persistencia.input.Ctrl_Input_Text;
 import persistencia.output.Ctrl_Output;
 import domini.utils.IntorChar;
 
-public class LZSS implements Algorithm
-{
+public class LZSS {
 
     /**
      * @param Output Utilitzat per a la compressió i descompressió de fitxers.
