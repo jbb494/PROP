@@ -40,7 +40,7 @@ public class LZW_Dict_Encode {
         arr_n.clear();
 
         for (int i = 0; i < 256; ++i) {
-            arr_n.add( new Node((char)i) );
+            arr_n.add( new Node((byte)i) );
         }
     }
 
@@ -53,8 +53,9 @@ public class LZW_Dict_Encode {
      * @param c Caràcter que volem passar a valor numeric
      * @return Valor numeric del caràcter
     */
-    public Integer Ascii_value(char c) {
+    public Integer Ascii_value(byte c) {
         int x = (int) c;
+        if (x < 0) x += 256;
         return (Integer)x;
     }
 
@@ -65,15 +66,15 @@ public class LZW_Dict_Encode {
      * @param c Caràcter actual
      * @return Retorna l'enter que farà referència a la nova cadena de caràcters
      */
-    public Integer search_and_insert_BST(Integer i, char c) {
-
+    public Integer search_and_insert_BST(Integer i, byte c) {
+        
         //Dictionary's maximum size -> where reset it
         if (arr_n.size() == Limit) 
             reset_dictionary();
 
         if (i == -1) 
             return Ascii_value(c);
-
+        
         Integer pos = arr_n.get(i).First;
         Integer sz = arr_n.size();
 
