@@ -52,21 +52,13 @@ public class LZW {
 		LZW_Dict_Encode table = new LZW_Dict_Encode();
 		Integer i = -1;
 		
-		System.out.println("IM IN");
-
 		while (!inp.finished()) {
 			byte c = inp.get();
-			
-			/*String s1 = String.format("%8s", Integer.toBinaryString(c & 0xFF)).replace(' ', '0');
-			System.out.println(s1);
-			System.out.println(c);*/
 
 			Integer aux = i;
 
 			if ( (i = table.search_and_insert_BST(aux, c)) == -1) {
 				result.add(aux);
-				System.out.println(aux);
-				//Ahora le estoy pasando un byte, arreglarlo
 				i = table.Ascii_value(c);
 			}
 		}
@@ -74,7 +66,6 @@ public class LZW {
 		
 		if (i != -1) {
 			result.add(i);	
-			System.out.println(i);	
 		}
 		
 		return result;
@@ -95,7 +86,6 @@ public class LZW {
 		while (!inp.finished()) {
 			Integer k = inp.get();
 			
-			//System.out.println(k);
 			if (inp.finished()) return result;
 			
 			Integer sz = table.getSize();
@@ -133,14 +123,11 @@ public class LZW {
 	 * @return Controlador d'Output per poder esciure el resultat
 	 */
 	public Ctrl_Output print_encode(Ctrl_Input_Text inp) {
-		System.out.println("PRE");
 		ArrayList<Integer> arr = compression(inp);
 		
 		for (int i = 0; i < arr.size(); ++i) {
 			Output.add(arr.get(i));
 		}
-
-		System.out.println("POST");
 
 		return Output;
 	}
