@@ -1,6 +1,7 @@
 package persistencia.output;
 
 import java.nio.ByteBuffer;
+import java.util.ArrayList;
 
 public class Ctrl_Output {
     
@@ -65,7 +66,12 @@ public class Ctrl_Output {
         } 
     }
 
-    
+    public void add(ArrayList<Byte> arr){
+        for(Byte b : arr){
+            add(b,8);
+        }
+    } 
+
     public void print() {   
         Output_Class.print();
     }
