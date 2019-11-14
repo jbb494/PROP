@@ -59,7 +59,7 @@ public class LZ78 implements Algorithm {
             }else
             {
 									
-				Integer midaPunter = (int)Math.ceil((Math.log((double)punterMap+1)/Math.log(2)));
+				//Integer midaPunter = (int)Math.ceil((Math.log((double)punterMap+1)/Math.log(2)));
 
 				//System.out.println("punterMap: " + punterMap + " midaPunter: " + midaPunter);
 				

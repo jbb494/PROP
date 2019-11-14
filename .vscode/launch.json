@@ -2,6 +2,12 @@
     "configurations": [
         {
             "type": "java",
+            "name": "CodeLens (Launch) - Driver__Input",
+            "request": "launch",
+            "mainClass": "Driver__Input"
+        },
+        {
+            "type": "java",
             "name": "CodeLens (Launch) - byteToConversion",
             "request": "launch",
             "mainClass": "domini.utils.byteToConversion",

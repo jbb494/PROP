@@ -1,5 +1,6 @@
 package presentacion.master;
 import domini.algorithm.Ctrl_Algorithm;
+import domini.estadistica.Estadistica;
 
 public class Ctrl_Master {
 
@@ -16,7 +17,7 @@ public class Ctrl_Master {
     }
 
     //Functions
-    public String Context() {
+    public void Context() {
         
         //Asking if we wanna encode or decode
         System.out.println("Vol comprimir o descomprimir un fitxer?");
@@ -34,13 +35,16 @@ public class Ctrl_Master {
 
         //Asking the name of the file we wanna encode / decode
         System.out.println("Quin és el path de l'arxiu amb el que volem treballar des d'aquest directori?");
-        Path = System.console().readLine().toLowerCase();
+        Path = System.console().readLine();
 
+    public String Work() {
         Ctrl_Algorithm CAlg = new Ctrl_Algorithm();
         String tornada = "";
         if(Function == 1) //Ho hem de pensar
-        {
+        {   
+            //Estadistica est = new Estadistica();
             tornada = CAlg.Auto_Encoder(Path);
+            //est.show_estadistica(Path, out);
         }
         else if(Function == 2)
         {
@@ -59,36 +63,13 @@ public class Ctrl_Master {
             {
                 System.out.println("Amb quin algorisme vol comprimir el fitxer: LZ78, LZW o LZSS?");
                 String mode = System.console().readLine().toLowerCase();
+                Estadistica est = new Estadistica();
                 tornada = CAlg.Choose_Encoder(Path, mode);
+                //Generació de les estadístiques
+                String out_p = Path.substring(0, i+1) + mode;
+                est.show_estadistica(Path,out_p);
             }            
         }
         return tornada;
     }
-
-
-    /*public void Read() {
-        Ctrl_Input Inp = new Ctrl_Input(Path);
-        switch (Function) {
-            case 1:
-                //Encara cal implementar la funció per cridar a una compressió JPEG
-                //if (Inp.getExtension().equals("txt")) {
-                    String file = Inp.getText();
-                    Ctrl_Algorithm alg = new Ctrl_Algorithm();
-
-                //}
-               // else {
-
-                //}
-
-                break;
-            case 2:
-            
-                break;
-            default:
-
-                break;
-        }
-    }*/
-
-
 }
