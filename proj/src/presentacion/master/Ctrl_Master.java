@@ -36,6 +36,7 @@ public class Ctrl_Master {
         //Asking the name of the file we wanna encode / decode
         System.out.println("Quin és el path de l'arxiu amb el que volem treballar des d'aquest directori?");
         Path = System.console().readLine();
+    }
 
     public String Work() {
         Ctrl_Algorithm CAlg = new Ctrl_Algorithm();
