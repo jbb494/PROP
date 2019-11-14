@@ -60,6 +60,8 @@ public class LZSS {
     public void Compressor(Ctrl_Input_Text in)
     {
         ArrayList<Byte> aux = new ArrayList<Byte>();
+        ArrayList<Integer> keys = new ArrayList<Integer>();
+        boolean needkey = true;
         Map<Integer, Byte> vc = new TreeMap<Integer, Byte>();
         byte nextByte;
         boolean first = true;
@@ -76,7 +78,11 @@ public class LZSS {
                     first = false;
                     punter = i;
                 }
-                ArrayList<Integer> keys = GetKey(vc, aux.get(0));
+                if(needkey)
+                {
+                    keys = GetKey(vc, aux.get(0));
+                    needkey = false;
+                }
                 boolean found = false;
                 int max = 0;
                 for(int j = 0; j < keys.size() && !found; j++)
@@ -101,6 +107,7 @@ public class LZSS {
                     Output.add(31, 5);
                     aux = new ArrayList<Byte>();
                     first = true;
+                    needkey = true;
                 }
                 else if(!found && aux.size() >= 4)
                 {
@@ -110,6 +117,7 @@ public class LZSS {
                     Output.add(aux.size() - 4, 5);
                     aux = new ArrayList<Byte>();
                     aux.add(nextByte);
+                    needkey = true;
                 }
                 else if(!found && aux.size() < 4)
                 {
@@ -117,6 +125,7 @@ public class LZSS {
                     Output.add(aux.get(0), 8);
                     aux.remove(0);
                     punter++;
+                    needkey = true;
                 }
                 found2 = found;
             }
@@ -140,6 +149,7 @@ public class LZSS {
                 }
                 aux = new ArrayList<Byte>();
                 first = true;
+                needkey = true;
             }
             vc.put(i, nextByte);
             if(vc.size() > 8191) vc.remove(paux++);
