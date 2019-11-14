@@ -23,4 +23,18 @@ public class stringConversion {
         return x;
     }
 
+    public static String intToString(int x) {
+        if (x == 0) return "0";
+        if (x < 0) return "-" + intToString(-x);
+
+        String str = "";
+        while (x > 0) {
+            int aux = x%10;
+            str = (char)(aux+'0') + str;
+            x = x/10;
+        }
+        return str;
+
+    }
+
 }

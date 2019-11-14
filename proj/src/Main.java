@@ -12,8 +12,72 @@ public class Main {
     public static void main(String[] args) 
     {   
         Integer n = 0;
-        String mode = "LZW";
-        if (mode == "LZSS") {
+        String mode = "JPEG";
+        if (mode == "JPEG") {
+            double[][] mat1 = {
+                {1, 2, 3, 4, 5, 6, 7, 8},
+                {1, 2, 3, 4, 5, 6, 7, 8},
+                {1, 2, 3, 4, 5, 6, 7, 8},
+                {1, 2, 3, 4, 5, 6, 7, 8},
+                {1, 2, 3, 4, 5, 6, 7, 8},
+                {1, 2, 3, 4, 5, 6, 7, 8},
+                {1, 2, 3, 4, 5, 6, 7, 8},
+                {1, 2, 3, 4, 5, 6, 7, 8},
+            };
+            JPEG.discrete_cosine_transform(mat1);
+            /*for (int i = 0; i < 8; ++i) {
+                for (int j = 0; j < 8; ++j) {
+                    System.out.print(mat1[i][j]);
+                    System.out.print(" ");
+                }
+                System.out.println("");
+            }
+            System.out.println("");*/
+            JPEG.inverse_discrete_cosine_transform(mat1);
+            for (int i = 0; i < 8; ++i) {
+                for (int j = 0; j < 8; ++j) {
+                    System.out.print(mat1[i][j]);
+                    System.out.print(" ");
+                }
+                System.out.println("");
+            }
+
+            /*
+
+            double[] x = {255, 0, 255};
+            double[][] mat2 = {x, x, x, x,  x, x, x, x};
+            double[][][] mat3 = { mat2, mat2, mat2, mat2, mat2, mat2, mat2, mat2 };
+            double[][][][] mat4 = {mat3};
+
+            Ctrl_Output_Img out1 = new Ctrl_Output_Img(args[0], 8, 8, 255);
+            out1.add(mat4);
+            out1.print();
+
+            double y = 255;
+            double[] mat1 = {y,y, y,y,  y,y, y,y};
+            double[][] m2 = { mat1, mat1, mat1, mat1, mat1, mat1, mat1, mat1 };
+            JPEG.discrete_cosine_transform(m2, 0,0);
+            JPEG.inverse_discrete_cosine_transform(m2, 0,0);
+            double[][][] m3 = new double[8][8][3];
+            for (int i = 0; i < 8; ++i) {
+                for (int j = 0; j < 8; ++j) {
+                    for (int k = 0; k < 3; ++k) {
+                        m3[i][j][k] = m2[i][j];
+                    }
+                }
+            }
+
+            Ctrl_Output_Img out2 = new Ctrl_Output_Img(args[1], 8, 8, 255);
+            out2.add(mat4);
+            out2.print();*/
+
+            /*
+            Ctrl_Input_Img in = new Ctrl_Input_Img(args[0]);
+            JPEG alg = new JPEG();
+            alg.encode(in);
+            alg.decode(args[1]);*/
+        }
+        else if (mode == "LZSS") {
             if(n == 1 | n == 0){ // n = 0 per comprimir
      
                 String pathCompresio = "../hello.txt";

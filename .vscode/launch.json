@@ -2,6 +2,13 @@
     "configurations": [
         {
             "type": "java",
+            "name": "CodeLens (Launch) - Huffman",
+            "request": "launch",
+            "mainClass": "com.company.algorithm.Huffman",
+            "projectName": "PROP_c7ade387"
+        },
+        {
+            "type": "java",
             "name": "CodeLens (Launch) - byteToConversion",
             "request": "launch",
             "mainClass": "com.company.utils.byteToConversion",
