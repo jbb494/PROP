@@ -8,7 +8,7 @@ package domini.utils;
 import domini.utils.Node;
 import java.util.ArrayList;
 
-public class LZW_Dict_Encode {
+public class Dict_Encode {
     
     //Attributes
     /**
@@ -26,7 +26,7 @@ public class LZW_Dict_Encode {
      * @brief Constructor de la classe
      * @note Inicialitzem el diccionari
      */
-    public LZW_Dict_Encode() {
+    public Dict_Encode() {
         arr_n = new ArrayList<Node>();
         reset_dictionary();
     }
