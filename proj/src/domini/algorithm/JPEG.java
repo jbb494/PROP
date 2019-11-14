@@ -1,13 +1,10 @@
-/*package domini.algorithm;
+package domini.algorithm;
 
 import java.util.ArrayList;
 
-<<<<<<< HEAD:proj/src/com/company/algorithm/JPEG.java
 import com.company.input.Ctrl_Input_Img;
 import com.company.output.Ctrl_Output_Img;
-=======
 import persistencia.input.Ctrl_Input_Img;
->>>>>>> 8c0f125e396b99d4ee3f953bd5e92131b877c9ca:proj/src/domini/algorithm/JPEG.java
 
 public class JPEG {
 
@@ -267,4 +264,4 @@ public class JPEG {
 	
 	
 }
-*/
+
