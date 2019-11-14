@@ -61,7 +61,7 @@ public class Estadistica {
             double gc = (double)input.length() / (double)output.length();
 
             System.out.println("La velocitat de compressió ha sigut de " + spd + " bytes/ms.");
-            System.out.println("El grau de compressió és de " + String.format("%.3f", gc) + ". \n");
+            System.out.println("El grau de compressió és de " + String.format("%.6f", gc) + ". \n");
 
         
         }
