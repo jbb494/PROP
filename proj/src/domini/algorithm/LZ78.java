@@ -44,7 +44,7 @@ public class LZ78 {
 		Integer punterMap = 0;
 		
 		while(!in.finished()) {
-			nextChar = in.get();
+			nextChar = (char)in.get(); //hola, soc el lapeyra i he afegit (char) perquè compili
 			String nextCharS;
 			//if(nextChar == ' ')nextCharS = "\\s";
 			//else nextCharS = nextChar.toString();

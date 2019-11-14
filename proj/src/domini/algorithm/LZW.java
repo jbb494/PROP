@@ -53,7 +53,7 @@ public class LZW {
 		Integer i = -1;
 		
 		while (!inp.finished()) {
-			char c = inp.get();
+			char c = (char)inp.get();  //Hola, soc el Lapeyra i he afegit (char) perquè compili
 			Integer aux = i;
 
 			if ( (i = table.search_and_insert_BST(aux, c)) == -1) {

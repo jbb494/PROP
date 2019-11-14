@@ -2,9 +2,9 @@ package domini.algorithm;
 
 import java.util.ArrayList;
 
-import com.company.input.Ctrl_Input_Img;
-import com.company.output.Ctrl_Output_Img;
-import persistencia.input.Ctrl_Input_Img;
+
+import persistencia.input.*;
+import persistencia.output.*;
 
 public class JPEG {
 

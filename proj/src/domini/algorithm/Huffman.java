@@ -1,6 +1,6 @@
-package com.company.algorithm;
+package domini.algorithm;
 
-import com.company.utils.*;
+import domini.utils.BinTree;
 
 class Huffman { //falta comprovar
 
@@ -103,7 +103,7 @@ class Huffman { //falta comprovar
     public Huffman(boolean automatic) {
         auto_codes = new long[0];
         auto = automatic;
-        tree = new BinTree();
+        tree = new BinTree<Byte>();
         if(auto) {
             set_auto_codes();
             set_auto_tree();

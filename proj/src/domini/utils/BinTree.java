@@ -1,11 +1,11 @@
-package com.company.utils;
+package domini.utils;
 
 public class BinTree<T> { //falta comprovar
     T data;
     BinTree<T> left;
     BinTree<T> right;
 
-    BinTree() {
+    public BinTree() {
         left = right = null;
         data = null;
     }

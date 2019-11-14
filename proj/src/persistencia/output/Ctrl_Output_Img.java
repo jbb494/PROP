@@ -1,7 +1,6 @@
-package com.company.output;
+package persistencia.output;
 
-
-import com.company.utils.stringConversion;
+import domini.utils.*;
 
 public class Ctrl_Output_Img extends Ctrl_Output {
 
@@ -12,7 +11,7 @@ public class Ctrl_Output_Img extends Ctrl_Output {
     int rows;
 
     public Ctrl_Output_Img(String path, int w, int h, int mv) {
-        super(path);
+        super(path, "", true);
 
         if (mv <= 0 || mv >= 65536) {
             System.err.println("The maximum color value (Maxval) must be less than 65536 and more than zero.");
