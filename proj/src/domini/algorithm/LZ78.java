@@ -53,7 +53,6 @@ public class LZ78 {
             if(map.containsKey(novaEntrada))
             {
 				seq.add(nextByte);
-
             }else
             {
 									
@@ -85,8 +84,7 @@ public class LZ78 {
 	 * @brief Descomprimim un fitxer amb l'algoritme LZ78
 	 * @param inp accés al Controlador d'Input pel fitxer comprimit
 	 */
-	public void Decompressor(Ctrl_Input_LZ78 in) 
-	{
+	public void Decompressor(Ctrl_Input_LZ78 in) {
 		Map<Integer, ArrayList<Byte>> map = new HashMap<Integer, ArrayList<Byte>>();
 		Integer punterActual = 0;
 		while(!in.finished()) {
