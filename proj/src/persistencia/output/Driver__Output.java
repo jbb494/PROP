@@ -1,3 +1,8 @@
+/**
+ * @class Driver__Output
+ * @brief Classe Driver__Output
+ * @author Joan Bellavista Bartroli
+ */
 package persistencia.output;
 
 import persistencia.output.Output;
@@ -5,8 +10,15 @@ import java.io.BufferedReader;
 import java.io.InputStreamReader;
 
 public class Driver__Output {
+    /**
+     * @param path Path a la carpeta de data
+     */
     static final String path = "../data/Driver__Output.out";
 
+    /**
+     * @fn private static void showOptions()
+     * @brief Mostra les diferents accion que podem pendre durant l'execucio
+     */
     private static void showOptions(){
         System.out.println("Driver de Output");
         System.out.println("Constructores: ");
@@ -32,11 +44,24 @@ public class Driver__Output {
         System.out.println("----------------------------------------");
     }
 
+    
+    /**
+     * @fn private static void comprovarExcepcions(Output out, String linea)
+     * @brief Comprova les possibles excepcions que es puguin generar en la classe
+     * @param out 
+     * @param linea
+     */
     private static void comprovarExcepcions(Output out, String linea){
         if(out == null && !linea.equals("1") && !linea.equals("0")) {
             throw new IllegalArgumentException("Debes llamar al constructor antes");
         }
     }
+
+    /**
+     * @fn public static void main(String[] args)
+     * @brief Main de la classe
+     * @param args
+     */
     public static void main(String[] args) {
         try {
             Output out = null;
