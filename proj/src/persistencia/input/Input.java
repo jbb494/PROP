@@ -1,3 +1,8 @@
+/**
+ * @class Input
+ * @brief Classe Input
+ * @author 
+ */
 package persistencia.input;
 
 import java.io.DataInputStream;
@@ -14,16 +19,41 @@ import domini.utils.byteToConversion;
 
 public class Input {
     
+    /**
+     * @param inputStreamReader
+     */
     private DataInputStream inputStreamReader;
+
+    /**
+     * @param punter Indica el proper bit que ha de ser llegit del byte en qüestió
+     * @note 0 <= punter < 8
+     */
     private int punter; 
-    // 0 <= punter < 8,  indica el proper bit que ha de ser llegit del byte en qüestió
-    
-    private Byte last_byte; //últim byte llegit
+
+    /**
+     * @param last_byte Ultim byte llegit
+     */
+    private Byte last_byte; 
+
+    /**
+     * @param end Indica si hem arribat al final de l'arxiu 
+     */
     private boolean end;
-    private int illegals; //nombre de bits que s'han intentat legir però queden fora del fitxer
+
+    /**
+     * @param illegals Nombre de bits que s'han intentat llegir pero queden fora del fitxer
+     */
+    private int illegals;
     
+    /**
+     * @param gotExtension Indica si l'arxiu te extensió definida per treballar
+     */
     private Boolean gotExtension = false;
-    // Scanner obtenerNumero = new Scanner(System.in);
+
+    /**
+     * @brief Constructor de la classe
+     * @param path Path de l'arxiu d'Input
+     */
     public Input(String path) {
         try {   
             end = false;
@@ -44,6 +74,10 @@ public class Input {
 
     }
 
+    /**
+     * @fn private void read()
+     * @brief Llegeix el proxim byte de l'arxiu
+     */
     private void read() {
         Integer c;
         try {
@@ -58,6 +92,11 @@ public class Input {
         }
     }
     
+    /**
+     * @fn public byte getBits(int num_bits)
+     * @param num_bits Nombre de bits que volem que ens retorni ( 1 <= num_bits <= 8)
+     * @return Retorna un byte amb num_bits bits valids
+     */
     public byte getBits(int num_bits) 
     // pre: 1 <= num_bits <= 8        <-- IMPORTANT!!!
     {
@@ -94,6 +133,11 @@ public class Input {
         return b;
     }
 
+    /**
+     * @fn public ArrayList<Byte> getMoreBits(int num_bits)
+     * @param num_bits Nombre de bits que volem que ens retorni
+     * @return ArrayList de Bytes amb num_bits bits valids
+     */
     public ArrayList<Byte> getMoreBits(int num_bits) 
     // cap limitació en el valor de num_bits
     {
@@ -107,14 +151,26 @@ public class Input {
     }
 
     //Passar la funció a Ctrl_Input
+    /**
+     * @fn public boolean finished()
+     * @return Retorna si hem arribat al final de l'arxiu o no
+     */
     public boolean finished() {
         return end;
     }
 
+    /**
+     * @fn public int outOfFile()
+     * @return Retorna el nombre de bits que s'han intentat llegir però queden fora del fitxer
+     */
     public int outOfFile() { //nombre de bits que s'han intentat llegir però queden fora del fitxer
         return illegals;
     }
 
+    /**
+     * @fn public String getDecodeAlg()
+     * @return Retorna l'algoritme que hem d'emprar per la descompressio
+     */
     public String getDecodeAlg() //0 si lz78, 1 si lzw o 2 si lzss
     {
         if(gotExtension) {
