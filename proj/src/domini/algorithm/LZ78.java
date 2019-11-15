@@ -48,7 +48,7 @@ public class LZ78 {
 			ArrayList<Byte> novaEntrada = new ArrayList<Byte> ();
 			novaEntrada.addAll(seq);
 			novaEntrada.add(nextByte);
-			
+			System.out.println(nextByte);
             if(map.indexNode(novaEntrada) != -1) {
 				seq.add(nextByte);
             }else
@@ -60,13 +60,12 @@ public class LZ78 {
 				
 				if(seq.size() >= 1){
 					Integer punterActual = map.indexNode(seq) +1;
-
 					Output.add(punterActual, 32);
-
+					System.out.println("never went in here");
 				}else{
-					Output.add(0, 32);
+					System.out.println("adding 0");
+					Output.add((Integer)0, 32);
 				}
-
 				Output.add(nextByte, 8);
 
 				map.insert(novaEntrada, punterMap);
