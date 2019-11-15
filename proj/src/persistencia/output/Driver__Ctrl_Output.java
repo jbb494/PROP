@@ -66,7 +66,7 @@ public class Driver__Ctrl_Output {
      * @param ctrl_out Classe Ctrl_Output passada per paràmetre
      * @param linea 
      * @param method Mètode de compressio/descompressio emprat
-     * @param b
+     * @param b 
      */
     private static void comprovarExcepcions(Ctrl_Output ctrl_out, String linea, String method, Boolean b){
         int op = Integer.parseInt(linea);
