@@ -29,7 +29,7 @@ public class Driver__Ctrl_Output {
         System.out.println("\t Input: 2");
         System.out.println("\t 3. add(String s)");
         System.out.println("\t Input: 3");
-        System.out.println("\t 4. add(Character c)");
+        System.out.println("\t 4. add(Byte c)");
         System.out.println("\t Input: 4");
         System.out.println("\t 5. add(Integer x)");
         System.out.println("\t Input: 5");

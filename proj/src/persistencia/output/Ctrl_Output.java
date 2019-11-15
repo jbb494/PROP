@@ -53,6 +53,7 @@ public class Ctrl_Output {
     public void add(Integer x, Integer mida){
         //System.out.println(x);
         ByteBuffer bb = ByteBuffer.allocate(4); 
+        bb.clear();
         Integer midaAux = mida%8;
         Double daux = new Double(mida)/8;
         Integer nombreBytes = new Double (Math.ceil(daux)).intValue();

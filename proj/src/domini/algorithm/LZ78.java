@@ -60,13 +60,13 @@ public class LZ78 {
 				
 				if(seq.size() >= 1){
 					Integer punterActual = map.indexNode(seq) +1;
-
+					
 					Output.add(punterActual, 32);
 
 				}else{
 					Output.add((Integer)0, 32);
 				}
-
+				
 				Output.add(nextByte, 8);
 
 				map.insert(novaEntrada, punterMap);
@@ -88,6 +88,7 @@ public class LZ78 {
 			Pair <Integer, Byte> entr = in.get();
 			//System.out.println((in.finished() ? "finsihed" : "not Finished")
 			// + " Int: "+ entr.getLeft() + " Byte: " + entr.getRight());
+			if(in.finished()) return;
 			Integer punterMap = entr.getLeft();
 			Byte nextByte = entr.getRight();
 
