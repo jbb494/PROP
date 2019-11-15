@@ -56,7 +56,7 @@ public class Ctrl_Input {
 
     /**
      * @fn public String getAlg()
-     * @return Proporciona el algoritme més adient per tractar la descompressio
+     * @return Proporciona el algoritme mes adient per tractar la descompressio
      */
     public String getAlg()
     {
