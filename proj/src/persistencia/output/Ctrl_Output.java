@@ -11,14 +11,14 @@ public class Ctrl_Output {
     //Constructor
     public Ctrl_Output(String path, String method, boolean b) {
         Output_Class = new Output(path);
-        
         if (!b) {
             if (method.toLowerCase().equals("lzss"))
                 add((byte)2, 2);
             else if(method.toLowerCase().equals("lzw"))
                 add((byte)1, 2);
-            else if(method.toLowerCase().equals("lz78"))
+            else if(method.toLowerCase().equals("lz78")){
                 add((byte)0, 2);
+            }
         }
     }
 
@@ -53,6 +53,7 @@ public class Ctrl_Output {
     public void add(Integer x, Integer mida){
         //System.out.println(x);
         ByteBuffer bb = ByteBuffer.allocate(4); 
+        bb.clear();
         Integer midaAux = mida%8;
         Double daux = new Double(mida)/8;
         Integer nombreBytes = new Double (Math.ceil(daux)).intValue();
