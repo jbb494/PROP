@@ -24,7 +24,6 @@ public class Ctrl_Output {
 
     //Functions
     public void add(Byte b, Integer n_bits) {
-        //System.out.println(b);
         Output_Class.add(b, n_bits);
     }
 
@@ -52,6 +51,8 @@ public class Ctrl_Output {
 
     public void add(Integer x, Integer mida){
         //System.out.println(x);
+        //System.out.println("imprimir integer: " + x);
+
         ByteBuffer bb = ByteBuffer.allocate(4); 
         bb.clear();
         Integer midaAux = mida%8;
@@ -71,7 +72,7 @@ public class Ctrl_Output {
         for(Byte b : arr){
             add(b,8);
         }
-    } 
+    }
 
     public void print() {   
         Output_Class.print();

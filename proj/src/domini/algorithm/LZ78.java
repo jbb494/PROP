@@ -41,27 +41,27 @@ public class LZ78 {
 		ArrayList<Byte> seq = new ArrayList<Byte>();
 
 		Integer punterMap = 0;
-		
+		int i = 0;
 		while(!in.finished()) {
 			nextByte = in.get();
-
 			ArrayList<Byte> novaEntrada = new ArrayList<Byte> ();
 			novaEntrada.addAll(seq);
 			novaEntrada.add(nextByte);
-			
+			//System.out.println("nextByte: " + nextByte + " iteracio: " + i++);
             if(map.indexNode(novaEntrada) != -1) {
+				if(in.finished()){
+					Integer punterActual = map.indexNode(seq) +1;
+					Output.add((Integer)punterActual, 32);
+					Output.add(nextByte, 8);	
+					return;
+				}
 				seq.add(nextByte);
             }else
-            {
-									
-				//Integer midaPunter = (int)Math.ceil((Math.log((double)punterMap+1)/Math.log(2)));
-
-				//System.out.println("punterMap: " + punterMap + " midaPunter: " + midaPunter);
-				
+            {									
 				if(seq.size() >= 1){
 					Integer punterActual = map.indexNode(seq) +1;
 					
-					Output.add(punterActual, 32);
+					Output.add((Integer)punterActual, 32);
 
 				}else{
 					Output.add((Integer)0, 32);
@@ -95,11 +95,8 @@ public class LZ78 {
 			ArrayList<Byte> seqPunterMap = map.getWord(punterMap);
 			seqPunterMap.add(nextByte);
 			map.add(punterMap, nextByte);
-			//System.out.println("Size map: " + map.size() + " punterMap: " + punterMap + " seqPunterMap: " + seqPunterMap);
-			for (byte baux : seqPunterMap){
-				Output.add(baux,8);
-			}
-			// Output.add(seqPunterMap);				
+			//System.out.println("ADDING: " + seqPunterMap);
+			Output.add(seqPunterMap);
 		}
 	}
 
