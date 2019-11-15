@@ -24,6 +24,7 @@ public class Dict_Decode {
      * @brief Constructor de la classe
      * @note Inicialitzem el vector
      * @param inicializeAscii És true si inicialitzem només començar el diccionari amb la taula ascii.
+     * @param valorNeutre Valor {0,1} emprat a getWord
      */
     public Dict_Decode(Boolean inicializeAscii, Integer valorNeutre) {
         v = new ArrayList<Pair<Integer,Byte> >();
@@ -34,6 +35,7 @@ public class Dict_Decode {
     /**
      * @brief Reinicialitza el vector
      * @note Es crida quan sigui ple o sigui creat
+     * @param b Es true si volem inicialitzar el diccionari amb la taula ASCII
      */
     public void reset_dictionary(Boolean b) {
         v.clear();

@@ -1,9 +1,18 @@
+/**
+ * @class stringConversion
+ * @brief Classe de stringConversion
+ * @author 
+ */
 package domini.utils;
 
-
-
-
 public class stringConversion {
+
+    /**
+     * @fn public static int atoi(String str)
+     * @brief S'encarrega de convertir un String a Int
+     * @param str String a transformar
+     * @return Valor enter de l'String que hem passat per paràmetre
+     */
     public static int atoi(String str) 
     { 
         int x = 0;
@@ -23,6 +32,12 @@ public class stringConversion {
         return x;
     }
 
+    /**
+     * @fn public static String intToString(int x)
+     * @brief S'encarrega de convertir un Int a String
+     * @param x Enter que volem convertir a String
+     * @return Valor de l'enter com a String
+     */
     public static String intToString(int x) {
         if (x == 0) return "0";
         if (x < 0) return "-" + intToString(-x);
