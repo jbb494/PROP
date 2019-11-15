@@ -1,3 +1,8 @@
+/**
+ * @class Input_Text
+ * @brief Classe Input_Text
+ * @author 
+ */
 package persistencia.input;
 
 import java.io.DataInputStream;
@@ -14,6 +19,7 @@ import domini.utils.byteToConversion;
 
 public class Input_Text  {
 
+
     ArrayList<Byte> arrayByte;
     private DataInputStream inputStreamReader;
     private int punter;
@@ -22,6 +28,10 @@ public class Input_Text  {
 
     /* write your code here */
     // Scanner obtenerNumero = new Scanner(System.in);
+    /**
+     * @brief Constructor de la classe
+     * @param path Path de l'arxiu a tractar
+     */
     public Input_Text(String path) {
         try {
             punter = 0;
@@ -43,6 +53,10 @@ public class Input_Text  {
 
     }
 
+    /**
+     * @fn private void read()
+     * @brief Llegeix bytes de l'arxiu 
+     */
     private void read() {
         Integer c;
         try {
@@ -57,6 +71,11 @@ public class Input_Text  {
    
     }
     
+    /**
+     * @fn public byte getBits(int num_bits)
+     * @param num_bits Especifica el nombre de bits que volem de l'input (num_bits -> {0,8})
+     * @return Retorna un byte amb el nombre valid de bits que demanem
+     */
     public byte getBits(int num_bits) {
         byte b = arrayByte.get(pos);
         b = byteToConversion.shift_right_logic(b, punter);
@@ -85,6 +104,10 @@ public class Input_Text  {
         return getBits(pos_bit/8, pos_bit%8, num_bits);
     }*/
 
+    /**
+     * @fn public ArrayList<Byte> getIn()
+     * @return Retorna l'atribut de la classe
+     */
     public ArrayList<Byte> getIn()
     {
         return arrayByte;

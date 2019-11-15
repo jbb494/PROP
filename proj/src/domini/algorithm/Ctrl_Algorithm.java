@@ -24,7 +24,7 @@ public class Ctrl_Algorithm {
      * @brief Realitzar? la compressi? d'un fitxer segons un algoritme concret
      * @param Path Path de l'arxiu a comprimir
      * @param method Algoritme a emprar
-     * @return Informaci? sobre la compressi?
+     * @return Informacio sobre la compressio
      */
     public String Choose_Encoder(String Path, String method) {
         int i = Path.lastIndexOf(".");
@@ -60,16 +60,24 @@ public class Ctrl_Algorithm {
     }
 
     /**
-     * @fn
-     * @brief
-     * @param Path
-     * @return
+     * @fn public String Auto_Encoder(String Path)
+     * @brief Determina de manera autom?tica quin compressor utilitzar
+     * @param Path Path de l'arxiu a comprimir
+     * @return Nom del m?tode a emprar
      */
     public String Auto_Encoder(String Path)
     {
 
         return "";
     }
+
+    /**
+     * @fn public String Auto_Decoder(String Path, String method)
+     * @brief Escull de manera autom?tica quin descompressor emprar
+     * @param Path Path de l'arxiu a descomprimir
+     * @param method Descompressor a emprar
+     * @return Informaci? sobre la descompressio
+     */
     public String Auto_Decoder(String Path, String method)
     {
         int i = Path.lastIndexOf(".");
