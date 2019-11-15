@@ -1,3 +1,8 @@
+/**
+ * @class Driver__Input
+ * @brief Classe de Driver__Input
+ * @author Joan Bellavista
+ */
 package persistencia.input;
 
 import persistencia.input.Input;
@@ -8,7 +13,11 @@ import java.util.ArrayList;
 
 
 public class Driver__Input {
-   
+    
+    /**
+     * @fn private static void showOptions()
+     * @brief Mostra les accions a realitzar durant l'execució
+     */
     private static void showOptions(){
         System.out.println("Driver de Input");
         System.out.println("Constructores: ");
@@ -43,7 +52,14 @@ public class Driver__Input {
 
         System.out.println("----------------------------------------");
     }
-
+    
+    /**
+     * @fn private static void comprovarExcepcions(Input inp, String linea, String path)
+     * @brief Comprovarà les possibles excepcions que puguin apareixer a la classe
+     * @param inp
+     * @param linea
+     * @param path
+     */
     private static void comprovarExcepcions(Input inp, String linea, String path){
         int op = Integer.parseInt(linea);
         if(path.equals("") && op < 6 && !linea.equals("0")){
@@ -54,6 +70,11 @@ public class Driver__Input {
         }
     }
 
+    /**
+     * @fn public static void main(String[] args)
+     * @brief Main de la classe
+     * @param args
+     */
     public static void main(String[] args) {
         try {
             Input inp = null;
