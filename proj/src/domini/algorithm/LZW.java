@@ -12,7 +12,7 @@ import persistencia.input.Ctrl_Input_LZW;
 import persistencia.input.Ctrl_Input_Text;
 import persistencia.output.Ctrl_Output;
 import domini.utils.Dict_Decode;
-import domini.utils.LZW_Dict_Encode;
+import domini.utils.Dict_Encode;
 
 public class LZW {
 
@@ -49,7 +49,7 @@ public class LZW {
 		ArrayList<Integer> result = new ArrayList<Integer>();
 
 		//We initialize the attributes we need
-		LZW_Dict_Encode table = new LZW_Dict_Encode();
+		Dict_Encode table = new Dict_Encode();
 		Integer i = -1;
 		
 		while (!inp.finished()) {

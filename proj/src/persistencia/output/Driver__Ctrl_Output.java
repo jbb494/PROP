@@ -1,3 +1,8 @@
+/**
+ * @class Driver__Ctrl_Output
+ * @brief 
+ */
+
 package persistencia.output;
 
 import persistencia.output.Ctrl_Output;

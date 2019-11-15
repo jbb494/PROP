@@ -63,7 +63,6 @@ public class LZ78 {
 					Output.add(punterActual, 32);
 					System.out.println("never went in here");
 				}else{
-					System.out.println("adding 0");
 					Output.add((Integer)0, 32);
 				}
 				Output.add(nextByte, 8);
