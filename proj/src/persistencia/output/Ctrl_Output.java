@@ -11,14 +11,14 @@ public class Ctrl_Output {
     //Constructor
     public Ctrl_Output(String path, String method, boolean b) {
         Output_Class = new Output(path);
+        
         if (!b) {
             if (method.toLowerCase().equals("lzss"))
                 add((byte)2, 2);
             else if(method.toLowerCase().equals("lzw"))
                 add((byte)1, 2);
-            else if(method.toLowerCase().equals("lz78")){
+            else if(method.toLowerCase().equals("lz78"))
                 add((byte)0, 2);
-            }
         }
     }
 

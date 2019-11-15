@@ -1,3 +1,8 @@
+/**
+ * @class Ctrl_Algorithm
+ * @brief Classe de Ctrl_Algorithm
+ * @author 
+ */
 package domini.algorithm;
 
 import persistencia.input.Ctrl_Input;
@@ -9,11 +14,19 @@ import persistencia.output.Ctrl_Output;
 
 public class Ctrl_Algorithm {
 
-
+    /**
+     * @brief Constructor de la classe
+     */
     public Ctrl_Algorithm() {}
 
-    public String Choose_Encoder(String Path, String method)
-    {
+    /**
+     * @fn public String Choose_Encoder(String Path, String method)
+     * @brief Realitzar? la compressi? d'un fitxer segons un algoritme concret
+     * @param Path Path de l'arxiu a comprimir
+     * @param method Algoritme a emprar
+     * @return Informaci? sobre la compressi?
+     */
+    public String Choose_Encoder(String Path, String method) {
         int i = Path.lastIndexOf(".");
         String prefix = Path.substring(0, i+1);
         if(method.toLowerCase().equals("lzss"))
@@ -45,6 +58,13 @@ public class Ctrl_Algorithm {
         }
         return "Compressió de " + Path;
     }
+
+    /**
+     * @fn
+     * @brief
+     * @param Path
+     * @return
+     */
     public String Auto_Encoder(String Path)
     {
 
