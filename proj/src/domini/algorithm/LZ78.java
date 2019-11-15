@@ -64,7 +64,7 @@ public class LZ78 {
 					Output.add(punterActual, 32);
 
 				}else{
-					Output.add(0, 32);
+					Output.add((Integer)0, 32);
 				}
 
 				Output.add(nextByte, 8);
