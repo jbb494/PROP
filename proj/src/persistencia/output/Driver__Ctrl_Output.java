@@ -1,19 +1,22 @@
 /**
  * @class Driver__Ctrl_Output
- * @brief 
+ * @brief Driver per la classe Ctrl_Output
+ * @author Joan Bellavista Bartroli
  */
 
 package persistencia.output;
 
-import persistencia.output.Ctrl_Output;
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
-import java.util.ArrayList;
 
 
 
 public class Driver__Ctrl_Output {
-   
+    
+    /**
+     * @fn private static void showOptions()
+     * @brief Mostra les accions a realitzar durant l'execució 
+     */
     private static void showOptions(){
         System.out.println("Driver de Ctrl_Output");
         System.out.println("Constructores: ");
@@ -57,6 +60,14 @@ public class Driver__Ctrl_Output {
         System.out.println("----------------------------------------");
     }
 
+    /**
+     * @fn private static void comprovarExcepcions(Ctrl_Output ctrl_out, String linea, String method, Boolean b)
+     * @brief Comprovarà les possibles excepcions que puguin apareixer a la classe
+     * @param ctrl_out Classe Ctrl_Output passada per paràmetre
+     * @param linea 
+     * @param method Mètode de compressio/descompressio emprat
+     * @param b
+     */
     private static void comprovarExcepcions(Ctrl_Output ctrl_out, String linea, String method, Boolean b){
         int op = Integer.parseInt(linea);
         if(method.equals("") && op < 9 && !linea.equals("0")){
@@ -67,6 +78,11 @@ public class Driver__Ctrl_Output {
         }
     }
 
+    /**
+     * @fn public static void main(String[] args)
+     * @brief Main de la classe
+     * @param args
+     */
     public static void main(String[] args) {
         try {
             Ctrl_Output ctrl_out = null;
