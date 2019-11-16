@@ -9,15 +9,7 @@ import java.util.*;
 
 
 public class byteToConversion {
-
-    /**
-     * @brief Constructor de la classe
-     */
-    byteToConversion()
-    {
-
-    }
-    
+  
     /**
      * @fn public static Character byteToCharacter(Byte b)
      * @brief Transforma un byte a Character

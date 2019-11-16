@@ -22,6 +22,7 @@ public class LZ78 {
 	/**
 	 * @brief Constructor de la clase LZW
 	 * @param aux Path de sortida
+	 * @param b False si estas comprimint, True si estas descomprimint
 	 */
 	public LZ78(String aux, boolean b) {
 		Output = new Ctrl_Output(aux, "lz78", b);
@@ -41,7 +42,6 @@ public class LZ78 {
 		ArrayList<Byte> seq = new ArrayList<Byte>();
 
 		Integer punterMap = 0;
-		int i = 0;
 		while(!in.finished()) {
 			nextByte = in.get();
 			ArrayList<Byte> novaEntrada = new ArrayList<Byte> ();
