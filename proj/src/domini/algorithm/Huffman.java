@@ -2,14 +2,14 @@ package domini.algorithm;
 
 import domini.utils.BinTree;
 
-class Huffman { //falta comprovar
+public class Huffman { //falta comprovar
 
     boolean auto;
     long[] auto_codes;
     BinTree<Byte> tree;
 
 
-    void set_auto_codes() {
+    public void set_auto_codes() {
         auto_codes = new long[256];
 
         auto_codes[0x00] = size_code(4, 0b1010);
