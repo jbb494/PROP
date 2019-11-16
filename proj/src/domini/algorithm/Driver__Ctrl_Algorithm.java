@@ -16,6 +16,7 @@ public class Driver__Ctrl_Algorithm {
 		System.out.println("	 1. Ctrl_Algorithm()");
 		System.out.println("	 Input: 1");
 
+		System.out.println("\nFunciones: ");
 		System.out.println("	 2. Choose_Encoder(String Path, String method) ");
 		System.out.println("	 Input: 2");
 		System.out.println("	 3. Auto_Encoder(String Path)");

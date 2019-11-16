@@ -16,6 +16,7 @@ public class Driver__Estadistica {
 		System.out.println("	 1. Estadistica()");
 		System.out.println("	 Input: 1");
 
+		System.out.println("\nFunciones: ");
 		System.out.println("	 2. show_estadistica(String inp, String out) ");
 		System.out.println("	 Input: 2");
 		System.out.println();

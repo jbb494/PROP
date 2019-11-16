@@ -16,6 +16,7 @@ public class Driver__Huffman {
 		System.out.println("	 1. Huffman(boolean automatic)");
 		System.out.println("	 Input: 1");
 
+		System.out.println("\nFunciones: ");
 		System.out.println("	 2. set_auto_codes() ");
 		System.out.println("	 Input: 2");
 		System.out.println("	 3. bit_from_code(int n, long cd) ");
