@@ -77,7 +77,7 @@ public class Driver__Ctrl_Algorithm {
 					System.err.println(ret);
 				break;
 				case "4":
-					System.out.println("Escrive el path del archivo comprimido que quieres descomprimir y el metodo con el que ha sido comprimido.");
+					System.out.println("escribe el path del archivo comprimido que quieres descomprimir y el metodo con el que ha sido comprimido.");
 					String[] aux2 = reader.readLine().trim().split(" ");
 					Path = aux2[0];
 					method = aux2[1];

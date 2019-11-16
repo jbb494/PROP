@@ -63,7 +63,7 @@ public class Driver__LZW {
 			comprovarExcepcions(lzw, linea);
 			switch(linea){
 				case "1":
-					System.out.println("Escrive el path del archivo \"out\". Luego escrive \"true\" si quieres descomprimir o \"false\" si quieres comprimir.");
+					System.out.println("escribe el path del archivo \"out\". Luego escribe \"true\" si quieres descomprimir o \"false\" si quieres comprimir.");
 					String[] aux1 = reader.readLine().trim().split(" ");
 					String aux = aux1[0];
 					boolean b = aux1[1].equals("true");
@@ -71,14 +71,14 @@ public class Driver__LZW {
 					lzw = new LZW(aux, b);
 				break;
 				case "2":
-					System.out.println("Escrive el path del archivo que quieres comprimir.");
+					System.out.println("escribe el path del archivo que quieres comprimir.");
 					String aux2 = reader.readLine().trim();
 					String path = aux2;
 					Ctrl_Input_Text inp = new Ctrl_Input_Text(path);
 					lzw.compression(inp);
 				break;
 				case "3":
-					System.out.println("Escrive el path del archivo que quieres descomprimir");
+					System.out.println("escribe el path del archivo que quieres descomprimir");
 					String aux3 = reader.readLine().trim();
 					path = aux3;
 					Ctrl_Input_LZW inp2 = new Ctrl_Input_LZW(path);;

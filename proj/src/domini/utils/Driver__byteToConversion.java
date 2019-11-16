@@ -55,14 +55,14 @@ public class Driver__byteToConversion {
 			comprovarExcepcions(bytetoconversion, linea);
 			switch(linea){
 				case "1":
-					System.out.println("Escrive un byte");
+					System.out.println("escribe un byte");
 					String aux1 = reader.readLine().trim();
 					Byte b = Byte.parseByte(aux1);
 					Character ret = byteToConversion.byteToCharacter(b);
 					System.out.println(ret);
 				break;
 				case "2":
-					System.out.println("Escrive 4 bytes separados por espacios");
+					System.out.println("escribe 4 bytes separados por espacios");
 					String[] aux2 = reader.readLine().trim().split(" ");
 					List<Byte> bArg = new ArrayList<Byte>(0);
 					for (String aux22 : aux2){
@@ -72,7 +72,7 @@ public class Driver__byteToConversion {
 					System.out.println(ret2);
 				break;
 				case "3":
-					System.out.println("Escrive un byte (entre 0 y 127) y un integer que indique el desplazamiento");
+					System.out.println("escribe un byte (entre 0 y 127) y un integer que indique el desplazamiento");
 					String[] aux3 = reader.readLine().trim().split(" ");
 					b = Byte.parseByte(aux3[0]);
 					int despl = Integer.parseInt(aux3[1]);

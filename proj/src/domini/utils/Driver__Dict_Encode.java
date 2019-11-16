@@ -1,35 +1,33 @@
-package domini.algorithm;
+package domini.utils; 
 
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
 
-import persistencia.input.Ctrl_Input_Img;
-
 /**
- * @class Driver__JPEG
- * @brief Driver de JPEG
+ * @class Driver__Dict_Encode
+ * @brief Driver de Dict_Encode
  * @author Joan Bellavista Bartroli
  */
-public class Driver__JPEG {
+public class Driver__Dict_Encode {
 
 	/**
 	 * @fn private static void showOptions()
 	 * @brief Mostra les accions a realitzar durant l'execució
 	*/
 	private static void showOptions(){
-		System.out.println("Driver de JPEG");
+		System.out.println("Driver de Dict_Encode");
 		System.out.println("Constructores: ");
-		System.out.println("	 1. JPEG()");
+		System.out.println("	 1. Dict_Encode()");
 		System.out.println("	 Input: 1");
 
-		System.out.println("\nFunciones: ");
-		System.out.println("	 2. discrete_cosine_transform(double[][] mat1) ");
+		System.out.println("Funciones: ");
+		System.out.println("	 2. reset_dictionary() ");
 		System.out.println("	 Input: 2");
-		System.out.println("	 3. inverse_discrete_cosine_transform(double[][] mat1) ");
+		System.out.println("	 3. Ascii_value(byte c) ");
 		System.out.println("	 Input: 3");
-		System.out.println("	 4. encode(Ctrl_Input_Img in) ");
+		System.out.println("	 4. search_and_insert_BST(Integer i, byte c) ");
 		System.out.println("	 Input: 4");
-		System.out.println("	 5. decode(String path) ");
+		System.out.println("	 5. getLimit() ");
 		System.out.println("	 Input: 5");
 		System.out.println();
 
@@ -38,21 +36,21 @@ public class Driver__JPEG {
 		System.out.println("----------------------------------------");
 	}
 	/**
-	 * @fn private static void comprovarExcepcions(JPEG jpeg, String linea)
+	 * @fn private static void comprovarExcepcions(Dict_Encode dict_encode, String linea)
 	 * @brief Comprovarà les possibles excepcions que puguin apareixer a la classe
-	 * @param jpeg
+	 * @param dict_encode
 	 * @param linea
 	 */
-	private static void comprovarExcepcions(JPEG jpeg, String linea){
+	private static void comprovarExcepcions(Dict_Encode dict_encode, String linea){
 		int op = Integer.parseInt(linea);
-		if(jpeg == null && op > 1) {
+		if(dict_encode == null && op > 1) {
 			throw new IllegalArgumentException("Debes llamar al constructor antes");
 		}
 	}
 
 	public static void main(String[] args) {
 	try {
-		JPEG jpeg = null;
+		Dict_Encode dict_encode = null;
 		showOptions();
 		BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
 		String linea = "";
@@ -60,35 +58,30 @@ public class Driver__JPEG {
 			System.out.println("Selecciona una opción:");
 			linea = reader.readLine().trim();
 			System.out.println("Opción: " + linea + " seleccionada");
-			comprovarExcepcions(jpeg, linea);
+			comprovarExcepcions(dict_encode, linea);
 			switch(linea){
 				case "1":
-					jpeg = new JPEG();
+					dict_encode = new Dict_Encode();
 				break;
 				case "2":
-					System.out.println("escribe la matriz separando por espacios y para nueva fila pon una \",\"");
-					String aux2 = reader.readLine().trim();
-					double[][] mat1 = {{1},{2}};
-					JPEG.discrete_cosine_transform(mat1);
+					dict_encode.reset_dictionary();
 				break;
 				case "3":
-					System.out.println("");
+					System.out.println("Escribe un byte.");
 					String aux3 = reader.readLine().trim();
-					double[][] mat2 = {{1},{2}};
-					JPEG.inverse_discrete_cosine_transform(mat2);
+					byte c = Byte.parseByte(aux3);
+					dict_encode.Ascii_value(c);
 				break;
 				case "4":
-					System.out.println("");
-					String aux4 = reader.readLine().trim();
-					String path = aux4;
-					Ctrl_Input_Img in = new Ctrl_Input_Img(path);
-					jpeg.encode(in);
+					System.out.println("Escribe un entero que represente el puntero a una cadena de caracteres. Separado de un espacio escribe un byte");
+					String[] aux4 = reader.readLine().trim().split(" ");
+					Integer i = Integer.parseInt(aux4[0]);
+					c = Byte.parseByte(aux4[1]);
+					Integer ret = dict_encode.search_and_insert_BST(i, c);
+					System.out.println(ret == -1 ? "no existe" : ret);
 				break;
 				case "5":
-					System.out.println("");
-					String aux5 = reader.readLine().trim();
-					path = aux5;
-					jpeg.decode(path);
+					dict_encode.getLimit();
 				break;
 				case "0":
 					return;

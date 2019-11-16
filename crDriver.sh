@@ -11,13 +11,13 @@ fi
 RegexPerNomsValids="\(\w\|\d\|,\|<\|>\|_\|-\)"
 RegexPerTotMenysPar="\(\w\|\d\|,\|<\|>\|_\|-\|\s\)"
 IFS=$'\n'
-ArrayFuncions=($(sed -e "/public/! d; /\* @/ d; s/public\s*//g; s/static\s*//g;/^\s*class/ d; /^\s*$RegexPerNomsValids*(/ d ;s/{\s*//g; s/^\s*$RegexPerNomsValids*\s*\(.*\)$/\2/g; /^()/ d" $NomArxiuInp))
+ArrayFuncions=($(sed -e "/\s*public\(\s*$RegexPerNomsValids*\)*($RegexPerTotMenysPar*).*/! d; ; /\* @/ d; s/public\s*//g; s/static\s*//g;/^\s*class/ d; /^\s*$RegexPerNomsValids*(/ d ;s/{\s*//g; s/^\s*$RegexPerNomsValids*\s*\(.*\)$/\2/g; /^()/ d" $NomArxiuInp))
 Constructores=($(sed -e "/\s*public\s*$RegexPerNomsValids*($RegexPerTotMenysPar*).*/! d; /\* @/ d;s/\s*{//g;s/\s*}//g; s/^\s*//g; s/^public\s*//g; s/public\s*//g;" $NomArxiuInp))
 Package=$(sed "/^package/! d" $NomArxiuInp)
 
 echo -n "" > $NomArxiuOut
 echo -e "$Package \n" >> $NomArxiuOut
-echo -e "import java.io.BufferedReader;\nimport java.io.InputStreamReader;\nimport java.util.ArrayList;\n" >> $NomArxiuOut
+echo -e "import java.io.BufferedReader;\nimport java.io.InputStreamReader;\n" >> $NomArxiuOut
 
 echo -e "/**\n * @class $NomDriver\n * @brief Driver de $NomClasse\n * @author Joan Bellavista Bartroli\n */" >> $NomArxiuOut
 

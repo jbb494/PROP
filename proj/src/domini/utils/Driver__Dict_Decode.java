@@ -62,7 +62,7 @@ public class Driver__Dict_Decode {
 			comprovarExcepcions(dict_decode, linea);
 			switch(linea){
 				case "1":
-					System.out.println("Escrive \"true\" si quieres que el diccionario se inicialize con la tabla ascii. Escrive \"false\" de lo contrario. Separado de un espacio escrive un integer que represente el valor neutro");
+					System.out.println("escribe \"true\" si quieres que el diccionario se inicialize con la tabla ascii. escribe \"false\" de lo contrario. Separado de un espacio escribe un integer que represente el valor neutro");
 					String[] aux1 = reader.readLine().trim().split(" ");
 					Boolean inicializeAscii = aux1[0].equals("true");
 					if(!inicializeAscii && !aux1[0].equals("false"))throw new IllegalArgumentException("Entrada no valida");
@@ -70,7 +70,7 @@ public class Driver__Dict_Decode {
 					dict_decode = new Dict_Decode(inicializeAscii, valorNeutre);
 				break;
 				case "2":
-					System.out.println("Escrive \"true\" si quieres que el diccionario se reinicialize con la tabla ascii. ");
+					System.out.println("escribe \"true\" si quieres que el diccionario se reinicialize con la tabla ascii. ");
 					String aux2 = reader.readLine().trim();
 					Boolean b = aux2.equals("true");
 					if(!b && !aux2.equals("false"))throw new IllegalArgumentException("Entrada no valida");
@@ -88,7 +88,7 @@ public class Driver__Dict_Decode {
 					System.out.println(ret2);
 				break;
 				case "5":
-					System.out.println("Escrive un integer que represente la cadena previa. Separado por un espacio escrive un byte");
+					System.out.println("escribe un integer que represente la cadena previa. Separado por un espacio escribe un byte");
 					String[] aux5 = reader.readLine().trim().split(" ");
 					Integer i2 = Integer.parseInt(aux5[0]);
 					byte c = Byte.parseByte(aux5[1]);
