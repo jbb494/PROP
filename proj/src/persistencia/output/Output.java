@@ -41,6 +41,7 @@ public class Output {
         this.path = path;
     }
 
+    
     /**
      * @fn public void add(byte b, int n_bits)
      * @brief Afegeix un byte amb n_bits valids
@@ -138,4 +139,30 @@ public class Output {
         for(Byte b: Out) System.out.println(String.format("%8s", Integer.toBinaryString(b & 0xFF)).replace(' ', '0'));
 
     }
+
+    /**
+     * @fn public ArrayList<Byte> getOut() 
+     * @return Retorna la llista de bytes de la classe
+     */
+    public ArrayList<Byte> getOut() {
+        return Out;
+    }
+
+    /**
+     * @fn public Integer getPos()
+     * @return Retorna la posició de l'arxiu
+     */
+    public Integer getPos() {
+        return Pos;
+    }
+
+    /**
+     * @fn public String getPath
+     * @return Retorna el path de l'arxiu
+     */
+    public String getPath() {
+        return path;
+    }
+
+
 }

@@ -129,5 +129,13 @@ public class Ctrl_Output {
     public void printString() {
         Output_Class.printString();
     }
+    
+    /**
+     * @fn public Output getOut()
+     * @return Retorna l'atribut de tipus Output de la classe
+     */
+    public Output getOut() {
+        return Output_Class;
+    }
 
 }
