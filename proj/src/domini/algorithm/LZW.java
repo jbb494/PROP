@@ -11,8 +11,8 @@ import java.util.*;
 import persistencia.input.Ctrl_Input_LZW;
 import persistencia.input.Ctrl_Input_Text;
 import persistencia.output.Ctrl_Output;
-import domini.utils.LZW_Dict_Decode;
-import domini.utils.LZW_Dict_Encode;
+import domini.utils.Dict_Decode;
+import domini.utils.Dict_Encode;
 
 public class LZW {
 
@@ -45,28 +45,27 @@ public class LZW {
 	 * @param inp accés al Controlador d'Input per el text
 	 * @return llista amb els enters que representen el text
 	 */
-	public ArrayList<Integer> compression(Ctrl_Input_Text inp) {
-		ArrayList<Integer> result = new ArrayList<>();
+	public void compression(Ctrl_Input_Text inp) {
 
 		//We initialize the attributes we need
-		LZW_Dict_Encode table = new LZW_Dict_Encode();
+		Dict_Encode table = new Dict_Encode();
 		Integer i = -1;
 		
 		while (!inp.finished()) {
-			char c = inp.get();
+			byte c = inp.get();
+
 			Integer aux = i;
 
 			if ( (i = table.search_and_insert_BST(aux, c)) == -1) {
-				result.add(aux);
+				Output.add(aux);
 				i = table.Ascii_value(c);
 			}
 		}
 
 		
-		if (i != -1)
-			result.add(i);			
-		
-		return result;
+		if (i != -1) {
+			Output.add(i);	
+		}
 	}
 
 	/**
@@ -75,21 +74,22 @@ public class LZW {
 	 * @param inp accés al Controlador d'Input pel fitxer comprimit
 	 * @return text que representa el fitxer descomprimit
 	 */
-	public String decompression(Ctrl_Input_LZW inp) {
-		String result = "";
+	public void decompression(Ctrl_Input_LZW inp) {
 		
-		LZW_Dict_Decode table = new LZW_Dict_Decode();
+		Dict_Decode table = new Dict_Decode(true, -1);
 		Integer i = -1;
 		
 		while (!inp.finished()) {
 			Integer k = inp.get();
 			
+			if (inp.finished()) return;
+			
 			Integer sz = table.getSize();
-			String s = "";
+			ArrayList<Byte> s = new ArrayList<>();
 
 			//Dictionary's maximum size -> Reset it
 			if (sz == Limit) { 
-				table.reset_dictionary();
+				table.reset_dictionary(true);
 			}				
 			else if (k > sz) {
 				System.out.println("Liada");
@@ -98,48 +98,24 @@ public class LZW {
 				s = table.getWord(k);
 
 				if (i != -1) {
-					table.add(i, s.charAt(0));
+					table.add(i, s.get(0));
 				}
 			}
 			else {
-				table.add(i, table.getWord(i).charAt(0));
+				table.add(i, table.getWord(i).get(0));
 				s = table.getWord(k);
 			}
-
-			result += s;
+			Output.add(s);
 			i = k;
 		}
-		return result;
 	}
 
 	/**
-	 * @fn public Ctrl_Output print_encode(Ctrl_Input_Text inp)
-	 * @brief La funció serà cridada quan volguem comprimir un text i obtenir el resultat
-	 * @param inp Controlador d'Input amb l'accés al fitxer
+	 * @fn public Ctrl_Output print()
+	 * @brief La funció serà cridada quan volguem obtenir el resultat d'una compressio o descompressio
 	 * @return Controlador d'Output per poder esciure el resultat
 	 */
-	public Ctrl_Output print_encode(Ctrl_Input_Text inp) {
-		ArrayList<Integer> arr = compression(inp);
-		
-		for (int i = 0; i < arr.size(); ++i) {
-			Output.add(arr.get(i));
-		}
-
+	public Ctrl_Output print() {
 		return Output;
 	}
-
-	/**
-	 * @fn public Ctrl_Output print_decode(Ctrl_Input_LZW inp)
-	 * @brief La funció serà cridada quan volguem descomprimir un text i obtenir el resultat
-	 * @param inp Controlador d'Input amb l'accés al fitxer comprimit amb LZW
-	 * @return Controlador d'Output per poder esciure el resultat
-	 */
-	public Ctrl_Output print_decode(Ctrl_Input_LZW inp) {
-		String arr = decompression(inp);
-		
-		Output.add(arr);
-
-		return Output;
-	}
-	
 }

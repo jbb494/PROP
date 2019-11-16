@@ -16,7 +16,7 @@ public class Node {
     /**
      * @param c Valor del node
      */
-    char c;
+    byte c;
 
     /**
      * @param Left fill esquerra
@@ -33,7 +33,7 @@ public class Node {
      * @brief Constructor de la classe
      * @param c Valor del node
      */
-    public Node(char c) {
+    public Node(byte c) {
         First = Left = Right = -1;
         this.c = c;
     }

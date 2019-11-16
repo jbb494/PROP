@@ -1,8 +1,10 @@
-/*package domini.algorithm;
+package domini.algorithm;
 
 import java.util.ArrayList;
 
-import persistencia.input.Ctrl_Input_Img;
+
+import persistencia.input.*;
+import persistencia.output.*;
 
 public class JPEG {
 
@@ -30,77 +32,91 @@ public class JPEG {
 		return (byte)(x + 0.5);
 	}
 
+	private static double force255(double x) {
+        if (x < 0) return 0;
+        if (x > 255) return 255;
+        return x;
+    }
 	private static double alpha(int x) { // only used in discrete_cosine_transform
 		if (x == 0) return 1.0 / Math.sqrt(2);
 		return 1.0;
 	}
 
-	private static void discrete_cosine_transform(double[][] mat1, int x0, int y0) {
+	public static void discrete_cosine_transform(double[][] mat1) {
 		//int n = 8;
 		//int m = 8;
 		
 		double[][] mat2 = new double[8][8];
 
-		for (int i = 0; i < 8; i++) {
-			for (int j = 0; j < 8; ++j) {
+		for (int u = 0; u < 8; u++) {
+			for (int v = 0; v < 8; ++v) {
 
 				double sum = 0;
 				for (int x = 0; x < 8; ++x) { 
                     for (int y = 0; y < 8; ++y)  { 
-                        sum += mat1[x0 + x][y0 + y] *  
-                               Math.cos((2*x + 1) * i * Math.PI / (2*8)) *  
-                               Math.cos((2*y + 1) * j * Math.PI / (2*8)); 
+                        sum += mat1[x][y] *  
+                               Math.cos((2*x + 1) * u * Math.PI / (16.0)) *  
+                               Math.cos((2*y + 1) * v * Math.PI / (16.0)); 
                     } 
 				}
-				mat2[i][j] = (1.0/4.0) * alpha(i) * alpha(j) * sum;
+				mat2[u][v] = (1.0/4.0) * alpha(u) * alpha(v) * sum;
 			}
 		}
 
+		
+
 		for (int x = 0; x < 8; ++x) {
 			for (int y = 0; y < 8; ++y) { 
-				mat1[x0 + x][y0 + y] = mat2[x][y];
+				mat1[x][y] = mat2[x][y];
 			}
 		}
 	}
 
-	private static void inverse_discrete_cosine_transform(double[][] mat1, int x0, int y0) {
+	public static void inverse_discrete_cosine_transform(double[][] mat1) {
 		//int n = 8;
 		//int m = 8;
 		
 		double[][] mat2 = new double[8][8];
 
-		for (int i = 0; i < 8; i++) {
-			for (int j = 0; j < 8; ++j) {
+		for (int x = 0; x < 8; x++) {
+			for (int y = 0; y < 8; ++y) {
 
 				double sum = 0;
-				for (int x = 0; x < 8; ++x) { 
-                    for (int y = 0; y < 8; ++y)  { 
-						sum += alpha(i) * alpha(j) *
-							   mat1[x0 + x][y0 + y] *  
-                               Math.cos((2*x + 1) * i * Math.PI / (2*8)) *  
-                               Math.cos((2*y + 1) * j * Math.PI / (2*8)); 
+				for (int u = 0; u < 8; ++u) { 
+                    for (int v = 0; v < 8; ++v)  { 
+						sum += alpha(u) * alpha(v) * 
+							   mat1[u][v] *  
+                               Math.cos((2*x + 1) * u * Math.PI / (16.0)) *  
+                               Math.cos((2*y + 1) * v * Math.PI / (16.0)); 
                     } 
 				}
-				mat2[i][j] = (1.0/4.0) * sum;
+				mat2[x][y] = (1.0/4.0) * sum;
 			}
 		}
 
 		for (int x = 0; x < 8; ++x) {
 			for (int y = 0; y < 8; ++y) { 
-				mat1[x0 + x][y0 + y] = mat2[x][y];
+				mat1[x][y] = mat2[x][y];
 			}
 		}
 	}
 
+	Byte[][][][][] com;
+	int com_w, com_h;
 
 	public void encode(Ctrl_Input_Img in) {
 
+		com = new Byte[in.getHeight()/8][in.getWidth()/8][8][8][3];
+
 		int num_i_blocks = in.getHeight()/8;
+		int num_j_blocks = in.getWidth()/8;
+		////////////////////////////////////////////////
+		com_h = num_i_blocks*8; com_w = num_j_blocks*8;
+		////////////////////////////////////////////////
 
 		for (int i_block = 0; i_block < num_i_blocks; i_block++)  {
 
 			double[][][][] inRGB = in.get();
-			int num_j_blocks = inRGB.length;
 
 			for (int j_block = 0; j_block < num_j_blocks; j_block++)  {
 
@@ -124,19 +140,22 @@ public class JPEG {
 				ArrayList<Byte[]> ret = new ArrayList<Byte[]>();
 						
 				for (int k = 0; k < 3; ++k) {
-
+					
 					//4. Discrete cosnie transform
 					for(int i = 0; i < 8; ++i) {
 						for (int j = 0; j < 8; ++j) {
 							YCbCr[k][i][j] -= 128;
 						}
 					}
-					discrete_cosine_transform(YCbCr[k], 0, 0);
+					discrete_cosine_transform(YCbCr[k]);
 					
 					//5. Quantization
 					for(int i = 0; i < 8; ++i) {
 						for (int j = 0; j < 8; ++j) {
 							outYCbCr[i][j][k] = round(YCbCr[k][i][j] / quantization_matrix[i][j]);
+							///////////////////////////////////////////////////
+							com[i_block][j_block][i][j][k] = outYCbCr[i][j][k];
+							///////////////////////////////////////////////////
 						}
 					}
 
@@ -176,12 +195,18 @@ public class JPEG {
 			}
 		}
 
-		//return ret;
+		
 	}
 
-	public void decode() {
 
-		int num_i_blocks, num_j_blocks;
+	public void decode(String path) {
+
+		///////////////////////////
+		int num_i_blocks = com_h/8;
+		int num_j_blocks = com_w/8;
+
+		Ctrl_Output_Img out = new Ctrl_Output_Img(path, com_w, com_h, 255);
+		////////////////////////////
 
 		for (int i_block = 0; i_block < num_i_blocks; i_block++)  {
 
@@ -198,12 +223,15 @@ public class JPEG {
 					//5. Quantization
 					for(int i = 0; i < 8; ++i) {
 						for (int j = 0; j < 8; ++j) {
+							///////////////////////////////////////////////////
+							inYCbCr[i][j][k] = com[i_block][j_block][i][j][k];
+							///////////////////////////////////////////////////
 							YCbCr[k][i][j] = inYCbCr[i][j][k] * quantization_matrix[i][j];
 						}
 					}
 
 					//4. Discrete cosnie transform
-					inverse_discrete_cosine_transform(YCbCr[k], 0, 0);
+					inverse_discrete_cosine_transform(YCbCr[k]);
 					for(int i = 0; i < 8; ++i) {
 						for (int j = 0; j < 8; ++j) {
 							YCbCr[k][i][j] += 128;
@@ -215,23 +243,25 @@ public class JPEG {
 				//1. Color space transformation
 				for (int i = 0; i < 8; ++i) {
 					for (int j = 0; j < 8; ++j) {
-						double r, g, b;
-						r = inRGB[j_block][i][j][0]; g = inRGB[j_block][i][j][1]; b = inRGB[j_block][i][j][2];
 						double y, cb, cr;
-						// https://sistenix.com/rgb2ycbcr.html
-						y = 16 + (65.738*r + 129.057*g + 25.064f*b)/256;
-						cb = 128 + (-37.945*r - 74.494*g + 112.439*b)/256;
-						cr = 128 + (112.439*r - 94.154*g - 18.285*b)/256;
-						YCbCr[0][i][j] = y; YCbCr[1][i][j] = cb; YCbCr[2][i][j] = cr;
+						y = YCbCr[0][i][j]; cb = YCbCr[1][i][j]; cr = YCbCr[2][i][j];
+						double r, g, b;
+						// https://en.wikipedia.org/wiki/YCbCr#ITU-R_BT.601_conversion
+						r = 255./219.*(y-16) + 255./224.*1.402*(cr-128.);
+                        g = 255./219.*(y-16) + 255./224.*(1.772*0.114/0.587*(cb-128) - 1.402*0.299/0.587*(cr-128));
+                        b = 255./219.*(y-16) + 255./224.*1.772*(cb-128);
+                        r = force255(r); g = force255(g); b = force255(b);
+						
+						outRGB[j_block][i][j][0] = r; g = outRGB[j_block][i][j][1] = g; outRGB[j_block][i][j][2] = b;
 					}
 				}
 			}
+			out.add(outRGB);
 		}
+		out.print();
 
 	}
 	
-	public static void main(String args[]) {
-			
-	}
+	
 }
-*/
+

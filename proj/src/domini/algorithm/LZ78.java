@@ -33,50 +33,45 @@ public class LZ78 {
 	 * @brief Comprimim un text amb l'algoritme LZ78
 	 * @param in accés al Controlador d'Input per el text
 	 */
-	public void Compressor(Ctrl_Input_Text in)
-	{
-        Map<String, Integer> map = new HashMap<String, Integer>();
+	public void Compressor(Ctrl_Input_Text in) {
+        Trie<Byte> map = new Trie<Byte>();
 		
-		Character nextChar;
+		Byte nextByte;
 				
-		String seq = "";
+		ArrayList<Byte> seq = new ArrayList<Byte>();
 
 		Integer punterMap = 0;
-		
+		int i = 0;
 		while(!in.finished()) {
-			nextChar = in.get();
-			String nextCharS;
-			//if(nextChar == ' ')nextCharS = "\\s";
-			//else nextCharS = nextChar.toString();
-			nextCharS = nextChar.toString();
-
-			String novaEntrada = seq.concat(nextCharS);
-			
-            if(map.containsKey(novaEntrada))
-            {
-				seq = seq.concat(nextCharS);
-
+			nextByte = in.get();
+			ArrayList<Byte> novaEntrada = new ArrayList<Byte> ();
+			novaEntrada.addAll(seq);
+			novaEntrada.add(nextByte);
+			//System.out.println("nextByte: " + nextByte + " iteracio: " + i++);
+            if(map.indexNode(novaEntrada) != -1) {
+				if(in.finished()){
+					Integer punterActual = map.indexNode(seq) +1;
+					Output.add((Integer)punterActual, 32);
+					Output.add(nextByte, 8);	
+					return;
+				}
+				seq.add(nextByte);
             }else
-            {
-									
-				//Integer midaPunter = (int)Math.ceil((Math.log((double)punterMap+1)/Math.log(2)));
-
-				//System.out.println("punterMap: " + punterMap + " midaPunter: " + midaPunter);
-				
-				if(seq.length() >= 1){
-					Integer punterActual = map.get(seq) +1;
-
-					Output.add(punterActual, 32);
+            {									
+				if(seq.size() >= 1){
+					Integer punterActual = map.indexNode(seq) +1;
+					
+					Output.add((Integer)punterActual, 32);
 
 				}else{
-					Output.add(0, 32);
+					Output.add((Integer)0, 32);
 				}
+				
+				Output.add(nextByte, 8);
 
-				Output.add(nextChar);
+				map.insert(novaEntrada, punterMap);
 
-				map.put(novaEntrada, punterMap);
-
-				seq = "";
+				seq = new ArrayList<Byte>();
 				punterMap++;
 			}
 		}
@@ -87,24 +82,21 @@ public class LZ78 {
 	 * @brief Descomprimim un fitxer amb l'algoritme LZ78
 	 * @param inp accés al Controlador d'Input pel fitxer comprimit
 	 */
-	public void Decompressor(Ctrl_Input_LZ78 in) 
-	{
-		Map<Integer, String> map = new HashMap<Integer, String>();
-		Integer punterActual = 0;
+	public void Decompressor(Ctrl_Input_LZ78 in) {
+		Dict_Decode map = new Dict_Decode(false, 0);
 		while(!in.finished()) {
-			//System.out.println("Int: " + entr.getKey() + "Char: " + entr.getValue());
-			Pair <Integer, Character> entr = in.get();
+			Pair <Integer, Byte> entr = in.get();
+			//System.out.println((in.finished() ? "finsihed" : "not Finished")
+			// + " Int: "+ entr.getLeft() + " Byte: " + entr.getRight());
 			if(in.finished()) return;
 			Integer punterMap = entr.getLeft();
-			Character nextChar = entr.getRight();
-			if(punterMap == 0){
-				Output.add(nextChar);
-				map.put(punterActual++, nextChar.toString());
-			}else {
-				String seqPunterMap = map.get(punterMap-1);
-				map.put(punterActual++, seqPunterMap.concat(nextChar.toString()));
-				Output.add(seqPunterMap.concat(nextChar.toString()));		
-			}
+			Byte nextByte = entr.getRight();
+
+			ArrayList<Byte> seqPunterMap = map.getWord(punterMap);
+			seqPunterMap.add(nextByte);
+			map.add(punterMap, nextByte);
+			//System.out.println("ADDING: " + seqPunterMap);
+			Output.add(seqPunterMap);
 		}
 	}
 

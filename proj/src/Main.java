@@ -1,12 +1,21 @@
-
+/**
+ * @class Main
+ * @brief Classe Main
+ * @author
+ */
 import presentacion.master.Ctrl_Master;
 
 public class Main {
+
 
     public static void print_binary(Byte b) {
         System.out.println(Integer.toBinaryString(b));
     }
 
+    /**
+     * @brief Main de la classe
+     * @param args
+     */
     public static void main(String[] args) 
     {   
         while(true)
