@@ -3,7 +3,7 @@ if [[ $# -eq 0 ]]; then
     echo "Compilem els seguents arxius: "
     ArxiusAcompilar=$(find | grep .java | tr "\n" " ")
     echo $ArxiusAcompilar | sed "s/ /\n/g"
-    javac $ArxiusAcompilar -d ../bin
+    javac -Xlint:unchecked $ArxiusAcompilar -d ../bin
 elif [[ $1 == "-driver" ]]; then
     echo "Executem driver"
     cd ../bin
