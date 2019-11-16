@@ -26,14 +26,10 @@ public class Driver__ArrayCircular {
 		System.out.println("	 Input: 5");
 		System.out.println("	 6. getEnd()");
 		System.out.println("	 Input: 6");
-		System.out.println("	 7. incStart()");
+		System.out.println("	 7. isIn(byte value)");
 		System.out.println("	 Input: 7");
-		System.out.println("	 8. incEnd()");
+		System.out.println("	 8. getAfegits()");
 		System.out.println("	 Input: 8");
-		System.out.println("	 9. isIn(byte value)");
-		System.out.println("	 Input: 9");
-		System.out.println("	 10. getAfegits()");
-		System.out.println("	 Input: 10");
 		System.out.println();
 
 		System.out.println("	 0. Sortir");
@@ -96,18 +92,12 @@ public class Driver__ArrayCircular {
 					System.out.println(arraycircular.getEnd());;
 				break;
 				case "7":
-					arraycircular.incStart();
-				break;
-				case "8":
-					arraycircular.incEnd();
-				break;
-				case "9":
 					System.out.println("Pon un Byte para saber si está en la Array");
 					aux = reader.readLine().trim();
 					value = Byte.parseByte(aux);
 					System.out.println(arraycircular.isIn(value));;
 				break;
-				case "10":
+				case "8":
 					System.out.println(arraycircular.getAfegits());
 				break;
 				case "0":

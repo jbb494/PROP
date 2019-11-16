@@ -1,7 +1,5 @@
 package domini.utils;
 
-import java.util.*;
-
 
 public class ArrayCircular {
 
@@ -54,16 +52,6 @@ public class ArrayCircular {
     public int getEnd()
     {
         return end;
-    }
-
-    public void incStart()
-    {
-        start = (++start)%size;
-    }
-
-    public void incEnd()
-    {
-        end = (++end)%size;
     }
 
     public boolean isIn(byte value)
