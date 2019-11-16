@@ -4,6 +4,11 @@ import java.io.BufferedReader;
 import java.io.InputStreamReader;
 import java.util.ArrayList;
 
+/**
+ * @class Driver__Dict_Encode
+ * @brief Driver de Dict_Encode
+ * @author Joan Bellavista Bartroli
+ */
 public class Driver__Dict_Decode {
 
 	/**

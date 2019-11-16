@@ -5,6 +5,11 @@ import java.io.InputStreamReader;
 
 import persistencia.input.Ctrl_Input_Img;
 
+/**
+ * @class Driver__JPEG
+ * @brief Driver de JPEG
+ * @author Joan Bellavista Bartroli
+ */
 public class Driver__JPEG {
 
 	/**

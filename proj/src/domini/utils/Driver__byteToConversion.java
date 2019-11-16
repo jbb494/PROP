@@ -5,6 +5,11 @@ import java.io.InputStreamReader;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * @class Driver_byteToConversion
+ * @brief Driver de byteToConversion
+ * @author Joan Bellavista Bartroli
+ */
 public class Driver__byteToConversion {
 
 	/**

@@ -2,12 +2,16 @@ package domini.algorithm;
 
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
-import java.util.ArrayList;
 
 import persistencia.input.Ctrl_Input_LZSS;
 import persistencia.input.Ctrl_Input_Text;
 import persistencia.output.Ctrl_Output;
 
+/**
+ * @class Driver__LZSS
+ * @brief Driver de LZSS
+ * @author Joan Bellavista Bartroli
+ */
 public class Driver__LZSS {
 
 	/**

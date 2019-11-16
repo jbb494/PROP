@@ -2,8 +2,12 @@ package domini.algorithm;
 
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
-import java.util.ArrayList;
 
+/**
+ * @class Driver__Huffman
+ * @brief Driver de Huffman
+ * @author Joan Bellavista Bartroli
+ */
 public class Driver__Huffman {
 
 	/**

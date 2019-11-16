@@ -2,8 +2,12 @@ package domini.estadistica;
 
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
-import java.util.ArrayList;
 
+/**
+ * @class Driver__Estadistica
+ * @brief Driver de Estadistica
+ * @author Joan Bellavista Bartroli
+ */
 public class Driver__Estadistica {
 
 	/**
