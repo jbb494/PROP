@@ -4,16 +4,22 @@ NomArxiuInp=$1
 NomClasse=$(echo $1 | sed -e "s/\.java//" )
 NomDriver="Driver__$NomClasse"
 NomArxiuOut="Driver__"$NomArxiuInp
+if [[ -f $NomArxiuOut ]]; then
+    echo "The driver $NomArxiuOut already exists"
+    exit 1
+fi
 RegexPerNomsValids="\(\w\|\d\|,\|<\|>\|_\|-\)"
 RegexPerTotMenysPar="\(\w\|\d\|,\|<\|>\|_\|-\|\s\)"
 IFS=$'\n'
-ArrayFuncions=($(sed -e "/public/! d; /\* @/ d; s/public\s*//g; /^\s*class/ d; /^\s*$RegexPerNomsValids*(/ d ;s/{\s*//g; s/^\s*$RegexPerNomsValids*\s*\(.*\)$/\2/g; /^()/ d" $NomArxiuInp))
-Constructores=($(sed -e "/\s*public\s*$RegexPerNomsValids*($RegexPerTotMenysPar*).*/! d; /\* @/ d;s/\s*{//g; s/\s*}//g;s/^\s*//g; s/^public\s*//g" $NomArxiuInp))
+ArrayFuncions=($(sed -e "/\s*public\(\s*$RegexPerNomsValids*\)*($RegexPerTotMenysPar*).*/! d; ; /\* @/ d; s/public\s*//g; s/static\s*//g;/^\s*class/ d; /^\s*$RegexPerNomsValids*(/ d ;s/{\s*//g; s/^\s*$RegexPerNomsValids*\s*\(.*\)$/\2/g; /^()/ d" $NomArxiuInp))
+Constructores=($(sed -e "/\s*public\s*$RegexPerNomsValids*($RegexPerTotMenysPar*).*/! d; /\* @/ d;s/\s*{//g;s/\s*}//g; s/^\s*//g; s/^public\s*//g; s/public\s*//g;" $NomArxiuInp))
 Package=$(sed "/^package/! d" $NomArxiuInp)
 
 echo -n "" > $NomArxiuOut
 echo -e "$Package \n" >> $NomArxiuOut
-echo -e "import java.io.BufferedReader;\nimport java.io.InputStreamReader;\nimport java.util.ArrayList;\n" >> $NomArxiuOut
+echo -e "import java.io.BufferedReader;\nimport java.io.InputStreamReader;\n" >> $NomArxiuOut
+
+echo -e "/**\n * @class $NomDriver\n * @brief Driver de $NomClasse\n * @author Joan Bellavista Bartroli\n */" >> $NomArxiuOut
 
 echo -e "public class $NomDriver {\n" >> $NomArxiuOut
 
@@ -28,6 +34,7 @@ for key in "${Constructores[@]}"; do
 done
 nombreConstructors=$((i-1))
 echo >> $NomArxiuOut 
+echo -e "\t\tSystem.out.println(\"Funciones: \");" >> $NomArxiuOut
 
 for key in "${ArrayFuncions[@]}"; do
     echo -e "\t\tSystem.out.println(\"\\t $i. $key\");" >> $NomArxiuOut
@@ -62,10 +69,10 @@ for constr in "${Constructores[@]}"; do
     IFS=',' read -r -a atributs <<< "$Arguments"
     if [[ ${#atributs[@]} -ge 2 ]]; then
         echo -e "\t\t\t\t\tSystem.out.println(\"\");" >> $NomArxiuOut
-        echo -e "\t\t\t\t\tString[] aux = reader.readLine().trim().split(\" \");" >> $NomArxiuOut
+        echo -e "\t\t\t\t\tString[] aux$i = reader.readLine().trim().split(\" \");" >> $NomArxiuOut
     elif [[ ${#atributs[@]} -eq 1 ]]; then
         echo -e "\t\t\t\t\tSystem.out.println(\"\");" >> $NomArxiuOut
-        echo -e "\t\t\t\t\tString aux = reader.readLine().trim();" >> $NomArxiuOut
+        echo -e "\t\t\t\t\tString aux$i = reader.readLine().trim();" >> $NomArxiuOut
     fi
 
     for atr in "${atributs[@]}"; do
@@ -95,10 +102,10 @@ for func in "${ArrayFuncions[@]}"; do
     IFS=',' read -r -a atributs <<< "$Arguments"
     if [[ ${#atributs[@]} -ge 2 ]]; then
         echo -e "\t\t\t\t\tSystem.out.println(\"\");" >> $NomArxiuOut
-        echo -e "\t\t\t\t\tString[] aux = reader.readLine().trim().split(\" \");" >> $NomArxiuOut
+        echo -e "\t\t\t\t\tString[] aux$i = reader.readLine().trim().split(\" \");" >> $NomArxiuOut
     elif [[ ${#atributs[@]} -eq 1 ]]; then
         echo -e "\t\t\t\t\tSystem.out.println(\"\");" >> $NomArxiuOut
-        echo -e "\t\t\t\t\tString aux = reader.readLine().trim();" >> $NomArxiuOut
+        echo -e "\t\t\t\t\tString aux$i = reader.readLine().trim();" >> $NomArxiuOut
     fi
 
     for atr in "${atributs[@]}"; do

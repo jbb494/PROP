@@ -2,8 +2,12 @@ package domini.algorithm;
 
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
-import java.util.ArrayList;
 
+/**
+ * @class Driver__Ctrl_Algorithm
+ * @brief Driver de Ctrl_Algorithm
+ * @author Joan Bellavista Bartroli
+ */
 public class Driver__Ctrl_Algorithm {
 
 	/**
@@ -16,6 +20,7 @@ public class Driver__Ctrl_Algorithm {
 		System.out.println("	 1. Ctrl_Algorithm()");
 		System.out.println("	 Input: 1");
 
+		System.out.println("\nFunciones: ");
 		System.out.println("	 2. Choose_Encoder(String Path, String method) ");
 		System.out.println("	 Input: 2");
 		System.out.println("	 3. Auto_Encoder(String Path)");
@@ -72,7 +77,7 @@ public class Driver__Ctrl_Algorithm {
 					System.err.println(ret);
 				break;
 				case "4":
-					System.out.println("Escrive el path del archivo comprimido que quieres descomprimir y el metodo con el que ha sido comprimido.");
+					System.out.println("escribe el path del archivo comprimido que quieres descomprimir y el metodo con el que ha sido comprimido.");
 					String[] aux2 = reader.readLine().trim().split(" ");
 					Path = aux2[0];
 					method = aux2[1];
