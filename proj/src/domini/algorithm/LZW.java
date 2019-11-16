@@ -45,8 +45,7 @@ public class LZW {
 	 * @param inp accés al Controlador d'Input per el text
 	 * @return llista amb els enters que representen el text
 	 */
-	public ArrayList<Integer> compression(Ctrl_Input_Text inp) {
-		ArrayList<Integer> result = new ArrayList<Integer>();
+	public void compression(Ctrl_Input_Text inp) {
 
 		//We initialize the attributes we need
 		Dict_Encode table = new Dict_Encode();
@@ -58,17 +57,15 @@ public class LZW {
 			Integer aux = i;
 
 			if ( (i = table.search_and_insert_BST(aux, c)) == -1) {
-				result.add(aux);
+				Output.add(aux);
 				i = table.Ascii_value(c);
 			}
 		}
 
 		
 		if (i != -1) {
-			result.add(i);	
+			Output.add(i);	
 		}
-		
-		return result;
 	}
 
 	/**
@@ -77,8 +74,7 @@ public class LZW {
 	 * @param inp accés al Controlador d'Input pel fitxer comprimit
 	 * @return text que representa el fitxer descomprimit
 	 */
-	public ArrayList<Byte> decompression(Ctrl_Input_LZW inp) {
-		ArrayList<Byte> result = new ArrayList<>();
+	public void decompression(Ctrl_Input_LZW inp) {
 		
 		Dict_Decode table = new Dict_Decode(true, -1);
 		Integer i = -1;
@@ -86,7 +82,7 @@ public class LZW {
 		while (!inp.finished()) {
 			Integer k = inp.get();
 			
-			if (inp.finished()) return result;
+			if (inp.finished()) return;
 			
 			Integer sz = table.getSize();
 			ArrayList<Byte> s = new ArrayList<>();
@@ -109,43 +105,17 @@ public class LZW {
 				table.add(i, table.getWord(i).get(0));
 				s = table.getWord(k);
 			}
-
-			result.addAll(s);
+			Output.add(s);
 			i = k;
 		}
-		return result;
 	}
 
 	/**
-	 * @fn public Ctrl_Output print_encode(Ctrl_Input_Text inp)
-	 * @brief La funció serà cridada quan volguem comprimir un text i obtenir el resultat
-	 * @param inp Controlador d'Input amb l'accés al fitxer
+	 * @fn public Ctrl_Output print()
+	 * @brief La funció serà cridada quan volguem obtenir el resultat d'una compressio o descompressio
 	 * @return Controlador d'Output per poder esciure el resultat
 	 */
-	public Ctrl_Output print_encode(Ctrl_Input_Text inp) {
-		ArrayList<Integer> arr = compression(inp);
-		
-		for (int i = 0; i < arr.size(); ++i) {
-			Output.add(arr.get(i));
-		}
-
+	public Ctrl_Output print() {
 		return Output;
 	}
-
-	/**
-	 * @fn public Ctrl_Output print_decode(Ctrl_Input_LZW inp)
-	 * @brief La funció serà cridada quan volguem descomprimir un text i obtenir el resultat
-	 * @param inp Controlador d'Input amb l'accés al fitxer comprimit amb LZW
-	 * @return Controlador d'Output per poder esciure el resultat
-	 */
-	public Ctrl_Output print_decode(Ctrl_Input_LZW inp) {
-		ArrayList<Byte> arr = decompression(inp);
-		
-		for (byte b : arr) {
-			Output.add(b,8);
-		}
-
-		return Output;
-	}
-	
 }

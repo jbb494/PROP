@@ -41,7 +41,8 @@ public class Ctrl_Algorithm {
         {
             LZW alg = new LZW(prefix + method, false);
             Ctrl_Input_Text in = new Ctrl_Input_Text(Path);
-            Ctrl_Output outp = alg.print_encode(in);
+            alg.compression(in);
+            Ctrl_Output outp = alg.print();
             outp.print();
         }
         else if(method.toLowerCase().equals("lz78"))
@@ -103,7 +104,8 @@ public class Ctrl_Algorithm {
             {
                 LZW alg = new LZW(prefix + "txt", true);  
                 Ctrl_Input_LZW inP2 = new Ctrl_Input_LZW(Path);
-                Ctrl_Output outp = alg.print_decode(inP2);
+                alg.decompression(inP2);
+                Ctrl_Output outp = alg.print();
                 outp.print();
             }
             else if(decide == "lz78")
