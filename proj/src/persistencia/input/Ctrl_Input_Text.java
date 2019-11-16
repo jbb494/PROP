@@ -23,9 +23,9 @@ public class Ctrl_Input_Text extends Ctrl_Input {
  
     /**
      * @fn public byte get()
-     * @brief Proporciona el próxim byte a llegir
+     * @brief Proporciona el proxim byte a llegir
      * @note Passa tots els caracters a codi ASCII
-     * @return Retorna el pròxim byte de l'arxiu, en el cas de que no haguem arribat al final
+     * @return Retorna el proxim byte de l'arxiu, en el cas de que no haguem arribat al final
      */
     public byte get() {
         byte actual = seguent;
