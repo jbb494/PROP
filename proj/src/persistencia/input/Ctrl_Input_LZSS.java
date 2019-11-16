@@ -36,7 +36,7 @@ public class Ctrl_Input_LZSS extends Ctrl_Input {
         else
         {
             List<Byte> lb = new ArrayList<Byte>();
-            aux = Input_class.getBits(2);
+            aux = Input_class.getBits(3);
             lb.add(aux);
             aux = Input_class.getBits(8);
             lb.add(aux);
