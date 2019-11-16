@@ -1,5 +1,6 @@
 %%%%%%%%%%%%%%%%%%%%%%%%    Ctrl_Input     %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 Haurem de crear funció getNumber y getChar (com a minim) per poder cridar les dels fills no?
+RESPOSTA DEL JOAN LAPEYRA: des dels fills pots fer Input_class.getBits(n)
 
 
 
@@ -7,6 +8,8 @@ Haurem de crear funció getNumber y getChar (com a minim) per poder cridar les d
 --> getBits() 
     Si hem arribat al final de l'arxiu no és millor fer return de -1? Intueixo que 0 pot ser valor 
     correcte.
+    RESPOSTA DEL JOAN LAPEYRA: -1 també pot ser valor correcte, qualsevol valor pot ser correcte
+
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%    Ctrl_Input_Text     %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
