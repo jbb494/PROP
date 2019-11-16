@@ -19,10 +19,24 @@ import domini.utils.byteToConversion;
 
 public class Input_Text  {
 
-
+    /**
+     * @param arrayByte
+     */
     ArrayList<Byte> arrayByte;
+    
+    /**
+     * @param inputStreamReader
+     */
     private DataInputStream inputStreamReader;
+    
+    /**
+     * @param punter
+     */
     private int punter;
+    
+    /**
+     * @param pos
+     */
     private int pos;
 
 

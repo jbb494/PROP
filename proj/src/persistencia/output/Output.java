@@ -1,3 +1,8 @@
+/**
+ * @class Output
+ * @brief Classe Output
+ * @author 
+ */
 package persistencia.output;
 
 import java.util.*;
@@ -11,19 +16,39 @@ import domini.utils.byteToConversion;
 
 public class Output {
 
+    /**
+     * @param Out Llista de bytes que escriurem
+     */
     ArrayList<Byte> Out;
+
+    /**
+     * @param Pos Posicio en la que ens trobem a l'arxiu
+     */
     Integer Pos;
 
+    /**
+     * @param path Path de sortida de l'arxiu
+     */
     String path;
 
+    /**
+     * @brief Constructor de la classe
+     * @param path Path de sortida
+     */
     public Output(String path) {
         Out = new ArrayList<>();
         Pos = 0;
         this.path = path;
     }
 
-
-    public void add(byte b, int n_bits) //Pre: El byte b ha de poder expressar-se en n_bits
+    /**
+     * @fn public void add(byte b, int n_bits)
+     * @brief Afegeix un byte amb n_bits valids
+     * @param b Byte a afegir
+     * @param n_bits Nombre de bits valids
+     * @note El byte b ha de poder expressar-se en n_bits
+     */
+    public void add(byte b, int n_bits) 
     {
         if(n_bits != 0)
         {
@@ -50,8 +75,12 @@ public class Output {
                 if(Pos > 7) Pos -= 8;
             }
         }
-   }
-   
+    }
+    
+    /**
+     * @fn public void print()
+     * @brief 
+     */
     public void print()
     {
         DataOutputStream dataOutputStream = null;
@@ -79,6 +108,10 @@ public class Output {
 
     }
 
+    /**
+     * @fn public void printString()
+     * @brief 
+     */
     public void printString()
     {
         OutputStreamWriter outputStreamWriter = null;

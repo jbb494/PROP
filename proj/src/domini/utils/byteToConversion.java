@@ -1,3 +1,8 @@
+/**
+ * @class byteToConversion
+ * @brief Classe byteToConversion
+ * @author 
+ */
 package domini.utils;
 
 import java.util.*;
@@ -5,11 +10,20 @@ import java.util.*;
 
 public class byteToConversion {
 
+    /**
+     * @brief Constructor de la classe
+     */
     byteToConversion()
     {
 
     }
     
+    /**
+     * @fn public static Character byteToCharacter(Byte b)
+     * @brief Transforma un byte a Character
+     * @param b Byte a transformar
+     * @return Character resultat de la transformació
+     */
     public static Character byteToCharacter(Byte b)
     {
         Character ret;
@@ -19,8 +33,13 @@ public class byteToConversion {
         return ret;
     }
 
+    /**
+     * @fn public static Integer byteToInteger(List<Byte> bArg)
+     * @brief Transforma un Array de bytes a un Enter
+     * @param bArg Llista de bytes que volem transformar
+     * @return Integer resultat de la conversió
+     */
     public static Integer byteToInteger(List<Byte> bArg)
-    //The most significant bytes are first
     {
         Integer ret = 0;
 
@@ -33,6 +52,13 @@ public class byteToConversion {
         return ret;
     }
 
+    /**
+     * @fn public static byte shift_right_logic(byte b, int despl)
+     * @brief Desplaçament lògic cap a la detra d'un byte
+     * @param b Byte que volem desplaçar
+     * @param despl Nombre de bits que volem desplaçar
+     * @return Byte desplaçat
+     */
     public static byte shift_right_logic(byte b, int despl) {
         return (byte) ((byte) (b >>> despl) &~ (byte) (0xff << (8-despl)));
     }

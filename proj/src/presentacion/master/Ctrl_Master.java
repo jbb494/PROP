@@ -1,3 +1,8 @@
+/**
+ * @class Ctrl_Master
+ * @brief Classe Ctrl_Master
+ * @author
+ */
 package presentacion.master;
 import domini.algorithm.Ctrl_Algorithm;
 import domini.estadistica.Estadistica;
@@ -5,18 +10,30 @@ import domini.estadistica.Estadistica;
 public class Ctrl_Master {
 
     //Attributes
+    /**
+     * @param Function Indica el que vol fer l'usuari
+     */
     Integer Function;
 
+    /**
+     * @param Path Path de l'arxiu que hem de tractar
+     */
     String Path;
 
 
-    //Constructor
+    /**
+     * @brief Constructor de la classe
+     */
     public Ctrl_Master() {
         Function = 0;
         Path = "";
     }
 
     //Functions
+    /**
+     * @fn public void Context()
+     * @brief S'encarrega de preguntar a l'usuari que vol fer
+     */
     public void Context() {
         
         //Asking if we wanna encode or decode
@@ -38,6 +55,11 @@ public class Ctrl_Master {
         Path = System.console().readLine();
     }
 
+    /**
+     * @fn public String Work()
+     * @brief Realitza l'accio que l'usuari hagi indicar
+     * @return Retorna informació sobre l'execucio
+     */
     public String Work() {
         Ctrl_Algorithm CAlg = new Ctrl_Algorithm();
         String tornada = "";
