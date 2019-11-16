@@ -5,7 +5,8 @@ import java.util.*;
 import persistencia.input.Ctrl_Input_LZSS;
 import persistencia.input.Ctrl_Input_Text;
 import persistencia.output.Ctrl_Output;
-import domini.utils.IntorByte;;
+import domini.utils.IntorByte;
+import domini.utils.Pair;;
 
 public class LZSS {
 
@@ -40,7 +41,146 @@ public class LZSS {
                  aux.add(entry.getKey());
         return aux;
     }
-        
+
+    private int KMPSearch(ArrayList<Byte> paraula, Map<Integer,Byte> text, int paux) 
+    {
+        int M = paraula.size(); 
+        int N = text.size();   
+        int j = 0;
+        int lps[] = computeLPSArray(paraula, M);
+        int i = 0;
+        while (i < N) { 
+            if (paraula.get(j).equals(text.get(i+paux))) { 
+                j++; 
+                i++; 
+            } 
+            if (j == M) return i-j+paux;
+            else if (i < N && !paraula.get(j).equals(text.get(i+paux))) { 
+                if (j != 0) j = lps[j - 1]; 
+                else i = i + 1; 
+            } 
+        } 
+        return -1;
+    } 
+  
+    int [] computeLPSArray(ArrayList<Byte> paraula, int M) 
+    { 
+        int len = 0; 
+        int i = 1; 
+        int lps[] = new int[M]; 
+        lps[0] = 0;
+        while (i < M) { 
+            if (paraula.get(i) == paraula.get(len)) { 
+                len++; 
+                lps[i] = len; 
+                i++; 
+            } 
+            else
+            { 
+                if (len != 0) { 
+                    len = lps[len - 1];
+                } 
+                else
+                { 
+                    lps[i] = len; 
+                    i++; 
+                } 
+            } 
+        } 
+        return lps;
+    }
+
+    private int[] fail(ArrayList<Byte> pat)
+    {
+        int n = pat.size();
+        int failure[] = new int[n];
+        failure[0] = -1;
+        for (int j = 1; j < n; j++)
+        {
+            int i = failure[j - 1];
+            while ((i >= 0 && pat.get(j) != pat.get(i + 1)))
+                i = failure[i];
+            if (pat.get(j) == pat.get(i + 1))
+                failure[j] = i + 1;
+            else
+                failure[j] = -1;
+        }
+        return failure;
+    }
+    /** Function to find match for a pattern **/
+    private int posMatch(ArrayList<Byte> pat, byte[] text, int start, int end, int overflow)
+    {
+        int i, j = 0;
+        int lens;
+        if(overflow <= 1023){ lens = end; i = 0;}
+        else { lens = end; i = start; }
+        int lenp = pat.size();
+        int failure[] = fail(pat);
+        if(overflow <= 1023)
+        {
+            while (i < lens && j < lenp)
+            {
+                if (text[i] == pat.get(j))
+                {
+                    i++;
+                    j++;
+                }
+                else if (j == 0)
+                    i++;
+                else
+                    j = failure[j - 1] + 1;
+            }
+        }
+        else
+        {
+            while (i != lens && j < lenp)
+            {
+                if (text[i] == pat.get(j))
+                {
+                    i = (++i)%1024;
+                    j++;
+                }
+                else if (j == 0)
+                    i = (++i)%1024;
+                else
+                    j = failure[j - 1] + 1;
+            }
+        }
+        return ((j == lenp) ? (i - lenp) : -1);
+    }
+       /* 
+    private int KMP_Alg(ArrayList<Byte> paraula, Map<Integer, Byte> text, int paux)
+    {
+        int[] taula = TableKMP(paraula);
+        int aux = 0;
+        for(int i = 0; i < text.size(); i++)
+        {
+            while(aux > 0 && !text.get(i+paux).equals(paraula.get(aux)))
+                aux = taula[aux-1];
+            if(text.get(i+paux).equals(paraula.get(aux)))
+            {
+                ++aux;
+                if(paraula.size() == aux) return i-(aux-1)+paux; //found
+            }
+        }
+        return -1; //not found
+    }
+
+    private int[] TableKMP(ArrayList<Byte> paraula)
+    {
+        int[] taula = new int[paraula.size()];
+        if(taula.length > 0) taula[0] = 0;
+        for(int i = 1; i < paraula.size(); i++)
+        {
+            int j = taula[i-1];
+            while(j > 0 && paraula.get(j).equals(paraula.get(i)))
+                j = taula[j-1];
+            if(paraula.get(i).equals(paraula.get(j))) ++j;
+            taula[i] = j;
+        }
+        return taula;
+    }*/
+
 
     /**
      * @fn public Ctrl_Output print()
@@ -52,6 +192,18 @@ public class LZSS {
         return Output;
     }
 
+    private boolean conte(byte[] vc, int maxlen, byte value)
+    {
+        int len;
+        if(maxlen <= 1023) len = maxlen;
+        else len = 1024;
+        for(int i = 0; i < len; i++)
+        {
+            if(vc[i] == value) return true;
+        }
+        return false;
+    }
+
     /**
      * @fn public void Compressor(Ctrl_Input_Text in)
      * @brief Mètode principal per a la compressió.
@@ -59,7 +211,8 @@ public class LZSS {
      */
     public void Compressor(Ctrl_Input_Text in)
     {
-        ArrayList<Byte> aux = new ArrayList<Byte>();
+        
+        /*ArrayList<Byte> aux = new ArrayList<Byte>();
         ArrayList<Integer> keys = new ArrayList<Integer>();
         boolean needkey = true;
         Map<Integer, Byte> vc = new TreeMap<Integer, Byte>();
@@ -71,6 +224,7 @@ public class LZSS {
         {
             nextByte = in.get();
             aux.add(nextByte);
+            if(i%100000 == 0) System.out.println(i/100000);
             if(vc.containsValue(nextByte))
             {
                 if(first)
@@ -78,11 +232,7 @@ public class LZSS {
                     first = false;
                     punter = i;
                 }
-                if(needkey)
-                {
-                    keys = GetKey(vc, aux.get(0));
-                    needkey = false;
-                }
+                keys = GetKey(vc, aux.get(0));
                 boolean found = false;
                 int max = 0;
                 for(int j = 0; j < keys.size() && !found; j++)
@@ -103,7 +253,7 @@ public class LZSS {
                 if(found && aux.size() == 34)
                 {
                     Output.add((byte)1, 1);
-                    Output.add(punter - pivot, 13);
+                    Output.add(punter - pivot, 10);
                     Output.add(31, 5);
                     aux = new ArrayList<Byte>();
                     first = true;
@@ -112,7 +262,7 @@ public class LZSS {
                 else if(!found && aux.size() >= 4)
                 {
                     Output.add((byte)1, 1);
-                    Output.add(punter - pivnotf, 13);
+                    Output.add(punter - pivnotf, 10);
                     punter += (aux.size() - 1);
                     Output.add(aux.size() - 4, 5);
                     aux = new ArrayList<Byte>();
@@ -134,7 +284,7 @@ public class LZSS {
                 if(aux.size() >= 4)
                 {
                     Output.add((byte)1, 1);
-                    Output.add(punter - pivnotf, 13);
+                    Output.add(punter - pivnotf, 10);
                     Output.add(aux.size() - 4, 5);
                     Output.add((byte)0, 1);
                     Output.add(nextByte, 8);
@@ -152,16 +302,116 @@ public class LZSS {
                 needkey = true;
             }
             vc.put(i, nextByte);
-            if(vc.size() > 8191) vc.remove(paux++);
+            if(vc.size() > 1023) vc.remove(paux++);
             i++;
         }
         if(found2 && aux.size() >= 3 && aux.size() < 34)
         {
             Output.add((byte)1, 1);
-            Output.add(punter - pivot, 13);
+            Output.add(punter - pivot, 10);
             Output.add(aux.size()-3, 5);
         }
         else if(!found2 && aux.size() > 0)
+        {
+            for(int j = 0; j < aux.size(); j++)
+            {
+                Output.add((byte)0, 1);
+                Output.add(aux.get(j),8);
+            }
+        }*/
+        ArrayList<Byte> aux = new ArrayList<Byte>();
+        byte vc[] = new byte[1024];
+        byte nextByte;
+        boolean first = true;
+        boolean found2 = false;
+        int start = 0, end = 1023;
+        int punter = 0, pivot = 0, pivnotf = 0, i = 0;
+        while(!in.finished())
+        {
+            nextByte = in.get();
+            aux.add(nextByte);
+            if(i%100000 == 0) System.out.println(i/100000);
+            if(conte(vc, i, nextByte))
+            {
+                if(first)
+                {
+                    first = false;
+                    punter = start;
+                }
+                pivot = posMatch(aux, vc, start, end, i); // O(n+m)
+                boolean found = (pivot != -1);
+                if(found && aux.size() == 34)
+                {
+                    Output.add((byte)1, 1);
+                    int pos;
+                    if(punter - pivot < 0) pos = (punter - pivot) + 1024;
+                    else pos = (punter - pivot);
+                    Output.add(pos, 10);
+                    Output.add(31, 5);
+                    aux = new ArrayList<Byte>();
+                    first = true;
+                }
+                else if(!found && aux.size() >= 4)
+                {
+                    Output.add((byte)1, 1);
+                    int pos;
+                    if(punter - pivnotf < 0) pos = (punter - pivnotf) + 1024;
+                    else pos = (punter - pivnotf);
+                    Output.add(pos, 10);
+                    punter += (aux.size() - 1);
+                    Output.add(aux.size() - 4, 5);
+                    aux = new ArrayList<Byte>();
+                    aux.add(nextByte);
+                }
+                else if(!found && aux.size() < 4)
+                {
+                    Output.add((byte)0, 1);
+                    Output.add(aux.get(0), 8);
+                    aux.remove(0);
+                    punter++;
+                }
+                found2 = found;
+            }
+            else
+            {
+                if(aux.size() >= 4)
+                {
+                    Output.add((byte)1, 1);
+                    int pos;
+                    if(punter - pivnotf < 0) pos = (punter - pivnotf) + 1024;
+                    else pos = (punter - pivnotf);
+                    Output.add(pos, 10);
+                    Output.add(aux.size() - 4, 5);
+                    Output.add((byte)0, 1);
+                    Output.add(nextByte, 8);
+                }
+                else
+                {
+                    for(int j = 0; j < aux.size(); j++)
+                    {
+                        Output.add((byte)0, 1);
+                        Output.add(aux.get(j), 8);
+                    }
+                }
+                aux = new ArrayList<Byte>();
+                first = true;
+            }
+            vc[start] = nextByte;
+            end = (++end)%1024;
+            start = (++start)%1024;
+            i++;
+            pivnotf = pivot;
+        }
+        if(found2 && aux.size() >= 3 && aux.size() < 34)
+        {
+            Output.add((byte)1, 1);
+            int pos;
+            if(punter - pivot < 0) pos = (punter - pivot) + 1024;
+            else pos = (punter - pivot);
+            Output.add(pos, 10);
+            Output.add(aux.size()-3, 5);
+        }
+        else
         {
             for(int j = 0; j < aux.size(); j++)
             {
@@ -179,10 +429,11 @@ public class LZSS {
      */
     public void Decompressor(Ctrl_Input_LZSS in)
     {
-        Map<Integer, Byte> vc = new TreeMap<Integer, Byte>();
-        int pos = 0, posmap = 0;
+        byte[] vc = new byte[1024];
+        int start = 0;
         //boolean end = false;
         IntorByte ioc;
+        boolean maxsize = false;
         while(!in.finished())
         {
             ioc = in.getLZSS();
@@ -191,24 +442,37 @@ public class LZSS {
             {
                 byte c = ioc.GetByte();
                 Output.add(c, 8);
-                vc.put(posmap++, c);
-                if(vc.size() > 8191) vc.remove(pos++);
+                vc[start] = c;
+                start = (++start)%1024;
+                if(start == 0) maxsize = true;
             }
             else
             {
                 int despl = ioc.GetDespl();
                 int mida = ioc.GetMida();
-                ArrayList<Byte> aux = new ArrayList<Byte>();
                 for(int j = 0; j < mida; j++)
                 {
-                    byte c = vc.get(posmap-despl+j);
-                    aux.add(c);
-                    vc.put(posmap+j, c);
-                    if(vc.size() > 8191) vc.remove(pos++);
+                    int pos;
+                    if(maxsize)
+                    {
+                        if(start - despl +j < 0) pos = (start - despl + j)+1024;
+                        else pos = start - despl + j;
+                    }
+                    else pos = start - despl + j;
+                    if(pos > 1023)
+                    {
+                        System.out.println(maxsize);
+                    System.out.println("start: " + start);
+                    System.out.println("despl: " + (despl));
+                    System.out.println("j: "+ j);
+                    }
+                    byte c = vc[pos];
+                    Output.add(c,8);
+                    int moviment = (start+j)%1024;
+                    if(moviment == 0) maxsize = true;
+                    vc[moviment] = c;
                 }
-                posmap += mida;
-                for(int w = 0; w < aux.size(); w++)
-                    Output.add(aux.get(w), 8);
+                start = (start + mida)%1024;
             }
         }
     }
