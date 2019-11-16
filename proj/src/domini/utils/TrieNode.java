@@ -1,7 +1,7 @@
 /**
  * @class TrieNode
  * @brief Classe TrieNode
- * @author 
+ * @author Joan Bellavista Bartroli
  */
 package domini.utils;
 
