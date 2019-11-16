@@ -57,7 +57,7 @@ public class Driver__TrieNode {
 			comprovarExcepcions(trienode, linea);
 			switch(linea){
 				case "1":
-					System.out.println("");
+					System.out.println("Escribe un entero que dara un valor al nodo root");
 					String aux1 = reader.readLine().trim();
 					Integer index = Integer.parseInt(aux1);
 					trienode = new TrieNode<Byte>(index);
@@ -66,7 +66,7 @@ public class Driver__TrieNode {
 					trienode.getChildren();
 				break;
 				case "3":
-					trienode.getIndex();
+					System.out.println(trienode.getIndex());
 				break;
 				case "0":
 					return;
