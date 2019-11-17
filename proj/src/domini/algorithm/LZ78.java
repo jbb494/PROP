@@ -11,10 +11,11 @@ import java.util.*;
  * @author Joan Bellavista Bartroli
  */
 public class LZ78 {
-	/**
-     * @param Output Utilitzat per a la compressió i descompressió de fitxers.
-     */
-    Ctrl_Output Output;
+
+    /**
+	 *  Utilitzat per a la compressió i descompressió de fitxers..
+	*/
+    Ctrl_Output Output ;
    
 	//Constructor
 	/**
@@ -90,7 +91,11 @@ public class LZ78 {
 			Output.add(seqPunterMap);
 		}
 	}
-
+	/**
+	 * @fn public print()
+	 * @brief Retorna el Ctrl_Output.
+	 * @return Retorna el Ctrl_Output on està l'arxiu comprimit o descomprimit.
+	 */
 	public Ctrl_Output print() {
         return Output;
 	}
