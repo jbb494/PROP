@@ -66,7 +66,7 @@ public class LZSS {
     } 
   
     /**
-     * @fn int [] computeLPSArray(ArrayList<Byte> paraula, int M)
+     * @fn int[] FailArray(ArrayList<Byte> paraula, int M)
      * @brief Mètode auxiliar de l'algorisme de Knuth-Morris-Pratt.
      * @param paraula 
      * @param M

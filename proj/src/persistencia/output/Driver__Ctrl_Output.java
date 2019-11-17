@@ -32,6 +32,8 @@ public class Driver__Ctrl_Output {
         System.out.println("\t Input: 5");
         System.out.println("\t 6. add(Integer x, Integer mida)");
         System.out.println("\t Input: 6");
+        System.out.println("\t 13. add2(Integer x, Integer mida)");
+        System.out.println("\t Input: 13");
         System.out.println();
 
         System.out.println("Consultoras: ");
@@ -50,6 +52,7 @@ public class Driver__Ctrl_Output {
         System.out.println("\t Input: 11");
         System.out.println("\t 12. Comprimido método lzss");
         System.out.println("\t Input: 12");
+
 
         System.out.println("\t 0. Sortir");
         System.out.println("\t Input: 0");
@@ -143,6 +146,11 @@ public class Driver__Ctrl_Output {
                     case "12":
                         method = "lzss";
                         b = false;
+                    break;
+                    case "13":
+                        System.out.println("Escribe un Integer y su tamaño");
+                        aux1 = reader.readLine().split(" ");
+                        ctrl_out.add2(Integer.parseInt(aux1[0]), Integer.parseInt(aux1[1]));
                     break;
                     case "0":
                         return;
