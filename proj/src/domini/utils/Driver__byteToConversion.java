@@ -35,8 +35,8 @@ public class Driver__byteToConversion {
 	/**
 	 * @fn private static void comprovarExcepcions(byteToConversion bytetoconversion, String linea)
 	 * @brief Comprovarà les possibles excepcions que puguin apareixer a la classe
-	 * @param bytetoconversion
-	 * @param linea
+	 * @param bytetoconversion Instància byteToConversion
+	 * @param linea Número de operació realitzada
 	 */
 	private static void comprovarExcepcions(byteToConversion bytetoconversion, String linea){
 		// int op = Integer.parseInt(linea);

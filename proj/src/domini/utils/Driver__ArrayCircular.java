@@ -43,8 +43,8 @@ public class Driver__ArrayCircular {
 	/**
 	 * @fn private static void comprovarExcepcions(ArrayCircular arraycircular, String linea)
 	 * @brief Comprovarà les possibles excepcions que puguin apareixer a la classe
-	 * @param arraycircular
-	 * @param linea
+	 * @param arraycircular Instància ArrayCircular
+	 * @param linea Número de operació realitzada
 	 */
 	private static void comprovarExcepcions(ArrayCircular arraycircular, String linea){
 		int op = Integer.parseInt(linea);

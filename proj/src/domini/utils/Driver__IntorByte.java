@@ -44,8 +44,8 @@ public class Driver__IntorByte {
 	/**
 	 * @fn private static void comprovarExcepcions(IntorByte intorbyte, String linea)
 	 * @brief Comprovarà les possibles excepcions que puguin apareixer a la classe
-	 * @param intorbyte
-	 * @param linea
+	 * @param intorbyte Instància IntorByte
+	 * @param linea Número de operació realitzada
 	 */
 	private static void comprovarExcepcions(IntorByte intorbyte, String linea){
 		int op = Integer.parseInt(linea);

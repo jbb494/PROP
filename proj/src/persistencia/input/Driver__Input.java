@@ -58,9 +58,9 @@ public class Driver__Input {
     /**
      * @fn private static void comprovarExcepcions(Input inp, String linea, String path)
      * @brief Comprovarà les possibles excepcions que puguin apareixer a la classe
-     * @param inp
-     * @param linea
-     * @param path
+     * @param inp Instància Input 
+     * @param linea Número de operació realitzada
+     * @param path Path al fitxer
      */
     private static void comprovarExcepcions(Input inp, String linea, String path){
         int op = Integer.parseInt(linea);

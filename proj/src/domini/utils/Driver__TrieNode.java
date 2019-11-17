@@ -34,10 +34,10 @@ public class Driver__TrieNode {
 	/**
 	 * @fn private static void comprovarExcepcions(TrieNode trienode, String linea)
 	 * @brief Comprovarà les possibles excepcions que puguin apareixer a la classe
-	 * @param trienode
-	 * @param linea
+	 * @param trienode Instància TrieNode
+	 * @param linea Número de operació realitzada
 	 */
-	private static void comprovarExcepcions(TrieNode trienode, String linea){
+	private static void comprovarExcepcions(TrieNode<Byte> trienode, String linea){
 		int op = Integer.parseInt(linea);
 		if(trienode == null && op > 1) {
 			throw new IllegalArgumentException("Debes llamar al constructor antes");

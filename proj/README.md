@@ -14,7 +14,8 @@ Es tracta de construir un entorn per a la compressió i descompressió de fitxer
 
 # Com utilitzar l'instal·lador
 > Ens anem a la alçada de la carpeta de src. Allà, obrim un terminal i executem "./compileAndRun.sh". Llavors, ens sortirà un menú desplegable amb les opcions disponibles, com aquest:
->> -r o run per executar el main.<br>
+>> make compila el projecte.<br>
+>> run per executar el main.<br>
 >> -driver i el nom del driver que vols executar. Exemple: ./compileAndRun.sh -driver domini.algorithm.Driver__LZ78<br>
 >> -ctest Compila els tests.<br>
 >> -etest i el nom del test que vols executar. Exemple: ./compileAndRun.sh -etest domini.algorithm.LZWTest<br>

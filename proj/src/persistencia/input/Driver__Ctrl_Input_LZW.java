@@ -32,8 +32,8 @@ public class Driver__Ctrl_Input_LZW {
 	/**
 	 * @fn private static void comprovarExcepcions(Ctrl_Input_LZW ctrl_input_lzw, String linea)
 	 * @brief Comprovarà les possibles excepcions que puguin apareixer a la classe
-	 * @param ctrl_input_lzw
-	 * @param linea
+	 * @param ctrl_input_lzw Instància Ctrl_Input_LZW
+	 * @param linea Número de operació realitzada
 	 */
 	private static void comprovarExcepcions(Ctrl_Input_LZW ctrl_input_lzw, String linea){
 		int op = Integer.parseInt(linea);

@@ -34,10 +34,10 @@ public class Driver__Pair {
 	/**
 	 * @fn private static void comprovarExcepcions(Pair pair, String linea)
 	 * @brief Comprovarà les possibles excepcions que puguin apareixer a la classe
-	 * @param pair
-	 * @param linea
+	 * @param pair Instància Pair
+	 * @param linea Número de operació realitzada
 	 */
-	private static void comprovarExcepcions(Pair pair, String linea){
+	private static void comprovarExcepcions(Pair<Byte, Byte> pair, String linea){
 		int op = Integer.parseInt(linea);
 		if(pair == null && op > 1) {
 			throw new IllegalArgumentException("Debes llamar al constructor antes");
@@ -46,7 +46,7 @@ public class Driver__Pair {
 
 	public static void main(String[] args) {
 	try {
-		Pair pair = null;
+		Pair<Byte, Byte> pair = null;
 		showOptions();
 		BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
 		String linea = "";

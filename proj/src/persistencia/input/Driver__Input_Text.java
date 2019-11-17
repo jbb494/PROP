@@ -34,8 +34,8 @@ public class Driver__Input_Text {
 	/**
 	 * @fn private static void comprovarExcepcions(Input_Text input_text, String linea)
 	 * @brief Comprovarà les possibles excepcions que puguin apareixer a la classe
-	 * @param input_text
-	 * @param linea
+	 * @param input_text Instància Input_Text
+	 * @param linea Número de operació realitzada
 	 */
 	private static void comprovarExcepcions(Input_Text input_text, String linea){
 		int op = Integer.parseInt(linea);

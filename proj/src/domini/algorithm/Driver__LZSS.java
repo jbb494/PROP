@@ -46,8 +46,8 @@ public class Driver__LZSS {
 	/**
 	 * @fn private static void comprovarExcepcions(LZSS lzss, String linea)
 	 * @brief Comprovarà les possibles excepcions que puguin apareixer a la classe
-	 * @param lzss
-	 * @param linea
+	 * @param lzss Instància LZSS
+	 * @param linea Número de operació realitzada
 	 */
 	private static void comprovarExcepcions(LZSS lzss, String linea){
 		int op = Integer.parseInt(linea);
