@@ -1,12 +1,12 @@
-/**
- * @class Ctrl_Output
- * @brief Classe Ctrl_Output
- */
 package persistencia.output;
 
 import java.nio.ByteBuffer;
 import java.util.ArrayList;
 
+/**
+ * @class Ctrl_Output
+ * @brief Classe Ctrl_Output
+ */
 public class Ctrl_Output {
     
     //Attributes
@@ -115,6 +115,12 @@ public class Ctrl_Output {
         }
     }
 
+    /**
+     * @fn public void add2(int x, int mida)
+     * @brief Afegeix un enter amb mida.
+     * @param x Int a afegir.
+     * @param mida Mida de "x".
+     */
     public void add2(int x, int mida) 
     //least significant bytes first
     {

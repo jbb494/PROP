@@ -69,7 +69,7 @@ public class Driver__LZSS {
 			comprovarExcepcions(lzss, linea);
 			switch(linea){
 				case "1":
-					System.out.println("escribe el path del archivo \"out\". Luego escribe \"true\" si quieres descomprimir o \"false\" si quieres comprimir.");
+					System.out.println("escribe el path del archivo \"out\" separado por espacios. Luego escribe \"true\" si quieres descomprimir o \"false\" si quieres comprimir.");
 					String[] aux1 = reader.readLine().trim().split(" ");
 					String aux = aux1[0];
 					boolean b = aux1[1].equals("true");

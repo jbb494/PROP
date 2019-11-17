@@ -1,8 +1,4 @@
-/**
- * @class Input_Text
- * @brief Classe Input_Text
- * @author 
- */
+
 package persistencia.input;
 
 import java.io.DataInputStream;
@@ -14,9 +10,11 @@ import java.util.ArrayList;
 
 import domini.utils.byteToConversion;
 
-// Necesitaremos inputreader y bufferreader
-// https://funnelgarden.com/java_read_file/ --> FileInputStream
-
+/**
+ * @class Input_Text
+ * @brief Classe Input_Text
+ * @author 
+ */
 public class Input_Text  {
 
     /**

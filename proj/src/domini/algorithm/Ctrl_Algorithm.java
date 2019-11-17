@@ -1,8 +1,3 @@
-/**
- * @class Ctrl_Algorithm
- * @brief Classe de Ctrl_Algorithm
- * @author 
- */
 package domini.algorithm;
 
 import persistencia.input.Ctrl_Input;
@@ -12,6 +7,11 @@ import persistencia.input.Ctrl_Input_LZ78;
 import persistencia.input.Ctrl_Input_Text;
 import persistencia.output.Ctrl_Output;
 
+/**
+ * @class Ctrl_Algorithm
+ * @brief Classe de Ctrl_Algorithm
+ * @author 
+ */
 public class Ctrl_Algorithm {
 
     /**

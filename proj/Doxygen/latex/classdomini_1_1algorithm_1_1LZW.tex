@@ -1,0 +1,110 @@
+\hypertarget{classdomini_1_1algorithm_1_1LZW}{}\section{domini.\+algorithm.\+L\+ZW Class Reference}
+\label{classdomini_1_1algorithm_1_1LZW}\index{domini.\+algorithm.\+L\+ZW@{domini.\+algorithm.\+L\+ZW}}
+
+
+Compressió i descompressió pel mètode \hyperlink{classdomini_1_1algorithm_1_1LZW}{L\+ZW}.  
+
+
+
+
+Collaboration diagram for domini.\+algorithm.\+L\+ZW\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=211pt]{classdomini_1_1algorithm_1_1LZW__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classdomini_1_1algorithm_1_1LZW_a00bd43f0691ac9679e6232b701e535ec}{L\+ZW} (String aux, boolean b)
+\begin{DoxyCompactList}\small\item\em Constructor de la clase \hyperlink{classdomini_1_1algorithm_1_1LZW}{L\+ZW}. \end{DoxyCompactList}\item 
+void \hyperlink{classdomini_1_1algorithm_1_1LZW_a79ce338289c3e8fcdd111ca029cfb45b}{compression} (\hyperlink{classpersistencia_1_1input_1_1Ctrl__Input__Text}{Ctrl\+\_\+\+Input\+\_\+\+Text} inp)
+\begin{DoxyCompactList}\small\item\em Comprimim un text amb l\textquotesingle{}algoritme \hyperlink{classdomini_1_1algorithm_1_1LZW}{L\+ZW}. \end{DoxyCompactList}\item 
+void \hyperlink{classdomini_1_1algorithm_1_1LZW_a1c7f66a62ed475a72a49f294c41f54fa}{decompression} (\hyperlink{classpersistencia_1_1input_1_1Ctrl__Input__LZW}{Ctrl\+\_\+\+Input\+\_\+\+L\+ZW} inp)
+\begin{DoxyCompactList}\small\item\em Descomprimim un fitxer amb l\textquotesingle{}algoritme \hyperlink{classdomini_1_1algorithm_1_1LZW}{L\+ZW}. \end{DoxyCompactList}\item 
+\hyperlink{classpersistencia_1_1output_1_1Ctrl__Output}{Ctrl\+\_\+\+Output} \hyperlink{classdomini_1_1algorithm_1_1LZW_a57ba5129e7f26d4cc066195e3d6c9c8c}{print} ()
+\begin{DoxyCompactList}\small\item\em La funció serà cridada quan volguem obtenir el resultat d\textquotesingle{}una compressio o descompressio. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Compressió i descompressió pel mètode \hyperlink{classdomini_1_1algorithm_1_1LZW}{L\+ZW}. 
+
+\begin{DoxyAuthor}{Author}
+Miguel Paracuellos Ocaña 
+\end{DoxyAuthor}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classdomini_1_1algorithm_1_1LZW_a00bd43f0691ac9679e6232b701e535ec}\label{classdomini_1_1algorithm_1_1LZW_a00bd43f0691ac9679e6232b701e535ec}} 
+\index{domini\+::algorithm\+::\+L\+ZW@{domini\+::algorithm\+::\+L\+ZW}!L\+ZW@{L\+ZW}}
+\index{L\+ZW@{L\+ZW}!domini\+::algorithm\+::\+L\+ZW@{domini\+::algorithm\+::\+L\+ZW}}
+\subsubsection{\texorpdfstring{L\+Z\+W()}{LZW()}}
+{\footnotesize\ttfamily domini.\+algorithm.\+L\+Z\+W.\+L\+ZW (\begin{DoxyParamCaption}\item[{String}]{aux,  }\item[{boolean}]{b }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Constructor de la clase \hyperlink{classdomini_1_1algorithm_1_1LZW}{L\+ZW}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em aux} & Path de sortida \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classdomini_1_1algorithm_1_1LZW_a79ce338289c3e8fcdd111ca029cfb45b}\label{classdomini_1_1algorithm_1_1LZW_a79ce338289c3e8fcdd111ca029cfb45b}} 
+\index{domini\+::algorithm\+::\+L\+ZW@{domini\+::algorithm\+::\+L\+ZW}!compression@{compression}}
+\index{compression@{compression}!domini\+::algorithm\+::\+L\+ZW@{domini\+::algorithm\+::\+L\+ZW}}
+\subsubsection{\texorpdfstring{compression()}{compression()}}
+{\footnotesize\ttfamily public Array\+List$<$ Integer $>$ domini.\+algorithm.\+L\+Z\+W.\+compression (\begin{DoxyParamCaption}\item[{\hyperlink{classpersistencia_1_1input_1_1Ctrl__Input__Text}{Ctrl\+\_\+\+Input\+\_\+\+Text}}]{inp }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Comprimim un text amb l\textquotesingle{}algoritme \hyperlink{classdomini_1_1algorithm_1_1LZW}{L\+ZW}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em inp} & accés al Controlador d\textquotesingle{}Input per el text \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+llista amb els enters que representen el text 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classdomini_1_1algorithm_1_1LZW_a1c7f66a62ed475a72a49f294c41f54fa}\label{classdomini_1_1algorithm_1_1LZW_a1c7f66a62ed475a72a49f294c41f54fa}} 
+\index{domini\+::algorithm\+::\+L\+ZW@{domini\+::algorithm\+::\+L\+ZW}!decompression@{decompression}}
+\index{decompression@{decompression}!domini\+::algorithm\+::\+L\+ZW@{domini\+::algorithm\+::\+L\+ZW}}
+\subsubsection{\texorpdfstring{decompression()}{decompression()}}
+{\footnotesize\ttfamily public String domini.\+algorithm.\+L\+Z\+W.\+decompression (\begin{DoxyParamCaption}\item[{\hyperlink{classpersistencia_1_1input_1_1Ctrl__Input__LZW}{Ctrl\+\_\+\+Input\+\_\+\+L\+ZW}}]{inp }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Descomprimim un fitxer amb l\textquotesingle{}algoritme \hyperlink{classdomini_1_1algorithm_1_1LZW}{L\+ZW}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em inp} & accés al Controlador d\textquotesingle{}Input pel fitxer comprimit \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+text que representa el fitxer descomprimit 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classdomini_1_1algorithm_1_1LZW_a57ba5129e7f26d4cc066195e3d6c9c8c}\label{classdomini_1_1algorithm_1_1LZW_a57ba5129e7f26d4cc066195e3d6c9c8c}} 
+\index{domini\+::algorithm\+::\+L\+ZW@{domini\+::algorithm\+::\+L\+ZW}!print@{print}}
+\index{print@{print}!domini\+::algorithm\+::\+L\+ZW@{domini\+::algorithm\+::\+L\+ZW}}
+\subsubsection{\texorpdfstring{print()}{print()}}
+{\footnotesize\ttfamily public \hyperlink{classpersistencia_1_1output_1_1Ctrl__Output}{Ctrl\+\_\+\+Output} domini.\+algorithm.\+L\+Z\+W.\+print (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+La funció serà cridada quan volguem obtenir el resultat d\textquotesingle{}una compressio o descompressio. 
+
+\begin{DoxyReturn}{Returns}
+Controlador d\textquotesingle{}Output per poder esciure el resultat 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+src/domini/algorithm/L\+Z\+W.\+java\end{DoxyCompactItemize}

@@ -5,8 +5,8 @@ import java.io.InputStreamReader;
 import java.util.ArrayList;
 
 /**
- * @class Driver__Dict_Encode
- * @brief Driver de Dict_Encode
+ * @class Driver__Dict_Decode
+ * @brief Driver de Dict_Decode
  * @author Joan Bellavista Bartroli
  */
 public class Driver__Dict_Decode {

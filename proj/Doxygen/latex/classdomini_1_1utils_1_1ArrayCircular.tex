@@ -1,0 +1,162 @@
+\hypertarget{classdomini_1_1utils_1_1ArrayCircular}{}\section{domini.\+utils.\+Array\+Circular Class Reference}
+\label{classdomini_1_1utils_1_1ArrayCircular}\index{domini.\+utils.\+Array\+Circular@{domini.\+utils.\+Array\+Circular}}
+
+
+Aquesta és la classe per a estructura de dades del algoritme L\+Z\+SS.  
+
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classdomini_1_1utils_1_1ArrayCircular_add69c3bd37b2a3ef6069bd3b5df93fec}{Array\+Circular} (int mida)
+\begin{DoxyCompactList}\small\item\em El constructor. \end{DoxyCompactList}\item 
+void \hyperlink{classdomini_1_1utils_1_1ArrayCircular_a29e48f57c422739fff65e1f5d14c72c2}{set\+Value} (byte value)
+\begin{DoxyCompactList}\small\item\em Mètode per assignar el valor value al atribut array a la posició start. \end{DoxyCompactList}\item 
+byte \hyperlink{classdomini_1_1utils_1_1ArrayCircular_acbed36ebcc550922c4485c19ce5be53e}{get\+Value} (int index)
+\item 
+byte \hyperlink{classdomini_1_1utils_1_1ArrayCircular_aa36c40061ff0f3ea0ae15f5b06900e94}{get\+Value\+Amb\+Despl} (int despl)
+\begin{DoxyCompactList}\small\item\em dóna el byte de despl vegades cap enrere (des de start). \end{DoxyCompactList}\item 
+int \hyperlink{classdomini_1_1utils_1_1ArrayCircular_a3527e861f31137d21dd09e4fe452badd}{get\+Start} ()
+\begin{DoxyCompactList}\small\item\em dóna el int de la primera posició vàlida del array. \end{DoxyCompactList}\item 
+int \hyperlink{classdomini_1_1utils_1_1ArrayCircular_a3fe38ed7aa9d3b4f99bc4c80cd72bb3e}{get\+End} ()
+\begin{DoxyCompactList}\small\item\em dóna el int de la última posició vàlida del array. \end{DoxyCompactList}\item 
+boolean \hyperlink{classdomini_1_1utils_1_1ArrayCircular_aaf106d070b5937f2559a56257dc8cac3}{is\+In} (byte value)
+\begin{DoxyCompactList}\small\item\em Recorregut lineal sobre l\textquotesingle{}atribut array per trobar value. \end{DoxyCompactList}\item 
+int \hyperlink{classdomini_1_1utils_1_1ArrayCircular_a1c65dd3b452fa82ab8827885a7a2fbe1}{get\+Afegits} ()
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Aquesta és la classe per a estructura de dades del algoritme L\+Z\+SS. 
+
+Aquesta classe tracta d\textquotesingle{}utilitzar un vector amb política circular.
+
+\begin{DoxyAuthor}{Author}
+Manel Aguilar 
+\end{DoxyAuthor}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classdomini_1_1utils_1_1ArrayCircular_add69c3bd37b2a3ef6069bd3b5df93fec}\label{classdomini_1_1utils_1_1ArrayCircular_add69c3bd37b2a3ef6069bd3b5df93fec}} 
+\index{domini\+::utils\+::\+Array\+Circular@{domini\+::utils\+::\+Array\+Circular}!Array\+Circular@{Array\+Circular}}
+\index{Array\+Circular@{Array\+Circular}!domini\+::utils\+::\+Array\+Circular@{domini\+::utils\+::\+Array\+Circular}}
+\subsubsection{\texorpdfstring{Array\+Circular()}{ArrayCircular()}}
+{\footnotesize\ttfamily domini.\+utils.\+Array\+Circular.\+Array\+Circular (\begin{DoxyParamCaption}\item[{int}]{mida }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+El constructor. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em mida} & inicialitza el atribut array amb mida mida. \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classdomini_1_1utils_1_1ArrayCircular_a1c65dd3b452fa82ab8827885a7a2fbe1}\label{classdomini_1_1utils_1_1ArrayCircular_a1c65dd3b452fa82ab8827885a7a2fbe1}} 
+\index{domini\+::utils\+::\+Array\+Circular@{domini\+::utils\+::\+Array\+Circular}!get\+Afegits@{get\+Afegits}}
+\index{get\+Afegits@{get\+Afegits}!domini\+::utils\+::\+Array\+Circular@{domini\+::utils\+::\+Array\+Circular}}
+\subsubsection{\texorpdfstring{get\+Afegits()}{getAfegits()}}
+{\footnotesize\ttfamily public int domini.\+utils.\+Array\+Circular.\+get\+Afegits (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\begin{DoxyReturn}{Returns}
+retorna el atribut privat afegits. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classdomini_1_1utils_1_1ArrayCircular_a3fe38ed7aa9d3b4f99bc4c80cd72bb3e}\label{classdomini_1_1utils_1_1ArrayCircular_a3fe38ed7aa9d3b4f99bc4c80cd72bb3e}} 
+\index{domini\+::utils\+::\+Array\+Circular@{domini\+::utils\+::\+Array\+Circular}!get\+End@{get\+End}}
+\index{get\+End@{get\+End}!domini\+::utils\+::\+Array\+Circular@{domini\+::utils\+::\+Array\+Circular}}
+\subsubsection{\texorpdfstring{get\+End()}{getEnd()}}
+{\footnotesize\ttfamily public int domini.\+utils.\+Array\+Circular.\+get\+End (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+dóna el int de la última posició vàlida del array. 
+
+\begin{DoxyReturn}{Returns}
+Retorna l\textquotesingle{}atribut end 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classdomini_1_1utils_1_1ArrayCircular_a3527e861f31137d21dd09e4fe452badd}\label{classdomini_1_1utils_1_1ArrayCircular_a3527e861f31137d21dd09e4fe452badd}} 
+\index{domini\+::utils\+::\+Array\+Circular@{domini\+::utils\+::\+Array\+Circular}!get\+Start@{get\+Start}}
+\index{get\+Start@{get\+Start}!domini\+::utils\+::\+Array\+Circular@{domini\+::utils\+::\+Array\+Circular}}
+\subsubsection{\texorpdfstring{get\+Start()}{getStart()}}
+{\footnotesize\ttfamily public int domini.\+utils.\+Array\+Circular.\+get\+Start (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+dóna el int de la primera posició vàlida del array. 
+
+\begin{DoxyReturn}{Returns}
+Retorna l\textquotesingle{}atribut start 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classdomini_1_1utils_1_1ArrayCircular_acbed36ebcc550922c4485c19ce5be53e}\label{classdomini_1_1utils_1_1ArrayCircular_acbed36ebcc550922c4485c19ce5be53e}} 
+\index{domini\+::utils\+::\+Array\+Circular@{domini\+::utils\+::\+Array\+Circular}!get\+Value@{get\+Value}}
+\index{get\+Value@{get\+Value}!domini\+::utils\+::\+Array\+Circular@{domini\+::utils\+::\+Array\+Circular}}
+\subsubsection{\texorpdfstring{get\+Value()}{getValue()}}
+{\footnotesize\ttfamily public byte domini.\+utils.\+Array\+Circular.\+get\+Value (\begin{DoxyParamCaption}\item[{int}]{index }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+\begin{DoxyParams}{Parameters}
+{\em index} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Retorna el byte a la posició index de array 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classdomini_1_1utils_1_1ArrayCircular_aa36c40061ff0f3ea0ae15f5b06900e94}\label{classdomini_1_1utils_1_1ArrayCircular_aa36c40061ff0f3ea0ae15f5b06900e94}} 
+\index{domini\+::utils\+::\+Array\+Circular@{domini\+::utils\+::\+Array\+Circular}!get\+Value\+Amb\+Despl@{get\+Value\+Amb\+Despl}}
+\index{get\+Value\+Amb\+Despl@{get\+Value\+Amb\+Despl}!domini\+::utils\+::\+Array\+Circular@{domini\+::utils\+::\+Array\+Circular}}
+\subsubsection{\texorpdfstring{get\+Value\+Amb\+Despl()}{getValueAmbDespl()}}
+{\footnotesize\ttfamily public byte domini.\+utils.\+Array\+Circular.\+get\+Value\+Amb\+Despl (\begin{DoxyParamCaption}\item[{int}]{despl }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+dóna el byte de despl vegades cap enrere (des de start). 
+
+
+\begin{DoxyParams}{Parameters}
+{\em despl} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Retorna el byte a la posició indicada del array 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classdomini_1_1utils_1_1ArrayCircular_aaf106d070b5937f2559a56257dc8cac3}\label{classdomini_1_1utils_1_1ArrayCircular_aaf106d070b5937f2559a56257dc8cac3}} 
+\index{domini\+::utils\+::\+Array\+Circular@{domini\+::utils\+::\+Array\+Circular}!is\+In@{is\+In}}
+\index{is\+In@{is\+In}!domini\+::utils\+::\+Array\+Circular@{domini\+::utils\+::\+Array\+Circular}}
+\subsubsection{\texorpdfstring{is\+In()}{isIn()}}
+{\footnotesize\ttfamily public boolean domini.\+utils.\+Array\+Circular.\+is\+In (\begin{DoxyParamCaption}\item[{byte}]{value }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Recorregut lineal sobre l\textquotesingle{}atribut array per trobar value. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em value} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true si value està a array else false. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classdomini_1_1utils_1_1ArrayCircular_a29e48f57c422739fff65e1f5d14c72c2}\label{classdomini_1_1utils_1_1ArrayCircular_a29e48f57c422739fff65e1f5d14c72c2}} 
+\index{domini\+::utils\+::\+Array\+Circular@{domini\+::utils\+::\+Array\+Circular}!set\+Value@{set\+Value}}
+\index{set\+Value@{set\+Value}!domini\+::utils\+::\+Array\+Circular@{domini\+::utils\+::\+Array\+Circular}}
+\subsubsection{\texorpdfstring{set\+Value()}{setValue()}}
+{\footnotesize\ttfamily public void domini.\+utils.\+Array\+Circular.\+set\+Value (\begin{DoxyParamCaption}\item[{byte}]{value }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Mètode per assignar el valor value al atribut array a la posició start. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em value} & \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+src/domini/utils/Array\+Circular.\+java\end{DoxyCompactItemize}

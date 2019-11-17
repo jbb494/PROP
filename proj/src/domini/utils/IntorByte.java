@@ -1,3 +1,5 @@
+package domini.utils;
+
 /** @class IntorByte 
  *  @brief Classe auxiliar per l'algorisme LZSS.
  *   
@@ -6,9 +8,6 @@
  * 
  *  @author Manel Aguilar
  */
-
-package domini.utils;
-
 public class IntorByte {
 
    /**
@@ -111,4 +110,3 @@ public class IntorByte {
    }
 
 }
-

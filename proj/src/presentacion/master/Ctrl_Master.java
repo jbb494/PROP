@@ -1,12 +1,12 @@
+package presentacion.master;
+import domini.algorithm.Ctrl_Algorithm;
+import domini.estadistica.Estadistica;
+
 /**
  * @class Ctrl_Master
  * @brief Classe Ctrl_Master
  * @author
  */
-package presentacion.master;
-import domini.algorithm.Ctrl_Algorithm;
-import domini.estadistica.Estadistica;
-
 public class Ctrl_Master {
 
     //Attributes

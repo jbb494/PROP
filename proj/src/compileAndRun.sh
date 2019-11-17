@@ -1,4 +1,3 @@
-
 if [[ $# -eq 0 ]]; then
     echo "Compilem els seguents arxius: "
     ArxiusAcompilar=$(find | grep .java | sed "/Test\.java$/ d" | tr "\n" " ")

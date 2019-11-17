@@ -1,11 +1,10 @@
+package domini.utils;
+
 /**
  * @class Pair
  * @brief Template d'una classe Pair
  * @author Miguel Paracuellos Ocaña
  */
-
-package domini.utils;
-
 public class Pair<T1,T2> {
     //Attributes
     /**

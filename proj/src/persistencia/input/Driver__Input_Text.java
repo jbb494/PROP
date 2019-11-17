@@ -4,6 +4,11 @@ import java.io.BufferedReader;
 import java.io.InputStreamReader;
 import java.util.ArrayList;
 
+/**
+ * @class Driver__Input_Text
+ * @brief Driver de Input_Text
+ * @author Joan Bellavista Bartroli
+ */
 public class Driver__Input_Text {
 
 	/**

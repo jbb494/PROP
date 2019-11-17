@@ -1,9 +1,3 @@
-/**
- * @class Algoritme LZW
- * @brief Compressió i descompressió pel mètode LZW
- * @author Miguel Paracuellos Ocaña 
- */
-
 package domini.algorithm;
 
 import java.util.*;
@@ -14,6 +8,11 @@ import persistencia.output.Ctrl_Output;
 import domini.utils.Dict_Decode;
 import domini.utils.Dict_Encode;
 
+/**
+ * @class LZW
+ * @brief Compressió i descompressió pel mètode LZW
+ * @author Miguel Paracuellos Ocaña 
+ */
 public class LZW {
 
 	//Attributes

@@ -1,13 +1,13 @@
-/**
- * @class TrieNode
- * @brief Classe TrieNode
- * @author Joan Bellavista Bartroli
- */
 package domini.utils;
 
 import java.util.HashMap;
 import java.util.Map;
 
+/**
+ * @class TrieNode
+ * @brief Classe TrieNode
+ * @author Joan Bellavista Bartroli
+ */
 class TrieNode<T> {
     /**
      * @param index Es el indice de la cadena de bytes que va desde root (la root del Trie) hasta este TrieNode.

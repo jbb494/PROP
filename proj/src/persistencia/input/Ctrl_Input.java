@@ -1,12 +1,12 @@
+package persistencia.input;
+
+import java.util.regex.Pattern;
+
 /**
  * @class Ctrl_Input
  * @brief Classe de Ctrl_Input
  * @author 
  */
-package persistencia.input;
-
-import java.util.regex.Pattern;
-
 public class Ctrl_Input {
 
     //Attributes

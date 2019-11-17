@@ -1,9 +1,3 @@
-/**
- * @class Algoritme LZ78
- * @brief Compressió i descompressió pel mètode LZ78
- * @author Joan Bellavista Bartroli
- */
-
 package domini.algorithm;
 import persistencia.input.*;
 import persistencia.output.Ctrl_Output;
@@ -11,7 +5,11 @@ import domini.utils.*;
 
 import java.util.*;
 
-
+/**
+ * @class LZ78
+ * @brief Compressió i descompressió pel mètode LZ78
+ * @author Joan Bellavista Bartroli
+ */
 public class LZ78 {
 	/**
      * @param Output Utilitzat per a la compressió i descompressió de fitxers.
@@ -99,3 +97,4 @@ public class LZ78 {
 	
 	
 }
+
