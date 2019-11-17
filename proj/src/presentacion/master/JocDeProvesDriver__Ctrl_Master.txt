@@ -1,0 +1,18 @@
+Prova 1:
+	Descripció: Volem provar la classe Ctrl_Master
+	Objectius: Veure si executa bé el programa en general.
+	Driver construït: Driver__Ctrl_Master.java
+	Entrada: Cridem al constructor (1) i seguidament cridem al mètode Context() (2),
+		seguim les indicacions i tot seguit seleccionem el mètode Work() (3), seguint
+		les instruccions demanades.
+	Sortida: El path demanat a la opció dos ha hagut de comprimir-se/descomprimir-se
+		correctament.
+	Resultat de la prova: ok
+
+Prova 2:
+	Descripció: Volem provar la classe Ctrl_Master
+	Objectius: Veure si no cridem en ordre correcte als mètodes, si dóna una excepció.
+	Driver construït: Driver__Ctrl_Master.java
+	Entrada: Cridem al constructor (1) i seguidament cridem al mètode Work() (3).
+	Sortida: java.lang.IllegalArgumentException: Debes hacer primero la opción 2.
+	Resultat de la prova: error
