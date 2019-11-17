@@ -10,6 +10,7 @@ var searchData=
   ['getend',['getEnd',['../classdomini_1_1utils_1_1ArrayCircular.html#a3fe38ed7aa9d3b4f99bc4c80cd72bb3e',1,'domini::utils::ArrayCircular']]],
   ['getextension',['getExtension',['../classpersistencia_1_1input_1_1Ctrl__Input.html#a46d569c2f3ceb0ab6cf9900708b3316a',1,'persistencia::input::Ctrl_Input']]],
   ['getin',['getIn',['../classpersistencia_1_1input_1_1Input__Text.html#a36c0224f7ac8f3a60a80bacc571dd3be',1,'persistencia::input::Input_Text']]],
+  ['getindex',['getIndex',['../classdomini_1_1utils_1_1TrieNode.html#ac8e79df6ce5e7b33c6d08a0fe0681916',1,'domini::utils::TrieNode']]],
   ['getleft',['getLeft',['../classdomini_1_1utils_1_1Pair.html#a9439fbd8488cb1fbf00c57f15f093c4b',1,'domini::utils::Pair']]],
   ['getlimit',['getLimit',['../classdomini_1_1utils_1_1Dict__Encode.html#a21a05b62b848a7ab9fbdf49a3a6e7edf',1,'domini::utils::Dict_Encode']]],
   ['getlzss',['getLZSS',['../classpersistencia_1_1input_1_1Ctrl__Input__LZSS.html#a204d4d68a1d94725d9017b71bac0288e',1,'persistencia::input::Ctrl_Input_LZSS']]],

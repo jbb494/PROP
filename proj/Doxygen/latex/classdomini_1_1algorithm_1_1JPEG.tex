@@ -27,6 +27,144 @@ void {\bfseries decode} (\hyperlink{classpersistencia_1_1input_1_1Ctrl__Input__J
 \mbox{\Hypertarget{classdomini_1_1algorithm_1_1JPEG_a049a54398fe4b90620d0ac1ea1fdf780}\label{classdomini_1_1algorithm_1_1JPEG_a049a54398fe4b90620d0ac1ea1fdf780}} 
 static void {\bfseries main} (String\mbox{[}$\,$\mbox{]} args)
 \end{DoxyCompactItemize}
+\subsection*{Static Package Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classdomini_1_1algorithm_1_1JPEG_a7c22a7a65763bf92181473df447f72c8}\label{classdomini_1_1algorithm_1_1JPEG_a7c22a7a65763bf92181473df447f72c8}} 
+static int {\bfseries get\+\_\+entropy1\+\_\+code} (int runlength, int size)
+\item 
+\mbox{\Hypertarget{classdomini_1_1algorithm_1_1JPEG_a9a60945af9ce8de6086bd5dfa386f175}\label{classdomini_1_1algorithm_1_1JPEG_a9a60945af9ce8de6086bd5dfa386f175}} 
+static int {\bfseries get\+\_\+runlength\+\_\+from\+\_\+entropy1} (int code)
+\item 
+\mbox{\Hypertarget{classdomini_1_1algorithm_1_1JPEG_a8d1005fb7833d36a064afb1c5e15bbd3}\label{classdomini_1_1algorithm_1_1JPEG_a8d1005fb7833d36a064afb1c5e15bbd3}} 
+static int {\bfseries get\+\_\+size\+\_\+from\+\_\+entropy1} (int code)
+\item 
+\mbox{\Hypertarget{classdomini_1_1algorithm_1_1JPEG_affccb19b13041ba0549beb9a5986c0f1}\label{classdomini_1_1algorithm_1_1JPEG_affccb19b13041ba0549beb9a5986c0f1}} 
+static int {\bfseries get\+\_\+entropy2\+\_\+size} (int value)
+\item 
+\mbox{\Hypertarget{classdomini_1_1algorithm_1_1JPEG_ac2a5593f3f9baa1ce4065d2f89194611}\label{classdomini_1_1algorithm_1_1JPEG_ac2a5593f3f9baa1ce4065d2f89194611}} 
+static int {\bfseries get\+\_\+entropy2\+\_\+code} (int value)
+\end{DoxyCompactItemize}
+\subsection*{Package Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classdomini_1_1algorithm_1_1JPEG_a2512a38136dac55fa5dbbfc8f0ae822d}\label{classdomini_1_1algorithm_1_1JPEG_a2512a38136dac55fa5dbbfc8f0ae822d}} 
+\hyperlink{classpersistencia_1_1output_1_1Ctrl__Output}{Ctrl\+\_\+\+Output} {\bfseries out}
+\item 
+\mbox{\Hypertarget{classdomini_1_1algorithm_1_1JPEG_a68d523efc6a9dfb3dd2edec0bbb79b48}\label{classdomini_1_1algorithm_1_1JPEG_a68d523efc6a9dfb3dd2edec0bbb79b48}} 
+String {\bfseries path}
+\item 
+\mbox{\Hypertarget{classdomini_1_1algorithm_1_1JPEG_a3ff24cf46363c31ffa24e3604bf3ced8}\label{classdomini_1_1algorithm_1_1JPEG_a3ff24cf46363c31ffa24e3604bf3ced8}} 
+boolean {\bfseries decode\+\_\+or\+\_\+encode}
+\item 
+\mbox{\Hypertarget{classdomini_1_1algorithm_1_1JPEG_aacc6445baa7819e3f9139ffb78e0b8f4}\label{classdomini_1_1algorithm_1_1JPEG_aacc6445baa7819e3f9139ffb78e0b8f4}} 
+\hyperlink{classdomini_1_1algorithm_1_1Huffman}{Huffman} {\bfseries huff}
+\end{DoxyCompactItemize}
+\subsection*{Static Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classdomini_1_1algorithm_1_1JPEG_a26704d0281063c49a1c005e0496220a7}\label{classdomini_1_1algorithm_1_1JPEG_a26704d0281063c49a1c005e0496220a7}} 
+static int {\bfseries round} (double x)
+\item 
+\mbox{\Hypertarget{classdomini_1_1algorithm_1_1JPEG_af93979340e9745708d2e2d41ded34419}\label{classdomini_1_1algorithm_1_1JPEG_af93979340e9745708d2e2d41ded34419}} 
+static double {\bfseries force255} (double x)
+\item 
+\mbox{\Hypertarget{classdomini_1_1algorithm_1_1JPEG_a058b0ee7eb44bbaec4078b5fc32c5107}\label{classdomini_1_1algorithm_1_1JPEG_a058b0ee7eb44bbaec4078b5fc32c5107}} 
+static double {\bfseries alpha} (int x)
+\item 
+\mbox{\Hypertarget{classdomini_1_1algorithm_1_1JPEG_ae089373d26fecc912f954a1d921c79d9}\label{classdomini_1_1algorithm_1_1JPEG_ae089373d26fecc912f954a1d921c79d9}} 
+static void {\bfseries discrete\+\_\+cosine\+\_\+transform} (double\mbox{[}$\,$\mbox{]}\mbox{[}$\,$\mbox{]} mat1)
+\item 
+\mbox{\Hypertarget{classdomini_1_1algorithm_1_1JPEG_a7d71cc9f6447cd36189a30eafe10314e}\label{classdomini_1_1algorithm_1_1JPEG_a7d71cc9f6447cd36189a30eafe10314e}} 
+static void {\bfseries inverse\+\_\+discrete\+\_\+cosine\+\_\+transform} (double\mbox{[}$\,$\mbox{]}\mbox{[}$\,$\mbox{]} mat1)
+\item 
+\mbox{\Hypertarget{classdomini_1_1algorithm_1_1JPEG_a6abdee6c1601b4b11b5dfa7cfe531ca0}\label{classdomini_1_1algorithm_1_1JPEG_a6abdee6c1601b4b11b5dfa7cfe531ca0}} 
+static int {\bfseries get\+\_\+value\+\_\+from\+\_\+entropy2} (int code, int size)
+\end{DoxyCompactItemize}
+\subsection*{Static Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+static int \mbox{[}$\,$\mbox{]}\mbox{[}$\,$\mbox{]} {\bfseries quantization\+\_\+matrix}
+\item 
+static int \mbox{[}$\,$\mbox{]} {\bfseries zig\+Zag\+\_\+X}
+\item 
+static int \mbox{[}$\,$\mbox{]} {\bfseries zig\+Zag\+\_\+Y}
+\end{DoxyCompactItemize}
+
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{classdomini_1_1algorithm_1_1JPEG_a7c95eb140dbe185a31b402d48ec17a66}\label{classdomini_1_1algorithm_1_1JPEG_a7c95eb140dbe185a31b402d48ec17a66}} 
+\index{domini\+::algorithm\+::\+J\+P\+EG@{domini\+::algorithm\+::\+J\+P\+EG}!quantization\+\_\+matrix@{quantization\+\_\+matrix}}
+\index{quantization\+\_\+matrix@{quantization\+\_\+matrix}!domini\+::algorithm\+::\+J\+P\+EG@{domini\+::algorithm\+::\+J\+P\+EG}}
+\subsubsection{\texorpdfstring{quantization\+\_\+matrix}{quantization\_matrix}}
+{\footnotesize\ttfamily int \mbox{[}$\,$\mbox{]}\mbox{[}$\,$\mbox{]} domini.\+algorithm.\+J\+P\+E\+G.\+quantization\+\_\+matrix\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}
+=
+    \{
+        \{16, 11, 10, 16, 24, 40, 51, 61\},
+        \{12, 12, 14, 19, 26, 58, 60, 55\},
+        \{14, 13, 16, 24, 40, 57, 69, 56\},
+        \{14, 17, 22, 29, 51, 87, 80, 62\},
+        \{18, 22, 37, 56, 68, 109, 103, 77\},
+        \{24, 35, 55, 64, 81, 104, 113, 92\},
+        \{49, 64, 78, 87, 103, 121, 120, 101\},
+        \{72, 92, 95, 98, 112, 100, 103, 99\}
+    \}
+\end{DoxyCode}
+\mbox{\Hypertarget{classdomini_1_1algorithm_1_1JPEG_a7d3829cbffd758c087341a8da13dd2ca}\label{classdomini_1_1algorithm_1_1JPEG_a7d3829cbffd758c087341a8da13dd2ca}} 
+\index{domini\+::algorithm\+::\+J\+P\+EG@{domini\+::algorithm\+::\+J\+P\+EG}!zig\+Zag\+\_\+X@{zig\+Zag\+\_\+X}}
+\index{zig\+Zag\+\_\+X@{zig\+Zag\+\_\+X}!domini\+::algorithm\+::\+J\+P\+EG@{domini\+::algorithm\+::\+J\+P\+EG}}
+\subsubsection{\texorpdfstring{zig\+Zag\+\_\+X}{zigZag\_X}}
+{\footnotesize\ttfamily int \mbox{[}$\,$\mbox{]} domini.\+algorithm.\+J\+P\+E\+G.\+zig\+Zag\+\_\+X\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}
+= \{
+        0,
+        0, 1,
+        2, 1, 0,
+        0, 1, 2, 3, 
+        4, 3, 2, 1, 0,
+        0, 1, 2, 3, 4, 5,
+        6, 5, 4, 3, 2, 1, 0,
+        0, 1, 2, 3, 4, 5, 6, 7,
+        7, 6, 5, 4, 3, 2, 1,
+        2, 3, 4, 5, 6, 7,
+        7, 6, 5, 4, 3,
+        4, 5, 6, 7, 
+        7, 6, 5,
+        6, 7,
+        7
+    \}
+\end{DoxyCode}
+\mbox{\Hypertarget{classdomini_1_1algorithm_1_1JPEG_ad886d8aa00a40cb151b446534f0d1bcc}\label{classdomini_1_1algorithm_1_1JPEG_ad886d8aa00a40cb151b446534f0d1bcc}} 
+\index{domini\+::algorithm\+::\+J\+P\+EG@{domini\+::algorithm\+::\+J\+P\+EG}!zig\+Zag\+\_\+Y@{zig\+Zag\+\_\+Y}}
+\index{zig\+Zag\+\_\+Y@{zig\+Zag\+\_\+Y}!domini\+::algorithm\+::\+J\+P\+EG@{domini\+::algorithm\+::\+J\+P\+EG}}
+\subsubsection{\texorpdfstring{zig\+Zag\+\_\+Y}{zigZag\_Y}}
+{\footnotesize\ttfamily int \mbox{[}$\,$\mbox{]} domini.\+algorithm.\+J\+P\+E\+G.\+zig\+Zag\+\_\+Y\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}
+= \{
+        0,
+        1, 0,
+        0, 1, 2,
+        3, 2, 1, 0,
+        0, 1, 2, 3, 4,
+        5, 4, 3, 2, 1, 0,
+        0, 1, 2, 3, 4, 5, 6,
+        7, 6, 5, 4, 3, 2, 1, 0,
+        1, 2, 3, 4, 5, 6, 7,
+        7, 6, 5, 4, 3, 2,
+        3, 4, 5, 6, 7,
+        7, 6, 5, 4,
+        5, 6, 7,
+        7, 6,
+        7
+    \}
+\end{DoxyCode}
 
 
 The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}

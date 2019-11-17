@@ -257,5 +257,11 @@ public class LZSS {
  *  LZSS i la descompressió d'un input el qual ha estat comprimit amb
  *  aquest mateix algoritme.
  * 
+ *  Per la part de la compressió tenim una finestra corredissa de "window" posicions. On aquest valor tindrà
+ *  uns bits per aquest valor i després la mida de 5 bits. Per tant, buscarem una compressió mínima de 3B.
+ *  
+ *  Per la part de la descompressió, agafarem la unitat mínima representada per InorByte, on, com bé especifica
+ *  a aquella classe, seran dos Int's o un Byte.
+ *  
  *  @author Manel Aguilar
  */

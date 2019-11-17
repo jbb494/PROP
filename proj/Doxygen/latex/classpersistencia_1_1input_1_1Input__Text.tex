@@ -11,7 +11,7 @@ Collaboration diagram for persistencia.\+input.\+Input\+\_\+\+Text\+:\nopagebrea
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=223pt]{classpersistencia_1_1input_1_1Input__Text__coll__graph}
+\includegraphics[width=284pt]{classpersistencia_1_1input_1_1Input__Text__coll__graph}
 \end{center}
 \end{figure}
 \subsection*{Public Member Functions}
@@ -22,6 +22,26 @@ Collaboration diagram for persistencia.\+input.\+Input\+\_\+\+Text\+:\nopagebrea
 byte \hyperlink{classpersistencia_1_1input_1_1Input__Text_a471f357f566d79f224a9cc51967f34ef}{get\+Bits} (int num\+\_\+bits)
 \item 
 Array\+List$<$ Byte $>$ \hyperlink{classpersistencia_1_1input_1_1Input__Text_a36c0224f7ac8f3a60a80bacc571dd3be}{get\+In} ()
+\end{DoxyCompactItemize}
+\subsection*{Package Attributes}
+\begin{DoxyCompactItemize}
+\item 
+Array\+List$<$ Byte $>$ \hyperlink{classpersistencia_1_1input_1_1Input__Text_ab29b20f25abf37ab5fa9fd86e446fdf5}{array\+Byte}
+\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classpersistencia_1_1input_1_1Input__Text_a7a9380838f5fe9c753c1e94a8cf47437}\label{classpersistencia_1_1input_1_1Input__Text_a7a9380838f5fe9c753c1e94a8cf47437}} 
+void \hyperlink{classpersistencia_1_1input_1_1Input__Text_a7a9380838f5fe9c753c1e94a8cf47437}{read} ()
+\begin{DoxyCompactList}\small\item\em Llegeix bytes de l\textquotesingle{}arxiu. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+Data\+Input\+Stream \hyperlink{classpersistencia_1_1input_1_1Input__Text_a032eea39e81853708f2c0d1358d08301}{input\+Stream\+Reader}
+\item 
+int \hyperlink{classpersistencia_1_1input_1_1Input__Text_a38dcfc8b8b79a8820e42f4ed6031ea01}{punter}
+\item 
+int \hyperlink{classpersistencia_1_1input_1_1Input__Text_a89dcd598f4620d041db312f0aa2ca19a}{pos}
 \end{DoxyCompactItemize}
 
 
@@ -75,6 +95,53 @@ Retorna un byte amb el nombre valid de bits que demanem
 \begin{DoxyReturn}{Returns}
 Retorna l\textquotesingle{}atribut de la classe 
 \end{DoxyReturn}
+
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{classpersistencia_1_1input_1_1Input__Text_ab29b20f25abf37ab5fa9fd86e446fdf5}\label{classpersistencia_1_1input_1_1Input__Text_ab29b20f25abf37ab5fa9fd86e446fdf5}} 
+\index{persistencia\+::input\+::\+Input\+\_\+\+Text@{persistencia\+::input\+::\+Input\+\_\+\+Text}!array\+Byte@{array\+Byte}}
+\index{array\+Byte@{array\+Byte}!persistencia\+::input\+::\+Input\+\_\+\+Text@{persistencia\+::input\+::\+Input\+\_\+\+Text}}
+\subsubsection{\texorpdfstring{array\+Byte}{arrayByte}}
+{\footnotesize\ttfamily Array\+List$<$Byte$>$ persistencia.\+input.\+Input\+\_\+\+Text.\+array\+Byte\hspace{0.3cm}{\ttfamily [package]}}
+
+
+\begin{DoxyParams}{Parameters}
+{\em array\+Byte} & \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classpersistencia_1_1input_1_1Input__Text_a032eea39e81853708f2c0d1358d08301}\label{classpersistencia_1_1input_1_1Input__Text_a032eea39e81853708f2c0d1358d08301}} 
+\index{persistencia\+::input\+::\+Input\+\_\+\+Text@{persistencia\+::input\+::\+Input\+\_\+\+Text}!input\+Stream\+Reader@{input\+Stream\+Reader}}
+\index{input\+Stream\+Reader@{input\+Stream\+Reader}!persistencia\+::input\+::\+Input\+\_\+\+Text@{persistencia\+::input\+::\+Input\+\_\+\+Text}}
+\subsubsection{\texorpdfstring{input\+Stream\+Reader}{inputStreamReader}}
+{\footnotesize\ttfamily Data\+Input\+Stream persistencia.\+input.\+Input\+\_\+\+Text.\+input\+Stream\+Reader\hspace{0.3cm}{\ttfamily [private]}}
+
+
+\begin{DoxyParams}{Parameters}
+{\em input\+Stream\+Reader} & \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classpersistencia_1_1input_1_1Input__Text_a89dcd598f4620d041db312f0aa2ca19a}\label{classpersistencia_1_1input_1_1Input__Text_a89dcd598f4620d041db312f0aa2ca19a}} 
+\index{persistencia\+::input\+::\+Input\+\_\+\+Text@{persistencia\+::input\+::\+Input\+\_\+\+Text}!pos@{pos}}
+\index{pos@{pos}!persistencia\+::input\+::\+Input\+\_\+\+Text@{persistencia\+::input\+::\+Input\+\_\+\+Text}}
+\subsubsection{\texorpdfstring{pos}{pos}}
+{\footnotesize\ttfamily int persistencia.\+input.\+Input\+\_\+\+Text.\+pos\hspace{0.3cm}{\ttfamily [private]}}
+
+
+\begin{DoxyParams}{Parameters}
+{\em pos} & \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classpersistencia_1_1input_1_1Input__Text_a38dcfc8b8b79a8820e42f4ed6031ea01}\label{classpersistencia_1_1input_1_1Input__Text_a38dcfc8b8b79a8820e42f4ed6031ea01}} 
+\index{persistencia\+::input\+::\+Input\+\_\+\+Text@{persistencia\+::input\+::\+Input\+\_\+\+Text}!punter@{punter}}
+\index{punter@{punter}!persistencia\+::input\+::\+Input\+\_\+\+Text@{persistencia\+::input\+::\+Input\+\_\+\+Text}}
+\subsubsection{\texorpdfstring{punter}{punter}}
+{\footnotesize\ttfamily int persistencia.\+input.\+Input\+\_\+\+Text.\+punter\hspace{0.3cm}{\ttfamily [private]}}
+
+
+\begin{DoxyParams}{Parameters}
+{\em punter} & \\
+\hline
+\end{DoxyParams}
 
 
 The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}

@@ -5,6 +5,15 @@
 Classe \hyperlink{classpersistencia_1_1input_1_1Input}{Input}.  
 
 
+
+
+Collaboration diagram for persistencia.\+input.\+Input\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=227pt]{classpersistencia_1_1input_1_1Input__coll__graph}
+\end{center}
+\end{figure}
 \subsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
@@ -19,6 +28,27 @@ boolean \hyperlink{classpersistencia_1_1input_1_1Input_af607cad1726ef15cf8e970dc
 int \hyperlink{classpersistencia_1_1input_1_1Input_a3f0fc057e91430b81f5f2c92f91b8ed7}{out\+Of\+File} ()
 \item 
 String \hyperlink{classpersistencia_1_1input_1_1Input_a95e2068bd17e415f0487f8193f066160}{get\+Decode\+Alg} ()
+\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classpersistencia_1_1input_1_1Input_a24eae4109b4ff4954ff2d7feef2fa4e4}\label{classpersistencia_1_1input_1_1Input_a24eae4109b4ff4954ff2d7feef2fa4e4}} 
+void \hyperlink{classpersistencia_1_1input_1_1Input_a24eae4109b4ff4954ff2d7feef2fa4e4}{read} ()
+\begin{DoxyCompactList}\small\item\em Llegeix el proxim byte de l\textquotesingle{}arxiu. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+Data\+Input\+Stream \hyperlink{classpersistencia_1_1input_1_1Input_a7b25d54d1a6454a58275174eef12a88b}{input\+Stream\+Reader}
+\item 
+int \hyperlink{classpersistencia_1_1input_1_1Input_abe76388d0ac9eeafdba673ad2138f8dc}{punter}
+\item 
+Byte \hyperlink{classpersistencia_1_1input_1_1Input_a45d4bdcdb96823fc8ffe5c1a430727f2}{last\+\_\+byte}
+\item 
+boolean \hyperlink{classpersistencia_1_1input_1_1Input_aa986cd4af0178e1a80f551dcd8936125}{end}
+\item 
+int \hyperlink{classpersistencia_1_1input_1_1Input_ad3132949d4ac469b5f4d77373389f9f1}{illegals}
+\item 
+Boolean \hyperlink{classpersistencia_1_1input_1_1Input_a044330fba061b562ab4a537011c044f3}{got\+Extension} = false
 \end{DoxyCompactItemize}
 
 
@@ -104,6 +134,78 @@ Array\+List de Bytes amb num\+\_\+bits bits valids
 \begin{DoxyReturn}{Returns}
 Retorna el nombre de bits que s\textquotesingle{}han intentat llegir però queden fora del fitxer 
 \end{DoxyReturn}
+
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{classpersistencia_1_1input_1_1Input_aa986cd4af0178e1a80f551dcd8936125}\label{classpersistencia_1_1input_1_1Input_aa986cd4af0178e1a80f551dcd8936125}} 
+\index{persistencia\+::input\+::\+Input@{persistencia\+::input\+::\+Input}!end@{end}}
+\index{end@{end}!persistencia\+::input\+::\+Input@{persistencia\+::input\+::\+Input}}
+\subsubsection{\texorpdfstring{end}{end}}
+{\footnotesize\ttfamily boolean persistencia.\+input.\+Input.\+end\hspace{0.3cm}{\ttfamily [private]}}
+
+
+\begin{DoxyParams}{Parameters}
+{\em end} & Indica si hem arribat al final de l\textquotesingle{}arxiu \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classpersistencia_1_1input_1_1Input_a044330fba061b562ab4a537011c044f3}\label{classpersistencia_1_1input_1_1Input_a044330fba061b562ab4a537011c044f3}} 
+\index{persistencia\+::input\+::\+Input@{persistencia\+::input\+::\+Input}!got\+Extension@{got\+Extension}}
+\index{got\+Extension@{got\+Extension}!persistencia\+::input\+::\+Input@{persistencia\+::input\+::\+Input}}
+\subsubsection{\texorpdfstring{got\+Extension}{gotExtension}}
+{\footnotesize\ttfamily Boolean persistencia.\+input.\+Input.\+got\+Extension = false\hspace{0.3cm}{\ttfamily [private]}}
+
+
+\begin{DoxyParams}{Parameters}
+{\em got\+Extension} & Indica si l\textquotesingle{}arxiu te extensió definida per treballar \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classpersistencia_1_1input_1_1Input_ad3132949d4ac469b5f4d77373389f9f1}\label{classpersistencia_1_1input_1_1Input_ad3132949d4ac469b5f4d77373389f9f1}} 
+\index{persistencia\+::input\+::\+Input@{persistencia\+::input\+::\+Input}!illegals@{illegals}}
+\index{illegals@{illegals}!persistencia\+::input\+::\+Input@{persistencia\+::input\+::\+Input}}
+\subsubsection{\texorpdfstring{illegals}{illegals}}
+{\footnotesize\ttfamily int persistencia.\+input.\+Input.\+illegals\hspace{0.3cm}{\ttfamily [private]}}
+
+
+\begin{DoxyParams}{Parameters}
+{\em illegals} & Nombre de bits que s\textquotesingle{}han intentat llegir pero queden fora del fitxer \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classpersistencia_1_1input_1_1Input_a7b25d54d1a6454a58275174eef12a88b}\label{classpersistencia_1_1input_1_1Input_a7b25d54d1a6454a58275174eef12a88b}} 
+\index{persistencia\+::input\+::\+Input@{persistencia\+::input\+::\+Input}!input\+Stream\+Reader@{input\+Stream\+Reader}}
+\index{input\+Stream\+Reader@{input\+Stream\+Reader}!persistencia\+::input\+::\+Input@{persistencia\+::input\+::\+Input}}
+\subsubsection{\texorpdfstring{input\+Stream\+Reader}{inputStreamReader}}
+{\footnotesize\ttfamily Data\+Input\+Stream persistencia.\+input.\+Input.\+input\+Stream\+Reader\hspace{0.3cm}{\ttfamily [private]}}
+
+
+\begin{DoxyParams}{Parameters}
+{\em input\+Stream\+Reader} & \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classpersistencia_1_1input_1_1Input_a45d4bdcdb96823fc8ffe5c1a430727f2}\label{classpersistencia_1_1input_1_1Input_a45d4bdcdb96823fc8ffe5c1a430727f2}} 
+\index{persistencia\+::input\+::\+Input@{persistencia\+::input\+::\+Input}!last\+\_\+byte@{last\+\_\+byte}}
+\index{last\+\_\+byte@{last\+\_\+byte}!persistencia\+::input\+::\+Input@{persistencia\+::input\+::\+Input}}
+\subsubsection{\texorpdfstring{last\+\_\+byte}{last\_byte}}
+{\footnotesize\ttfamily Byte persistencia.\+input.\+Input.\+last\+\_\+byte\hspace{0.3cm}{\ttfamily [private]}}
+
+
+\begin{DoxyParams}{Parameters}
+{\em last\+\_\+byte} & Ultim byte llegit \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classpersistencia_1_1input_1_1Input_abe76388d0ac9eeafdba673ad2138f8dc}\label{classpersistencia_1_1input_1_1Input_abe76388d0ac9eeafdba673ad2138f8dc}} 
+\index{persistencia\+::input\+::\+Input@{persistencia\+::input\+::\+Input}!punter@{punter}}
+\index{punter@{punter}!persistencia\+::input\+::\+Input@{persistencia\+::input\+::\+Input}}
+\subsubsection{\texorpdfstring{punter}{punter}}
+{\footnotesize\ttfamily int persistencia.\+input.\+Input.\+punter\hspace{0.3cm}{\ttfamily [private]}}
+
+
+\begin{DoxyParams}{Parameters}
+{\em punter} & Indica el proper bit que ha de ser llegit del byte en qüestió \\
+\hline
+\end{DoxyParams}
+\begin{DoxyNote}{Note}
+0 $<$= punter $<$ 8 
+\end{DoxyNote}
 
 
 The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
