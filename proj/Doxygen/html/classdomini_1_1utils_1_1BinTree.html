@@ -65,11 +65,20 @@ $(function() {
 <div class="header">
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
+<a href="#pri-methods">Private Member Functions</a> &#124;
+<a href="#pri-attribs">Private Attributes</a> &#124;
 <a href="classdomini_1_1utils_1_1BinTree-members.html">List of all members</a>  </div>
   <div class="headertitle">
 <div class="title">domini.utils.BinTree Class Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
+<div class="dynheader">
+Collaboration diagram for domini.utils.BinTree:</div>
+<div class="dyncontent">
+<div class="center"><img src="classdomini_1_1utils_1_1BinTree__coll__graph.png" border="0" usemap="#domini_8utils_8BinTree_coll__map" alt="Collaboration graph"/></div>
+<map name="domini_8utils_8BinTree_coll__map" id="domini_8utils_8BinTree_coll__map">
+</map>
+<center><span class="legend">[<a href="graph_legend.html">legend</a>]</span></center></div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
@@ -103,7 +112,54 @@ int&#160;</td><td class="memItemRight" valign="bottom"><b>setChild</b> (int x, i
 <tr class="memitem:ad8f921ac94ebe2a1007ed41b935099b1"><td class="memItemLeft" align="right" valign="top"><a id="ad8f921ac94ebe2a1007ed41b935099b1"></a>
 void&#160;</td><td class="memItemRight" valign="bottom"><b>print</b> ()</td></tr>
 <tr class="separator:ad8f921ac94ebe2a1007ed41b935099b1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-methods"></a>
+Private Member Functions</h2></td></tr>
+<tr class="memitem:ae9ac7c25f515a2f89772406f01b769d2"><td class="memItemLeft" align="right" valign="top"><a id="ae9ac7c25f515a2f89772406f01b769d2"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>checkNode</b> (int x)</td></tr>
+<tr class="separator:ae9ac7c25f515a2f89772406f01b769d2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae65e589ea90a85ed18bba6bc9f74e9a2"><td class="memItemLeft" align="right" valign="top"><a id="ae65e589ea90a85ed18bba6bc9f74e9a2"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>print_v2</b> (int tabs, int x)</td></tr>
+<tr class="separator:ae65e589ea90a85ed18bba6bc9f74e9a2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a47c913594a3116b2e602c87fa4afc5c3"><td class="memItemLeft" align="right" valign="top"><a id="a47c913594a3116b2e602c87fa4afc5c3"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>print</b> (int tabs, int x)</td></tr>
+<tr class="separator:a47c913594a3116b2e602c87fa4afc5c3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aec1bd291bf3703915a815d09cfb0caf1"><td class="memItemLeft" align="right" valign="top"><a id="aec1bd291bf3703915a815d09cfb0caf1"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>print_arr</b> ()</td></tr>
+<tr class="separator:aec1bd291bf3703915a815d09cfb0caf1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-attribs"></a>
+Private Attributes</h2></td></tr>
+<tr class="memitem:a357bcbcf07ba7fcb99d11b237d189e65"><td class="memItemLeft" align="right" valign="top">ArrayList&lt; Integer &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classdomini_1_1utils_1_1BinTree.html#a357bcbcf07ba7fcb99d11b237d189e65">arr</a></td></tr>
+<tr class="separator:a357bcbcf07ba7fcb99d11b237d189e65"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a36f1212262c353accbc0a0385fa45a8d"><td class="memItemLeft" align="right" valign="top"><a id="a36f1212262c353accbc0a0385fa45a8d"></a>
+int&#160;</td><td class="memItemRight" valign="bottom"><b>num_undefs</b></td></tr>
+<tr class="separator:a36f1212262c353accbc0a0385fa45a8d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
+<h2 class="groupheader">Member Data Documentation</h2>
+<a id="a357bcbcf07ba7fcb99d11b237d189e65"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a357bcbcf07ba7fcb99d11b237d189e65">&#9670;&nbsp;</a></span>arr</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">ArrayList&lt;Integer&gt; domini.utils.BinTree.arr</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Permet expressar arbres binaris on les fulles poden prendre valors enters. Els nodes s'identifiquen amb enters. Aquesta estroctura de dades permet afegir informació però no permet eliminar o modificar informació prèviament afegida, sigui x un node si arr[2*x] = -2, x és una fulla i arr[2*x+1] és el valor de x altrament x+arr[2*x] i x+arr[2*x+1] són els fills de x (-1 significa indefinit) Un node no està inicialitzat &lt;-&gt; els dos fills son indefinits El node arrel és 0 </p>
+
+</div>
+</div>
 <hr/>The documentation for this class was generated from the following file:<ul>
 <li>src/domini/utils/BinTree.java</li>
 </ul>

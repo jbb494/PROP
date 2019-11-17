@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['output',['Output',['../classpersistencia_1_1output_1_1Output.html',1,'persistencia::output']]]
+  ['node',['Node',['../classdomini_1_1utils_1_1Node.html',1,'domini::utils']]]
 ];

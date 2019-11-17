@@ -1,5 +1,15 @@
 \hypertarget{classdomini_1_1utils_1_1BinTree}{}\section{domini.\+utils.\+Bin\+Tree Class Reference}
 \label{classdomini_1_1utils_1_1BinTree}\index{domini.\+utils.\+Bin\+Tree@{domini.\+utils.\+Bin\+Tree}}
+
+
+Collaboration diagram for domini.\+utils.\+Bin\+Tree\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=184pt]{classdomini_1_1utils_1_1BinTree__coll__graph}
+\end{center}
+\end{figure}
 \subsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
@@ -33,7 +43,39 @@ int {\bfseries set\+Child} (int x, int left\+\_\+right, \hyperlink{classdomini_1
 \mbox{\Hypertarget{classdomini_1_1utils_1_1BinTree_ad8f921ac94ebe2a1007ed41b935099b1}\label{classdomini_1_1utils_1_1BinTree_ad8f921ac94ebe2a1007ed41b935099b1}} 
 void {\bfseries print} ()
 \end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classdomini_1_1utils_1_1BinTree_ae9ac7c25f515a2f89772406f01b769d2}\label{classdomini_1_1utils_1_1BinTree_ae9ac7c25f515a2f89772406f01b769d2}} 
+void {\bfseries check\+Node} (int x)
+\item 
+\mbox{\Hypertarget{classdomini_1_1utils_1_1BinTree_ae65e589ea90a85ed18bba6bc9f74e9a2}\label{classdomini_1_1utils_1_1BinTree_ae65e589ea90a85ed18bba6bc9f74e9a2}} 
+void {\bfseries print\+\_\+v2} (int tabs, int x)
+\item 
+\mbox{\Hypertarget{classdomini_1_1utils_1_1BinTree_a47c913594a3116b2e602c87fa4afc5c3}\label{classdomini_1_1utils_1_1BinTree_a47c913594a3116b2e602c87fa4afc5c3}} 
+void {\bfseries print} (int tabs, int x)
+\item 
+\mbox{\Hypertarget{classdomini_1_1utils_1_1BinTree_aec1bd291bf3703915a815d09cfb0caf1}\label{classdomini_1_1utils_1_1BinTree_aec1bd291bf3703915a815d09cfb0caf1}} 
+void {\bfseries print\+\_\+arr} ()
+\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+Array\+List$<$ Integer $>$ \hyperlink{classdomini_1_1utils_1_1BinTree_a357bcbcf07ba7fcb99d11b237d189e65}{arr}
+\item 
+\mbox{\Hypertarget{classdomini_1_1utils_1_1BinTree_a36f1212262c353accbc0a0385fa45a8d}\label{classdomini_1_1utils_1_1BinTree_a36f1212262c353accbc0a0385fa45a8d}} 
+int {\bfseries num\+\_\+undefs}
+\end{DoxyCompactItemize}
 
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{classdomini_1_1utils_1_1BinTree_a357bcbcf07ba7fcb99d11b237d189e65}\label{classdomini_1_1utils_1_1BinTree_a357bcbcf07ba7fcb99d11b237d189e65}} 
+\index{domini\+::utils\+::\+Bin\+Tree@{domini\+::utils\+::\+Bin\+Tree}!arr@{arr}}
+\index{arr@{arr}!domini\+::utils\+::\+Bin\+Tree@{domini\+::utils\+::\+Bin\+Tree}}
+\subsubsection{\texorpdfstring{arr}{arr}}
+{\footnotesize\ttfamily Array\+List$<$Integer$>$ domini.\+utils.\+Bin\+Tree.\+arr\hspace{0.3cm}{\ttfamily [private]}}
+
+Permet expressar arbres binaris on les fulles poden prendre valors enters. Els nodes s\textquotesingle{}identifiquen amb enters. Aquesta estroctura de dades permet afegir informació però no permet eliminar o modificar informació prèviament afegida, sigui x un node si arr\mbox{[}2$\ast$x\mbox{]} = -\/2, x és una fulla i arr\mbox{[}2$\ast$x+1\mbox{]} és el valor de x altrament x+arr\mbox{[}2$\ast$x\mbox{]} i x+arr\mbox{[}2$\ast$x+1\mbox{]} són els fills de x (-\/1 significa indefinit) Un node no està inicialitzat $<$-\/$>$ els dos fills son indefinits El node arrel és 0 
 
 The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
 \item 

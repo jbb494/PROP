@@ -5,6 +5,16 @@
 Aquesta és la classe del algoritme \hyperlink{classdomini_1_1algorithm_1_1LZSS}{L\+Z\+SS}.  
 
 
+
+
+Collaboration diagram for domini.\+algorithm.\+L\+Z\+SS\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=211pt]{classdomini_1_1algorithm_1_1LZSS__coll__graph}
+\end{center}
+\end{figure}
 \subsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
@@ -21,6 +31,13 @@ void \hyperlink{classdomini_1_1algorithm_1_1LZSS_a385d06ea406b7a0f1168370e957453
 \begin{DoxyCompactList}\small\item\em Mètode principal per a la compressió. \end{DoxyCompactList}\item 
 void \hyperlink{classdomini_1_1algorithm_1_1LZSS_a3fcf941d4301a4a857c585b3770a0ecf}{Decompressor} (\hyperlink{classpersistencia_1_1input_1_1Ctrl__Input__LZSS}{Ctrl\+\_\+\+Input\+\_\+\+L\+Z\+SS} in)
 \begin{DoxyCompactList}\small\item\em Mètode principal per a la descompressió. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classpersistencia_1_1output_1_1Ctrl__Output}{Ctrl\+\_\+\+Output} \hyperlink{classdomini_1_1algorithm_1_1LZSS_ab15cbc33a0590c2ac42127ca16821fef}{Output}
+\item 
+final int \hyperlink{classdomini_1_1algorithm_1_1LZSS_a00d9f2e9bc2baa39513fad040b8e7123}{window} = 2048
+\end{DoxyCompactItemize}
 
 
 \subsection{Detailed Description}
@@ -117,6 +134,31 @@ Mètode print.
 \begin{DoxyReturn}{Returns}
 Retorna l\textquotesingle{}atribut \char`\"{}\+Output\char`\"{}. 
 \end{DoxyReturn}
+
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{classdomini_1_1algorithm_1_1LZSS_ab15cbc33a0590c2ac42127ca16821fef}\label{classdomini_1_1algorithm_1_1LZSS_ab15cbc33a0590c2ac42127ca16821fef}} 
+\index{domini\+::algorithm\+::\+L\+Z\+SS@{domini\+::algorithm\+::\+L\+Z\+SS}!Output@{Output}}
+\index{Output@{Output}!domini\+::algorithm\+::\+L\+Z\+SS@{domini\+::algorithm\+::\+L\+Z\+SS}}
+\subsubsection{\texorpdfstring{Output}{Output}}
+{\footnotesize\ttfamily \hyperlink{classpersistencia_1_1output_1_1Ctrl__Output}{Ctrl\+\_\+\+Output} domini.\+algorithm.\+L\+Z\+S\+S.\+Output\hspace{0.3cm}{\ttfamily [private]}}
+
+
+\begin{DoxyParams}{Parameters}
+{\em Output} & Utilitzat per a la compressió i descompressió de fitxers. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classdomini_1_1algorithm_1_1LZSS_a00d9f2e9bc2baa39513fad040b8e7123}\label{classdomini_1_1algorithm_1_1LZSS_a00d9f2e9bc2baa39513fad040b8e7123}} 
+\index{domini\+::algorithm\+::\+L\+Z\+SS@{domini\+::algorithm\+::\+L\+Z\+SS}!window@{window}}
+\index{window@{window}!domini\+::algorithm\+::\+L\+Z\+SS@{domini\+::algorithm\+::\+L\+Z\+SS}}
+\subsubsection{\texorpdfstring{window}{window}}
+{\footnotesize\ttfamily final int domini.\+algorithm.\+L\+Z\+S\+S.\+window = 2048\hspace{0.3cm}{\ttfamily [private]}}
+
+
+\begin{DoxyParams}{Parameters}
+{\em window} & Valor de la finestra per al compressor. \\
+\hline
+\end{DoxyParams}
 
 
 The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
