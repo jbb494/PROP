@@ -44,6 +44,10 @@ Aquesta és la classe del algoritme \hyperlink{classdomini_1_1algorithm_1_1LZSS}
 
 En aquesta classe es tracta la compressió mitjançant l\textquotesingle{}algorisme \hyperlink{classdomini_1_1algorithm_1_1LZSS}{L\+Z\+SS} i la descompressió d\textquotesingle{}un input el qual ha estat comprimit amb aquest mateix algoritme.
 
+Per la part de la compressió tenim una finestra corredissa de \char`\"{}window\char`\"{} posicions. On aquest valor tindrà uns bits per aquest valor i després la mida de 5 bits. Per tant, buscarem una compressió mínima de 3B.
+
+Per la part de la descompressió, agafarem la unitat mínima representada per Inor\+Byte, on, com bé especifica a aquella classe, seran dos Int\textquotesingle{}s o un Byte.
+
 \begin{DoxyAuthor}{Author}
 Manel Aguilar 
 \end{DoxyAuthor}
