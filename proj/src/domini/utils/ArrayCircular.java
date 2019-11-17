@@ -75,11 +75,7 @@ public class ArrayCircular {
     {
         int ret = start - despl;
         if(ret < 0) ret += size;
-        if(ret < 0 || ret >= size){
-            System.out.println("start: " +start);
-            System.out.println("despl: "+ despl);
-            System.out.println("ret:" +ret);
-            throw new IndexOutOfBoundsException("Fora de rang");}
+        if(ret < 0 || ret >= size) throw new IndexOutOfBoundsException("Fora de rang");
         return array[ret];
     }
 

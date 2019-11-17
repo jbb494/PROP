@@ -34,7 +34,7 @@ public class LZSS {
      * @param text
      * @return Retorna un int si troba paraula a text else -1.
      */
-    private int KMPSearch(ArrayList<Byte> paraula, ArrayCircular text) 
+    public int KMPSearch(ArrayList<Byte> paraula, ArrayCircular text) 
     {
         int M = paraula.size(); 
         int N, i;
@@ -42,10 +42,10 @@ public class LZSS {
         if(aux < window){ N = aux; i = 0; }
         else { N = text.getEnd(); i = text.getStart(); }
         int j = 0;
-        int lps[] = computeLPSArray(paraula, M);
+        int lps[] = FailArray(paraula, M);
         while (i != N) { 
             if (paraula.get(j).equals(text.getValue(i))) { 
-                j++; 
+                ++j; 
                 i = (++i)%window; 
             } 
             if (j == M)
@@ -69,21 +69,25 @@ public class LZSS {
      * @param M
      * @return Retorna un vector amb les posicions de la taula de fallades.
      */
-    int [] computeLPSArray(ArrayList<Byte> paraula, int M) 
+    public int[] FailArray(ArrayList<Byte> paraula, int M) 
     { 
-        int len = 0; 
-        int i = 1; 
+        
         int lps[] = new int[M]; 
         lps[0] = 0;
-        while (i < M) { 
-            if (paraula.get(i) == paraula.get(len)) { 
-                len++; 
+        int len = 0; 
+        int i = 1; 
+        while (i < M)
+        { 
+            if (paraula.get(i) == paraula.get(len))
+            { 
+                ++len; 
                 lps[i] = len; 
-                i++; 
+                ++i; 
             } 
             else
             { 
-                if (len != 0) { 
+                if (len != 0)
+                { 
                     len = lps[len - 1];
                 } 
                 else
