@@ -8,8 +8,8 @@ if [[ -f $NomArxiuOut ]]; then
     echo "The driver $NomArxiuOut already exists"
     exit 1
 fi
-RegexPerNomsValids="\(\w\|\d\|,\|<\|>\|_\|-\)"
-RegexPerTotMenysPar="\(\w\|\d\|,\|<\|>\|_\|-\|\s\)"
+RegexPerNomsValids="\(\w\|\d\|,\|<\|>\|_\|-\|[\|])"
+RegexPerTotMenysPar="\(\w\|\d\|,\|<\|>\|_\|-\|\s\|[\|])"
 IFS=$'\n'
 ArrayFuncions=($(sed -e "/\s*public\(\s*$RegexPerNomsValids*\)*($RegexPerTotMenysPar*).*/! d; ; /\* @/ d; s/public\s*//g; s/static\s*//g;/^\s*class/ d; /^\s*$RegexPerNomsValids*(/ d ;s/{\s*//g; s/^\s*$RegexPerNomsValids*\s*\(.*\)$/\2/g; /^()/ d" $NomArxiuInp))
 Constructores=($(sed -e "/\s*public\s*$RegexPerNomsValids*($RegexPerTotMenysPar*).*/! d; /\* @/ d;s/\s*{//g;s/\s*}//g; s/^\s*//g; s/^public\s*//g; s/public\s*//g;" $NomArxiuInp))
