@@ -6,7 +6,7 @@ import java.util.Date;
 /**
  * @class Estadistica
  * @brief Generació de les estadístiques durant la compressió
- * @author Miguel Paracuellos Ocaña
+ * @author Manel Aguilar
  */
 
 public class Estadistica {
@@ -62,8 +62,8 @@ public class Estadistica {
             double gc = (double)input.length() / (double)output.length();
 
             System.out.println("La velocitat de compressió ha sigut de " + spd + " bytes/ms.");
-            System.out.println("El grau de compressió és de " + String.format("%.6f", gc) + ". \n");
-            System.out.println("Temps en comprimir: " + (ts/1000) + " segons.");
+            System.out.println("El grau de compressió és de " + String.format("%.6f", gc));
+            System.out.println("Temps en comprimir: " + (ts/1000) + " segons.\n");
         
         }
         else

@@ -34,8 +34,8 @@ public class Driver__Ctrl_Input_LZSS {
 	/**
 	 * @fn private static void comprovarExcepcions(Ctrl_Input_LZSS ctrl_input_lzss, String linea)
 	 * @brief Comprovarà les possibles excepcions que puguin apareixer a la classe
-	 * @param ctrl_input_lzss
-	 * @param linea
+	 * @param ctrl_input_lzss Instància Ctrl_Input_LZSS
+	 * @param linea Número de operació realitzada
 	 */
 	private static void comprovarExcepcions(Ctrl_Input_LZSS ctrl_input_lzss, String linea){
 		int op = Integer.parseInt(linea);

@@ -36,8 +36,8 @@ public class Driver__Node {
 	/**
 	 * @fn private static void comprovarExcepcions(Node node, String linea)
 	 * @brief Comprovarà les possibles excepcions que puguin apareixer a la classe
-	 * @param node
-	 * @param linea
+	 * @param node Instància Node
+	 * @param linea Número de operació realitzada
 	 */
 	private static void comprovarExcepcions(Node node, String linea){
 		int op = Integer.parseInt(linea);

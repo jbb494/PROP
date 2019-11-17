@@ -12,7 +12,7 @@ import domini.utils.byteToConversion;
 /**
  * @class Output
  * @brief Classe Output
- * @author 
+ * @author Manel Aguilar
  */
 public class Output {
 

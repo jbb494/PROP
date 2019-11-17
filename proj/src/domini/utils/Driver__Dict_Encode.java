@@ -38,8 +38,8 @@ public class Driver__Dict_Encode {
 	/**
 	 * @fn private static void comprovarExcepcions(Dict_Encode dict_encode, String linea)
 	 * @brief Comprovarà les possibles excepcions que puguin apareixer a la classe
-	 * @param dict_encode
-	 * @param linea
+	 * @param dict_encode Instància Dict_Encode
+	 * @param linea Número de operació realitzada
 	 */
 	private static void comprovarExcepcions(Dict_Encode dict_encode, String linea){
 		int op = Integer.parseInt(linea);

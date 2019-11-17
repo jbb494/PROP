@@ -3,7 +3,7 @@ package domini.utils;
 /**
  * @class stringConversion
  * @brief Classe de stringConversion
- * @author 
+ * @author Joan Lapeyra
  */
 public class stringConversion {
 

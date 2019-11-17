@@ -48,8 +48,8 @@ public class Driver__Output {
     /**
      * @fn private static void comprovarExcepcions(Output out, String linea)
      * @brief Comprova les possibles excepcions que es puguin generar en la classe
-     * @param out 
-     * @param linea
+     * @param out Instància Output
+     * @param linea Número de operació realitzada
      */
     private static void comprovarExcepcions(Output out, String linea){
         if(out == null && !linea.equals("1") && !linea.equals("0")) {

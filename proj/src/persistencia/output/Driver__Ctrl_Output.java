@@ -64,11 +64,10 @@ public class Driver__Ctrl_Output {
      * @fn private static void comprovarExcepcions(Ctrl_Output ctrl_out, String linea, String method, Boolean b)
      * @brief Comprovarà les possibles excepcions que puguin apareixer a la classe
      * @param ctrl_out Classe Ctrl_Output passada per paràmetre
-     * @param linea 
+     * @param linea Número de operació realitzada
      * @param method Mètode de compressio/descompressio emprat
-     * @param b 
      */
-    private static void comprovarExcepcions(Ctrl_Output ctrl_out, String linea, String method, Boolean b){
+    private static void comprovarExcepcions(Ctrl_Output ctrl_out, String linea, String method){
         int op = Integer.parseInt(linea);
         if(method.equals("") && op < 9 && !linea.equals("0")){
             throw new IllegalArgumentException("Debes primero definir el método y si es compresión o descompresión");
@@ -96,7 +95,7 @@ public class Driver__Ctrl_Output {
                 System.out.println("Selecciona una opción:");
                 linea = reader.readLine().trim();
                 System.out.println("Opción: " + linea + " seleccionada");
-                comprovarExcepcions(ctrl_out, linea, method, b);
+                comprovarExcepcions(ctrl_out, linea, method);
                 switch(linea){
                     case "1":
                         ctrl_out = new Ctrl_Output(path, method, b);

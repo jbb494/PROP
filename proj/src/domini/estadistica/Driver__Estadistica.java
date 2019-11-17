@@ -32,8 +32,8 @@ public class Driver__Estadistica {
 	/**
 	 * @fn private static void comprovarExcepcions(Estadistica estadistica, String linea)
 	 * @brief Comprovarà les possibles excepcions que puguin apareixer a la classe
-	 * @param estadistica
-	 * @param linea
+	 * @param estadistica Instància Estadistica
+	 * @param linea Número de operació realitzada
 	 */
 	private static void comprovarExcepcions(Estadistica estadistica, String linea){
 		int op = Integer.parseInt(linea);

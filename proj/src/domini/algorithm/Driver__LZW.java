@@ -40,8 +40,8 @@ public class Driver__LZW {
 	/**
 	 * @fn private static void comprovarExcepcions(LZW lzw, String linea)
 	 * @brief Comprovarà les possibles excepcions que puguin apareixer a la classe
-	 * @param lzw
-	 * @param linea
+	 * @param lzw Instància LZW
+	 * @param linea Número de operació realitzada
 	 */
 	private static void comprovarExcepcions(LZW lzw, String linea){
 		int op = Integer.parseInt(linea);

@@ -36,8 +36,8 @@ public class Driver__Ctrl_Algorithm {
 	/**
 	 * @fn private static void comprovarExcepcions(Ctrl_Algorithm ctrl_algorithm, String linea)
 	 * @brief Comprovarà les possibles excepcions que puguin apareixer a la classe
-	 * @param ctrl_algorithm
-	 * @param linea
+	 * @param ctrl_algorithm Instància Ctrl_Algorithm
+	 * @param linea Número de operació realitzada
 	 */
 	private static void comprovarExcepcions(Ctrl_Algorithm ctrl_algorithm, String linea){
 		int op = Integer.parseInt(linea);

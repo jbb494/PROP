@@ -39,8 +39,8 @@ public class Driver__Ctrl_Master {
 	/**
 	 * @fn private static void comprovarExcepcions(Ctrl_Master ctrl_master, String linea)
 	 * @brief Comprovarà les possibles excepcions que puguin apareixer a la classe
-	 * @param ctrl_master
-	 * @param linea
+	 * @param ctrl_master Instància Ctrl_Master
+	 * @param linea Número de operació realitzada
 	 */
 	private static void comprovarExcepcions(Ctrl_Master ctrl_master, String linea){
 		int op = Integer.parseInt(linea);
