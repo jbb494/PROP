@@ -1,16 +1,13 @@
-/**
- * @class Driver__Ctrl_Output
- * @brief Driver per la classe Ctrl_Output
- * @author Joan Bellavista Bartroli
- */
-
 package persistencia.output;
 
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
 
-
-
+/**
+ * @class Driver__Ctrl_Output
+ * @brief Driver per la classe Ctrl_Output
+ * @author Joan Bellavista Bartroli
+ */
 public class Driver__Ctrl_Output {
     
     /**

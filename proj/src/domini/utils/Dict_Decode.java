@@ -1,12 +1,12 @@
+package domini.utils;
+
+import java.util.ArrayList;
+
 /**
  * @class Dict_Decode
  * @brief Diccionari (amb els mètodes corresponents) emprat per a la descompressió amb LZW
  * @author Miguel Paracuellos Ocaña
  */
-package domini.utils;
-
-import java.util.ArrayList;
-
 public class Dict_Decode {
     //Attributes
     /**

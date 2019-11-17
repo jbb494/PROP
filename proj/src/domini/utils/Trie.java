@@ -1,12 +1,12 @@
+package domini.utils;
+
+import java.util.ArrayList;
+
 /**
  * @class Trie
  * @brief Classe de Trie
  * @author Joan Bellavista
  */
-package domini.utils;
-
-import java.util.ArrayList;
-
 public class Trie<T> {
 
     /**

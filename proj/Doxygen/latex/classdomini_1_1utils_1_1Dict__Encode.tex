@@ -1,0 +1,131 @@
+\hypertarget{classdomini_1_1utils_1_1Dict__Encode}{}\section{domini.\+utils.\+Dict\+\_\+\+Encode Class Reference}
+\label{classdomini_1_1utils_1_1Dict__Encode}\index{domini.\+utils.\+Dict\+\_\+\+Encode@{domini.\+utils.\+Dict\+\_\+\+Encode}}
+
+
+Diccionari (amb els mètodes corresponents) emprat per a la compressió amb L\+ZW.  
+
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classdomini_1_1utils_1_1Dict__Encode_aa16372a031311494fdcae13d1a9b48c3}{Dict\+\_\+\+Encode} ()
+\begin{DoxyCompactList}\small\item\em Constructor de la classe. \end{DoxyCompactList}\item 
+void \hyperlink{classdomini_1_1utils_1_1Dict__Encode_a6c3016286b3bb242d12799f8e7ebb585}{reset\+\_\+dictionary} ()
+\begin{DoxyCompactList}\small\item\em Reinicilització del diccionari de la classe. \end{DoxyCompactList}\item 
+Integer \hyperlink{classdomini_1_1utils_1_1Dict__Encode_a12e23ecdd9b0078cb6e56c01126248b9}{Ascii\+\_\+value} (byte c)
+\begin{DoxyCompactList}\small\item\em Retorna el valor númeric d\textquotesingle{}un caràcter A\+S\+C\+II. \end{DoxyCompactList}\item 
+Integer \hyperlink{classdomini_1_1utils_1_1Dict__Encode_a1bafdca1835da3fa93b900ff0aa720e0}{search\+\_\+and\+\_\+insert\+\_\+\+B\+ST} (Integer i, byte c)
+\begin{DoxyCompactList}\small\item\em Cada cop que es crida es mira si ja tenim la combinació enter-\/char al diccionari. \end{DoxyCompactList}\item 
+Integer \hyperlink{classdomini_1_1utils_1_1Dict__Encode_a21a05b62b848a7ab9fbdf49a3a6e7edf}{get\+Limit} ()
+\end{DoxyCompactItemize}
+\subsection*{Static Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+static final Integer \hyperlink{classdomini_1_1utils_1_1Dict__Encode_a48fe9a878056a119ad36a0aad2727a13}{Limit} = Integer.\+M\+A\+X\+\_\+\+V\+A\+L\+UE
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Diccionari (amb els mètodes corresponents) emprat per a la compressió amb L\+ZW. 
+
+\begin{DoxyAuthor}{Author}
+Miguel Paracuellos Ocaña 
+\end{DoxyAuthor}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classdomini_1_1utils_1_1Dict__Encode_aa16372a031311494fdcae13d1a9b48c3}\label{classdomini_1_1utils_1_1Dict__Encode_aa16372a031311494fdcae13d1a9b48c3}} 
+\index{domini\+::utils\+::\+Dict\+\_\+\+Encode@{domini\+::utils\+::\+Dict\+\_\+\+Encode}!Dict\+\_\+\+Encode@{Dict\+\_\+\+Encode}}
+\index{Dict\+\_\+\+Encode@{Dict\+\_\+\+Encode}!domini\+::utils\+::\+Dict\+\_\+\+Encode@{domini\+::utils\+::\+Dict\+\_\+\+Encode}}
+\subsubsection{\texorpdfstring{Dict\+\_\+\+Encode()}{Dict\_Encode()}}
+{\footnotesize\ttfamily domini.\+utils.\+Dict\+\_\+\+Encode.\+Dict\+\_\+\+Encode (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Constructor de la classe. 
+
+\begin{DoxyNote}{Note}
+Inicialitzem el diccionari 
+\end{DoxyNote}
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classdomini_1_1utils_1_1Dict__Encode_a12e23ecdd9b0078cb6e56c01126248b9}\label{classdomini_1_1utils_1_1Dict__Encode_a12e23ecdd9b0078cb6e56c01126248b9}} 
+\index{domini\+::utils\+::\+Dict\+\_\+\+Encode@{domini\+::utils\+::\+Dict\+\_\+\+Encode}!Ascii\+\_\+value@{Ascii\+\_\+value}}
+\index{Ascii\+\_\+value@{Ascii\+\_\+value}!domini\+::utils\+::\+Dict\+\_\+\+Encode@{domini\+::utils\+::\+Dict\+\_\+\+Encode}}
+\subsubsection{\texorpdfstring{Ascii\+\_\+value()}{Ascii\_value()}}
+{\footnotesize\ttfamily public Integer domini.\+utils.\+Dict\+\_\+\+Encode.\+Ascii\+\_\+value (\begin{DoxyParamCaption}\item[{byte}]{c }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Retorna el valor númeric d\textquotesingle{}un caràcter A\+S\+C\+II. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em c} & Caràcter que volem passar a valor numeric \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Valor numeric del caràcter 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classdomini_1_1utils_1_1Dict__Encode_a21a05b62b848a7ab9fbdf49a3a6e7edf}\label{classdomini_1_1utils_1_1Dict__Encode_a21a05b62b848a7ab9fbdf49a3a6e7edf}} 
+\index{domini\+::utils\+::\+Dict\+\_\+\+Encode@{domini\+::utils\+::\+Dict\+\_\+\+Encode}!get\+Limit@{get\+Limit}}
+\index{get\+Limit@{get\+Limit}!domini\+::utils\+::\+Dict\+\_\+\+Encode@{domini\+::utils\+::\+Dict\+\_\+\+Encode}}
+\subsubsection{\texorpdfstring{get\+Limit()}{getLimit()}}
+{\footnotesize\ttfamily public Integer domini.\+utils.\+Dict\+\_\+\+Encode.\+get\+Limit (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\begin{DoxyReturn}{Returns}
+Retorna el limit d\textquotesingle{}entrades que pot tenir el diccionari 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classdomini_1_1utils_1_1Dict__Encode_a6c3016286b3bb242d12799f8e7ebb585}\label{classdomini_1_1utils_1_1Dict__Encode_a6c3016286b3bb242d12799f8e7ebb585}} 
+\index{domini\+::utils\+::\+Dict\+\_\+\+Encode@{domini\+::utils\+::\+Dict\+\_\+\+Encode}!reset\+\_\+dictionary@{reset\+\_\+dictionary}}
+\index{reset\+\_\+dictionary@{reset\+\_\+dictionary}!domini\+::utils\+::\+Dict\+\_\+\+Encode@{domini\+::utils\+::\+Dict\+\_\+\+Encode}}
+\subsubsection{\texorpdfstring{reset\+\_\+dictionary()}{reset\_dictionary()}}
+{\footnotesize\ttfamily public void domini.\+utils.\+Dict\+\_\+\+Encode.\+reset\+\_\+dictionary (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Reinicilització del diccionari de la classe. 
+
+\begin{DoxyNote}{Note}
+Només quan el creem o quan estigui ple 
+\end{DoxyNote}
+\mbox{\Hypertarget{classdomini_1_1utils_1_1Dict__Encode_a1bafdca1835da3fa93b900ff0aa720e0}\label{classdomini_1_1utils_1_1Dict__Encode_a1bafdca1835da3fa93b900ff0aa720e0}} 
+\index{domini\+::utils\+::\+Dict\+\_\+\+Encode@{domini\+::utils\+::\+Dict\+\_\+\+Encode}!search\+\_\+and\+\_\+insert\+\_\+\+B\+ST@{search\+\_\+and\+\_\+insert\+\_\+\+B\+ST}}
+\index{search\+\_\+and\+\_\+insert\+\_\+\+B\+ST@{search\+\_\+and\+\_\+insert\+\_\+\+B\+ST}!domini\+::utils\+::\+Dict\+\_\+\+Encode@{domini\+::utils\+::\+Dict\+\_\+\+Encode}}
+\subsubsection{\texorpdfstring{search\+\_\+and\+\_\+insert\+\_\+\+B\+S\+T()}{search\_and\_insert\_BST()}}
+{\footnotesize\ttfamily public Integer domini.\+utils.\+Dict\+\_\+\+Encode.\+search\+\_\+and\+\_\+insert\+\_\+\+B\+ST (\begin{DoxyParamCaption}\item[{Integer}]{i,  }\item[{byte}]{c }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Cada cop que es crida es mira si ja tenim la combinació enter-\/char al diccionari. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em i} & Enter que representa una cadena de caràcters \\
+\hline
+{\em c} & Caràcter actual \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Retorna l\textquotesingle{}enter que farà referència a la nova cadena de caràcters 
+\end{DoxyReturn}
+
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{classdomini_1_1utils_1_1Dict__Encode_a48fe9a878056a119ad36a0aad2727a13}\label{classdomini_1_1utils_1_1Dict__Encode_a48fe9a878056a119ad36a0aad2727a13}} 
+\index{domini\+::utils\+::\+Dict\+\_\+\+Encode@{domini\+::utils\+::\+Dict\+\_\+\+Encode}!Limit@{Limit}}
+\index{Limit@{Limit}!domini\+::utils\+::\+Dict\+\_\+\+Encode@{domini\+::utils\+::\+Dict\+\_\+\+Encode}}
+\subsubsection{\texorpdfstring{Limit}{Limit}}
+{\footnotesize\ttfamily final Integer domini.\+utils.\+Dict\+\_\+\+Encode.\+Limit = Integer.\+M\+A\+X\+\_\+\+V\+A\+L\+UE\hspace{0.3cm}{\ttfamily [static]}}
+
+
+\begin{DoxyParams}{Parameters}
+{\em Limit} & Nombre màxim d\textquotesingle{}entrades que pot tenir el diccionari \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+src/domini/utils/Dict\+\_\+\+Encode.\+java\end{DoxyCompactItemize}

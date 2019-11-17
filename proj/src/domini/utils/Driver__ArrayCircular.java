@@ -2,12 +2,11 @@ package domini.utils;
 
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
-import java.util.ArrayList;
 
 /**
  * @class Driver__ArrayCircular
  * @brief Driver de ArrayCircular
- * @author Manel Aguilar
+ * @author Joan Bellavista Bartroli
  */
 public class Driver__ArrayCircular {
 

@@ -1,13 +1,12 @@
+package domini.utils;
+
+import java.util.*;
+
 /**
  * @class byteToConversion
  * @brief Classe byteToConversion
  * @author 
  */
-package domini.utils;
-
-import java.util.*;
-
-
 public class byteToConversion {
   
     /**

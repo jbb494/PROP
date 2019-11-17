@@ -1,13 +1,13 @@
+package domini.estadistica;
+
+import java.io.File;
+import java.util.Date;
+
 /**
  * @class Estadistica
  * @brief Generació de les estadístiques durant la compressió
  * @author Miguel Paracuellos Ocaña
  */
-
-package domini.estadistica;
-
-import java.io.File;
-import java.util.Date;
 
 public class Estadistica {
 
