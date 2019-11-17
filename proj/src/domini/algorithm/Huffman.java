@@ -1,7 +1,6 @@
 package domini.algorithm;
 
 import domini.utils.BinTree;
-import jdk.nashorn.internal.ir.ReturnNode;
 
 class Huffman { 
 
