@@ -4,9 +4,9 @@ Es tracta de construir un entorn per a la compressió i descompressió de fitxer
 # Compressor i Descompressor
 ## Fitxers .TXT
 ### Algorismes
-> #### LZ78: Lempel-Ziv, 1978
-> #### LZSS: Lempel–Ziv–Storer–Szymansk, 1982
-> #### LZW: Lempel–Ziv–Welch, 1984
+> #### <a href="./classdomini_1_1algorithm_1_1LZ78.html"> LZ78 </a>: Lempel-Ziv, 1978
+> #### <a href="./classdomini_1_1algorithm_1_1LZSS.html"> LZSS </a>: Lempel–Ziv–Storer–Szymansk, 1982
+> #### <a href="./classdomini_1_1algorithm_1_1LZW.html"> LZW </a>: Lempel–Ziv–Welch, 1984
 ## Imatges .PPM
 ### Algorisme
-> #### JPEG: Joint Photographic Experts Group, 1992
+> #### <a href="./classdomini_1_1algorithm_1_1JPEG.html"> JPEG </a>: Joint Photographic Experts Group, 1992
