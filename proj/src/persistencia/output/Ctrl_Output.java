@@ -1,12 +1,12 @@
-/**
- * @class Ctrl_Output
- * @brief Classe Ctrl_Output
- */
 package persistencia.output;
 
 import java.nio.ByteBuffer;
 import java.util.ArrayList;
 
+/**
+ * @class Ctrl_Output
+ * @brief Classe Ctrl_Output
+ */
 public class Ctrl_Output {
     
     //Attributes

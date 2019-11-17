@@ -1,15 +1,14 @@
-/**
- * @class Ctrl_Input_LZ78
- * @brief Acces a un arxiu comprimit amb LZ78
- * @author Joan Bellavista Bartroli
- */
-
 package persistencia.input;
 
 
 import domini.utils.byteToConversion;
 import domini.utils.*;
 
+/**
+ * @class Ctrl_Input_LZ78
+ * @brief Acces a un arxiu comprimit amb LZ78
+ * @author Joan Bellavista Bartroli
+ */
 public class Ctrl_Input_LZ78 extends Ctrl_Input {
 
     /**

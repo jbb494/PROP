@@ -1,10 +1,10 @@
+package domini.utils;
+
 /**
  * @class Node
  * @brief Representa un node
  * @author Miguel Paracuellos Ocaña
  */
-package domini.utils;
-
 public class Node {
     //Attributes
     

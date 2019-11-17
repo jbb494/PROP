@@ -1,0 +1,111 @@
+\hypertarget{classpersistencia_1_1input_1_1Input}{}\section{persistencia.\+input.\+Input Class Reference}
+\label{classpersistencia_1_1input_1_1Input}\index{persistencia.\+input.\+Input@{persistencia.\+input.\+Input}}
+
+
+Classe \hyperlink{classpersistencia_1_1input_1_1Input}{Input}.  
+
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classpersistencia_1_1input_1_1Input_a9b30ef8d489a1fc5b4aa04a14474349a}{Input} (String path)
+\begin{DoxyCompactList}\small\item\em Constructor de la classe. \end{DoxyCompactList}\item 
+byte \hyperlink{classpersistencia_1_1input_1_1Input_a3fa5a378b2155a3022a4a4ef38d63a8e}{get\+Bits} (int num\+\_\+bits)
+\item 
+Array\+List$<$ Byte $>$ \hyperlink{classpersistencia_1_1input_1_1Input_a81e96a5ac3ca41b5001ffff9f9acc76a}{get\+More\+Bits} (int num\+\_\+bits)
+\item 
+boolean \hyperlink{classpersistencia_1_1input_1_1Input_af607cad1726ef15cf8e970dcbee74b68}{finished} ()
+\item 
+int \hyperlink{classpersistencia_1_1input_1_1Input_a3f0fc057e91430b81f5f2c92f91b8ed7}{out\+Of\+File} ()
+\item 
+String \hyperlink{classpersistencia_1_1input_1_1Input_a95e2068bd17e415f0487f8193f066160}{get\+Decode\+Alg} ()
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Classe \hyperlink{classpersistencia_1_1input_1_1Input}{Input}. 
+
+\begin{DoxyAuthor}{Author}
+
+\end{DoxyAuthor}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classpersistencia_1_1input_1_1Input_a9b30ef8d489a1fc5b4aa04a14474349a}\label{classpersistencia_1_1input_1_1Input_a9b30ef8d489a1fc5b4aa04a14474349a}} 
+\index{persistencia\+::input\+::\+Input@{persistencia\+::input\+::\+Input}!Input@{Input}}
+\index{Input@{Input}!persistencia\+::input\+::\+Input@{persistencia\+::input\+::\+Input}}
+\subsubsection{\texorpdfstring{Input()}{Input()}}
+{\footnotesize\ttfamily persistencia.\+input.\+Input.\+Input (\begin{DoxyParamCaption}\item[{String}]{path }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Constructor de la classe. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em path} & Path de l\textquotesingle{}arxiu d\textquotesingle{}\hyperlink{classpersistencia_1_1input_1_1Input}{Input} \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classpersistencia_1_1input_1_1Input_af607cad1726ef15cf8e970dcbee74b68}\label{classpersistencia_1_1input_1_1Input_af607cad1726ef15cf8e970dcbee74b68}} 
+\index{persistencia\+::input\+::\+Input@{persistencia\+::input\+::\+Input}!finished@{finished}}
+\index{finished@{finished}!persistencia\+::input\+::\+Input@{persistencia\+::input\+::\+Input}}
+\subsubsection{\texorpdfstring{finished()}{finished()}}
+{\footnotesize\ttfamily public boolean persistencia.\+input.\+Input.\+finished (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\begin{DoxyReturn}{Returns}
+Retorna si hem arribat al final de l\textquotesingle{}arxiu o no 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classpersistencia_1_1input_1_1Input_a3fa5a378b2155a3022a4a4ef38d63a8e}\label{classpersistencia_1_1input_1_1Input_a3fa5a378b2155a3022a4a4ef38d63a8e}} 
+\index{persistencia\+::input\+::\+Input@{persistencia\+::input\+::\+Input}!get\+Bits@{get\+Bits}}
+\index{get\+Bits@{get\+Bits}!persistencia\+::input\+::\+Input@{persistencia\+::input\+::\+Input}}
+\subsubsection{\texorpdfstring{get\+Bits()}{getBits()}}
+{\footnotesize\ttfamily public byte persistencia.\+input.\+Input.\+get\+Bits (\begin{DoxyParamCaption}\item[{int}]{num\+\_\+bits }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+\begin{DoxyParams}{Parameters}
+{\em num\+\_\+bits} & Nombre de bits que volem que ens retorni ( 1 $<$= num\+\_\+bits $<$= 8) \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Retorna un byte amb num\+\_\+bits bits valids 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classpersistencia_1_1input_1_1Input_a95e2068bd17e415f0487f8193f066160}\label{classpersistencia_1_1input_1_1Input_a95e2068bd17e415f0487f8193f066160}} 
+\index{persistencia\+::input\+::\+Input@{persistencia\+::input\+::\+Input}!get\+Decode\+Alg@{get\+Decode\+Alg}}
+\index{get\+Decode\+Alg@{get\+Decode\+Alg}!persistencia\+::input\+::\+Input@{persistencia\+::input\+::\+Input}}
+\subsubsection{\texorpdfstring{get\+Decode\+Alg()}{getDecodeAlg()}}
+{\footnotesize\ttfamily public String persistencia.\+input.\+Input.\+get\+Decode\+Alg (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\begin{DoxyReturn}{Returns}
+Retorna l\textquotesingle{}algoritme que hem d\textquotesingle{}emprar per la descompressio 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classpersistencia_1_1input_1_1Input_a81e96a5ac3ca41b5001ffff9f9acc76a}\label{classpersistencia_1_1input_1_1Input_a81e96a5ac3ca41b5001ffff9f9acc76a}} 
+\index{persistencia\+::input\+::\+Input@{persistencia\+::input\+::\+Input}!get\+More\+Bits@{get\+More\+Bits}}
+\index{get\+More\+Bits@{get\+More\+Bits}!persistencia\+::input\+::\+Input@{persistencia\+::input\+::\+Input}}
+\subsubsection{\texorpdfstring{get\+More\+Bits()}{getMoreBits()}}
+{\footnotesize\ttfamily public Array\+List$<$ Byte $>$ persistencia.\+input.\+Input.\+get\+More\+Bits (\begin{DoxyParamCaption}\item[{int}]{num\+\_\+bits }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+\begin{DoxyParams}{Parameters}
+{\em num\+\_\+bits} & Nombre de bits que volem que ens retorni \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Array\+List de Bytes amb num\+\_\+bits bits valids 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classpersistencia_1_1input_1_1Input_a3f0fc057e91430b81f5f2c92f91b8ed7}\label{classpersistencia_1_1input_1_1Input_a3f0fc057e91430b81f5f2c92f91b8ed7}} 
+\index{persistencia\+::input\+::\+Input@{persistencia\+::input\+::\+Input}!out\+Of\+File@{out\+Of\+File}}
+\index{out\+Of\+File@{out\+Of\+File}!persistencia\+::input\+::\+Input@{persistencia\+::input\+::\+Input}}
+\subsubsection{\texorpdfstring{out\+Of\+File()}{outOfFile()}}
+{\footnotesize\ttfamily public int persistencia.\+input.\+Input.\+out\+Of\+File (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\begin{DoxyReturn}{Returns}
+Retorna el nombre de bits que s\textquotesingle{}han intentat llegir però queden fora del fitxer 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+src/persistencia/input/Input.\+java\end{DoxyCompactItemize}

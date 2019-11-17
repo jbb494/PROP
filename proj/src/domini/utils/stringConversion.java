@@ -1,10 +1,10 @@
+package domini.utils;
+
 /**
  * @class stringConversion
  * @brief Classe de stringConversion
  * @author 
  */
-package domini.utils;
-
 public class stringConversion {
 
     /**

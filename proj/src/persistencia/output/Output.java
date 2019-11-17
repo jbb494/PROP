@@ -1,8 +1,3 @@
-/**
- * @class Output
- * @brief Classe Output
- * @author 
- */
 package persistencia.output;
 
 import java.util.*;
@@ -14,6 +9,11 @@ import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import domini.utils.byteToConversion;
 
+/**
+ * @class Output
+ * @brief Classe Output
+ * @author 
+ */
 public class Output {
 
     /**

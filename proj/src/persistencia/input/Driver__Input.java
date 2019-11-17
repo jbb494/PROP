@@ -1,8 +1,3 @@
-/**
- * @class Driver__Input
- * @brief Classe de Driver__Input
- * @author Joan Bellavista
- */
 package persistencia.input;
 
 import persistencia.input.Input;
@@ -10,8 +5,15 @@ import java.io.BufferedReader;
 import java.io.InputStreamReader;
 import java.util.ArrayList;
 
+// Necesitaremos inputreader y bufferreader
+// https://funnelgarden.com/java_read_file/ --> FileInputStream
 
 
+/**
+ * @class Driver__Input
+ * @brief Classe de Driver__Input
+ * @author Joan Bellavista
+ */
 public class Driver__Input {
     
     /**

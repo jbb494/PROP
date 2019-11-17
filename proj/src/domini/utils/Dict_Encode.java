@@ -1,13 +1,13 @@
-/**
- * @class LZW_Dict_Encode
- * @brief Diccionari (amb els mètodes corresponents) emprat per a la compressió amb LZW
- * @author Miguel Paracuellos Ocaña
- */
 package domini.utils;
 
 import domini.utils.Node;
 import java.util.ArrayList;
 
+/**
+ * @class Dict_Encode
+ * @brief Diccionari (amb els mètodes corresponents) emprat per a la compressió amb LZW
+ * @author Miguel Paracuellos Ocaña
+ */
 public class Dict_Encode {
     
     //Attributes

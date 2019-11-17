@@ -1,14 +1,14 @@
-/**
- * @class Driver__Output
- * @brief Classe Driver__Output
- * @author Joan Bellavista Bartroli
- */
 package persistencia.output;
 
 import persistencia.output.Output;
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
 
+/**
+ * @class Driver__Output
+ * @brief Classe Driver__Output
+ * @author Joan Bellavista Bartroli
+ */
 public class Driver__Output {
     /**
      * @param path Path a la carpeta de data

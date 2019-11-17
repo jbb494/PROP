@@ -6,7 +6,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * @class Driver_byteToConversion
+ * @class Driver__byteToConversion
  * @brief Driver de byteToConversion
  * @author Joan Bellavista Bartroli
  */

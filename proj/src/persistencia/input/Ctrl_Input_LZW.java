@@ -1,15 +1,14 @@
-/**
- * @class Ctrl_Input_LZW
- * @brief Acces a un arxiu comprimit amb LZW
- * @author Miguel Paracuellos Ocana
- */
-
 package persistencia.input;
 
 import java.util.ArrayList;
 import java.util.List;
 import domini.utils.byteToConversion;
 
+/**
+ * @class Ctrl_Input_LZW
+ * @brief Acces a un arxiu comprimit amb LZW
+ * @author Miguel Paracuellos Ocana
+ */
 public class Ctrl_Input_LZW extends Ctrl_Input {
 
     /**
