@@ -1,4 +1,5 @@
 #!/bin/bash 
+#@autor = Joan Bellavista
 
 NomArxiuInp=$1
 NomClasse=$(echo $1 | sed -e "s/\.java//" )
