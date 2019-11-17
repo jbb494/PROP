@@ -23,7 +23,7 @@ elif [[ $1 == "-clean" || $1 == "-remove" ]]; then
     echo $ArxiusABorrar | sed "s/ /\n/g;"
     rm $ArxiusABorrar
     cd ../src
-elif [[ $1 == "run" || $1 == "r" ]]; then
+elif [[ $1 == "run" ]]; then
     echo ""
     echo ""
     cd ../bin
@@ -31,7 +31,7 @@ elif [[ $1 == "run" || $1 == "r" ]]; then
     cd ../src
 else
     echo -e "Usage:  make compila el projecte."
-    echo -e "\t-r o run per executar el main."
+    echo -e "\trun per executar el main."
     echo -e "\t-driver i el nom del driver que vols executar. Exemple: ./compileAndRun.sh -driver domini.algorithm.Driver__LZ78"
     echo -e "\t-ctest Compila els tests."
     echo -e "\t-etest i el nom del test que vols executar. Exemple: ./compileAndRun.sh -etest domini.algorithm.LZWTest"

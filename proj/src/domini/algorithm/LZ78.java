@@ -13,7 +13,7 @@ import java.util.*;
 public class LZ78 {
 
     /**
-	 *  Utilitzat per a la compressió i descompressió de fitxers..
+	 *  @param Utilitzat per a la compressió i descompressió de fitxers..
 	*/
     Ctrl_Output Output ;
    

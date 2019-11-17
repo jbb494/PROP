@@ -6,6 +6,9 @@ import java.util.Map;
 /**
  * @class TrieNode
  * @brief Classe TrieNode
+ * 
+ * Esta clase representa los nodos del Trie.
+ * 
  * @author Joan Bellavista Bartroli
  */
 class TrieNode<T> {
