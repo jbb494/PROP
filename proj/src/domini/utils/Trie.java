@@ -24,8 +24,8 @@ public class Trie<T> {
     /**
      * @fn public void insert(ArrayList<T> list, Integer index)
      * @brief Inserta al Trie una lista de bytes con un indice.
-     * @param list 
-     * @param index
+     * @param list La lista de bytes.
+     * @param index El entero que representará el índice de esta cadena de bytes.
      */
     public void insert(ArrayList<T> list, Integer index) {
         TrieNode<T> actual = root;
@@ -39,8 +39,8 @@ public class Trie<T> {
 
     /**
      * @fn public Integer indexNode(ArrayList<T> word)
-     * @brief 
-     * @param list
+     * @brief Devuelve el indice de la lista.
+     * @param list La lista de bytes.
      * @return Devuelve el indice de la lista "list" si esta. O -1 si no esta.
      */
     public Integer indexNode(ArrayList<T> list) {

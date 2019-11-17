@@ -8,7 +8,17 @@ import persistencia.output.*;
 
 public class JPEG {
 
-	public JPEG() {}
+	Ctrl_Output out;
+	String path;
+	boolean decode_or_encode; // if true, decode; otherwise, encode
+
+	Huffman huff;
+
+	public JPEG(String aux, boolean b) {
+		huff = new Huffman(true);
+		path = aux;
+		decode_or_encode = b;
+	}
 
 	
 
@@ -24,12 +34,46 @@ public class JPEG {
 		{72, 92, 95, 98, 112, 100, 103, 99}
 	};
 
-	private static Byte sizeOf(Byte b) {
-		return 8; //num de bits "importants" de b
-	}
+	private static int[] zigZag_X = {
+		0,
+		0, 1,
+		2, 1, 0,
+		0, 1, 2, 3, 
+		4, 3, 2, 1, 0,
+		0, 1, 2, 3, 4, 5,
+		6, 5, 4, 3, 2, 1, 0,
+		0, 1, 2, 3, 4, 5, 6, 7,
+		7, 6, 5, 4, 3, 2, 1,
+		2, 3, 4, 5, 6, 7,
+		7, 6, 5, 4, 3,
+		4, 5, 6, 7, 
+		7, 6, 5,
+		6, 7,
+		7
+	};
+		
+		
+	private static int[] zigZag_Y = {
+		0,
+		1, 0,
+		0, 1, 2,
+		3, 2, 1, 0,
+		0, 1, 2, 3, 4,
+		5, 4, 3, 2, 1, 0,
+		0, 1, 2, 3, 4, 5, 6,
+		7, 6, 5, 4, 3, 2, 1, 0,
+		1, 2, 3, 4, 5, 6, 7,
+		7, 6, 5, 4, 3, 2,
+		3, 4, 5, 6, 7,
+		7, 6, 5, 4,
+		5, 6, 7,
+		7, 6,
+		7
+	};
 
-	private static Byte round(double x) {
-		return (byte)(x + 0.5);
+
+	private static int round(double x) {
+		return (int)(x + 0.5);
 	}
 
 	private static double force255(double x) {
@@ -42,7 +86,9 @@ public class JPEG {
 		return 1.0;
 	}
 
-	public static void discrete_cosine_transform(double[][] mat1) {
+	 
+
+	private static void discrete_cosine_transform(double[][] mat1) {
 		//int n = 8;
 		//int m = 8;
 		
@@ -72,7 +118,7 @@ public class JPEG {
 		}
 	}
 
-	public static void inverse_discrete_cosine_transform(double[][] mat1) {
+	private static void inverse_discrete_cosine_transform(double[][] mat1) {
 		//int n = 8;
 		//int m = 8;
 		
@@ -101,25 +147,56 @@ public class JPEG {
 		}
 	}
 
-	Byte[][][][][] com;
-	int com_w, com_h;
+	static int get_entropy1_code(int runlength, int size) {
+		return ((runlength<<4) + size);
+	}
+
+	static int get_runlength_from_entropy1(int code) {
+		return (code >> 4) & 0x000F;
+	}
+
+	static int get_size_from_entropy1(int code) {
+		return code & 0x000F;
+	}
+
+
+	static int get_entropy2_size(int value) {
+		if (value == 0) return 0;
+		if (value < 0) return get_entropy2_size(-value);
+		return 1 + get_entropy2_size(value / 2);
+	}
+
+	static int get_entropy2_code(int value) {
+		if (value < 0) return ~(-value);
+		return value;
+	}
+
+	private static int get_value_from_entropy2(int code, int size) {
+		if (size == 0) return 0;
+		if (((code >> (size-1)) & 1) == 0) return -(~(code | (-1 << size)));
+		return code;
+	}
+
+
+
+
 
 	public void encode(Ctrl_Input_Img in) {
 
-		com = new Byte[in.getHeight()/8][in.getWidth()/8][8][8][3];
+		out = new Ctrl_Output(path, "jpeg", false);
 
 		int num_i_blocks = in.getHeight()/8;
 		int num_j_blocks = in.getWidth()/8;
-		////////////////////////////////////////////////
-		com_h = num_i_blocks*8; com_w = num_j_blocks*8;
-		////////////////////////////////////////////////
+
+		out.add2(num_j_blocks*8, 32);
+		out.add2(num_i_blocks*8, 32);
 
 		for (int i_block = 0; i_block < num_i_blocks; i_block++)  {
 
 			double[][][][] inRGB = in.get();
 
 			for (int j_block = 0; j_block < num_j_blocks; j_block++)  {
-
+				
 				//1. Color space transformation
 				double[][][] YCbCr = new double[3][8][8];
 				for (int i = 0; i < 8; ++i) {
@@ -136,8 +213,8 @@ public class JPEG {
 					}
 				}
 				
-				Byte[][][] outYCbCr = new Byte[8][8][3];
-				ArrayList<Byte[]> ret = new ArrayList<Byte[]>();
+				int[][][] outYCbCr = new int[8][8][3];
+				//ArrayList<Byte[]> ret = new ArrayList<Byte[]>();
 						
 				for (int k = 0; k < 3; ++k) {
 					
@@ -153,60 +230,60 @@ public class JPEG {
 					for(int i = 0; i < 8; ++i) {
 						for (int j = 0; j < 8; ++j) {
 							outYCbCr[i][j][k] = round(YCbCr[k][i][j] / quantization_matrix[i][j]);
-							///////////////////////////////////////////////////
-							com[i_block][j_block][i][j][k] = outYCbCr[i][j][k];
-							///////////////////////////////////////////////////
+							if (j_block == 0 && i_block == 0 && k == 0) {
+								System.out.print(outYCbCr[i][j][k]);
+								System.out.print(" ");
+							}
 						}
+						if (j_block == 0 && i_block == 0 && k == 0) System.out.println();
 					}
+					if (j_block == 0 && i_block == 0 && k == 0) System.out.println();
 
 					//6. Entropy coding
-					int i = 0, j = 0;
-					boolean up = true;
-					byte zeros = 0;
+					int zeros = 0;
 					for (int aux = 0; aux < 64; ++aux) {
-						//https://en.wikipedia.org/wiki/JPEG#Entropy_coding diu:
-						//"The first value in the matrix is the DC coefficient; it is not encoded the same way."
-						//Però no diu com
-						Byte x = outYCbCr[i][j][k];
+						int x = outYCbCr[zigZag_X[aux]][zigZag_Y[aux]][k];
 						if (x == 0) {
 							zeros++;
 						} else {
 							while (zeros >= 16) {
-								zeros = 0;
-								Byte[] z16_val = {15,0,0};
-								ret.add(z16_val);
+								out.add2(huff.getCode(0x0F0), huff.getSize(0x0F0));
 								zeros -= 16;
 							}
-							Byte[] y = {zeros, sizeOf(x), x};
-							ret.add(y);
+							int by = get_entropy1_code(zeros, get_entropy2_size(x));
+							out.add2(huff.getCode(by), huff.getSize(by));
 							zeros = 0;
+							out.add2(get_entropy2_code(x), get_entropy2_size(x));
+							if (j_block == 0 && i_block == 0 && k == 0) {
+								System.out.print(x);
+								System.out.print(",");
+								System.out.print(get_entropy2_code(x));
+								System.out.print(",");
+								System.out.print(get_entropy2_size(x));
+								System.out.print(" ");
+							}
 						}
-						
-						
-						if      ((i == 0 && up) || (i == 7 && !up)) {j++; up = !up;}
-						else if ((j == 0 && !up) || (j == 7 && up)) {i++; up = !up;}
-						else if (up) {i--; j++;}
-						else         {i++; j--;}
 					}
-					Byte[] eob = {0,0,0};
-					ret.add(eob);
+					out.add2(huff.getCode(0), huff.getSize(0));
+					if (j_block == 0 && i_block == 0 && k == 0) System.out.println();
 
 				}
 			}
 		}
+		out.print();
 
 		
 	}
 
 
-	public void decode(String path) {
+	public void decode(Ctrl_Input_JPEG in) {
 
-		///////////////////////////
-		int num_i_blocks = com_h/8;
-		int num_j_blocks = com_w/8;
+		int num_i_blocks = in.getHeight()/8;
+		int num_j_blocks = in.getWidth()/8;
 
-		Ctrl_Output_Img out = new Ctrl_Output_Img(path, com_w, com_h, 255);
-		////////////////////////////
+		out = new Ctrl_Output_Img(path, in.getWidth(), in.getHeight(), 255);
+
+		//int it = 0;
 
 		for (int i_block = 0; i_block < num_i_blocks; i_block++)  {
 
@@ -214,21 +291,63 @@ public class JPEG {
 			
 			for (int j_block = 0; j_block < num_j_blocks; j_block++)  {
 
-				Byte[][][] inYCbCr = new Byte[8][8][3];
+				int[][][] inYCbCr = new int[8][8][3];
+				for (int i = 0; i < 8; ++i) {
+                    for (int j = 0; j < 8; ++j) {
+                        for (int k = 0; k < 3; ++k) inYCbCr[i][j][k] = 0;
+                    }
+				}
+				
 				double[][][] YCbCr = new double[3][8][8];
 
+				
 				for (int k = 0; k < 3; ++k) {
-					//Falta (6.) entropy coding
+					//6. Entropy coding
+					int zz = 0;
+					while (true) {
 
-					//5. Quantization
-					for(int i = 0; i < 8; ++i) {
-						for (int j = 0; j < 8; ++j) {
-							///////////////////////////////////////////////////
-							inYCbCr[i][j][k] = com[i_block][j_block][i][j][k];
-							///////////////////////////////////////////////////
-							YCbCr[k][i][j] = inYCbCr[i][j][k] * quantization_matrix[i][j];
+						int found;
+						while ((found = huff.searchSymbol(in.get(1))) == 0)
+						if (found == -1) throw new IllegalArgumentException("Huffman code not found");
+						
+						int by = huff.getFoundSymbol();
+						int size = get_size_from_entropy1(by);
+
+						if (by == 0x00) break;
+						else if (by == 0x0F0) {
+							zz += 16;
+						}
+						else {
+							zz += get_runlength_from_entropy1(by);
+							if (zz >= 64) throw new IllegalArgumentException("Entropy coding failed");
+							int code = in.get(size);
+							int x = get_value_from_entropy2(code, size);
+							if (j_block == 0 && i_block == 0 && k == 0) {
+								System.out.print(x);
+								System.out.print(",");
+								System.out.print(code);
+								System.out.print(",");
+								System.out.print(size);
+								System.out.print(" ");
+							}
+							inYCbCr[zigZag_X[zz]][zigZag_Y[zz]][k] = x;
+							zz++;
 						}
 					}
+					if (j_block == 0 && i_block == 0 && k == 0) System.out.println();
+
+					//5. Quantization
+					for (int i = 0; i < 8; ++i) {
+						for (int j = 0; j < 8; ++j) {
+							if (j_block == 0 && i_block == 0 && k == 0) {
+								System.out.print(inYCbCr[i][j][k]);
+								System.out.print(" ");
+							}
+							YCbCr[k][i][j] = inYCbCr[i][j][k] * quantization_matrix[i][j];
+						}
+						if (j_block == 0 && i_block == 0 && k == 0) System.out.println();
+					}
+					if (j_block == 0 && i_block == 0 && k == 0) System.out.println();
 
 					//4. Discrete cosnie transform
 					inverse_discrete_cosine_transform(YCbCr[k]);
@@ -256,10 +375,22 @@ public class JPEG {
 					}
 				}
 			}
-			out.add(outRGB);
+
+			((Ctrl_Output_Img)out).add(outRGB);
 		}
 		out.print();
 
+	}
+
+	public static void main(String[] args) {
+		
+		Ctrl_Input_Img img = new Ctrl_Input_Img(args[0]);
+		JPEG alg = new JPEG(args[1], false);
+		alg.encode(img);
+		System.out.println("--");
+		Ctrl_Input_JPEG jpeg = new Ctrl_Input_JPEG(args[1]);
+		JPEG alg2 = new JPEG(args[2], true);
+		alg2.decode(jpeg);
 	}
 	
 	
