@@ -15,7 +15,7 @@ import domini.utils.byteToConversion;
 /**
  * @class Input
  * @brief Classe Input
- * @author 
+ * @author Joan Bellavista
  */
 public class Input {
     

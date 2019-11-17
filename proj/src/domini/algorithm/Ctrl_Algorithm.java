@@ -10,7 +10,7 @@ import persistencia.output.Ctrl_Output;
 /**
  * @class Ctrl_Algorithm
  * @brief Classe de Ctrl_Algorithm
- * @author 
+ * @author Manel Aguilar
  */
 public class Ctrl_Algorithm {
 

@@ -1,7 +1,7 @@
 /**
  * @class Main
  * @brief Classe Main
- * @author
+ * @author Joan Lapeyra
  */
 import presentacion.master.Ctrl_Master;
 

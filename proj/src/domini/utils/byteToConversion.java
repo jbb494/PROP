@@ -5,7 +5,7 @@ import java.util.*;
 /**
  * @class byteToConversion
  * @brief Classe byteToConversion
- * @author 
+ * @author Joan Bellavista
  */
 public class byteToConversion {
   

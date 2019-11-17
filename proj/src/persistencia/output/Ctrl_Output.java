@@ -6,6 +6,7 @@ import java.util.ArrayList;
 /**
  * @class Ctrl_Output
  * @brief Classe Ctrl_Output
+ * @author Miguel Paracuellos
  */
 public class Ctrl_Output {
     
@@ -81,13 +82,11 @@ public class Ctrl_Output {
 
     /**
      * @fn public void add(Integer x, Integer mida)
-     * @brief Afegeix un Integer d'una mida determinada
+     * @brief Afegeix un enter amb mida. Guarda els bits més significatius primer.
      * @param x Enter a afegir
      * @param mida Mida del enter que volem afegir
      */
     public void add(Integer x, Integer mida){
-        //System.out.println(x);
-        //System.out.println("imprimir integer: " + x);
 
         ByteBuffer bb = ByteBuffer.allocate(4); 
         bb.clear();
@@ -101,7 +100,7 @@ public class Ctrl_Output {
             byte b = bb.get(i);
             add(b,midaAux);
             midaAux = 8;
-        } 
+        }
     }
 
     /**
@@ -117,7 +116,7 @@ public class Ctrl_Output {
 
     /**
      * @fn public void add2(int x, int mida)
-     * @brief Afegeix un enter amb mida.
+     * @brief Afegeix un enter amb mida. Guarda els bits menys significatius primer.
      * @param x Int a afegir.
      * @param mida Mida de "x".
      */

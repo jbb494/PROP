@@ -5,7 +5,7 @@ import domini.estadistica.Estadistica;
 /**
  * @class Ctrl_Master
  * @brief Classe Ctrl_Master
- * @author
+ * @author Miguel Paracuellos
  */
 public class Ctrl_Master {
 
