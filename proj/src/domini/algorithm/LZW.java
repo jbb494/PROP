@@ -11,6 +11,7 @@ import domini.utils.Dict_Encode;
 /**
  * @class LZW
  * @brief Compressió i descompressió pel mètode LZW
+ * 
  * El mètode LZW crea sobre la marxa, de manera automàtica i
  * en una única passada un diccionari de cadenes que es trobin dins del text a comprimir mentre al
  * mateix temps es procedeix a la seva codificació. Aquest diccionari no és transmès amb el text 
