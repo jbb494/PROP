@@ -1,7 +1,12 @@
-# Compresor i Descompresor
-## Utilitzem els següents algoritmes: 
-1. LZ78
-2. <a href="./classdomini_1_1algorithm_1_1JPEG.html"> JPEG </a>
+# Projecte de Programació
+Es tracta de construir un entorn per a la compressió i descompressió de fitxers .txt i de imatges .ppm
 
-
-## aixo es la main page HEM DE FER COSES
+# Compressor i Descompressor
+## Fitxers .TXT
+### Algorismes
+> #### LZ78: Lempel-Ziv, 1978
+> #### LZSS: Lempel–Ziv–Storer–Szymansk, 1982
+> #### LZW: Lempel–Ziv–Welch, 1984
+## Imatges .PPM
+### Algorisme
+> #### JPEG: Joint Photographic Experts Group, 1992

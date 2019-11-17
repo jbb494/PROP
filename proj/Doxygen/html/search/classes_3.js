@@ -9,6 +9,7 @@ var searchData=
   ['driver_5f_5fctrl_5finput_5flz78',['Driver__Ctrl_Input_LZ78',['../classpersistencia_1_1input_1_1Driver____Ctrl__Input__LZ78.html',1,'persistencia::input']]],
   ['driver_5f_5fctrl_5finput_5flzss',['Driver__Ctrl_Input_LZSS',['../classpersistencia_1_1input_1_1Driver____Ctrl__Input__LZSS.html',1,'persistencia::input']]],
   ['driver_5f_5fctrl_5finput_5flzw',['Driver__Ctrl_Input_LZW',['../classpersistencia_1_1input_1_1Driver____Ctrl__Input__LZW.html',1,'persistencia::input']]],
+  ['driver_5f_5fctrl_5fmaster',['Driver__Ctrl_Master',['../classpresentacion_1_1master_1_1Driver____Ctrl__Master.html',1,'presentacion::master']]],
   ['driver_5f_5fctrl_5foutput',['Driver__Ctrl_Output',['../classpersistencia_1_1output_1_1Driver____Ctrl__Output.html',1,'persistencia::output']]],
   ['driver_5f_5fdict_5fdecode',['Driver__Dict_Decode',['../classdomini_1_1utils_1_1Driver____Dict__Decode.html',1,'domini::utils']]],
   ['driver_5f_5fdict_5fencode',['Driver__Dict_Encode',['../classdomini_1_1utils_1_1Driver____Dict__Encode.html',1,'domini::utils']]],

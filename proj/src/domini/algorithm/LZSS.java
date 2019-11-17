@@ -15,6 +15,9 @@ public class LZSS {
      */
     private Ctrl_Output Output;
 
+    /**
+     * @param window Valor de la finestra per al compressor.
+     */
     private final int window = 2048;
 
      /**
@@ -63,7 +66,7 @@ public class LZSS {
     } 
   
     /**
-     * @fn int [] computeLPSArray(ArrayList<Byte> paraula, int M)
+     * @fn int[] FailArray(ArrayList<Byte> paraula, int M)
      * @brief Mètode auxiliar de l'algorisme de Knuth-Morris-Pratt.
      * @param paraula 
      * @param M

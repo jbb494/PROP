@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['compresor_20i_20descompresor',['Compresor i Descompresor',['../index.html',1,'']]]
+  ['projecte_20de_20programació',['Projecte de Programació',['../index.html',1,'']]]
 ];
