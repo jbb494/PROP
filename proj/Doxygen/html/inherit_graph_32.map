@@ -1,3 +1,7 @@
 <map id="Graphical Class Hierarchy" name="Graphical Class Hierarchy">
+<<<<<<< HEAD
 <area shape="rect" id="node1" href="$classdomini_1_1utils_1_1Node.html" title="Representa un node. " alt="" coords="5,5,128,32"/>
+=======
+<area shape="rect" id="node1" href="$classdomini_1_1utils_1_1Trie.html" title="Clase de Trie. " alt="" coords="5,5,152,32"/>
+>>>>>>> 0e53281f1391a93d0eb3fdad7a8915221f6f42a1
 </map>
