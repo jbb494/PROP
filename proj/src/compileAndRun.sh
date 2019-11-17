@@ -2,6 +2,11 @@ if [[ $1 == "make" ]]; then
     echo "Compilem els seguents arxius: "
     ArxiusAcompilar=$(find | grep .java | sed "/Test\.java$/ d" | tr "\n" " ")
     echo $ArxiusAcompilar | sed "s/ /\n/g;"
+    cd ..
+    if [[ ! -d "bin" ]]; then
+        mkdir bin
+    fi
+    cd src
     javac -Xlint:unchecked $ArxiusAcompilar -d ../bin
 elif [[ $1 == "-driver" ]]; then
     echo "Executem driver"
