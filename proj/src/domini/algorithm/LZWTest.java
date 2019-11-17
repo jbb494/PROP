@@ -31,16 +31,22 @@ public class LZWTest {
 
     @Test
 	public void testConstructor() {
+        System.out.print("Comprovació del constructor de LZW... ");
+        
         String path = "output.txt";
         boolean b = true;
         Ctrl_Output aux = new Ctrl_Output(path, "lzw", b);
         initialize(path, b);
         compare_Ctrl_Output(aux);
+        
+        System.out.println("Constructor correcte!");
     }
 
 
     @Test
 	public void testCompression() {
+        System.out.print("Comprovació de la compressio amb LZW... ");
+        
         String path = "../data/junit.lzw";
         boolean b = true;   
         
@@ -53,10 +59,13 @@ public class LZWTest {
         Ctrl_Input_Text in = new Ctrl_Input_Text("../data/junit.txt");
         lzw.compression(in);
         compare_Ctrl_Output(aux);    
+
+        System.out.println("Compressor correcte!");
     }
 
     @Test
     public void testDecompression() {
+        System.out.print("Comprovació de la descompressio amb LZW... ");
         String path = "../data/junit.txt";
         boolean b = false;
 
@@ -70,15 +79,21 @@ public class LZWTest {
         Ctrl_Input_LZW in = new Ctrl_Input_LZW("../data/junit.lzw");
         lzw.decompression(in);
         compare_Ctrl_Output(aux);
+    
+        System.out.println("Descompressio correcte!");
     }
 
     @Test
     public void testReturn() {
+        System.out.print("Comprovacio del resultat actual amb LZW... ");
+
         String path = "output.txt";
         boolean b = true;
 
         Ctrl_Output aux = new Ctrl_Output(path, "lzw", b);
         initialize(path, b);
         compare_Ctrl_Output(aux);
+
+        System.out.println("Resultat actual correcte!");
     }  
 }
