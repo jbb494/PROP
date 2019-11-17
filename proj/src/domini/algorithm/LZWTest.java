@@ -17,35 +17,34 @@ public class LZWTest {
         lzw = new LZW(path, b);
     }
 
-    private void compare_Ctrl_Output(Ctrl_Output aux) {
+    private void compare_Ctrl_Output(Ctrl_Output aux, String descrp) {
         ArrayList<Byte> exp = aux.getOut().getOut();
         ArrayList<Byte> act = lzw.print().getOut().getOut();
-        assertEquals(exp.size(),act.size());
+        assertEquals(descrp + "El contigut no és l'esperat",exp.size(),act.size());
         for (int i = 0; i < exp.size(); ++i) {
-            assertEquals(exp.get(i), act.get(i));
+            assertEquals(descrp + "El contigut no és l'esperat",exp.get(i), act.get(i));
         }
 
-        assertEquals(aux.getOut().getPath(),lzw.print().getOut().getPath());
-        assertEquals(aux.getOut().getPos(), lzw.print().getOut().getPos());
+        assertEquals(descrp + "El path de sortida no coincideix",aux.getOut().getPath(),lzw.print().getOut().getPath());
+        assertEquals(descrp + "La posicio del punter de la classe no coincideix",aux.getOut().getPos(), lzw.print().getOut().getPos());
+
     }
 
     @Test
 	public void testConstructor() {
-        System.out.print("Comprovació del constructor de LZW... ");
+        String descp = "Comprovació del constructor de LZW... ";
         
         String path = "output.txt";
         boolean b = true;
         Ctrl_Output aux = new Ctrl_Output(path, "lzw", b);
         initialize(path, b);
-        compare_Ctrl_Output(aux);
-        
-        System.out.println("Constructor correcte!");
+        compare_Ctrl_Output(aux, descp);
     }
 
 
     @Test
 	public void testCompression() {
-        System.out.print("Comprovació de la compressio amb LZW... ");
+        String descp = "Comprovació de la compressio amb LZW... ";
         
         String path = "../data/junit.lzw";
         boolean b = true;   
@@ -58,14 +57,13 @@ public class LZWTest {
         initialize(path, true);
         Ctrl_Input_Text in = new Ctrl_Input_Text("../data/junit.txt");
         lzw.compression(in);
-        compare_Ctrl_Output(aux);    
-
-        System.out.println("Compressor correcte!");
+        compare_Ctrl_Output(aux,descp);    
     }
 
     @Test
     public void testDecompression() {
-        System.out.print("Comprovació de la descompressio amb LZW... ");
+        String descp = "Comprovació de la descompressio amb LZW... ";
+                
         String path = "../data/junit.txt";
         boolean b = false;
 
@@ -78,22 +76,18 @@ public class LZWTest {
         initialize(path, false);
         Ctrl_Input_LZW in = new Ctrl_Input_LZW("../data/junit.lzw");
         lzw.decompression(in);
-        compare_Ctrl_Output(aux);
-    
-        System.out.println("Descompressio correcte!");
+        compare_Ctrl_Output(aux,descp);
     }
 
     @Test
     public void testReturn() {
-        System.out.print("Comprovacio del resultat actual amb LZW... ");
+        String descp = "Comprovacio del resultat actual amb LZW... ";
 
         String path = "output.txt";
         boolean b = true;
 
         Ctrl_Output aux = new Ctrl_Output(path, "lzw", b);
         initialize(path, b);
-        compare_Ctrl_Output(aux);
-
-        System.out.println("Resultat actual correcte!");
+        compare_Ctrl_Output(aux,descp);
     }  
 }
