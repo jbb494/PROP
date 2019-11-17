@@ -14,5 +14,6 @@ var searchData=
   ['ctrl_5finput_5ftext',['Ctrl_Input_Text',['../classpersistencia_1_1input_1_1Ctrl__Input__Text.html',1,'persistencia.input.Ctrl_Input_Text'],['../classpersistencia_1_1input_1_1Ctrl__Input__Text.html#a945833e6bb2bb3fbdb328ae01392410f',1,'persistencia.input.Ctrl_Input_Text.Ctrl_Input_Text()']]],
   ['ctrl_5fmaster',['Ctrl_Master',['../classpresentacion_1_1master_1_1Ctrl__Master.html',1,'presentacion.master.Ctrl_Master'],['../classpresentacion_1_1master_1_1Ctrl__Master.html#a7336c36d767f4eb13e75761b67de17c4',1,'presentacion.master.Ctrl_Master.Ctrl_Master()']]],
   ['ctrl_5foutput',['Ctrl_Output',['../classpersistencia_1_1output_1_1Ctrl__Output.html',1,'persistencia.output.Ctrl_Output'],['../classpersistencia_1_1output_1_1Ctrl__Output.html#afeb28ec6172b522bf6bdaf16238d622b',1,'persistencia.output.Ctrl_Output.Ctrl_Output()']]],
-  ['ctrl_5foutput_5fimg',['Ctrl_Output_Img',['../classpersistencia_1_1output_1_1Ctrl__Output__Img.html',1,'persistencia::output']]]
+  ['ctrl_5foutput_5fimg',['Ctrl_Output_Img',['../classpersistencia_1_1output_1_1Ctrl__Output__Img.html',1,'persistencia::output']]],
+  ['compresor_20i_20descompresor',['Compresor i Descompresor',['../index.html',1,'']]]
 ];
