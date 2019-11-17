@@ -10,3 +10,10 @@ Es tracta de construir un entorn per a la compressió i descompressió de fitxer
 ## Imatges .PPM
 ### Algorisme
 > #### <a href="./classdomini_1_1algorithm_1_1JPEG.html"> JPEG </a>: Joint Photographic Experts Group, 1992
+<br>
+<br>
+Treball realitzat per:
+> Manel Aguilar<br>
+> Joan Bellavista<br>
+> Joan Lapeyra<br>
+> Miguel Paracuellos<br>
