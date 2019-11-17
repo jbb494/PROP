@@ -22,38 +22,38 @@ public class Trie<T> {
     }
 
     /**
-     * @fn public void insert(ArrayList<T> word, Integer index)
-     * @brief 
-     * @param word
+     * @fn public void insert(ArrayList<T> list, Integer index)
+     * @brief Inserta al Trie una lista de bytes con un indice.
+     * @param list 
      * @param index
      */
-    public void insert(ArrayList<T> word, Integer index) {
-        TrieNode<T> current = root;
+    public void insert(ArrayList<T> list, Integer index) {
+        TrieNode<T> actual = root;
 
-        for (int i = 0; i < word.size(); i++) {
-            current = current.getChildren()
-                .computeIfAbsent(word.get(i), c -> new TrieNode<T>(index)); 
-                // should only compute lastone.
+        for (int i = 0; i < list.size(); i++) {
+            actual = actual.getChildren()
+                .computeIfAbsent(list.get(i), c -> new TrieNode<T>(index)); 
+                // Solo deberia computar el ultimo.
         }
     }
 
     /**
      * @fn public Integer indexNode(ArrayList<T> word)
      * @brief 
-     * @param word
-     * @return
+     * @param list
+     * @return Devuelve el indice de la lista "list" si esta. O -1 si no esta.
      */
-    public Integer indexNode(ArrayList<T> word) {
-        TrieNode<T> current = root;
-        for (int i = 0; i < word.size(); i++) {
-            T ch = word.get(i);
-            TrieNode<T> node = current.getChildren().get(ch);
+    public Integer indexNode(ArrayList<T> list) {
+        TrieNode<T> actual = this.root;
+        for (int i = 0; i < list.size(); i++) {
+            T ch = list.get(i);
+            TrieNode<T> node = actual.getChildren().get(ch);
             if (node == null) {
                 return -1;
             }
-            current = node;
+            actual = node;
         }
-        return current.getIndex();
+        return actual.getIndex();
     }
 
 }

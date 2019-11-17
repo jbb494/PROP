@@ -1,8 +1,8 @@
 
 if [[ $# -eq 0 ]]; then
     echo "Compilem els seguents arxius: "
-    ArxiusAcompilar=$(find | grep .java | tr "\n" " ")
-    echo $ArxiusAcompilar | sed "s/ /\n/g"
+    ArxiusAcompilar=$(find | grep .java | sed "/Test\.java$/ d" | tr "\n" " ")
+    echo $ArxiusAcompilar | sed "s/ /\n/g;"
     javac -Xlint:unchecked $ArxiusAcompilar -d ../bin
 elif [[ $1 == "-driver" ]]; then
     echo "Executem driver"
@@ -18,6 +18,13 @@ elif [[ $1 == "-etest" ]]; then
     echo "Executem tests"
     cd ../bin
     java -cp .:junit.jar:hamcrest-core-1.3.jar org.junit.runner.JUnitCore $2
+    cd ../src
+elif [[ $1 == "-clean" || $1 == "-remove" ]]; then
+    echo "Borrem els seguents arxius: "
+    cd ../bin
+    ArxiusABorrar=$(find | grep "\.class" | tr "\n" " ")
+    echo $ArxiusABorrar | sed "s/ /\n/g;"
+    rm $ArxiusABorrar
     cd ../src
 fi
 

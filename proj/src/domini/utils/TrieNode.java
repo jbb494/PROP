@@ -10,13 +10,14 @@ import java.util.Map;
 
 class TrieNode<T> {
     /**
-     * @param children 
-     */
-    private final Map<T, TrieNode<T>> children = new HashMap<>();
-    /**
      * @param index
      */
     private Integer index;
+
+    /**
+     * @param children 
+     */
+    private final Map<T, TrieNode<T>> children = new HashMap<>();
 
     /**
      * @brief Constructor de la classe
