@@ -15,6 +15,9 @@ public class LZSS {
      */
     private Ctrl_Output Output;
 
+    /**
+     * @param window Valor de la finestra per al compressor.
+     */
     private final int window = 2048;
 
      /**

@@ -1,12 +1,3 @@
-/** @class IntorByte 
- *  @brief Classe auxiliar per l'algorisme LZSS.
- *   
- *  En aquesta classe es tracta de construir un objecte
- *  per obtenir una unitat mínima per al descompressor.
- * 
- *  @author Manel Aguilar
- */
-
 package domini.utils;
 
 public class IntorByte {
@@ -112,3 +103,11 @@ public class IntorByte {
 
 }
 
+/** @class IntorByte 
+ *  @brief Classe auxiliar per l'algorisme LZSS.
+ *   
+ *  En aquesta classe es tracta de construir un objecte
+ *  per obtenir una unitat mínima per al descompressor.
+ * 
+ *  @author Manel Aguilar
+ */
