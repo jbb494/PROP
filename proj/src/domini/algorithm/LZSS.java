@@ -66,13 +66,13 @@ public class LZSS {
     } 
   
     /**
-     * @fn int[] FailArray(ArrayList<Byte> paraula, int M)
+     * @fn public int [] FailArray(ArrayList<Byte> paraula, int M)
      * @brief Mètode auxiliar de l'algorisme de Knuth-Morris-Pratt.
      * @param paraula 
      * @param M
      * @return Retorna un vector amb les posicions de la taula de fallades.
      */
-    public int[] FailArray(ArrayList<Byte> paraula, int M) 
+    public int [] FailArray(ArrayList<Byte> paraula, int M) 
     { 
         
         int lps[] = new int[M]; 
