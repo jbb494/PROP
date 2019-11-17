@@ -28,6 +28,10 @@ Vam afegir un tercer text de mida similar al Input1/3 per comprovar si el grau d
 
 En tots els casos anteriors estàvem treballant sobre textos en català/castellà, fet que no ens acabava de convèncer per assegurar el correcte funcionament de la compressió/descompressió de textos utf8, per tant vam generar un fitxer amb codificació Koreana. 
 
+### Input6.txt
+
+A últim moment ens va sorgir el dubte sobre qué passaria si el fitxer estava completament buit, així que vam crear aquest sisé joc de proves.
+
 ### junit.txt - junit.lzw
 
 Emprem aquests dos fitxers per la comprovació de la classe LZW amb Junit.
