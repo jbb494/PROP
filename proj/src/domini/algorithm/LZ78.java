@@ -8,12 +8,16 @@ import java.util.*;
 /**
  * @class LZ78
  * @brief Compressió i descompressió pel mètode LZ78
+ * 
+ * Aquest algoritme de compresió es basa en utilitzar una estructura de dades (Trie en el meu cas), per guardar
+ * seqüencies de bytes i fer referència a aquestes seqüències amb punters al Trie.
+ * 
  * @author Joan Bellavista Bartroli
  */
 public class LZ78 {
 
     /**
-	 *  Utilitzat per a la compressió i descompressió de fitxers..
+	 *  @param Utilitzat per a la compressió i descompressió de fitxers..
 	*/
     Ctrl_Output Output ;
    

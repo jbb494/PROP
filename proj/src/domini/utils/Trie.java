@@ -4,7 +4,10 @@ import java.util.ArrayList;
 
 /**
  * @class Trie
- * @brief Classe de Trie
+ * @brief Clase de Trie.
+ * 
+ * Esta clase es una implemnetación general de la estructura de datos Trie. Usa TrieNode como nodos.
+ * 
  * @author Joan Bellavista
  */
 public class Trie<T> {
