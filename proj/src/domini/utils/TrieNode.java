@@ -10,18 +10,18 @@ import java.util.Map;
 
 class TrieNode<T> {
     /**
-     * @param index
+     * @param index Es el indice de la cadena de bytes que va desde root (la root del Trie) hasta este TrieNode.
      */
     private Integer index;
 
     /**
-     * @param children 
+     * @param children Es un hasmap donde se guardan los hijos del nodo actual. La clave del hasmap es el byte y el valor es donde esta el Nodo (que contiene el indice).
      */
     private final Map<T, TrieNode<T>> children = new HashMap<>();
 
     /**
      * @brief Constructor de la classe
-     * @param index
+     * @param index Es el indice de la cadena de bytes que va desde root (la root del Trie) hasta este TrieNode.
      */
     public TrieNode(Integer index){
         this.index = index;

@@ -20,7 +20,7 @@ public class LZ78 {
    
 	//Constructor
 	/**
-	 * @brief Constructor de la clase LZW
+	 * @brief Constructor de la clase LZ78
 	 * @param aux Path de sortida
 	 * @param b False si estas comprimint, True si estas descomprimint
 	 */
@@ -36,18 +36,14 @@ public class LZ78 {
 	 */
 	public void Compressor(Ctrl_Input_Text in) {
         Trie<Byte> map = new Trie<Byte>();
-		
-		Byte nextByte;
-				
+		Byte nextByte;	
 		ArrayList<Byte> seq = new ArrayList<Byte>();
-
 		Integer punterMap = 0;
 		while(!in.finished()) {
 			nextByte = in.get();
 			ArrayList<Byte> novaEntrada = new ArrayList<Byte> ();
 			novaEntrada.addAll(seq);
 			novaEntrada.add(nextByte);
-			//System.out.println("nextByte: " + nextByte + " iteracio: " + i++);
             if(map.indexNode(novaEntrada) != -1) {
 				if(in.finished()){
 					Integer punterActual = map.indexNode(seq) +1;
@@ -86,8 +82,6 @@ public class LZ78 {
 		Dict_Decode map = new Dict_Decode(false, 0);
 		while(!in.finished()) {
 			Pair <Integer, Byte> entr = in.get();
-			//System.out.println((in.finished() ? "finsihed" : "not Finished")
-			// + " Int: "+ entr.getLeft() + " Byte: " + entr.getRight());
 			if(in.finished()) return;
 			Integer punterMap = entr.getLeft();
 			Byte nextByte = entr.getRight();
@@ -95,13 +89,11 @@ public class LZ78 {
 			ArrayList<Byte> seqPunterMap = map.getWord(punterMap);
 			seqPunterMap.add(nextByte);
 			map.add(punterMap, nextByte);
-			//System.out.println("ADDING: " + seqPunterMap);
 			Output.add(seqPunterMap);
 		}
 	}
 
-	public Ctrl_Output print()
-	{
+	public Ctrl_Output print() {
         return Output;
 	}
 	

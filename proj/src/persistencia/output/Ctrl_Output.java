@@ -115,6 +115,19 @@ public class Ctrl_Output {
         }
     }
 
+    public void add2(int x, int mida) 
+    //least significant bytes first
+    {
+        while(mida > 0) {
+            int m;
+            if (mida < 8) m = mida;
+            else m = 8;
+            add((byte)x, m);
+            x = x >> 8;
+            mida -= 8;
+        }
+    }
+
     /**
      * @fn public void print()
      * @brief Escriu el contingut de la classe en un nou arxiu

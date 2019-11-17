@@ -14,10 +14,10 @@ public class Ctrl_Output_Img extends Ctrl_Output {
         super(path, "", true);
 
         if (mv <= 0 || mv >= 65536) {
-            System.err.println("The maximum color value (Maxval) must be less than 65536 and more than zero.");
+            throw new IllegalArgumentException("The maximum color value (Maxval) must be less than 65536 and more than zero.");
         }
-        if (w <= 0 || h <= 0) {
-            System.err.println("Width and height must be non-negative.");
+        if (w < 0 || h < 0) {
+            throw new IllegalArgumentException("Width and height must be non-negative.");
         }
 
         width = (w/8)*8;
