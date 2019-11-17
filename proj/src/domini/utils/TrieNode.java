@@ -32,7 +32,7 @@ class TrieNode<T> {
 
     /**
      * @fn public Map<T, TrieNode<T>> getChildren()
-     * @return Retorna el fill de la classe
+     * @return Devuelve los hijos de este nodo
      */
     public Map<T, TrieNode<T>> getChildren() {
         return children;
@@ -40,7 +40,7 @@ class TrieNode<T> {
 
     /**
      * @fn public Integer getIndex()
-     * @return Retorna l'index de la classe
+     * @return Devuelve el indice de este nodo
      */
     public Integer getIndex(){
         return index;

@@ -4,7 +4,7 @@ import java.util.*;
 
 /**
  * @class byteToConversion
- * @brief Classe byteToConversion
+ * @brief La classe conté funcions estàtiques les quals converteixen de byte a altres tipus.
  * @author 
  */
 public class byteToConversion {

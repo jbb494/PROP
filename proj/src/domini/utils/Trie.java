@@ -6,19 +6,22 @@ import java.util.ArrayList;
  * @class Trie
  * @brief Clase de Trie.
  * 
- * Esta clase es una implemnetación general de la estructura de datos Trie. Usa TrieNode como nodos.
+ * Esta clase es una implementación general de la estructura de datos Trie.
+ * Cada nodo representa una seqüencias de carácetres. Cada conexión entre nodos (padre-hijo),
+ * representa un carácter. Y un nodo es la seqüencia de carácteres desde él hasta la raiz.
+ * Además, cada nodo tiene un entero que identifica su seqüencia. (esto será útil para el compresor)
  * 
  * @author Joan Bellavista
  */
 public class Trie<T> {
 
     /**
-     * @param root Arrel de l'arbre
+     * @param root Raiz del árbol
      */
     private TrieNode<T> root;
 
     /**
-     * @brief Constructor de la classe
+     * @brief Constructor de la clase
      */
     public Trie() {
         root = new TrieNode<T>(-1);
@@ -42,7 +45,7 @@ public class Trie<T> {
 
     /**
      * @fn public Integer indexNode(ArrayList<T> word)
-     * @brief Devuelve el indice de la lista.
+     * @brief Devuelve el indice de la seqüencia de carácteres.
      * @param list La lista de bytes.
      * @return Devuelve el indice de la lista "list" si esta. O -1 si no esta.
      */
