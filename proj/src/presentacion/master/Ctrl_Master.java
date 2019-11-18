@@ -84,7 +84,8 @@ public class Ctrl_Master {
             if(extension == "ppm") tornada = CAlg.Choose_Encoder(Path, "ppm");
             else
             {
-                System.out.println("Amb quin algorisme vol comprimir el fitxer: LZ78, LZW o LZSS?");
+                System.out.println("Amb quin algorisme vol comprimir el fitxer: LZ78, LZW, LZSS o JPEG?");
+                System.out.println("(escriviu-lo en minúsucules)");
                 String mode = System.console().readLine().toLowerCase();
                 Estadistica est = new Estadistica();
                 tornada = CAlg.Choose_Encoder(Path, mode);
