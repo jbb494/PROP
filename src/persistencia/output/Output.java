@@ -22,7 +22,7 @@ public class Output {
     ArrayList<Byte> Out;
 
     /**
-     * @param Pos Posicio en la que ens trobem a l'arxiu
+     * @param Pos Posició en la que ens trobem al byte actual.
      */
     Integer Pos;
 
@@ -44,9 +44,9 @@ public class Output {
     
     /**
      * @fn public void add(byte b, int n_bits)
-     * @brief Afegeix un byte amb n_bits valids
+     * @brief Afegeix un byte amb n_bits vàlids
      * @param b Byte a afegir
-     * @param n_bits Nombre de bits valids
+     * @param n_bits Nombre de bits vàlids
      * @note El byte b ha de poder expressar-se en n_bits
      */
     public void add(byte b, int n_bits) 
@@ -80,7 +80,7 @@ public class Output {
     
     /**
      * @fn public void print()
-     * @brief 
+     * @brief Crea el fitxer de sortida a path
      */
     public void print()
     {
@@ -112,7 +112,7 @@ public class Output {
 
     /**
      * @fn public void printString()
-     * @brief 
+     * @brief Crea un fitxer de sortida i també mostra per consola el contingut d'aquest.
      */
     public void printString()
     {
