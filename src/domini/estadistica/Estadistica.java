@@ -12,18 +12,18 @@ import java.util.Date;
 public class Estadistica {
 
     /**
-     * @param start Instancia del moment en que comencem la compressió
+     * @param start Instància del moment en que comencem la compressió
      */
     Date start;
 
     /**
-     * @param end Instancia del moment en que acabem la compressió
+     * @param end Instància del moment en que acabem la compressió
      */
     Date end;
 
     /**
      * @brief Constructor de la classe Estadística
-     * @note Generem l'Instancia d'inici de temps de compressió
+     * @note Generem l'Instància d'inici de temps de compressió
      */
     public Estadistica() {
         start = new Date();
@@ -33,9 +33,9 @@ public class Estadistica {
 
     /**
      * @fn private int speed(Calendar i, Calendar f)
-     * @brief Càlcula del temps que hem trigat en comprimir l'arxiu
-     * @param i Instancia del moment en que hem començat a comprimir
-     * @param f Instancia del moment en que hem acabat de comprimir
+     * @brief Càlcul del temps que hem trigat en comprimir l'arxiu
+     * @param i Instància del moment en que hem començat a comprimir
+     * @param f Instància del moment en que hem acabat de comprimir
      * @return Temps emprat per comprimir
      */
     private long time(Date i, Date f) {
@@ -46,7 +46,7 @@ public class Estadistica {
     /**
      * @fn public void show_estadistica(String inp, String out)
      * @brief Mostrarà les estadístiques de la compressió
-     * @param inp Path de l'arxiu que haviem de comprimir
+     * @param inp Path de l'arxiu que havíem de comprimir
      * @param out Path de l'arxiu comprimit
      */
     public void show_estadistica(String inp, String out) {
@@ -63,7 +63,8 @@ public class Estadistica {
 
             System.out.println("La velocitat de compressió ha sigut de " + spd + " bytes/ms.");
             System.out.println("El grau de compressió és de " + String.format("%.6f", gc));
-            System.out.println("Temps en comprimir: " + (ts/1000) + " segons.\n");
+            if(ts/1000 < 1) System.out.println("Temps en comprimir: " + ts + " ms.\n");
+            else System.out.println("Temps en comprimir: " + (ts/1000) + " segons.\n");
         
         }
         else
