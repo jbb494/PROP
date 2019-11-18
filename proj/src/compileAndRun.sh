@@ -13,6 +13,8 @@ elif [[ $1 == "-driver" ]]; then
     cd ../bin
     java $2
     cd ../src
+elif [[ $1 == "-Idriver" ]]; then
+    cat 
 elif [[ $1 == "-ctest" ]]; then 
     echo "Compilem tests"
     TestsAcompilar=$(find | grep .java | sed "/.*Test\./! d" | tr "\n" " ")
