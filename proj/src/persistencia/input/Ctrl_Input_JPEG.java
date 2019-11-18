@@ -1,6 +1,5 @@
 package persistencia.input;
 
-import persistencia.output.Ctrl_Output;
 
 public class Ctrl_Input_JPEG extends Ctrl_Input {
 

@@ -181,7 +181,7 @@ public class JPEG {
 
 
 
-	public void encode(Ctrl_Input_Img in) {
+	public void Compressor(Ctrl_Input_Img in) {
 
 		out = new Ctrl_Output(path, "jpeg", false);
 
@@ -230,14 +230,8 @@ public class JPEG {
 					for(int i = 0; i < 8; ++i) {
 						for (int j = 0; j < 8; ++j) {
 							outYCbCr[i][j][k] = round(YCbCr[k][i][j] / quantization_matrix[i][j]);
-							if (j_block == 0 && i_block == 0 && k == 0) {
-								System.out.print(outYCbCr[i][j][k]);
-								System.out.print(" ");
-							}
 						}
-						if (j_block == 0 && i_block == 0 && k == 0) System.out.println();
 					}
-					if (j_block == 0 && i_block == 0 && k == 0) System.out.println();
 
 					//6. Entropy coding
 					int zeros = 0;
@@ -254,29 +248,35 @@ public class JPEG {
 							out.add2(huff.getCode(by), huff.getSize(by));
 							zeros = 0;
 							out.add2(get_entropy2_code(x), get_entropy2_size(x));
-							if (j_block == 0 && i_block == 0 && k == 0) {
+							/*if (j_block == 0 && i_block == 0 && k == 0) { //debug
 								System.out.print(x);
 								System.out.print(",");
 								System.out.print(get_entropy2_code(x));
 								System.out.print(",");
 								System.out.print(get_entropy2_size(x));
-								System.out.print(" ");
-							}
+								System.out.print(":");
+								System.out.print(zeros);
+								System.out.print(":");
+								System.out.print(Integer.toHexString(by));
+								System.out.print(",");
+								System.out.print(Integer.toBinaryString(huff.getCode(by)));
+								System.out.print(",");
+								System.out.print(huff.getSize(by));
+								System.out.print("  ");
+							}*/
 						}
 					}
 					out.add2(huff.getCode(0), huff.getSize(0));
-					if (j_block == 0 && i_block == 0 && k == 0) System.out.println();
 
 				}
 			}
 		}
-		out.print();
 
 		
 	}
 
 
-	public void decode(Ctrl_Input_JPEG in) {
+	public void Decompressor(Ctrl_Input_JPEG in) {
 
 		int num_i_blocks = in.getHeight()/8;
 		int num_j_blocks = in.getWidth()/8;
@@ -322,32 +322,33 @@ public class JPEG {
 							if (zz >= 64) throw new IllegalArgumentException("Entropy coding failed");
 							int code = in.get(size);
 							int x = get_value_from_entropy2(code, size);
-							if (j_block == 0 && i_block == 0 && k == 0) {
+							/*if (j_block == 0 && i_block == 0 && k == 0) { //debug
 								System.out.print(x);
 								System.out.print(",");
 								System.out.print(code);
 								System.out.print(",");
 								System.out.print(size);
-								System.out.print(" ");
-							}
+								System.out.print(":");
+								System.out.print(get_runlength_from_entropy1(by));
+								System.out.print(":");
+								System.out.print(Integer.toHexString(by));
+								System.out.print(",");
+								System.out.print(Integer.toBinaryString(huff.getCode(by)));
+								System.out.print(",");
+								System.out.print(huff.getSize(by));
+								System.out.print("   ");
+							}*/
 							inYCbCr[zigZag_X[zz]][zigZag_Y[zz]][k] = x;
 							zz++;
 						}
 					}
-					if (j_block == 0 && i_block == 0 && k == 0) System.out.println();
 
 					//5. Quantization
 					for (int i = 0; i < 8; ++i) {
 						for (int j = 0; j < 8; ++j) {
-							if (j_block == 0 && i_block == 0 && k == 0) {
-								System.out.print(inYCbCr[i][j][k]);
-								System.out.print(" ");
-							}
 							YCbCr[k][i][j] = inYCbCr[i][j][k] * quantization_matrix[i][j];
 						}
-						if (j_block == 0 && i_block == 0 && k == 0) System.out.println();
 					}
-					if (j_block == 0 && i_block == 0 && k == 0) System.out.println();
 
 					//4. Discrete cosnie transform
 					inverse_discrete_cosine_transform(YCbCr[k]);
@@ -378,19 +379,26 @@ public class JPEG {
 
 			((Ctrl_Output_Img)out).add(outRGB);
 		}
-		out.print();
 
+	}
+
+	public Ctrl_Output print() {
+        return out;
 	}
 
 	public static void main(String[] args) {
 		
 		Ctrl_Input_Img img = new Ctrl_Input_Img(args[0]);
 		JPEG alg = new JPEG(args[1], false);
-		alg.encode(img);
+		alg.Compressor(img);
+		Ctrl_Output out1 = alg.print();
+		out1.print();
 		System.out.println("--");
 		Ctrl_Input_JPEG jpeg = new Ctrl_Input_JPEG(args[1]);
 		JPEG alg2 = new JPEG(args[2], true);
-		alg2.decode(jpeg);
+		alg2.Decompressor(jpeg);
+		Ctrl_Output out2 = alg2.print();
+		out2.print();
 	}
 	
 	
