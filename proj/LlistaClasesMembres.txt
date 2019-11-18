@@ -63,4 +63,5 @@ Manel Agilar:
 ./persistencia/input/Driver__Ctrl_Input_LZ78.java
 ./persistencia/input/Driver__Ctrl_Input_LZW.java
 ./persistencia/input/Driver__Ctrl_Input_LZSS.java
+./persistencia/input/Driver__Ctrl_Input_Text.java
 ./persistencia/output/Output.java
