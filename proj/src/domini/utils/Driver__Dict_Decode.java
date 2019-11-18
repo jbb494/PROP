@@ -75,6 +75,7 @@ public class Driver__Dict_Decode {
 					Boolean b = aux2.equals("true");
 					if(!b && !aux2.equals("false"))throw new IllegalArgumentException("Entrada no valida");
 					dict_decode.reset_dictionary(b);
+					System.out.println("S'ha reiniciat el diccionari");
 				break;
 				case "3":
 					System.out.println("Escribe un integer.");
