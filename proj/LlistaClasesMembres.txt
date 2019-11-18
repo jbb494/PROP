@@ -35,6 +35,7 @@ Miguel Paracuellos:
 ./persistencia/input/Ctrl_Input_Text.java
 ./persistencia/input/Ctrl_Input_LZW.java
 ./persistencia/output/Ctrl_Output.java
+Dels jocs de proves dels drivers ("Drivers joc_proves.txt"), els últims 21.
 
 Joan Lapeyra: 
 
@@ -50,7 +51,7 @@ Joan Lapeyra:
 ./persistencia/output/Ctrl_Output_Img.java
 
 
-Manel Agilar: 
+Manel Aguilar: 
 
 ./presentacion/master/Driver__Ctrl_Master.java
 ./domini/estadistica/Estadistica.java
@@ -65,3 +66,4 @@ Manel Agilar:
 ./persistencia/input/Driver__Ctrl_Input_LZSS.java
 ./persistencia/input/Driver__Ctrl_Input_Text.java
 ./persistencia/output/Output.java
+Dels jocs de proves dels drivers ("Drivers joc_proves.txt"), els primers 21.
