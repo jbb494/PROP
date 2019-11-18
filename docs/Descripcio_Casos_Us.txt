@@ -1,0 +1,10 @@
+L'actor principal té dos opcions, comprimir o bé descomprimir.
+En cas el cas de la descompressió, l'actor ja no haurà de prendre cap altre decisió. 
+En canvi, si fos comprimir ens sortirien dues opcions més, manual o automàtic.
+	-En el cas de automàtic, l'actor ja no ha de prendre més decisions.
+	-En el cas manual, l'actor haurà d'escollir l'algoritme ell mateix:
+		*Per facilitar la comprensió dels casos d'ús hem afegit que l'actor haurà de triar entre si el fitxer
+		és una imatge o un text, però d'això realment s'encarrega el propi programa. El que realment interessa és que per
+		cadascún dels dos casos anteriors l'usuari haurà d'escollir l'algoritme.
+			i)	Imatge -> JPEG
+			ii)	Text -> LZSS / LZ78 / LZW

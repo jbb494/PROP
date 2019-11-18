@@ -2,7 +2,7 @@
 \label{classdomini_1_1utils_1_1Dict__Encode}\index{domini.\+utils.\+Dict\+\_\+\+Encode@{domini.\+utils.\+Dict\+\_\+\+Encode}}
 
 
-Diccionari (amb els mètodes corresponents) emprat per a la compressió amb L\+ZW.  
+Diccionari (amb els mètodes corresponents) emprat per a la compressió.  
 
 
 
@@ -22,9 +22,9 @@ Collaboration diagram for domini.\+utils.\+Dict\+\_\+\+Encode\+:\nopagebreak
 void \hyperlink{classdomini_1_1utils_1_1Dict__Encode_a6c3016286b3bb242d12799f8e7ebb585}{reset\+\_\+dictionary} ()
 \begin{DoxyCompactList}\small\item\em Reinicilització del diccionari de la classe. \end{DoxyCompactList}\item 
 Integer \hyperlink{classdomini_1_1utils_1_1Dict__Encode_a12e23ecdd9b0078cb6e56c01126248b9}{Ascii\+\_\+value} (byte c)
-\begin{DoxyCompactList}\small\item\em Retorna el valor númeric d\textquotesingle{}un caràcter A\+S\+C\+II. \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em Retorna el valor númeric d\textquotesingle{}un byte. \end{DoxyCompactList}\item 
 Integer \hyperlink{classdomini_1_1utils_1_1Dict__Encode_a1bafdca1835da3fa93b900ff0aa720e0}{search\+\_\+and\+\_\+insert\+\_\+\+B\+ST} (Integer i, byte c)
-\begin{DoxyCompactList}\small\item\em Cada cop que es crida es mira si ja tenim la combinació enter-\/char al diccionari. \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em Cada cop que es crida es mira si ja tenim la combinació enter-\/byte al diccionari. \end{DoxyCompactList}\item 
 Integer \hyperlink{classdomini_1_1utils_1_1Dict__Encode_a21a05b62b848a7ab9fbdf49a3a6e7edf}{get\+Limit} ()
 \end{DoxyCompactItemize}
 \subsection*{Static Public Attributes}
@@ -40,9 +40,9 @@ Array\+List$<$ \hyperlink{classdomini_1_1utils_1_1Node}{Node} $>$ \hyperlink{cla
 
 
 \subsection{Detailed Description}
-Diccionari (amb els mètodes corresponents) emprat per a la compressió amb L\+ZW. 
+Diccionari (amb els mètodes corresponents) emprat per a la compressió. 
 
-\begin{DoxyAuthor}{Author}
+Estructura de dades on cada posició representarà una seqüencia de bytes b0,b1,...,bn-\/1,bn. Per entendre com es genera i s\textquotesingle{}obté aquesta seqüencia es recomanable mirar la descripció de la classe \hyperlink{classdomini_1_1utils_1_1Node}{Node} donat que es l\textquotesingle{}estructura de dades de cada posició del nostre Array. \begin{DoxyAuthor}{Author}
 Miguel Paracuellos Ocaña 
 \end{DoxyAuthor}
 
@@ -72,15 +72,15 @@ Inicialitzem el diccionari
 
 
 
-Retorna el valor númeric d\textquotesingle{}un caràcter A\+S\+C\+II. 
+Retorna el valor númeric d\textquotesingle{}un byte. 
 
 
 \begin{DoxyParams}{Parameters}
-{\em c} & Caràcter que volem passar a valor numeric \\
+{\em c} & byte que volem passar a valor numeric \\
 \hline
 \end{DoxyParams}
 \begin{DoxyReturn}{Returns}
-Valor numeric del caràcter 
+Valor numeric del byte 
 \end{DoxyReturn}
 \mbox{\Hypertarget{classdomini_1_1utils_1_1Dict__Encode_a21a05b62b848a7ab9fbdf49a3a6e7edf}\label{classdomini_1_1utils_1_1Dict__Encode_a21a05b62b848a7ab9fbdf49a3a6e7edf}} 
 \index{domini\+::utils\+::\+Dict\+\_\+\+Encode@{domini\+::utils\+::\+Dict\+\_\+\+Encode}!get\+Limit@{get\+Limit}}
@@ -112,17 +112,17 @@ Només quan el creem o quan estigui ple
 
 
 
-Cada cop que es crida es mira si ja tenim la combinació enter-\/char al diccionari. 
+Cada cop que es crida es mira si ja tenim la combinació enter-\/byte al diccionari. 
 
 
 \begin{DoxyParams}{Parameters}
-{\em i} & Enter que representa una cadena de caràcters \\
+{\em i} & Enter que representa una cadena de byte \\
 \hline
-{\em c} & Caràcter actual \\
+{\em c} & byte actual \\
 \hline
 \end{DoxyParams}
 \begin{DoxyReturn}{Returns}
-Retorna l\textquotesingle{}enter que farà referència a la nova cadena de caràcters 
+Retorna l\textquotesingle{}enter que farà referència a la nova cadena de byte 
 \end{DoxyReturn}
 
 
@@ -153,4 +153,4 @@ Retorna l\textquotesingle{}enter que farà referència a la nova cadena de carà
 
 The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
 \item 
-src/domini/utils/Dict\+\_\+\+Encode.\+java\end{DoxyCompactItemize}
+src/domini/utils/\hyperlink{Dict__Encode_8java}{Dict\+\_\+\+Encode.\+java}\end{DoxyCompactItemize}

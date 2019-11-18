@@ -2,7 +2,7 @@
 \label{classdomini_1_1utils_1_1Dict__Decode}\index{domini.\+utils.\+Dict\+\_\+\+Decode@{domini.\+utils.\+Dict\+\_\+\+Decode}}
 
 
-Diccionari (amb els mètodes corresponents) emprat per a la descompressió amb L\+ZW.  
+Diccionari (amb els mètodes corresponents) emprat per a la descompressió.  
 
 
 
@@ -17,7 +17,7 @@ Collaboration diagram for domini.\+utils.\+Dict\+\_\+\+Decode\+:\nopagebreak
 \subsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\hyperlink{classdomini_1_1utils_1_1Dict__Decode_a8a0f9e67c530bafc031e72c218ce74f8}{Dict\+\_\+\+Decode} (Boolean inicialize\+Ascii, Integer valor\+Neutre)
+\hyperlink{classdomini_1_1utils_1_1Dict__Decode_a8a0f9e67c530bafc031e72c218ce74f8}{Dict\+\_\+\+Decode} (Boolean inicialize\+Ascii, Integer \hyperlink{classdomini_1_1utils_1_1Dict__Decode_a6ef2d17f449cf7a658a4bf983e2fb474}{valor\+Neutre})
 \begin{DoxyCompactList}\small\item\em Constructor de la classe. \end{DoxyCompactList}\item 
 void \hyperlink{classdomini_1_1utils_1_1Dict__Decode_a635432505df1ceaa58a987bb80c6b0a3}{reset\+\_\+dictionary} (Boolean b)
 \begin{DoxyCompactList}\small\item\em Reinicialitza el vector. \end{DoxyCompactList}\item 
@@ -33,16 +33,15 @@ void \hyperlink{classdomini_1_1utils_1_1Dict__Decode_a077011e4507db308d143ea9b71
 final Integer \hyperlink{classdomini_1_1utils_1_1Dict__Decode_a10fd6693de70b9091942496b35324c5a}{Limit} = Integer.\+M\+A\+X\+\_\+\+V\+A\+L\+UE
 \item 
 Array\+List$<$ \hyperlink{classdomini_1_1utils_1_1Pair}{Pair}$<$ Integer, Byte $>$ $>$ \hyperlink{classdomini_1_1utils_1_1Dict__Decode_a351bb8836b391e5e21ebc9cc1943a22d}{v}
-\begin{DoxyCompactList}\small\item\em Cada element consta d\textquotesingle{}un caràcter i un index de la seqüència previa al caràcter. \end{DoxyCompactList}\item 
-\mbox{\Hypertarget{classdomini_1_1utils_1_1Dict__Decode_a6ef2d17f449cf7a658a4bf983e2fb474}\label{classdomini_1_1utils_1_1Dict__Decode_a6ef2d17f449cf7a658a4bf983e2fb474}} 
-Integer {\bfseries valor\+Neutre}
+\begin{DoxyCompactList}\small\item\em Cada element consta d\textquotesingle{}un byte i un index de la posició de la seqüència previa al byte actual. \end{DoxyCompactList}\item 
+Integer \hyperlink{classdomini_1_1utils_1_1Dict__Decode_a6ef2d17f449cf7a658a4bf983e2fb474}{valor\+Neutre}
 \end{DoxyCompactItemize}
 
 
 \subsection{Detailed Description}
-Diccionari (amb els mètodes corresponents) emprat per a la descompressió amb L\+ZW. 
+Diccionari (amb els mètodes corresponents) emprat per a la descompressió. 
 
-\begin{DoxyAuthor}{Author}
+Estructura de dades on cada posició indicarà una seqüencia de bytes b0,b1,...,bn-\/1,bn. El primer valor indica la posició del següent bytes de la subcadena b0,...,bn-\/1 mentre que el segon valor és bn. \begin{DoxyAuthor}{Author}
 Miguel Paracuellos Ocaña 
 \end{DoxyAuthor}
 
@@ -85,7 +84,7 @@ Afegeix un element al vector de la classe.
 \begin{DoxyParams}{Parameters}
 {\em i} & Enter que representa la cadena previa \\
 \hline
-{\em c} & Caràcter actual \\
+{\em c} & Byte actual \\
 \hline
 \end{DoxyParams}
 \mbox{\Hypertarget{classdomini_1_1utils_1_1Dict__Decode_aac69020c3515649e8c2d70e2908e3f3e}\label{classdomini_1_1utils_1_1Dict__Decode_aac69020c3515649e8c2d70e2908e3f3e}} 
@@ -126,7 +125,7 @@ Retorna la paraula corresponent a l\textquotesingle{}enter
 Reinicialitza el vector. 
 
 \begin{DoxyNote}{Note}
-Es crida quan sigui ple o sigui creat 
+Es crida quan sigui ple o si es instanciat a la construcció. 
 \end{DoxyNote}
 
 \begin{DoxyParams}{Parameters}
@@ -155,15 +154,21 @@ Es crida quan sigui ple o sigui creat
 
 
 
-Cada element consta d\textquotesingle{}un caràcter i un index de la seqüència previa al caràcter. 
+Cada element consta d\textquotesingle{}un byte i un index de la posició de la seqüència previa al byte actual. 
 
 
 \begin{DoxyParams}{Parameters}
 {\em v} & Diccionari de la classe \\
 \hline
 \end{DoxyParams}
+\mbox{\Hypertarget{classdomini_1_1utils_1_1Dict__Decode_a6ef2d17f449cf7a658a4bf983e2fb474}\label{classdomini_1_1utils_1_1Dict__Decode_a6ef2d17f449cf7a658a4bf983e2fb474}} 
+\index{domini\+::utils\+::\+Dict\+\_\+\+Decode@{domini\+::utils\+::\+Dict\+\_\+\+Decode}!valor\+Neutre@{valor\+Neutre}}
+\index{valor\+Neutre@{valor\+Neutre}!domini\+::utils\+::\+Dict\+\_\+\+Decode@{domini\+::utils\+::\+Dict\+\_\+\+Decode}}
+\subsubsection{\texorpdfstring{valor\+Neutre}{valorNeutre}}
+{\footnotesize\ttfamily Integer domini.\+utils.\+Dict\+\_\+\+Decode.\+valor\+Neutre\hspace{0.3cm}{\ttfamily [package]}}
+
 
 
 The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
 \item 
-src/domini/utils/Dict\+\_\+\+Decode.\+java\end{DoxyCompactItemize}
+src/domini/utils/\hyperlink{Dict__Decode_8java}{Dict\+\_\+\+Decode.\+java}\end{DoxyCompactItemize}

@@ -1,6 +1,7 @@
 var searchData=
 [
   ['indexnode',['indexNode',['../classdomini_1_1utils_1_1Trie.html#a5c30e36df9ab804bbc054805358ecf2a',1,'domini::utils::Trie']]],
+  ['initialize',['initialize',['../classdomini_1_1algorithm_1_1LZWTest.html#acf4cac88aafa2144dc8ce3a80453fa90',1,'domini::algorithm::LZWTest']]],
   ['initsearchsymbol',['initSearchSymbol',['../classdomini_1_1algorithm_1_1Huffman.html#aec935898b93387360acd588a05dc3f33',1,'domini::algorithm::Huffman']]],
   ['input',['Input',['../classpersistencia_1_1input_1_1Input.html#a9b30ef8d489a1fc5b4aa04a14474349a',1,'persistencia::input::Input']]],
   ['insert',['insert',['../classdomini_1_1utils_1_1Trie.html#a3599001d9b056f0b54ab7eabb9d3510b',1,'domini::utils::Trie']]],

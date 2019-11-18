@@ -59,7 +59,7 @@ $(function() {
 
 <div id="nav-path" class="navpath">
   <ul>
-<li class="navelem"><b>domini</b></li><li class="navelem"><b>algorithm</b></li><li class="navelem"><a class="el" href="classdomini_1_1algorithm_1_1LZSS.html">LZSS</a></li>  </ul>
+<li class="navelem"><a class="el" href="namespacedomini.html">domini</a></li><li class="navelem"><a class="el" href="namespacedomini_1_1algorithm.html">algorithm</a></li><li class="navelem"><a class="el" href="classdomini_1_1algorithm_1_1LZSS.html">LZSS</a></li>  </ul>
 </div>
 </div><!-- top -->
 <div class="header">
@@ -92,8 +92,8 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a88e88f2bb6e984cadf48e1c71f0234fc"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classdomini_1_1algorithm_1_1LZSS.html#a88e88f2bb6e984cadf48e1c71f0234fc">KMPSearch</a> (ArrayList&lt; Byte &gt; paraula, <a class="el" href="classdomini_1_1utils_1_1ArrayCircular.html">ArrayCircular</a> text)</td></tr>
 <tr class="memdesc:a88e88f2bb6e984cadf48e1c71f0234fc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Mètode auxiliar del compressor utilitzant l'algorisme de Knuth-Morris-Pratt.  <a href="#a88e88f2bb6e984cadf48e1c71f0234fc">More...</a><br /></td></tr>
 <tr class="separator:a88e88f2bb6e984cadf48e1c71f0234fc"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a56733a42f84d7a58cc5db9ea5f67835f"><td class="memItemLeft" align="right" valign="top"><a id="a56733a42f84d7a58cc5db9ea5f67835f"></a>
-int []&#160;</td><td class="memItemRight" valign="bottom"><b>FailArray</b> (ArrayList&lt; Byte &gt; paraula, int M)</td></tr>
+<tr class="memitem:a56733a42f84d7a58cc5db9ea5f67835f"><td class="memItemLeft" align="right" valign="top">int []&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classdomini_1_1algorithm_1_1LZSS.html#a56733a42f84d7a58cc5db9ea5f67835f">FailArray</a> (ArrayList&lt; Byte &gt; paraula, int M)</td></tr>
+<tr class="memdesc:a56733a42f84d7a58cc5db9ea5f67835f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Mètode auxiliar de l'algorisme de Knuth-Morris-Pratt.  <a href="#a56733a42f84d7a58cc5db9ea5f67835f">More...</a><br /></td></tr>
 <tr class="separator:a56733a42f84d7a58cc5db9ea5f67835f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a8172ff7c8aefb87c90c648bc1b6b78b9"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classpersistencia_1_1output_1_1Ctrl__Output.html">Ctrl_Output</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classdomini_1_1algorithm_1_1LZSS.html#a8172ff7c8aefb87c90c648bc1b6b78b9">print</a> ()</td></tr>
 <tr class="memdesc:a8172ff7c8aefb87c90c648bc1b6b78b9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Mètode print.  <a href="#a8172ff7c8aefb87c90c648bc1b6b78b9">More...</a><br /></td></tr>
@@ -233,6 +233,52 @@ Private Attributes</h2></td></tr>
 
 </div>
 </div>
+<a id="a56733a42f84d7a58cc5db9ea5f67835f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a56733a42f84d7a58cc5db9ea5f67835f">&#9670;&nbsp;</a></span>FailArray()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int [] domini.algorithm.LZSS.FailArray </td>
+          <td>(</td>
+          <td class="paramtype">ArrayList&lt; Byte &gt;&#160;</td>
+          <td class="paramname"><em>paraula</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>M</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Mètode auxiliar de l'algorisme de Knuth-Morris-Pratt. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">paraula</td><td></td></tr>
+    <tr><td class="paramname">M</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>Retorna un vector de M posicions que és la taula de fallades de paraula. </dd></dl>
+
+</div>
+</div>
 <a id="a88e88f2bb6e984cadf48e1c71f0234fc"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a88e88f2bb6e984cadf48e1c71f0234fc">&#9670;&nbsp;</a></span>KMPSearch()</h2>
 
@@ -275,7 +321,7 @@ Private Attributes</h2></td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>Retorna un int si troba paraula a text else -1. </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>Retorna l'index de la primera posició a text si troba paraula else -1. </dd></dl>
 
 </div>
 </div>
@@ -365,7 +411,7 @@ Private Attributes</h2></td></tr>
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following file:<ul>
-<li>src/domini/algorithm/LZSS.java</li>
+<li>src/domini/algorithm/<a class="el" href="LZSS_8java.html">LZSS.java</a></li>
 </ul>
 </div><!-- contents -->
 <!-- start footer part -->

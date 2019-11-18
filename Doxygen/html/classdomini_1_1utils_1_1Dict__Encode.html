@@ -59,7 +59,7 @@ $(function() {
 
 <div id="nav-path" class="navpath">
   <ul>
-<li class="navelem"><b>domini</b></li><li class="navelem"><b>utils</b></li><li class="navelem"><a class="el" href="classdomini_1_1utils_1_1Dict__Encode.html">Dict_Encode</a></li>  </ul>
+<li class="navelem"><a class="el" href="namespacedomini.html">domini</a></li><li class="navelem"><a class="el" href="namespacedomini_1_1utils.html">utils</a></li><li class="navelem"><a class="el" href="classdomini_1_1utils_1_1Dict__Encode.html">Dict_Encode</a></li>  </ul>
 </div>
 </div><!-- top -->
 <div class="header">
@@ -73,7 +73,7 @@ $(function() {
 </div><!--header-->
 <div class="contents">
 
-<p>Diccionari (amb els mètodes corresponents) emprat per a la compressió amb LZW.  
+<p>Diccionari (amb els mètodes corresponents) emprat per a la compressió.  
  <a href="classdomini_1_1utils_1_1Dict__Encode.html#details">More...</a></p>
 <div class="dynheader">
 Collaboration diagram for domini.utils.Dict_Encode:</div>
@@ -90,10 +90,10 @@ Public Member Functions</h2></td></tr>
 <tr class="memdesc:a6c3016286b3bb242d12799f8e7ebb585"><td class="mdescLeft">&#160;</td><td class="mdescRight">Reinicilització del diccionari de la classe.  <a href="#a6c3016286b3bb242d12799f8e7ebb585">More...</a><br /></td></tr>
 <tr class="separator:a6c3016286b3bb242d12799f8e7ebb585"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a12e23ecdd9b0078cb6e56c01126248b9"><td class="memItemLeft" align="right" valign="top">Integer&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classdomini_1_1utils_1_1Dict__Encode.html#a12e23ecdd9b0078cb6e56c01126248b9">Ascii_value</a> (byte c)</td></tr>
-<tr class="memdesc:a12e23ecdd9b0078cb6e56c01126248b9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Retorna el valor númeric d'un caràcter ASCII.  <a href="#a12e23ecdd9b0078cb6e56c01126248b9">More...</a><br /></td></tr>
+<tr class="memdesc:a12e23ecdd9b0078cb6e56c01126248b9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Retorna el valor númeric d'un byte.  <a href="#a12e23ecdd9b0078cb6e56c01126248b9">More...</a><br /></td></tr>
 <tr class="separator:a12e23ecdd9b0078cb6e56c01126248b9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a1bafdca1835da3fa93b900ff0aa720e0"><td class="memItemLeft" align="right" valign="top">Integer&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classdomini_1_1utils_1_1Dict__Encode.html#a1bafdca1835da3fa93b900ff0aa720e0">search_and_insert_BST</a> (Integer i, byte c)</td></tr>
-<tr class="memdesc:a1bafdca1835da3fa93b900ff0aa720e0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Cada cop que es crida es mira si ja tenim la combinació enter-char al diccionari.  <a href="#a1bafdca1835da3fa93b900ff0aa720e0">More...</a><br /></td></tr>
+<tr class="memdesc:a1bafdca1835da3fa93b900ff0aa720e0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Cada cop que es crida es mira si ja tenim la combinació enter-byte al diccionari.  <a href="#a1bafdca1835da3fa93b900ff0aa720e0">More...</a><br /></td></tr>
 <tr class="separator:a1bafdca1835da3fa93b900ff0aa720e0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a21a05b62b848a7ab9fbdf49a3a6e7edf"><td class="memItemLeft" align="right" valign="top">Integer&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classdomini_1_1utils_1_1Dict__Encode.html#a21a05b62b848a7ab9fbdf49a3a6e7edf">getLimit</a> ()</td></tr>
 <tr class="separator:a21a05b62b848a7ab9fbdf49a3a6e7edf"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -109,8 +109,8 @@ Private Attributes</h2></td></tr>
 <tr class="separator:abc506ae01222e16d9b6581efbdad1a97"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>Diccionari (amb els mètodes corresponents) emprat per a la compressió amb LZW. </p>
-<dl class="section author"><dt>Author</dt><dd>Miguel Paracuellos Ocaña </dd></dl>
+<div class="textblock"><p>Diccionari (amb els mètodes corresponents) emprat per a la compressió. </p>
+<p>Estructura de dades on cada posició representarà una seqüencia de bytes b0,b1,...,bn-1,bn. Per entendre com es genera i s'obté aquesta seqüencia es recomanable mirar la descripció de la classe <a class="el" href="classdomini_1_1utils_1_1Node.html" title="Representa un node emprat per la representació de cadenes de caràcters. ">Node</a> donat que es l'estructura de dades de cada posició del nostre Array. </p><dl class="section author"><dt>Author</dt><dd>Miguel Paracuellos Ocaña </dd></dl>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="aa16372a031311494fdcae13d1a9b48c3"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#aa16372a031311494fdcae13d1a9b48c3">&#9670;&nbsp;</a></span>Dict_Encode()</h2>
@@ -165,14 +165,14 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Retorna el valor númeric d'un caràcter ASCII. </p>
+<p>Retorna el valor númeric d'un byte. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">c</td><td>Caràcter que volem passar a valor numeric </td></tr>
+    <tr><td class="paramname">c</td><td>byte que volem passar a valor numeric </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>Valor numeric del caràcter </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>Valor numeric del byte </dd></dl>
 
 </div>
 </div>
@@ -264,15 +264,15 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Cada cop que es crida es mira si ja tenim la combinació enter-char al diccionari. </p>
+<p>Cada cop que es crida es mira si ja tenim la combinació enter-byte al diccionari. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">i</td><td>Enter que representa una cadena de caràcters </td></tr>
-    <tr><td class="paramname">c</td><td>Caràcter actual </td></tr>
+    <tr><td class="paramname">i</td><td>Enter que representa una cadena de byte </td></tr>
+    <tr><td class="paramname">c</td><td>byte actual </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>Retorna l'enter que farà referència a la nova cadena de caràcters </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>Retorna l'enter que farà referència a la nova cadena de byte </dd></dl>
 
 </div>
 </div>
@@ -334,7 +334,7 @@ Private Attributes</h2></td></tr>
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following file:<ul>
-<li>src/domini/utils/Dict_Encode.java</li>
+<li>src/domini/utils/<a class="el" href="Dict__Encode_8java.html">Dict_Encode.java</a></li>
 </ul>
 </div><!-- contents -->
 <!-- start footer part -->

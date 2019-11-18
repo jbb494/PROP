@@ -22,8 +22,7 @@ Collaboration diagram for domini.\+algorithm.\+J\+P\+EG\+:
 \begin{DoxyCompactList}\small\item\em Constructor de la clase \hyperlink{classdomini_1_1algorithm_1_1JPEG}{J\+P\+EG}. \end{DoxyCompactList}\item 
 void \hyperlink{classdomini_1_1algorithm_1_1JPEG_a457ac869c214dffce8a78c0c14c4bf8b}{Compressor} (\hyperlink{classpersistencia_1_1input_1_1Ctrl__Input__Img}{Ctrl\+\_\+\+Input\+\_\+\+Img} in)
 \begin{DoxyCompactList}\small\item\em Comprimim un text amb l\textquotesingle{}algoritme \hyperlink{classdomini_1_1algorithm_1_1JPEG}{J\+P\+EG}. \end{DoxyCompactList}\item 
-\mbox{\Hypertarget{classdomini_1_1algorithm_1_1JPEG_af78f9030854c1823d28f34f2205d6740}\label{classdomini_1_1algorithm_1_1JPEG_af78f9030854c1823d28f34f2205d6740}} 
-void {\bfseries Decompressor} (\hyperlink{classpersistencia_1_1input_1_1Ctrl__Input__JPEG}{Ctrl\+\_\+\+Input\+\_\+\+J\+P\+EG} in)
+void \hyperlink{classdomini_1_1algorithm_1_1JPEG_af78f9030854c1823d28f34f2205d6740}{Decompressor} (\hyperlink{classpersistencia_1_1input_1_1Ctrl__Input__JPEG}{Ctrl\+\_\+\+Input\+\_\+\+J\+P\+EG} in)
 \item 
 \hyperlink{classpersistencia_1_1output_1_1Ctrl__Output}{Ctrl\+\_\+\+Output} \hyperlink{classdomini_1_1algorithm_1_1JPEG_a02fa1a8d05204b71cf6d5e8d6bbd3d2b}{print} ()
 \begin{DoxyCompactList}\small\item\em Retorna el Ctrl\+\_\+\+Output. \end{DoxyCompactList}\end{DoxyCompactItemize}
@@ -45,28 +44,22 @@ static int \hyperlink{classdomini_1_1algorithm_1_1JPEG_aa9c52789d61d5eebdeb13ee3
 \begin{DoxyCompactList}\small\item\em Arrodoneix un número real. \end{DoxyCompactList}\item 
 static double \hyperlink{classdomini_1_1algorithm_1_1JPEG_af86bdbb6b6f5671abff6bc6bd5f6349d}{force255} (double x)
 \begin{DoxyCompactList}\small\item\em és la funcí alfa de D\+CT. \end{DoxyCompactList}\item 
-\mbox{\Hypertarget{classdomini_1_1algorithm_1_1JPEG_a058b0ee7eb44bbaec4078b5fc32c5107}\label{classdomini_1_1algorithm_1_1JPEG_a058b0ee7eb44bbaec4078b5fc32c5107}} 
-static double {\bfseries alpha} (int x)
+static double \hyperlink{classdomini_1_1algorithm_1_1JPEG_a058b0ee7eb44bbaec4078b5fc32c5107}{alpha} (int x)
 \item 
 static void \hyperlink{classdomini_1_1algorithm_1_1JPEG_a367e6d1e6543bf3d8c847aae36f4b6bf}{discrete\+\_\+cosine\+\_\+transform} (double\mbox{[}$\,$\mbox{]}\mbox{[}$\,$\mbox{]} mat1)
 \begin{DoxyCompactList}\small\item\em aplica discrete cosine transform (D\+CT) a una matriu 8x8 \end{DoxyCompactList}\item 
 static void \hyperlink{classdomini_1_1algorithm_1_1JPEG_a3a6e16b0ee34746e4b0118ed9107bd75}{inverse\+\_\+discrete\+\_\+cosine\+\_\+transform} (double\mbox{[}$\,$\mbox{]}\mbox{[}$\,$\mbox{]} mat1)
 \begin{DoxyCompactList}\small\item\em aplica discrete cosine transform (D\+CT) inversa a una matriu 8x8 \end{DoxyCompactList}\item 
-\mbox{\Hypertarget{classdomini_1_1algorithm_1_1JPEG_a0f897c6c525d81551539df1eb8db7e12}\label{classdomini_1_1algorithm_1_1JPEG_a0f897c6c525d81551539df1eb8db7e12}} 
 static int \hyperlink{classdomini_1_1algorithm_1_1JPEG_a0f897c6c525d81551539df1eb8db7e12}{get\+\_\+entropy1\+\_\+code} (int runlength, int size)
 \begin{DoxyCompactList}\small\item\em codifica runlength i size en el simbol1 de Entropy Coding \end{DoxyCompactList}\item 
 static int \hyperlink{classdomini_1_1algorithm_1_1JPEG_ac58cb434a7acfd90fc8e548fd7c00ae2}{get\+\_\+runlength\+\_\+from\+\_\+entropy1} (int code)
 \begin{DoxyCompactList}\small\item\em retorna el runlength codificat en un simbol1 de Entropy Coding \end{DoxyCompactList}\item 
-\mbox{\Hypertarget{classdomini_1_1algorithm_1_1JPEG_a8d1005fb7833d36a064afb1c5e15bbd3}\label{classdomini_1_1algorithm_1_1JPEG_a8d1005fb7833d36a064afb1c5e15bbd3}} 
-static int {\bfseries get\+\_\+size\+\_\+from\+\_\+entropy1} (int code)
+static int \hyperlink{classdomini_1_1algorithm_1_1JPEG_a8d1005fb7833d36a064afb1c5e15bbd3}{get\+\_\+size\+\_\+from\+\_\+entropy1} (int code)
 \item 
-\mbox{\Hypertarget{classdomini_1_1algorithm_1_1JPEG_aa9bc9bee7181efee254be843e23ee2c6}\label{classdomini_1_1algorithm_1_1JPEG_aa9bc9bee7181efee254be843e23ee2c6}} 
 static int \hyperlink{classdomini_1_1algorithm_1_1JPEG_aa9bc9bee7181efee254be843e23ee2c6}{get\+\_\+entropy2\+\_\+size} (int value)
 \begin{DoxyCompactList}\small\item\em codifica value en el symbol2 de Entropy Coding i en retorna la mida \end{DoxyCompactList}\item 
-\mbox{\Hypertarget{classdomini_1_1algorithm_1_1JPEG_a0ccbcda5311dc96a30e5cb7f2a5b95b5}\label{classdomini_1_1algorithm_1_1JPEG_a0ccbcda5311dc96a30e5cb7f2a5b95b5}} 
 static int \hyperlink{classdomini_1_1algorithm_1_1JPEG_a0ccbcda5311dc96a30e5cb7f2a5b95b5}{get\+\_\+entropy2\+\_\+code} (int value)
 \begin{DoxyCompactList}\small\item\em retorna la codifiacació en el simbol2 de Entropy Coding d\textquotesingle{}un cert valor \end{DoxyCompactList}\item 
-\mbox{\Hypertarget{classdomini_1_1algorithm_1_1JPEG_a41c69fe2e29999dd17a555859df22530}\label{classdomini_1_1algorithm_1_1JPEG_a41c69fe2e29999dd17a555859df22530}} 
 static int \hyperlink{classdomini_1_1algorithm_1_1JPEG_a41c69fe2e29999dd17a555859df22530}{get\+\_\+value\+\_\+from\+\_\+entropy2} (int code, int size)
 \begin{DoxyCompactList}\small\item\em retorna el valor codificat en un codi d\textquotesingle{}una determinada mida \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Static Private Attributes}
@@ -109,6 +102,12 @@ Constructor de la clase \hyperlink{classdomini_1_1algorithm_1_1JPEG}{J\+P\+EG}.
 
 
 \subsection{Member Function Documentation}
+\mbox{\Hypertarget{classdomini_1_1algorithm_1_1JPEG_a058b0ee7eb44bbaec4078b5fc32c5107}\label{classdomini_1_1algorithm_1_1JPEG_a058b0ee7eb44bbaec4078b5fc32c5107}} 
+\index{domini\+::algorithm\+::\+J\+P\+EG@{domini\+::algorithm\+::\+J\+P\+EG}!alpha@{alpha}}
+\index{alpha@{alpha}!domini\+::algorithm\+::\+J\+P\+EG@{domini\+::algorithm\+::\+J\+P\+EG}}
+\subsubsection{\texorpdfstring{alpha()}{alpha()}}
+{\footnotesize\ttfamily static double domini.\+algorithm.\+J\+P\+E\+G.\+alpha (\begin{DoxyParamCaption}\item[{int}]{x }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}, {\ttfamily [private]}}
+
 \mbox{\Hypertarget{classdomini_1_1algorithm_1_1JPEG_a457ac869c214dffce8a78c0c14c4bf8b}\label{classdomini_1_1algorithm_1_1JPEG_a457ac869c214dffce8a78c0c14c4bf8b}} 
 \index{domini\+::algorithm\+::\+J\+P\+EG@{domini\+::algorithm\+::\+J\+P\+EG}!Compressor@{Compressor}}
 \index{Compressor@{Compressor}!domini\+::algorithm\+::\+J\+P\+EG@{domini\+::algorithm\+::\+J\+P\+EG}}
@@ -124,6 +123,12 @@ Comprimim un text amb l\textquotesingle{}algoritme \hyperlink{classdomini_1_1alg
 {\em in} & accés al Controlador d\textquotesingle{}Input del fitxer a comprimir \\
 \hline
 \end{DoxyParams}
+\mbox{\Hypertarget{classdomini_1_1algorithm_1_1JPEG_af78f9030854c1823d28f34f2205d6740}\label{classdomini_1_1algorithm_1_1JPEG_af78f9030854c1823d28f34f2205d6740}} 
+\index{domini\+::algorithm\+::\+J\+P\+EG@{domini\+::algorithm\+::\+J\+P\+EG}!Decompressor@{Decompressor}}
+\index{Decompressor@{Decompressor}!domini\+::algorithm\+::\+J\+P\+EG@{domini\+::algorithm\+::\+J\+P\+EG}}
+\subsubsection{\texorpdfstring{Decompressor()}{Decompressor()}}
+{\footnotesize\ttfamily void domini.\+algorithm.\+J\+P\+E\+G.\+Decompressor (\begin{DoxyParamCaption}\item[{\hyperlink{classpersistencia_1_1input_1_1Ctrl__Input__JPEG}{Ctrl\+\_\+\+Input\+\_\+\+J\+P\+EG}}]{in }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
 \mbox{\Hypertarget{classdomini_1_1algorithm_1_1JPEG_a367e6d1e6543bf3d8c847aae36f4b6bf}\label{classdomini_1_1algorithm_1_1JPEG_a367e6d1e6543bf3d8c847aae36f4b6bf}} 
 \index{domini\+::algorithm\+::\+J\+P\+EG@{domini\+::algorithm\+::\+J\+P\+EG}!discrete\+\_\+cosine\+\_\+transform@{discrete\+\_\+cosine\+\_\+transform}}
 \index{discrete\+\_\+cosine\+\_\+transform@{discrete\+\_\+cosine\+\_\+transform}!domini\+::algorithm\+::\+J\+P\+EG@{domini\+::algorithm\+::\+J\+P\+EG}}
@@ -157,6 +162,36 @@ aplica discrete cosine transform (D\+CT) a una matriu 8x8
 \begin{DoxyReturn}{Returns}
 el real més proper a x de l\textquotesingle{}interval \mbox{[}0..255\mbox{]} 
 \end{DoxyReturn}
+\mbox{\Hypertarget{classdomini_1_1algorithm_1_1JPEG_a0f897c6c525d81551539df1eb8db7e12}\label{classdomini_1_1algorithm_1_1JPEG_a0f897c6c525d81551539df1eb8db7e12}} 
+\index{domini\+::algorithm\+::\+J\+P\+EG@{domini\+::algorithm\+::\+J\+P\+EG}!get\+\_\+entropy1\+\_\+code@{get\+\_\+entropy1\+\_\+code}}
+\index{get\+\_\+entropy1\+\_\+code@{get\+\_\+entropy1\+\_\+code}!domini\+::algorithm\+::\+J\+P\+EG@{domini\+::algorithm\+::\+J\+P\+EG}}
+\subsubsection{\texorpdfstring{get\+\_\+entropy1\+\_\+code()}{get\_entropy1\_code()}}
+{\footnotesize\ttfamily private static int domini.\+algorithm.\+J\+P\+E\+G.\+get\+\_\+entropy1\+\_\+code (\begin{DoxyParamCaption}\item[{int}]{runlength,  }\item[{int}]{size }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}, {\ttfamily [private]}}
+
+
+
+codifica runlength i size en el simbol1 de Entropy Coding 
+
+\mbox{\Hypertarget{classdomini_1_1algorithm_1_1JPEG_a0ccbcda5311dc96a30e5cb7f2a5b95b5}\label{classdomini_1_1algorithm_1_1JPEG_a0ccbcda5311dc96a30e5cb7f2a5b95b5}} 
+\index{domini\+::algorithm\+::\+J\+P\+EG@{domini\+::algorithm\+::\+J\+P\+EG}!get\+\_\+entropy2\+\_\+code@{get\+\_\+entropy2\+\_\+code}}
+\index{get\+\_\+entropy2\+\_\+code@{get\+\_\+entropy2\+\_\+code}!domini\+::algorithm\+::\+J\+P\+EG@{domini\+::algorithm\+::\+J\+P\+EG}}
+\subsubsection{\texorpdfstring{get\+\_\+entropy2\+\_\+code()}{get\_entropy2\_code()}}
+{\footnotesize\ttfamily private static int domini.\+algorithm.\+J\+P\+E\+G.\+get\+\_\+entropy2\+\_\+code (\begin{DoxyParamCaption}\item[{int}]{value }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}, {\ttfamily [private]}}
+
+
+
+retorna la codifiacació en el simbol2 de Entropy Coding d\textquotesingle{}un cert valor 
+
+\mbox{\Hypertarget{classdomini_1_1algorithm_1_1JPEG_aa9bc9bee7181efee254be843e23ee2c6}\label{classdomini_1_1algorithm_1_1JPEG_aa9bc9bee7181efee254be843e23ee2c6}} 
+\index{domini\+::algorithm\+::\+J\+P\+EG@{domini\+::algorithm\+::\+J\+P\+EG}!get\+\_\+entropy2\+\_\+size@{get\+\_\+entropy2\+\_\+size}}
+\index{get\+\_\+entropy2\+\_\+size@{get\+\_\+entropy2\+\_\+size}!domini\+::algorithm\+::\+J\+P\+EG@{domini\+::algorithm\+::\+J\+P\+EG}}
+\subsubsection{\texorpdfstring{get\+\_\+entropy2\+\_\+size()}{get\_entropy2\_size()}}
+{\footnotesize\ttfamily private static int domini.\+algorithm.\+J\+P\+E\+G.\+get\+\_\+entropy2\+\_\+size (\begin{DoxyParamCaption}\item[{int}]{value }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}, {\ttfamily [private]}}
+
+
+
+codifica value en el symbol2 de Entropy Coding i en retorna la mida 
+
 \mbox{\Hypertarget{classdomini_1_1algorithm_1_1JPEG_ac58cb434a7acfd90fc8e548fd7c00ae2}\label{classdomini_1_1algorithm_1_1JPEG_ac58cb434a7acfd90fc8e548fd7c00ae2}} 
 \index{domini\+::algorithm\+::\+J\+P\+EG@{domini\+::algorithm\+::\+J\+P\+EG}!get\+\_\+runlength\+\_\+from\+\_\+entropy1@{get\+\_\+runlength\+\_\+from\+\_\+entropy1}}
 \index{get\+\_\+runlength\+\_\+from\+\_\+entropy1@{get\+\_\+runlength\+\_\+from\+\_\+entropy1}!domini\+::algorithm\+::\+J\+P\+EG@{domini\+::algorithm\+::\+J\+P\+EG}}
@@ -167,7 +202,23 @@ el real més proper a x de l\textquotesingle{}interval \mbox{[}0..255\mbox{]}
 
 retorna el runlength codificat en un simbol1 de Entropy Coding 
 
-retorna la mida codificada en un simbol1 de Entropy Coding \mbox{\Hypertarget{classdomini_1_1algorithm_1_1JPEG_a3a6e16b0ee34746e4b0118ed9107bd75}\label{classdomini_1_1algorithm_1_1JPEG_a3a6e16b0ee34746e4b0118ed9107bd75}} 
+retorna la mida codificada en un simbol1 de Entropy Coding \mbox{\Hypertarget{classdomini_1_1algorithm_1_1JPEG_a8d1005fb7833d36a064afb1c5e15bbd3}\label{classdomini_1_1algorithm_1_1JPEG_a8d1005fb7833d36a064afb1c5e15bbd3}} 
+\index{domini\+::algorithm\+::\+J\+P\+EG@{domini\+::algorithm\+::\+J\+P\+EG}!get\+\_\+size\+\_\+from\+\_\+entropy1@{get\+\_\+size\+\_\+from\+\_\+entropy1}}
+\index{get\+\_\+size\+\_\+from\+\_\+entropy1@{get\+\_\+size\+\_\+from\+\_\+entropy1}!domini\+::algorithm\+::\+J\+P\+EG@{domini\+::algorithm\+::\+J\+P\+EG}}
+\subsubsection{\texorpdfstring{get\+\_\+size\+\_\+from\+\_\+entropy1()}{get\_size\_from\_entropy1()}}
+{\footnotesize\ttfamily static int domini.\+algorithm.\+J\+P\+E\+G.\+get\+\_\+size\+\_\+from\+\_\+entropy1 (\begin{DoxyParamCaption}\item[{int}]{code }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}, {\ttfamily [private]}}
+
+\mbox{\Hypertarget{classdomini_1_1algorithm_1_1JPEG_a41c69fe2e29999dd17a555859df22530}\label{classdomini_1_1algorithm_1_1JPEG_a41c69fe2e29999dd17a555859df22530}} 
+\index{domini\+::algorithm\+::\+J\+P\+EG@{domini\+::algorithm\+::\+J\+P\+EG}!get\+\_\+value\+\_\+from\+\_\+entropy2@{get\+\_\+value\+\_\+from\+\_\+entropy2}}
+\index{get\+\_\+value\+\_\+from\+\_\+entropy2@{get\+\_\+value\+\_\+from\+\_\+entropy2}!domini\+::algorithm\+::\+J\+P\+EG@{domini\+::algorithm\+::\+J\+P\+EG}}
+\subsubsection{\texorpdfstring{get\+\_\+value\+\_\+from\+\_\+entropy2()}{get\_value\_from\_entropy2()}}
+{\footnotesize\ttfamily private static int domini.\+algorithm.\+J\+P\+E\+G.\+get\+\_\+value\+\_\+from\+\_\+entropy2 (\begin{DoxyParamCaption}\item[{int}]{code,  }\item[{int}]{size }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}, {\ttfamily [private]}}
+
+
+
+retorna el valor codificat en un codi d\textquotesingle{}una determinada mida 
+
+\mbox{\Hypertarget{classdomini_1_1algorithm_1_1JPEG_a3a6e16b0ee34746e4b0118ed9107bd75}\label{classdomini_1_1algorithm_1_1JPEG_a3a6e16b0ee34746e4b0118ed9107bd75}} 
 \index{domini\+::algorithm\+::\+J\+P\+EG@{domini\+::algorithm\+::\+J\+P\+EG}!inverse\+\_\+discrete\+\_\+cosine\+\_\+transform@{inverse\+\_\+discrete\+\_\+cosine\+\_\+transform}}
 \index{inverse\+\_\+discrete\+\_\+cosine\+\_\+transform@{inverse\+\_\+discrete\+\_\+cosine\+\_\+transform}!domini\+::algorithm\+::\+J\+P\+EG@{domini\+::algorithm\+::\+J\+P\+EG}}
 \subsubsection{\texorpdfstring{inverse\+\_\+discrete\+\_\+cosine\+\_\+transform()}{inverse\_discrete\_cosine\_transform()}}
@@ -351,4 +402,4 @@ l\textquotesingle{}enter més pròxim a x
 
 The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
 \item 
-src/domini/algorithm/J\+P\+E\+G.\+java\end{DoxyCompactItemize}
+src/domini/algorithm/\hyperlink{JPEG_8java}{J\+P\+E\+G.\+java}\end{DoxyCompactItemize}

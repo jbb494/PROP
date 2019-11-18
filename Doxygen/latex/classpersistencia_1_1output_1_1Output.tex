@@ -20,13 +20,11 @@ Collaboration diagram for persistencia.\+output.\+Output\+:\nopagebreak
 \hyperlink{classpersistencia_1_1output_1_1Output_acbb70ea9eabb2a6d0b2d7bd2f3c9009a}{Output} (String \hyperlink{classpersistencia_1_1output_1_1Output_aebef717882f3bcc7080dec014c6714c9}{path})
 \begin{DoxyCompactList}\small\item\em Constructor de la classe. \end{DoxyCompactList}\item 
 void \hyperlink{classpersistencia_1_1output_1_1Output_adc03a0dd7a94da21fe8432064a4eec09}{add} (byte b, int n\+\_\+bits)
-\begin{DoxyCompactList}\small\item\em Afegeix un byte amb n\+\_\+bits valids. \end{DoxyCompactList}\item 
-\mbox{\Hypertarget{classpersistencia_1_1output_1_1Output_a416850e57f55bd371d60b2aae8e7e983}\label{classpersistencia_1_1output_1_1Output_a416850e57f55bd371d60b2aae8e7e983}} 
-void {\bfseries print} ()
-\item 
-\mbox{\Hypertarget{classpersistencia_1_1output_1_1Output_ae6398e0602d281fd044d6557a16eb727}\label{classpersistencia_1_1output_1_1Output_ae6398e0602d281fd044d6557a16eb727}} 
-void {\bfseries print\+String} ()
-\item 
+\begin{DoxyCompactList}\small\item\em Afegeix un byte amb n\+\_\+bits vàlids. \end{DoxyCompactList}\item 
+void \hyperlink{classpersistencia_1_1output_1_1Output_a416850e57f55bd371d60b2aae8e7e983}{print} ()
+\begin{DoxyCompactList}\small\item\em Crea el fitxer de sortida a path. \end{DoxyCompactList}\item 
+void \hyperlink{classpersistencia_1_1output_1_1Output_ae6398e0602d281fd044d6557a16eb727}{print\+String} ()
+\begin{DoxyCompactList}\small\item\em Crea un fitxer de sortida i també mostra per consola el contingut d\textquotesingle{}aquest. \end{DoxyCompactList}\item 
 Array\+List$<$ Byte $>$ \hyperlink{classpersistencia_1_1output_1_1Output_ae4f870c86bed5b445125df989b313b9f}{get\+Out} ()
 \item 
 Integer \hyperlink{classpersistencia_1_1output_1_1Output_a01f862217e01efb59bc2eff3fe54006f}{get\+Pos} ()
@@ -79,13 +77,13 @@ Constructor de la classe.
 
 
 
-Afegeix un byte amb n\+\_\+bits valids. 
+Afegeix un byte amb n\+\_\+bits vàlids. 
 
 
 \begin{DoxyParams}{Parameters}
 {\em b} & Byte a afegir \\
 \hline
-{\em n\+\_\+bits} & Nombre de bits valids \\
+{\em n\+\_\+bits} & Nombre de bits vàlids \\
 \hline
 \end{DoxyParams}
 \begin{DoxyNote}{Note}
@@ -118,6 +116,26 @@ Retorna el path de l\textquotesingle{}arxiu
 \begin{DoxyReturn}{Returns}
 Retorna la posició de l\textquotesingle{}arxiu 
 \end{DoxyReturn}
+\mbox{\Hypertarget{classpersistencia_1_1output_1_1Output_a416850e57f55bd371d60b2aae8e7e983}\label{classpersistencia_1_1output_1_1Output_a416850e57f55bd371d60b2aae8e7e983}} 
+\index{persistencia\+::output\+::\+Output@{persistencia\+::output\+::\+Output}!print@{print}}
+\index{print@{print}!persistencia\+::output\+::\+Output@{persistencia\+::output\+::\+Output}}
+\subsubsection{\texorpdfstring{print()}{print()}}
+{\footnotesize\ttfamily public void persistencia.\+output.\+Output.\+print (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Crea el fitxer de sortida a path. 
+
+\mbox{\Hypertarget{classpersistencia_1_1output_1_1Output_ae6398e0602d281fd044d6557a16eb727}\label{classpersistencia_1_1output_1_1Output_ae6398e0602d281fd044d6557a16eb727}} 
+\index{persistencia\+::output\+::\+Output@{persistencia\+::output\+::\+Output}!print\+String@{print\+String}}
+\index{print\+String@{print\+String}!persistencia\+::output\+::\+Output@{persistencia\+::output\+::\+Output}}
+\subsubsection{\texorpdfstring{print\+String()}{printString()}}
+{\footnotesize\ttfamily public void persistencia.\+output.\+Output.\+print\+String (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Crea un fitxer de sortida i també mostra per consola el contingut d\textquotesingle{}aquest. 
+
 
 
 \subsection{Member Data Documentation}
@@ -151,11 +169,11 @@ Retorna la posició de l\textquotesingle{}arxiu
 
 
 \begin{DoxyParams}{Parameters}
-{\em Pos} & Posicio en la que ens trobem a l\textquotesingle{}arxiu \\
+{\em Pos} & Posició en la que ens trobem al byte actual. \\
 \hline
 \end{DoxyParams}
 
 
 The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
 \item 
-src/persistencia/output/Output.\+java\end{DoxyCompactItemize}
+src/persistencia/output/\hyperlink{Output_8java}{Output.\+java}\end{DoxyCompactItemize}
