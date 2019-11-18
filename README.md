@@ -22,7 +22,7 @@ Es tracta de construir un entorn per a la compressió i descompressió de fitxer
 >> -clean o -remove Borra els executables.
 <br>
 <br>
-Treball realitzat per:
+Treball realitzat per:<br>
 > Manel Aguilar<br>
 > Joan Bellavista<br>
 > Joan Lapeyra<br>
