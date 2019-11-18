@@ -75,6 +75,8 @@ public class Driver__Output {
                 comprovarExcepcions(out, linea);
                 switch(linea){
                     case "1":
+                        System.out.println("Escribe un path de fichero de salida");
+                        String path = reader.readLine().trim();
                         out = new Output(path);
                     break;
                     case "2":
