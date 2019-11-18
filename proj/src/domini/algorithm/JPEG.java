@@ -386,7 +386,7 @@ public class JPEG {
         return out;
 	}
 
-	public static void main(String[] args) {
+	/*public static void main(String[] args) {
 		
 		Ctrl_Input_Img img = new Ctrl_Input_Img(args[0]);
 		JPEG alg = new JPEG(args[1], false);
@@ -399,7 +399,7 @@ public class JPEG {
 		alg2.Decompressor(jpeg);
 		Ctrl_Output out2 = alg2.print();
 		out2.print();
-	}
+	}*/
 	
 	
 }
