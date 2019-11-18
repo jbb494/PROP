@@ -5,8 +5,7 @@ import java.util.ArrayList;
 /**
  * @class BinTree
  * @brief Permet expressar arbres binaris on les fulles poden prendre valors enters.
- * Els nodes s'identifiquen amb enters.
- * Aquesta estroctura de dades permet afegir informació però no permet 
+ * Els nodes s'identifiquen amb enters. Aquesta estroctura de dades permet afegir informació però no permet
  * eliminar o modificar informació prèviament afegida,
  * @author Joan Lapeyra Amat
  */
