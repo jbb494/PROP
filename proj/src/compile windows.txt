@@ -1,2 +1,0 @@
-cd \Users\Joan\Desktop\UNI\Q5\PROP\repositori\PROP\proj\src
-javac  *.java domini\algorithm\*.java domini\estadistica\*.java domini\utils\*.java persistencia\input\*.java persistencia\output\*.java presentacion\master\*.java

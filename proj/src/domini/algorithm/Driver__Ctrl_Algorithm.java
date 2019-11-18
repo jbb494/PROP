@@ -23,7 +23,7 @@ public class Driver__Ctrl_Algorithm {
 		System.out.println("\nFunciones: ");
 		System.out.println("	 2. Choose_Encoder(String Path, String method) ");
 		System.out.println("	 Input: 2");
-		System.out.println("	 3. Auto_Encoder(String Path)");
+		System.out.println("	 3. [NO IMPLEMENTADO] Auto_Encoder(String Path)");
 		System.out.println("	 Input: 3");
 		System.out.println("	 4. Auto_Decoder(String Path, String method)");
 		System.out.println("	 Input: 4");
@@ -62,7 +62,7 @@ public class Driver__Ctrl_Algorithm {
 					ctrl_algorithm = new Ctrl_Algorithm();
 				break;
 				case "2":
-					System.out.println("Escribe el path del archivo que quieres hacer la compresión y el metodo. ");
+					System.out.println("Escribe el path del archivo que quieres hacer la compresión y el metodo separado por espacios. ");
 					String[] aux = reader.readLine().trim().split(" ");
 					String Path = aux[0];
 					String method = aux[1];
@@ -77,7 +77,7 @@ public class Driver__Ctrl_Algorithm {
 					System.err.println(ret);
 				break;
 				case "4":
-					System.out.println("escribe el path del archivo comprimido que quieres descomprimir y el metodo con el que ha sido comprimido.");
+					System.out.println("escribe el path del archivo comprimido que quieres descomprimir y el metodo con el que ha sido comprimido separado por espacios.");
 					String[] aux2 = reader.readLine().trim().split(" ");
 					Path = aux2[0];
 					method = aux2[1];
