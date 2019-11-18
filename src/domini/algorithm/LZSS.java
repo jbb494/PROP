@@ -35,7 +35,7 @@ public class LZSS {
      * @brief Mètode auxiliar del compressor utilitzant l'algorisme de Knuth-Morris-Pratt.
      * @param paraula 
      * @param text
-     * @return Retorna un int si troba paraula a text else -1.
+     * @return Retorna l'index de la primera posició a text si troba paraula else -1.
      */
     public int KMPSearch(ArrayList<Byte> paraula, ArrayCircular text) 
     {
@@ -70,7 +70,7 @@ public class LZSS {
      * @brief Mètode auxiliar de l'algorisme de Knuth-Morris-Pratt.
      * @param paraula 
      * @param M
-     * @return Retorna un vector amb les posicions de la taula de fallades.
+     * @return Retorna un vector de M posicions que és la taula de fallades de paraula.
      */
     public int [] FailArray(ArrayList<Byte> paraula, int M) 
     { 
