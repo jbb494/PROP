@@ -23,7 +23,7 @@ public class Driver__Ctrl_Algorithm {
 		System.out.println("\nFunciones: ");
 		System.out.println("	 2. Choose_Encoder(String Path, String method) ");
 		System.out.println("	 Input: 2");
-		System.out.println("	 3. Auto_Encoder(String Path)");
+		System.out.println("	 3. [NO IMPLEMENTADO] Auto_Encoder(String Path)");
 		System.out.println("	 Input: 3");
 		System.out.println("	 4. Auto_Decoder(String Path, String method)");
 		System.out.println("	 Input: 4");
