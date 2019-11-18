@@ -2,7 +2,6 @@ package domini.estadistica;
 
 import java.io.File;
 import java.util.Date;
-import java.lang.Math;
 
 /**
  * @class Estadistica
@@ -58,10 +57,11 @@ public class Estadistica {
         File output = new File(out);
 
         if (input.exists() && output.exists()) {
+            if (ts == 0) ts = 1;
             long spd = input.length() / ts;
             double gc = (double)input.length() / (double)output.length();
-            if(input.length().equals(output.length())) gc = 1.0;
-            if (ts == 0) ts = 1;
+            if(gc == 0.0) gc = 1.0;
+            
 
             System.out.println("La velocitat de compressió ha sigut de " + spd + " bytes/ms.");
             System.out.println("El grau de compressió és de " + String.format("%.6f", gc));
