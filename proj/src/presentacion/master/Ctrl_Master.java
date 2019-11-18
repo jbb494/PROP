@@ -51,8 +51,9 @@ public class Ctrl_Master {
         else Function = 2; // Descompressió
 
         //Asking the name of the file we wanna encode / decode
-        System.out.println("Quin és el path de l'arxiu amb el que volem treballar des d'aquest directori?");
+        System.out.println("Quin és el nom de l'arxiu, que està dintre la carpeta src/persistencia/data, amb el que volem treballar?");
         Path = System.console().readLine();
+        Path = "../src/persistencia/data/".concat(Path);
     }
 
     /**
