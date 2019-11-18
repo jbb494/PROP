@@ -1,0 +1,62 @@
+~~~~~~~~~~~~~~~~~ INPUT I OUTPUT ~~~~~~~~~~~~~~~~~~~~~~~~
+
+La classe Input s'encarrega de llegir un fitxer, el path del qual
+li proporciona la constructora. Legeix seqüencialment, és a dir,
+llegeix els bits per ordre i no llegeix cap bit dos vegades. Quan
+es crida getBits(n) o getMoreBits(n) llegeix els n primers bits
+que no havia llegit i els retorna.
+
+Sovint els algoritmes necessiten llegir dades d'un fitxer en un 
+format concret, el que els va bé per operar-hi posteriorment. La
+classe Ctrl_Input conté una instància de tipus Input i els seus
+fills, cadascun destinat a llegir un tipus de fitxer (txt, ppm,
+jpeg, etc.) fan crides a getBits i getMoreBits d'aquesta instància
+i operen sobre les dades obtingudes per retornar-les en un format 
+concret.
+
+La classe Output s'encarrega d'escriure en un fitxer, el path del
+qual li proporciona la constructora. Escriu seqüencialment, és
+a dir, escriu els bits per orde i no sobreescriu mai. Quan es
+crida a la funció add(b,n) s'escriuen n bits del byte b.
+
+La classe Ctrl_Output conté una instància Output que fa servir per
+escriure en un determinat fitxer. Té vàries funcions add, que
+reben dades en diferents formats (Intge, String, ArrayList<Byte>,
+etc.). Aquestes s'encarreguen s'escriure les dades rebudes en el
+format desitjat mitjançant crides a add sobre la instància Output.
+
+Ctrl_Output_Img és una classe filla de Ctrl_Output destinada 
+exclusivament a escriure una imatge ppm.
+
+~~~~~~~~~~~~~~~~~~ MAIN, MASTER I ALGORITMES ~~~~~~~~~~~~~~~~
+
+El main crea una instància de Ctrl_Master a la qual delega tota
+la feina. Ctrl_Master es comunica amb l'usuari per obtenir un path
+d'un fitxer i si s'ha de comprimir o descomprimir. A partir d'aquí
+crea una instància Ctrl_Algorithm a la qual delega la feina.
+
+Ctrl_Algorithm rep un path a un fitxer, el tipus del qual
+identifica gràcies a la seva extensió. El tipus li serveix per
+saber en quin formt cal llegir-lo, és a dir, amb quin fill de 
+Ctrl_Input llegir-lo. Si s'ha de descomprimir obté l'algoritme 
+perquè sap amb quin algoritme s'ha comprimit prèviament gràcies
+a la metadata del fitxer (els 2 primers bits). Si s'ha de comrimir
+pot ser que li vingui donat l'algoritme a utlitzar o que l'hagi
+de decidir. Encara no hem dissenyat una heurística intel·ligent
+per prendre aquesta decisió.
+Ctrl_Algorithm crea una instpancia de la classe de l'algoritme 
+adequat (JPEG, LZ78, LZW o LZSS) i crida a la funció de 
+compressió o descompressió de la classe de l'algoritme passant-li
+per paràmetre el fill adequat de Ctrl_Input.
+Les classes dels algiritmes (JPEG, LZ78, LZW o LZSS) s'encarreguen
+de comprimir o descomprimir els fitxers i creen una insància de 
+Ctrl_Output (en algun cas és de tipus Ctrl_Output_Img) que fan
+servir per emmegatzamar les dades al path que se'ls porporciona
+a la seva constructora.
+
+~~~~~~~~~~~~~~~~~~~~~~~~~ UTILS ~~~~~~~~~~~~~~~~~~~~~~~~~~
+Algunes classes necessiten fer ús de funcions o estoctures de 
+dades que no proporciona Java, com per exemple arbres binaris,
+parells o arrays circulars. Aquestes estroctures de dades i 
+funcions són les que hem deixat a la capeta utils i s'han creat
+segons les necessitats de dites classes.
