@@ -27,7 +27,7 @@ Collaboration diagram for persistencia.\+input.\+Ctrl\+\_\+\+Input\+\_\+\+L\+Z78
 \begin{DoxyCompactItemize}
 \item 
 \hyperlink{classpersistencia_1_1input_1_1Ctrl__Input__LZ78_a3629302a8c1eb2b0c7367ad0ea542780}{Ctrl\+\_\+\+Input\+\_\+\+L\+Z78} (String path)
-\begin{DoxyCompactList}\small\item\em Constructor de la classe. \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em Constructor de la classe. Crida al constructor pare \hyperlink{classpersistencia_1_1input_1_1Ctrl__Input}{Ctrl\+\_\+\+Input}. a més interepreta la metadata. \end{DoxyCompactList}\item 
 \hyperlink{classdomini_1_1utils_1_1Pair}{Pair}$<$ Integer, Byte $>$ \hyperlink{classpersistencia_1_1input_1_1Ctrl__Input__LZ78_ae09535962f284be3a76369845c15b78c}{get} ()
 \end{DoxyCompactItemize}
 \subsection*{Additional Inherited Members}
@@ -35,6 +35,8 @@ Collaboration diagram for persistencia.\+input.\+Ctrl\+\_\+\+Input\+\_\+\+L\+Z78
 
 \subsection{Detailed Description}
 Acces a un arxiu comprimit amb L\+Z78. 
+
+Aquesta classe és un fill de \hyperlink{classpersistencia_1_1input_1_1Ctrl__Input}{Ctrl\+\_\+\+Input}. Té una funció get que retorna l\textquotesingle{}entrada en el format que el algoritme L\+Z78 necessita. (parells de integer i byte).
 
 \begin{DoxyAuthor}{Author}
 Joan Bellavista Bartroli 
@@ -50,7 +52,7 @@ Joan Bellavista Bartroli
 
 
 
-Constructor de la classe. 
+Constructor de la classe. Crida al constructor pare \hyperlink{classpersistencia_1_1input_1_1Ctrl__Input}{Ctrl\+\_\+\+Input}. a més interepreta la metadata. 
 
 
 \begin{DoxyParams}{Parameters}
@@ -67,7 +69,7 @@ Constructor de la classe.
 {\footnotesize\ttfamily public \hyperlink{classdomini_1_1utils_1_1Pair}{Pair}$<$ Integer, Character $>$ persistencia.\+input.\+Ctrl\+\_\+\+Input\+\_\+\+L\+Z78.\+get (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
 
 \begin{DoxyReturn}{Returns}
-Primer enter no llegit de l\textquotesingle{}arxiu comprimit amb L\+Z78 
+Primer parell enter-\/byte no llegit de l\textquotesingle{}arxiu comprimit amb L\+Z78 
 \end{DoxyReturn}
 
 

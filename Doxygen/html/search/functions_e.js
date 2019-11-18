@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['read',['read',['../classpersistencia_1_1input_1_1Input.html#a24eae4109b4ff4954ff2d7feef2fa4e4',1,'persistencia.input.Input.read()'],['../classpersistencia_1_1input_1_1Input__Text.html#a7a9380838f5fe9c753c1e94a8cf47437',1,'persistencia.input.Input_Text.read()']]],
-  ['reset_5fdictionary',['reset_dictionary',['../classdomini_1_1utils_1_1Dict__Decode.html#a635432505df1ceaa58a987bb80c6b0a3',1,'domini.utils.Dict_Decode.reset_dictionary()'],['../classdomini_1_1utils_1_1Dict__Encode.html#a6c3016286b3bb242d12799f8e7ebb585',1,'domini.utils.Dict_Encode.reset_dictionary()']]]
+  ['outoffile',['outOfFile',['../classpersistencia_1_1input_1_1Input.html#a3f0fc057e91430b81f5f2c92f91b8ed7',1,'persistencia::input::Input']]],
+  ['output',['Output',['../classpersistencia_1_1output_1_1Output.html#acbb70ea9eabb2a6d0b2d7bd2f3c9009a',1,'persistencia::output::Output']]]
 ];

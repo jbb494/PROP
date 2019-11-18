@@ -79,13 +79,13 @@ $(function() {
 Public Member Functions</h2></td></tr>
 <tr class="memitem:aa47b21b235e9dab115f3f97726837d5f"><td class="memItemLeft" align="right" valign="top"><a id="aa47b21b235e9dab115f3f97726837d5f"></a>
 &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classdomini_1_1utils_1_1Trie.html#aa47b21b235e9dab115f3f97726837d5f">Trie</a> ()</td></tr>
-<tr class="memdesc:aa47b21b235e9dab115f3f97726837d5f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructor de la classe. <br /></td></tr>
+<tr class="memdesc:aa47b21b235e9dab115f3f97726837d5f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructor de la clase. <br /></td></tr>
 <tr class="separator:aa47b21b235e9dab115f3f97726837d5f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a3599001d9b056f0b54ab7eabb9d3510b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classdomini_1_1utils_1_1Trie.html#a3599001d9b056f0b54ab7eabb9d3510b">insert</a> (ArrayList&lt; T &gt; list, Integer index)</td></tr>
 <tr class="memdesc:a3599001d9b056f0b54ab7eabb9d3510b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Inserta al <a class="el" href="classdomini_1_1utils_1_1Trie.html" title="Clase de Trie. ">Trie</a> una lista de bytes con un indice.  <a href="#a3599001d9b056f0b54ab7eabb9d3510b">More...</a><br /></td></tr>
 <tr class="separator:a3599001d9b056f0b54ab7eabb9d3510b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a5c30e36df9ab804bbc054805358ecf2a"><td class="memItemLeft" align="right" valign="top">Integer&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classdomini_1_1utils_1_1Trie.html#a5c30e36df9ab804bbc054805358ecf2a">indexNode</a> (ArrayList&lt; T &gt; list)</td></tr>
-<tr class="memdesc:a5c30e36df9ab804bbc054805358ecf2a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Devuelve el indice de la lista.  <a href="#a5c30e36df9ab804bbc054805358ecf2a">More...</a><br /></td></tr>
+<tr class="memdesc:a5c30e36df9ab804bbc054805358ecf2a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Devuelve el indice de la seqüencia de carácteres.  <a href="#a5c30e36df9ab804bbc054805358ecf2a">More...</a><br /></td></tr>
 <tr class="separator:a5c30e36df9ab804bbc054805358ecf2a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-attribs"></a>
@@ -95,7 +95,7 @@ Private Attributes</h2></td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Clase de <a class="el" href="classdomini_1_1utils_1_1Trie.html" title="Clase de Trie. ">Trie</a>. </p>
-<p>Esta clase es una implemnetación general de la estructura de datos <a class="el" href="classdomini_1_1utils_1_1Trie.html" title="Clase de Trie. ">Trie</a>. Usa <a class="el" href="classdomini_1_1utils_1_1TrieNode.html" title="Classe TrieNode. ">TrieNode</a> como nodos.</p>
+<p>Esta clase es una implementación general de la estructura de datos <a class="el" href="classdomini_1_1utils_1_1Trie.html" title="Clase de Trie. ">Trie</a>. Cada nodo representa una seqüencias de carácetres. Cada conexión entre nodos (padre-hijo), representa un carácter. Y un nodo es la seqüencia de carácteres desde él hasta la raiz. Además, cada nodo tiene un entero que identifica su seqüencia. (esto será útil para el compresor)</p>
 <dl class="section author"><dt>Author</dt><dd>Joan Bellavista </dd></dl>
 </div><h2 class="groupheader">Member Function Documentation</h2>
 <a id="a5c30e36df9ab804bbc054805358ecf2a"></a>
@@ -122,7 +122,7 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Devuelve el indice de la lista. </p>
+<p>Devuelve el indice de la seqüencia de carácteres. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">list</td><td>La lista de bytes. </td></tr>
@@ -200,7 +200,7 @@ Private Attributes</h2></td></tr>
 </div><div class="memdoc">
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">root</td><td>Arrel de l'arbre </td></tr>
+    <tr><td class="paramname">root</td><td>Raiz del árbol </td></tr>
   </table>
   </dd>
 </dl>

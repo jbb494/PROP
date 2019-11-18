@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['window',['window',['../classdomini_1_1algorithm_1_1LZSS.html#a00d9f2e9bc2baa39513fad040b8e7123',1,'domini::algorithm::LZSS']]]
+  ['quantization_5fmatrix',['quantization_matrix',['../classdomini_1_1algorithm_1_1JPEG.html#a7c95eb140dbe185a31b402d48ec17a66',1,'domini::algorithm::JPEG']]]
 ];

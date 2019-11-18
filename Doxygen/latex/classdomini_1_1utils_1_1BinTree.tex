@@ -2,6 +2,11 @@
 \label{classdomini_1_1utils_1_1BinTree}\index{domini.\+utils.\+Bin\+Tree@{domini.\+utils.\+Bin\+Tree}}
 
 
+Permet expressar arbres binaris on les fulles poden prendre valors enters. Els nodes s\textquotesingle{}identifiquen amb enters. Aquesta estroctura de dades permet afegir informació però no permet eliminar o modificar informació prèviament afegida,.  
+
+
+
+
 Collaboration diagram for domini.\+utils.\+Bin\+Tree\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
@@ -12,59 +17,242 @@ Collaboration diagram for domini.\+utils.\+Bin\+Tree\+:\nopagebreak
 \subsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\Hypertarget{classdomini_1_1utils_1_1BinTree_a83904c6ebf931ba29a134be5f29a66c7}\label{classdomini_1_1utils_1_1BinTree_a83904c6ebf931ba29a134be5f29a66c7}} 
-{\bfseries Bin\+Tree} (int data)
-\item 
-\mbox{\Hypertarget{classdomini_1_1utils_1_1BinTree_a742c520d5bff9a17a4cd56d833aa62c0}\label{classdomini_1_1utils_1_1BinTree_a742c520d5bff9a17a4cd56d833aa62c0}} 
-boolean {\bfseries well\+Defined} ()
-\item 
-\mbox{\Hypertarget{classdomini_1_1utils_1_1BinTree_a08e528b0f5bbebe0a5382be7f8e73a55}\label{classdomini_1_1utils_1_1BinTree_a08e528b0f5bbebe0a5382be7f8e73a55}} 
-int {\bfseries size} ()
-\item 
-\mbox{\Hypertarget{classdomini_1_1utils_1_1BinTree_a6be9277eaecc3750a8aedfa045f8142b}\label{classdomini_1_1utils_1_1BinTree_a6be9277eaecc3750a8aedfa045f8142b}} 
-boolean {\bfseries is\+Init} (int x)
-\item 
-\mbox{\Hypertarget{classdomini_1_1utils_1_1BinTree_a52ea101b3e66d5389a2350e6c777c517}\label{classdomini_1_1utils_1_1BinTree_a52ea101b3e66d5389a2350e6c777c517}} 
-boolean {\bfseries is\+Leaf} (int x)
-\item 
-\mbox{\Hypertarget{classdomini_1_1utils_1_1BinTree_a256937f5412ac463258c67b8190708ba}\label{classdomini_1_1utils_1_1BinTree_a256937f5412ac463258c67b8190708ba}} 
-int {\bfseries get\+Data} (int x)
-\item 
-\mbox{\Hypertarget{classdomini_1_1utils_1_1BinTree_a35dbfcf3a00a10d46240ce6295d4454c}\label{classdomini_1_1utils_1_1BinTree_a35dbfcf3a00a10d46240ce6295d4454c}} 
-void {\bfseries set\+Data} (int x, int data)
-\item 
-\mbox{\Hypertarget{classdomini_1_1utils_1_1BinTree_ab44a6f728b74f5b3f0bd583d858de57e}\label{classdomini_1_1utils_1_1BinTree_ab44a6f728b74f5b3f0bd583d858de57e}} 
-int {\bfseries get\+Child} (int x, int left\+\_\+right)
-\item 
-\mbox{\Hypertarget{classdomini_1_1utils_1_1BinTree_a8efc5cd06c9e5bad98ab7da0bc72c1cf}\label{classdomini_1_1utils_1_1BinTree_a8efc5cd06c9e5bad98ab7da0bc72c1cf}} 
-int {\bfseries set\+Child} (int x, int left\+\_\+right, \hyperlink{classdomini_1_1utils_1_1BinTree}{Bin\+Tree} child)
-\item 
-\mbox{\Hypertarget{classdomini_1_1utils_1_1BinTree_ad8f921ac94ebe2a1007ed41b935099b1}\label{classdomini_1_1utils_1_1BinTree_ad8f921ac94ebe2a1007ed41b935099b1}} 
-void {\bfseries print} ()
-\end{DoxyCompactItemize}
+\mbox{\Hypertarget{classdomini_1_1utils_1_1BinTree_a46082da82a1186c5a99ae68eee6ece13}\label{classdomini_1_1utils_1_1BinTree_a46082da82a1186c5a99ae68eee6ece13}} 
+\hyperlink{classdomini_1_1utils_1_1BinTree_a46082da82a1186c5a99ae68eee6ece13}{Bin\+Tree} ()
+\begin{DoxyCompactList}\small\item\em Constructora\+: es crea un arbre amb un sol node que té els dos fills indefinits. \end{DoxyCompactList}\item 
+\hyperlink{classdomini_1_1utils_1_1BinTree_a83904c6ebf931ba29a134be5f29a66c7}{Bin\+Tree} (int data)
+\begin{DoxyCompactList}\small\item\em Constructora\+: es crea un arbre amb un sol node que té valor. \end{DoxyCompactList}\item 
+boolean \hyperlink{classdomini_1_1utils_1_1BinTree_a30f097b37ebea20379d9c2930e8fa27f}{well\+Defined} ()
+\begin{DoxyCompactList}\small\item\em Indica si l\textquotesingle{}arbre està ben deninit, és a dir, si tots els nodes estan inicialitzats. \end{DoxyCompactList}\item 
+int \hyperlink{classdomini_1_1utils_1_1BinTree_afb98cb560c437784fe3ce1b8d6aa046e}{size} ()
+\begin{DoxyCompactList}\small\item\em Indica la mida de l\textquotesingle{}arbre. \end{DoxyCompactList}\item 
+boolean \hyperlink{classdomini_1_1utils_1_1BinTree_aefcc4df5059f9893eba9998cb267eced}{is\+Init} (int x)
+\begin{DoxyCompactList}\small\item\em Indica si un node està inicialitzat. \end{DoxyCompactList}\item 
+boolean \hyperlink{classdomini_1_1utils_1_1BinTree_a37030e961f5613a5c74984ac002d965b}{is\+Leaf} (int x)
+\begin{DoxyCompactList}\small\item\em Indica si un node és una fulla amb valor. \end{DoxyCompactList}\item 
+int \hyperlink{classdomini_1_1utils_1_1BinTree_ad8734786aa8ba40815e4b782264aef64}{get\+Data} (int x)
+\begin{DoxyCompactList}\small\item\em Retorna el valor d\textquotesingle{}un node. \end{DoxyCompactList}\item 
+void \hyperlink{classdomini_1_1utils_1_1BinTree_a785c86fc21b251e2252455ab4ec2b3e1}{set\+Data} (int x, int data)
+\begin{DoxyCompactList}\small\item\em Assigna un valor a un node x. \end{DoxyCompactList}\item 
+int \hyperlink{classdomini_1_1utils_1_1BinTree_aee1ed36b9433869f94a6ee8a6815d872}{get\+Child} (int x, int left\+\_\+right)
+\begin{DoxyCompactList}\small\item\em Retorna el node fill d\textquotesingle{}un node. \end{DoxyCompactList}\item 
+int \hyperlink{classdomini_1_1utils_1_1BinTree_adbbdac6bb04a03f8f13c9152940ebbc6}{set\+Child} (int x, int left\+\_\+right, \hyperlink{classdomini_1_1utils_1_1BinTree}{Bin\+Tree} child)
+\begin{DoxyCompactList}\small\item\em Assigna un fill a un node. \end{DoxyCompactList}\item 
+void \hyperlink{classdomini_1_1utils_1_1BinTree_a0dc4daeb2d0e221cc8fc702d1d0ec795}{print} ()
+\begin{DoxyCompactList}\small\item\em Imprimeix el subarbre dels descendents de x en preordre inicant cada fill amb un 0 o un 1 segons s\textquotesingle{}escaigui i indicant el valor de les fulles. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Private Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\Hypertarget{classdomini_1_1utils_1_1BinTree_ae9ac7c25f515a2f89772406f01b769d2}\label{classdomini_1_1utils_1_1BinTree_ae9ac7c25f515a2f89772406f01b769d2}} 
-void {\bfseries check\+Node} (int x)
-\item 
-\mbox{\Hypertarget{classdomini_1_1utils_1_1BinTree_ae65e589ea90a85ed18bba6bc9f74e9a2}\label{classdomini_1_1utils_1_1BinTree_ae65e589ea90a85ed18bba6bc9f74e9a2}} 
-void {\bfseries print\+\_\+v2} (int tabs, int x)
-\item 
+void \hyperlink{classdomini_1_1utils_1_1BinTree_a32b3e2ad7dfee3425e0b1f6f8b5100f5}{check\+Node} (int x)
+\begin{DoxyCompactList}\small\item\em Salta una excepció si x no representa un node de l\textquotesingle{}arbre. \end{DoxyCompactList}\item 
 \mbox{\Hypertarget{classdomini_1_1utils_1_1BinTree_a47c913594a3116b2e602c87fa4afc5c3}\label{classdomini_1_1utils_1_1BinTree_a47c913594a3116b2e602c87fa4afc5c3}} 
 void {\bfseries print} (int tabs, int x)
-\item 
-\mbox{\Hypertarget{classdomini_1_1utils_1_1BinTree_aec1bd291bf3703915a815d09cfb0caf1}\label{classdomini_1_1utils_1_1BinTree_aec1bd291bf3703915a815d09cfb0caf1}} 
-void {\bfseries print\+\_\+arr} ()
 \end{DoxyCompactItemize}
 \subsection*{Private Attributes}
 \begin{DoxyCompactItemize}
 \item 
 Array\+List$<$ Integer $>$ \hyperlink{classdomini_1_1utils_1_1BinTree_a357bcbcf07ba7fcb99d11b237d189e65}{arr}
 \item 
-\mbox{\Hypertarget{classdomini_1_1utils_1_1BinTree_a36f1212262c353accbc0a0385fa45a8d}\label{classdomini_1_1utils_1_1BinTree_a36f1212262c353accbc0a0385fa45a8d}} 
-int {\bfseries num\+\_\+undefs}
+int \hyperlink{classdomini_1_1utils_1_1BinTree_a36f1212262c353accbc0a0385fa45a8d}{num\+\_\+undefs}
 \end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Permet expressar arbres binaris on les fulles poden prendre valors enters. Els nodes s\textquotesingle{}identifiquen amb enters. Aquesta estroctura de dades permet afegir informació però no permet eliminar o modificar informació prèviament afegida,. 
+
+\begin{DoxyAuthor}{Author}
+Joan Lapeyra Amat 
+\end{DoxyAuthor}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classdomini_1_1utils_1_1BinTree_a83904c6ebf931ba29a134be5f29a66c7}\label{classdomini_1_1utils_1_1BinTree_a83904c6ebf931ba29a134be5f29a66c7}} 
+\index{domini\+::utils\+::\+Bin\+Tree@{domini\+::utils\+::\+Bin\+Tree}!Bin\+Tree@{Bin\+Tree}}
+\index{Bin\+Tree@{Bin\+Tree}!domini\+::utils\+::\+Bin\+Tree@{domini\+::utils\+::\+Bin\+Tree}}
+\subsubsection{\texorpdfstring{Bin\+Tree()}{BinTree()}}
+{\footnotesize\ttfamily domini.\+utils.\+Bin\+Tree.\+Bin\+Tree (\begin{DoxyParamCaption}\item[{int}]{data }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Constructora\+: es crea un arbre amb un sol node que té valor. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em data} & és el valor de l\textquotesingle{}unic node \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classdomini_1_1utils_1_1BinTree_a32b3e2ad7dfee3425e0b1f6f8b5100f5}\label{classdomini_1_1utils_1_1BinTree_a32b3e2ad7dfee3425e0b1f6f8b5100f5}} 
+\index{domini\+::utils\+::\+Bin\+Tree@{domini\+::utils\+::\+Bin\+Tree}!check\+Node@{check\+Node}}
+\index{check\+Node@{check\+Node}!domini\+::utils\+::\+Bin\+Tree@{domini\+::utils\+::\+Bin\+Tree}}
+\subsubsection{\texorpdfstring{check\+Node()}{checkNode()}}
+{\footnotesize\ttfamily private void domini.\+utils.\+Bin\+Tree.\+check\+Node (\begin{DoxyParamCaption}\item[{int}]{x }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [private]}}
+
+
+
+Salta una excepció si x no representa un node de l\textquotesingle{}arbre. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em x} & vol representar un node \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classdomini_1_1utils_1_1BinTree_aee1ed36b9433869f94a6ee8a6815d872}\label{classdomini_1_1utils_1_1BinTree_aee1ed36b9433869f94a6ee8a6815d872}} 
+\index{domini\+::utils\+::\+Bin\+Tree@{domini\+::utils\+::\+Bin\+Tree}!get\+Child@{get\+Child}}
+\index{get\+Child@{get\+Child}!domini\+::utils\+::\+Bin\+Tree@{domini\+::utils\+::\+Bin\+Tree}}
+\subsubsection{\texorpdfstring{get\+Child()}{getChild()}}
+{\footnotesize\ttfamily public int domini.\+utils.\+Bin\+Tree.\+get\+Child (\begin{DoxyParamCaption}\item[{int}]{x,  }\item[{int}]{left\+\_\+right }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Retorna el node fill d\textquotesingle{}un node. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em x} & representa un node que no es fulla \\
+\hline
+{\em left\+\_\+right} & és 0 si es vol consultar el fill esquerre i és 1 si es vol consultar el dret \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+el fill del costat left\+\_\+right del node x 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classdomini_1_1utils_1_1BinTree_ad8734786aa8ba40815e4b782264aef64}\label{classdomini_1_1utils_1_1BinTree_ad8734786aa8ba40815e4b782264aef64}} 
+\index{domini\+::utils\+::\+Bin\+Tree@{domini\+::utils\+::\+Bin\+Tree}!get\+Data@{get\+Data}}
+\index{get\+Data@{get\+Data}!domini\+::utils\+::\+Bin\+Tree@{domini\+::utils\+::\+Bin\+Tree}}
+\subsubsection{\texorpdfstring{get\+Data()}{getData()}}
+{\footnotesize\ttfamily public int domini.\+utils.\+Bin\+Tree.\+get\+Data (\begin{DoxyParamCaption}\item[{int}]{x }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Retorna el valor d\textquotesingle{}un node. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em x} & representa una fulla \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+el valor de la fulla x 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classdomini_1_1utils_1_1BinTree_aefcc4df5059f9893eba9998cb267eced}\label{classdomini_1_1utils_1_1BinTree_aefcc4df5059f9893eba9998cb267eced}} 
+\index{domini\+::utils\+::\+Bin\+Tree@{domini\+::utils\+::\+Bin\+Tree}!is\+Init@{is\+Init}}
+\index{is\+Init@{is\+Init}!domini\+::utils\+::\+Bin\+Tree@{domini\+::utils\+::\+Bin\+Tree}}
+\subsubsection{\texorpdfstring{is\+Init()}{isInit()}}
+{\footnotesize\ttfamily public boolean domini.\+utils.\+Bin\+Tree.\+is\+Init (\begin{DoxyParamCaption}\item[{int}]{x }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Indica si un node està inicialitzat. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em x} & representa un node \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true $<$-\/$>$ x està inicialitzat 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classdomini_1_1utils_1_1BinTree_a37030e961f5613a5c74984ac002d965b}\label{classdomini_1_1utils_1_1BinTree_a37030e961f5613a5c74984ac002d965b}} 
+\index{domini\+::utils\+::\+Bin\+Tree@{domini\+::utils\+::\+Bin\+Tree}!is\+Leaf@{is\+Leaf}}
+\index{is\+Leaf@{is\+Leaf}!domini\+::utils\+::\+Bin\+Tree@{domini\+::utils\+::\+Bin\+Tree}}
+\subsubsection{\texorpdfstring{is\+Leaf()}{isLeaf()}}
+{\footnotesize\ttfamily public boolean domini.\+utils.\+Bin\+Tree.\+is\+Leaf (\begin{DoxyParamCaption}\item[{int}]{x }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Indica si un node és una fulla amb valor. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em x} & representa un node \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true $<$-\/$>$ x és una fula amb valor 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classdomini_1_1utils_1_1BinTree_a0dc4daeb2d0e221cc8fc702d1d0ec795}\label{classdomini_1_1utils_1_1BinTree_a0dc4daeb2d0e221cc8fc702d1d0ec795}} 
+\index{domini\+::utils\+::\+Bin\+Tree@{domini\+::utils\+::\+Bin\+Tree}!print@{print}}
+\index{print@{print}!domini\+::utils\+::\+Bin\+Tree@{domini\+::utils\+::\+Bin\+Tree}}
+\subsubsection{\texorpdfstring{print()}{print()}}
+{\footnotesize\ttfamily public void domini.\+utils.\+Bin\+Tree.\+print (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Imprimeix el subarbre dels descendents de x en preordre inicant cada fill amb un 0 o un 1 segons s\textquotesingle{}escaigui i indicant el valor de les fulles. 
+
+Imprimeix l\textquotesingle{}arbre en preordre inicant cada fill amb un 0 o un 1 segons s\textquotesingle{}escaigui i indicant el valor de les fulles.
+
+
+\begin{DoxyParams}{Parameters}
+{\em x} & representa un node \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classdomini_1_1utils_1_1BinTree_adbbdac6bb04a03f8f13c9152940ebbc6}\label{classdomini_1_1utils_1_1BinTree_adbbdac6bb04a03f8f13c9152940ebbc6}} 
+\index{domini\+::utils\+::\+Bin\+Tree@{domini\+::utils\+::\+Bin\+Tree}!set\+Child@{set\+Child}}
+\index{set\+Child@{set\+Child}!domini\+::utils\+::\+Bin\+Tree@{domini\+::utils\+::\+Bin\+Tree}}
+\subsubsection{\texorpdfstring{set\+Child()}{setChild()}}
+{\footnotesize\ttfamily public int domini.\+utils.\+Bin\+Tree.\+set\+Child (\begin{DoxyParamCaption}\item[{int}]{x,  }\item[{int}]{left\+\_\+right,  }\item[{\hyperlink{classdomini_1_1utils_1_1BinTree}{Bin\+Tree}}]{child }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Assigna un fill a un node. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em x} & representa un node que no es fulla \\
+\hline
+{\em left\+\_\+right} & és 0 si es vol afegir el fill a l\textquotesingle{}esquerra i és 1 si es vol afegir a la dreta \\
+\hline
+{\em child} & conté els nodes que descendiran de x. L\textquotesingle{}arrel de child serà fill de x i la resta de nodes mantindran la jerarquia \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+el fill afegit. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classdomini_1_1utils_1_1BinTree_a785c86fc21b251e2252455ab4ec2b3e1}\label{classdomini_1_1utils_1_1BinTree_a785c86fc21b251e2252455ab4ec2b3e1}} 
+\index{domini\+::utils\+::\+Bin\+Tree@{domini\+::utils\+::\+Bin\+Tree}!set\+Data@{set\+Data}}
+\index{set\+Data@{set\+Data}!domini\+::utils\+::\+Bin\+Tree@{domini\+::utils\+::\+Bin\+Tree}}
+\subsubsection{\texorpdfstring{set\+Data()}{setData()}}
+{\footnotesize\ttfamily public void domini.\+utils.\+Bin\+Tree.\+set\+Data (\begin{DoxyParamCaption}\item[{int}]{x,  }\item[{int}]{data }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Assigna un valor a un node x. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em x} & representa un node no inicialitzat \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classdomini_1_1utils_1_1BinTree_afb98cb560c437784fe3ce1b8d6aa046e}\label{classdomini_1_1utils_1_1BinTree_afb98cb560c437784fe3ce1b8d6aa046e}} 
+\index{domini\+::utils\+::\+Bin\+Tree@{domini\+::utils\+::\+Bin\+Tree}!size@{size}}
+\index{size@{size}!domini\+::utils\+::\+Bin\+Tree@{domini\+::utils\+::\+Bin\+Tree}}
+\subsubsection{\texorpdfstring{size()}{size()}}
+{\footnotesize\ttfamily public int domini.\+utils.\+Bin\+Tree.\+size (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Indica la mida de l\textquotesingle{}arbre. 
+
+\begin{DoxyReturn}{Returns}
+el nombre de nodes 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classdomini_1_1utils_1_1BinTree_a30f097b37ebea20379d9c2930e8fa27f}\label{classdomini_1_1utils_1_1BinTree_a30f097b37ebea20379d9c2930e8fa27f}} 
+\index{domini\+::utils\+::\+Bin\+Tree@{domini\+::utils\+::\+Bin\+Tree}!well\+Defined@{well\+Defined}}
+\index{well\+Defined@{well\+Defined}!domini\+::utils\+::\+Bin\+Tree@{domini\+::utils\+::\+Bin\+Tree}}
+\subsubsection{\texorpdfstring{well\+Defined()}{wellDefined()}}
+{\footnotesize\ttfamily public boolean domini.\+utils.\+Bin\+Tree.\+well\+Defined (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Indica si l\textquotesingle{}arbre està ben deninit, és a dir, si tots els nodes estan inicialitzats. 
+
+\begin{DoxyReturn}{Returns}
+true $<$-\/$>$ l\textquotesingle{}arbre està ben deninit 
+\end{DoxyReturn}
 
 
 \subsection{Member Data Documentation}
@@ -74,7 +262,23 @@ int {\bfseries num\+\_\+undefs}
 \subsubsection{\texorpdfstring{arr}{arr}}
 {\footnotesize\ttfamily Array\+List$<$Integer$>$ domini.\+utils.\+Bin\+Tree.\+arr\hspace{0.3cm}{\ttfamily [private]}}
 
-Permet expressar arbres binaris on les fulles poden prendre valors enters. Els nodes s\textquotesingle{}identifiquen amb enters. Aquesta estroctura de dades permet afegir informació però no permet eliminar o modificar informació prèviament afegida, sigui x un node si arr\mbox{[}2$\ast$x\mbox{]} = -\/2, x és una fulla i arr\mbox{[}2$\ast$x+1\mbox{]} és el valor de x altrament x+arr\mbox{[}2$\ast$x\mbox{]} i x+arr\mbox{[}2$\ast$x+1\mbox{]} són els fills de x (-\/1 significa indefinit) Un node no està inicialitzat $<$-\/$>$ els dos fills son indefinits El node arrel és 0 
+
+\begin{DoxyParams}{Parameters}
+{\em arr} & sigui x un node si arr\mbox{[}2$\ast$x\mbox{]} = -\/2, x és una fulla i arr\mbox{[}2$\ast$x+1\mbox{]} és el valor de x altrament x+arr\mbox{[}2$\ast$x\mbox{]} i x+arr\mbox{[}2$\ast$x+1\mbox{]} són els fills de x (-\/1 significa indefinit) Un node no està inicialitzat $<$-\/$>$ els dos fills son indefinits El node arrel és 0 \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classdomini_1_1utils_1_1BinTree_a36f1212262c353accbc0a0385fa45a8d}\label{classdomini_1_1utils_1_1BinTree_a36f1212262c353accbc0a0385fa45a8d}} 
+\index{domini\+::utils\+::\+Bin\+Tree@{domini\+::utils\+::\+Bin\+Tree}!num\+\_\+undefs@{num\+\_\+undefs}}
+\index{num\+\_\+undefs@{num\+\_\+undefs}!domini\+::utils\+::\+Bin\+Tree@{domini\+::utils\+::\+Bin\+Tree}}
+\subsubsection{\texorpdfstring{num\+\_\+undefs}{num\_undefs}}
+{\footnotesize\ttfamily int domini.\+utils.\+Bin\+Tree.\+num\+\_\+undefs\hspace{0.3cm}{\ttfamily [private]}}
+
+
+\begin{DoxyParams}{Parameters}
+{\em num\+\_\+undefs} & és el número de fills indefinits en el global desl nodes \\
+\hline
+\end{DoxyParams}
+
 
 The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
 \item 

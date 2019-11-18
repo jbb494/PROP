@@ -1,6 +1,8 @@
 var searchData=
 [
-  ['out',['Out',['../classpersistencia_1_1output_1_1Output.html#ab993115d43930b7fb69e5d1c99addfba',1,'persistencia::output::Output']]],
-  ['output',['Output',['../classdomini_1_1algorithm_1_1LZ78.html#a6cb1fa950644b379cc4034437047ccb8',1,'domini.algorithm.LZ78.Output()'],['../classdomini_1_1algorithm_1_1LZSS.html#ab15cbc33a0590c2ac42127ca16821fef',1,'domini.algorithm.LZSS.Output()'],['../classdomini_1_1algorithm_1_1LZW.html#a22cd522a89b5226a3fb3424ffe122f72',1,'domini.algorithm.LZW.Output()']]],
-  ['output_5fclass',['Output_Class',['../classpersistencia_1_1output_1_1Ctrl__Output.html#adbfbc3bef074ccf06131270fb9fafd8d',1,'persistencia::output::Ctrl_Output']]]
+  ['l',['L',['../classdomini_1_1utils_1_1Pair.html#a276a0eee9fa97fc27b37fab887f07cea',1,'domini::utils::Pair']]],
+  ['last_5fbyte',['last_byte',['../classpersistencia_1_1input_1_1Input.html#a45d4bdcdb96823fc8ffe5c1a430727f2',1,'persistencia::input::Input']]],
+  ['last_5fsymbol',['last_symbol',['../classdomini_1_1algorithm_1_1Huffman.html#a0da0a4274a58653bbe3e1c753adfbe38',1,'domini::algorithm::Huffman']]],
+  ['left',['Left',['../classdomini_1_1utils_1_1Node.html#a2f1d911cf52953b29d42e5e020b82dbf',1,'domini::utils::Node']]],
+  ['limit',['Limit',['../classdomini_1_1algorithm_1_1LZW.html#a6d83dbcda4939db767fa0522d40fcc0a',1,'domini.algorithm.LZW.Limit()'],['../classdomini_1_1utils_1_1Dict__Decode.html#a10fd6693de70b9091942496b35324c5a',1,'domini.utils.Dict_Decode.Limit()'],['../classdomini_1_1utils_1_1Dict__Encode.html#a48fe9a878056a119ad36a0aad2727a13',1,'domini.utils.Dict_Encode.Limit()']]]
 ];

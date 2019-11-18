@@ -2,6 +2,11 @@
 \label{classdomini_1_1algorithm_1_1JPEG}\index{domini.\+algorithm.\+J\+P\+EG@{domini.\+algorithm.\+J\+P\+EG}}
 
 
+Compressió i descompressió pel mètode \hyperlink{classdomini_1_1algorithm_1_1JPEG}{J\+P\+EG}.  
+
+
+
+
 Collaboration diagram for domini.\+algorithm.\+J\+P\+EG\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
@@ -12,87 +17,248 @@ Collaboration diagram for domini.\+algorithm.\+J\+P\+EG\+:\nopagebreak
 \subsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\Hypertarget{classdomini_1_1algorithm_1_1JPEG_a9dce5a80ccc8b626758cb4ae0b93e056}\label{classdomini_1_1algorithm_1_1JPEG_a9dce5a80ccc8b626758cb4ae0b93e056}} 
-{\bfseries J\+P\+EG} (String aux, boolean b)
+\hyperlink{classdomini_1_1algorithm_1_1JPEG_a9dce5a80ccc8b626758cb4ae0b93e056}{J\+P\+EG} (String aux, boolean b)
+\begin{DoxyCompactList}\small\item\em Constructor de la clase \hyperlink{classdomini_1_1algorithm_1_1JPEG}{J\+P\+EG}. \end{DoxyCompactList}\item 
+void \hyperlink{classdomini_1_1algorithm_1_1JPEG_a457ac869c214dffce8a78c0c14c4bf8b}{Compressor} (\hyperlink{classpersistencia_1_1input_1_1Ctrl__Input__Img}{Ctrl\+\_\+\+Input\+\_\+\+Img} in)
+\begin{DoxyCompactList}\small\item\em Comprimim un text amb l\textquotesingle{}algoritme \hyperlink{classdomini_1_1algorithm_1_1JPEG}{J\+P\+EG}. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classdomini_1_1algorithm_1_1JPEG_af78f9030854c1823d28f34f2205d6740}\label{classdomini_1_1algorithm_1_1JPEG_af78f9030854c1823d28f34f2205d6740}} 
+void {\bfseries Decompressor} (\hyperlink{classpersistencia_1_1input_1_1Ctrl__Input__JPEG}{Ctrl\+\_\+\+Input\+\_\+\+J\+P\+EG} in)
 \item 
-\mbox{\Hypertarget{classdomini_1_1algorithm_1_1JPEG_a4ba23333674aafc965dc90e077e4c2ab}\label{classdomini_1_1algorithm_1_1JPEG_a4ba23333674aafc965dc90e077e4c2ab}} 
-void {\bfseries encode} (\hyperlink{classpersistencia_1_1input_1_1Ctrl__Input__Img}{Ctrl\+\_\+\+Input\+\_\+\+Img} in)
-\item 
-\mbox{\Hypertarget{classdomini_1_1algorithm_1_1JPEG_ada412451f1905760bb3d528aaa24e4cb}\label{classdomini_1_1algorithm_1_1JPEG_ada412451f1905760bb3d528aaa24e4cb}} 
-void {\bfseries decode} (\hyperlink{classpersistencia_1_1input_1_1Ctrl__Input__JPEG}{Ctrl\+\_\+\+Input\+\_\+\+J\+P\+EG} in)
-\end{DoxyCompactItemize}
-\subsection*{Static Public Member Functions}
-\begin{DoxyCompactItemize}
-\item 
-\mbox{\Hypertarget{classdomini_1_1algorithm_1_1JPEG_a049a54398fe4b90620d0ac1ea1fdf780}\label{classdomini_1_1algorithm_1_1JPEG_a049a54398fe4b90620d0ac1ea1fdf780}} 
-static void {\bfseries main} (String\mbox{[}$\,$\mbox{]} args)
-\end{DoxyCompactItemize}
-\subsection*{Static Package Functions}
-\begin{DoxyCompactItemize}
-\item 
-\mbox{\Hypertarget{classdomini_1_1algorithm_1_1JPEG_a7c22a7a65763bf92181473df447f72c8}\label{classdomini_1_1algorithm_1_1JPEG_a7c22a7a65763bf92181473df447f72c8}} 
-static int {\bfseries get\+\_\+entropy1\+\_\+code} (int runlength, int size)
-\item 
-\mbox{\Hypertarget{classdomini_1_1algorithm_1_1JPEG_a9a60945af9ce8de6086bd5dfa386f175}\label{classdomini_1_1algorithm_1_1JPEG_a9a60945af9ce8de6086bd5dfa386f175}} 
-static int {\bfseries get\+\_\+runlength\+\_\+from\+\_\+entropy1} (int code)
-\item 
-\mbox{\Hypertarget{classdomini_1_1algorithm_1_1JPEG_a8d1005fb7833d36a064afb1c5e15bbd3}\label{classdomini_1_1algorithm_1_1JPEG_a8d1005fb7833d36a064afb1c5e15bbd3}} 
-static int {\bfseries get\+\_\+size\+\_\+from\+\_\+entropy1} (int code)
-\item 
-\mbox{\Hypertarget{classdomini_1_1algorithm_1_1JPEG_affccb19b13041ba0549beb9a5986c0f1}\label{classdomini_1_1algorithm_1_1JPEG_affccb19b13041ba0549beb9a5986c0f1}} 
-static int {\bfseries get\+\_\+entropy2\+\_\+size} (int value)
-\item 
-\mbox{\Hypertarget{classdomini_1_1algorithm_1_1JPEG_ac2a5593f3f9baa1ce4065d2f89194611}\label{classdomini_1_1algorithm_1_1JPEG_ac2a5593f3f9baa1ce4065d2f89194611}} 
-static int {\bfseries get\+\_\+entropy2\+\_\+code} (int value)
-\end{DoxyCompactItemize}
+\hyperlink{classpersistencia_1_1output_1_1Ctrl__Output}{Ctrl\+\_\+\+Output} \hyperlink{classdomini_1_1algorithm_1_1JPEG_a02fa1a8d05204b71cf6d5e8d6bbd3d2b}{print} ()
+\begin{DoxyCompactList}\small\item\em Retorna el Ctrl\+\_\+\+Output. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Package Attributes}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\Hypertarget{classdomini_1_1algorithm_1_1JPEG_a2512a38136dac55fa5dbbfc8f0ae822d}\label{classdomini_1_1algorithm_1_1JPEG_a2512a38136dac55fa5dbbfc8f0ae822d}} 
-\hyperlink{classpersistencia_1_1output_1_1Ctrl__Output}{Ctrl\+\_\+\+Output} {\bfseries out}
+\hyperlink{classpersistencia_1_1output_1_1Ctrl__Output}{Ctrl\+\_\+\+Output} \hyperlink{classdomini_1_1algorithm_1_1JPEG_a2512a38136dac55fa5dbbfc8f0ae822d}{out}
 \item 
-\mbox{\Hypertarget{classdomini_1_1algorithm_1_1JPEG_a68d523efc6a9dfb3dd2edec0bbb79b48}\label{classdomini_1_1algorithm_1_1JPEG_a68d523efc6a9dfb3dd2edec0bbb79b48}} 
-String {\bfseries path}
+String \hyperlink{classdomini_1_1algorithm_1_1JPEG_a68d523efc6a9dfb3dd2edec0bbb79b48}{path}
 \item 
-\mbox{\Hypertarget{classdomini_1_1algorithm_1_1JPEG_a3ff24cf46363c31ffa24e3604bf3ced8}\label{classdomini_1_1algorithm_1_1JPEG_a3ff24cf46363c31ffa24e3604bf3ced8}} 
-boolean {\bfseries decode\+\_\+or\+\_\+encode}
+boolean \hyperlink{classdomini_1_1algorithm_1_1JPEG_a3ff24cf46363c31ffa24e3604bf3ced8}{decode\+\_\+or\+\_\+encode}
 \item 
-\mbox{\Hypertarget{classdomini_1_1algorithm_1_1JPEG_aacc6445baa7819e3f9139ffb78e0b8f4}\label{classdomini_1_1algorithm_1_1JPEG_aacc6445baa7819e3f9139ffb78e0b8f4}} 
-\hyperlink{classdomini_1_1algorithm_1_1Huffman}{Huffman} {\bfseries huff}
+\hyperlink{classdomini_1_1algorithm_1_1Huffman}{Huffman} \hyperlink{classdomini_1_1algorithm_1_1JPEG_aacc6445baa7819e3f9139ffb78e0b8f4}{huff}
 \end{DoxyCompactItemize}
 \subsection*{Static Private Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\Hypertarget{classdomini_1_1algorithm_1_1JPEG_a26704d0281063c49a1c005e0496220a7}\label{classdomini_1_1algorithm_1_1JPEG_a26704d0281063c49a1c005e0496220a7}} 
-static int {\bfseries round} (double x)
-\item 
-\mbox{\Hypertarget{classdomini_1_1algorithm_1_1JPEG_af93979340e9745708d2e2d41ded34419}\label{classdomini_1_1algorithm_1_1JPEG_af93979340e9745708d2e2d41ded34419}} 
-static double {\bfseries force255} (double x)
-\item 
+static int \hyperlink{classdomini_1_1algorithm_1_1JPEG_aa9c52789d61d5eebdeb13ee39f8e817d}{round} (double x)
+\begin{DoxyCompactList}\small\item\em Arrodoneix un número real. \end{DoxyCompactList}\item 
+static double \hyperlink{classdomini_1_1algorithm_1_1JPEG_af86bdbb6b6f5671abff6bc6bd5f6349d}{force255} (double x)
+\begin{DoxyCompactList}\small\item\em és la funcí alfa de D\+CT. \end{DoxyCompactList}\item 
 \mbox{\Hypertarget{classdomini_1_1algorithm_1_1JPEG_a058b0ee7eb44bbaec4078b5fc32c5107}\label{classdomini_1_1algorithm_1_1JPEG_a058b0ee7eb44bbaec4078b5fc32c5107}} 
 static double {\bfseries alpha} (int x)
 \item 
-\mbox{\Hypertarget{classdomini_1_1algorithm_1_1JPEG_ae089373d26fecc912f954a1d921c79d9}\label{classdomini_1_1algorithm_1_1JPEG_ae089373d26fecc912f954a1d921c79d9}} 
-static void {\bfseries discrete\+\_\+cosine\+\_\+transform} (double\mbox{[}$\,$\mbox{]}\mbox{[}$\,$\mbox{]} mat1)
+static void \hyperlink{classdomini_1_1algorithm_1_1JPEG_a367e6d1e6543bf3d8c847aae36f4b6bf}{discrete\+\_\+cosine\+\_\+transform} (double\mbox{[}$\,$\mbox{]}\mbox{[}$\,$\mbox{]} mat1)
+\begin{DoxyCompactList}\small\item\em aplica discrete cosine transform (D\+CT) a una matriu 8x8 \end{DoxyCompactList}\item 
+static void \hyperlink{classdomini_1_1algorithm_1_1JPEG_a3a6e16b0ee34746e4b0118ed9107bd75}{inverse\+\_\+discrete\+\_\+cosine\+\_\+transform} (double\mbox{[}$\,$\mbox{]}\mbox{[}$\,$\mbox{]} mat1)
+\begin{DoxyCompactList}\small\item\em aplica discrete cosine transform (D\+CT) inversa a una matriu 8x8 \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classdomini_1_1algorithm_1_1JPEG_a0f897c6c525d81551539df1eb8db7e12}\label{classdomini_1_1algorithm_1_1JPEG_a0f897c6c525d81551539df1eb8db7e12}} 
+static int \hyperlink{classdomini_1_1algorithm_1_1JPEG_a0f897c6c525d81551539df1eb8db7e12}{get\+\_\+entropy1\+\_\+code} (int runlength, int size)
+\begin{DoxyCompactList}\small\item\em codifica runlength i size en el simbol1 de Entropy Coding \end{DoxyCompactList}\item 
+static int \hyperlink{classdomini_1_1algorithm_1_1JPEG_ac58cb434a7acfd90fc8e548fd7c00ae2}{get\+\_\+runlength\+\_\+from\+\_\+entropy1} (int code)
+\begin{DoxyCompactList}\small\item\em retorna el runlength codificat en un simbol1 de Entropy Coding \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classdomini_1_1algorithm_1_1JPEG_a8d1005fb7833d36a064afb1c5e15bbd3}\label{classdomini_1_1algorithm_1_1JPEG_a8d1005fb7833d36a064afb1c5e15bbd3}} 
+static int {\bfseries get\+\_\+size\+\_\+from\+\_\+entropy1} (int code)
 \item 
-\mbox{\Hypertarget{classdomini_1_1algorithm_1_1JPEG_a7d71cc9f6447cd36189a30eafe10314e}\label{classdomini_1_1algorithm_1_1JPEG_a7d71cc9f6447cd36189a30eafe10314e}} 
-static void {\bfseries inverse\+\_\+discrete\+\_\+cosine\+\_\+transform} (double\mbox{[}$\,$\mbox{]}\mbox{[}$\,$\mbox{]} mat1)
-\item 
-\mbox{\Hypertarget{classdomini_1_1algorithm_1_1JPEG_a6abdee6c1601b4b11b5dfa7cfe531ca0}\label{classdomini_1_1algorithm_1_1JPEG_a6abdee6c1601b4b11b5dfa7cfe531ca0}} 
-static int {\bfseries get\+\_\+value\+\_\+from\+\_\+entropy2} (int code, int size)
-\end{DoxyCompactItemize}
+\mbox{\Hypertarget{classdomini_1_1algorithm_1_1JPEG_aa9bc9bee7181efee254be843e23ee2c6}\label{classdomini_1_1algorithm_1_1JPEG_aa9bc9bee7181efee254be843e23ee2c6}} 
+static int \hyperlink{classdomini_1_1algorithm_1_1JPEG_aa9bc9bee7181efee254be843e23ee2c6}{get\+\_\+entropy2\+\_\+size} (int value)
+\begin{DoxyCompactList}\small\item\em codifica value en el symbol2 de Entropy Coding i en retorna la mida \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classdomini_1_1algorithm_1_1JPEG_a0ccbcda5311dc96a30e5cb7f2a5b95b5}\label{classdomini_1_1algorithm_1_1JPEG_a0ccbcda5311dc96a30e5cb7f2a5b95b5}} 
+static int \hyperlink{classdomini_1_1algorithm_1_1JPEG_a0ccbcda5311dc96a30e5cb7f2a5b95b5}{get\+\_\+entropy2\+\_\+code} (int value)
+\begin{DoxyCompactList}\small\item\em retorna la codifiacació en el simbol2 de Entropy Coding d\textquotesingle{}un cert valor \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classdomini_1_1algorithm_1_1JPEG_a41c69fe2e29999dd17a555859df22530}\label{classdomini_1_1algorithm_1_1JPEG_a41c69fe2e29999dd17a555859df22530}} 
+static int \hyperlink{classdomini_1_1algorithm_1_1JPEG_a41c69fe2e29999dd17a555859df22530}{get\+\_\+value\+\_\+from\+\_\+entropy2} (int code, int size)
+\begin{DoxyCompactList}\small\item\em retorna el valor codificat en un codi d\textquotesingle{}una determinada mida \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Static Private Attributes}
 \begin{DoxyCompactItemize}
 \item 
-static int \mbox{[}$\,$\mbox{]}\mbox{[}$\,$\mbox{]} {\bfseries quantization\+\_\+matrix}
+static int \mbox{[}$\,$\mbox{]}\mbox{[}$\,$\mbox{]} \hyperlink{classdomini_1_1algorithm_1_1JPEG_a7c95eb140dbe185a31b402d48ec17a66}{quantization\+\_\+matrix}
 \item 
-static int \mbox{[}$\,$\mbox{]} {\bfseries zig\+Zag\+\_\+X}
+static int \mbox{[}$\,$\mbox{]} \hyperlink{classdomini_1_1algorithm_1_1JPEG_a7d3829cbffd758c087341a8da13dd2ca}{zig\+Zag\+\_\+X}
 \item 
-static int \mbox{[}$\,$\mbox{]} {\bfseries zig\+Zag\+\_\+Y}
+static int \mbox{[}$\,$\mbox{]} \hyperlink{classdomini_1_1algorithm_1_1JPEG_ad886d8aa00a40cb151b446534f0d1bcc}{zig\+Zag\+\_\+Y}
 \end{DoxyCompactItemize}
 
 
+\subsection{Detailed Description}
+Compressió i descompressió pel mètode \hyperlink{classdomini_1_1algorithm_1_1JPEG}{J\+P\+EG}. 
+
+\begin{DoxyAuthor}{Author}
+Joan Lapeyra Amat 
+\end{DoxyAuthor}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classdomini_1_1algorithm_1_1JPEG_a9dce5a80ccc8b626758cb4ae0b93e056}\label{classdomini_1_1algorithm_1_1JPEG_a9dce5a80ccc8b626758cb4ae0b93e056}} 
+\index{domini\+::algorithm\+::\+J\+P\+EG@{domini\+::algorithm\+::\+J\+P\+EG}!J\+P\+EG@{J\+P\+EG}}
+\index{J\+P\+EG@{J\+P\+EG}!domini\+::algorithm\+::\+J\+P\+EG@{domini\+::algorithm\+::\+J\+P\+EG}}
+\subsubsection{\texorpdfstring{J\+P\+E\+G()}{JPEG()}}
+{\footnotesize\ttfamily domini.\+algorithm.\+J\+P\+E\+G.\+J\+P\+EG (\begin{DoxyParamCaption}\item[{String}]{aux,  }\item[{boolean}]{b }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Constructor de la clase \hyperlink{classdomini_1_1algorithm_1_1JPEG}{J\+P\+EG}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em aux} & Path de sortida \\
+\hline
+{\em b} & False si estas comprimint, True si estas descomprimint \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classdomini_1_1algorithm_1_1JPEG_a457ac869c214dffce8a78c0c14c4bf8b}\label{classdomini_1_1algorithm_1_1JPEG_a457ac869c214dffce8a78c0c14c4bf8b}} 
+\index{domini\+::algorithm\+::\+J\+P\+EG@{domini\+::algorithm\+::\+J\+P\+EG}!Compressor@{Compressor}}
+\index{Compressor@{Compressor}!domini\+::algorithm\+::\+J\+P\+EG@{domini\+::algorithm\+::\+J\+P\+EG}}
+\subsubsection{\texorpdfstring{Compressor()}{Compressor()}}
+{\footnotesize\ttfamily public void domini.\+algorithm.\+J\+P\+E\+G.\+Compressor (\begin{DoxyParamCaption}\item[{\hyperlink{classpersistencia_1_1input_1_1Ctrl__Input__Img}{Ctrl\+\_\+\+Input\+\_\+\+Img}}]{in }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Comprimim un text amb l\textquotesingle{}algoritme \hyperlink{classdomini_1_1algorithm_1_1JPEG}{J\+P\+EG}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em in} & accés al Controlador d\textquotesingle{}Input del fitxer a comprimir \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classdomini_1_1algorithm_1_1JPEG_a367e6d1e6543bf3d8c847aae36f4b6bf}\label{classdomini_1_1algorithm_1_1JPEG_a367e6d1e6543bf3d8c847aae36f4b6bf}} 
+\index{domini\+::algorithm\+::\+J\+P\+EG@{domini\+::algorithm\+::\+J\+P\+EG}!discrete\+\_\+cosine\+\_\+transform@{discrete\+\_\+cosine\+\_\+transform}}
+\index{discrete\+\_\+cosine\+\_\+transform@{discrete\+\_\+cosine\+\_\+transform}!domini\+::algorithm\+::\+J\+P\+EG@{domini\+::algorithm\+::\+J\+P\+EG}}
+\subsubsection{\texorpdfstring{discrete\+\_\+cosine\+\_\+transform()}{discrete\_cosine\_transform()}}
+{\footnotesize\ttfamily private static void domini.\+algorithm.\+J\+P\+E\+G.\+discrete\+\_\+cosine\+\_\+transform (\begin{DoxyParamCaption}\item[{double}]{mat1\mbox{[}$\,$\mbox{]}\mbox{[}$\,$\mbox{]} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}, {\ttfamily [private]}}
+
+
+
+aplica discrete cosine transform (D\+CT) a una matriu 8x8 
+
+
+\begin{DoxyParams}{Parameters}
+{\em mat1} & és la matriu 8x8 a la qual s\textquotesingle{}aplica D\+CT \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classdomini_1_1algorithm_1_1JPEG_af86bdbb6b6f5671abff6bc6bd5f6349d}\label{classdomini_1_1algorithm_1_1JPEG_af86bdbb6b6f5671abff6bc6bd5f6349d}} 
+\index{domini\+::algorithm\+::\+J\+P\+EG@{domini\+::algorithm\+::\+J\+P\+EG}!force255@{force255}}
+\index{force255@{force255}!domini\+::algorithm\+::\+J\+P\+EG@{domini\+::algorithm\+::\+J\+P\+EG}}
+\subsubsection{\texorpdfstring{force255()}{force255()}}
+{\footnotesize\ttfamily private double domini.\+algorithm.\+J\+P\+E\+G.\+force255 (\begin{DoxyParamCaption}\item[{double}]{x }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}, {\ttfamily [private]}}
+
+
+
+és la funcí alfa de D\+CT. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em x} & és un real \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+el real més proper a x de l\textquotesingle{}interval \mbox{[}0..255\mbox{]} 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classdomini_1_1algorithm_1_1JPEG_ac58cb434a7acfd90fc8e548fd7c00ae2}\label{classdomini_1_1algorithm_1_1JPEG_ac58cb434a7acfd90fc8e548fd7c00ae2}} 
+\index{domini\+::algorithm\+::\+J\+P\+EG@{domini\+::algorithm\+::\+J\+P\+EG}!get\+\_\+runlength\+\_\+from\+\_\+entropy1@{get\+\_\+runlength\+\_\+from\+\_\+entropy1}}
+\index{get\+\_\+runlength\+\_\+from\+\_\+entropy1@{get\+\_\+runlength\+\_\+from\+\_\+entropy1}!domini\+::algorithm\+::\+J\+P\+EG@{domini\+::algorithm\+::\+J\+P\+EG}}
+\subsubsection{\texorpdfstring{get\+\_\+runlength\+\_\+from\+\_\+entropy1()}{get\_runlength\_from\_entropy1()}}
+{\footnotesize\ttfamily private static int domini.\+algorithm.\+J\+P\+E\+G.\+get\+\_\+runlength\+\_\+from\+\_\+entropy1 (\begin{DoxyParamCaption}\item[{int}]{code }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}, {\ttfamily [private]}}
+
+
+
+retorna el runlength codificat en un simbol1 de Entropy Coding 
+
+retorna la mida codificada en un simbol1 de Entropy Coding \mbox{\Hypertarget{classdomini_1_1algorithm_1_1JPEG_a3a6e16b0ee34746e4b0118ed9107bd75}\label{classdomini_1_1algorithm_1_1JPEG_a3a6e16b0ee34746e4b0118ed9107bd75}} 
+\index{domini\+::algorithm\+::\+J\+P\+EG@{domini\+::algorithm\+::\+J\+P\+EG}!inverse\+\_\+discrete\+\_\+cosine\+\_\+transform@{inverse\+\_\+discrete\+\_\+cosine\+\_\+transform}}
+\index{inverse\+\_\+discrete\+\_\+cosine\+\_\+transform@{inverse\+\_\+discrete\+\_\+cosine\+\_\+transform}!domini\+::algorithm\+::\+J\+P\+EG@{domini\+::algorithm\+::\+J\+P\+EG}}
+\subsubsection{\texorpdfstring{inverse\+\_\+discrete\+\_\+cosine\+\_\+transform()}{inverse\_discrete\_cosine\_transform()}}
+{\footnotesize\ttfamily private static void domini.\+algorithm.\+J\+P\+E\+G.\+inverse\+\_\+discrete\+\_\+cosine\+\_\+transform (\begin{DoxyParamCaption}\item[{double}]{mat1\mbox{[}$\,$\mbox{]}\mbox{[}$\,$\mbox{]} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}, {\ttfamily [private]}}
+
+
+
+aplica discrete cosine transform (D\+CT) inversa a una matriu 8x8 
+
+
+\begin{DoxyParams}{Parameters}
+{\em mat1} & és la matriu 8x8 a la qual s\textquotesingle{}aplica D\+CT inversa \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classdomini_1_1algorithm_1_1JPEG_a02fa1a8d05204b71cf6d5e8d6bbd3d2b}\label{classdomini_1_1algorithm_1_1JPEG_a02fa1a8d05204b71cf6d5e8d6bbd3d2b}} 
+\index{domini\+::algorithm\+::\+J\+P\+EG@{domini\+::algorithm\+::\+J\+P\+EG}!print@{print}}
+\index{print@{print}!domini\+::algorithm\+::\+J\+P\+EG@{domini\+::algorithm\+::\+J\+P\+EG}}
+\subsubsection{\texorpdfstring{print()}{print()}}
+{\footnotesize\ttfamily public \hyperlink{classpersistencia_1_1output_1_1Ctrl__Output}{Ctrl\+\_\+\+Output} domini.\+algorithm.\+J\+P\+E\+G.\+print (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Retorna el Ctrl\+\_\+\+Output. 
+
+\begin{DoxyReturn}{Returns}
+Retorna el Ctrl\+\_\+\+Output on està l\textquotesingle{}arxiu comprimit o descomprimit. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classdomini_1_1algorithm_1_1JPEG_aa9c52789d61d5eebdeb13ee39f8e817d}\label{classdomini_1_1algorithm_1_1JPEG_aa9c52789d61d5eebdeb13ee39f8e817d}} 
+\index{domini\+::algorithm\+::\+J\+P\+EG@{domini\+::algorithm\+::\+J\+P\+EG}!round@{round}}
+\index{round@{round}!domini\+::algorithm\+::\+J\+P\+EG@{domini\+::algorithm\+::\+J\+P\+EG}}
+\subsubsection{\texorpdfstring{round()}{round()}}
+{\footnotesize\ttfamily private static int domini.\+algorithm.\+J\+P\+E\+G.\+round (\begin{DoxyParamCaption}\item[{double}]{x }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}, {\ttfamily [private]}}
+
+
+
+Arrodoneix un número real. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em x} & és el real \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+l\textquotesingle{}enter més pròxim a x 
+\end{DoxyReturn}
+
+
 \subsection{Member Data Documentation}
+\mbox{\Hypertarget{classdomini_1_1algorithm_1_1JPEG_a3ff24cf46363c31ffa24e3604bf3ced8}\label{classdomini_1_1algorithm_1_1JPEG_a3ff24cf46363c31ffa24e3604bf3ced8}} 
+\index{domini\+::algorithm\+::\+J\+P\+EG@{domini\+::algorithm\+::\+J\+P\+EG}!decode\+\_\+or\+\_\+encode@{decode\+\_\+or\+\_\+encode}}
+\index{decode\+\_\+or\+\_\+encode@{decode\+\_\+or\+\_\+encode}!domini\+::algorithm\+::\+J\+P\+EG@{domini\+::algorithm\+::\+J\+P\+EG}}
+\subsubsection{\texorpdfstring{decode\+\_\+or\+\_\+encode}{decode\_or\_encode}}
+{\footnotesize\ttfamily boolean domini.\+algorithm.\+J\+P\+E\+G.\+decode\+\_\+or\+\_\+encode\hspace{0.3cm}{\ttfamily [package]}}
+
+
+\begin{DoxyParams}{Parameters}
+{\em decode\+\_\+or\+\_\+encode} & indica si és compressió (true) o descompressió (false) \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classdomini_1_1algorithm_1_1JPEG_aacc6445baa7819e3f9139ffb78e0b8f4}\label{classdomini_1_1algorithm_1_1JPEG_aacc6445baa7819e3f9139ffb78e0b8f4}} 
+\index{domini\+::algorithm\+::\+J\+P\+EG@{domini\+::algorithm\+::\+J\+P\+EG}!huff@{huff}}
+\index{huff@{huff}!domini\+::algorithm\+::\+J\+P\+EG@{domini\+::algorithm\+::\+J\+P\+EG}}
+\subsubsection{\texorpdfstring{huff}{huff}}
+{\footnotesize\ttfamily \hyperlink{classdomini_1_1algorithm_1_1Huffman}{Huffman} domini.\+algorithm.\+J\+P\+E\+G.\+huff\hspace{0.3cm}{\ttfamily [package]}}
+
+
+\begin{DoxyParams}{Parameters}
+{\em huff} & és la codificació de huffman utilitzat a Entropy Conding \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classdomini_1_1algorithm_1_1JPEG_a2512a38136dac55fa5dbbfc8f0ae822d}\label{classdomini_1_1algorithm_1_1JPEG_a2512a38136dac55fa5dbbfc8f0ae822d}} 
+\index{domini\+::algorithm\+::\+J\+P\+EG@{domini\+::algorithm\+::\+J\+P\+EG}!out@{out}}
+\index{out@{out}!domini\+::algorithm\+::\+J\+P\+EG@{domini\+::algorithm\+::\+J\+P\+EG}}
+\subsubsection{\texorpdfstring{out}{out}}
+{\footnotesize\ttfamily \hyperlink{classpersistencia_1_1output_1_1Ctrl__Output}{Ctrl\+\_\+\+Output} domini.\+algorithm.\+J\+P\+E\+G.\+out\hspace{0.3cm}{\ttfamily [package]}}
+
+
+\begin{DoxyParams}{Parameters}
+{\em out} & és utilitxat per emmegatzemar la compressió o descompressió. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classdomini_1_1algorithm_1_1JPEG_a68d523efc6a9dfb3dd2edec0bbb79b48}\label{classdomini_1_1algorithm_1_1JPEG_a68d523efc6a9dfb3dd2edec0bbb79b48}} 
+\index{domini\+::algorithm\+::\+J\+P\+EG@{domini\+::algorithm\+::\+J\+P\+EG}!path@{path}}
+\index{path@{path}!domini\+::algorithm\+::\+J\+P\+EG@{domini\+::algorithm\+::\+J\+P\+EG}}
+\subsubsection{\texorpdfstring{path}{path}}
+{\footnotesize\ttfamily String domini.\+algorithm.\+J\+P\+E\+G.\+path\hspace{0.3cm}{\ttfamily [package]}}
+
+
+\begin{DoxyParams}{Parameters}
+{\em path} & és el path de sortida. \\
+\hline
+\end{DoxyParams}
 \mbox{\Hypertarget{classdomini_1_1algorithm_1_1JPEG_a7c95eb140dbe185a31b402d48ec17a66}\label{classdomini_1_1algorithm_1_1JPEG_a7c95eb140dbe185a31b402d48ec17a66}} 
 \index{domini\+::algorithm\+::\+J\+P\+EG@{domini\+::algorithm\+::\+J\+P\+EG}!quantization\+\_\+matrix@{quantization\+\_\+matrix}}
 \index{quantization\+\_\+matrix@{quantization\+\_\+matrix}!domini\+::algorithm\+::\+J\+P\+EG@{domini\+::algorithm\+::\+J\+P\+EG}}
@@ -113,6 +279,11 @@ static int \mbox{[}$\,$\mbox{]} {\bfseries zig\+Zag\+\_\+Y}
         \{72, 92, 95, 98, 112, 100, 103, 99\}
     \}
 \end{DoxyCode}
+
+\begin{DoxyParams}{Parameters}
+{\em quantization\+\_\+matrix} & és la matriu de quantització \\
+\hline
+\end{DoxyParams}
 \mbox{\Hypertarget{classdomini_1_1algorithm_1_1JPEG_a7d3829cbffd758c087341a8da13dd2ca}\label{classdomini_1_1algorithm_1_1JPEG_a7d3829cbffd758c087341a8da13dd2ca}} 
 \index{domini\+::algorithm\+::\+J\+P\+EG@{domini\+::algorithm\+::\+J\+P\+EG}!zig\+Zag\+\_\+X@{zig\+Zag\+\_\+X}}
 \index{zig\+Zag\+\_\+X@{zig\+Zag\+\_\+X}!domini\+::algorithm\+::\+J\+P\+EG@{domini\+::algorithm\+::\+J\+P\+EG}}
@@ -139,6 +310,11 @@ static int \mbox{[}$\,$\mbox{]} {\bfseries zig\+Zag\+\_\+Y}
         7
     \}
 \end{DoxyCode}
+
+\begin{DoxyParams}{Parameters}
+{\em zig\+Zag\+\_\+\+X\mbox{[}i\mbox{]}} & és la fila que es cnsulta a la ièssima iteració d\textquotesingle{}un recorregut en zigzag d\textquotesingle{}una matriu 8x8 \\
+\hline
+\end{DoxyParams}
 \mbox{\Hypertarget{classdomini_1_1algorithm_1_1JPEG_ad886d8aa00a40cb151b446534f0d1bcc}\label{classdomini_1_1algorithm_1_1JPEG_ad886d8aa00a40cb151b446534f0d1bcc}} 
 \index{domini\+::algorithm\+::\+J\+P\+EG@{domini\+::algorithm\+::\+J\+P\+EG}!zig\+Zag\+\_\+Y@{zig\+Zag\+\_\+Y}}
 \index{zig\+Zag\+\_\+Y@{zig\+Zag\+\_\+Y}!domini\+::algorithm\+::\+J\+P\+EG@{domini\+::algorithm\+::\+J\+P\+EG}}
@@ -165,6 +341,11 @@ static int \mbox{[}$\,$\mbox{]} {\bfseries zig\+Zag\+\_\+Y}
         7
     \}
 \end{DoxyCode}
+
+\begin{DoxyParams}{Parameters}
+{\em zig\+Zag\+\_\+\+Y\mbox{[}i\mbox{]}} & és la columna que es cnsulta a la ièssima iteració d\textquotesingle{}un recorregut en zigzag d\textquotesingle{}una matriu 8x8 \\
+\hline
+\end{DoxyParams}
 
 
 The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}

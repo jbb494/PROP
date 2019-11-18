@@ -7,10 +7,11 @@ var searchData=
   ['arr',['arr',['../classdomini_1_1utils_1_1BinTree.html#a357bcbcf07ba7fcb99d11b237d189e65',1,'domini::utils::BinTree']]],
   ['arr_5fn',['arr_n',['../classdomini_1_1utils_1_1Dict__Encode.html#abc506ae01222e16d9b6581efbdad1a97',1,'domini::utils::Dict_Encode']]],
   ['array',['array',['../classdomini_1_1utils_1_1ArrayCircular.html#a2af77a58adf605b58d79a1879a0a593f',1,'domini::utils::ArrayCircular']]],
-  ['arraybyte',['arrayByte',['../classpersistencia_1_1input_1_1Input__Text.html#ab29b20f25abf37ab5fa9fd86e446fdf5',1,'persistencia::input::Input_Text']]],
   ['arraycircular',['ArrayCircular',['../classdomini_1_1utils_1_1ArrayCircular.html',1,'domini.utils.ArrayCircular'],['../classdomini_1_1utils_1_1ArrayCircular.html#add69c3bd37b2a3ef6069bd3b5df93fec',1,'domini.utils.ArrayCircular.ArrayCircular()']]],
   ['ascii_5fvalue',['Ascii_value',['../classdomini_1_1utils_1_1Dict__Encode.html#a12e23ecdd9b0078cb6e56c01126248b9',1,'domini::utils::Dict_Encode']]],
   ['atoi',['atoi',['../classdomini_1_1utils_1_1stringConversion.html#ac5d58fb65893c40fc46af0fae55772ca',1,'domini::utils::stringConversion']]],
+  ['auto',['auto',['../classdomini_1_1algorithm_1_1Huffman.html#a1c2b6800e0b472c65f44ff9cf28a5b35',1,'domini::algorithm::Huffman']]],
+  ['auto_5fcodes',['auto_codes',['../classdomini_1_1algorithm_1_1Huffman.html#a0fa542dd4e914d8c0da5c070fe9f682f',1,'domini::algorithm::Huffman']]],
   ['auto_5fdecoder',['Auto_Decoder',['../classdomini_1_1algorithm_1_1Ctrl__Algorithm.html#a613d15cc5326fc688b11d2c71ec9500a',1,'domini::algorithm::Ctrl_Algorithm']]],
   ['auto_5fencoder',['Auto_Encoder',['../classdomini_1_1algorithm_1_1Ctrl__Algorithm.html#a6f7a706e07d4e6f8c1ea293d06e17318',1,'domini::algorithm::Ctrl_Algorithm']]]
 ];

@@ -2,6 +2,11 @@
 \label{classdomini_1_1algorithm_1_1Huffman}\index{domini.\+algorithm.\+Huffman@{domini.\+algorithm.\+Huffman}}
 
 
+Codificació \hyperlink{classdomini_1_1algorithm_1_1Huffman}{Huffman}.  
+
+
+
+
 Collaboration diagram for domini.\+algorithm.\+Huffman\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
@@ -12,51 +17,43 @@ Collaboration diagram for domini.\+algorithm.\+Huffman\+:\nopagebreak
 \subsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\Hypertarget{classdomini_1_1algorithm_1_1Huffman_ad5963e423f25e932ed78779bc000edaf}\label{classdomini_1_1algorithm_1_1Huffman_ad5963e423f25e932ed78779bc000edaf}} 
-{\bfseries Huffman} (boolean automatic)
-\item 
-\mbox{\Hypertarget{classdomini_1_1algorithm_1_1Huffman_a305f26e6d42a2acf9c2c85e751a7084f}\label{classdomini_1_1algorithm_1_1Huffman_a305f26e6d42a2acf9c2c85e751a7084f}} 
-int {\bfseries get\+Code} (int symbol)
-\item 
-\mbox{\Hypertarget{classdomini_1_1algorithm_1_1Huffman_aa1d92244c3586d571825fb1799dd6331}\label{classdomini_1_1algorithm_1_1Huffman_aa1d92244c3586d571825fb1799dd6331}} 
-int {\bfseries get\+Size} (int symbol)
-\item 
-\mbox{\Hypertarget{classdomini_1_1algorithm_1_1Huffman_a9b7c1f210d857e6fb380f1964c8d312b}\label{classdomini_1_1algorithm_1_1Huffman_a9b7c1f210d857e6fb380f1964c8d312b}} 
-int {\bfseries get\+Symbol} (int code)
-\item 
-\mbox{\Hypertarget{classdomini_1_1algorithm_1_1Huffman_adf2a924d37ddd0212721bb019398b3f4}\label{classdomini_1_1algorithm_1_1Huffman_adf2a924d37ddd0212721bb019398b3f4}} 
-void {\bfseries init\+Search\+Symbol} ()
-\item 
-\mbox{\Hypertarget{classdomini_1_1algorithm_1_1Huffman_afbfe973f057eaf88d13a26c21552bbf7}\label{classdomini_1_1algorithm_1_1Huffman_afbfe973f057eaf88d13a26c21552bbf7}} 
-int {\bfseries search\+Symbol} (int bit)
-\item 
-\mbox{\Hypertarget{classdomini_1_1algorithm_1_1Huffman_a3f261a9daaf21109f5357d7f385a3af7}\label{classdomini_1_1algorithm_1_1Huffman_a3f261a9daaf21109f5357d7f385a3af7}} 
-int {\bfseries get\+Found\+Symbol} ()
-\end{DoxyCompactItemize}
+\hyperlink{classdomini_1_1algorithm_1_1Huffman_ad5963e423f25e932ed78779bc000edaf}{Huffman} (boolean automatic)
+\begin{DoxyCompactList}\small\item\em Constructora. \end{DoxyCompactList}\item 
+int \hyperlink{classdomini_1_1algorithm_1_1Huffman_aed38ea297e6463f016a74d0ba405768a}{get\+Code} (int symbol)
+\begin{DoxyCompactList}\small\item\em Retorna el codi de huffman corresponent a un símbol. \end{DoxyCompactList}\item 
+int \hyperlink{classdomini_1_1algorithm_1_1Huffman_a2791541d1b5a3d65912fad5979d41dfd}{get\+Size} (int symbol)
+\begin{DoxyCompactList}\small\item\em Retorna la mide del codi de huffman corresponent a un símbol. \end{DoxyCompactList}\item 
+int \hyperlink{classdomini_1_1algorithm_1_1Huffman_a426cb1d15e2fe89a55e5b0f25e887342}{get\+Symbol} (int code)
+\begin{DoxyCompactList}\small\item\em Retorna el símbol corresponent a un codi de huffman que es pot llegir al recorrer l\textquotesingle{}arbre de huffman a paritr d\textquotesingle{}un node. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classdomini_1_1algorithm_1_1Huffman_aec935898b93387360acd588a05dc3f33}\label{classdomini_1_1algorithm_1_1Huffman_aec935898b93387360acd588a05dc3f33}} 
+void \hyperlink{classdomini_1_1algorithm_1_1Huffman_aec935898b93387360acd588a05dc3f33}{init\+Search\+Symbol} ()
+\begin{DoxyCompactList}\small\item\em Inicialitza una Huffman\+Search. El codi de huffman implícit és buit. \end{DoxyCompactList}\item 
+int \hyperlink{classdomini_1_1algorithm_1_1Huffman_a56a954cb68aad6701b609d0fc2c7c724}{search\+Symbol} (int bit)
+\begin{DoxyCompactList}\small\item\em Fa avançar la Huffman\+Search\+: afageix un bit al codi de huffman implícit. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classdomini_1_1algorithm_1_1Huffman_a2fa5805057243c65769bf12435e5f363}\label{classdomini_1_1algorithm_1_1Huffman_a2fa5805057243c65769bf12435e5f363}} 
+int \hyperlink{classdomini_1_1algorithm_1_1Huffman_a2fa5805057243c65769bf12435e5f363}{get\+Found\+Symbol} ()
+\begin{DoxyCompactList}\small\item\em Retorna el símbol trobat a la Huffman\+Search, és a dir, el símbol representat pel codi de \hyperlink{classdomini_1_1algorithm_1_1Huffman}{Huffman} implícit. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Private Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\Hypertarget{classdomini_1_1algorithm_1_1Huffman_a5f263f76053992912e0571a8cce8f710}\label{classdomini_1_1algorithm_1_1Huffman_a5f263f76053992912e0571a8cce8f710}} 
-void {\bfseries set\+\_\+auto\+\_\+codes} ()
-\item 
-\mbox{\Hypertarget{classdomini_1_1algorithm_1_1Huffman_aa3456238bbda43d0ed066e1bb028777e}\label{classdomini_1_1algorithm_1_1Huffman_aa3456238bbda43d0ed066e1bb028777e}} 
-\hyperlink{classdomini_1_1utils_1_1BinTree}{Bin\+Tree} {\bfseries code\+\_\+subtree} (int size, int code, int info)
-\item 
-\mbox{\Hypertarget{classdomini_1_1algorithm_1_1Huffman_ab0a932eb127fb421e136205be8a26418}\label{classdomini_1_1algorithm_1_1Huffman_ab0a932eb127fb421e136205be8a26418}} 
-void {\bfseries code\+\_\+to\+\_\+tree} (int node, int size, int code, int info)
-\item 
-\mbox{\Hypertarget{classdomini_1_1algorithm_1_1Huffman_a7cc808d84aa7616bd4761172f88d8e4c}\label{classdomini_1_1algorithm_1_1Huffman_a7cc808d84aa7616bd4761172f88d8e4c}} 
-void {\bfseries set\+\_\+auto\+\_\+tree} ()
-\item 
+\mbox{\Hypertarget{classdomini_1_1algorithm_1_1Huffman_a82b44a2aaa1d3726263a79a6562b7a6f}\label{classdomini_1_1algorithm_1_1Huffman_a82b44a2aaa1d3726263a79a6562b7a6f}} 
+void \hyperlink{classdomini_1_1algorithm_1_1Huffman_a82b44a2aaa1d3726263a79a6562b7a6f}{set\+\_\+auto\+\_\+codes} ()
+\begin{DoxyCompactList}\small\item\em Inicialitza el vector auto\+\_\+codes, la taula de huffman automàtica. \end{DoxyCompactList}\item 
+\hyperlink{classdomini_1_1utils_1_1BinTree}{Bin\+Tree} \hyperlink{classdomini_1_1algorithm_1_1Huffman_acd2537482f8d719bb37c23ba2d8ec0b1}{code\+\_\+subtree} (int size, int code, int info)
+\begin{DoxyCompactList}\small\item\em Genera un (sub)arbre de huffman. \end{DoxyCompactList}\item 
+void \hyperlink{classdomini_1_1algorithm_1_1Huffman_a3337f12f1de140551c5a68cb7bab5126}{code\+\_\+to\+\_\+tree} (int node, int size, int code, int info)
+\begin{DoxyCompactList}\small\item\em S\textquotesingle{}actualitza l\textquotesingle{}atribut \textquotesingle{}tree\textquotesingle{} a partir d\textquotesingle{}un node. Després d\textquotesingle{}haver executat la funció s\textquotesingle{}ha de poder recórrer l\textquotesingle{}arbre de huffman a partir de node per trobar codificat el símbol \textquotesingle{}info\textquotesingle{} en el codi \textquotesingle{}code\textquotesingle{} de mida \textquotesingle{}size\textquotesingle{}. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classdomini_1_1algorithm_1_1Huffman_a688b01855a68e8de4fb75f47dd775fe6}\label{classdomini_1_1algorithm_1_1Huffman_a688b01855a68e8de4fb75f47dd775fe6}} 
+void \hyperlink{classdomini_1_1algorithm_1_1Huffman_a688b01855a68e8de4fb75f47dd775fe6}{set\+\_\+auto\+\_\+tree} ()
+\begin{DoxyCompactList}\small\item\em Incialitza l\textquotesingle{}arbre de huffman pel mode automàtic. \end{DoxyCompactList}\item 
 \mbox{\Hypertarget{classdomini_1_1algorithm_1_1Huffman_ad1dafb062b641d7294fa057c3a7d053e}\label{classdomini_1_1algorithm_1_1Huffman_ad1dafb062b641d7294fa057c3a7d053e}} 
 int {\bfseries get\+Symbol} (int code, int node)
 \end{DoxyCompactItemize}
 \subsection*{Static Private Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\Hypertarget{classdomini_1_1algorithm_1_1Huffman_a4c43ebb729de31b90c3c435b9765c5d4}\label{classdomini_1_1algorithm_1_1Huffman_a4c43ebb729de31b90c3c435b9765c5d4}} 
-static long {\bfseries size\+\_\+code} (int size, int code)
-\item 
+static long \hyperlink{classdomini_1_1algorithm_1_1Huffman_a2c035fb63cf7b945bc56cca90c1343a3}{size\+\_\+code} (int size, int code)
+\begin{DoxyCompactList}\small\item\em Retorna un long que representa un codi d\textquotesingle{}una mida determinada. \end{DoxyCompactList}\item 
 \mbox{\Hypertarget{classdomini_1_1algorithm_1_1Huffman_a9ebf8a890196bc1f3af6917707c1096f}\label{classdomini_1_1algorithm_1_1Huffman_a9ebf8a890196bc1f3af6917707c1096f}} 
 static int {\bfseries size} (long x)
 \item 
@@ -66,24 +63,279 @@ static int {\bfseries code} (long x)
 \subsection*{Private Attributes}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\Hypertarget{classdomini_1_1algorithm_1_1Huffman_a1c2b6800e0b472c65f44ff9cf28a5b35}\label{classdomini_1_1algorithm_1_1Huffman_a1c2b6800e0b472c65f44ff9cf28a5b35}} 
-boolean {\bfseries auto}
+boolean \hyperlink{classdomini_1_1algorithm_1_1Huffman_a1c2b6800e0b472c65f44ff9cf28a5b35}{auto}
 \item 
-\mbox{\Hypertarget{classdomini_1_1algorithm_1_1Huffman_a0fa542dd4e914d8c0da5c070fe9f682f}\label{classdomini_1_1algorithm_1_1Huffman_a0fa542dd4e914d8c0da5c070fe9f682f}} 
-long \mbox{[}$\,$\mbox{]} {\bfseries auto\+\_\+codes}
+long \mbox{[}$\,$\mbox{]} \hyperlink{classdomini_1_1algorithm_1_1Huffman_a0fa542dd4e914d8c0da5c070fe9f682f}{auto\+\_\+codes}
 \item 
-\mbox{\Hypertarget{classdomini_1_1algorithm_1_1Huffman_a6c010fa777f5601b7be908f8c876cf8e}\label{classdomini_1_1algorithm_1_1Huffman_a6c010fa777f5601b7be908f8c876cf8e}} 
-\hyperlink{classdomini_1_1utils_1_1BinTree}{Bin\+Tree} {\bfseries tree}
+\hyperlink{classdomini_1_1utils_1_1BinTree}{Bin\+Tree} \hyperlink{classdomini_1_1algorithm_1_1Huffman_a6c010fa777f5601b7be908f8c876cf8e}{tree}
 \item 
-\mbox{\Hypertarget{classdomini_1_1algorithm_1_1Huffman_a71e35eb22265910f918572b34eaa6b2f}\label{classdomini_1_1algorithm_1_1Huffman_a71e35eb22265910f918572b34eaa6b2f}} 
-int {\bfseries node\+\_\+pointer}
+int \hyperlink{classdomini_1_1algorithm_1_1Huffman_a71e35eb22265910f918572b34eaa6b2f}{node\+\_\+pointer}
 \item 
-\mbox{\Hypertarget{classdomini_1_1algorithm_1_1Huffman_a0da0a4274a58653bbe3e1c753adfbe38}\label{classdomini_1_1algorithm_1_1Huffman_a0da0a4274a58653bbe3e1c753adfbe38}} 
-int {\bfseries last\+\_\+symbol}
+int \hyperlink{classdomini_1_1algorithm_1_1Huffman_a0da0a4274a58653bbe3e1c753adfbe38}{last\+\_\+symbol}
 \item 
-\mbox{\Hypertarget{classdomini_1_1algorithm_1_1Huffman_a3453c53e74badc739d51208d35ba372d}\label{classdomini_1_1algorithm_1_1Huffman_a3453c53e74badc739d51208d35ba372d}} 
-boolean {\bfseries sym\+\_\+found}
+boolean \hyperlink{classdomini_1_1algorithm_1_1Huffman_a3453c53e74badc739d51208d35ba372d}{sym\+\_\+found}
 \end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Codificació \hyperlink{classdomini_1_1algorithm_1_1Huffman}{Huffman}. 
+
+Aquesta classe codifica enters mitjançant \hyperlink{classdomini_1_1algorithm_1_1Huffman}{Huffman}. Té dos modes\+: l\textquotesingle{}automàtic (codifica mitjançant una taula de huffman per defecte) i manual (assigna codis en funció de la freqüència dels enters). El mode manual encara no està disponible. La intenció és que estigui disponible per la segona entrega.
+
+\begin{DoxyAuthor}{Author}
+Joan Lapeyra Amat 
+\end{DoxyAuthor}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classdomini_1_1algorithm_1_1Huffman_ad5963e423f25e932ed78779bc000edaf}\label{classdomini_1_1algorithm_1_1Huffman_ad5963e423f25e932ed78779bc000edaf}} 
+\index{domini\+::algorithm\+::\+Huffman@{domini\+::algorithm\+::\+Huffman}!Huffman@{Huffman}}
+\index{Huffman@{Huffman}!domini\+::algorithm\+::\+Huffman@{domini\+::algorithm\+::\+Huffman}}
+\subsubsection{\texorpdfstring{Huffman()}{Huffman()}}
+{\footnotesize\ttfamily domini.\+algorithm.\+Huffman.\+Huffman (\begin{DoxyParamCaption}\item[{boolean}]{automatic }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Constructora. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em automatic} & indica si el mode és automàtic \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classdomini_1_1algorithm_1_1Huffman_acd2537482f8d719bb37c23ba2d8ec0b1}\label{classdomini_1_1algorithm_1_1Huffman_acd2537482f8d719bb37c23ba2d8ec0b1}} 
+\index{domini\+::algorithm\+::\+Huffman@{domini\+::algorithm\+::\+Huffman}!code\+\_\+subtree@{code\+\_\+subtree}}
+\index{code\+\_\+subtree@{code\+\_\+subtree}!domini\+::algorithm\+::\+Huffman@{domini\+::algorithm\+::\+Huffman}}
+\subsubsection{\texorpdfstring{code\+\_\+subtree()}{code\_subtree()}}
+{\footnotesize\ttfamily private \hyperlink{classdomini_1_1utils_1_1BinTree}{Bin\+Tree} domini.\+algorithm.\+Huffman.\+code\+\_\+subtree (\begin{DoxyParamCaption}\item[{int}]{size,  }\item[{int}]{code,  }\item[{int}]{info }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [private]}}
+
+
+
+Genera un (sub)arbre de huffman. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em size} & És la mida del codi de huffman. \\
+\hline
+{\em code} & És el codi de huffman \\
+\hline
+{\em info} & És el símbol que volem codificar \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Un arbre de huffman que codifica el símbol \textquotesingle{}info\textquotesingle{} en el codi \textquotesingle{}code\textquotesingle{} de mide \textquotesingle{}size\textquotesingle{} 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classdomini_1_1algorithm_1_1Huffman_a3337f12f1de140551c5a68cb7bab5126}\label{classdomini_1_1algorithm_1_1Huffman_a3337f12f1de140551c5a68cb7bab5126}} 
+\index{domini\+::algorithm\+::\+Huffman@{domini\+::algorithm\+::\+Huffman}!code\+\_\+to\+\_\+tree@{code\+\_\+to\+\_\+tree}}
+\index{code\+\_\+to\+\_\+tree@{code\+\_\+to\+\_\+tree}!domini\+::algorithm\+::\+Huffman@{domini\+::algorithm\+::\+Huffman}}
+\subsubsection{\texorpdfstring{code\+\_\+to\+\_\+tree()}{code\_to\_tree()}}
+{\footnotesize\ttfamily private void domini.\+algorithm.\+Huffman.\+code\+\_\+to\+\_\+tree (\begin{DoxyParamCaption}\item[{int}]{node,  }\item[{int}]{size,  }\item[{int}]{code,  }\item[{int}]{info }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [private]}}
+
+
+
+S\textquotesingle{}actualitza l\textquotesingle{}atribut \textquotesingle{}tree\textquotesingle{} a partir d\textquotesingle{}un node. Després d\textquotesingle{}haver executat la funció s\textquotesingle{}ha de poder recórrer l\textquotesingle{}arbre de huffman a partir de node per trobar codificat el símbol \textquotesingle{}info\textquotesingle{} en el codi \textquotesingle{}code\textquotesingle{} de mida \textquotesingle{}size\textquotesingle{}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em node} & És el node a partir del qual volem codificar. \\
+\hline
+{\em size} & És la mida del codi de huffman. \\
+\hline
+{\em code} & És el codi de huffman \\
+\hline
+{\em info} & És el símbol que volem codificar \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classdomini_1_1algorithm_1_1Huffman_aed38ea297e6463f016a74d0ba405768a}\label{classdomini_1_1algorithm_1_1Huffman_aed38ea297e6463f016a74d0ba405768a}} 
+\index{domini\+::algorithm\+::\+Huffman@{domini\+::algorithm\+::\+Huffman}!get\+Code@{get\+Code}}
+\index{get\+Code@{get\+Code}!domini\+::algorithm\+::\+Huffman@{domini\+::algorithm\+::\+Huffman}}
+\subsubsection{\texorpdfstring{get\+Code()}{getCode()}}
+{\footnotesize\ttfamily public int domini.\+algorithm.\+Huffman.\+get\+Code (\begin{DoxyParamCaption}\item[{int}]{symbol }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Retorna el codi de huffman corresponent a un símbol. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em symbol} & és el símbol en qüestió \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+la codificació de symbol amb els primers bits com a bits menys significatius 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classdomini_1_1algorithm_1_1Huffman_a2791541d1b5a3d65912fad5979d41dfd}\label{classdomini_1_1algorithm_1_1Huffman_a2791541d1b5a3d65912fad5979d41dfd}} 
+\index{domini\+::algorithm\+::\+Huffman@{domini\+::algorithm\+::\+Huffman}!get\+Size@{get\+Size}}
+\index{get\+Size@{get\+Size}!domini\+::algorithm\+::\+Huffman@{domini\+::algorithm\+::\+Huffman}}
+\subsubsection{\texorpdfstring{get\+Size()}{getSize()}}
+{\footnotesize\ttfamily public int domini.\+algorithm.\+Huffman.\+get\+Size (\begin{DoxyParamCaption}\item[{int}]{symbol }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Retorna la mide del codi de huffman corresponent a un símbol. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em symbol} & és el símbol en qüestió \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+la mida en quüestió 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classdomini_1_1algorithm_1_1Huffman_a426cb1d15e2fe89a55e5b0f25e887342}\label{classdomini_1_1algorithm_1_1Huffman_a426cb1d15e2fe89a55e5b0f25e887342}} 
+\index{domini\+::algorithm\+::\+Huffman@{domini\+::algorithm\+::\+Huffman}!get\+Symbol@{get\+Symbol}}
+\index{get\+Symbol@{get\+Symbol}!domini\+::algorithm\+::\+Huffman@{domini\+::algorithm\+::\+Huffman}}
+\subsubsection{\texorpdfstring{get\+Symbol()}{getSymbol()}}
+{\footnotesize\ttfamily public int domini.\+algorithm.\+Huffman.\+get\+Symbol (\begin{DoxyParamCaption}\item[{int}]{code }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Retorna el símbol corresponent a un codi de huffman que es pot llegir al recorrer l\textquotesingle{}arbre de huffman a paritr d\textquotesingle{}un node. 
+
+Retorna el símbol corresponent a un codi de huffman.
+
+
+\begin{DoxyParams}{Parameters}
+{\em code} & és el codi de huffman amb els primers bits com a menys significatius \\
+\hline
+{\em node} & és el node de tree en qüestió \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+el símbol en qüestió
+\end{DoxyReturn}
+
+\begin{DoxyParams}{Parameters}
+{\em code} & és el codi de huffman amb els primers bits com a menys significatius \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+el símbol en qüestió 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classdomini_1_1algorithm_1_1Huffman_a56a954cb68aad6701b609d0fc2c7c724}\label{classdomini_1_1algorithm_1_1Huffman_a56a954cb68aad6701b609d0fc2c7c724}} 
+\index{domini\+::algorithm\+::\+Huffman@{domini\+::algorithm\+::\+Huffman}!search\+Symbol@{search\+Symbol}}
+\index{search\+Symbol@{search\+Symbol}!domini\+::algorithm\+::\+Huffman@{domini\+::algorithm\+::\+Huffman}}
+\subsubsection{\texorpdfstring{search\+Symbol()}{searchSymbol()}}
+{\footnotesize\ttfamily public int domini.\+algorithm.\+Huffman.\+search\+Symbol (\begin{DoxyParamCaption}\item[{int}]{bit }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Fa avançar la Huffman\+Search\+: afageix un bit al codi de huffman implícit. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em bit} & és el bit que s\textquotesingle{}afageix al codi de la Huffman\+Seach \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+1 si s\textquotesingle{}ha trobat un símbol, és a dir, el codi de huffman implícit correspon a un símbol. 0 si no s\textquotesingle{}ha trobat un símbol però pot ser que sigui trobat en un futur, és a dir, el codi de huffman implícit és prefix de codis de huffman vàlids. -\/1 si no s\textquotesingle{}ha trobat cap símbol ni es trobarà a l\textquotesingle{}actual Huffman\+Seach, és a dir, el codi de \hyperlink{classdomini_1_1algorithm_1_1Huffman}{Huffman} implícit no és prefix de cap codi vàlid. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classdomini_1_1algorithm_1_1Huffman_a2c035fb63cf7b945bc56cca90c1343a3}\label{classdomini_1_1algorithm_1_1Huffman_a2c035fb63cf7b945bc56cca90c1343a3}} 
+\index{domini\+::algorithm\+::\+Huffman@{domini\+::algorithm\+::\+Huffman}!size\+\_\+code@{size\+\_\+code}}
+\index{size\+\_\+code@{size\+\_\+code}!domini\+::algorithm\+::\+Huffman@{domini\+::algorithm\+::\+Huffman}}
+\subsubsection{\texorpdfstring{size\+\_\+code()}{size\_code()}}
+{\footnotesize\ttfamily private static long domini.\+algorithm.\+Huffman.\+size\+\_\+code (\begin{DoxyParamCaption}\item[{int}]{size,  }\item[{int}]{code }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}, {\ttfamily [private]}}
+
+
+
+Retorna un long que representa un codi d\textquotesingle{}una mida determinada. 
+
+Retorna un codi representat per un long.
+
+Retorna la mida d\textquotesingle{}un codi representat per un long.
+
+
+\begin{DoxyParams}{Parameters}
+{\em size} & és la mida del codi en qüestó \\
+\hline
+{\em code} & és el codi en qüestió, on els primers bits es donen com a bits més significatius\\
+\hline
+{\em x} & represnta el codi en qüestió \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+la mida del codi representat per x
+\end{DoxyReturn}
+
+\begin{DoxyParams}{Parameters}
+{\em x} & represnta el codi en qüestió \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+el codi representar per x. Els primers bits es retornen com a bits de menys pes. 
+\end{DoxyReturn}
+
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{classdomini_1_1algorithm_1_1Huffman_a1c2b6800e0b472c65f44ff9cf28a5b35}\label{classdomini_1_1algorithm_1_1Huffman_a1c2b6800e0b472c65f44ff9cf28a5b35}} 
+\index{domini\+::algorithm\+::\+Huffman@{domini\+::algorithm\+::\+Huffman}!auto@{auto}}
+\index{auto@{auto}!domini\+::algorithm\+::\+Huffman@{domini\+::algorithm\+::\+Huffman}}
+\subsubsection{\texorpdfstring{auto}{auto}}
+{\footnotesize\ttfamily boolean domini.\+algorithm.\+Huffman.\+auto\hspace{0.3cm}{\ttfamily [private]}}
+
+
+\begin{DoxyParams}{Parameters}
+{\em auto} & indica si el mode és automàtic. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classdomini_1_1algorithm_1_1Huffman_a0fa542dd4e914d8c0da5c070fe9f682f}\label{classdomini_1_1algorithm_1_1Huffman_a0fa542dd4e914d8c0da5c070fe9f682f}} 
+\index{domini\+::algorithm\+::\+Huffman@{domini\+::algorithm\+::\+Huffman}!auto\+\_\+codes@{auto\+\_\+codes}}
+\index{auto\+\_\+codes@{auto\+\_\+codes}!domini\+::algorithm\+::\+Huffman@{domini\+::algorithm\+::\+Huffman}}
+\subsubsection{\texorpdfstring{auto\+\_\+codes}{auto\_codes}}
+{\footnotesize\ttfamily long \mbox{[}$\,$\mbox{]} domini.\+algorithm.\+Huffman.\+auto\+\_\+codes\hspace{0.3cm}{\ttfamily [private]}}
+
+
+\begin{DoxyParams}{Parameters}
+{\em auto\+\_\+codes} & és la taula de huffman que representa la codificació automàtica. Donat un enter x, code(auto\+\_\+codes\mbox{[}x\mbox{]}) és la codificació de x, que té una mida de size(auto\+\_\+codes\mbox{[}x\mbox{]}) Aquesta taula és la que proporciona \href{https://www.ece.ucdavis.edu/cerl/reliablejpeg/coding/,}{\tt https\+://www.\+ece.\+ucdavis.\+edu/cerl/reliablejpeg/coding/,} pensada per ser utilitzada en l\textquotesingle{}algoritme \hyperlink{classdomini_1_1algorithm_1_1JPEG}{J\+P\+EG}. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classdomini_1_1algorithm_1_1Huffman_a0da0a4274a58653bbe3e1c753adfbe38}\label{classdomini_1_1algorithm_1_1Huffman_a0da0a4274a58653bbe3e1c753adfbe38}} 
+\index{domini\+::algorithm\+::\+Huffman@{domini\+::algorithm\+::\+Huffman}!last\+\_\+symbol@{last\+\_\+symbol}}
+\index{last\+\_\+symbol@{last\+\_\+symbol}!domini\+::algorithm\+::\+Huffman@{domini\+::algorithm\+::\+Huffman}}
+\subsubsection{\texorpdfstring{last\+\_\+symbol}{last\_symbol}}
+{\footnotesize\ttfamily int domini.\+algorithm.\+Huffman.\+last\+\_\+symbol\hspace{0.3cm}{\ttfamily [private]}}
+
+
+\begin{DoxyParams}{Parameters}
+{\em last\+\_\+symbol} & és l\textquotesingle{}últim símbol trobar d\textquotesingle{}una Huffman\+Search \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classdomini_1_1algorithm_1_1Huffman_a71e35eb22265910f918572b34eaa6b2f}\label{classdomini_1_1algorithm_1_1Huffman_a71e35eb22265910f918572b34eaa6b2f}} 
+\index{domini\+::algorithm\+::\+Huffman@{domini\+::algorithm\+::\+Huffman}!node\+\_\+pointer@{node\+\_\+pointer}}
+\index{node\+\_\+pointer@{node\+\_\+pointer}!domini\+::algorithm\+::\+Huffman@{domini\+::algorithm\+::\+Huffman}}
+\subsubsection{\texorpdfstring{node\+\_\+pointer}{node\_pointer}}
+{\footnotesize\ttfamily int domini.\+algorithm.\+Huffman.\+node\+\_\+pointer\hspace{0.3cm}{\ttfamily [private]}}
+
+
+\begin{DoxyParams}{Parameters}
+{\em node\+\_\+pointer} & és el node de \textquotesingle{}tree\textquotesingle{} fins on s\textquotesingle{}ha buscat un cert símbol mitjançant Huffman\+Search \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classdomini_1_1algorithm_1_1Huffman_a3453c53e74badc739d51208d35ba372d}\label{classdomini_1_1algorithm_1_1Huffman_a3453c53e74badc739d51208d35ba372d}} 
+\index{domini\+::algorithm\+::\+Huffman@{domini\+::algorithm\+::\+Huffman}!sym\+\_\+found@{sym\+\_\+found}}
+\index{sym\+\_\+found@{sym\+\_\+found}!domini\+::algorithm\+::\+Huffman@{domini\+::algorithm\+::\+Huffman}}
+\subsubsection{\texorpdfstring{sym\+\_\+found}{sym\_found}}
+{\footnotesize\ttfamily boolean domini.\+algorithm.\+Huffman.\+sym\+\_\+found\hspace{0.3cm}{\ttfamily [private]}}
+
+
+\begin{DoxyParams}{Parameters}
+{\em sym\+\_\+found} & indica si en la Huffman\+Search actual s\textquotesingle{}ha trobat ja un símbol. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classdomini_1_1algorithm_1_1Huffman_a6c010fa777f5601b7be908f8c876cf8e}\label{classdomini_1_1algorithm_1_1Huffman_a6c010fa777f5601b7be908f8c876cf8e}} 
+\index{domini\+::algorithm\+::\+Huffman@{domini\+::algorithm\+::\+Huffman}!tree@{tree}}
+\index{tree@{tree}!domini\+::algorithm\+::\+Huffman@{domini\+::algorithm\+::\+Huffman}}
+\subsubsection{\texorpdfstring{tree}{tree}}
+{\footnotesize\ttfamily \hyperlink{classdomini_1_1utils_1_1BinTree}{Bin\+Tree} domini.\+algorithm.\+Huffman.\+tree\hspace{0.3cm}{\ttfamily [private]}}
+
+
+\begin{DoxyParams}{Parameters}
+{\em tree} & és l\textquotesingle{}arbre de huffan que emmegatzema la codificació. \\
+\hline
+\end{DoxyParams}
 
 
 The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}

@@ -37,11 +37,11 @@ void \hyperlink{classpersistencia_1_1output_1_1Ctrl__Output_a4070b40016edf1d959b
 void \hyperlink{classpersistencia_1_1output_1_1Ctrl__Output_aefe249b0ae9dbe578c44d96c6b56cf5d}{add} (Integer x)
 \begin{DoxyCompactList}\small\item\em Afegeix un enter de 4 bytes. \end{DoxyCompactList}\item 
 void \hyperlink{classpersistencia_1_1output_1_1Ctrl__Output_ac792cc55e30c9c769e10a20c2dd41bc8}{add} (Integer x, Integer mida)
-\begin{DoxyCompactList}\small\item\em Afegeix un Integer d\textquotesingle{}una mida determinada. \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em Afegeix un enter amb mida. Guarda els bits més significatius primer. \end{DoxyCompactList}\item 
 void \hyperlink{classpersistencia_1_1output_1_1Ctrl__Output_a5fb2f07198a77b4fac0f95ee48e3d0b9}{add} (Array\+List$<$ Byte $>$ arr)
 \begin{DoxyCompactList}\small\item\em Afegeix una llista de Bytes. \end{DoxyCompactList}\item 
 void \hyperlink{classpersistencia_1_1output_1_1Ctrl__Output_ad4738467c2312b0e079c14003e548dd6}{add2} (int x, int mida)
-\begin{DoxyCompactList}\small\item\em Afegeix un enter amb mida. \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em Afegeix un enter amb mida. Guarda els bits menys significatius primer. \end{DoxyCompactList}\item 
 \mbox{\Hypertarget{classpersistencia_1_1output_1_1Ctrl__Output_a908955c29bfecc7ebac86613bc75e9ed}\label{classpersistencia_1_1output_1_1Ctrl__Output_a908955c29bfecc7ebac86613bc75e9ed}} 
 void \hyperlink{classpersistencia_1_1output_1_1Ctrl__Output_a908955c29bfecc7ebac86613bc75e9ed}{print} ()
 \begin{DoxyCompactList}\small\item\em Escriu el contingut de la classe en un nou arxiu. \end{DoxyCompactList}\item 
@@ -59,6 +59,11 @@ void {\bfseries print\+String} ()
 
 \subsection{Detailed Description}
 Classe \hyperlink{classpersistencia_1_1output_1_1Ctrl__Output}{Ctrl\+\_\+\+Output}. 
+
+\begin{DoxyAuthor}{Author}
+Miguel Paracuellos 
+\end{DoxyAuthor}
+
 
 \subsection{Constructor \& Destructor Documentation}
 \mbox{\Hypertarget{classpersistencia_1_1output_1_1Ctrl__Output_afeb28ec6172b522bf6bdaf16238d622b}\label{classpersistencia_1_1output_1_1Ctrl__Output_afeb28ec6172b522bf6bdaf16238d622b}} 
@@ -153,7 +158,7 @@ Afegeix un enter de 4 bytes.
 
 
 
-Afegeix un Integer d\textquotesingle{}una mida determinada. 
+Afegeix un enter amb mida. Guarda els bits més significatius primer. 
 
 
 \begin{DoxyParams}{Parameters}
@@ -185,7 +190,7 @@ Afegeix una llista de Bytes.
 
 
 
-Afegeix un enter amb mida. 
+Afegeix un enter amb mida. Guarda els bits menys significatius primer. 
 
 
 \begin{DoxyParams}{Parameters}

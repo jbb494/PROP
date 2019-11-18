@@ -65,8 +65,6 @@ $(function() {
 <div class="header">
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
-<a href="#pub-static-methods">Static Public Member Functions</a> &#124;
-<a href="#pac-static-methods">Static Package Functions</a> &#124;
 <a href="#pac-attribs">Package Attributes</a> &#124;
 <a href="#pri-static-methods">Static Private Member Functions</a> &#124;
 <a href="#pri-static-attribs">Static Private Attributes</a> &#124;
@@ -75,6 +73,9 @@ $(function() {
 <div class="title">domini.algorithm.JPEG Class Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
+
+<p>Compressió i descompressió pel mètode <a class="el" href="classdomini_1_1algorithm_1_1JPEG.html" title="Compressió i descompressió pel mètode JPEG. ">JPEG</a>.  
+ <a href="classdomini_1_1algorithm_1_1JPEG.html#details">More...</a></p>
 <div class="dynheader">
 Collaboration diagram for domini.algorithm.JPEG:</div>
 <div class="dyncontent">
@@ -89,86 +90,471 @@ Collaboration diagram for domini.algorithm.JPEG:</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a9dce5a80ccc8b626758cb4ae0b93e056"><td class="memItemLeft" align="right" valign="top"><a id="a9dce5a80ccc8b626758cb4ae0b93e056"></a>
-&#160;</td><td class="memItemRight" valign="bottom"><b>JPEG</b> (String aux, boolean b)</td></tr>
+<tr class="memitem:a9dce5a80ccc8b626758cb4ae0b93e056"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classdomini_1_1algorithm_1_1JPEG.html#a9dce5a80ccc8b626758cb4ae0b93e056">JPEG</a> (String aux, boolean b)</td></tr>
+<tr class="memdesc:a9dce5a80ccc8b626758cb4ae0b93e056"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructor de la clase <a class="el" href="classdomini_1_1algorithm_1_1JPEG.html" title="Compressió i descompressió pel mètode JPEG. ">JPEG</a>.  <a href="#a9dce5a80ccc8b626758cb4ae0b93e056">More...</a><br /></td></tr>
 <tr class="separator:a9dce5a80ccc8b626758cb4ae0b93e056"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a4ba23333674aafc965dc90e077e4c2ab"><td class="memItemLeft" align="right" valign="top"><a id="a4ba23333674aafc965dc90e077e4c2ab"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>encode</b> (<a class="el" href="classpersistencia_1_1input_1_1Ctrl__Input__Img.html">Ctrl_Input_Img</a> in)</td></tr>
-<tr class="separator:a4ba23333674aafc965dc90e077e4c2ab"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ada412451f1905760bb3d528aaa24e4cb"><td class="memItemLeft" align="right" valign="top"><a id="ada412451f1905760bb3d528aaa24e4cb"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>decode</b> (<a class="el" href="classpersistencia_1_1input_1_1Ctrl__Input__JPEG.html">Ctrl_Input_JPEG</a> in)</td></tr>
-<tr class="separator:ada412451f1905760bb3d528aaa24e4cb"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-static-methods"></a>
-Static Public Member Functions</h2></td></tr>
-<tr class="memitem:a049a54398fe4b90620d0ac1ea1fdf780"><td class="memItemLeft" align="right" valign="top"><a id="a049a54398fe4b90620d0ac1ea1fdf780"></a>
-static void&#160;</td><td class="memItemRight" valign="bottom"><b>main</b> (String[] args)</td></tr>
-<tr class="separator:a049a54398fe4b90620d0ac1ea1fdf780"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pac-static-methods"></a>
-Static Package Functions</h2></td></tr>
-<tr class="memitem:a7c22a7a65763bf92181473df447f72c8"><td class="memItemLeft" align="right" valign="top"><a id="a7c22a7a65763bf92181473df447f72c8"></a>
-static int&#160;</td><td class="memItemRight" valign="bottom"><b>get_entropy1_code</b> (int runlength, int size)</td></tr>
-<tr class="separator:a7c22a7a65763bf92181473df447f72c8"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9a60945af9ce8de6086bd5dfa386f175"><td class="memItemLeft" align="right" valign="top"><a id="a9a60945af9ce8de6086bd5dfa386f175"></a>
-static int&#160;</td><td class="memItemRight" valign="bottom"><b>get_runlength_from_entropy1</b> (int code)</td></tr>
-<tr class="separator:a9a60945af9ce8de6086bd5dfa386f175"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a8d1005fb7833d36a064afb1c5e15bbd3"><td class="memItemLeft" align="right" valign="top"><a id="a8d1005fb7833d36a064afb1c5e15bbd3"></a>
-static int&#160;</td><td class="memItemRight" valign="bottom"><b>get_size_from_entropy1</b> (int code)</td></tr>
-<tr class="separator:a8d1005fb7833d36a064afb1c5e15bbd3"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:affccb19b13041ba0549beb9a5986c0f1"><td class="memItemLeft" align="right" valign="top"><a id="affccb19b13041ba0549beb9a5986c0f1"></a>
-static int&#160;</td><td class="memItemRight" valign="bottom"><b>get_entropy2_size</b> (int value)</td></tr>
-<tr class="separator:affccb19b13041ba0549beb9a5986c0f1"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac2a5593f3f9baa1ce4065d2f89194611"><td class="memItemLeft" align="right" valign="top"><a id="ac2a5593f3f9baa1ce4065d2f89194611"></a>
-static int&#160;</td><td class="memItemRight" valign="bottom"><b>get_entropy2_code</b> (int value)</td></tr>
-<tr class="separator:ac2a5593f3f9baa1ce4065d2f89194611"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a457ac869c214dffce8a78c0c14c4bf8b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classdomini_1_1algorithm_1_1JPEG.html#a457ac869c214dffce8a78c0c14c4bf8b">Compressor</a> (<a class="el" href="classpersistencia_1_1input_1_1Ctrl__Input__Img.html">Ctrl_Input_Img</a> in)</td></tr>
+<tr class="memdesc:a457ac869c214dffce8a78c0c14c4bf8b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Comprimim un text amb l'algoritme <a class="el" href="classdomini_1_1algorithm_1_1JPEG.html" title="Compressió i descompressió pel mètode JPEG. ">JPEG</a>.  <a href="#a457ac869c214dffce8a78c0c14c4bf8b">More...</a><br /></td></tr>
+<tr class="separator:a457ac869c214dffce8a78c0c14c4bf8b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af78f9030854c1823d28f34f2205d6740"><td class="memItemLeft" align="right" valign="top"><a id="af78f9030854c1823d28f34f2205d6740"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>Decompressor</b> (<a class="el" href="classpersistencia_1_1input_1_1Ctrl__Input__JPEG.html">Ctrl_Input_JPEG</a> in)</td></tr>
+<tr class="separator:af78f9030854c1823d28f34f2205d6740"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a02fa1a8d05204b71cf6d5e8d6bbd3d2b"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classpersistencia_1_1output_1_1Ctrl__Output.html">Ctrl_Output</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classdomini_1_1algorithm_1_1JPEG.html#a02fa1a8d05204b71cf6d5e8d6bbd3d2b">print</a> ()</td></tr>
+<tr class="memdesc:a02fa1a8d05204b71cf6d5e8d6bbd3d2b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Retorna el Ctrl_Output.  <a href="#a02fa1a8d05204b71cf6d5e8d6bbd3d2b">More...</a><br /></td></tr>
+<tr class="separator:a02fa1a8d05204b71cf6d5e8d6bbd3d2b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pac-attribs"></a>
 Package Attributes</h2></td></tr>
-<tr class="memitem:a2512a38136dac55fa5dbbfc8f0ae822d"><td class="memItemLeft" align="right" valign="top"><a id="a2512a38136dac55fa5dbbfc8f0ae822d"></a>
-<a class="el" href="classpersistencia_1_1output_1_1Ctrl__Output.html">Ctrl_Output</a>&#160;</td><td class="memItemRight" valign="bottom"><b>out</b></td></tr>
+<tr class="memitem:a2512a38136dac55fa5dbbfc8f0ae822d"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classpersistencia_1_1output_1_1Ctrl__Output.html">Ctrl_Output</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classdomini_1_1algorithm_1_1JPEG.html#a2512a38136dac55fa5dbbfc8f0ae822d">out</a></td></tr>
 <tr class="separator:a2512a38136dac55fa5dbbfc8f0ae822d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a68d523efc6a9dfb3dd2edec0bbb79b48"><td class="memItemLeft" align="right" valign="top"><a id="a68d523efc6a9dfb3dd2edec0bbb79b48"></a>
-String&#160;</td><td class="memItemRight" valign="bottom"><b>path</b></td></tr>
+<tr class="memitem:a68d523efc6a9dfb3dd2edec0bbb79b48"><td class="memItemLeft" align="right" valign="top">String&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classdomini_1_1algorithm_1_1JPEG.html#a68d523efc6a9dfb3dd2edec0bbb79b48">path</a></td></tr>
 <tr class="separator:a68d523efc6a9dfb3dd2edec0bbb79b48"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a3ff24cf46363c31ffa24e3604bf3ced8"><td class="memItemLeft" align="right" valign="top"><a id="a3ff24cf46363c31ffa24e3604bf3ced8"></a>
-boolean&#160;</td><td class="memItemRight" valign="bottom"><b>decode_or_encode</b></td></tr>
+<tr class="memitem:a3ff24cf46363c31ffa24e3604bf3ced8"><td class="memItemLeft" align="right" valign="top">boolean&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classdomini_1_1algorithm_1_1JPEG.html#a3ff24cf46363c31ffa24e3604bf3ced8">decode_or_encode</a></td></tr>
 <tr class="separator:a3ff24cf46363c31ffa24e3604bf3ced8"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aacc6445baa7819e3f9139ffb78e0b8f4"><td class="memItemLeft" align="right" valign="top"><a id="aacc6445baa7819e3f9139ffb78e0b8f4"></a>
-<a class="el" href="classdomini_1_1algorithm_1_1Huffman.html">Huffman</a>&#160;</td><td class="memItemRight" valign="bottom"><b>huff</b></td></tr>
+<tr class="memitem:aacc6445baa7819e3f9139ffb78e0b8f4"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classdomini_1_1algorithm_1_1Huffman.html">Huffman</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classdomini_1_1algorithm_1_1JPEG.html#aacc6445baa7819e3f9139ffb78e0b8f4">huff</a></td></tr>
 <tr class="separator:aacc6445baa7819e3f9139ffb78e0b8f4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-static-methods"></a>
 Static Private Member Functions</h2></td></tr>
-<tr class="memitem:a26704d0281063c49a1c005e0496220a7"><td class="memItemLeft" align="right" valign="top"><a id="a26704d0281063c49a1c005e0496220a7"></a>
-static int&#160;</td><td class="memItemRight" valign="bottom"><b>round</b> (double x)</td></tr>
-<tr class="separator:a26704d0281063c49a1c005e0496220a7"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af93979340e9745708d2e2d41ded34419"><td class="memItemLeft" align="right" valign="top"><a id="af93979340e9745708d2e2d41ded34419"></a>
-static double&#160;</td><td class="memItemRight" valign="bottom"><b>force255</b> (double x)</td></tr>
-<tr class="separator:af93979340e9745708d2e2d41ded34419"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa9c52789d61d5eebdeb13ee39f8e817d"><td class="memItemLeft" align="right" valign="top">static int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classdomini_1_1algorithm_1_1JPEG.html#aa9c52789d61d5eebdeb13ee39f8e817d">round</a> (double x)</td></tr>
+<tr class="memdesc:aa9c52789d61d5eebdeb13ee39f8e817d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Arrodoneix un número real.  <a href="#aa9c52789d61d5eebdeb13ee39f8e817d">More...</a><br /></td></tr>
+<tr class="separator:aa9c52789d61d5eebdeb13ee39f8e817d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af86bdbb6b6f5671abff6bc6bd5f6349d"><td class="memItemLeft" align="right" valign="top">static double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classdomini_1_1algorithm_1_1JPEG.html#af86bdbb6b6f5671abff6bc6bd5f6349d">force255</a> (double x)</td></tr>
+<tr class="memdesc:af86bdbb6b6f5671abff6bc6bd5f6349d"><td class="mdescLeft">&#160;</td><td class="mdescRight">és la funcí alfa de DCT.  <a href="#af86bdbb6b6f5671abff6bc6bd5f6349d">More...</a><br /></td></tr>
+<tr class="separator:af86bdbb6b6f5671abff6bc6bd5f6349d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a058b0ee7eb44bbaec4078b5fc32c5107"><td class="memItemLeft" align="right" valign="top"><a id="a058b0ee7eb44bbaec4078b5fc32c5107"></a>
 static double&#160;</td><td class="memItemRight" valign="bottom"><b>alpha</b> (int x)</td></tr>
 <tr class="separator:a058b0ee7eb44bbaec4078b5fc32c5107"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae089373d26fecc912f954a1d921c79d9"><td class="memItemLeft" align="right" valign="top"><a id="ae089373d26fecc912f954a1d921c79d9"></a>
-static void&#160;</td><td class="memItemRight" valign="bottom"><b>discrete_cosine_transform</b> (double[][] mat1)</td></tr>
-<tr class="separator:ae089373d26fecc912f954a1d921c79d9"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a7d71cc9f6447cd36189a30eafe10314e"><td class="memItemLeft" align="right" valign="top"><a id="a7d71cc9f6447cd36189a30eafe10314e"></a>
-static void&#160;</td><td class="memItemRight" valign="bottom"><b>inverse_discrete_cosine_transform</b> (double[][] mat1)</td></tr>
-<tr class="separator:a7d71cc9f6447cd36189a30eafe10314e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a6abdee6c1601b4b11b5dfa7cfe531ca0"><td class="memItemLeft" align="right" valign="top"><a id="a6abdee6c1601b4b11b5dfa7cfe531ca0"></a>
-static int&#160;</td><td class="memItemRight" valign="bottom"><b>get_value_from_entropy2</b> (int code, int size)</td></tr>
-<tr class="separator:a6abdee6c1601b4b11b5dfa7cfe531ca0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a367e6d1e6543bf3d8c847aae36f4b6bf"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classdomini_1_1algorithm_1_1JPEG.html#a367e6d1e6543bf3d8c847aae36f4b6bf">discrete_cosine_transform</a> (double[][] mat1)</td></tr>
+<tr class="memdesc:a367e6d1e6543bf3d8c847aae36f4b6bf"><td class="mdescLeft">&#160;</td><td class="mdescRight">aplica discrete cosine transform (DCT) a una matriu 8x8  <a href="#a367e6d1e6543bf3d8c847aae36f4b6bf">More...</a><br /></td></tr>
+<tr class="separator:a367e6d1e6543bf3d8c847aae36f4b6bf"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3a6e16b0ee34746e4b0118ed9107bd75"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classdomini_1_1algorithm_1_1JPEG.html#a3a6e16b0ee34746e4b0118ed9107bd75">inverse_discrete_cosine_transform</a> (double[][] mat1)</td></tr>
+<tr class="memdesc:a3a6e16b0ee34746e4b0118ed9107bd75"><td class="mdescLeft">&#160;</td><td class="mdescRight">aplica discrete cosine transform (DCT) inversa a una matriu 8x8  <a href="#a3a6e16b0ee34746e4b0118ed9107bd75">More...</a><br /></td></tr>
+<tr class="separator:a3a6e16b0ee34746e4b0118ed9107bd75"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0f897c6c525d81551539df1eb8db7e12"><td class="memItemLeft" align="right" valign="top"><a id="a0f897c6c525d81551539df1eb8db7e12"></a>
+static int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classdomini_1_1algorithm_1_1JPEG.html#a0f897c6c525d81551539df1eb8db7e12">get_entropy1_code</a> (int runlength, int size)</td></tr>
+<tr class="memdesc:a0f897c6c525d81551539df1eb8db7e12"><td class="mdescLeft">&#160;</td><td class="mdescRight">codifica runlength i size en el simbol1 de Entropy Coding <br /></td></tr>
+<tr class="separator:a0f897c6c525d81551539df1eb8db7e12"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac58cb434a7acfd90fc8e548fd7c00ae2"><td class="memItemLeft" align="right" valign="top">static int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classdomini_1_1algorithm_1_1JPEG.html#ac58cb434a7acfd90fc8e548fd7c00ae2">get_runlength_from_entropy1</a> (int code)</td></tr>
+<tr class="memdesc:ac58cb434a7acfd90fc8e548fd7c00ae2"><td class="mdescLeft">&#160;</td><td class="mdescRight">retorna el runlength codificat en un simbol1 de Entropy Coding  <a href="#ac58cb434a7acfd90fc8e548fd7c00ae2">More...</a><br /></td></tr>
+<tr class="separator:ac58cb434a7acfd90fc8e548fd7c00ae2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8d1005fb7833d36a064afb1c5e15bbd3"><td class="memItemLeft" align="right" valign="top"><a id="a8d1005fb7833d36a064afb1c5e15bbd3"></a>
+static int&#160;</td><td class="memItemRight" valign="bottom"><b>get_size_from_entropy1</b> (int code)</td></tr>
+<tr class="separator:a8d1005fb7833d36a064afb1c5e15bbd3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa9bc9bee7181efee254be843e23ee2c6"><td class="memItemLeft" align="right" valign="top"><a id="aa9bc9bee7181efee254be843e23ee2c6"></a>
+static int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classdomini_1_1algorithm_1_1JPEG.html#aa9bc9bee7181efee254be843e23ee2c6">get_entropy2_size</a> (int value)</td></tr>
+<tr class="memdesc:aa9bc9bee7181efee254be843e23ee2c6"><td class="mdescLeft">&#160;</td><td class="mdescRight">codifica value en el symbol2 de Entropy Coding i en retorna la mida <br /></td></tr>
+<tr class="separator:aa9bc9bee7181efee254be843e23ee2c6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0ccbcda5311dc96a30e5cb7f2a5b95b5"><td class="memItemLeft" align="right" valign="top"><a id="a0ccbcda5311dc96a30e5cb7f2a5b95b5"></a>
+static int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classdomini_1_1algorithm_1_1JPEG.html#a0ccbcda5311dc96a30e5cb7f2a5b95b5">get_entropy2_code</a> (int value)</td></tr>
+<tr class="memdesc:a0ccbcda5311dc96a30e5cb7f2a5b95b5"><td class="mdescLeft">&#160;</td><td class="mdescRight">retorna la codifiacació en el simbol2 de Entropy Coding d'un cert valor <br /></td></tr>
+<tr class="separator:a0ccbcda5311dc96a30e5cb7f2a5b95b5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a41c69fe2e29999dd17a555859df22530"><td class="memItemLeft" align="right" valign="top"><a id="a41c69fe2e29999dd17a555859df22530"></a>
+static int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classdomini_1_1algorithm_1_1JPEG.html#a41c69fe2e29999dd17a555859df22530">get_value_from_entropy2</a> (int code, int size)</td></tr>
+<tr class="memdesc:a41c69fe2e29999dd17a555859df22530"><td class="mdescLeft">&#160;</td><td class="mdescRight">retorna el valor codificat en un codi d'una determinada mida <br /></td></tr>
+<tr class="separator:a41c69fe2e29999dd17a555859df22530"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-static-attribs"></a>
 Static Private Attributes</h2></td></tr>
-<tr class="memitem:a7c95eb140dbe185a31b402d48ec17a66"><td class="memItemLeft" align="right" valign="top">static int [][]&#160;</td><td class="memItemRight" valign="bottom"><b>quantization_matrix</b></td></tr>
+<tr class="memitem:a7c95eb140dbe185a31b402d48ec17a66"><td class="memItemLeft" align="right" valign="top">static int [][]&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classdomini_1_1algorithm_1_1JPEG.html#a7c95eb140dbe185a31b402d48ec17a66">quantization_matrix</a></td></tr>
 <tr class="separator:a7c95eb140dbe185a31b402d48ec17a66"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a7d3829cbffd758c087341a8da13dd2ca"><td class="memItemLeft" align="right" valign="top">static int []&#160;</td><td class="memItemRight" valign="bottom"><b>zigZag_X</b></td></tr>
+<tr class="memitem:a7d3829cbffd758c087341a8da13dd2ca"><td class="memItemLeft" align="right" valign="top">static int []&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classdomini_1_1algorithm_1_1JPEG.html#a7d3829cbffd758c087341a8da13dd2ca">zigZag_X</a></td></tr>
 <tr class="separator:a7d3829cbffd758c087341a8da13dd2ca"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad886d8aa00a40cb151b446534f0d1bcc"><td class="memItemLeft" align="right" valign="top">static int []&#160;</td><td class="memItemRight" valign="bottom"><b>zigZag_Y</b></td></tr>
+<tr class="memitem:ad886d8aa00a40cb151b446534f0d1bcc"><td class="memItemLeft" align="right" valign="top">static int []&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classdomini_1_1algorithm_1_1JPEG.html#ad886d8aa00a40cb151b446534f0d1bcc">zigZag_Y</a></td></tr>
 <tr class="separator:ad886d8aa00a40cb151b446534f0d1bcc"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>Compressió i descompressió pel mètode <a class="el" href="classdomini_1_1algorithm_1_1JPEG.html" title="Compressió i descompressió pel mètode JPEG. ">JPEG</a>. </p>
+<dl class="section author"><dt>Author</dt><dd>Joan Lapeyra Amat </dd></dl>
+</div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a id="a9dce5a80ccc8b626758cb4ae0b93e056"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9dce5a80ccc8b626758cb4ae0b93e056">&#9670;&nbsp;</a></span>JPEG()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">domini.algorithm.JPEG.JPEG </td>
+          <td>(</td>
+          <td class="paramtype">String&#160;</td>
+          <td class="paramname"><em>aux</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">boolean&#160;</td>
+          <td class="paramname"><em>b</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Constructor de la clase <a class="el" href="classdomini_1_1algorithm_1_1JPEG.html" title="Compressió i descompressió pel mètode JPEG. ">JPEG</a>. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">aux</td><td>Path de sortida </td></tr>
+    <tr><td class="paramname">b</td><td>False si estas comprimint, True si estas descomprimint </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<h2 class="groupheader">Member Function Documentation</h2>
+<a id="a457ac869c214dffce8a78c0c14c4bf8b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a457ac869c214dffce8a78c0c14c4bf8b">&#9670;&nbsp;</a></span>Compressor()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">public void domini.algorithm.JPEG.Compressor </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classpersistencia_1_1input_1_1Ctrl__Input__Img.html">Ctrl_Input_Img</a>&#160;</td>
+          <td class="paramname"><em>in</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Comprimim un text amb l'algoritme <a class="el" href="classdomini_1_1algorithm_1_1JPEG.html" title="Compressió i descompressió pel mètode JPEG. ">JPEG</a>. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">in</td><td>accés al Controlador d'Input del fitxer a comprimir </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a367e6d1e6543bf3d8c847aae36f4b6bf"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a367e6d1e6543bf3d8c847aae36f4b6bf">&#9670;&nbsp;</a></span>discrete_cosine_transform()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">private static void domini.algorithm.JPEG.discrete_cosine_transform </td>
+          <td>(</td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>mat1</em>[][]</td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>aplica discrete cosine transform (DCT) a una matriu 8x8 </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">mat1</td><td>és la matriu 8x8 a la qual s'aplica DCT </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="af86bdbb6b6f5671abff6bc6bd5f6349d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af86bdbb6b6f5671abff6bc6bd5f6349d">&#9670;&nbsp;</a></span>force255()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">private double domini.algorithm.JPEG.force255 </td>
+          <td>(</td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>x</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>és la funcí alfa de DCT. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">x</td><td>és un real </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>el real més proper a x de l'interval [0..255] </dd></dl>
+
+</div>
+</div>
+<a id="ac58cb434a7acfd90fc8e548fd7c00ae2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac58cb434a7acfd90fc8e548fd7c00ae2">&#9670;&nbsp;</a></span>get_runlength_from_entropy1()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">private static int domini.algorithm.JPEG.get_runlength_from_entropy1 </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>code</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>retorna el runlength codificat en un simbol1 de Entropy Coding </p>
+<p>retorna la mida codificada en un simbol1 de Entropy Coding </p>
+
+</div>
+</div>
+<a id="a3a6e16b0ee34746e4b0118ed9107bd75"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3a6e16b0ee34746e4b0118ed9107bd75">&#9670;&nbsp;</a></span>inverse_discrete_cosine_transform()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">private static void domini.algorithm.JPEG.inverse_discrete_cosine_transform </td>
+          <td>(</td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>mat1</em>[][]</td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>aplica discrete cosine transform (DCT) inversa a una matriu 8x8 </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">mat1</td><td>és la matriu 8x8 a la qual s'aplica DCT inversa </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a02fa1a8d05204b71cf6d5e8d6bbd3d2b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a02fa1a8d05204b71cf6d5e8d6bbd3d2b">&#9670;&nbsp;</a></span>print()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">public <a class="el" href="classpersistencia_1_1output_1_1Ctrl__Output.html">Ctrl_Output</a> domini.algorithm.JPEG.print </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Retorna el Ctrl_Output. </p>
+<dl class="section return"><dt>Returns</dt><dd>Retorna el Ctrl_Output on està l'arxiu comprimit o descomprimit. </dd></dl>
+
+</div>
+</div>
+<a id="aa9c52789d61d5eebdeb13ee39f8e817d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa9c52789d61d5eebdeb13ee39f8e817d">&#9670;&nbsp;</a></span>round()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">private static int domini.algorithm.JPEG.round </td>
+          <td>(</td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>x</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Arrodoneix un número real. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">x</td><td>és el real </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>l'enter més pròxim a x </dd></dl>
+
+</div>
+</div>
 <h2 class="groupheader">Member Data Documentation</h2>
+<a id="a3ff24cf46363c31ffa24e3604bf3ced8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3ff24cf46363c31ffa24e3604bf3ced8">&#9670;&nbsp;</a></span>decode_or_encode</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">boolean domini.algorithm.JPEG.decode_or_encode</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">package</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">decode_or_encode</td><td>indica si és compressió (true) o descompressió (false) </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="aacc6445baa7819e3f9139ffb78e0b8f4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aacc6445baa7819e3f9139ffb78e0b8f4">&#9670;&nbsp;</a></span>huff</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classdomini_1_1algorithm_1_1Huffman.html">Huffman</a> domini.algorithm.JPEG.huff</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">package</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">huff</td><td>és la codificació de huffman utilitzat a Entropy Conding </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a2512a38136dac55fa5dbbfc8f0ae822d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2512a38136dac55fa5dbbfc8f0ae822d">&#9670;&nbsp;</a></span>out</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classpersistencia_1_1output_1_1Ctrl__Output.html">Ctrl_Output</a> domini.algorithm.JPEG.out</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">package</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">out</td><td>és utilitxat per emmegatzemar la compressió o descompressió. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a68d523efc6a9dfb3dd2edec0bbb79b48"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a68d523efc6a9dfb3dd2edec0bbb79b48">&#9670;&nbsp;</a></span>path</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">String domini.algorithm.JPEG.path</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">package</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">path</td><td>és el path de sortida. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
 <a id="a7c95eb140dbe185a31b402d48ec17a66"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a7c95eb140dbe185a31b402d48ec17a66">&#9670;&nbsp;</a></span>quantization_matrix</h2>
 
@@ -188,7 +574,13 @@ Static Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
-<b>Initial value:</b><div class="fragment"><div class="line">=</div><div class="line">    {</div><div class="line">        {16, 11, 10, 16, 24, 40, 51, 61},</div><div class="line">        {12, 12, 14, 19, 26, 58, 60, 55},</div><div class="line">        {14, 13, 16, 24, 40, 57, 69, 56},</div><div class="line">        {14, 17, 22, 29, 51, 87, 80, 62},</div><div class="line">        {18, 22, 37, 56, 68, 109, 103, 77},</div><div class="line">        {24, 35, 55, 64, 81, 104, 113, 92},</div><div class="line">        {49, 64, 78, 87, 103, 121, 120, 101},</div><div class="line">        {72, 92, 95, 98, 112, 100, 103, 99}</div><div class="line">    }</div></div><!-- fragment -->
+<b>Initial value:</b><div class="fragment"><div class="line">=</div><div class="line">    {</div><div class="line">        {16, 11, 10, 16, 24, 40, 51, 61},</div><div class="line">        {12, 12, 14, 19, 26, 58, 60, 55},</div><div class="line">        {14, 13, 16, 24, 40, 57, 69, 56},</div><div class="line">        {14, 17, 22, 29, 51, 87, 80, 62},</div><div class="line">        {18, 22, 37, 56, 68, 109, 103, 77},</div><div class="line">        {24, 35, 55, 64, 81, 104, 113, 92},</div><div class="line">        {49, 64, 78, 87, 103, 121, 120, 101},</div><div class="line">        {72, 92, 95, 98, 112, 100, 103, 99}</div><div class="line">    }</div></div><!-- fragment --><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">quantization_matrix</td><td>és la matriu de quantització </td></tr>
+  </table>
+  </dd>
+</dl>
+
 </div>
 </div>
 <a id="a7d3829cbffd758c087341a8da13dd2ca"></a>
@@ -210,7 +602,13 @@ Static Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
-<b>Initial value:</b><div class="fragment"><div class="line">= {</div><div class="line">        0,</div><div class="line">        0, 1,</div><div class="line">        2, 1, 0,</div><div class="line">        0, 1, 2, 3, </div><div class="line">        4, 3, 2, 1, 0,</div><div class="line">        0, 1, 2, 3, 4, 5,</div><div class="line">        6, 5, 4, 3, 2, 1, 0,</div><div class="line">        0, 1, 2, 3, 4, 5, 6, 7,</div><div class="line">        7, 6, 5, 4, 3, 2, 1,</div><div class="line">        2, 3, 4, 5, 6, 7,</div><div class="line">        7, 6, 5, 4, 3,</div><div class="line">        4, 5, 6, 7, </div><div class="line">        7, 6, 5,</div><div class="line">        6, 7,</div><div class="line">        7</div><div class="line">    }</div></div><!-- fragment -->
+<b>Initial value:</b><div class="fragment"><div class="line">= {</div><div class="line">        0,</div><div class="line">        0, 1,</div><div class="line">        2, 1, 0,</div><div class="line">        0, 1, 2, 3, </div><div class="line">        4, 3, 2, 1, 0,</div><div class="line">        0, 1, 2, 3, 4, 5,</div><div class="line">        6, 5, 4, 3, 2, 1, 0,</div><div class="line">        0, 1, 2, 3, 4, 5, 6, 7,</div><div class="line">        7, 6, 5, 4, 3, 2, 1,</div><div class="line">        2, 3, 4, 5, 6, 7,</div><div class="line">        7, 6, 5, 4, 3,</div><div class="line">        4, 5, 6, 7, </div><div class="line">        7, 6, 5,</div><div class="line">        6, 7,</div><div class="line">        7</div><div class="line">    }</div></div><!-- fragment --><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">zigZag_X[i]</td><td>és la fila que es cnsulta a la ièssima iteració d'un recorregut en zigzag d'una matriu 8x8 </td></tr>
+  </table>
+  </dd>
+</dl>
+
 </div>
 </div>
 <a id="ad886d8aa00a40cb151b446534f0d1bcc"></a>
@@ -232,7 +630,13 @@ Static Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
-<b>Initial value:</b><div class="fragment"><div class="line">= {</div><div class="line">        0,</div><div class="line">        1, 0,</div><div class="line">        0, 1, 2,</div><div class="line">        3, 2, 1, 0,</div><div class="line">        0, 1, 2, 3, 4,</div><div class="line">        5, 4, 3, 2, 1, 0,</div><div class="line">        0, 1, 2, 3, 4, 5, 6,</div><div class="line">        7, 6, 5, 4, 3, 2, 1, 0,</div><div class="line">        1, 2, 3, 4, 5, 6, 7,</div><div class="line">        7, 6, 5, 4, 3, 2,</div><div class="line">        3, 4, 5, 6, 7,</div><div class="line">        7, 6, 5, 4,</div><div class="line">        5, 6, 7,</div><div class="line">        7, 6,</div><div class="line">        7</div><div class="line">    }</div></div><!-- fragment -->
+<b>Initial value:</b><div class="fragment"><div class="line">= {</div><div class="line">        0,</div><div class="line">        1, 0,</div><div class="line">        0, 1, 2,</div><div class="line">        3, 2, 1, 0,</div><div class="line">        0, 1, 2, 3, 4,</div><div class="line">        5, 4, 3, 2, 1, 0,</div><div class="line">        0, 1, 2, 3, 4, 5, 6,</div><div class="line">        7, 6, 5, 4, 3, 2, 1, 0,</div><div class="line">        1, 2, 3, 4, 5, 6, 7,</div><div class="line">        7, 6, 5, 4, 3, 2,</div><div class="line">        3, 4, 5, 6, 7,</div><div class="line">        7, 6, 5, 4,</div><div class="line">        5, 6, 7,</div><div class="line">        7, 6,</div><div class="line">        7</div><div class="line">    }</div></div><!-- fragment --><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">zigZag_Y[i]</td><td>és la columna que es cnsulta a la ièssima iteració d'un recorregut en zigzag d'una matriu 8x8 </td></tr>
+  </table>
+  </dd>
+</dl>
+
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following file:<ul>

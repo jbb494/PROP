@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['end',['end',['../classdomini_1_1estadistica_1_1Estadistica.html#ae99e664f0569e308009ec7ca32864006',1,'domini.estadistica.Estadistica.end()'],['../classdomini_1_1utils_1_1ArrayCircular.html#ad3f40ecb62a2503382fa5d1fa2025912',1,'domini.utils.ArrayCircular.end()'],['../classpersistencia_1_1input_1_1Input.html#aa986cd4af0178e1a80f551dcd8936125',1,'persistencia.input.Input.end()']]],
-  ['extensio',['Extensio',['../classpersistencia_1_1input_1_1Ctrl__Input.html#a6041b56aa31f01f75d02382f98e259e5',1,'persistencia::input::Ctrl_Input']]]
+  ['decode_5for_5fencode',['decode_or_encode',['../classdomini_1_1algorithm_1_1JPEG.html#a3ff24cf46363c31ffa24e3604bf3ced8',1,'domini::algorithm::JPEG']]],
+  ['despl',['despl',['../classdomini_1_1utils_1_1IntorByte.html#a83872b8acc9ab187acbc2175d5bf320e',1,'domini::utils::IntorByte']]]
 ];

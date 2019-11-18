@@ -1,6 +1,4 @@
 var searchData=
 [
-  ['c',['c',['../classdomini_1_1utils_1_1Node.html#a2fbef2557db813ae02a2d52032eaa6e1',1,'domini::utils::Node']]],
-  ['caracter',['caracter',['../classdomini_1_1utils_1_1IntorByte.html#adbb2e8c31ead2f27d85ff39683b9a8a7',1,'domini::utils::IntorByte']]],
-  ['children',['children',['../classdomini_1_1utils_1_1TrieNode.html#ae64d9c12696f526eecb3ff15aa290640',1,'domini::utils::TrieNode']]]
+  ['bits_5fper_5fval',['bits_per_val',['../classpersistencia_1_1input_1_1Ctrl__Input__Img.html#a222ad0e7d241e5f396cf67c3b760f143',1,'persistencia.input.Ctrl_Input_Img.bits_per_val()'],['../classpersistencia_1_1output_1_1Ctrl__Output__Img.html#ad40e63d16abd9058889249f5ad84f200',1,'persistencia.output.Ctrl_Output_Img.bits_per_val()']]]
 ];

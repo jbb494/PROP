@@ -10,11 +10,11 @@ Clase de \hyperlink{classdomini_1_1utils_1_1Trie}{Trie}.
 \item 
 \mbox{\Hypertarget{classdomini_1_1utils_1_1Trie_aa47b21b235e9dab115f3f97726837d5f}\label{classdomini_1_1utils_1_1Trie_aa47b21b235e9dab115f3f97726837d5f}} 
 \hyperlink{classdomini_1_1utils_1_1Trie_aa47b21b235e9dab115f3f97726837d5f}{Trie} ()
-\begin{DoxyCompactList}\small\item\em Constructor de la classe. \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em Constructor de la clase. \end{DoxyCompactList}\item 
 void \hyperlink{classdomini_1_1utils_1_1Trie_a3599001d9b056f0b54ab7eabb9d3510b}{insert} (Array\+List$<$ T $>$ list, Integer index)
 \begin{DoxyCompactList}\small\item\em Inserta al \hyperlink{classdomini_1_1utils_1_1Trie}{Trie} una lista de bytes con un indice. \end{DoxyCompactList}\item 
 Integer \hyperlink{classdomini_1_1utils_1_1Trie_a5c30e36df9ab804bbc054805358ecf2a}{index\+Node} (Array\+List$<$ T $>$ list)
-\begin{DoxyCompactList}\small\item\em Devuelve el indice de la lista. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Devuelve el indice de la seqüencia de carácteres. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Private Attributes}
 \begin{DoxyCompactItemize}
 \item 
@@ -25,7 +25,7 @@ Integer \hyperlink{classdomini_1_1utils_1_1Trie_a5c30e36df9ab804bbc054805358ecf2
 \subsection{Detailed Description}
 Clase de \hyperlink{classdomini_1_1utils_1_1Trie}{Trie}. 
 
-Esta clase es una implemnetación general de la estructura de datos \hyperlink{classdomini_1_1utils_1_1Trie}{Trie}. Usa \hyperlink{classdomini_1_1utils_1_1TrieNode}{Trie\+Node} como nodos.
+Esta clase es una implementación general de la estructura de datos \hyperlink{classdomini_1_1utils_1_1Trie}{Trie}. Cada nodo representa una seqüencias de carácetres. Cada conexión entre nodos (padre-\/hijo), representa un carácter. Y un nodo es la seqüencia de carácteres desde él hasta la raiz. Además, cada nodo tiene un entero que identifica su seqüencia. (esto será útil para el compresor)
 
 \begin{DoxyAuthor}{Author}
 Joan Bellavista 
@@ -41,7 +41,7 @@ Joan Bellavista
 
 
 
-Devuelve el indice de la lista. 
+Devuelve el indice de la seqüencia de carácteres. 
 
 
 \begin{DoxyParams}{Parameters}
@@ -79,7 +79,7 @@ Inserta al \hyperlink{classdomini_1_1utils_1_1Trie}{Trie} una lista de bytes con
 
 
 \begin{DoxyParams}{Parameters}
-{\em root} & Arrel de l\textquotesingle{}arbre \\
+{\em root} & Raiz del árbol \\
 \hline
 \end{DoxyParams}
 
