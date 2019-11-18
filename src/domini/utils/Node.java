@@ -2,14 +2,14 @@ package domini.utils;
 
 /**
  * @class Node
- * @brief Representa un node
+ * @brief Representa un node emprat per la representació de cadenes de caràcters.
  * @author Miguel Paracuellos Ocaña
  */
 public class Node {
     //Attributes
     
     /**
-     * @param First Primer valor que accedeix a aquest node
+     * @param First Primer valor que accedeix a la seqüencia de caracters representada per aquest node
      */
     Integer First;
 

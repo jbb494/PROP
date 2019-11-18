@@ -4,7 +4,10 @@ import java.util.ArrayList;
 
 /**
  * @class Dict_Decode
- * @brief Diccionari (amb els mètodes corresponents) emprat per a la descompressió amb LZW
+ * @brief Diccionari (amb els mètodes corresponents) emprat per a la descompressió.
+ *
+ * Estructura de dades on cada posició indicarà una seqüencia de bytes b0,b1,...,bn-1,bn. El primer valor indica 
+ * la posició del següent bytes de la subcadena b0,...,bn-1 mentre que el segon valor és bn. 
  * @author Miguel Paracuellos Ocaña
  */
 public class Dict_Decode {
@@ -15,7 +18,7 @@ public class Dict_Decode {
     final Integer Limit = Integer.MAX_VALUE;
     /**
      * @param v Diccionari de la classe
-     * @brief Cada element consta d'un caràcter i un index de la seqüència previa al caràcter
+     * @brief Cada element consta d'un byte i un index de la posició de la seqüència previa al byte actual
      */
     ArrayList<Pair<Integer,Byte> > v;
     Integer valorNeutre;
@@ -34,7 +37,7 @@ public class Dict_Decode {
 
     /**
      * @brief Reinicialitza el vector
-     * @note Es crida quan sigui ple o sigui creat
+     * @note Es crida quan sigui ple o si es instanciat a la construcció.
      * @param b Es true si volem inicialitzar el diccionari amb la taula ASCII
      */
     public void reset_dictionary(Boolean b) {
@@ -79,7 +82,7 @@ public class Dict_Decode {
      * @fn public void add(Integer i, char c)
      * @brief Afegeix un element al vector de la classe
      * @param i Enter que representa la cadena previa
-     * @param c Caràcter actual
+     * @param c Byte actual
      */
     public void add(Integer i, byte c) {
         v.add( new Pair<Integer,Byte>(i,c) );

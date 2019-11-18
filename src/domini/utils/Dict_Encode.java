@@ -5,7 +5,11 @@ import java.util.ArrayList;
 
 /**
  * @class Dict_Encode
- * @brief Diccionari (amb els mètodes corresponents) emprat per a la compressió amb LZW
+ * @brief Diccionari (amb els mètodes corresponents) emprat per a la compressió.
+ * 
+ * Estructura de dades on cada posició representarà una seqüencia de bytes b0,b1,...,bn-1,bn. Per entendre com 
+ * es genera i s'obté aquesta seqüencia es recomanable mirar la descripció de la classe Node donat que es l'estructura
+ * de dades de cada posició del nostre Array. 
  * @author Miguel Paracuellos Ocaña
  */
 public class Dict_Encode {
@@ -48,10 +52,10 @@ public class Dict_Encode {
     //Functions
 
     /**
-     * @fn public Integer Ascii_value(char c)
-     * @brief Retorna el valor númeric d'un caràcter ASCII
-     * @param c Caràcter que volem passar a valor numeric
-     * @return Valor numeric del caràcter
+     * @fn public Integer Ascii_value(byte c)
+     * @brief Retorna el valor númeric d'un byte
+     * @param c byte que volem passar a valor numeric
+     * @return Valor numeric del byte
     */
     public Integer Ascii_value(byte c) {
         int x = (int) c;
@@ -60,11 +64,11 @@ public class Dict_Encode {
     }
 
     /**
-     * @fn public Integer search_and_insert_BST(Integer i, char c)
-     * @brief Cada cop que es crida es mira si ja tenim la combinació enter-char al diccionari
-     * @param i Enter que representa una cadena de caràcters
-     * @param c Caràcter actual
-     * @return Retorna l'enter que farà referència a la nova cadena de caràcters
+     * @fn public Integer search_and_insert_BST(Integer i, byte c)
+     * @brief Cada cop que es crida es mira si ja tenim la combinació enter-byte al diccionari
+     * @param i Enter que representa una cadena de byte
+     * @param c byte actual
+     * @return Retorna l'enter que farà referència a la nova cadena de byte
      */
     public Integer search_and_insert_BST(Integer i, byte c) {
         

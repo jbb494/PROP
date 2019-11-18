@@ -146,6 +146,7 @@ public class Ctrl_Output {
 
     /**
      * @fn public void printString()
+     * @brief Escriu el contingut de la classe per consola byte a byte (en format binari)
      */
     public void printString() {
         Output_Class.printString();
