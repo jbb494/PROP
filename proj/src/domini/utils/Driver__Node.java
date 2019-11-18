@@ -27,6 +27,12 @@ public class Driver__Node {
 		System.out.println("	 Input: 3");
 		System.out.println("	 4. Modify_First(Integer i) ");
 		System.out.println("	 Input: 4");
+		System.out.println("	 5. Return_Left() ");
+		System.out.println("	 Input: 5");
+		System.out.println("	 6. Return_Right() ");
+		System.out.println("	 Input: 6");
+		System.out.println("	 7. Return_First() ");
+		System.out.println("	 Input: 7");
 		System.out.println();
 
 		System.out.println("	 0. Sortir");
@@ -82,6 +88,14 @@ public class Driver__Node {
 					i = Integer.parseInt(aux4);
 					node.Modify_First(i);
 				break;
+				case "5":
+					System.out.println("El valor de Left es " + node.Left);
+				break;
+				case "6":
+					System.out.println("El valor de Right es " + node.Right);
+				break;
+				case "7":
+					System.out.println("El valor de First es " + node.First);
 				case "0":
 					return;
 				default:

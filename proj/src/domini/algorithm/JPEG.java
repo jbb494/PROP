@@ -1,19 +1,42 @@
 package domini.algorithm;
 
-import java.util.ArrayList;
 
+import persistencia.input.Ctrl_Input_Img;
+import persistencia.input.Ctrl_Input_JPEG;
+import persistencia.output.Ctrl_Output;
+import persistencia.output.Ctrl_Output_Img;
 
-import persistencia.input.*;
-import persistencia.output.*;
-
+/**
+ * @class JPEG
+ * @brief Compressió i descompressió pel mètode JPEG
+ * 
+ * @author Joan Lapeyra Amat
+ */
 public class JPEG {
 
+	/**
+	 *  @param out és utilitxat per emmegatzemar la compressió o descompressió.
+	*/
 	Ctrl_Output out;
+	/**
+	 *  @param path és el path de sortida.
+	*/
 	String path;
+	/**
+	 *  @param decode_or_encode indica si és compressió (true) o descompressió (false)
+	*/
 	boolean decode_or_encode; // if true, decode; otherwise, encode
 
+	/**
+	 *  @param huff és la codificació de huffman utilitzat a Entropy Conding
+	*/
 	Huffman huff;
 
+	/**
+	 * @brief Constructor de la clase JPEG
+	 * @param aux Path de sortida
+	 * @param b False si estas comprimint, True si estas descomprimint
+	 */
 	public JPEG(String aux, boolean b) {
 		huff = new Huffman(true);
 		path = aux;
@@ -21,7 +44,9 @@ public class JPEG {
 	}
 
 	
-
+	/**
+	 *  @param quantization_matrix és la matriu de quantització
+	*/
 	private static int[][] quantization_matrix =
 	{
 		{16, 11, 10, 16, 24, 40, 51, 61},
@@ -34,6 +59,10 @@ public class JPEG {
 		{72, 92, 95, 98, 112, 100, 103, 99}
 	};
 
+	/**
+	 *  @param zigZag_X[i] és la fila que es cnsulta a la ièssima iteració 
+	 * d'un recorregut en zigzag d'una matriu 8x8
+	*/
 	private static int[] zigZag_X = {
 		0,
 		0, 1,
@@ -52,7 +81,10 @@ public class JPEG {
 		7
 	};
 		
-		
+	/**
+	 *  @param zigZag_Y[i] és la columna que es cnsulta a la ièssima iteració 
+	 * d'un recorregut en zigzag d'una matriu 8x8
+	*/
 	private static int[] zigZag_Y = {
 		0,
 		1, 0,
@@ -72,22 +104,41 @@ public class JPEG {
 	};
 
 
+	/**
+	 * @fn private static int round(double x)
+	 * @brief Arrodoneix un número real
+     * @param x és el real
+     * @return l'enter més pròxim a x
+	 */
 	private static int round(double x) {
 		return (int)(x + 0.5);
 	}
 
+	/**
+	 * @fn private double force255(double x)
+     * @param x és un real
+     * @return el real més proper a x de l'interval [0..255]
+	 */
 	private static double force255(double x) {
         if (x < 0) return 0;
         if (x > 255) return 255;
         return x;
-    }
+	}
+	/**
+	 * @fn private double force255(double x)
+	 * @brief és la funcí alfa de DCT
+	 */
 	private static double alpha(int x) { // only used in discrete_cosine_transform
 		if (x == 0) return 1.0 / Math.sqrt(2);
 		return 1.0;
 	}
 
 	 
-
+	/**
+	 * @fn private static void discrete_cosine_transform(double[][] mat1)
+	 * @brief aplica discrete cosine transform (DCT) a una matriu 8x8
+	 * @param mat1 és la matriu 8x8 a la qual s'aplica DCT
+	 */
 	private static void discrete_cosine_transform(double[][] mat1) {
 		//int n = 8;
 		//int m = 8;
@@ -117,7 +168,12 @@ public class JPEG {
 			}
 		}
 	}
-
+	
+	/**
+	 * @fn private static void inverse_discrete_cosine_transform(double[][] mat1)
+	 * @brief aplica discrete cosine transform (DCT) inversa a una matriu 8x8
+	 * @param mat1 és la matriu 8x8 a la qual s'aplica DCT inversa
+	 */
 	private static void inverse_discrete_cosine_transform(double[][] mat1) {
 		//int n = 8;
 		//int m = 8;
@@ -146,31 +202,48 @@ public class JPEG {
 			}
 		}
 	}
-
-	static int get_entropy1_code(int runlength, int size) {
+	/**
+	 * @fn private static int get_entropy1_code(int runlength, int size)
+	 * @brief codifica runlength i size en el simbol1 de Entropy Coding
+	 */
+	private static int get_entropy1_code(int runlength, int size) {
 		return ((runlength<<4) + size);
 	}
-
-	static int get_runlength_from_entropy1(int code) {
+	/**
+	 * @fn private static int get_runlength_from_entropy1(int code)
+	 * @brief retorna el runlength codificat en un simbol1 de Entropy Coding
+	 */
+	private static int get_runlength_from_entropy1(int code) {
 		return (code >> 4) & 0x000F;
 	}
-
-	static int get_size_from_entropy1(int code) {
+	/**
+	 * @fn private static int get_runlength_from_entropy1(int code)
+	 * @brief retorna la mida codificada en un simbol1 de Entropy Coding
+	 */
+	private static int get_size_from_entropy1(int code) {
 		return code & 0x000F;
 	}
-
-
-	static int get_entropy2_size(int value) {
+	/**
+	 * @fn private static int get_entropy2_size(int value)
+	 * @brief codifica value en el symbol2 de Entropy Coding i en retorna la mida
+	 */
+	private static int get_entropy2_size(int value) {
 		if (value == 0) return 0;
 		if (value < 0) return get_entropy2_size(-value);
 		return 1 + get_entropy2_size(value / 2);
 	}
-
-	static int get_entropy2_code(int value) {
+	/**
+	 * @fn private static int get_entropy2_code(int value)
+	 * @brief retorna la codifiacació en el simbol2 de Entropy Coding d'un cert valor
+	 */
+	private static int get_entropy2_code(int value) {
 		if (value < 0) return ~(-value);
 		return value;
 	}
-
+	/**
+	 * @fn private static int get_value_from_entropy2(int code, int size)
+	 * @brief retorna el valor codificat en un codi d'una determinada mida
+	 */
 	private static int get_value_from_entropy2(int code, int size) {
 		if (size == 0) return 0;
 		if (((code >> (size-1)) & 1) == 0) return -(~(code | (-1 << size)));
@@ -178,10 +251,12 @@ public class JPEG {
 	}
 
 
-
-
-
-	public void encode(Ctrl_Input_Img in) {
+	/**
+	 * @fn public void Compressor(Ctrl_Input_Img in)
+	 * @brief Comprimim un text amb l'algoritme JPEG
+	 * @param in accés al Controlador d'Input del fitxer a comprimir
+	 */
+	public void Compressor(Ctrl_Input_Img in) {
 
 		out = new Ctrl_Output(path, "jpeg", false);
 
@@ -230,14 +305,8 @@ public class JPEG {
 					for(int i = 0; i < 8; ++i) {
 						for (int j = 0; j < 8; ++j) {
 							outYCbCr[i][j][k] = round(YCbCr[k][i][j] / quantization_matrix[i][j]);
-							if (j_block == 0 && i_block == 0 && k == 0) {
-								System.out.print(outYCbCr[i][j][k]);
-								System.out.print(" ");
-							}
 						}
-						if (j_block == 0 && i_block == 0 && k == 0) System.out.println();
 					}
-					if (j_block == 0 && i_block == 0 && k == 0) System.out.println();
 
 					//6. Entropy coding
 					int zeros = 0;
@@ -254,29 +323,40 @@ public class JPEG {
 							out.add2(huff.getCode(by), huff.getSize(by));
 							zeros = 0;
 							out.add2(get_entropy2_code(x), get_entropy2_size(x));
-							if (j_block == 0 && i_block == 0 && k == 0) {
+							/*if (j_block == 0 && i_block == 0 && k == 0) { //debug
 								System.out.print(x);
 								System.out.print(",");
 								System.out.print(get_entropy2_code(x));
 								System.out.print(",");
 								System.out.print(get_entropy2_size(x));
-								System.out.print(" ");
-							}
+								System.out.print(":");
+								System.out.print(zeros);
+								System.out.print(":");
+								System.out.print(Integer.toHexString(by));
+								System.out.print(",");
+								System.out.print(Integer.toBinaryString(huff.getCode(by)));
+								System.out.print(",");
+								System.out.print(huff.getSize(by));
+								System.out.print("  ");
+							}*/
 						}
 					}
 					out.add2(huff.getCode(0), huff.getSize(0));
-					if (j_block == 0 && i_block == 0 && k == 0) System.out.println();
 
 				}
 			}
 		}
-		out.print();
 
 		
 	}
 
 
-	public void decode(Ctrl_Input_JPEG in) {
+	/**
+	 * @fn public void Decompressor(Ctrl_Input_JPEG in
+	 * @brief Desomprimim un text amb l'algoritme JPEG
+	 * @param in accés al Controlador d'Input del fitxer a descomprimir
+	 */
+	public void Decompressor(Ctrl_Input_JPEG in) {
 
 		int num_i_blocks = in.getHeight()/8;
 		int num_j_blocks = in.getWidth()/8;
@@ -322,32 +402,33 @@ public class JPEG {
 							if (zz >= 64) throw new IllegalArgumentException("Entropy coding failed");
 							int code = in.get(size);
 							int x = get_value_from_entropy2(code, size);
-							if (j_block == 0 && i_block == 0 && k == 0) {
+							/*if (j_block == 0 && i_block == 0 && k == 0) { //debug
 								System.out.print(x);
 								System.out.print(",");
 								System.out.print(code);
 								System.out.print(",");
 								System.out.print(size);
-								System.out.print(" ");
-							}
+								System.out.print(":");
+								System.out.print(get_runlength_from_entropy1(by));
+								System.out.print(":");
+								System.out.print(Integer.toHexString(by));
+								System.out.print(",");
+								System.out.print(Integer.toBinaryString(huff.getCode(by)));
+								System.out.print(",");
+								System.out.print(huff.getSize(by));
+								System.out.print("   ");
+							}*/
 							inYCbCr[zigZag_X[zz]][zigZag_Y[zz]][k] = x;
 							zz++;
 						}
 					}
-					if (j_block == 0 && i_block == 0 && k == 0) System.out.println();
 
 					//5. Quantization
 					for (int i = 0; i < 8; ++i) {
 						for (int j = 0; j < 8; ++j) {
-							if (j_block == 0 && i_block == 0 && k == 0) {
-								System.out.print(inYCbCr[i][j][k]);
-								System.out.print(" ");
-							}
 							YCbCr[k][i][j] = inYCbCr[i][j][k] * quantization_matrix[i][j];
 						}
-						if (j_block == 0 && i_block == 0 && k == 0) System.out.println();
 					}
-					if (j_block == 0 && i_block == 0 && k == 0) System.out.println();
 
 					//4. Discrete cosnie transform
 					inverse_discrete_cosine_transform(YCbCr[k]);
@@ -378,20 +459,32 @@ public class JPEG {
 
 			((Ctrl_Output_Img)out).add(outRGB);
 		}
-		out.print();
 
 	}
 
-	public static void main(String[] args) {
+	/**
+	 * @fn public Ctrl_Output print()
+	 * @brief Retorna el Ctrl_Output.
+	 * @return Retorna el Ctrl_Output on està l'arxiu comprimit o descomprimit.
+	 */
+	public Ctrl_Output print() {
+        return out;
+	}
+
+	/*public static void main(String[] args) {
 		
 		Ctrl_Input_Img img = new Ctrl_Input_Img(args[0]);
 		JPEG alg = new JPEG(args[1], false);
-		alg.encode(img);
+		alg.Compressor(img);
+		Ctrl_Output out1 = alg.print();
+		out1.print();
 		System.out.println("--");
 		Ctrl_Input_JPEG jpeg = new Ctrl_Input_JPEG(args[1]);
 		JPEG alg2 = new JPEG(args[2], true);
-		alg2.decode(jpeg);
-	}
+		alg2.Decompressor(jpeg);
+		Ctrl_Output out2 = alg2.print();
+		out2.print();
+	}*/
 	
 	
 }

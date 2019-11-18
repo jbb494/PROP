@@ -69,12 +69,13 @@ public class Driver__Ctrl_Output {
      */
     private static void comprovarExcepcions(Ctrl_Output ctrl_out, String linea, String method){
         int op = Integer.parseInt(linea);
-        if(method.equals("") && op < 9 && !linea.equals("0")){
-            throw new IllegalArgumentException("Debes primero definir el método y si es compresión o descompresión");
-        }
         if(ctrl_out == null && !linea.equals("1") && !linea.equals("0") && op < 6) {
             throw new IllegalArgumentException("Debes llamar al constructor antes");
         }
+        if(method.equals("") && op < 9 && !linea.equals("1")){
+            throw new IllegalArgumentException("Debes primero definir el método y si es compresión o descompresión");
+        }
+        
     }
 
     /**

@@ -181,6 +181,6 @@ public class Input {
         if(aux == (byte)0) return "lz78";
         else if(aux == (byte)1) return "lzw";
         else if(aux == (byte)2) return "lzss";
-        else throw new IllegalArgumentException("La metadata no es correcta");
+        else return "jpeg";
     }
 }

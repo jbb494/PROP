@@ -1,10 +1,12 @@
 package domini.algorithm;
 
 import persistencia.input.Ctrl_Input;
+import persistencia.input.Ctrl_Input_Img;
 import persistencia.input.Ctrl_Input_LZSS;
 import persistencia.input.Ctrl_Input_LZW;
 import persistencia.input.Ctrl_Input_LZ78;
 import persistencia.input.Ctrl_Input_Text;
+import persistencia.input.Ctrl_Input_JPEG;
 import persistencia.output.Ctrl_Output;
 
 /**
@@ -53,8 +55,13 @@ public class Ctrl_Algorithm {
             Ctrl_Output outp = alg.print();
             outp.print();
         }
-        else if(method == "ppm")
+        else if(method.toLowerCase().equals("jpeg"))
         {
+            JPEG alg = new JPEG(prefix + method, false);
+            Ctrl_Input_Img in = new Ctrl_Input_Img(Path);
+            alg.Compressor(in);
+            Ctrl_Output outp = alg.print();
+            outp.print();
 
         }
         return "Compressió de " + Path;
@@ -83,9 +90,13 @@ public class Ctrl_Algorithm {
     {
         int i = Path.lastIndexOf(".");
         String prefix = Path.substring(0, i+1);
-        if(method.toLowerCase().equals("ppm"))
+        if(method.toLowerCase().equals("jpeg"))
         {
-
+            JPEG alg = new JPEG(prefix + "ppm", true);  
+            Ctrl_Input_JPEG inP2 = new Ctrl_Input_JPEG(Path);
+            alg.Decompressor(inP2);      
+            Ctrl_Output outp = alg.print();
+            outp.print();
         }
         else
         {
