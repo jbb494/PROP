@@ -21,6 +21,7 @@ Es tracta de construir un entorn per a la compressió i descompressió de fitxer
 >> -etest i el nom del test que vols executar. Exemple: ./compileAndRun.sh -etest domini.algorithm.LZWTest<br>
 >> -clean o -remove Borra els executables.
 <br>
+
 # Com obrir Doxygen.
 > Heu d'obrir a qualsevol navegador el següent arxiu: PROP/Doxygen/html/index.html
 
