@@ -9,7 +9,7 @@ import persistencia.input.Ctrl_Input_Img;
 /**
  * @class Driver__Ctrl_Input_Img
  * @brief Driver de Ctrl_Input_Img
- * @author 
+ * @author Joan Lapeyra Amat
  */
 public class Driver__Ctrl_Input_Img {
 
