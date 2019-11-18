@@ -15,7 +15,7 @@ public class stringConversion {
      */
     public static int atoi(String str) 
     { 
-        int x = 0;
+        /*int x = 0;
         int n = str.length();
         if (n == 0) return 0;
         int i = 0;
@@ -29,7 +29,9 @@ public class stringConversion {
             i++;
         }
         if (!pos) x = -x;
-        return x;
+        return x;*/
+        return Integer.parseInt(str);
+        
     }
 
     /**
@@ -39,7 +41,7 @@ public class stringConversion {
      * @return Valor de l'enter com a String
      */
     public static String intToString(int x) {
-        if (x == 0) return "0";
+        /*if (x == 0) return "0";
         if (x < 0) return "-" + intToString(-x);
 
         String str = "";
@@ -48,7 +50,9 @@ public class stringConversion {
             str = (char)(aux+'0') + str;
             x = x/10;
         }
-        return str;
+        return str;*/
+
+        return Integer.toString(x);
 
     }
 

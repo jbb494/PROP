@@ -9,7 +9,7 @@ import java.util.ArrayList;
 /**
  * @class Driver__BinTree
  * @brief Driver de BinTree
- * @author Joan Bellavista Bartroli
+ * @author Joan Lapeyra Amat
  */
 public class Driver__BinTree {
     

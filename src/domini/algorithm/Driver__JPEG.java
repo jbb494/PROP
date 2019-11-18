@@ -5,7 +5,6 @@ import java.io.InputStreamReader;
 
 import persistencia.input.Ctrl_Input_Img;
 import persistencia.input.Ctrl_Input_JPEG;
-import persistencia.input.Ctrl_Input;
 
 /**
  * @class Driver__JPEG
