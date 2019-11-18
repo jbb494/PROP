@@ -13,7 +13,7 @@ public class Driver__Output {
     /**
      * @param path Path a la carpeta de data
      */
-    static final String path = "../data/Driver__Output.out";
+    static final String path = "../src/persistencia/data/Driver__Output.out";
 
     /**
      * @fn private static void showOptions()
@@ -75,8 +75,6 @@ public class Driver__Output {
                 comprovarExcepcions(out, linea);
                 switch(linea){
                     case "1":
-                        System.out.println("Escribe un path de fichero de salida");
-                        String path = reader.readLine().trim();
                         out = new Output(path);
                     break;
                     case "2":

@@ -118,16 +118,16 @@ public class Driver__Input {
                         System.out.println("Los dos primeros bits del fichero comprimido indican que se comprimió con el algoritmo " + inp.getDecodeAlg());
                     break;
                     case "6":
-                        path = "../data/Input1.txt";
+                        path = "../src/persistencia/data/Input1.txt";
                     break;
                     case "7":
-                    path = "../data/Input1.lz78";
+                    path = "../src/persistencia/data/Input1.lz78";
                     break;
                     case "8":
-                    path = "../data/Input1.lzw";
+                    path = "../src/persistencia/data/Input1.lzw";
                     break;
                     case "9":
-                    path = "../data/Input1.lzss";
+                    path = "../src/persistencia/data/Input1.lzss";
                     break;
                     case "0":
                         return;

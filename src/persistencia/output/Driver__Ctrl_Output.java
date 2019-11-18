@@ -88,7 +88,7 @@ public class Driver__Ctrl_Output {
             Ctrl_Output ctrl_out = null;
             Boolean b = false;
             String method = "";
-            String path = "../data/Driver__Ctrl_Output.out";
+            String path = "../src/persistencia/output/Driver__Ctrl_Output.out";
             showOptions();
             BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
             String linea = "";
