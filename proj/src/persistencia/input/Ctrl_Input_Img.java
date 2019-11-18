@@ -14,8 +14,7 @@ public class Ctrl_Input_Img extends Ctrl_Input {
         super(path);
         String str = getWord();
         if (! str.equals("P6")) {
-            System.err.println("Magic number of "+path+" is "+str+". It should be P6.");
-            System.err.println(path+" may not be in ppm format.");
+            throw new IllegalArgumentException("Magic number of "+path+" is "+str+". It should be P6. It may not be in ppm format.");
         }
         width = getIntASCII();
         height = getIntASCII();

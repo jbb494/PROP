@@ -33,6 +33,8 @@ public class Ctrl_Output {
                 add((byte)1, 2);
             else if(method.toLowerCase().equals("lz78"))
                 add((byte)0, 2);
+            else if(method.toLowerCase().equals("jpeg"))
+                add((byte)3, 2);
         }
     }
 
@@ -127,7 +129,8 @@ public class Ctrl_Output {
             int m;
             if (mida < 8) m = mida;
             else m = 8;
-            add((byte)x, m);
+            byte aux = (byte)(x & ~(-1 << m));
+            add(aux, m);
             x = x >> 8;
             mida -= 8;
         }
