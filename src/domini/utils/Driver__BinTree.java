@@ -47,6 +47,10 @@ public class Driver__BinTree {
         System.out.println("\t Input: 10");
         System.out.println();
 
+        System.out.println("\t 11. print()");
+        System.out.println("\t Input: 11");
+        System.out.println();
+
         System.out.println("\t 0. Salir");
         System.out.println("\t Input: 0");
 
@@ -191,6 +195,11 @@ public class Driver__BinTree {
                         data = Integer.parseInt(reader.readLine().trim());
                         bt = arr.get(data);
                         print_res("El nuevo hijo "+s+" del nodo ",x," es el nodo ",arr.get(n).setChild(x, left_right, bt),".");
+                    break;
+                    case "11":
+                        selecciona_bintree(arr.size());
+                        n = Integer.parseInt(reader.readLine().trim());
+                        arr.get(n).print();
                     break;
                     case "0":
                         return;
