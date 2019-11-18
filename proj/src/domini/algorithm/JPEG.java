@@ -1,19 +1,42 @@
 package domini.algorithm;
 
-import java.util.ArrayList;
 
+import persistencia.input.Ctrl_Input_Img;
+import persistencia.input.Ctrl_Input_JPEG;
+import persistencia.output.Ctrl_Output;
+import persistencia.output.Ctrl_Output_Img;
 
-import persistencia.input.*;
-import persistencia.output.*;
-
+/**
+ * @class JPEG
+ * @brief Compressió i descompressió pel mètode JPEG
+ * 
+ * @author Joan Lapeyra Amat
+ */
 public class JPEG {
 
+	/**
+	 *  @param out és utilitxat per emmegatzemar la compressió o descompressió.
+	*/
 	Ctrl_Output out;
+	/**
+	 *  @param path és el path de sortida.
+	*/
 	String path;
+	/**
+	 *  @param decode_or_encode indica si és compressió (true) o descompressió (false)
+	*/
 	boolean decode_or_encode; // if true, decode; otherwise, encode
 
+	/**
+	 *  @param huff és la codificació de huffman utilitzat a Entropy Conding
+	*/
 	Huffman huff;
 
+	/**
+	 * @brief Constructor de la clase JPEG
+	 * @param aux Path de sortida
+	 * @param b False si estas comprimint, True si estas descomprimint
+	 */
 	public JPEG(String aux, boolean b) {
 		huff = new Huffman(true);
 		path = aux;
@@ -21,7 +44,9 @@ public class JPEG {
 	}
 
 	
-
+	/**
+	 *  @param quantization_matrix és la matriu de quantització
+	*/
 	private static int[][] quantization_matrix =
 	{
 		{16, 11, 10, 16, 24, 40, 51, 61},
@@ -34,6 +59,10 @@ public class JPEG {
 		{72, 92, 95, 98, 112, 100, 103, 99}
 	};
 
+	/**
+	 *  @param zigZag_X[i] és la fila que es cnsulta a la ièssima iteració 
+	 * d'un recorregut en zigzag d'una matriu 8x8
+	*/
 	private static int[] zigZag_X = {
 		0,
 		0, 1,
@@ -52,7 +81,10 @@ public class JPEG {
 		7
 	};
 		
-		
+	/**
+	 *  @param zigZag_Y[i] és la columna que es cnsulta a la ièssima iteració 
+	 * d'un recorregut en zigzag d'una matriu 8x8
+	*/
 	private static int[] zigZag_Y = {
 		0,
 		1, 0,
@@ -72,22 +104,41 @@ public class JPEG {
 	};
 
 
+	/**
+	 * @fn private static int round(double x)
+	 * @brief Arrodoneix un número real
+     * @param x és el real
+     * @return l'enter més pròxim a x
+	 */
 	private static int round(double x) {
 		return (int)(x + 0.5);
 	}
 
+	/**
+	 * @fn private double force255(double x)
+     * @param x és un real
+     * @return el real més proper a x de l'interval [0..255]
+	 */
 	private static double force255(double x) {
         if (x < 0) return 0;
         if (x > 255) return 255;
         return x;
-    }
+	}
+	/**
+	 * @fn private double force255(double x)
+	 * @brief és la funcí alfa de DCT
+	 */
 	private static double alpha(int x) { // only used in discrete_cosine_transform
 		if (x == 0) return 1.0 / Math.sqrt(2);
 		return 1.0;
 	}
 
 	 
-
+	/**
+	 * @fn private static void discrete_cosine_transform(double[][] mat1)
+	 * @brief aplica discrete cosine transform (DCT) a una matriu 8x8
+	 * @param mat1 és la matriu 8x8 a la qual s'aplica DCT
+	 */
 	private static void discrete_cosine_transform(double[][] mat1) {
 		//int n = 8;
 		//int m = 8;
@@ -117,7 +168,12 @@ public class JPEG {
 			}
 		}
 	}
-
+	
+	/**
+	 * @fn private static void inverse_discrete_cosine_transform(double[][] mat1)
+	 * @brief aplica discrete cosine transform (DCT) inversa a una matriu 8x8
+	 * @param mat1 és la matriu 8x8 a la qual s'aplica DCT inversa
+	 */
 	private static void inverse_discrete_cosine_transform(double[][] mat1) {
 		//int n = 8;
 		//int m = 8;
@@ -146,31 +202,48 @@ public class JPEG {
 			}
 		}
 	}
-
-	static int get_entropy1_code(int runlength, int size) {
+	/**
+	 * @fn private static int get_entropy1_code(int runlength, int size)
+	 * @brief codifica runlength i size en el simbol1 de Entropy Coding
+	 */
+	private static int get_entropy1_code(int runlength, int size) {
 		return ((runlength<<4) + size);
 	}
-
-	static int get_runlength_from_entropy1(int code) {
+	/**
+	 * @fn private static int get_runlength_from_entropy1(int code)
+	 * @brief retorna el runlength codificat en un simbol1 de Entropy Coding
+	 */
+	private static int get_runlength_from_entropy1(int code) {
 		return (code >> 4) & 0x000F;
 	}
-
-	static int get_size_from_entropy1(int code) {
+	/**
+	 * @fn private static int get_runlength_from_entropy1(int code)
+	 * @brief retorna la mida codificada en un simbol1 de Entropy Coding
+	 */
+	private static int get_size_from_entropy1(int code) {
 		return code & 0x000F;
 	}
-
-
-	static int get_entropy2_size(int value) {
+	/**
+	 * @fn private static int get_entropy2_size(int value)
+	 * @brief codifica value en el symbol2 de Entropy Coding i en retorna la mida
+	 */
+	private static int get_entropy2_size(int value) {
 		if (value == 0) return 0;
 		if (value < 0) return get_entropy2_size(-value);
 		return 1 + get_entropy2_size(value / 2);
 	}
-
-	static int get_entropy2_code(int value) {
+	/**
+	 * @fn private static int get_entropy2_code(int value)
+	 * @brief retorna la codifiacació en el simbol2 de Entropy Coding d'un cert valor
+	 */
+	private static int get_entropy2_code(int value) {
 		if (value < 0) return ~(-value);
 		return value;
 	}
-
+	/**
+	 * @fn private static int get_value_from_entropy2(int code, int size)
+	 * @brief retorna el valor codificat en un codi d'una determinada mida
+	 */
 	private static int get_value_from_entropy2(int code, int size) {
 		if (size == 0) return 0;
 		if (((code >> (size-1)) & 1) == 0) return -(~(code | (-1 << size)));
@@ -178,9 +251,11 @@ public class JPEG {
 	}
 
 
-
-
-
+	/**
+	 * @fn public void Compressor(Ctrl_Input_Img in)
+	 * @brief Comprimim un text amb l'algoritme JPEG
+	 * @param in accés al Controlador d'Input del fitxer a comprimir
+	 */
 	public void Compressor(Ctrl_Input_Img in) {
 
 		out = new Ctrl_Output(path, "jpeg", false);
@@ -276,6 +351,11 @@ public class JPEG {
 	}
 
 
+	/**
+	 * @fn public void Decompressor(Ctrl_Input_JPEG in
+	 * @brief Desomprimim un text amb l'algoritme JPEG
+	 * @param in accés al Controlador d'Input del fitxer a descomprimir
+	 */
 	public void Decompressor(Ctrl_Input_JPEG in) {
 
 		int num_i_blocks = in.getHeight()/8;
@@ -382,6 +462,11 @@ public class JPEG {
 
 	}
 
+	/**
+	 * @fn public Ctrl_Output print()
+	 * @brief Retorna el Ctrl_Output.
+	 * @return Retorna el Ctrl_Output on està l'arxiu comprimit o descomprimit.
+	 */
 	public Ctrl_Output print() {
         return out;
 	}

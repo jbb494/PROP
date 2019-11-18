@@ -2,13 +2,44 @@ package domini.algorithm;
 
 import domini.utils.BinTree;
 
+
+/**
+ * @class Huffman
+ * @brief Codificació Huffman
+ * 
+ * Aquesta classe codifica enters mitjançant Huffman.
+ * Té dos modes: l'automàtic (codifica mitjançant una taula de huffman per defecte) 
+ * i manual (assigna codis en funció de la freqüència dels enters).
+ * El mode manual encara no està disponible. La intenció és que estigui disponible
+ * per la segona entrega.
+ * 
+ * @author Joan Lapeyra Amat
+ */
 class Huffman { 
 
+    /**
+	 *  @param auto indica si el mode és automàtic.
+	*/
     private boolean auto;
+
+    /**
+	 *  @param auto_codes és la taula de huffman que representa la codificació automàtica.
+     * Donat un enter x, code(auto_codes[x]) és la codificació de x, que té una mida de size(auto_codes[x])
+     * Aquesta taula és la que proporciona https://www.ece.ucdavis.edu/cerl/reliablejpeg/coding/,
+     * pensada per ser utilitzada en l'algoritme JPEG.
+	*/
     private long[] auto_codes;
+
+    /**
+	 *  @param tree és l'arbre de huffan que emmegatzema la codificació.
+	*/
     private BinTree tree;
 
-
+    /**
+	 * @fn private void set_auto_codes()
+	 * @brief Inicialitza el vector auto_codes, la taula de huffman automàtica.
+     * 
+	 */
     private void set_auto_codes() {
         // https://www.ece.ucdavis.edu/cerl/reliablejpeg/coding/
 
@@ -94,7 +125,14 @@ class Huffman {
         }
     }
 
-
+    /**
+     * @fn private BinTree code_subtree(int size, int code, int info)
+     * @brief Genera un (sub)arbre de huffman
+     * @param size És la mida del codi de huffman.
+     * @param code És el codi de huffman
+     * @param info És el símbol que volem codificar
+     * @return Un arbre de huffman que codifica el símbol 'info' en el codi 'code' de mide 'size'
+     */
     private BinTree code_subtree(int size, int code, int info) {
         if (size == 0) return new BinTree(info);
 
@@ -103,6 +141,16 @@ class Huffman {
         return bt;
     }
 
+    /**
+     * @fn private void code_to_tree(int node, int size, int code, int info)
+     * @brief S'actualitza l'atribut 'tree' a partir d'un node. 
+     * Després d'haver executat la funció s'ha de poder recórrer l'arbre de huffman a partir de 
+     * node per trobar codificat el símbol 'info' en el codi 'code' de mida 'size'
+     * @param node És el node a partir del qual volem codificar.
+     * @param size És la mida del codi de huffman.
+     * @param code És el codi de huffman
+     * @param info És el símbol que volem codificar
+     */
     private void code_to_tree(int node, int size, int code, int info) {
         if (size == 0 || tree.isLeaf(node)) {
             if (size == 0 && tree.isLeaf(node)) {
@@ -121,6 +169,10 @@ class Huffman {
         }
     }
 
+    /**
+     * @fn private void set_auto_tree()
+     * @brief Incialitza l'arbre de huffman pel mode automàtic.
+     */
     private void set_auto_tree() {
         for(int i = 0; i < auto_codes.length; ++i) {
             long cd = auto_codes[i];
@@ -131,6 +183,10 @@ class Huffman {
         }
     }
 
+    /**
+     * @brief Constructora.
+     * @param automatic indica si el mode és automàtic
+     */
     public Huffman(boolean automatic) {
         auto_codes = new long[0];
         auto = automatic;
@@ -143,6 +199,12 @@ class Huffman {
         }
     }
 
+    /**
+	 * @fn public int getCode(int symbol)
+	 * @brief Retorna el codi de huffman corresponent a un símbol
+	 * @param symbol és el símbol en qüestió
+     * @return la codificació de symbol amb els primers bits com a bits menys significatius
+	 */
     public int getCode(int symbol) {
         if (auto) {
             return code(auto_codes[symbol]);
@@ -150,6 +212,12 @@ class Huffman {
         return 0;
     }
 
+    /**
+	 * @fn public int getSize(int symbol)
+	 * @brief Retorna la mide del codi de huffman corresponent a un símbol
+	 * @param symbol és el símbol en qüestió
+     * @return la mida en quüestió
+	 */
     public int getSize(int symbol) {
         if (auto) {
             return size(auto_codes[symbol]);
@@ -157,25 +225,66 @@ class Huffman {
         return 0;
     }
 
+    /**
+	 * @fn private int getSymbol(int code)
+	 * @brief Retorna el símbol corresponent a un codi de huffman 
+     * que es pot llegir al recorrer l'arbre de huffman a paritr d'un node 
+	 * @param code és el codi de huffman amb els primers bits com a menys significatius
+     * @param node és el node de tree en qüestió
+     * @return el símbol en qüestió
+	 */
     private int getSymbol(int code, int node) {
         if (tree.isLeaf(node)) return tree.getData(node);
         return getSymbol(code>>1, tree.getChild(node, code&1));
     }
 
+    /**
+	 * @fn public int getSymbol(int code)
+	 * @brief Retorna el símbol corresponent a un codi de huffman
+	 * @param code és el codi de huffman amb els primers bits com a menys significatius
+     * @return el símbol en qüestió
+	 */
     public int getSymbol(int code) {
         return getSymbol(code, 0);
     }
 
     ///
+
+    /**
+	 *  @param node_pointer és el node de 'tree' fins on s'ha buscat un cert símbol 
+     * mitjançant HuffmanSearch
+	*/
     private int node_pointer;
+
+    /**
+	 *  @param last_symbol és l'últim símbol trobar d'una HuffmanSearch
+	*/
     private int last_symbol;
+    /**
+	 *  @param sym_found indica si en la HuffmanSearch actual s'ha trobat ja un símbol.
+	*/
     private boolean sym_found;
 
+    /**
+	 * @fn public void initSearchSymbol()
+	 * @brief Inicialitza una HuffmanSearch. El codi de huffman implícit és buit.
+	 */
     public void initSearchSymbol() {
         node_pointer = 0;
         sym_found = false;
     }
 
+    /**
+	 * @fn public int searchSymbol(int bit)
+	 * @brief Fa avançar la HuffmanSearch: afageix un bit al codi de huffman implícit.
+     * @param bit és el bit que s'afageix al codi de la HuffmanSeach
+     * @return 
+     *          1 si s'ha trobat un símbol, és a dir, el codi de huffman implícit correspon a un símbol.
+     *          0 si no s'ha trobat un símbol però pot ser que sigui trobat en un futur, és a dir,
+     *            el codi de huffman implícit és prefix de codis de huffman vàlids.
+     *          -1 si no s'ha trobat cap símbol ni es trobarà a l'actual HuffmanSeach, és a dir, 
+     *            el codi de Huffman implícit no és prefix de cap codi vàlid.
+	 */
     public int searchSymbol(int bit) {
         bit = bit&1;
         node_pointer = tree.getChild(node_pointer, bit);
@@ -193,6 +302,11 @@ class Huffman {
         return 0; //cal seguir buscant
     }
 
+    /**
+	 * @fn public int getFoundSymbol()
+	 * @brief Retorna el símbol trobat a la HuffmanSearch, és a dir, el símbol representat
+     * pel codi de Huffman implícit.
+	 */
     public int getFoundSymbol() {
         if(!sym_found) throw new IllegalArgumentException("There is no found symbol"); 
         return last_symbol;
@@ -201,6 +315,12 @@ class Huffman {
 
     ////
 
+    /**
+	 * @fn private static long size_code(int size, int code)
+	 * @brief Retorna un long que representa un codi d'una mida determinada.
+     * @param size és la mida del codi en qüestó
+     * @param code és el codi en qüestió, on els primers bits es donen com a bits més significatius
+	 */
     private static long size_code(int size, int code) { //most significant bits are the first ones
         int x = 0;
         for (int i = 0; i < size; ++i) {
@@ -211,39 +331,24 @@ class Huffman {
         return ((long)size << 32) + (long)x;
     }
     
+    /**
+	 * @fn private static long size_code(int size, int code)
+	 * @brief Retorna la mida d'un codi representat per un long.
+     * @param x represnta el codi en qüestió
+     * @return la mida del codi representat per x
+	 */
     private static int size(long x) {
         return (int)(x >> 32);
     }
 
+    /**
+	 * @fn private static long size_code(int size, int code)
+	 * @brief Retorna un codi representat per un long.
+     * @param x represnta el codi en qüestió
+     * @return el codi representar per x. Els primers bits es retornen com a bits de menys pes.
+	 */
     private static int code(long x) { //lest significant bits are the first ones
         return (int)x;
     }
-
-    /*
-    static int getSym_auxxx(Huffman h, int cd) {
-        h.initSearchSymbol();
-        int x;
-        while ((x = h.searchSymbol(cd&1)) == 0) cd >>= 1;
-        if (x == -1) throw new IllegalArgumentException(Integer.toBinaryString(cd) +"is a wrong code");
-        return h.getFoundSymbol();
-    }
-
-    public static void main(String[] args) {
-        Huffman h = new Huffman(true);
-
-        int c = 0;
-        for (int i = 0; i < 256; ++i) {
-            int cd = h.getCode(i);
-            if (cd != -1) {
-                int sy = getSym_auxxx(h, cd);
-                if (sy != i) {
-                    System.out.println(Integer.toHexString(i) +","+Integer.toBinaryString(cd)+","+Integer.toHexString(sy));
-                }
-                else c++;
-            }
-        }
-        System.out.println(c);
-    }
-    */
 
 }

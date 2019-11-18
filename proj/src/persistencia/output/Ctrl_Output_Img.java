@@ -1,15 +1,40 @@
 package persistencia.output;
 
-import domini.utils.*;
+import domini.utils.stringConversion;
 
+/**
+ * @class Ctrl_Input_Img
+ * @brief Controlador de Output que permet escriure una imatge ppm
+ * @author Joan Lapeyra Amat
+ */
 public class Ctrl_Output_Img extends Ctrl_Output {
 
+    /**
+     * @param max_val Valor màxim que poden prendre els enters que representan quantitat de color.
+     */
     int max_val;
+    /**
+     * @param height Alçada de la imatge
+     */
     int height;
+    /**
+     * @param width Amplada de la imatge
+     */
     int width;
+    /**
+     * @param bits_per_val Quantitat de bits per valor.
+     */
     int bits_per_val;
+    /**
+     * @param rows Nombre de files llegides.
+     */
     int rows;
 
+    /**
+     * @brief Constructor de la classe.
+     * Escriu les dades de la capçalera ppm (magic number, width, height, max_val)
+     * @param path Path de l'arxiu output
+     */
     public Ctrl_Output_Img(String path, int w, int h, int mv) {
         super(path, "", true);
 
@@ -35,24 +60,34 @@ public class Ctrl_Output_Img extends Ctrl_Output {
         if (max_val < 256) bits_per_val = 8;
         else               bits_per_val = 16;
     }
-
+    /**
+     * @fn public int getHeight()
+     * @brief Retorna l'alçada de la imatge
+     * @return Alçada
+     */
     public int getHeight() {
         return height;
     }
-
+    /**
+     * @fn public int getWidth()
+     * @brief Retorna l'amplada de la imatge
+     * @return Amplada
+     */
     public int getWidth() {
         return width;
     }
     
-    //FALTA COMPROVAR
+    /**
+     * @fn public int get(int size)
+     * @bief Escriu l'entrada en format ppm
+     * @param mat Les dimensions de mat son [width/8][8][8][3],
+     *   on mat[block][x][y][color] 
+     *       és el la qantitat de color 'color' (rgb)
+     *       al píxel (x+8*n, y+8*block), 
+     *       on 8*n son les files escrites abans d'executar add() i n és natural
+     *   Les quantitats de color s'expressen en reals entre 0 i max_val
+     */
     public void add(double[][][][] mat)
-    /*  Les dimensions de mat son [width/8][8][8][3],
-        on mat[block][x][y][color] 
-            és el la qantitat de color 'color' (rgb)
-            al píxel (x+8*n, y+8*block), 
-            on 8*n son les files escrites abans d'executar add() i n és natural
-        Les quantitats de color s'expressen en reals entre 0 i max_val
-    */
     {
         int n_blocks = width/8; //width de moment és múltiple de 8
         rows += 8;
@@ -71,6 +106,10 @@ public class Ctrl_Output_Img extends Ctrl_Output {
         }
     }
 
+    /**
+     * @fn public boolean finished()
+     * @brief inica si s'han llegit totes les files de la imatge.
+     */
     public boolean finished() {
         return (rows >= height);
     }

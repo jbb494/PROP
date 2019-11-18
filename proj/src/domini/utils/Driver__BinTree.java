@@ -6,45 +6,59 @@ import java.io.InputStreamReader;
 import java.util.ArrayList;
 
 
-
+/**
+ * @class Driver__BinTree
+ * @brief Driver de BinTree
+ * @author Joan Bellavista Bartroli
+ */
 public class Driver__BinTree {
-   
+    
+    /**
+	 * @fn private static void showOptions()
+	 * @brief Mostra les accions a realitzar durant l'execució
+	*/
     private static void showOptions(){
         System.out.println("Driver de BinTree");
         System.out.println("Constructores: ");
         System.out.println("\t 1. BinTree()");
-        System.out.println("\t BinTree: 1");
+        System.out.println("\t Input: 1");
         System.out.println("\t 2. BinTree(int data)");
-        System.out.println("\t BinTree: 2");
+        System.out.println("\t Input: 2");
         System.out.println();
 
         System.out.println("Consultoras: ");
         System.out.println("\t 3. wellDefined()");
-        System.out.println("\t BinTree: 3");
+        System.out.println("\t Input: 3");
         System.out.println("\t 4. size()");
-        System.out.println("\t BinTree: 4");
+        System.out.println("\t Input: 4");
         System.out.println("\t 5. isInit(int x)");
-        System.out.println("\t BinTree: 5");
+        System.out.println("\t Input: 5");
         System.out.println("\t 6. isLeaf(int x)");
-        System.out.println("\t BinTree: 6");
+        System.out.println("\t Input: 6");
         System.out.println("\t 7. getData(int x)");
-        System.out.println("\t BinTree: 7");
+        System.out.println("\t Input: 7");
         System.out.println("\t 8. getChild(int x, int left_right)");
-        System.out.println("\t BinTree: 8");
+        System.out.println("\t Input: 8");
         System.out.println();
 
         System.out.println("\t 9. setData(int x, int data)");
-        System.out.println("\t BinTree: 9");
+        System.out.println("\t Input: 9");
         System.out.println("\t 10. setChild(int x, int left_right, BinTree child)");
-        System.out.println("\t BinTree: 10");
+        System.out.println("\t Input: 10");
         System.out.println();
 
         System.out.println("\t 0. Salir");
-        System.out.println("\t BinTree: 0");
+        System.out.println("\t Input: 0");
 
         System.out.println("----------------------------------------");
     }
 
+    /**
+	 * @fn private static void comprovarExcepcions(int constructed, String linea)
+	 * @brief Fa saltar una excepció si es vol accedir a una BinTree però no se n'ha creat cap.
+	 * @param constructed Nombre de BinTree's construits
+	 * @param linea Número de operació realitzada
+	 */
     private static void comprovarExcepcions(int constructed, String linea){
         int op = Integer.parseInt(linea);
         if(op > 2 && constructed == 0){
