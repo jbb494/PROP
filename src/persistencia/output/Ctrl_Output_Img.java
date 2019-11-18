@@ -3,7 +3,7 @@ package persistencia.output;
 import domini.utils.stringConversion;
 
 /**
- * @class Ctrl_Input_Img
+ * @class Ctrl_Output_Img
  * @brief Controlador de Output que permet escriure una imatge ppm
  * @author Joan Lapeyra Amat
  */
