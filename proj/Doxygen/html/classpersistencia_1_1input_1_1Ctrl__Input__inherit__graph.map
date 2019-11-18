@@ -1,8 +1,0 @@
-<map id="persistencia.input.Ctrl_Input" name="persistencia.input.Ctrl_Input">
-<area shape="rect" id="node2" href="$classpersistencia_1_1input_1_1Ctrl__Input__Img.html" title="persistencia.input.Ctrl\l_Input_Img" alt="" coords="203,5,352,47"/>
-<area shape="rect" id="node3" href="$classpersistencia_1_1input_1_1Ctrl__Input__JPEG.html" title="persistencia.input.Ctrl\l_Input_JPEG" alt="" coords="203,71,352,112"/>
-<area shape="rect" id="node4" href="$classpersistencia_1_1input_1_1Ctrl__Input__LZ78.html" title="Acces a un arxiu comprimit amb LZ78. " alt="" coords="203,136,352,177"/>
-<area shape="rect" id="node5" href="$classpersistencia_1_1input_1_1Ctrl__Input__LZSS.html" title="Aquesta és la classe fill del controlador Ctrl_Input. " alt="" coords="203,201,352,243"/>
-<area shape="rect" id="node6" href="$classpersistencia_1_1input_1_1Ctrl__Input__LZW.html" title="Acces a un arxiu comprimit amb LZW. " alt="" coords="203,267,352,308"/>
-<area shape="rect" id="node7" href="$classpersistencia_1_1input_1_1Ctrl__Input__Text.html" title="Classe de Ctrl_Input_Text. " alt="" coords="203,332,352,373"/>
-</map>
