@@ -42,13 +42,15 @@ public class Ctrl_Master {
         
         if (input.equals("comprimir"))
         {
-            System.out.println("Vol fer-ho de manera manual o automàtica?");
+            System.out.println("Vol fer-ho de manera manual o automàtica (en aquest cas escrigui auto)?");
             String aux = System.console().readLine().toLowerCase();
             
             if (aux.equals("manual")) Function = 3; // Compressió manual
-            else Function = 1; // Compressió automàtica
+            else if (aux.equals("auto")) Function = 1; // Compressió automàtica
+	    else throw new IllegalArgumentException("Entrada incorrecte, escrigui \"manual\" o \"auto\"");
         }
-        else Function = 2; // Descompressió
+        else if (input.equals("descomprimir")) Function = 2; // Descompressió
+	else throw new IllegalArgumentException("Entrada incorrecte, escrigui \"comprimir\" o \"descomprimir\"");
 
         //Asking the name of the file we wanna encode / decode
         System.out.println("Quin és el nom de l'arxiu, que està dintre la carpeta src/persistencia/data, amb el que volem treballar?");
@@ -64,30 +66,30 @@ public class Ctrl_Master {
     public String Work() {
         Ctrl_Algorithm CAlg = new Ctrl_Algorithm();
         String tornada = "";
-        if(Function == 1) //Ho hem de pensar
-        {   
-            //Estadistica est = new Estadistica();
-            tornada = CAlg.Auto_Encoder(Path);
-            //est.show_estadistica(Path, out);
-        }
-        else if(Function == 2)
+        if(Function == 2)
         {
             String extension = "";
             int i = Path.lastIndexOf(".");
             extension = Path.substring(i+1);
             tornada = CAlg.Auto_Decoder(Path, extension);
         }
-        else if(Function == 3)
+        else
         {
             String extension = "";
             int i = Path.lastIndexOf(".");
             extension = Path.substring(i+1);
             if(extension == "ppm") tornada = CAlg.Choose_Encoder(Path, "ppm");
             else
-            {
-                System.out.println("Amb quin algorisme vol comprimir el fitxer: LZ78, LZW, LZSS o JPEG?");
-                System.out.println("(escriviu-lo en minúsucules)");
-                String mode = System.console().readLine().toLowerCase();
+            {	
+		String mode = "";		
+		if (Function == 3) {
+		        System.out.println("Amb quin algorisme vol comprimir el fitxer: LZ78, LZW, LZSS o JPEG?");
+		        System.out.println("(escriviu-lo en minúsucules)");
+		        mode = System.console().readLine().toLowerCase();
+		}
+		else {
+			mode = CAlg.Auto_Encoder(Path); 	
+		}	
                 Estadistica est = new Estadistica();
                 tornada = CAlg.Choose_Encoder(Path, mode);
                 //Generació de les estadístiques

@@ -75,8 +75,11 @@ public class Ctrl_Algorithm {
      */
     public String Auto_Encoder(String Path)
     {
-
-        return "";
+	int i = Path.lastIndexOf(".");
+        String ext = Path.substring(i+1);
+	if (ext.toLowerCase().equals("txt")) return "lzw";
+	else if (ext.toLowerCase().equals("ppm")) return "jpeg";
+	else throw new IllegalArgumentException("Format no reconegut");
     }
 
     /**

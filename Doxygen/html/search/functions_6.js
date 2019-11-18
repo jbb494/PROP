@@ -10,7 +10,7 @@ var searchData=
   ['getalg',['getAlg',['../classpersistencia_1_1input_1_1Ctrl__Input.html#aa69f79fb581f6d80c5a9609148794570',1,'persistencia::input::Ctrl_Input']]],
   ['getbits',['getBits',['../classpersistencia_1_1input_1_1Input.html#a3fa5a378b2155a3022a4a4ef38d63a8e',1,'persistencia::input::Input']]],
   ['getbyte',['GetByte',['../classdomini_1_1utils_1_1IntorByte.html#afd907b7001011bbca374605fb11491f4',1,'domini::utils::IntorByte']]],
-  ['getchar',['getChar',['../classpersistencia_1_1input_1_1Ctrl__Input__Img.html#a3a1584d1b3a8939a809035356598688c',1,'persistencia::input::Ctrl_Input_Img']]],
+  ['getchar',['getChar',['../classpersistencia_1_1input_1_1Ctrl__Input__Img.html#a85a204b05c118b07d403e9b59d7f18c0',1,'persistencia::input::Ctrl_Input_Img']]],
   ['getchild',['getChild',['../classdomini_1_1utils_1_1BinTree.html#aee1ed36b9433869f94a6ee8a6815d872',1,'domini::utils::BinTree']]],
   ['getcode',['getCode',['../classdomini_1_1algorithm_1_1Huffman.html#aed38ea297e6463f016a74d0ba405768a',1,'domini::algorithm::Huffman']]],
   ['getdata',['getData',['../classdomini_1_1utils_1_1BinTree.html#ad8734786aa8ba40815e4b782264aef64',1,'domini::utils::BinTree']]],
@@ -19,7 +19,7 @@ var searchData=
   ['getend',['getEnd',['../classdomini_1_1utils_1_1ArrayCircular.html#a3fe38ed7aa9d3b4f99bc4c80cd72bb3e',1,'domini::utils::ArrayCircular']]],
   ['getextension',['getExtension',['../classpersistencia_1_1input_1_1Ctrl__Input.html#a46d569c2f3ceb0ab6cf9900708b3316a',1,'persistencia::input::Ctrl_Input']]],
   ['getfoundsymbol',['getFoundSymbol',['../classdomini_1_1algorithm_1_1Huffman.html#a2fa5805057243c65769bf12435e5f363',1,'domini::algorithm::Huffman']]],
-  ['getheight',['getHeight',['../classpersistencia_1_1input_1_1Ctrl__Input__Img.html#a18c84756ef851079b2f7e101d179c1fa',1,'persistencia.input.Ctrl_Input_Img.getHeight()'],['../classpersistencia_1_1input_1_1Ctrl__Input__JPEG.html#a173716ac8d17365965ede95f99a8e65a',1,'persistencia.input.Ctrl_Input_JPEG.getHeight()'],['../classpersistencia_1_1output_1_1Ctrl__Output__Img.html#a736bcf38410d875d9b4a17fd2a95cc4d',1,'persistencia.output.Ctrl_Output_Img.getHeight()']]],
+  ['getheight',['getHeight',['../classpersistencia_1_1input_1_1Ctrl__Input__Img.html#a55dc2906950235559f83b4765aea73e8',1,'persistencia.input.Ctrl_Input_Img.getHeight()'],['../classpersistencia_1_1input_1_1Ctrl__Input__JPEG.html#a173716ac8d17365965ede95f99a8e65a',1,'persistencia.input.Ctrl_Input_JPEG.getHeight()'],['../classpersistencia_1_1output_1_1Ctrl__Output__Img.html#a736bcf38410d875d9b4a17fd2a95cc4d',1,'persistencia.output.Ctrl_Output_Img.getHeight()']]],
   ['getindex',['getIndex',['../classdomini_1_1utils_1_1TrieNode.html#ac8e79df6ce5e7b33c6d08a0fe0681916',1,'domini::utils::TrieNode']]],
   ['getleft',['getLeft',['../classdomini_1_1utils_1_1Pair.html#a9439fbd8488cb1fbf00c57f15f093c4b',1,'domini::utils::Pair']]],
   ['getlimit',['getLimit',['../classdomini_1_1utils_1_1Dict__Encode.html#a21a05b62b848a7ab9fbdf49a3a6e7edf',1,'domini::utils::Dict_Encode']]],
@@ -36,6 +36,6 @@ var searchData=
   ['getsymbol',['getSymbol',['../classdomini_1_1algorithm_1_1Huffman.html#a426cb1d15e2fe89a55e5b0f25e887342',1,'domini::algorithm::Huffman']]],
   ['getvalue',['getValue',['../classdomini_1_1utils_1_1ArrayCircular.html#acbed36ebcc550922c4485c19ce5be53e',1,'domini::utils::ArrayCircular']]],
   ['getvalueambdespl',['getValueAmbDespl',['../classdomini_1_1utils_1_1ArrayCircular.html#aa36c40061ff0f3ea0ae15f5b06900e94',1,'domini::utils::ArrayCircular']]],
-  ['getwidth',['getWidth',['../classpersistencia_1_1input_1_1Ctrl__Input__Img.html#aa8b27bbbc30d9374b5ca1a8067d86bc0',1,'persistencia.input.Ctrl_Input_Img.getWidth()'],['../classpersistencia_1_1input_1_1Ctrl__Input__JPEG.html#ab4cd4c26db5bd1ce89f6e53458c99ba8',1,'persistencia.input.Ctrl_Input_JPEG.getWidth()'],['../classpersistencia_1_1output_1_1Ctrl__Output__Img.html#ab6e88e466e6b7d7d847be2ac9c26c529',1,'persistencia.output.Ctrl_Output_Img.getWidth()']]],
+  ['getwidth',['getWidth',['../classpersistencia_1_1input_1_1Ctrl__Input__Img.html#ab4cda237a52c99efb4411e0e86f3d3a2',1,'persistencia.input.Ctrl_Input_Img.getWidth()'],['../classpersistencia_1_1input_1_1Ctrl__Input__JPEG.html#ab4cd4c26db5bd1ce89f6e53458c99ba8',1,'persistencia.input.Ctrl_Input_JPEG.getWidth()'],['../classpersistencia_1_1output_1_1Ctrl__Output__Img.html#ab6e88e466e6b7d7d847be2ac9c26c529',1,'persistencia.output.Ctrl_Output_Img.getWidth()']]],
   ['getword',['getWord',['../classdomini_1_1utils_1_1Dict__Decode.html#a0f6457460aefe9df50f0cad48f58feee',1,'domini::utils::Dict_Decode']]]
 ];
