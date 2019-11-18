@@ -65,12 +65,13 @@ public class Driver__Dict_Encode {
 				break;
 				case "2":
 					dict_encode.reset_dictionary();
+					System.out.println("El diccionari ha sigut reiniciat");
 				break;
 				case "3":
 					System.out.println("Escribe un byte.");
 					String aux3 = reader.readLine().trim();
 					byte c = Byte.parseByte(aux3);
-					dict_encode.Ascii_value(c);
+					System.out.println(dict_encode.Ascii_value(c));
 				break;
 				case "4":
 					System.out.println("Escribe un entero que represente el puntero a una cadena de caracteres. Separado de un espacio escribe un byte");
