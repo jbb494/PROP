@@ -86,6 +86,7 @@ public class Output {
     {
         DataOutputStream dataOutputStream = null;
         try {
+            System.out.println(path);
             dataOutputStream = new DataOutputStream(new FileOutputStream(path));
         } catch (FileNotFoundException e) {
             e.printStackTrace();
