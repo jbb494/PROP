@@ -1,0 +1,169 @@
+\hypertarget{classdomini_1_1utils_1_1Dict__Decode}{}\section{domini.\+utils.\+Dict\+\_\+\+Decode Class Reference}
+\label{classdomini_1_1utils_1_1Dict__Decode}\index{domini.\+utils.\+Dict\+\_\+\+Decode@{domini.\+utils.\+Dict\+\_\+\+Decode}}
+
+
+Diccionari (amb els mètodes corresponents) emprat per a la descompressió amb L\+ZW.  
+
+
+
+
+Collaboration diagram for domini.\+utils.\+Dict\+\_\+\+Decode\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=206pt]{classdomini_1_1utils_1_1Dict__Decode__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classdomini_1_1utils_1_1Dict__Decode_a8a0f9e67c530bafc031e72c218ce74f8}{Dict\+\_\+\+Decode} (Boolean inicialize\+Ascii, Integer valor\+Neutre)
+\begin{DoxyCompactList}\small\item\em Constructor de la classe. \end{DoxyCompactList}\item 
+void \hyperlink{classdomini_1_1utils_1_1Dict__Decode_a635432505df1ceaa58a987bb80c6b0a3}{reset\+\_\+dictionary} (Boolean b)
+\begin{DoxyCompactList}\small\item\em Reinicialitza el vector. \end{DoxyCompactList}\item 
+Array\+List$<$ Byte $>$ \hyperlink{classdomini_1_1utils_1_1Dict__Decode_a0f6457460aefe9df50f0cad48f58feee}{get\+Word} (Integer i)
+\begin{DoxyCompactList}\small\item\em Retorna la paraula que correspon a la seqüència encadenada a partir d\textquotesingle{}un enter. \end{DoxyCompactList}\item 
+Integer \hyperlink{classdomini_1_1utils_1_1Dict__Decode_aac69020c3515649e8c2d70e2908e3f3e}{get\+Size} ()
+\item 
+void \hyperlink{classdomini_1_1utils_1_1Dict__Decode_a077011e4507db308d143ea9b7146abb9}{add} (Integer i, byte c)
+\begin{DoxyCompactList}\small\item\em Afegeix un element al vector de la classe. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Package Attributes}
+\begin{DoxyCompactItemize}
+\item 
+final Integer \hyperlink{classdomini_1_1utils_1_1Dict__Decode_a10fd6693de70b9091942496b35324c5a}{Limit} = Integer.\+M\+A\+X\+\_\+\+V\+A\+L\+UE
+\item 
+Array\+List$<$ \hyperlink{classdomini_1_1utils_1_1Pair}{Pair}$<$ Integer, Byte $>$ $>$ \hyperlink{classdomini_1_1utils_1_1Dict__Decode_a351bb8836b391e5e21ebc9cc1943a22d}{v}
+\begin{DoxyCompactList}\small\item\em Cada element consta d\textquotesingle{}un caràcter i un index de la seqüència previa al caràcter. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classdomini_1_1utils_1_1Dict__Decode_a6ef2d17f449cf7a658a4bf983e2fb474}\label{classdomini_1_1utils_1_1Dict__Decode_a6ef2d17f449cf7a658a4bf983e2fb474}} 
+Integer {\bfseries valor\+Neutre}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Diccionari (amb els mètodes corresponents) emprat per a la descompressió amb L\+ZW. 
+
+\begin{DoxyAuthor}{Author}
+Miguel Paracuellos Ocaña 
+\end{DoxyAuthor}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classdomini_1_1utils_1_1Dict__Decode_a8a0f9e67c530bafc031e72c218ce74f8}\label{classdomini_1_1utils_1_1Dict__Decode_a8a0f9e67c530bafc031e72c218ce74f8}} 
+\index{domini\+::utils\+::\+Dict\+\_\+\+Decode@{domini\+::utils\+::\+Dict\+\_\+\+Decode}!Dict\+\_\+\+Decode@{Dict\+\_\+\+Decode}}
+\index{Dict\+\_\+\+Decode@{Dict\+\_\+\+Decode}!domini\+::utils\+::\+Dict\+\_\+\+Decode@{domini\+::utils\+::\+Dict\+\_\+\+Decode}}
+\subsubsection{\texorpdfstring{Dict\+\_\+\+Decode()}{Dict\_Decode()}}
+{\footnotesize\ttfamily domini.\+utils.\+Dict\+\_\+\+Decode.\+Dict\+\_\+\+Decode (\begin{DoxyParamCaption}\item[{Boolean}]{inicialize\+Ascii,  }\item[{Integer}]{valor\+Neutre }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Constructor de la classe. 
+
+\begin{DoxyNote}{Note}
+Inicialitzem el vector 
+\end{DoxyNote}
+
+\begin{DoxyParams}{Parameters}
+{\em inicialize\+Ascii} & És true si inicialitzem només començar el diccionari amb la taula ascii. \\
+\hline
+{\em valor\+Neutre} & Valor \{0,1\} emprat a get\+Word \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classdomini_1_1utils_1_1Dict__Decode_a077011e4507db308d143ea9b7146abb9}\label{classdomini_1_1utils_1_1Dict__Decode_a077011e4507db308d143ea9b7146abb9}} 
+\index{domini\+::utils\+::\+Dict\+\_\+\+Decode@{domini\+::utils\+::\+Dict\+\_\+\+Decode}!add@{add}}
+\index{add@{add}!domini\+::utils\+::\+Dict\+\_\+\+Decode@{domini\+::utils\+::\+Dict\+\_\+\+Decode}}
+\subsubsection{\texorpdfstring{add()}{add()}}
+{\footnotesize\ttfamily public void domini.\+utils.\+Dict\+\_\+\+Decode.\+add (\begin{DoxyParamCaption}\item[{Integer}]{i,  }\item[{byte}]{c }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Afegeix un element al vector de la classe. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em i} & Enter que representa la cadena previa \\
+\hline
+{\em c} & Caràcter actual \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classdomini_1_1utils_1_1Dict__Decode_aac69020c3515649e8c2d70e2908e3f3e}\label{classdomini_1_1utils_1_1Dict__Decode_aac69020c3515649e8c2d70e2908e3f3e}} 
+\index{domini\+::utils\+::\+Dict\+\_\+\+Decode@{domini\+::utils\+::\+Dict\+\_\+\+Decode}!get\+Size@{get\+Size}}
+\index{get\+Size@{get\+Size}!domini\+::utils\+::\+Dict\+\_\+\+Decode@{domini\+::utils\+::\+Dict\+\_\+\+Decode}}
+\subsubsection{\texorpdfstring{get\+Size()}{getSize()}}
+{\footnotesize\ttfamily public Integer domini.\+utils.\+Dict\+\_\+\+Decode.\+get\+Size (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\begin{DoxyReturn}{Returns}
+Size del vector 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classdomini_1_1utils_1_1Dict__Decode_a0f6457460aefe9df50f0cad48f58feee}\label{classdomini_1_1utils_1_1Dict__Decode_a0f6457460aefe9df50f0cad48f58feee}} 
+\index{domini\+::utils\+::\+Dict\+\_\+\+Decode@{domini\+::utils\+::\+Dict\+\_\+\+Decode}!get\+Word@{get\+Word}}
+\index{get\+Word@{get\+Word}!domini\+::utils\+::\+Dict\+\_\+\+Decode@{domini\+::utils\+::\+Dict\+\_\+\+Decode}}
+\subsubsection{\texorpdfstring{get\+Word()}{getWord()}}
+{\footnotesize\ttfamily public String domini.\+utils.\+Dict\+\_\+\+Decode.\+get\+Word (\begin{DoxyParamCaption}\item[{Integer}]{i }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Retorna la paraula que correspon a la seqüència encadenada a partir d\textquotesingle{}un enter. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em i} & Enter que representa una seqüència de caràcters \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Retorna la paraula corresponent a l\textquotesingle{}enter 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classdomini_1_1utils_1_1Dict__Decode_a635432505df1ceaa58a987bb80c6b0a3}\label{classdomini_1_1utils_1_1Dict__Decode_a635432505df1ceaa58a987bb80c6b0a3}} 
+\index{domini\+::utils\+::\+Dict\+\_\+\+Decode@{domini\+::utils\+::\+Dict\+\_\+\+Decode}!reset\+\_\+dictionary@{reset\+\_\+dictionary}}
+\index{reset\+\_\+dictionary@{reset\+\_\+dictionary}!domini\+::utils\+::\+Dict\+\_\+\+Decode@{domini\+::utils\+::\+Dict\+\_\+\+Decode}}
+\subsubsection{\texorpdfstring{reset\+\_\+dictionary()}{reset\_dictionary()}}
+{\footnotesize\ttfamily void domini.\+utils.\+Dict\+\_\+\+Decode.\+reset\+\_\+dictionary (\begin{DoxyParamCaption}\item[{Boolean}]{b }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Reinicialitza el vector. 
+
+\begin{DoxyNote}{Note}
+Es crida quan sigui ple o sigui creat 
+\end{DoxyNote}
+
+\begin{DoxyParams}{Parameters}
+{\em b} & Es true si volem inicialitzar el diccionari amb la taula A\+S\+C\+II \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{classdomini_1_1utils_1_1Dict__Decode_a10fd6693de70b9091942496b35324c5a}\label{classdomini_1_1utils_1_1Dict__Decode_a10fd6693de70b9091942496b35324c5a}} 
+\index{domini\+::utils\+::\+Dict\+\_\+\+Decode@{domini\+::utils\+::\+Dict\+\_\+\+Decode}!Limit@{Limit}}
+\index{Limit@{Limit}!domini\+::utils\+::\+Dict\+\_\+\+Decode@{domini\+::utils\+::\+Dict\+\_\+\+Decode}}
+\subsubsection{\texorpdfstring{Limit}{Limit}}
+{\footnotesize\ttfamily final Integer domini.\+utils.\+Dict\+\_\+\+Decode.\+Limit = Integer.\+M\+A\+X\+\_\+\+V\+A\+L\+UE\hspace{0.3cm}{\ttfamily [package]}}
+
+
+\begin{DoxyParams}{Parameters}
+{\em Limit} & Màxim nombre d\textquotesingle{}entrades que pot tenir el diccionari \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classdomini_1_1utils_1_1Dict__Decode_a351bb8836b391e5e21ebc9cc1943a22d}\label{classdomini_1_1utils_1_1Dict__Decode_a351bb8836b391e5e21ebc9cc1943a22d}} 
+\index{domini\+::utils\+::\+Dict\+\_\+\+Decode@{domini\+::utils\+::\+Dict\+\_\+\+Decode}!v@{v}}
+\index{v@{v}!domini\+::utils\+::\+Dict\+\_\+\+Decode@{domini\+::utils\+::\+Dict\+\_\+\+Decode}}
+\subsubsection{\texorpdfstring{v}{v}}
+{\footnotesize\ttfamily Array\+List$<$\hyperlink{classdomini_1_1utils_1_1Pair}{Pair}$<$Integer,Byte$>$ $>$ domini.\+utils.\+Dict\+\_\+\+Decode.\+v\hspace{0.3cm}{\ttfamily [package]}}
+
+
+
+Cada element consta d\textquotesingle{}un caràcter i un index de la seqüència previa al caràcter. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em v} & Diccionari de la classe \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+src/domini/utils/Dict\+\_\+\+Decode.\+java\end{DoxyCompactItemize}
