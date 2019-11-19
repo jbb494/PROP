@@ -7,7 +7,11 @@ import java.util.Map;
  * @class TrieNode
  * @brief Classe TrieNode
  * 
- * Esta clase representa los nodos del Trie.
+ * Aquesta estructura de dades són els nodes del Trie. Cada node representa la seqüencia de bytes des d'ell fins a l'arrel.
+ * L'atribut index representa l'índex del node (que és l'identificador d'aquest). 
+ * Després tenim children, que es un HashMap que cada entrada té com a key un byte i com a value un TrieNode.
+ * Després tenim dos consultores, una que retorna el HasMap que conté children. 
+ * La segona constructora retorna l'índex d'aquest mateix TrieNode. Per últim, el constructor, que se li passa com a paràmetre l'índex.
  * 
  * @author Joan Bellavista Bartroli
  */
