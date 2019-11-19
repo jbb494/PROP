@@ -11,8 +11,6 @@ Joan Bellavista:
 ./domini/utils/Driver__byteToConversion.java
 ./domini/utils/Driver__Node.java
 ./domini/utils/Driver__Pair.java
-./domini/utils/Driver__Dict_Encode.java
-./domini/utils/Driver__Dict_Decode.java
 ./domini/algorithm/Driver__Ctrl_Algorithm.java
 ./domini/algorithm/LZ78.java
 ./domini/algorithm/Driver__LZ78.java
@@ -35,7 +33,10 @@ Miguel Paracuellos:
 ./persistencia/input/Ctrl_Input_Text.java
 ./persistencia/input/Ctrl_Input_LZW.java
 ./persistencia/output/Ctrl_Output.java
+./domini/utils/Driver__Dict_Encode.java
+./domini/utils/Driver__Dict_Decode.java
 Dels jocs de proves dels drivers ("Drivers joc_proves.txt"), els últims 21.
+
 
 Joan Lapeyra: 
 
