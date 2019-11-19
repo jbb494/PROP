@@ -68,19 +68,18 @@ Per tant, té les operacions òbvies de set i get de els atributs byte, despl i 
 Per últim, també té la consultora de si és un byte o dos Int's.
 
 ## Trie
-Aquesta classe és una implementació general de l'estructura de dades Trie. Cada node representa una seqüencias de carácetres. Cada connexió entre nodes (pare-fill), representa un caràcter. I un node és la seqüencia de caràcters des d'ell fins a la raiz.
-A més, cada node té un enter que identifica el seu seqüencia. (això serà útil per al compressor)
+Aquesta classe és una implementació general de l'estructura de dades Trie. Cada node representa una seqüencia de Bytes. Cada connexió entre nodes (pare-fill), representa un caràcter. I un node representa la seqüència de caràcters des d'ell fins a l'arrel.
+A més, cada node té un enter que identifica la seva seqüència. (això serà útil per al compressor). Tot i que aquesta classe està implementada de forma general (), parlarem com si fos un Trie, ja que és com l'utilitzarem sempre en aquest projecte.
 
-### insert(ArrayList<T> list, Integer index)
-Inserta al Trie la ArrayList list amb un Integer index
+### insert(ArrayList list, Integer índex)
+L'algoritme lz78 només fa **insert**, si en el diccionari ja existeix la frase *list* - (últim Byte de *list*). O sigui que mai es donarà el cas que la funció inserti més d'un node al Trie. Dit això, aquesta funció afegeix un Node (que serà fill del node que representi *list* - (últim Byte de *list*)), i li assigna el *index*.
 
-### Integer indexNode(ArrayList<T> list)
-Retorna l'índex de la ArrayList list.
+### Integer indexNode(ArrayList list)
+Retorna l'índex del node que representa la frase *list*. Retorna -1 si no existeix.
 
 ## TrieNode
-Aquesta estructura de dades representa els nodes del Trie.
-L'atribut index representa l'índex des del root del Trie fins el mateix TrieNode. Després tenim children, que es un HashMap que representa els TrieNode's que són fills d'aquest. Després tenim dos consultores, una que retorna el map que conté els fills (children) i l'altre l'index d'aquest mateix TrieNode. Per últim, el constructor, que li passa com a paràmetre l'índex del TrieNode que s'acaba de crear.
-
+Aquesta estructura de dades són els nodes del Trie. Cada node representa la seqüencia de bytes des d'ell fins a l'arrel.
+L'atribut *index* representa l'índex del node (que és l'identificador d'aquest). Després tenim *children*, que es un HashMap que cada entrada té com a key un byte i com a value un TrieNode. Després tenim dos consultores, una que retorna el HasMap que conté *children*. La segona constructora retorna l'índex d'aquest mateix TrieNode. Per últim, el constructor, que se li passa com a paràmetre l'índex.
  
 # Algoritmes
  
@@ -135,15 +134,15 @@ Dins del while, s'aniran agafant instàncies IntorByte, les quals, representaran
  
  
 ## LZ78 (Lempel-Ziv, 1978)
-LZ78 és un algoritme *lossless*, i que en temps lineal comprimeix un arxiu qualsevol. La estructura de dades que utilitza és un diccionari, el qual és una col·lecció potencialment il·limitada de frases vistes anteriorment. Cada frase en el diccionari té associada un índex que codificarà aquesta frase.
+LZ78 és un algoritme *lossless*, i que en temps lineal comprimeix un arxiu qualsevol. L'estructura de dades que utilitza és un diccionari, el qual és una col·lecció potencialment il·limitada de frases vistes anteriorment. Cada frase en el diccionari té associada un índex que codificarà aquesta frase.
 
 ### Compressió
 La compressió té el següent funcionament: A mesura que va llegint, va introduïnt frases a un diccionari, i després, quan es troba una repetició d'alguna frase que estigui al diccionari, *imprimeix* l'índex de l'entrada del diccionari en lloc de la frase.
-En la meva implementació de l'algoritme, vaig començar utilitzant un HashMap<String,Integer>. La clau era la frase, i el valor era el índex que representava aquella frase en concret. El algoritme funcionava bé, a una bona velocitat (seguia sent lineal). Però utilitzava molt espai de memòria (RAM). 
-Vaig decidir canviar el HashMap per un altre tipus de diccionari: El Trie. L'aventatge que té el Trie respecte el HashMap és que, tot i mantenir la funció *find* a cost temporal constant, utilitza molta menys memòria. Ja que cada frase emmagatzemada al Trie ocupa sempre 1 byte, mentre que el HashMap ocupava tants bytes com la mida de la frase. Això es deu a la estructura que segueix el Trie, que cada node representa la seqüència de bytes que va des d'ells fins l'arrel.
+En la meva implementació de l'algoritme, vaig començar utilitzant un HashMap<String,Integer>;. La clau era la frase, i el valor era l'índex que representava aquella frase en concret. L'algoritme funcionava bé, a una bona velocitat (seguia sent lineal). Però utilitzava molt espai de memòria (RAM).
+Vaig decidir canviar el HashMap per un altre tipus de diccionari: El Trie. L'aventatge que té el Trie respecte al HashMap és que, tot i mantenir la funció *find* a cost temporal constant, utilitza molta menys memòria. Ja que cada frase emmagatzemada al Trie ocupa sempre 1 byte, mentre que el HashMap ocupava tants bytes com la mida de la frase. Això es deu a l'estructura que segueix el Trie, que cada node representa la seqüència de bytes que va des d'ells fins a l'arrel.
 
 ### Descompressió
-El text descomprimit, per la natura de la compressió, és sempre una seqüència de Pair<Integer,Byte>. Tenint això en compte, la descompressió segueix aquest funcionament: Anem generant un nou diccionari a mesura que llegim la entrada. A més, els integers que llegim són entrades al diccionari que existeixen (a no ser que sigui 0, que aleshores no està al diccionari i hem d'afegir-lo). Quan llegim un integer, *imprimim* la frase apuntada per aquest. Els bytes els *imprimim* tal i com els llegim.
+El text descomprimit, per la natura de la compressió, és sempre una seqüència de Pair<Integer,Byte>;. Tenint això en compte, la descompressió segueix aquest funcionament: Anem generant un nou diccionari a mesura que llegim l'entrada. A més, els integers que llegim són entrades al diccionari que existeixen (a no ser que sigui 0, que aleshores no està al diccionari i hem d'afegir-lo). Quan llegim un integer, *imprimim* la frase apuntada per aquest. Els bytes els *imprimim* tal com els llegim.
 
 L'estructura de dades emperada a la descompressió ha estat *Dict_Decode* (la qual ha estat definida a l'apartat de **Estructures de Dades**).
 
