@@ -98,7 +98,7 @@ public class LZW {
 				table.reset_dictionary(true);
 			}				
 			else if (k > sz) {
-				System.out.println("Liada");
+				throw new IllegalArgumentException("El text no està ben comprimit");
 			}		
 			else if (k < sz) {
 				s = table.getWord(k);
