@@ -19,10 +19,12 @@ elif [[ $1 == "-ctest" ]]; then
     echo "Compilem tests"
     TestsAcompilar=$(find | grep .java | sed "/.*Test\./! d" | tr "\n" " ")
     echo $TestsAcompilar | sed "s/ /\n/g"
-    javac -cp .:junit-4.12.jar:hamcrest-core-1.3.jar $TestsAcompilar -d ../bin
+    javac -cp .:../bin/junit-4.12.jar:../bin/hamcrest-core-1.3.jar $TestsAcompilar -d ../bin
 elif [[ $1 == "-etest" ]]; then
     echo "Executem tests"
+    cd ../bin
     java -cp .:junit-4.12.jar:hamcrest-core-1.3.jar org.junit.runner.JUnitCore $2
+    cd ../src
 elif [[ $1 == "-clean" || $1 == "-remove" ]]; then
     echo "Borrem els seguents arxius: "
     cd ../bin
