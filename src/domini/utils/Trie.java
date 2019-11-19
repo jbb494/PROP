@@ -6,10 +6,11 @@ import java.util.ArrayList;
  * @class Trie
  * @brief Clase de Trie.
  * 
- * Esta clase es una implementación general de la estructura de datos Trie.
- * Cada nodo representa una seqüencias de carácetres. Cada conexión entre nodos (padre-hijo),
- * representa un carácter. Y un nodo es la seqüencia de carácteres desde él hasta la raiz.
- * Además, cada nodo tiene un entero que identifica su seqüencia. (esto será útil para el compresor)
+ * Aquesta classe és una implementació general de l'estructura de dades Trie. Cada node representa una seqüencia de Bytes.
+ * Cada connexió entre nodes (pare-fill), representa un caràcter. I un node representa la seqüència de caràcters des d'ell fins a l'arrel.
+ * A més, cada node té un enter que identifica la seva seqüència. (això serà útil per al compressor). 
+ * Tot i que aquesta classe està implementada de forma general (), parlarem com si fos un Trie,
+ * ja que és com l'utilitzarem sempre en aquest projecte.
  * 
  * @author Joan Bellavista
  */
