@@ -74,7 +74,7 @@ A més, cada node té un enter que identifica la seva seqüència. (això serà 
 ### insert(ArrayList list, Integer índex)
 L'algoritme lz78 només fa **insert**, si en el diccionari ja existeix la frase *list* - (últim Byte de *list*). O sigui que mai es donarà el cas que la funció inserti més d'un node al Trie. Dit això, aquesta funció afegeix un Node (que serà fill del node que representi *list* - (últim Byte de *list*)), i li assigna el *index*.
 
-### Integer indexNode(ArrayList list)
+### indexNode(ArrayList list)
 Retorna l'índex del node que representa la frase *list*. Retorna -1 si no existeix.
 
 ## TrieNode
