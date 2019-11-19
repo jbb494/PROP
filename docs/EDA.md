@@ -135,13 +135,19 @@ Dins del while, s'aniran agafant instàncies IntorByte, les quals, representaran
  
  
 ## LZ78 (Lempel-Ziv, 1978)
-Aquest algoritme de compresió es basa en utilitzar una estructura de dades (Trie en el meu cas), per guardar seqüencies de bytes i fer referència a aquestes seqüències amb punters al Trie.
+LZ78 és un algoritme *lossless*, i que en temps lineal comprimeix un arxiu qualsevol. La estructura de dades que utilitza és un diccionari, el qual és una col·lecció potencialment il·limitada de frases vistes anteriorment. Cada frase en el diccionari té associada un índex que codificarà aquesta frase.
 
 ### Compressió
-
+La compressió té el següent funcionament: A mesura que va llegint, va introduïnt frases a un diccionari, i després, quan es troba una repetició d'alguna frase que estigui al diccionari, *imprimeix* l'índex de l'entrada del diccionari en lloc de la frase.
+En la meva implementació de l'algoritme, vaig començar utilitzant un HashMap<String,Integer>. La clau era la frase, i el valor era el índex que representava aquella frase en concret. El algoritme funcionava bé, a una bona velocitat (seguia sent lineal). Però utilitzava molt espai de memòria (RAM). 
+Vaig decidir canviar el HashMap per un altre tipus de diccionari: El Trie. L'aventatge que té el Trie respecte el HashMap és que, tot i mantenir la funció *find* a cost temporal constant, utilitza molta menys memòria. Ja que cada frase emmagatzemada al Trie ocupa sempre 1 byte, mentre que el HashMap ocupava tants bytes com la mida de la frase. Això es deu a la estructura que segueix el Trie, que cada node representa la seqüència de bytes que va des d'ells fins l'arrel.
 
 ### Descompressió
+El text descomprimit, per la natura de la compressió, és sempre una seqüència de Pair<Integer,Byte>. Tenint això en compte, la descompressió segueix aquest funcionament: Anem generant un nou diccionari a mesura que llegim la entrada. A més, els integers que llegim són entrades al diccionari que existeixen (a no ser que sigui 0, que aleshores no està al diccionari i hem d'afegir-lo). Quan llegim un integer, *imprimim* la frase apuntada per aquest. Els bytes els *imprimim* tal i com els llegim.
 
+L'estructura de dades emperada a la descompressió ha estat *Dict_Decode* (la qual ha estat definida a l'apartat de **Estructures de Dades**).
+
+D'aquesta manera el que farem es anar generant de nou un diccionari a mesura que anem descomprimint cada byte i retornant la cadena que representa cada decodificació.
 
 ## JPEG (Joint Photographic Experts Group, 1992)
 
