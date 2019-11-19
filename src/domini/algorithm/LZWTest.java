@@ -19,6 +19,9 @@ public class LZWTest {
 	 */
     private LZW lzw;
 
+    private String path_lzw = "../src/persistencia/data/junit.lzw";
+    private String path_txt = "../src/persistencia/data/junit.txt";
+
     /**
      * @fn private void initialize(String path, boolean b)
      * @brief Inicialitza l'atribut lzw
@@ -72,16 +75,15 @@ public class LZWTest {
 	public void testCompression() {
         String descp = "Comprovació de la compressio amb LZW... ";
         
-        String path = "../data/junit.lzw";
         boolean b = true;   
         
-        Ctrl_Output aux = new Ctrl_Output(path, "lzw", b);
+        Ctrl_Output aux = new Ctrl_Output(path_lzw, "lzw", b);
         Integer[] compr = {66,65,256,257,65,260};
         for (Integer x : compr) 
             aux.add(x);
         
-        initialize(path, true);
-        Ctrl_Input_Text in = new Ctrl_Input_Text("../data/junit.txt");
+        initialize(path_lzw, true);
+        Ctrl_Input_Text in = new Ctrl_Input_Text(path_txt);
         lzw.compression(in);
         compare_Ctrl_Output(aux,descp);    
     }
@@ -94,17 +96,16 @@ public class LZWTest {
     public void testDecompression() {
         String descp = "Comprovació de la descompressio amb LZW... ";
                 
-        String path = "../data/junit.txt";
         boolean b = false;
 
-        Ctrl_Output aux = new Ctrl_Output(path, "lzw", b);
+        Ctrl_Output aux = new Ctrl_Output(path_txt, "lzw", b);
         byte[] decomp = {66,65,66,65,65,66,65,65,65};
         for (byte bt : decomp)
             aux.add(bt,8);
         
         
-        initialize(path, false);
-        Ctrl_Input_LZW in = new Ctrl_Input_LZW("../data/junit.lzw");
+        initialize(path_txt, false);
+        Ctrl_Input_LZW in = new Ctrl_Input_LZW(path_lzw);
         lzw.decompression(in);
         compare_Ctrl_Output(aux,descp);
     }
