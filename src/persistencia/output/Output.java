@@ -16,10 +16,7 @@ import domini.utils.byteToConversion;
  */
 public class Output {
 
-    /**
-     * @param Out Llista de bytes que escriurem
-     */
-    ArrayList<Byte> Out;
+    
 
     /**
      * @param Pos Posició en la que ens trobem al byte actual.
@@ -32,48 +29,78 @@ public class Output {
     String path;
 
     /**
+     * @param next_byte Ultim byte llegit
+     */
+    private Byte next_byte; 
+
+    /**
+     * @param dataOutputStream
+     */
+    DataOutputStream dataOutputStream;
+
+    /**
      * @brief Constructor de la classe
      * @param path Path de sortida
      */
     public Output(String path) {
-        Out = new ArrayList<>();
         Pos = 0;
         this.path = path;
+        next_byte = 0;
+
+        dataOutputStream = null;
+        try {
+            System.out.println(path);
+            dataOutputStream = new DataOutputStream(new FileOutputStream(path));
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        }
+    }
+
+    private void write() {
+
+        try {
+            byte[] aux = {(byte)next_byte};
+            dataOutputStream.write(aux, 0, 1);
+            next_byte = 0;
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 
     
     /**
      * @fn public void add(byte b, int n_bits)
-     * @brief Afegeix un byte amb n_bits vàlids
+     * @brief Afegeix els n_bits de manys pes d'un byte
      * @param b Byte a afegir
      * @param n_bits Nombre de bits vàlids
-     * @note El byte b ha de poder expressar-se en n_bits
+     * @note Pre: 0 <= n_bits <= 8
      */
     public void add(byte b, int n_bits) 
     {
         if(n_bits != 0)
         {
-            byte aux, aux2;
+            byte aux;
+            b = (byte)(b & ~(0xff << n_bits)); //neteja dels els bits no vàlids a posicions altes
             aux = (byte)(b << Pos);
-            if(Pos != 0)
+            next_byte = (byte)(aux | next_byte);
+            
+            if (Pos + n_bits > 8) 
             {
-                aux2 = Out.get(Out.size()-1); 
-                Out.remove(Out.size()-1);
-                aux = (byte)(aux | aux2);
-            }
-            Out.add(aux);
-            if(n_bits > (8-Pos))
-            {
+                write();
                 int restants = n_bits - (8-Pos);
                 int despl = 8-Pos;
                 aux = byteToConversion.shift_right_logic(b, despl);
                 Pos = 0;
                 add(aux, restants);
             }
-            else
+            else if (Pos + n_bits == 8) 
+            {
+                write();
+                Pos = 0;
+            }
+            else // Pos + n_bits < 8
             {
                 Pos += n_bits;
-                if(Pos > 7) Pos -= 8;
             }
         }
     }
@@ -84,37 +111,19 @@ public class Output {
      */
     public void print()
     {
-        DataOutputStream dataOutputStream = null;
-        try {
-            System.out.println(path);
-            dataOutputStream = new DataOutputStream(new FileOutputStream(path));
-        } catch (FileNotFoundException e) {
-            e.printStackTrace();
-        }
-
-        byte[] bArray = new byte[Out.size()];
-        for (int i = 0; i < bArray.length; i++)
-        {
-            Byte bAux = Out.get(i);
-
-            bArray[i] = bAux;
-        }
-        
-        try {
-            dataOutputStream.write(bArray, 0, bArray.length);
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-        
-        //for(Byte b: Out) System.out.println(String.format("%8s", Integer.toBinaryString(b & 0xFF)).replace(' ', '0'));
-
+        if (Pos > 0) write();
     }
 
-    /**
+    /*
      * @fn public void printString()
      * @brief Crea un fitxer de sortida i també mostra per consola el contingut d'aquest.
      */
-    public void printString()
+
+    /* aquesta funció ha quedat inservible perquè ha desaparegut l'array 'Out'
+       He vist que només l'ultilitzen els drivesr (mirjançant Ctrl_Output::printString()),
+       per tant no crec que sigui un problema eliminar-la */
+
+    /*public void printString()
     {
         OutputStreamWriter outputStreamWriter = null;
         try {
@@ -138,20 +147,13 @@ public class Output {
         }
         
         for(Byte b: Out) System.out.println(String.format("%8s", Integer.toBinaryString(b & 0xFF)).replace(' ', '0'));
+        
+    }*/
 
-    }
-
-    /**
-     * @fn public ArrayList<Byte> getOut() 
-     * @return Retorna la llista de bytes de la classe
-     */
-    public ArrayList<Byte> getOut() {
-        return Out;
-    }
 
     /**
      * @fn public Integer getPos()
-     * @return Retorna la posició de l'arxiu
+     * @return Retorna la posició del pròxim bit a ecriure dins del byte a escriure
      */
     public Integer getPos() {
         return Pos;
