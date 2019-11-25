@@ -1,0 +1,19 @@
+Comprimir descomprimir carpetas
+
+Capa de presentacion
+
+Separacion de capas -> Distincion dominio - persistencia
+
+Solo habrá UNA extensión de los ficheros comprimidos
+
+Checkear que hacemos bien los buffers I/O
+
+Funcionalidades:
+    - Comprimir cualquier cosa con los LZ.
+    - Añadir alguna versión más de LZ.
+    - Diccionarios en arbol
+    - Automática
+        * JPEG: Obvio
+        * Textos: Hacer prueba experimental para determinar cual funciona mejor
+        
+    - Todas las que pensemos nosotros decírselo antes
