@@ -34,8 +34,6 @@ public class Driver__Output {
         System.out.println("Consultoras: ");
         System.out.println("\t 3. print()");
         System.out.println("\t Input: 3");
-        System.out.println("\t 4. test_printString()");
-        System.out.println("\t Input: 4");
         System.out.println();
 
         System.out.println("\t 0. Sortir");
@@ -91,9 +89,6 @@ public class Driver__Output {
                     break;
                     case "3":
                         out.print();
-                    break;
-                    case "4":
-                        out.printString();
                     break;
                     case "0":
                         return;

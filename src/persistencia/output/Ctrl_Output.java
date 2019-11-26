@@ -148,9 +148,11 @@ public class Ctrl_Output {
      * @fn public void printString()
      * @brief Escriu el contingut de la classe per consola byte a byte (en format binari)
      */
-    public void printString() {
+    /* aquesta funció ha quedat inservible perquè ha desaparegut l'array 'Out' de la classe Output
+       He vist que només l'ultilitzen els drivers, per tant no crec que sigui un problema eliminar-la.*/
+    /*public void printString() {
         Output_Class.printString();
-    }
+    }*/
     
     /**
      * @fn public Output getOut()

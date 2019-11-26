@@ -103,7 +103,7 @@ public class Driver__LZSS {
 				break;
 				case "4":
 					Ctrl_Output a = lzss.print();
-					a.printString();
+					//.printString();
 					a.print();
 				break;
 				case "5":
