@@ -31,7 +31,7 @@ public class Ctrl_Master {
     public Ctrl_Master() {
         Function = 0;
         Path = "";
-        // form = new MainForm();
+        form = new MainForm();
     }
 
     //Functions
