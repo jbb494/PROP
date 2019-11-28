@@ -1,5 +1,13 @@
 package domini.algorithm;
 
+import java.util.ArrayList;
+import java.util.Iterator;
+import java.util.PriorityQueue;
+import java.util.Map;
+import java.util.TreeMap;
+import java.util.HashMap;
+import java.util.Stack;
+
 import domini.utils.BinTree;
 
 
@@ -23,6 +31,11 @@ class Huffman {
     private boolean auto;
 
     /**
+	 *  @param tree és l'arbre de huffan que emmegatzema la codificació.
+	*/
+    private BinTree tree;
+
+    /**
 	 *  @param auto_codes és la taula de huffman que representa la codificació automàtica.
      * Donat un enter x, code(auto_codes[x]) és la codificació de x, que té una mida de size(auto_codes[x])
      * Aquesta taula és la que proporciona https://www.ece.ucdavis.edu/cerl/reliablejpeg/coding/,
@@ -31,9 +44,15 @@ class Huffman {
     private long[] auto_codes;
 
     /**
-	 *  @param tree és l'arbre de huffan que emmegatzema la codificació.
+	 *  @param man_codes és la taula de huffman que representa una codificació manual.
+     * Donat un enter x, code(man_codes.get(x)) és la codificació de x, que té una mida de size(man_codes.get(x))
 	*/
-    private BinTree tree;
+    private HashMap<Integer, Long> man_codes;
+
+    /**
+     *  @param code_sizes sizes.get(x) és el conjunt de simbols amb codi de mida x
+     */
+    ArrayList< ArrayList<Integer> > code_sizes;
 
     /**
 	 * @fn private void set_auto_codes()
@@ -129,7 +148,7 @@ class Huffman {
      * @fn private BinTree code_subtree(int size, int code, int info)
      * @brief Genera un (sub)arbre de huffman
      * @param size És la mida del codi de huffman.
-     * @param code És el codi de huffman
+     * @param code És el codi de huffman (els primers bits son els menys significants)
      * @param info És el símbol que volem codificar
      * @return Un arbre de huffman que codifica el símbol 'info' en el codi 'code' de mide 'size'
      */
@@ -148,7 +167,7 @@ class Huffman {
      * node per trobar codificat el símbol 'info' en el codi 'code' de mida 'size'
      * @param node És el node a partir del qual volem codificar.
      * @param size És la mida del codi de huffman.
-     * @param code És el codi de huffman
+     * @param code És el codi de huffman (els primers bits son els menys significants)
      * @param info És el símbol que volem codificar
      */
     private void code_to_tree(int node, int size, int code, int info) {
@@ -183,21 +202,122 @@ class Huffman {
         }
     }
 
+    private void initialize_from_code_sizes() {
+        auto = false;
+        tree = new BinTree();
+        man_codes = new HashMap<>();
+        node_pointer = 0;
+        sym_found = false;
+
+        int code = 0;
+        for (int size = 0; size < code_sizes.size(); ++size) {
+            for (int sym : code_sizes.get(size)) {
+                long sz_cd = size_code(size, code);
+                man_codes.put(sym, sz_cd);
+                code_to_tree(0, size, code(sz_cd), sym);
+                //System.out.println(sym + ": "+Integer.toBinaryString(code)+ ", "+size );
+                code++;
+            }
+            code = code << 1;
+        }
+    }
+
     /**
-     * @brief Constructora.
-     * @param automatic indica si el mode és automàtic
+     * @fn private void set_code_sizes(int node, int sz)
+     * @brief Incialitza part de code_size
+     * @param node és el node de tree a partir del qual afegim símbols en aquesta fincó
+     * @param sz és la profunditat de 'node' a 'tree'
+     * @note Pre: code_sizes.size() >= sz
      */
-    public Huffman(boolean automatic) {
+    private void set_code_sizes(int node, int sz) {
+        if (node == -1) return;
+        if (code_sizes.size() == sz) code_sizes.add(new ArrayList<Integer>());
+        if (tree.isLeaf(node)) {
+            code_sizes.get(sz).add(tree.getData(node));
+        }
+        else {
+            set_code_sizes(tree.getChild(node, 0), sz+1);
+            set_code_sizes(tree.getChild(node, 1), sz+1);
+        }
+    }
+
+    /**
+     * @fn private void set_code_sizes()
+     * @brief Incialitza code_size
+     */
+    private void set_code_sizes() {
+        code_sizes = new ArrayList<>();
+        set_code_sizes(0,0);
+    }
+
+    /**
+     * @brief Constructora. Mode automàtic.
+     */
+    public Huffman() {
         auto_codes = new long[0];
-        auto = automatic;
+        auto = true;
         tree = new BinTree();
         node_pointer = 0;
         sym_found = false;
         if(auto) {
             set_auto_codes();
             set_auto_tree();
+            set_code_sizes();
         }
     }
+
+    /**
+     * @brief Constructora. Mode manual, construeix en funció de freqüències.
+     * @param freqs el simbol x te la freqüència freqs.get(x)
+     * @note Siguin s1 i s2 dos simbols es garenteix que en la codificació generada: 
+     * (getCode(s1) <= getCode(s2)) <-> (getSize(s1) <= getSize(s2))
+     */
+    public Huffman(Map<Integer,Integer> freqs) {
+        Iterator<Integer> it = freqs.keySet().iterator();
+        PriorityQueue<Long> pq = new PriorityQueue<Long>();
+        ArrayList<BinTree> arr = new ArrayList<BinTree>();
+        while(it.hasNext()) {
+            int i = arr.size();
+            int sym = it.next();
+            pq.add(upper_lower(freqs.get(sym), i));
+            arr.add(new BinTree(sym));
+        }
+
+        while(pq.size() > 1) {
+            long l1 = pq.poll();
+            long l2 = pq.poll();
+            int i = arr.size();
+            arr.add(new BinTree());
+            arr.get(i).setChild(0, 0, arr.get(lower(l1)));
+            arr.get(i).setChild(0, 1, arr.get(lower(l2)));
+            pq.add(upper_lower( upper(l1)+upper(l2), i ));
+
+            arr.set(lower(l1), new BinTree()); //estalvi d'espai
+            arr.set(lower(l2), new BinTree()); //estalvi d'espai
+        }
+
+        
+        tree = new BinTree(arr.get(lower(pq.peek())));
+        set_code_sizes();
+        initialize_from_code_sizes();
+
+        ///////////////////////////////////////////////
+        tree.print();
+        System.out.println();
+        for (int i = 0; i < code_sizes.size(); ++i) {
+            System.out.print(i+": ");
+            for (int j = 0; j < code_sizes.get(i).size(); ++j) {
+                System.out.print(code_sizes.get(i).get(j)+" ");
+            }
+            System.out.println();
+        }
+        /////////////////////////////////////////////////
+
+        
+    }
+
+    
+
 
     /**
 	 * @fn public int getCode(int symbol)
@@ -209,7 +329,9 @@ class Huffman {
         if (auto) {
             return code(auto_codes[symbol]);
         }
-        return 0;
+        else {
+            return code(man_codes.get(symbol));
+        }
     }
 
     /**
@@ -222,7 +344,9 @@ class Huffman {
         if (auto) {
             return size(auto_codes[symbol]);
         }
-        return 0;
+        else {
+            return size(man_codes.get(symbol));
+        }
     }
 
     /**
@@ -328,7 +452,7 @@ class Huffman {
             x += code & 1;
             code >>= 1;
         }
-        return ((long)size << 32) + (long)x;
+        return upper_lower(size, x);
     }
     
     /**
@@ -338,7 +462,7 @@ class Huffman {
      * @return la mida del codi representat per x
 	 */
     private static int size(long x) {
-        return (int)(x >> 32);
+        return upper(x);
     }
 
     /**
@@ -348,7 +472,61 @@ class Huffman {
      * @return el codi representar per x. Els primers bits es retornen com a bits de menys pes.
 	 */
     private static int code(long x) { //lest significant bits are the first ones
+        return lower(x);
+    }
+
+    /**
+	 * @fn private static long upper_lower(int up, int low)
+	 * @brief Retorna un long amb 'up' als 32 bits més significatius i 'low' als menys significatius.
+	 */
+    private static long upper_lower(int up, int low) {
+        return ((long)up << 32) + (long)low;
+    }
+    
+    /**
+	 * @fn private static int upper(long x)
+	 * @brief Retorna els 32 bits més significatius de x
+	 */
+    private static int upper(long x) {
+        return (int)(x >> 32);
+    }
+
+    /**
+	 * @fn private static int lower(long x)
+	 * @brief Retorna els 32 bits menys significatius de x
+	 */
+    private static int lower(long x) {
         return (int)x;
+    }
+
+
+
+
+    public static void main(String[] args) {
+        Map<Integer,Integer> m = new HashMap<Integer,Integer>();
+        m.put(91, 11);
+        m.put(92, 6);
+        m.put(93, 2);
+        m.put(94, 10);
+        m.put(95, 7);
+        m.put(96, 10);
+
+        Map<Integer,Integer> m2 = new HashMap<Integer,Integer>();
+        m2.put(91, 20);
+        m2.put(92, 10);
+        m2.put(93, 10);
+        m2.put(94, 30);
+        m2.put(95, 15);
+        m2.put(96, 15);
+        Huffman h = new Huffman(m2);
+
+        System.out.println();
+
+        for (int x = 91; x <= 96; ++x) {
+            int cd = h.getCode(x);
+            int sz = h.getSize(x);
+            System.out.println(x +" -> "+ Integer.toBinaryString(cd) +","+ sz +" -> "+ h.getSymbol(cd));
+        }
     }
 
 }

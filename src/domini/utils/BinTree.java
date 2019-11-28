@@ -27,7 +27,7 @@ public class BinTree {
     
 
     /**
-     * @param num_undefs és el número de fills indefinits en el global desl nodes
+     * @param num_undefs és el número de fills indefinits en el global dels nodes
      */
     private int num_undefs;    
 
@@ -50,6 +50,11 @@ public class BinTree {
         arr.add(-2);
         arr.add(data);
         num_undefs = 0;
+    }
+
+    public BinTree(BinTree bt) {
+        arr = new ArrayList<Integer>(bt.arr);
+        num_undefs = bt.num_undefs;
     }
     /**
      * @fn private void checkNode(int x)
@@ -204,6 +209,8 @@ public class BinTree {
     public void print() {
         print(0,0);
     }
+
+
 
     
 }
