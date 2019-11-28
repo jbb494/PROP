@@ -38,7 +38,7 @@ public class JPEG {
 	 * @param b False si estas comprimint, True si estas descomprimint
 	 */
 	public JPEG(String aux, boolean b) {
-		huff = new Huffman(true);
+		huff = new Huffman();
 		path = aux;
 		decode_or_encode = b;
 	}

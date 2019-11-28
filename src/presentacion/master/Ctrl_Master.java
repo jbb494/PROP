@@ -1,6 +1,7 @@
 package presentacion.master;
 import domini.algorithm.Ctrl_Algorithm;
 import domini.estadistica.Estadistica;
+import presentacion.form.MainForm;
 
 /**
  * @class Ctrl_Master
@@ -21,12 +22,16 @@ public class Ctrl_Master {
     String Path;
 
 
+    MainForm form;
+
+
     /**
      * @brief Constructor de la classe
      */
     public Ctrl_Master() {
         Function = 0;
         Path = "";
+        // form = new MainForm();
     }
 
     //Functions

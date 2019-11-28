@@ -86,7 +86,7 @@ public class Driver__LZW {
 				break;
 				case "4":
 					Ctrl_Output a = lzw.print();
-					a.printString();
+					//a.printString();
 					a.print();					
 				break;
 				case "0":

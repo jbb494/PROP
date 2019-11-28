@@ -86,7 +86,7 @@ public class Driver__LZ78 {
 				break;
 				case "4":
 					Ctrl_Output a = lz78.print();
-					a.printString();
+					//a.printString();
 					a.print();
 				break;
 				case "0":

@@ -32,14 +32,12 @@ public class Driver__Ctrl_Output {
         System.out.println("\t Input: 5");
         System.out.println("\t 6. add(Integer x, Integer mida)");
         System.out.println("\t Input: 6");
-        System.out.println("\t 13. add2(Integer x, Integer mida)");
-        System.out.println("\t Input: 13");
+        System.out.println("\t 7. add2(Integer x, Integer mida)");
+        System.out.println("\t Input: 7");
         System.out.println();
 
         System.out.println("Consultoras: ");
-        System.out.println("\t 7. print()");
-        System.out.println("\t Input: 7");
-        System.out.println("\t 8. printString()");
+        System.out.println("\t 8. print()");
         System.out.println("\t Input: 8");
         System.out.println();
 
@@ -126,10 +124,12 @@ public class Driver__Ctrl_Output {
                         ctrl_out.add(Integer.parseInt(aux1[0]), Integer.parseInt(aux1[1]));
                     break;
                     case "7":
-                        ctrl_out.print();
+                        System.out.println("Escribe un Integer y su tamaño");
+                        aux1 = reader.readLine().split(" ");
+                        ctrl_out.add2(Integer.parseInt(aux1[0]), Integer.parseInt(aux1[1]));
                     break;
                     case "8":
-                        ctrl_out.printString();
+                        ctrl_out.print();
                     break;
                     case "9":
                         method = "descomprimir";
@@ -146,11 +146,6 @@ public class Driver__Ctrl_Output {
                     case "12":
                         method = "lzss";
                         b = false;
-                    break;
-                    case "13":
-                        System.out.println("Escribe un Integer y su tamaño");
-                        aux1 = reader.readLine().split(" ");
-                        ctrl_out.add2(Integer.parseInt(aux1[0]), Integer.parseInt(aux1[1]));
                     break;
                     case "0":
                         return;
