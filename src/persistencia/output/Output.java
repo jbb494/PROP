@@ -63,7 +63,7 @@ public class Output {
         try {
             byte[] aux = {(byte)next_byte};
             buff.write(aux, 0, 1);
-            buff.flush();
+            //buff.flush();
             next_byte = 0;
         } catch (IOException e) {
             e.printStackTrace();
@@ -115,6 +115,12 @@ public class Output {
     public void print()
     {
         if (Pos > 0) write();
+        try {
+            buff.flush();
+        }
+        catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 
     /**
