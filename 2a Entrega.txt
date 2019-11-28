@@ -1,7 +1,7 @@
 1)  Comprimir descomprimir carpeta
     Checkear que hacemos bien los buffers I/O
 
-2)  Capa de presentacion (JFrame)
+2)  Capa de presentacion (JFrame) --> Layaout Managers
 
 3)  Solo habrá UNA extensión de los ficheros comprimidos (propmola)
 
@@ -20,3 +20,5 @@ Preguntar:
 * Magic words oficials -> fan falta?
 
 * Separacion de capas -> Distincion dominio - persistencia --> Està bé?
+
+
