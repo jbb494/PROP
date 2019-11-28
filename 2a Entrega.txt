@@ -1,19 +1,22 @@
-Comprimir descomprimir carpetas
+1)  Comprimir descomprimir carpeta
+    Checkear que hacemos bien los buffers I/O
 
-Capa de presentacion 
+2)  Capa de presentacion (JFrame)
 
-Separacion de capas -> Distincion dominio - persistencia
+3)  Solo habrá UNA extensión de los ficheros comprimidos (propmola)
 
-Solo habrá UNA extensión de los ficheros comprimidos
+4)  Compresion Automática
+    Estadisticas de descompresion
 
-Checkear que hacemos bien los buffers I/O
+5)  Mejorar los algoritmos (LZ en árbol)
 
-Funcionalidades:
-    - Comprimir cualquier cosa con los LZ.
-    - Añadir alguna versión más de LZ.
-    - Diccionarios en arbol
-    - Automática
-        * JPEG: Obvio
-        * Textos: Hacer prueba experimental para determinar cual funciona mejor
-        
-    - Todas las que pensemos nosotros decírselo antes
+Extras:
+* Comprimir cualquier cosa con los LZ.
+* Añadir alguna versión más de LZ.
+     
+* Todas las que pensemos nosotros decírselo antes
+
+Preguntar:
+* Magic words oficials -> fan falta?
+
+* Separacion de capas -> Distincion dominio - persistencia --> Està bé?
