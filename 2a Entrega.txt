@@ -22,3 +22,4 @@ Preguntar:
 * Separacion de capas -> Distincion dominio - persistencia --> Està bé?
 
 
+Utilitzar patro estats per el ctrl master
