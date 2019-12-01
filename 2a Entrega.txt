@@ -13,7 +13,9 @@
 Extras:
 * Comprimir cualquier cosa con los LZ.
 * Añadir alguna versión más de LZ.
-     
+* Utilitzar patro estats per el ctrl master
+* Script fer autocompletable
+
 * Todas las que pensemos nosotros decírselo antes
 
 Preguntar:
@@ -21,5 +23,3 @@ Preguntar:
 
 * Separacion de capas -> Distincion dominio - persistencia --> Està bé?
 
-
-Utilitzar patro estats per el ctrl master
