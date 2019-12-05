@@ -22,16 +22,12 @@ public class Ctrl_Master {
     String Path;
 
 
-    MainForm form;
-
-
     /**
      * @brief Constructor de la classe
      */
     public Ctrl_Master() {
         Function = 0;
         Path = "";
-        form = new MainForm();
     }
 
     //Functions
