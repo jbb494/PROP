@@ -7,10 +7,11 @@
     <properties/>
     <border type="none"/>
     <children>
-      <component id="ca20d" class="javax.swing.JButton" binding="button1" default-binding="true">
+      <component id="ca20d" class="javax.swing.JButton" binding="rataButton" default-binding="true">
         <constraints border-constraint="North"/>
         <properties>
-          <text value="Button"/>
+          <background color="-16776127"/>
+          <text value="rata"/>
         </properties>
       </component>
     </children>

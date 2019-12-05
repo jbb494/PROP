@@ -3,6 +3,8 @@ import domini.algorithm.Ctrl_Algorithm;
 import domini.estadistica.Estadistica;
 import presentacion.mainForm;
 
+import javax.swing.*;
+
 /**
  * @class Ctrl_Master
  * @brief Classe Ctrl_Master
@@ -28,7 +30,10 @@ public class Ctrl_Master {
     public Ctrl_Master() {
         Function = 0;
         Path = "";
-        mainForm m = new mainForm();
+        mainForm frame = new mainForm();
+        frame.inicialitza_panel();
+
+
     }
 
     //Functions
