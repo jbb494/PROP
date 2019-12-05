@@ -1,8 +1,7 @@
 package presentacion.master;
 import domini.algorithm.Ctrl_Algorithm;
 import domini.estadistica.Estadistica;
-import presentacion.form.MainForm;
- 
+
 /**
  * @class Ctrl_Master
  * @brief Classe Ctrl_Master
