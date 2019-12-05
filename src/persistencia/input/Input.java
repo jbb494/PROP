@@ -1,5 +1,6 @@
 package persistencia.input;
 
+import java.io.BufferedInputStream;
 import java.io.DataInputStream;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
@@ -20,9 +21,9 @@ import domini.utils.byteToConversion;
 public class Input {
     
     /**
-     * @param inputStreamReader
+     * @param bin
      */
-    private DataInputStream inputStreamReader;
+    private BufferedInputStream bin;
 
     /**
      * @param punter Indica el proper bit que ha de ser llegit del byte en qüestió
@@ -59,8 +60,8 @@ public class Input {
             end = false;
             illegals = 0;
             punter = 0;
-            FileInputStream dataInputStream = new FileInputStream(new File(path));
-            inputStreamReader = new DataInputStream(dataInputStream);
+            FileInputStream fin = new FileInputStream(path);
+            bin = new BufferedInputStream(fin);
         } catch (FileNotFoundException e) {
             e.printStackTrace();
         } finally {
@@ -81,7 +82,7 @@ public class Input {
     private void read() {
         Integer c;
         try {
-            if ((c = inputStreamReader.read()) != -1) {
+            if ((c = bin.read()) != -1) {
                 last_byte = c.byteValue();
             }
             else {

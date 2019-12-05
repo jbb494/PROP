@@ -1,6 +1,7 @@
 package persistencia.output;
 
 import java.util.*;
+import java.io.BufferedOutputStream;
 import java.io.DataOutputStream;
 import java.io.OutputStreamWriter;
 
@@ -34,9 +35,9 @@ public class Output {
     private Byte next_byte; 
 
     /**
-     * @param dataOutputStream
+     * @param buff
      */
-    DataOutputStream dataOutputStream;
+    BufferedOutputStream buff;
 
     /**
      * @brief Constructor de la classe
@@ -47,10 +48,11 @@ public class Output {
         this.path = path;
         next_byte = 0;
 
-        dataOutputStream = null;
+        buff = null;
         try {
             System.out.println(path);
-            dataOutputStream = new DataOutputStream(new FileOutputStream(path));
+            FileOutputStream fout = new FileOutputStream(path);
+            buff = new BufferedOutputStream(fout);
         } catch (FileNotFoundException e) {
             e.printStackTrace();
         }
@@ -60,7 +62,8 @@ public class Output {
 
         try {
             byte[] aux = {(byte)next_byte};
-            dataOutputStream.write(aux, 0, 1);
+            buff.write(aux, 0, 1);
+            //buff.flush();
             next_byte = 0;
         } catch (IOException e) {
             e.printStackTrace();
@@ -112,44 +115,13 @@ public class Output {
     public void print()
     {
         if (Pos > 0) write();
+        try {
+            buff.flush();
+        }
+        catch (IOException e) {
+            e.printStackTrace();
+        }
     }
-
-    /*
-     * @fn public void printString()
-     * @brief Crea un fitxer de sortida i també mostra per consola el contingut d'aquest.
-     */
-
-    /* aquesta funció ha quedat inservible perquè ha desaparegut l'array 'Out'
-       He vist que només l'ultilitzen els drivesr (mirjançant Ctrl_Output::printString()),
-       per tant no crec que sigui un problema eliminar-la */
-
-    /*public void printString()
-    {
-        OutputStreamWriter outputStreamWriter = null;
-        try {
-            outputStreamWriter = new OutputStreamWriter(new FileOutputStream(path));
-        } catch (FileNotFoundException e) {
-            e.printStackTrace();
-        }
-
-        char[] cArray = new char[Out.size()];
-        for (int i = 0; i < cArray.length; i++)
-        {
-            char cAux = (char)(byte)Out.get(i);
-
-            cArray[i] = cAux;
-        }
-        
-        try {
-            outputStreamWriter.write(cArray, 0, cArray.length);
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-        
-        for(Byte b: Out) System.out.println(String.format("%8s", Integer.toBinaryString(b & 0xFF)).replace(' ', '0'));
-        
-    }*/
-
 
     /**
      * @fn public Integer getPos()

@@ -1,0 +1,25 @@
+1)  Comprimir descomprimir carpeta
+    Checkear que hacemos bien los buffers I/O
+
+2)  Capa de presentacion (JFrame) --> Layaout Managers
+
+3)  Solo habrá UNA extensión de los ficheros comprimidos (propmola)
+
+4)  Compresion Automática
+    Estadisticas de descompresion
+
+5)  Mejorar los algoritmos (LZ en árbol)
+
+Extras:
+* Comprimir cualquier cosa con los LZ.
+* Añadir alguna versión más de LZ.
+* Utilitzar patro estats per el ctrl master
+* Script fer autocompletable
+
+* Todas las que pensemos nosotros decírselo antes
+
+Preguntar:
+* Magic words oficials -> fan falta?
+
+* Separacion de capas -> Distincion dominio - persistencia --> Està bé?
+

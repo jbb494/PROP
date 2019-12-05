@@ -45,8 +45,8 @@ public class Ctrl_Output_Img extends Ctrl_Output {
             throw new IllegalArgumentException("Width and height must be non-negative.");
         }
 
-        width = (w/8)*8;
-        height = (h/8)*8;
+        width = (w/8)*8;  // cal permetre que width sigui no-múltiple de 8 
+        height = (h/8)*8; // cal permetre que height sigui no-múltiple de 8 
         max_val = mv;
         rows = 0;
 
@@ -94,7 +94,7 @@ public class Ctrl_Output_Img extends Ctrl_Output {
         for (int x = 0; x < 8; ++x) {
             for (int j = 0; j < 8*n_blocks; ++j) {
                 for (int color = 0; color < 3; ++color) {
-                    int val = (int)mat[j/8][x][j%8][color];
+                    int val = (int)mat[j/8][x][j%8][color];  //cal tenir en compte que max_val pot ser diferenta a 255
                     if (bits_per_val == 16) {
                         Byte b = (byte)(val >> 8);
                         add(b,8);
@@ -102,7 +102,7 @@ public class Ctrl_Output_Img extends Ctrl_Output {
                     Byte b = (byte)val;
                     add(b,8);
                 }
-            }
+            } // cal permetre escriure dummy data
         }
     }
 
