@@ -1,4 +1,4 @@
-package presentacion.master; 
+package presentacion.master;
 
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
