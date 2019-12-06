@@ -52,10 +52,10 @@ public class Ctrl_Master {
             
             if (aux.equals("manual")) Function = 3; // Compressió manual
             else if (aux.equals("auto")) Function = 1; // Compressió automàtica
-	    else throw new IllegalArgumentException("Entrada incorrecte, escrigui \"manual\" o \"auto\"");
+	        else throw new IllegalArgumentException("Entrada incorrecte, escrigui \"manual\" o \"auto\"");
         }
         else if (input.equals("descomprimir")) Function = 2; // Descompressió
-	else throw new IllegalArgumentException("Entrada incorrecte, escrigui \"comprimir\" o \"descomprimir\"");
+	    else throw new IllegalArgumentException("Entrada incorrecte, escrigui \"comprimir\" o \"descomprimir\"");
 
         //Asking the name of the file we wanna encode / decode
         System.out.println("Quin és el nom de l'arxiu, que està dintre la carpeta src/persistencia/data, amb el que volem treballar?");
@@ -71,6 +71,7 @@ public class Ctrl_Master {
     public String Work() {
         Ctrl_Algorithm CAlg = new Ctrl_Algorithm();
         String tornada = "";
+        //Descompressio
         if(Function == 2)
         {
             String extension = "";
@@ -78,23 +79,24 @@ public class Ctrl_Master {
             extension = Path.substring(i+1);
             tornada = CAlg.Auto_Decoder(Path, extension);
         }
-        else
-        {
+        //Compressio
+        else {
             String extension = "";
             int i = Path.lastIndexOf(".");
             extension = Path.substring(i+1);
             if(extension == "ppm") tornada = CAlg.Choose_Encoder(Path, "ppm");
-            else
-            {	
-		String mode = "";		
-		if (Function == 3) {
-		        System.out.println("Amb quin algorisme vol comprimir el fitxer: LZ78, LZW, LZSS o JPEG?");
-		        System.out.println("(escriviu-lo en minúsucules)");
-		        mode = System.console().readLine().toLowerCase();
-		}
-		else {
-			mode = CAlg.Auto_Encoder(Path); 	
-		}	
+            else {	
+                String mode = "";
+                //Manual		
+                if (Function == 3) {
+                        System.out.println("Amb quin algorisme vol comprimir el fitxer: LZ78, LZW, LZSS o JPEG?");
+                        System.out.println("(escriviu-lo en minúsucules)");
+                        mode = System.console().readLine().toLowerCase();
+                }
+                //Automatica
+                else {
+                    mode = CAlg.Auto_Encoder(Path); 	
+                }	
                 Estadistica est = new Estadistica();
                 tornada = CAlg.Choose_Encoder(Path, mode);
                 //Generació de les estadístiques
