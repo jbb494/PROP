@@ -2,6 +2,10 @@
     Checkear que hacemos bien los buffers I/O
 
 2)  Capa de presentacion (JFrame) --> Layaout Managers
+    - Menú popup al pulsar comprimir button.
+    - Barra de progrés. # Manel
+    - Convertir mainForm amb el Ctrl_Master.
+    - Preview: Poder agafar el output com string i fer preview. # Joan
 
 3)  Solo habrá UNA extensión de los ficheros comprimidos (propmola)
 

@@ -50,7 +50,7 @@ public class Ctrl_Master {
             
             if (aux.equals("manual")) Function = 3; // Compressió manual
             else if (aux.equals("auto")) Function = 1; // Compressió automàtica
-	    else throw new IllegalArgumentException("Entrada incorrecte, escrigui \"manual\" o \"auto\"");
+	        else throw new IllegalArgumentException("Entrada incorrecte, escrigui \"manual\" o \"auto\"");
         }
         else if (input.equals("descomprimir")) Function = 2; // Descompressió
 	    else throw new IllegalArgumentException("Entrada incorrecte, escrigui \"comprimir\" o \"descomprimir\"");
