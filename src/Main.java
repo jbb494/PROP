@@ -19,6 +19,12 @@ public class Main {
 //            CM.Context();
 //            System.out.println(CM.Work());
 //        }
-        Ctrl_Master CM = new Ctrl_Master();
+        java.awt.EventQueue.invokeLater (
+                new Runnable() {
+                    public void run() {
+                        Ctrl_Master CM = new Ctrl_Master();
+                    }
+                }
+        );
     }
 }

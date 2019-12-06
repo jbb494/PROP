@@ -1,9 +1,7 @@
 package presentacion.master;
 import domini.algorithm.Ctrl_Algorithm;
 import domini.estadistica.Estadistica;
-import presentacion.mainForm;
-
-import javax.swing.*;
+import presentacion.form.mainForm;
 
 /**
  * @class Ctrl_Master
@@ -32,7 +30,6 @@ public class Ctrl_Master {
         Path = "";
         mainForm frame = new mainForm();
         frame.inicialitza_panel();
-
     }
 
     //Functions
@@ -56,7 +53,7 @@ public class Ctrl_Master {
 	    else throw new IllegalArgumentException("Entrada incorrecte, escrigui \"manual\" o \"auto\"");
         }
         else if (input.equals("descomprimir")) Function = 2; // Descompressió
-	else throw new IllegalArgumentException("Entrada incorrecte, escrigui \"comprimir\" o \"descomprimir\"");
+	    else throw new IllegalArgumentException("Entrada incorrecte, escrigui \"comprimir\" o \"descomprimir\"");
 
         //Asking the name of the file we wanna encode / decode
         System.out.println("Quin és el nom de l'arxiu, que està dintre la carpeta src/persistencia/data, amb el que volem treballar?");

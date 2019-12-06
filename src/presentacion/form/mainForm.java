@@ -1,4 +1,4 @@
-package presentacion;
+package presentacion.form;
 
 import javax.swing.*;
 import javax.swing.border.TitledBorder;
