@@ -1,19 +1,145 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <form xmlns="http://www.intellij.com/uidesigner/form/" version="1" bind-to-class="presentacion.mainForm">
-  <grid id="27dc6" binding="panel1" default-binding="true" layout-manager="BorderLayout" hgap="0" vgap="0">
+  <grid id="27dc6" binding="panel1" default-binding="true" layout-manager="GridLayoutManager" row-count="5" column-count="4" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
+    <margin top="40" left="40" bottom="40" right="40"/>
     <constraints>
-      <xy x="20" y="20" width="500" height="400"/>
+      <xy x="20" y="20" width="1032" height="400"/>
     </constraints>
-    <properties/>
-    <border type="none"/>
+    <properties>
+      <background color="-14013910"/>
+      <foreground color="-12632257"/>
+      <minimumSize width="400" height="200"/>
+      <preferredSize width="1000" height="600"/>
+    </properties>
+    <border type="bevel-lowered">
+      <font name="Fira Code Medium" size="16" style="1"/>
+      <title-color color="-4932680"/>
+      <size top="150" left="400" bottom="150" right="400"/>
+    </border>
     <children>
-      <component id="ca20d" class="javax.swing.JButton" binding="rataButton" default-binding="true">
-        <constraints border-constraint="North"/>
+      <grid id="cdc0a" binding="panel2" layout-manager="GridLayoutManager" row-count="1" column-count="2" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
+        <margin top="0" left="0" bottom="0" right="0"/>
+        <constraints>
+          <grid row="4" column="0" row-span="1" col-span="2" vsize-policy="3" hsize-policy="3" anchor="0" fill="3" indent="0" use-parent-layout="false"/>
+        </constraints>
         <properties>
-          <background color="-16776127"/>
-          <text value="rata"/>
+          <background color="-14013910"/>
+          <foreground color="-1"/>
         </properties>
+        <border type="none"/>
+        <children>
+          <component id="5023e" class="javax.swing.JButton" binding="ComprBut">
+            <constraints>
+              <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false">
+                <minimum-size width="150" height="-1"/>
+                <maximum-size width="150" height="-1"/>
+              </grid>
+            </constraints>
+            <properties>
+              <background color="-12632257"/>
+              <foreground color="-1"/>
+              <inheritsPopupMenu value="false"/>
+              <text value="Comprimir"/>
+            </properties>
+          </component>
+          <component id="713cb" class="javax.swing.JButton" binding="DescompBut">
+            <constraints>
+              <grid row="0" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false">
+                <minimum-size width="150" height="-1"/>
+                <maximum-size width="150" height="-1"/>
+              </grid>
+            </constraints>
+            <properties>
+              <background color="-12632257"/>
+              <foreground color="-1"/>
+              <text value="Descomprimir"/>
+            </properties>
+          </component>
+        </children>
+      </grid>
+      <component id="44d3d" class="javax.swing.JTree" binding="RootTree">
+        <constraints>
+          <grid row="0" column="0" row-span="1" col-span="2" vsize-policy="6" hsize-policy="6" anchor="0" fill="3" indent="0" use-parent-layout="false">
+            <preferred-size width="150" height="50"/>
+          </grid>
+        </constraints>
+        <properties>
+          <background color="-12632257"/>
+          <focusCycleRoot value="false"/>
+          <foreground color="-14013910"/>
+        </properties>
+        <clientProperties>
+          <JTree.lineStyle class="java.lang.String" value=""/>
+        </clientProperties>
       </component>
+      <hspacer id="f9f78">
+        <constraints>
+          <grid row="0" column="2" row-span="1" col-span="1" vsize-policy="1" hsize-policy="2" anchor="0" fill="1" indent="0" use-parent-layout="false">
+            <minimum-size width="100" height="-1"/>
+            <preferred-size width="100" height="-1"/>
+            <maximum-size width="100" height="-1"/>
+          </grid>
+        </constraints>
+      </hspacer>
+      <vspacer id="113a3">
+        <constraints>
+          <grid row="3" column="0" row-span="1" col-span="1" vsize-policy="2" hsize-policy="1" anchor="0" fill="2" indent="0" use-parent-layout="false">
+            <minimum-size width="-1" height="50"/>
+            <preferred-size width="-1" height="50"/>
+            <maximum-size width="-1" height="50"/>
+          </grid>
+        </constraints>
+      </vspacer>
+      <grid id="16a80" binding="ArchivoPanel" layout-manager="GridLayoutManager" row-count="1" column-count="1" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
+        <margin top="0" left="0" bottom="0" right="0"/>
+        <constraints>
+          <grid row="2" column="0" row-span="1" col-span="2" vsize-policy="3" hsize-policy="3" anchor="0" fill="3" indent="0" use-parent-layout="false">
+            <minimum-size width="-1" height="25"/>
+            <preferred-size width="-1" height="25"/>
+            <maximum-size width="-1" height="25"/>
+          </grid>
+        </constraints>
+        <properties>
+          <background color="-12632257"/>
+          <foreground color="-1"/>
+        </properties>
+        <border type="none"/>
+        <children>
+          <component id="515cc" class="javax.swing.JLabel" binding="ArchSelec">
+            <constraints>
+              <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+            </constraints>
+            <properties>
+              <foreground color="-1"/>
+              <text value="Archivo seleccionado"/>
+            </properties>
+          </component>
+        </children>
+      </grid>
+      <vspacer id="45a87">
+        <constraints>
+          <grid row="1" column="0" row-span="1" col-span="1" vsize-policy="2" hsize-policy="1" anchor="0" fill="2" indent="0" use-parent-layout="false">
+            <minimum-size width="-1" height="10"/>
+            <preferred-size width="-1" height="10"/>
+            <maximum-size width="-1" height="10"/>
+          </grid>
+        </constraints>
+      </vspacer>
+      <grid id="c8b87" layout-manager="GridLayoutManager" row-count="1" column-count="1" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
+        <margin top="0" left="0" bottom="0" right="0"/>
+        <constraints>
+          <grid row="0" column="3" row-span="3" col-span="1" vsize-policy="3" hsize-policy="3" anchor="0" fill="3" indent="0" use-parent-layout="false">
+            <minimum-size width="400" height="-1"/>
+            <preferred-size width="400" height="-1"/>
+            <maximum-size width="400" height="-1"/>
+          </grid>
+        </constraints>
+        <properties>
+          <background color="-1180161"/>
+        </properties>
+        <border type="none"/>
+        <children/>
+      </grid>
     </children>
   </grid>
 </form>
