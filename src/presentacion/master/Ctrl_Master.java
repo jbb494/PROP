@@ -74,35 +74,30 @@ public class Ctrl_Master {
         //Descompressio
         if(Function == 2)
         {
-            String extension = "";
-            int i = Path.lastIndexOf(".");
-            extension = Path.substring(i+1);
-            tornada = CAlg.Auto_Decoder(Path, extension);
+            tornada = CAlg.Auto_Decoder(Path);
         }
         //Compressio
         else {
             String extension = "";
             int i = Path.lastIndexOf(".");
             extension = Path.substring(i+1);
-            if(extension == "ppm") tornada = CAlg.Choose_Encoder(Path, "ppm");
-            else {	
-                String mode = "";
-                //Manual		
-                if (Function == 3) {
-                        System.out.println("Amb quin algorisme vol comprimir el fitxer: LZ78, LZW, LZSS o JPEG?");
-                        System.out.println("(escriviu-lo en minúsucules)");
-                        mode = System.console().readLine().toLowerCase();
-                }
-                //Automatica
-                else {
-                    mode = CAlg.Auto_Encoder(Path); 	
-                }	
-                Estadistica est = new Estadistica();
-                tornada = CAlg.Choose_Encoder(Path, mode);
-                //Generació de les estadístiques
-                String out_p = Path.substring(0, i+1) + mode;
-                est.show_estadistica(Path,out_p);
-            }            
+            
+            String mode = "";
+            //Manual		
+            if (Function == 3) {
+                System.out.println("Amb quin algorisme vol comprimir el fitxer: LZ78, LZW, LZSS o JPEG?");
+                System.out.println("(escriviu-lo en minúsucules)");
+                mode = System.console().readLine().toLowerCase();
+            }
+            //Automatica
+            else {
+                mode = CAlg.Auto_Encoder(Path); 	
+            }	
+            Estadistica est = new Estadistica();
+            tornada = CAlg.Choose_Encoder(Path, mode);
+            //Generació de les estadístiques
+            String out_p = Path.substring(0, i+1) + mode;
+            est.show_estadistica(Path,out_p);            
         }
         return tornada;
     }
