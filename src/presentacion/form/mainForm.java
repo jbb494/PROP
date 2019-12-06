@@ -1,6 +1,7 @@
 package presentacion.form;
 
-import presentacion.form.components.browserTree;
+import presentacion.form.components.browserTree.browserTreeComponent;
+import presentacion.form.components.browserTree.modelBrowser;
 
 import javax.swing.*;
 import javax.swing.border.TitledBorder;
@@ -148,7 +149,8 @@ public class mainForm extends JFrame {
     }
 
     private void createUIComponents() {
-        DefaultMutableTreeNode model = new DefaultMutableTreeNode("rata manel");
-        RootTree = new browserTree(model);
+        modelBrowser m = new modelBrowser();
+        DefaultMutableTreeNode model = m.getModel();
+        RootTree = new browserTreeComponent(model);
     }
 }
