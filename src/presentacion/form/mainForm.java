@@ -19,7 +19,6 @@ public class mainForm extends JFrame {
     private JScrollPane ScrollDescompressio;
     private JTree RootTree;
     private JScrollPane ScrollTree;
-    private JPanel PanelTree;
 
 
     public void inicialitza_panel() {
