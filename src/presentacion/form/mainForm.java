@@ -1,7 +1,10 @@
 package presentacion.form;
 
+import presentacion.form.components.browserTree;
+
 import javax.swing.*;
 import javax.swing.border.TitledBorder;
+import javax.swing.tree.DefaultMutableTreeNode;
 import java.awt.*;
 
 public class mainForm extends JFrame {
@@ -41,6 +44,7 @@ public class mainForm extends JFrame {
      * @noinspection ALL
      */
     private void $$$setupUI$$$() {
+        createUIComponents();
         panel1 = new JPanel();
         panel1.setLayout(new com.intellij.uiDesigner.core.GridLayoutManager(5, 4, new Insets(40, 40, 40, 40), -1, -1));
         panel1.setAlignmentX(0.0f);
@@ -110,7 +114,6 @@ public class mainForm extends JFrame {
         ScrollTree = new JScrollPane();
         ScrollTree.setForeground(new Color(-12632257));
         PanelTree.add(ScrollTree, new com.intellij.uiDesigner.core.GridConstraints(0, 0, 1, 1, com.intellij.uiDesigner.core.GridConstraints.ANCHOR_CENTER, com.intellij.uiDesigner.core.GridConstraints.FILL_BOTH, com.intellij.uiDesigner.core.GridConstraints.SIZEPOLICY_CAN_SHRINK | com.intellij.uiDesigner.core.GridConstraints.SIZEPOLICY_WANT_GROW, com.intellij.uiDesigner.core.GridConstraints.SIZEPOLICY_CAN_SHRINK | com.intellij.uiDesigner.core.GridConstraints.SIZEPOLICY_WANT_GROW, null, null, null, 0, false));
-        RootTree = new JTree();
         RootTree.setBackground(new Color(-12632257));
         RootTree.setFocusCycleRoot(false);
         RootTree.setForeground(new Color(-14013910));
@@ -144,4 +147,8 @@ public class mainForm extends JFrame {
         return panel1;
     }
 
+    private void createUIComponents() {
+        DefaultMutableTreeNode model = new DefaultMutableTreeNode("rata manel");
+        RootTree = new browserTree(model);
+    }
 }

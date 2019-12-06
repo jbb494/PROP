@@ -161,7 +161,7 @@
             </properties>
             <border type="none"/>
             <children>
-              <component id="6377c" class="javax.swing.JTree" binding="RootTree">
+              <component id="6377c" class="javax.swing.JTree" binding="RootTree" custom-create="true">
                 <constraints/>
                 <properties>
                   <background color="-12632257"/>
