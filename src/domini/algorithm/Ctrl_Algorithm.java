@@ -103,7 +103,7 @@ public class Ctrl_Algorithm {
         if(metadata == 3)
         {
             JPEG alg = new JPEG(prefix + "ppm", true);  
-            inP2 = new Ctrl_Input_JPEG(Path);
+            inP2 = new Ctrl_Input_JPEG();
             alg.Decompressor((Ctrl_Input_JPEG)inP2);      
             Ctrl_Output outp = alg.print();
             outp.print();
@@ -111,7 +111,7 @@ public class Ctrl_Algorithm {
         else if(metadata == 2) 
         {               
             LZSS alg = new LZSS(prefix + "txt", true);  
-            inP2 = new Ctrl_Input_LZSS(Path);
+            inP2 = new Ctrl_Input_LZSS();
             alg.Decompressor((Ctrl_Input_LZSS)inP2);    
             Ctrl_Output outp = alg.print();
             outp.print();
@@ -119,7 +119,7 @@ public class Ctrl_Algorithm {
         else if(metadata == 1)
         {
             LZW alg = new LZW(prefix + "txt", true);  
-            inP2 = new Ctrl_Input_LZW(Path);
+            inP2 = new Ctrl_Input_LZW();
             alg.decompression((Ctrl_Input_LZW)inP2);
             Ctrl_Output outp = alg.print();
             outp.print();
@@ -127,7 +127,7 @@ public class Ctrl_Algorithm {
         else if(metadata == 0) 
         {
             LZ78 alg = new LZ78(prefix + "txt", true);  
-            inP2 = new Ctrl_Input_LZ78(Path);
+            inP2 = new Ctrl_Input_LZ78();
             alg.Decompressor((Ctrl_Input_LZ78)inP2);      
             Ctrl_Output outp = alg.print();
             outp.print();

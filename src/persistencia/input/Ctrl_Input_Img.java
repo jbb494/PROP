@@ -29,8 +29,8 @@ public class Ctrl_Input_Img extends Ctrl_Input {
 
     /**
      * @brief Constructor de la classe.
-     * Llegeix les dades de la capçalera ppm (magic number, width, height, max_val)
-     * @param path Path de l'arxiu input
+     * Llegeix les dades de la capçalera ppm (magic number, width, height, max_val). 
+     * @param path Path de l'arxiu que comença a llegir.
      */
     public Ctrl_Input_Img(String path) {
         super(path);
@@ -43,7 +43,26 @@ public class Ctrl_Input_Img extends Ctrl_Input {
         max_val = getIntASCII();
         if (max_val < 256) bits_per_val = 8;
         else               bits_per_val = 16;
-    }    
+    }
+
+    /**
+     * @brief Constructor de la classe.
+     * Llegeix les dades de la capçalera ppm (magic number, width, height, max_val)
+     * @note Continua llegint el fitxer que s'estava llegint.
+     */
+    public Ctrl_Input_Img() {
+        super();
+        String str = getWord();
+        if (! str.equals("P6")) {
+            throw new IllegalArgumentException("Magic number is "+str+". It should be P6. It may not be in ppm format.");
+        }
+        width = getIntASCII();
+        height = getIntASCII();
+        max_val = getIntASCII();
+        if (max_val < 256) bits_per_val = 8;
+        else               bits_per_val = 16;
+    }
+
     /**
      * @fn public int getHeight()
      * @brief Retorna l'alçada de la imatge
@@ -78,11 +97,11 @@ public class Ctrl_Input_Img extends Ctrl_Input {
         for (int x = 0; x < 8; ++x) {
             for (int j = 0; j < 8*n_blocks; ++j) {
                 for (int color = 0; color < 3; ++color) {
-                    int val = byteToConversion.byteToInteger(Input_class.getMoreBits(bits_per_val));
+                    int val = byteToConversion.byteToInteger(Input.getInstance().getMoreBits(bits_per_val));
                     ret[j/8][x][j%8][color] = (double)val / (double)max_val * 255.0;
                 }
             }
-            Input_class.getMoreBits((width - 8*n_blocks)*3*bits_per_val);
+            Input.getInstance().getMoreBits((width - 8*n_blocks)*3*bits_per_val);
         }
         return ret;
     }
@@ -95,7 +114,7 @@ public class Ctrl_Input_Img extends Ctrl_Input {
      * @return Retorna el byte llegit en forma de ceràcter
      */
     private char getChar() {
-        return (char)Input_class.getBits(8);
+        return (char)Input.getInstance().getBits(8);
     }
 
     /**

@@ -17,7 +17,7 @@ public class Ctrl_Input_LZ78 extends Ctrl_Input {
 
     /**
      * @brief Constructor de la classe. Crida al constructor pare Ctrl_Input. a més interepreta la metadata.
-     * @param path Path de l'arxiu comprimit
+     * @param path Path de l'arxiu comprimit que comença a llegir.
      */
     public Ctrl_Input_LZ78(String path)
     {
@@ -26,12 +26,21 @@ public class Ctrl_Input_LZ78 extends Ctrl_Input {
     }
 
     /**
+     * @brief Constructor de la classe. Crida al constructor pare Ctrl_Input. a més interepreta la metadata.
+     * @note Continua llegint el fitxer que s'estava llegint. Assumeix que la metadata ja ha estat llegida.
+     */
+    public Ctrl_Input_LZ78()
+    {
+        super();
+    }
+
+    /**
      * @fn public Pair<Integer, Character> get()
      * @return Primer parell enter-byte no llegit de l'arxiu comprimit amb LZ78
      */
     public Pair <Integer, Byte> get() {
-        Integer intAux = byteToConversion.byteToInteger(Input_class.getMoreBits(32));
-        Byte byteAux = Input_class.getBits(8);
+        Integer intAux = byteToConversion.byteToInteger(Input.getInstance().getMoreBits(32));
+        Byte byteAux = Input.getInstance().getBits(8);
         return new Pair <Integer, Byte>(intAux, byteAux);
     }
 }
