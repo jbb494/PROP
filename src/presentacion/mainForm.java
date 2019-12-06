@@ -12,6 +12,8 @@ public class mainForm extends JFrame {
     private JPanel panel2;
     private JPanel ArchivoPanel;
     private JLabel ArchSelec;
+    private JTextArea TextDescompressio;
+    private JPanel PanelDescompressio;
 
 
     public void inicialitza_panel() {
