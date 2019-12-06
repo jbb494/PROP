@@ -81,7 +81,7 @@ public class Driver__Ctrl_Algorithm {
 					String[] aux2 = reader.readLine().trim().split(" ");
 					Path = aux2[0];
 					method = aux2[1];
-					ret = ctrl_algorithm.Auto_Decoder(Path, method);
+					ret = ctrl_algorithm.Auto_Decoder(Path);
 					System.out.println(ret);
 				break;
 				case "0":
