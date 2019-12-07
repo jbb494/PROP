@@ -2,6 +2,7 @@ package domini.estadistica;
 
 import java.io.File;
 import java.util.Date;
+
 import domini.utils.Pair;
 
 /**
@@ -35,8 +36,10 @@ public class Estadistica {
      */
     public Estadistica(Boolean b) {
         start = new Date();
-        if (b) info = Pair(b,"compressio");
-        else info = Pair(b,"descompressio");
+        if (b) 
+            info = new Pair<Boolean,String>(b, "compressio");
+        else 
+            info = new Pair<Boolean,String>(b,"descompressio");
     }
 
     //Functions
@@ -53,6 +56,10 @@ public class Estadistica {
         return res;
     }
 
+    public void work_done() {
+        end = new Date();
+    } 
+
     /**
      * @fn public void show_estadistica(String inp, String out)
      * @brief Mostrarà les estadístiques de la compressió
@@ -60,7 +67,6 @@ public class Estadistica {
      * @param out Path de l'arxiu comprimit
      */
     public void show_estadistica(String inp, String out) {
-        end = new Date();
         long ts = time(start,end);
         
         File input = new File(inp);
@@ -84,8 +90,11 @@ public class Estadistica {
             else System.out.println("Temps de " + info.R + " : " + (ts/1000) + " segons.\n");
         
         }
-        else
-            System.err.println("Generación de estadísticas fallida: Input o output no existe");
+        else {
+            System.err.println("Generación de estadísticas fallida:");
+            if (! input.exists()) { System.out.println("-Input no existe"); }
+            if (! output.exists()) { System.out.println("-Output no existe"); }
+        }
 
             
     }
