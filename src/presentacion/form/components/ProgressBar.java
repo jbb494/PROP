@@ -11,7 +11,6 @@ public class ProgressBar extends JProgressBar {
         @Override
         public void actionPerformed(ActionEvent actionEvent) {
             int val = getValor();
-            System.out.println(val);
             if(val >= MAX)
             {
                 timer.stop();
