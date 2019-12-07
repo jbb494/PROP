@@ -18,7 +18,16 @@ public class Ctrl_Input_Text extends Ctrl_Input {
      */
     public Ctrl_Input_Text(String path) {
         super(path);
-        seguent = Input_class.getBits(8);
+        seguent = Input.getInstance().getBits(8);
+    }
+
+    /**
+     * @brief Constructor de la classe
+     * @note Continua llegint l'arxiu que s'estava llegint
+     */
+    public Ctrl_Input_Text() {
+        super();
+        seguent = Input.getInstance().getBits(8);
     }
  
     /**
@@ -29,7 +38,7 @@ public class Ctrl_Input_Text extends Ctrl_Input {
      */
     public byte get() {
         byte actual = seguent;
-        seguent = Input_class.getBits(8); 
+        seguent = Input.getInstance().getBits(8); 
         return actual;
     }
  

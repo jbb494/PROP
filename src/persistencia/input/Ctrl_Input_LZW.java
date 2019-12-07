@@ -21,6 +21,14 @@ public class Ctrl_Input_LZW extends Ctrl_Input {
     }
 
     /**
+       * @brief El constructor on es crida a la classe pare.
+       * @note Continua llegint el fitxer que s'estava llegint. Assumeix que la metadata ja ha estat llegida.
+    */
+    public Ctrl_Input_LZW() {
+        super();
+    }
+
+    /**
      * @fn public Integer get()
      * @return Primer enter no llegit de l'arxiu comprimit amb LZW
      */
@@ -31,7 +39,7 @@ public class Ctrl_Input_LZW extends Ctrl_Input {
         List<Byte> arrayByte = new ArrayList<>();
 
         for (int i = 0; i < 4; ++i) 
-            arrayByte.add(Input_class.getBits(8));
+            arrayByte.add(Input.getInstance().getBits(8));
         
         return byteToConversion.byteToInteger(arrayByte);
     }
