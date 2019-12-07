@@ -1,5 +1,6 @@
 package presentacion.form;
 
+import presentacion.form.components.ProgressBar;
 import presentacion.form.components.browserTree.browserTreeComponent;
 import presentacion.form.components.browserTree.modelBrowser;
 
@@ -21,7 +22,7 @@ public class mainForm extends JFrame {
     private JScrollPane ScrollDescompressio;
     private JTree RootTree;
     private JScrollPane ScrollTree;
-    private ProgressBar pbar;
+    private ProgressBar Progress;
 
 
     public mainForm() {
@@ -41,8 +42,6 @@ public class mainForm extends JFrame {
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.pack();
         frame.setVisible(true);
-        pbar.setValue(45);
-
     }
 
     /**
@@ -124,13 +123,12 @@ public class mainForm extends JFrame {
         RootTree.setForeground(new Color(-14013910));
         RootTree.putClientProperty("JTree.lineStyle", "");
         ScrollTree.setViewportView(RootTree);
-        pbar = new JProgressBar();
-        pbar.setBackground(new Color(-12632257));
-        pbar.setBorderPainted(false);
-        pbar.setForeground(new Color(-12632257));
-        pbar.setString("0%");
-        pbar.setStringPainted(false);
-        panel1.add(pbar, new com.intellij.uiDesigner.core.GridConstraints(1, 3, 1, 1, com.intellij.uiDesigner.core.GridConstraints.ANCHOR_CENTER, com.intellij.uiDesigner.core.GridConstraints.FILL_HORIZONTAL, com.intellij.uiDesigner.core.GridConstraints.SIZEPOLICY_WANT_GROW, com.intellij.uiDesigner.core.GridConstraints.SIZEPOLICY_FIXED, null, null, null, 0, false));
+        Progress.setBackground(new Color(-12632257));
+        Progress.setBorderPainted(false);
+        Progress.setForeground(new Color(-3092272));
+        Progress.setStringPainted(false);
+        Progress.setValue(0);
+        panel1.add(Progress, new com.intellij.uiDesigner.core.GridConstraints(1, 4, 1, 1, com.intellij.uiDesigner.core.GridConstraints.ANCHOR_CENTER, com.intellij.uiDesigner.core.GridConstraints.FILL_HORIZONTAL, com.intellij.uiDesigner.core.GridConstraints.SIZEPOLICY_WANT_GROW, com.intellij.uiDesigner.core.GridConstraints.SIZEPOLICY_FIXED, null, null, null, 0, false));
     }
 
     /**
@@ -163,5 +161,6 @@ public class mainForm extends JFrame {
         modelBrowser m = new modelBrowser();
         DefaultMutableTreeNode model = m.getModel();
         RootTree = new browserTreeComponent(model);
+        Progress = new ProgressBar(0, 100);
     }
 }

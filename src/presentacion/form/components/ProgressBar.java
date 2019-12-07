@@ -1,27 +1,41 @@
 package presentacion.form.components;
 
 import javax.swing.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
 public class ProgressBar extends JProgressBar {
 
-    int num;
+    private int MAX;
+    private ActionListener updateBar = new ActionListener() {
+        @Override
+        public void actionPerformed(ActionEvent actionEvent) {
+            int val = getValor();
+            System.out.println(val);
+            if(val >= MAX)
+            {
+                timer.stop();
+                return;
+            }
+            setValor(++val);
+        }
+    };
+    private Timer timer = new Timer(50, updateBar);
 
-    public ProgressBar ()
+    public ProgressBar (int min, int max)
     {
-        super();
-        num = 0;
+        super(min, max);
+        this.MAX = max;
+        timer.start();
     }
 
-    public void calcula_barra()
+    private int  getValor()
     {
-        while(num < 100)
-        {
-            try
-            {
-                Thread.sleep(1000);
-            }
-            catch (InterruptedException e){ }
-            num += 2;
-        }
+        return this.getValue();
+    }
+
+    private void  setValor(int val)
+    {
+        this.setValue(val);
     }
 }
