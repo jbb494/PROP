@@ -6,6 +6,7 @@
     - Barra de progrés. # Manel
     - Convertir mainForm amb el Ctrl_Master.
     - Preview: Poder agafar el output com string i fer preview. # Joan
+    - Patro estat classe Ctrl_Master # Miguel o Lapeyra
 
 3)  Solo habrá UNA extensión de los ficheros comprimidos (propmola)
 
