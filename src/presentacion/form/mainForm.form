@@ -164,6 +164,18 @@
           </component>
         </children>
       </scrollpane>
+      <component id="b4b4f" class="presentacion.form.components.ProgressBar" binding="pbar">
+        <constraints>
+          <grid row="1" column="3" row-span="1" col-span="1" vsize-policy="0" hsize-policy="6" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+        </constraints>
+        <properties>
+          <background color="-12632257"/>
+          <borderPainted value="false"/>
+          <foreground color="-12632257"/>
+          <string value="0%"/>
+          <stringPainted value="false"/>
+        </properties>
+      </component>
     </children>
   </grid>
 </form>

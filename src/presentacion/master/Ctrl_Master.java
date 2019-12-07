@@ -30,6 +30,7 @@ public class Ctrl_Master {
         Path = "";
         mainForm frame = new mainForm();
         frame.inicialitza_panel();
+
     }
 
     //Functions
