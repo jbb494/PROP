@@ -71,18 +71,20 @@ public class Ctrl_Master {
     public String Work() {
         Ctrl_Algorithm CAlg = new Ctrl_Algorithm();
         String tornada = "";
+        int i = Path.lastIndexOf(".");
+        String mode = "";
+        Estadistica est;
+
         //Descompressio
         if(Function == 2)
         {
+            est = new Estadistica(false);
             tornada = CAlg.Auto_Decoder(Path);
+            est.work_done();
+            mode = "txt";
         }
         //Compressio
         else {
-            String extension = "";
-            int i = Path.lastIndexOf(".");
-            extension = Path.substring(i+1);
-            
-            String mode = "";
             //Manual		
             if (Function == 3) {
                 System.out.println("Amb quin algorisme vol comprimir el fitxer: LZ78, LZW, LZSS o JPEG?");
@@ -93,12 +95,15 @@ public class Ctrl_Master {
             else {
                 mode = CAlg.Auto_Encoder(Path); 	
             }	
-            Estadistica est = new Estadistica();
+            est = new Estadistica(true);
             tornada = CAlg.Choose_Encoder(Path, mode);
-            //Generació de les estadístiques
-            String out_p = Path.substring(0, i+1) + mode;
-            est.show_estadistica(Path,out_p);            
+            est.work_done();          
         }
+
+        //Generació de les estadístiques
+        String out_p = Path.substring(0, i+1) + "jm";
+        est.show_estadistica(Path,out_p); 
+         
         return tornada;
     }
 }
