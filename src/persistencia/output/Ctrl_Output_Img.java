@@ -33,11 +33,30 @@ public class Ctrl_Output_Img extends Ctrl_Output {
     /**
      * @brief Constructor de la classe.
      * Escriu les dades de la capçalera ppm (magic number, width, height, max_val)
-     * @param path Path de l'arxiu output
+     * @param path Path de l'arxiu output al qual comença a escriure
      */
     public Ctrl_Output_Img(String path, int w, int h, int mv) {
-        super(path, "", true);
+        super(path);
+        init(w, h, mv);        
+    }
 
+    /**
+     * @brief Constructor de la classe.
+     * Escriu les dades de la capçalera ppm (magic number, width, height, max_val)
+     * @note Continua escrivint al fitxer on s'estava escrivint
+     */
+    public Ctrl_Output_Img(int w, int h, int mv) {
+        super();
+        init(w, h, mv);        
+    }
+
+
+    /**
+     * @brief Funció cridada per les constructores encarregada d'escriure
+     * les dades de la capçalera ppm (magic number, width, height, max_val)
+     * @param path Path de l'arxiu output
+     */
+    private void init(int w, int h, int mv) {
         if (mv <= 0 || mv >= 65536) {
             throw new IllegalArgumentException("The maximum color value (Maxval) must be less than 65536 and more than zero.");
         }
@@ -60,6 +79,7 @@ public class Ctrl_Output_Img extends Ctrl_Output {
         if (max_val < 256) bits_per_val = 8;
         else               bits_per_val = 16;
     }
+
     /**
      * @fn public int getHeight()
      * @brief Retorna l'alçada de la imatge

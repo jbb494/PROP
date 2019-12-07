@@ -8,27 +8,38 @@ import persistencia.output.Ctrl_Output;
 import domini.utils.ArrayCircular;
 import domini.utils.IntorByte;
 
-public class LZSS {
+public class LZSS extends Algorithm {
 
-    /**
-     * @param Output Utilitzat per a la compressió i descompressió de fitxers.
-     */
-    private Ctrl_Output Output;
+
 
     /**
      * @param window Valor de la finestra per al compressor.
      */
     private final int window = 2048;
 
-     /**
-     * @brief El constructor.
-     * @param aux inicialitza una instància Ctrl_Output.
-     * @param b Si false comprimeix else descomprimeix.
-     */
-    public LZSS(String aux, boolean b)
-    {
-        Output = new Ctrl_Output(aux, "lzss", b);
-    }
+    /**
+	 * @brief Constructor de la classe
+	 * @param path Path de sortida
+	 * @param b False si estas comprimint, True si estas descomprimint
+	 */
+	public LZSS(String path, boolean b) {
+		super(path, b);
+		if (!b) {
+			Output.addMetadata("lzss");
+		}
+	}
+
+	/**
+	 * @brief Constructor de la classe
+	 * @param b False si estas comprimint, True si estas descomprimint
+	 * @note Es continua escrivint al fitxer que s'estava escrivint
+	 */
+	public LZSS(boolean b) {
+		super(b);
+		if (!b) {
+			Output.addMetadata("lzss");
+		}
+	}
 
     /**
      * @fn private int KMPSearch(ArrayList<Byte> paraula, ArrayCircular text)

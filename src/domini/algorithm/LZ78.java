@@ -14,21 +14,33 @@ import java.util.*;
  * 
  * @author Joan Bellavista Bartroli
  */
-public class LZ78 {
+public class LZ78 extends Algorithm {
 
-    /**
-	 *  @param Utilitzat per a la compressió i descompressió de fitxers..
-	*/
-    Ctrl_Output Output ;
+    
    
 	//Constructor
 	/**
-	 * @brief Constructor de la clase LZ78
-	 * @param aux Path de sortida
+	 * @brief Constructor de la classe
+	 * @param path Path de sortida
 	 * @param b False si estas comprimint, True si estas descomprimint
 	 */
-	public LZ78(String aux, boolean b) {
-		Output = new Ctrl_Output(aux, "lz78", b);
+	public LZ78(String path, boolean b) {
+		super(path, b);
+		if (!b) {
+			Output.addMetadata("lz78");
+		}
+	}
+
+	/**
+	 * @brief Constructor de la classe
+	 * @param b False si estas comprimint, True si estas descomprimint
+	 * @note Es continua escrivint al fitxer que s'estava escrivint
+	 */
+	public LZ78(boolean b) {
+		super(b);
+		if (!b) {
+			Output.addMetadata("lz78");
+		}
 	}
 
 	//Functions

@@ -17,7 +17,7 @@ public class Driver__Ctrl_Output {
     private static void showOptions(){
         System.out.println("Driver de Ctrl_Output");
         System.out.println("Constructores: ");
-        System.out.println("\t 1. Ctrl_Output(String path, String method, boolean b)");
+        System.out.println("\t 1. Ctrl_Output(String path)");
         System.out.println("\t Input: 1");
         System.out.println();
 
@@ -42,13 +42,13 @@ public class Driver__Ctrl_Output {
         System.out.println();
 
         System.out.println("Escoge si el output es un descomprimido o comprimido. Y el método");
-        System.out.println("\t 9. Descomprimido");
+        System.out.println("\t 9. addMetadata(jpeg)");
         System.out.println("\t Input: 9");
-        System.out.println("\t 10. Comprimido método lz78");
+        System.out.println("\t 10. addMetadata(lz78)");
         System.out.println("\t Input: 10");
-        System.out.println("\t 11. Comprimido método lzw");
+        System.out.println("\t 11. addMetadata(lzw)");
         System.out.println("\t Input: 11");
-        System.out.println("\t 12. Comprimido método lzss");
+        System.out.println("\t 12. addMetadata(lzss)");
         System.out.println("\t Input: 12");
 
 
@@ -70,9 +70,6 @@ public class Driver__Ctrl_Output {
         if(ctrl_out == null && !linea.equals("1") && !linea.equals("0") && op < 6) {
             throw new IllegalArgumentException("Debes llamar al constructor antes");
         }
-        if(method.equals("") && op < 9 && !linea.equals("1")){
-            throw new IllegalArgumentException("Debes primero definir el método y si es compresión o descompresión");
-        }
         
     }
 
@@ -84,7 +81,6 @@ public class Driver__Ctrl_Output {
     public static void main(String[] args) {
         try {
             Ctrl_Output ctrl_out = null;
-            Boolean b = false;
             String method = "";
             String path = "../src/persistencia/output/Driver__Ctrl_Output.out";
             showOptions();
@@ -97,7 +93,7 @@ public class Driver__Ctrl_Output {
                 comprovarExcepcions(ctrl_out, linea, method);
                 switch(linea){
                     case "1":
-                        ctrl_out = new Ctrl_Output(path, method, b);
+                        ctrl_out = new Ctrl_Output(path);
                     break;
                     case "2":
                         System.out.println("Escribe un byte y un integer");
@@ -132,20 +128,20 @@ public class Driver__Ctrl_Output {
                         ctrl_out.print();
                     break;
                     case "9":
-                        method = "descomprimir";
-                        b = true;
+                        method = "jpeg";
+                        ctrl_out.addMetadata(method);
                     break;
                     case "10":
                         method = "lz78";
-                        b = false;
+                        ctrl_out.addMetadata(method);
                     break;
                     case "11":
                         method = "lzw";
-                        b = false;
+                        ctrl_out.addMetadata(method);
                     break;
                     case "12":
                         method = "lzss";
-                        b = false;
+                        ctrl_out.addMetadata(method);
                     break;
                     case "0":
                         return;

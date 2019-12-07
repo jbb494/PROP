@@ -67,7 +67,6 @@ public class Driver__Input {
         if(path.equals("") && op < 6 && !linea.equals("0")){
             throw new IllegalArgumentException("Debes escoger un path antes");
         }
-        Input.getInstance();
     }
 
     /**

@@ -20,7 +20,7 @@ import domini.utils.Dict_Encode;
  * diccionari del compressor tenia.
  * @author Miguel Paracuellos Ocaña 
  */
-public class LZW {
+public class LZW extends Algorithm {
 
 	//Attributes
 	/**
@@ -28,19 +28,32 @@ public class LZW {
 	 */
 	final Integer Limit = Integer.MAX_VALUE;
 
-	/**
-	 * @param Output Del tipus Ctrl_Output, li passarem el text processat
-	 */
-	Ctrl_Output Output;
+	
 
 
 	//Constructor
 	/**
-	 * @brief Constructor de la clase LZW
-	 * @param aux Path de sortida
+	 * @brief Constructor de la classe
+	 * @param path Path de sortida
+	 * @param b False si estas comprimint, True si estas descomprimint
 	 */
-	public LZW(String aux, boolean b) {
-		Output = new Ctrl_Output(aux, "lzw", b);
+	public LZW(String path, boolean b) {
+		super(path, b);
+		if (!b) {
+			Output.addMetadata("lzw");
+		}
+	}
+
+	/**
+	 * @brief Constructor de la classe
+	 * @param b False si estas comprimint, True si estas descomprimint
+	 * @note Es continua escrivint al fitxer que s'estava escrivint
+	 */
+	public LZW(boolean b) {
+		super(b);
+		if (!b) {
+			Output.addMetadata("lzw");
+		}
 	}
 
 

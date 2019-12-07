@@ -44,10 +44,6 @@ public class Input {
      */
     private int illegals;
     
-    /**
-     * @param gotExtension Indica si l'arxiu te extensió definida per treballar
-     */
-    private Boolean gotExtension = false;
 
     /**
      * @param instance Única instància de Input, siguint el patró singleton
@@ -195,10 +191,10 @@ public class Input {
      */
     public String getDecodeAlg() //0 si lz78, 1 si lzw o 2 si lzss
     {
-        if(gotExtension) {
+        /*if(gotExtension) {
             throw new IllegalArgumentException("Ya hemos cogido la metada");
         }
-        this.gotExtension = true;
+        this.gotExtension = true;*/
         byte aux = getBits(2);
         if(aux == (byte)0) return "lz78";
         else if(aux == (byte)1) return "lzw";
