@@ -45,11 +45,14 @@ public class LZ78 extends Algorithm {
 
 	//Functions
 	/**
-	 * @fn public Compressor(Ctrl_Input_Text in)
+	 * @fn public Compressor()
 	 * @brief Comprimim un text amb l'algoritme LZ78
-	 * @param in accés al Controlador d'Input per el text
 	 */
-	public void Compressor(Ctrl_Input_Text in) {
+	public void Compressor() {
+
+		checkCompressor();
+		Ctrl_Input_Text in = new Ctrl_Input_Text();
+
         Trie<Byte> map = new Trie<Byte>();
 		Byte nextByte;	
 		ArrayList<Byte> seq = new ArrayList<Byte>();
@@ -89,11 +92,14 @@ public class LZ78 extends Algorithm {
 	}
 
 	/**
-	 * @fn public Decompressor(Ctrl_Input_LZW inp)
+	 * @fn public Decompressor()
 	 * @brief Descomprimim un fitxer amb l'algoritme LZ78
-	 * @param inp accés al Controlador d'Input pel fitxer comprimit
 	 */
-	public void Decompressor(Ctrl_Input_LZ78 in) {
+	public void Decompressor() {
+
+		checkDecompressor();
+		Ctrl_Input_LZ78 in = new Ctrl_Input_LZ78();
+
 		Dict_Decode map = new Dict_Decode(false, 0);
 		while(!in.finished()) {
 			Pair <Integer, Byte> entr = in.get();
@@ -106,14 +112,6 @@ public class LZ78 extends Algorithm {
 			map.add(punterMap, nextByte);
 			Output.add(seqPunterMap);
 		}
-	}
-	/**
-	 * @fn public print()
-	 * @brief Retorna el Ctrl_Output.
-	 * @return Retorna el Ctrl_Output on està l'arxiu comprimit o descomprimit.
-	 */
-	public Ctrl_Output print() {
-        return Output;
 	}
 	
 	

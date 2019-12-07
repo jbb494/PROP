@@ -5,6 +5,11 @@ import java.util.regex.Pattern;
 /**
  * @class Ctrl_Input
  * @brief Classe de Ctrl_Input
+ * 
+ * Cal tenir en compte que no es poden llegir dos fitxers simultàniament.
+ * El fitxer que llegeixen les instàncies de Ctrl_Input i els seus fills s'inicialitza 
+ * cada cop que es crida a initialize(String path) o Ctrl_Input*(String path), 
+ * on Ctrl_Input* és Ctrl_Input o un dels seus fills.
  * @author Joan Lapeyra
  */
 public class Ctrl_Input {
@@ -37,6 +42,16 @@ public class Ctrl_Input {
      */
     public Ctrl_Input() {
         this.Extensio = null;
+    }
+
+    /**
+     * @fn public static void initialize(String path)
+     * @brief Assigna un nou fitxer per llegir.
+     * @param path referencia el fitxer en qüestió.
+     * @note Més info a la descripció de la classe.
+     */
+    public static void initialize(String path) {
+        Input.initialize(path);
     }
     
     //Function

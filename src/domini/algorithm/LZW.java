@@ -59,12 +59,13 @@ public class LZW extends Algorithm {
 
 	//Functions
 	/**
-	 * @fn public ArrayList<Integer> compression(Ctrl_Input_Text inp)
+	 * @fn public ArrayList<Integer> compression()
 	 * @brief Comprimim un text amb l'algoritme LZW
-	 * @param inp accés al Controlador d'Input per el text
-	 * @return llista amb els enters que representen el text
 	 */
-	public void compression(Ctrl_Input_Text inp) {
+	public void Compressor() {
+
+		checkCompressor();
+		Ctrl_Input_Text inp = new Ctrl_Input_Text();
 
 		//We initialize the attributes we need
 		Dict_Encode table = new Dict_Encode();
@@ -88,12 +89,13 @@ public class LZW extends Algorithm {
 	}
 
 	/**
-	 * @fn public String decompression(Ctrl_Input_LZW inp)
+	 * @fn public String decompression()
 	 * @brief Descomprimim un fitxer amb l'algoritme LZW
-	 * @param inp accés al Controlador d'Input pel fitxer comprimit
-	 * @return text que representa el fitxer descomprimit
 	 */
-	public void decompression(Ctrl_Input_LZW inp) {
+	public void Decompressor() {
+
+		checkDecompressor();
+		Ctrl_Input_LZW inp = new Ctrl_Input_LZW();
 		
 		Dict_Decode table = new Dict_Decode(true, -1);
 		Integer i = -1;
@@ -129,12 +131,4 @@ public class LZW extends Algorithm {
 		}
 	}
 
-	/**
-	 * @fn public Ctrl_Output print()
-	 * @brief La funció serà cridada quan volguem obtenir el resultat d'una compressio o descompressio
-	 * @return Controlador d'Output per poder esciure el resultat
-	 */
-	public Ctrl_Output print() {
-		return Output;
-	}
 }

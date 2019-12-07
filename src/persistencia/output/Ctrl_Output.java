@@ -7,6 +7,12 @@ import java.util.ArrayList;
 /**
  * @class Ctrl_Output
  * @brief Classe Ctrl_Output
+ * 
+ * Cal tenir en compte que no es poden escriure dos fitxers simultàniament.
+ * El fitxer que escriuen les instàncies de Ctrl_Output i els seus fills s'inicialitza 
+ * cada cop que es crida a initialize(String path) o Ctrl_Output*(String path), 
+ * on Ctrl_Output* és Ctrl_Output o un dels seus fills.
+ * 
  * @author Miguel Paracuellos
  */
 public class Ctrl_Output {
@@ -26,7 +32,19 @@ public class Ctrl_Output {
      */
     public Ctrl_Output() {}
 
+
     //Functions
+
+    /**
+     * @fn public static void initialize(String path)
+     * @brief Assigna un nou fitxer per esciure.
+     * @param path referencia el fitxer en qüestió.
+     * @note Més info a la descripció de la classe.
+     */
+    public static void initialize(String path) {
+        Output.initialize(path);
+    }
+
     /**
      * @brief Afageix la metadata corresponent a un determinat algorisme.
      * @param method És l'algorisme, del qual depèn la metadata.

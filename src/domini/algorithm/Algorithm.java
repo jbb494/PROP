@@ -5,6 +5,7 @@ import persistencia.output.Ctrl_Output;
 /**
  * @class Algorithm
  * @brief Classe de Algorithm
+ * És la superclasse de tots els algoritmes: JPEG, LZ78, LZW i LZSS
  * @author Joan Lapeyra Amat
  */
 public abstract class Algorithm {
@@ -15,9 +16,9 @@ public abstract class Algorithm {
     protected Ctrl_Output Output;
 
     /**
-	 *  @param decode_or_encode indica si és compressió (true) o descompressió (false)
+	 *  @param decompressing indica si és descompressió (true) o descompressió (false)
 	*/
-	private boolean decode_or_encode; // if true, decode; otherwise, encode
+	private boolean decompressing; // if true, decode; otherwise, encode
 
     /**
 	 * @brief Constructor de la clase
@@ -26,7 +27,7 @@ public abstract class Algorithm {
 	 */
     public Algorithm(String path, boolean b) {
         Output = new Ctrl_Output(path);
-        decode_or_encode = b;
+        decompressing = b;
     }
 
     /**
@@ -36,7 +37,7 @@ public abstract class Algorithm {
 	 */
     public Algorithm(boolean b) {
         Output = new Ctrl_Output();
-        decode_or_encode = b;
+        decompressing = b;
     }
 
     /**
@@ -45,7 +46,53 @@ public abstract class Algorithm {
 	 */
     public Algorithm() {
         Output = new Ctrl_Output();
-        decode_or_encode = true;
+        decompressing = true;
     }
+
+
+    /**
+     * @fn public abstract void Compressor()
+     * @brief Comprimeix el fitxer que s'està llegint
+     * @note L'algorisme emprat depèn de la subclasse
+     */
+    public abstract void Compressor();
+    /**
+     * @fn public abstract void Decompressor()
+     * @brief Descomprimeix el fitxer que s'està llegint
+     * @note L'algorisme emprat depèn de la subclasse
+     */
+    public abstract void Decompressor();
+
+
+    /**
+     * @fn protected void checkCompressor()
+     * @brief Llança una excepció si la instància no és compressora
+     */
+    protected void checkCompressor() {
+        if (decompressing) {
+            throw new IllegalArgumentException(
+                "S'ha intentat comprimir des d'una instància inicialitzada com a descompressora."
+            );
+        }
+    }
+    /**
+     * @fn protected void checkDecompressor()
+     * @brief Llança una excepció si la instància no és descompressora
+     */
+    protected void checkDecompressor() {
+        if (!decompressing) {
+            throw new IllegalArgumentException(
+                "S'ha intentat descomprimir des d'una instància inicialitzada com a compressora."
+            );
+        }
+    }
+
+    /**
+	 * @fn public Ctrl_Output print()
+	 * @brief Escriu a l'output el que quedava per escriure.
+	 */
+	public void print() {
+        Output.print();
+	}
 
 }

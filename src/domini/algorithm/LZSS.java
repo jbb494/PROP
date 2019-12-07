@@ -114,23 +114,16 @@ public class LZSS extends Algorithm {
         return lps;
     }
     
-    /**
-     * @fn public Ctrl_Output print()
-     * @brief Mètode print.
-     * @return Retorna l'atribut "Output".
-     */
-    public Ctrl_Output print()
-    {
-        return Output;
-    }
 
     /**
-     * @fn public void Compressor(Ctrl_Input_Text in)
+     * @fn public void Compressor()
      * @brief Mètode principal per a la compressió.
-     * @param in És per anar agafant informació de la classe Ctrl_Input_Text.
      */
-    public void Compressor(Ctrl_Input_Text in)
+    public void Compressor()
     {
+        checkCompressor();
+        Ctrl_Input_Text in = new Ctrl_Input_Text();
+
         ArrayList<Byte> aux = new ArrayList<Byte>();
         ArrayCircular vc = new ArrayCircular(window);
         byte nextByte;
@@ -228,12 +221,14 @@ public class LZSS extends Algorithm {
 
 
     /**
-     * @fn public void Decompressor(Ctrl_Input_LZSS in)
+     * @fn public void Decompressor()
      * @brief Mètode principal per a la descompressió.
-     * @param in És per anar agafant informació de la classe Ctrl_Input_LZSS.
      */
-    public void Decompressor(Ctrl_Input_LZSS in)
+    public void Decompressor()
     {
+        checkDecompressor();
+        Ctrl_Input_LZSS in = new Ctrl_Input_LZSS();
+
         ArrayCircular vc = new ArrayCircular(window);
         IntorByte ioc;
         while(!in.finished())

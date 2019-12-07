@@ -256,13 +256,14 @@ public class JPEG extends Algorithm {
 
 
 	/**
-	 * @fn public void Compressor(Ctrl_Input_Img in)
-	 * @brief Comprimim un text amb l'algoritme JPEG
-	 * @param in accés al Controlador d'Input del fitxer a comprimir
+	 * @fn public void Compressor()
+	 * @brief Comprimim una imatge amb l'algoritme JPEG
 	 */
-	public void Compressor(Ctrl_Input_Img in) {
+	public void Compressor() {
 
-		Output = new Ctrl_Output();
+		checkCompressor();
+		Ctrl_Input_Img in = new Ctrl_Input_Img();
+
 
 		int num_i_blocks = in.getHeight()/8;
 		int num_j_blocks = in.getWidth()/8;
@@ -341,11 +342,13 @@ public class JPEG extends Algorithm {
 
 
 	/**
-	 * @fn public void Decompressor(Ctrl_Input_JPEG in
-	 * @brief Desomprimim un text amb l'algoritme JPEG
-	 * @param in accés al Controlador d'Input del fitxer a descomprimir
+	 * @fn public void Decompressor()
+	 * @brief Desomprimim una imatge amb l'algoritme JPEG
 	 */
-	public void Decompressor(Ctrl_Input_JPEG in) {
+	public void Decompressor() {
+
+		checkDecompressor();
+		Ctrl_Input_JPEG in = new Ctrl_Input_JPEG();
 
 		int num_i_blocks = in.getHeight()/8;
 		int num_j_blocks = in.getWidth()/8;
@@ -434,17 +437,5 @@ public class JPEG extends Algorithm {
 		}
 
 	}
-
-	/**
-	 * @fn public Ctrl_Output print()
-	 * @brief Retorna el Ctrl_Output.
-	 * @return Retorna el Ctrl_Output on està l'arxiu comprimit o descomprimit.
-	 */
-	public Ctrl_Output print() {
-        return Output;
-	}
-
-	
-	
 }
 
