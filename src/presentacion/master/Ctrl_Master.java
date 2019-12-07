@@ -1,6 +1,8 @@
 package presentacion.master;
+
 import domini.algorithm.Ctrl_Algorithm;
 import domini.estadistica.Estadistica;
+import domini.utils.Pair;
 import presentacion.form.MainForm;
  
 /**
@@ -72,19 +74,22 @@ public class Ctrl_Master {
         Ctrl_Algorithm CAlg = new Ctrl_Algorithm();
         String tornada = "";
         int i = Path.lastIndexOf(".");
-        String mode = "";
+        String out = "";
         Estadistica est;
 
         //Descompressio
         if(Function == 2)
         {
             est = new Estadistica(false);
-            tornada = CAlg.Auto_Decoder(Path);
+            Pair<String,String> ret = CAlg.Auto_Decoder(Path);
+            tornada = ret.R;
+            out = ret.L;
             est.work_done();
-            mode = "txt";
         }
         //Compressio
         else {
+            out = "jm";
+            String mode;
             //Manual		
             if (Function == 3) {
                 System.out.println("Amb quin algorisme vol comprimir el fitxer: LZ78, LZW, LZSS o JPEG?");
@@ -101,7 +106,7 @@ public class Ctrl_Master {
         }
 
         //Generació de les estadístiques
-        String out_p = Path.substring(0, i+1) + "jm";
+        String out_p = Path.substring(0, i+1) + out;
         est.show_estadistica(Path,out_p); 
          
         return tornada;

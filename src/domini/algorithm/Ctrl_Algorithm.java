@@ -1,5 +1,6 @@
 package domini.algorithm;
 
+import domini.utils.Pair;
 import persistencia.input.Ctrl_Input;
 import persistencia.input.Ctrl_Input_Img;
 import persistencia.input.Ctrl_Input_LZSS;
@@ -92,8 +93,9 @@ public class Ctrl_Algorithm {
      * @param method Descompressor a emprar
      * @return Informació sobre la descompressió
      */
-    public String Auto_Decoder(String Path)
+    public Pair<String,String> Auto_Decoder(String Path)
     {
+        String type;
         int i = Path.lastIndexOf(".");
         String prefix = Path.substring(0, i+1);
 
@@ -107,31 +109,36 @@ public class Ctrl_Algorithm {
             alg.Decompressor((Ctrl_Input_JPEG)inP2);      
             Ctrl_Output outp = alg.print();
             outp.print();
+        
+            type = "ppm";
         }
-        else if(metadata == 2) 
-        {               
-            LZSS alg = new LZSS(prefix + "txt", true);  
-            inP2 = new Ctrl_Input_LZSS();
-            alg.Decompressor((Ctrl_Input_LZSS)inP2);    
-            Ctrl_Output outp = alg.print();
-            outp.print();
+        else {
+            type = "txt";
+            if(metadata == 2) 
+            {               
+                LZSS alg = new LZSS(prefix + "txt", true);  
+                inP2 = new Ctrl_Input_LZSS();
+                alg.Decompressor((Ctrl_Input_LZSS)inP2);    
+                Ctrl_Output outp = alg.print();
+                outp.print();
+            }
+            else if(metadata == 1)
+            {
+                LZW alg = new LZW(prefix + "txt", true);  
+                inP2 = new Ctrl_Input_LZW();
+                alg.decompression((Ctrl_Input_LZW)inP2);
+                Ctrl_Output outp = alg.print();
+                outp.print();
+            }
+            else if(metadata == 0) 
+            {
+                LZ78 alg = new LZ78(prefix + "txt", true);  
+                inP2 = new Ctrl_Input_LZ78();
+                alg.Decompressor((Ctrl_Input_LZ78)inP2);      
+                Ctrl_Output outp = alg.print();
+                outp.print();
+            }
         }
-        else if(metadata == 1)
-        {
-            LZW alg = new LZW(prefix + "txt", true);  
-            inP2 = new Ctrl_Input_LZW();
-            alg.decompression((Ctrl_Input_LZW)inP2);
-            Ctrl_Output outp = alg.print();
-            outp.print();
-        }
-        else if(metadata == 0) 
-        {
-            LZ78 alg = new LZ78(prefix + "txt", true);  
-            inP2 = new Ctrl_Input_LZ78();
-            alg.Decompressor((Ctrl_Input_LZ78)inP2);      
-            Ctrl_Output outp = alg.print();
-            outp.print();
-        }
-        return "Descompressió de " + Path;
+        return new Pair<String,String>(type, "Descompressió de " + Path);
     }
 }
