@@ -85,15 +85,16 @@ public class Ctrl_Master {
             if(extension == "ppm") tornada = CAlg.Choose_Encoder(Path, "ppm");
             else
             {	
-		String mode = "";		
-		if (Function == 3) {
-		        System.out.println("Amb quin algorisme vol comprimir el fitxer: LZ78, LZW, LZSS o JPEG?");
-		        System.out.println("(escriviu-lo en minúsucules)");
-		        mode = System.console().readLine().toLowerCase();
-		}
-		else {
-			mode = CAlg.Auto_Encoder(Path); 	
-		}	
+		        String mode = "";
+		        if (Function == 3)
+		        {
+                    System.out.println("Amb quin algorisme vol comprimir el fitxer: LZ78, LZW, LZSS o JPEG?");
+                    System.out.println("(escriviu-lo en minúsucules)");
+                    mode = System.console().readLine().toLowerCase();
+		        }
+		        else {
+			        mode = CAlg.Auto_Encoder(Path);
+		        }
                 Estadistica est = new Estadistica();
                 tornada = CAlg.Choose_Encoder(Path, mode);
                 //Generació de les estadístiques
@@ -102,5 +103,10 @@ public class Ctrl_Master {
             }            
         }
         return tornada;
+    }
+
+    public void CompilaManual()
+    {
+
     }
 }
