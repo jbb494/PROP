@@ -1,30 +1,30 @@
-package domini.algorithm;
+package domini.folders;
 
 import domini.utils.Pair;
 import persistencia.input.Ctrl_Input;
-
+import domini.algorithm.*;
 import domini.folders.FileNames;
 
 /**
- * @class Ctrl_Algorithm
- * @brief Classe de Ctrl_Algorithm
- * @author Manel Aguilar
+ * @class Ctrl_Folders
+ * @brief Classe Ctrl_Folders
+ * @author Joan Lapeyra
  */
-public class Ctrl_Algorithm {
+public class Ctrl_Folders {
 
     /**
      * @brief Constructor de la classe
      */
-    public Ctrl_Algorithm() {}
+    public Ctrl_Folders() {}
 
     /**
      * @fn public String Choose_Encoder(String Path, String method)
      * @brief Realitzar la compressió d'un fitxer segons un algoritme concret
-     * @param Path Path de l'arxiu a comprimir
-     * @param method Algoritme a emprar
+     * @param Path Path de l'arxiu o carpeta a comprimir
+     * @param method Algoritme a emprar pels fitxers de text
      * @return Informacio sobre la compressio
      */
-    static public String Choose_Encoder(String Path, String method) {
+    public String Choose_Encoder(String Path, String method) {
         String new_path = FileNames.getPrefix(Path) + ".jm";
 
         Algorithm alg;
@@ -52,19 +52,22 @@ public class Ctrl_Algorithm {
 
     /**
      * @fn public String Auto_Encoder(String Path)
-     * @brief Determina de manera automàtica quin compressor utilitzar
-     * @param Path Path de l'arxiu a comprimir
+     * @brief CALDRIA ELIMINAR AUESTA FUNCIÓ QUAN NINGÚ LA CRIDI
+     * @return String buida
+     */
+    public String Auto_Encoder(String Path)
+    {
+	    return "auto";
+    }
+
+    /**
+     * @fn private String Auto_Encoder_Text(String Path)
+     * @brief Determina de manera automàtica quin compressor de text utilitzar
      * @return Nom del mètode a emprar
      */
-    static public String Auto_Encoder(String Path)
+    private String Auto_Encoder_Text(String Path)
     {
-	    int i = Path.lastIndexOf(".");
-        String ext = Path.substring(i+1);
-        if (ext.toLowerCase().equals("txt")) 
-            return "lzw";
-        else if (ext.toLowerCase().equals("ppm")) 
-            return "jpeg";
-	    else throw new IllegalArgumentException("Format no reconegut");
+	    return "lzw";
     }
 
     /**
@@ -73,7 +76,7 @@ public class Ctrl_Algorithm {
      * @param Path Path de l'arxiu a descomprimir
      * @return Informació sobre la descompressió
      */
-    static public Pair<String,String> Auto_Decoder(String Path)
+    public Pair<String,String> Auto_Decoder(String Path)
     {
         String type;
         int i = Path.lastIndexOf(".");

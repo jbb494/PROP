@@ -1,6 +1,6 @@
 package presentacion.master;
 
-import domini.algorithm.Ctrl_Algorithm;
+import domini.folders.Ctrl_Folders;
 import domini.estadistica.Estadistica;
 import domini.utils.Pair;
 import presentacion.form.MainForm;
@@ -71,7 +71,7 @@ public class Ctrl_Master {
      * @return Retorna informació sobre l'execucio
      */
     public String Work() {
-        Ctrl_Algorithm CAlg = new Ctrl_Algorithm();
+        Ctrl_Folders CAlg = new Ctrl_Folders();
         String tornada = "";
         int i = Path.lastIndexOf(".");
         String out = "";
