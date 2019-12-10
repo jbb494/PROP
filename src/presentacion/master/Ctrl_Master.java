@@ -29,9 +29,6 @@ public class Ctrl_Master {
     public Ctrl_Master() {
         Function = 0;
         Path = "";
-        mainForm frame = new mainForm();
-        frame.inicialitza_panel();
-
     }
 
     //Functions
@@ -40,7 +37,6 @@ public class Ctrl_Master {
      * @brief S'encarrega de preguntar a l'usuari que vol fer
      */
     public void Context() {
-        
         //Asking if we wanna encode or decode
         System.out.println("Vol comprimir o descomprimir un fitxer?");
         String input = System.console().readLine().toLowerCase();
@@ -75,8 +71,8 @@ public class Ctrl_Master {
         String out = "";
         Estadistica est;
 
-        //Descompressio
-        if(Function == 2)
+        // Descompressio
+        if (Function == 2)
         {
             est = new Estadistica(false);
             Pair<String,String> ret = CAlg.Auto_Decoder(Path);
