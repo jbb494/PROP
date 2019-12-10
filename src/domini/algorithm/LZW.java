@@ -20,7 +20,7 @@ import domini.utils.Dict_Encode;
  * diccionari del compressor tenia.
  * @author Miguel Paracuellos Ocaña 
  */
-public class LZW {
+public class LZW extends Algorithm {
 
 	//Attributes
 	/**
@@ -28,30 +28,44 @@ public class LZW {
 	 */
 	final Integer Limit = Integer.MAX_VALUE;
 
-	/**
-	 * @param Output Del tipus Ctrl_Output, li passarem el text processat
-	 */
-	Ctrl_Output Output;
+	
 
 
 	//Constructor
 	/**
-	 * @brief Constructor de la clase LZW
-	 * @param aux Path de sortida
+	 * @brief Constructor de la classe
+	 * @param path Path de sortida
+	 * @param b False si estas comprimint, True si estas descomprimint
 	 */
-	public LZW(String aux, boolean b) {
-		Output = new Ctrl_Output(aux, "lzw", b);
+	public LZW(String path, boolean b) {
+		super(path, b);
+		if (!b) {
+			Output.addMetadata("lzw");
+		}
+	}
+
+	/**
+	 * @brief Constructor de la classe
+	 * @param b False si estas comprimint, True si estas descomprimint
+	 * @note Es continua escrivint al fitxer que s'estava escrivint
+	 */
+	public LZW(boolean b) {
+		super(b);
+		if (!b) {
+			Output.addMetadata("lzw");
+		}
 	}
 
 
 	//Functions
 	/**
-	 * @fn public ArrayList<Integer> compression(Ctrl_Input_Text inp)
+	 * @fn public ArrayList<Integer> compression()
 	 * @brief Comprimim un text amb l'algoritme LZW
-	 * @param inp accés al Controlador d'Input per el text
-	 * @return llista amb els enters que representen el text
 	 */
-	public void compression(Ctrl_Input_Text inp) {
+	public void Compressor() {
+
+		checkCompressor();
+		Ctrl_Input_Text inp = new Ctrl_Input_Text();
 
 		//We initialize the attributes we need
 		Dict_Encode table = new Dict_Encode();
@@ -75,12 +89,13 @@ public class LZW {
 	}
 
 	/**
-	 * @fn public String decompression(Ctrl_Input_LZW inp)
+	 * @fn public String decompression()
 	 * @brief Descomprimim un fitxer amb l'algoritme LZW
-	 * @param inp accés al Controlador d'Input pel fitxer comprimit
-	 * @return text que representa el fitxer descomprimit
 	 */
-	public void decompression(Ctrl_Input_LZW inp) {
+	public void Decompressor() {
+
+		checkDecompressor();
+		Ctrl_Input_LZW inp = new Ctrl_Input_LZW();
 		
 		Dict_Decode table = new Dict_Decode(true, -1);
 		Integer i = -1;
@@ -116,12 +131,4 @@ public class LZW {
 		}
 	}
 
-	/**
-	 * @fn public Ctrl_Output print()
-	 * @brief La funció serà cridada quan volguem obtenir el resultat d'una compressio o descompressio
-	 * @return Controlador d'Output per poder esciure el resultat
-	 */
-	public Ctrl_Output print() {
-		return Output;
-	}
 }

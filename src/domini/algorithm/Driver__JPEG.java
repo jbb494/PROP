@@ -3,8 +3,7 @@ package domini.algorithm;
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
 
-import persistencia.input.Ctrl_Input_Img;
-import persistencia.input.Ctrl_Input_JPEG;
+import persistencia.input.Ctrl_Input;
 
 /**
  * @class Driver__JPEG
@@ -24,11 +23,11 @@ public class Driver__JPEG {
 		System.out.println("	 Input: 1");
 
 		System.out.println("Funciones: ");
-		System.out.println("	 2. Compressor(Ctrl_Input_Img in) ");
+		System.out.println("	 2. Compressor() ");
 		System.out.println("	 Input: 2");
-		System.out.println("	 3. Decompressor(Ctrl_Input_JPEG in) ");
+		System.out.println("	 3. Decompressor() ");
 		System.out.println("	 Input: 3");
-		System.out.println("	 4. print().print() ");
+		System.out.println("	 4. print() ");
 		System.out.println("	 Input: 4");
 		System.out.println();
 
@@ -71,17 +70,18 @@ public class Driver__JPEG {
 				case "2":
 					System.out.println("Introduce el path del input");
 					String aux2 = reader.readLine().trim();
-					Ctrl_Input_Img in = new Ctrl_Input_Img(aux2);
-					jpeg.Compressor(in);
+					Ctrl_Input.initialize(aux2);
+					jpeg.Compressor();
 				break;
 				case "3":
 					System.out.println("Introduce el path del input");
 					String aux3 = reader.readLine().trim();
-					Ctrl_Input_JPEG in2 = new Ctrl_Input_JPEG(aux3);
-					jpeg.Decompressor(in2);
+					Ctrl_Input in2 = new Ctrl_Input(aux3);
+					System.out.println("La metadata del fitxer correspon al tipus "+in2.getAlg());
+					jpeg.Decompressor();
 				break;
 				case "4":
-					jpeg.print().print();
+					jpeg.print();
 				break;
 				case "0":
 					return;

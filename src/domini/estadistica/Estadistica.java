@@ -3,8 +3,11 @@ package domini.estadistica;
 import java.io.File;
 import java.util.Date;
 
+import domini.utils.Pair;
+
 /**
  * @class Estadistica
+ * @file
  * @brief Generació de les estadístiques durant la compressió
  * @author Manel Aguilar
  */
@@ -14,19 +17,29 @@ public class Estadistica {
     /**
      * @param start Instància del moment en que comencem la compressió
      */
-    Date start;
+    private Date start;
 
     /**
      * @param end Instància del moment en que acabem la compressió
      */
-    Date end;
+    private Date end;
+
+    /**
+     * @param info Indica si es tracta d'una compressio o descompressio
+     * @brief Si es True es tracta d'una compressio, sino d'una descompressio
+     */
+    private Pair<Boolean,String> info;
 
     /**
      * @brief Constructor de la classe Estadística
      * @note Generem l'Instància d'inici de temps de compressió
      */
-    public Estadistica() {
+    public Estadistica(Boolean b) {
         start = new Date();
+        if (b) 
+            info = new Pair<Boolean,String>(b, "compressio");
+        else 
+            info = new Pair<Boolean,String>(b,"descompressio");
     }
 
     //Functions
@@ -43,6 +56,10 @@ public class Estadistica {
         return res;
     }
 
+    public void work_done() {
+        end = new Date();
+    } 
+
     /**
      * @fn public void show_estadistica(String inp, String out)
      * @brief Mostrarà les estadístiques de la compressió
@@ -50,7 +67,6 @@ public class Estadistica {
      * @param out Path de l'arxiu comprimit
      */
     public void show_estadistica(String inp, String out) {
-        end = new Date();
         long ts = time(start,end);
         
         File input = new File(inp);
@@ -59,18 +75,26 @@ public class Estadistica {
         if (input.exists() && output.exists()) {
             if (ts == 0) ts = 1;
             long spd = input.length() / ts;
-            double gc = (double)input.length() / (double)output.length();
-            if(gc == 0.0) gc = 1.0;
+            double gc;
+            if (info.L) 
+                gc = (double)input.length() / (double)output.length();
+            else 
+                gc = (double)output.length() / (double)input.length();
+            if(gc == 0.0) 
+                gc = 1.0;
             
 
-            System.out.println("La velocitat de compressió ha sigut de " + spd + " bytes/ms.");
-            System.out.println("El grau de compressió és de " + String.format("%.6f", gc));
-            if(ts/1000 < 1) System.out.println("Temps en comprimir: " + ts + " ms.\n");
-            else System.out.println("Temps en comprimir: " + (ts/1000) + " segons.\n");
+            System.out.println("La velocitat de " + info.R + " ha sigut de " + spd + " bytes/ms.");
+            System.out.println("El grau de " + info.R + " és de " + String.format("%.6f", gc));
+            if(ts/1000 < 1) System.out.println("Temps de " + info.R + " : " + ts + " ms.\n");
+            else System.out.println("Temps de " + info.R + " : " + (ts/1000) + " segons.\n");
         
         }
-        else
-            System.err.println("Generación de estadísticas fallida: Input o output no existe");
+        else {
+            System.err.println("Generación de estadísticas fallida:");
+            if (! input.exists()) { System.out.println("-Input no existe"); }
+            if (! output.exists()) { System.out.println("-Output no existe"); }
+        }
 
             
     }

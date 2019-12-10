@@ -3,6 +3,7 @@ package presentacion.form;
 import presentacion.form.components.ProgressBar;
 import presentacion.form.components.browserTree.browserTreeComponent;
 import presentacion.form.components.browserTree.modelBrowser;
+import presentacion.master.Ctrl_Master;
 
 import javax.swing.*;
 import javax.swing.border.TitledBorder;
@@ -31,14 +32,15 @@ public class mainForm extends JFrame {
     private JPanel PanelDescompr;
     private JButton button1;
     private JPanel DuoButPanel;
+    Ctrl_Master CM;
     private JPanel panelpopup;
     private JButton LZSSBut;
     private JButton LZWButton;
     private JButton LZ78Button;
     private JButton JPEGButton;
 
-
     public mainForm() {
+        super("Compressor/Descompressor");
         $$$setupUI$$$();
         RootTree.addTreeSelectionListener(new TreeSelectionListener() {
             @Override
@@ -53,14 +55,16 @@ public class mainForm extends JFrame {
                 System.exit(0);
             }
         });
+
+        CM = new Ctrl_Master();
     }
 
     public void inicialitza_panel() {
-        JFrame frame = new JFrame("Compressor/Descompressor");
-        frame.setContentPane(new mainForm().panel1);
-        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        frame.pack();
-        frame.setVisible(true);
+        setContentPane(new mainForm().panel1);
+        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        pack();
+        setVisible(true);
+        setResizable(false);
     }
 
     /**

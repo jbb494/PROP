@@ -69,7 +69,7 @@ public class Driver__Huffman {
 				case "1":
 					System.out.println("");
 					System.out.println("Escribe un 0 para Huffman manual y un 1 para Huffman automatico");
-					String aux1 = reader.readLine().trim();
+					//String aux1 = reader.readLine().trim();
 					huffman = new Huffman();
 				break;
 				case "2":

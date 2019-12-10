@@ -1,12 +1,7 @@
 package domini.algorithm;
 
+import domini.utils.Pair;
 import persistencia.input.Ctrl_Input;
-import persistencia.input.Ctrl_Input_Img;
-import persistencia.input.Ctrl_Input_LZSS;
-import persistencia.input.Ctrl_Input_LZW;
-import persistencia.input.Ctrl_Input_LZ78;
-import persistencia.input.Ctrl_Input_Text;
-import persistencia.input.Ctrl_Input_JPEG;
 import persistencia.output.Ctrl_Output;
 
 /**
@@ -30,40 +25,28 @@ public class Ctrl_Algorithm {
      */
     public String Choose_Encoder(String Path, String method) {
         int i = Path.lastIndexOf(".");
-        String prefix = Path.substring(0, i+1);
-        if(method.toLowerCase().equals("lzss"))
-        {
-            LZSS alg = new LZSS(prefix + method, false);
-            Ctrl_Input_Text in = new Ctrl_Input_Text(Path);
-            alg.Compressor(in);
-            Ctrl_Output outp = alg.print();
-            outp.print();
-        }
-        else if(method.toLowerCase().equals("lzw"))
-        {
-            LZW alg = new LZW(prefix + method, false);
-            Ctrl_Input_Text in = new Ctrl_Input_Text(Path);
-            alg.compression(in);
-            Ctrl_Output outp = alg.print();
-            outp.print();
-        }
-        else if(method.toLowerCase().equals("lz78"))
-        {
-            LZ78 alg = new LZ78(prefix + method, false);
-            Ctrl_Input_Text in = new Ctrl_Input_Text(Path);
-            alg.Compressor(in);
-            Ctrl_Output outp = alg.print();
-            outp.print();
-        }
-        else if(method.toLowerCase().equals("jpeg"))
-        {
-            JPEG alg = new JPEG(prefix + method, false);
-            Ctrl_Input_Img in = new Ctrl_Input_Img(Path);
-            alg.Compressor(in);
-            Ctrl_Output outp = alg.print();
-            outp.print();
+        String new_path = Path.substring(0, i+1) + "jm";
 
+        Algorithm alg;
+        if(method.toLowerCase().equals("lzss")) {
+            alg = new LZSS(new_path, false);
         }
+        else if(method.toLowerCase().equals("lzw")) {
+            alg = new LZW(new_path, false);
+        }
+        else if(method.toLowerCase().equals("lz78")) {
+            alg = new LZ78(new_path, false);
+        }
+        else if(method.toLowerCase().equals("jpeg")) {
+            alg = new JPEG(new_path, false);
+        }
+        else {
+            throw new IllegalArgumentException(method+" no es correspon a cap dels algorismes.");
+        }
+        Ctrl_Input.initialize(Path);
+        alg.Compressor();
+        alg.print();
+
         return "Compressió de " + Path;
     }
 
@@ -75,11 +58,13 @@ public class Ctrl_Algorithm {
      */
     public String Auto_Encoder(String Path)
     {
-	int i = Path.lastIndexOf(".");
+	    int i = Path.lastIndexOf(".");
         String ext = Path.substring(i+1);
-	if (ext.toLowerCase().equals("txt")) return "lzw";
-	else if (ext.toLowerCase().equals("ppm")) return "jpeg";
-	else throw new IllegalArgumentException("Format no reconegut");
+        if (ext.toLowerCase().equals("txt")) 
+            return "lzw";
+        else if (ext.toLowerCase().equals("ppm")) 
+            return "jpeg";
+	    else throw new IllegalArgumentException("Format no reconegut");
     }
 
     /**
@@ -89,49 +74,37 @@ public class Ctrl_Algorithm {
      * @param method Descompressor a emprar
      * @return Informació sobre la descompressió
      */
-    public String Auto_Decoder(String Path, String method)
+    public Pair<String,String> Auto_Decoder(String Path)
     {
+        String type;
         int i = Path.lastIndexOf(".");
         String prefix = Path.substring(0, i+1);
-        if(method.toLowerCase().equals("jpeg"))
-        {
-            JPEG alg = new JPEG(prefix + "ppm", true);  
-            Ctrl_Input_JPEG inP2 = new Ctrl_Input_JPEG(Path);
-            alg.Decompressor(inP2);      
-            Ctrl_Output outp = alg.print();
-            outp.print();
+
+        Ctrl_Input inP2 = new Ctrl_Input(Path);
+        int metadata = inP2.getMetadata();
+
+        Algorithm alg;
+        if(metadata == 3) {
+            alg = new JPEG(prefix + "ppm", true);
+        
+            type = "ppm";
         }
-        else
-        {
-            Ctrl_Input inP = new Ctrl_Input(Path);
-            String decide = inP.getAlg();
-            if(decide.toLowerCase().equals("lzss"))
-            {               
-                LZSS alg = new LZSS(prefix + "txt", true);  
-                Ctrl_Input_LZSS inP2 = new Ctrl_Input_LZSS(Path);
-                alg.Decompressor(inP2);      
-                //alg.Decompressor((Ctrl_Input_LZSS)inP);
-                Ctrl_Output outp = alg.print();
-                outp.print();
+        else {
+            type = "txt";
+            if(metadata == 2)  {               
+                alg = new LZSS(prefix + "txt", true);
             }
-            else if(decide.toLowerCase().equals("lzw"))
-            {
-                LZW alg = new LZW(prefix + "txt", true);  
-                Ctrl_Input_LZW inP2 = new Ctrl_Input_LZW(Path);
-                alg.decompression(inP2);
-                Ctrl_Output outp = alg.print();
-                outp.print();
+            else if(metadata == 1) {
+                alg = new LZW(prefix + "txt", true);  
             }
-            else if(decide == "lz78")
-            {
-                LZ78 alg = new LZ78(prefix + "txt", true);  
-                Ctrl_Input_LZ78 inP2 = new Ctrl_Input_LZ78(Path);
-                alg.Decompressor(inP2);      
-                Ctrl_Output outp = alg.print();
-                outp.print();
+            else /*if(metadata == 0)*/ {
+                alg = new LZ78(prefix + "txt", true);  
             }
-            else return decide;
         }
-        return "Descompressió de " + Path;
+
+        alg.Decompressor();      
+        alg.print();
+
+        return new Pair<String,String>(type, "Descompressió de " + Path);
     }
 }

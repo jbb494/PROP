@@ -3,6 +3,7 @@
  * @brief Classe Main
  * @author Joan Lapeyra
  */
+import presentacion.form.mainForm;
 import presentacion.master.Ctrl_Master;
 
 public class Main {
@@ -22,7 +23,8 @@ public class Main {
         java.awt.EventQueue.invokeLater (
                 new Runnable() {
                     public void run() {
-                        Ctrl_Master CM = new Ctrl_Master();
+                        mainForm frame = new mainForm();
+                        frame.inicialitza_panel();
                     }
                 }
         );

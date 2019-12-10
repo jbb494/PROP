@@ -4,9 +4,7 @@ import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.PriorityQueue;
 import java.util.Map;
-import java.util.TreeMap;
 import java.util.HashMap;
-import java.util.Stack;
 
 import domini.utils.BinTree;
 

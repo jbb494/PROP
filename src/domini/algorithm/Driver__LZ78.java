@@ -3,9 +3,7 @@ package domini.algorithm;
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
 
-import persistencia.input.Ctrl_Input_LZ78;
-import persistencia.input.Ctrl_Input_Text;
-import persistencia.output.Ctrl_Output;
+import persistencia.input.Ctrl_Input;
 
 /**
  * @class Driver__LZ78
@@ -25,9 +23,9 @@ public class Driver__LZ78 {
 		System.out.println("	 Input: 1");
 
 		System.out.println("\nFunciones: ");
-		System.out.println("	 2. Compressor(Ctrl_Input_Text in) ");
+		System.out.println("	 2. Compressor() ");
 		System.out.println("	 Input: 2");
-		System.out.println("	 3. Decompressor(Ctrl_Input_LZ78 in) ");
+		System.out.println("	 3. Decompressor() ");
 		System.out.println("	 Input: 3");
 		System.out.println("	 4. print()");
 		System.out.println("	 Input: 4");
@@ -74,20 +72,21 @@ public class Driver__LZ78 {
 					System.out.println("escribe el path del archivo que quieres comprimir.");
 					String aux2 = reader.readLine().trim();
 					String path = aux2;
-					Ctrl_Input_Text in = new Ctrl_Input_Text(path);
-					lz78.Compressor(in);
+					Ctrl_Input.initialize(path);
+					lz78.Compressor();
 				break;
 				case "3":
 					System.out.println("escribe el path del archivo que quieres descomprimir");
 					String aux3 = reader.readLine().trim();
 					path = aux3;
-					Ctrl_Input_LZ78 in2 = new Ctrl_Input_LZ78(path);
-					lz78.Decompressor(in2);
+					Ctrl_Input in2 = new Ctrl_Input(path);
+					System.out.println("La metadata del fitxer correspon al tipus "+in2.getAlg());
+					lz78.Decompressor();
 				break;
 				case "4":
-					Ctrl_Output a = lz78.print();
+					lz78.print();
 					//a.printString();
-					a.print();
+					//a.print();
 				break;
 				case "0":
 					return;

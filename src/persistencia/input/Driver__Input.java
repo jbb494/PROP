@@ -23,18 +23,18 @@ public class Driver__Input {
     private static void showOptions(){
         System.out.println("Driver de Input");
         System.out.println("Constructores: ");
-        System.out.println("\t 1. Input(String path)");
+        System.out.println("\t 1. initialize()");
         System.out.println("\t Input: 1");
         System.out.println();
 
         System.out.println("Consultoras: ");
-        System.out.println("\t 2. getBits()");
+        System.out.println("\t 2. getInstance().getBits()");
         System.out.println("\t Input: 2");
-        System.out.println("\t 3. getMoreBits()");
+        System.out.println("\t 3. getInstance().getMoreBits()");
         System.out.println("\t Input: 3");
-        System.out.println("\t 4. finished()");
+        System.out.println("\t 4. getInstance().finished()");
         System.out.println("\t Input: 4");
-        System.out.println("\t 5. getDecodeAlg()");
+        System.out.println("\t 5. getInstance().getDecodeAlg()");
         System.out.println("\t Input: 5");
         System.out.println();
 
@@ -62,13 +62,10 @@ public class Driver__Input {
      * @param linea Número de operació realitzada
      * @param path Path al fitxer
      */
-    private static void comprovarExcepcions(Input inp, String linea, String path){
+    private static void comprovarExcepcions(String linea, String path){
         int op = Integer.parseInt(linea);
         if(path.equals("") && op < 6 && !linea.equals("0")){
             throw new IllegalArgumentException("Debes escoger un path antes");
-        }
-        if(inp == null && !linea.equals("1") && !linea.equals("0") && op < 6) {
-            throw new IllegalArgumentException("Debes llamar al constructor antes");
         }
     }
 
@@ -79,7 +76,6 @@ public class Driver__Input {
      */
     public static void main(String[] args) {
         try {
-            Input inp = null;
             String path = "";
             showOptions();
             BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
@@ -88,26 +84,26 @@ public class Driver__Input {
                 System.out.println("Selecciona una opción:");
                 linea = reader.readLine().trim();
                 System.out.println("Opción: " + linea + " seleccionada");
-                comprovarExcepcions(inp, linea, path);
+                comprovarExcepcions(linea, path);
                 switch(linea){
                     case "1":
-                        inp = new Input(path);
+                        Input.initialize(path);
                     break;
                     case "2":
                         System.out.println("Escribe un integer que represente el numero de bits que quieres leer");
                         Integer numBits1 = Integer.parseInt(reader.readLine().trim());
-                        byte a = inp.getBits(numBits1);
+                        byte a = Input.getInstance().getBits(numBits1);
                         System.out.println(a);
                     break;
                     case "3":
                         System.out.println("Escribe un integer que represente el numero de bits que quieres leer");
                         Integer numBits2 = Integer.parseInt(reader.readLine().trim());
-                        ArrayList<Byte> b= inp.getMoreBits(numBits2);
+                        ArrayList<Byte> b= Input.getInstance().getMoreBits(numBits2);
                         System.out.println(b);
                     break;
                     case "4":
                         String aux = "";
-                        if(inp.finished()){
+                        if(Input.getInstance().finished()){
                             aux = "Input ha terminado de leer";
                         }else{
                             aux = "Input aún puede leer";
@@ -115,7 +111,7 @@ public class Driver__Input {
                         System.out.println(aux);
                     break;
                     case "5":
-                        System.out.println("Los dos primeros bits del fichero comprimido indican que se comprimió con el algoritmo " + inp.getDecodeAlg());
+                        System.out.println("Los dos primeros bits del fichero comprimido indican que se comprimió con el algoritmo " + Input.getInstance().getDecodeAlg());
                     break;
                     case "6":
                         path = "../src/persistencia/data/Input1.txt";

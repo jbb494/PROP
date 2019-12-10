@@ -22,17 +22,17 @@ public class Driver__Output {
     private static void showOptions(){
         System.out.println("Driver de Output");
         System.out.println("Constructores: ");
-        System.out.println("\t 1. Output(String path)");
+        System.out.println("\t 1. initialize(String path)");
         System.out.println("\t Input: 1");
         System.out.println();
 
         System.out.println("Modificadores: ");
-        System.out.println("\t 2. Add(byte b, int n_bits)");
+        System.out.println("\t 2. getInstance().Add(byte b, int n_bits)");
         System.out.println("\t Input: 2");
         System.out.println();
 
         System.out.println("Consultoras: ");
-        System.out.println("\t 3. print()");
+        System.out.println("\t 3. getInstance().print()");
         System.out.println("\t Input: 3");
         System.out.println();
 
@@ -43,17 +43,6 @@ public class Driver__Output {
     }
 
     
-    /**
-     * @fn private static void comprovarExcepcions(Output out, String linea)
-     * @brief Comprova les possibles excepcions que es puguin generar en la classe
-     * @param out Instància Output
-     * @param linea Número de operació realitzada
-     */
-    private static void comprovarExcepcions(Output out, String linea){
-        if(out == null && !linea.equals("1") && !linea.equals("0")) {
-            throw new IllegalArgumentException("Debes llamar al constructor antes");
-        }
-    }
 
     /**
      * @fn public static void main(String[] args)
@@ -62,7 +51,7 @@ public class Driver__Output {
      */
     public static void main(String[] args) {
         try {
-            Output out = null;
+            //Output out = null;
             showOptions();
             BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
             String linea = "";
@@ -70,10 +59,10 @@ public class Driver__Output {
                 System.out.println("Selecciona una opción:");
                 linea = reader.readLine().trim();
                 System.out.println("Opción: " + linea + " seleccionada");
-                comprovarExcepcions(out, linea);
+                //comprovarExcepcions(out, linea);
                 switch(linea){
                     case "1":
-                        out = new Output(path);
+                        Output.initialize(path);
                     break;
                     case "2":
                     try{
@@ -82,13 +71,13 @@ public class Driver__Output {
                         byte ByteAux = (byte)Integer.parseInt(StringAux.split(" ")[0]);
                         Integer midaN = Integer.parseInt(StringAux.split(" ")[1]);
                         
-                        out.add(ByteAux, midaN);
+                        Output.getInstance().add(ByteAux, midaN);
                     }catch (Exception e){
                         System.out.println(e.getMessage());
                     }
                     break;
                     case "3":
-                        out.print();
+                        Output.getInstance().print();
                     break;
                     case "0":
                         return;

@@ -55,7 +55,7 @@ public class Driver__Estadistica {
 			comprovarExcepcions(estadistica, linea);
 			switch(linea){
 				case "1":
-					estadistica = new Estadistica();
+					estadistica = new Estadistica(true);
 				break;
 				case "2":
 					System.out.println("Indica el fichero para comprimir y el comprimido");

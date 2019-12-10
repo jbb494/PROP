@@ -14,30 +14,45 @@ import java.util.*;
  * 
  * @author Joan Bellavista Bartroli
  */
-public class LZ78 {
+public class LZ78 extends Algorithm {
 
-    /**
-	 *  @param Utilitzat per a la compressió i descompressió de fitxers..
-	*/
-    Ctrl_Output Output ;
+    
    
 	//Constructor
 	/**
-	 * @brief Constructor de la clase LZ78
-	 * @param aux Path de sortida
+	 * @brief Constructor de la classe
+	 * @param path Path de sortida
 	 * @param b False si estas comprimint, True si estas descomprimint
 	 */
-	public LZ78(String aux, boolean b) {
-		Output = new Ctrl_Output(aux, "lz78", b);
+	public LZ78(String path, boolean b) {
+		super(path, b);
+		if (!b) {
+			Output.addMetadata("lz78");
+		}
+	}
+
+	/**
+	 * @brief Constructor de la classe
+	 * @param b False si estas comprimint, True si estas descomprimint
+	 * @note Es continua escrivint al fitxer que s'estava escrivint
+	 */
+	public LZ78(boolean b) {
+		super(b);
+		if (!b) {
+			Output.addMetadata("lz78");
+		}
 	}
 
 	//Functions
 	/**
-	 * @fn public Compressor(Ctrl_Input_Text in)
+	 * @fn public Compressor()
 	 * @brief Comprimim un text amb l'algoritme LZ78
-	 * @param in accés al Controlador d'Input per el text
 	 */
-	public void Compressor(Ctrl_Input_Text in) {
+	public void Compressor() {
+
+		checkCompressor();
+		Ctrl_Input_Text in = new Ctrl_Input_Text();
+
         Trie<Byte> map = new Trie<Byte>();
 		Byte nextByte;	
 		ArrayList<Byte> seq = new ArrayList<Byte>();
@@ -77,11 +92,14 @@ public class LZ78 {
 	}
 
 	/**
-	 * @fn public Decompressor(Ctrl_Input_LZW inp)
+	 * @fn public Decompressor()
 	 * @brief Descomprimim un fitxer amb l'algoritme LZ78
-	 * @param inp accés al Controlador d'Input pel fitxer comprimit
 	 */
-	public void Decompressor(Ctrl_Input_LZ78 in) {
+	public void Decompressor() {
+
+		checkDecompressor();
+		Ctrl_Input_LZ78 in = new Ctrl_Input_LZ78();
+
 		Dict_Decode map = new Dict_Decode(false, 0);
 		while(!in.finished()) {
 			Pair <Integer, Byte> entr = in.get();
@@ -94,14 +112,6 @@ public class LZ78 {
 			map.add(punterMap, nextByte);
 			Output.add(seqPunterMap);
 		}
-	}
-	/**
-	 * @fn public print()
-	 * @brief Retorna el Ctrl_Output.
-	 * @return Retorna el Ctrl_Output on està l'arxiu comprimit o descomprimit.
-	 */
-	public Ctrl_Output print() {
-        return Output;
 	}
 	
 	
