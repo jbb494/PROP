@@ -4,6 +4,7 @@ import domini.algorithm.Ctrl_Algorithm;
 import domini.estadistica.Estadistica;
 import domini.utils.Pair;
 import presentacion.form.MainForm;
+import presentacion.state.*;
  
 /**
  * @class Ctrl_Master
@@ -110,5 +111,37 @@ public class Ctrl_Master {
         est.show_estadistica(Path,out_p); 
          
         return tornada;
+    }
+
+    public void Whatevar() {
+        int i = 0;
+        State s;
+        while (i < 3) {
+            System.out.println("Here");
+            System.out.println("GIVE ME YOUR INPUT SON OF FRUIT:");
+            Path = System.console().readLine();
+            Path = "../src/persistencia/data/".concat(Path);
+
+            switch (i) {
+                case 1:
+                    s = new Decompression_State(Path);
+                    break;
+                case 2:
+                    s = new Compression_State(Path);
+                    break;
+                case 3:
+                    s = new Decompression_State(Path);
+                default:
+                    s = new CS_LZ78(Path);
+                    break;
+            }
+
+            
+            String tornada = s.work();
+            s.finished();
+            System.out.println(tornada);
+
+            ++i;
+        }
     }
 }

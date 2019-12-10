@@ -16,8 +16,8 @@ public class Main {
         while(true)
         {
             Ctrl_Master CM = new Ctrl_Master();
-            CM.Context();
-            System.out.println(CM.Work());
+            //CM.Context();
+            CM.Whatevar();
         }
     }
 }
