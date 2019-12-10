@@ -10,12 +10,12 @@ public class Pair<T1,T2> {
     /**
      * @param L primer paràmetre
      */
-    T1 L;
+    public T1 L;
     
     /**
      * @param R segon paràmetre
      */
-    T2 R;
+    public T2 R;
 
     /**
      * @brief Constructor de la classe

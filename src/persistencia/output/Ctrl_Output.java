@@ -3,42 +3,63 @@ package persistencia.output;
 import java.nio.ByteBuffer;
 import java.util.ArrayList;
 
+
 /**
  * @class Ctrl_Output
  * @brief Classe Ctrl_Output
+ * 
+ * Cal tenir en compte que no es poden escriure dos fitxers simultàniament.
+ * El fitxer que escriuen les instàncies de Ctrl_Output i els seus fills s'inicialitza 
+ * cada cop que es crida a initialize(String path) o Ctrl_Output*(String path), 
+ * on Ctrl_Output* és Ctrl_Output o un dels seus fills.
+ * 
  * @author Miguel Paracuellos
  */
 public class Ctrl_Output {
     
-    //Attributes
-    /**
-     * @param Output_Class Classe Output com atribut de la classe
-     */
-    Output Output_Class;
-
     //Constructor
     /**
      * @brief Constructor de la classe
-     * @param path Path de l'arxiu resultant de l'escritura
-     * @param method Indicara el valor de la metadata segons l'algoritme emprat
-     * @param b Indicació per a txt o ppm
+     * @param path Path de l'arxiu que comença a escriure
      */
-    public Ctrl_Output(String path, String method, boolean b) {
-        Output_Class = new Output(path);
-        
-        if (!b) {
-            if (method.toLowerCase().equals("lzss"))
-                add((byte)2, 2);
-            else if(method.toLowerCase().equals("lzw"))
-                add((byte)1, 2);
-            else if(method.toLowerCase().equals("lz78"))
-                add((byte)0, 2);
-            else if(method.toLowerCase().equals("jpeg"))
-                add((byte)3, 2);
-        }
+    public Ctrl_Output(String path) {
+        Output.initialize(path);
     }
 
+    /**
+     * @brief Constructor de la classe
+     * @note Continua escrivint al fitxer al qual s'estava escrivint.
+     */
+    public Ctrl_Output() {}
+
+
     //Functions
+
+    /**
+     * @fn public static void initialize(String path)
+     * @brief Assigna un nou fitxer per esciure.
+     * @param path referencia el fitxer en qüestió.
+     * @note Més info a la descripció de la classe.
+     */
+    public static void initialize(String path) {
+        Output.initialize(path);
+    }
+
+    /**
+     * @brief Afageix la metadata corresponent a un determinat algorisme.
+     * @param method És l'algorisme, del qual depèn la metadata.
+     */
+    public void addMetadata(String method) {
+        if (method.toLowerCase().equals("lzss"))
+            add((byte)2, 2);
+        else if(method.toLowerCase().equals("lzw"))
+            add((byte)1, 2);
+        else if(method.toLowerCase().equals("lz78"))
+            add((byte)0, 2);
+        else if(method.toLowerCase().equals("jpeg"))
+            add((byte)3, 2);
+    }
+
     /**
      * @fn public void add(Byte b, Integer n_bits) 
      * @brief Afegeix un byte amb n_bits valids
@@ -46,7 +67,7 @@ public class Ctrl_Output {
      * @param n_bits Nombre de bits valids
      */
     public void add(Byte b, Integer n_bits) {
-        Output_Class.add(b, n_bits);
+        Output.getInstance().add(b, n_bits);
     }
 
     /**
@@ -57,7 +78,7 @@ public class Ctrl_Output {
     public void add(String s) {
         byte[] bytearray = s.getBytes();
         for (byte b : bytearray) 
-            Output_Class.add(b,8);
+            Output.getInstance().add(b,8);
     }
 
     /**
@@ -138,28 +159,10 @@ public class Ctrl_Output {
 
     /**
      * @fn public void print()
-     * @brief Escriu el contingut de la classe en un nou arxiu
+     * @brief Escriu el buffer a la sortida i buida el buffer.
      */
     public void print() {   
-        Output_Class.print();
-    }
-
-    /**
-     * @fn public void printString()
-     * @brief Escriu el contingut de la classe per consola byte a byte (en format binari)
-     */
-    /* aquesta funció ha quedat inservible perquè ha desaparegut l'array 'Out' de la classe Output
-       He vist que només l'ultilitzen els drivers, per tant no crec que sigui un problema eliminar-la.*/
-    /*public void printString() {
-        Output_Class.printString();
-    }*/
-    
-    /**
-     * @fn public Output getOut()
-     * @return Retorna l'atribut de tipus Output de la classe
-     */
-    public Output getOut() {
-        return Output_Class;
+        Output.getInstance().print();
     }
 
 }

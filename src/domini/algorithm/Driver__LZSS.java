@@ -5,9 +5,7 @@ import java.io.InputStreamReader;
 import java.util.ArrayList;
 
 import domini.utils.ArrayCircular;
-import persistencia.input.Ctrl_Input_LZSS;
-import persistencia.input.Ctrl_Input_Text;
-import persistencia.output.Ctrl_Output;
+import persistencia.input.Ctrl_Input;
 
 /**
  * @class Driver__LZSS
@@ -33,9 +31,9 @@ public class Driver__LZSS {
 		System.out.println("	 Input: 3");
 		System.out.println("	 4. print()");
 		System.out.println("	 Input: 4");
-		System.out.println("	 5. Compressor(Ctrl_Input_Text in)");
+		System.out.println("	 5. Compressor()");
 		System.out.println("	 Input: 5");
-		System.out.println("	 6. Decompressor(Ctrl_Input_LZSS in)");
+		System.out.println("	 6. Decompressor()");
 		System.out.println("	 Input: 6");
 		System.out.println();
 
@@ -102,23 +100,24 @@ public class Driver__LZSS {
 					System.out.println("");
 				break;
 				case "4":
-					Ctrl_Output a = lzss.print();
+					lzss.print();
 					//.printString();
-					a.print();
+					//a.print();
 				break;
 				case "5":
 					System.out.println("escribe el path del archivo que quieres comprimir.");
 					String a3 = reader.readLine().trim();
 					String path = a3;
-					Ctrl_Input_Text in = new Ctrl_Input_Text(path);
-					lzss.Compressor(in);
+					Ctrl_Input.initialize(path);
+					lzss.Compressor();
 				break;
 				case "6":
 					System.out.println("escribe el path del archivo que quieres descomprimir");
 					String a4 = reader.readLine().trim();
 					path = a4;
-					Ctrl_Input_LZSS in2 = new Ctrl_Input_LZSS(path);
-					lzss.Decompressor(in2);
+					Ctrl_Input in2 = new Ctrl_Input(path);
+					System.out.println("La metadata del fitxer correspon al tipus "+in2.getAlg());
+					lzss.Decompressor();
 				break;
 				case "0":
 					return;

@@ -1,9 +1,7 @@
 package persistencia.output;
 
-import java.util.*;
+
 import java.io.BufferedOutputStream;
-import java.io.DataOutputStream;
-import java.io.OutputStreamWriter;
 
 import java.io.IOException;
 import java.io.FileNotFoundException;
@@ -40,10 +38,33 @@ public class Output {
     BufferedOutputStream buff;
 
     /**
+     * @param instance Única instància de Output, siguint el patró singleton
+     */
+    private static Output instance = null;
+
+    /**
+     * @fn public static Output getInstance()
+     * @brief Retorna l'única instància de Output, siguint el patró singleton
+     */
+    public static Output getInstance() {
+        if(instance == null) throw new IllegalArgumentException("Output not initialized. You must call initialize(String)");
+        return instance;
+    }
+
+    /**
+     * @fn public static void initialize(String path)
+     * @brief Reinicialitza l'úniaca instància de Output, com a ampliació del patró singleton
+     * @param path Path de l'arxiu d'Output
+     */
+    public static void initialize(String path) {
+        instance = new Output(path);
+    }
+
+    /**
      * @brief Constructor de la classe
      * @param path Path de sortida
      */
-    public Output(String path) {
+    private Output(String path) {
         Pos = 0;
         this.path = path;
         next_byte = 0;

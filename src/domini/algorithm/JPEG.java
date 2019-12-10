@@ -12,20 +12,9 @@ import persistencia.output.Ctrl_Output_Img;
  * 
  * @author Joan Lapeyra Amat
  */
-public class JPEG {
+public class JPEG extends Algorithm {
 
-	/**
-	 *  @param out és utilitxat per emmegatzemar la compressió o descompressió.
-	*/
-	Ctrl_Output out;
-	/**
-	 *  @param path és el path de sortida.
-	*/
-	String path;
-	/**
-	 *  @param decode_or_encode indica si és compressió (true) o descompressió (false)
-	*/
-	boolean decode_or_encode; // if true, decode; otherwise, encode
+	
 
 	/**
 	 *  @param huff és la codificació de huffman utilitzat a Entropy Conding
@@ -33,14 +22,29 @@ public class JPEG {
 	Huffman huff;
 
 	/**
-	 * @brief Constructor de la clase JPEG
-	 * @param aux Path de sortida
+	 * @brief Constructor de la classe
+	 * @param path Path de sortida
 	 * @param b False si estas comprimint, True si estas descomprimint
 	 */
-	public JPEG(String aux, boolean b) {
+	public JPEG(String path, boolean b) {
+		super(path, b);
+		if (!b) {
+			Output.addMetadata("jpeg");
+		}
 		huff = new Huffman();
-		path = aux;
-		decode_or_encode = b;
+	}
+
+	/**
+	 * @brief Constructor de la classe
+	 * @param b False si estas comprimint, True si estas descomprimint
+	 * @note Es continua escrivint al fitxer que s'estava escrivint
+	 */
+	public JPEG(boolean b) {
+		super(b);
+		if (!b) {
+			Output.addMetadata("jpeg");
+		}
+		huff = new Huffman();
 	}
 
 	
@@ -252,19 +256,20 @@ public class JPEG {
 
 
 	/**
-	 * @fn public void Compressor(Ctrl_Input_Img in)
-	 * @brief Comprimim un text amb l'algoritme JPEG
-	 * @param in accés al Controlador d'Input del fitxer a comprimir
+	 * @fn public void Compressor()
+	 * @brief Comprimim una imatge amb l'algoritme JPEG
 	 */
-	public void Compressor(Ctrl_Input_Img in) {
+	public void Compressor() {
 
-		out = new Ctrl_Output(path, "jpeg", false);
+		checkCompressor();
+		Ctrl_Input_Img in = new Ctrl_Input_Img();
+
 
 		int num_i_blocks = in.getHeight()/8;
 		int num_j_blocks = in.getWidth()/8;
 
-		out.add2(num_j_blocks*8, 32);
-		out.add2(num_i_blocks*8, 32);
+		Output.add2(num_j_blocks*8, 32);
+		Output.add2(num_i_blocks*8, 32);
 
 		for (int i_block = 0; i_block < num_i_blocks; i_block++)  {
 
@@ -316,32 +321,17 @@ public class JPEG {
 							zeros++;
 						} else {
 							while (zeros >= 16) {
-								out.add2(huff.getCode(0x0F0), huff.getSize(0x0F0));
+								Output.add2(huff.getCode(0x0F0), huff.getSize(0x0F0));
 								zeros -= 16;
 							}
 							int by = get_entropy1_code(zeros, get_entropy2_size(x));
-							out.add2(huff.getCode(by), huff.getSize(by));
+							Output.add2(huff.getCode(by), huff.getSize(by));
 							zeros = 0;
-							out.add2(get_entropy2_code(x), get_entropy2_size(x));
-							/*if (j_block == 0 && i_block == 0 && k == 0) { //debug
-								System.out.print(x);
-								System.out.print(",");
-								System.out.print(get_entropy2_code(x));
-								System.out.print(",");
-								System.out.print(get_entropy2_size(x));
-								System.out.print(":");
-								System.out.print(zeros);
-								System.out.print(":");
-								System.out.print(Integer.toHexString(by));
-								System.out.print(",");
-								System.out.print(Integer.toBinaryString(huff.getCode(by)));
-								System.out.print(",");
-								System.out.print(huff.getSize(by));
-								System.out.print("  ");
-							}*/
+							Output.add2(get_entropy2_code(x), get_entropy2_size(x));
+							
 						}
 					}
-					out.add2(huff.getCode(0), huff.getSize(0));
+					Output.add2(huff.getCode(0), huff.getSize(0));
 
 				}
 			}
@@ -352,16 +342,18 @@ public class JPEG {
 
 
 	/**
-	 * @fn public void Decompressor(Ctrl_Input_JPEG in
-	 * @brief Desomprimim un text amb l'algoritme JPEG
-	 * @param in accés al Controlador d'Input del fitxer a descomprimir
+	 * @fn public void Decompressor()
+	 * @brief Desomprimim una imatge amb l'algoritme JPEG
 	 */
-	public void Decompressor(Ctrl_Input_JPEG in) {
+	public void Decompressor() {
+
+		checkDecompressor();
+		Ctrl_Input_JPEG in = new Ctrl_Input_JPEG();
 
 		int num_i_blocks = in.getHeight()/8;
 		int num_j_blocks = in.getWidth()/8;
 
-		out = new Ctrl_Output_Img(path, in.getWidth(), in.getHeight(), 255);
+		Output = new Ctrl_Output_Img(in.getWidth(), in.getHeight(), 255);
 
 		//int it = 0;
 
@@ -402,22 +394,6 @@ public class JPEG {
 							if (zz >= 64) throw new IllegalArgumentException("Entropy coding failed");
 							int code = in.get(size);
 							int x = get_value_from_entropy2(code, size);
-							/*if (j_block == 0 && i_block == 0 && k == 0) { //debug
-								System.out.print(x);
-								System.out.print(",");
-								System.out.print(code);
-								System.out.print(",");
-								System.out.print(size);
-								System.out.print(":");
-								System.out.print(get_runlength_from_entropy1(by));
-								System.out.print(":");
-								System.out.print(Integer.toHexString(by));
-								System.out.print(",");
-								System.out.print(Integer.toBinaryString(huff.getCode(by)));
-								System.out.print(",");
-								System.out.print(huff.getSize(by));
-								System.out.print("   ");
-							}*/
 							inYCbCr[zigZag_X[zz]][zigZag_Y[zz]][k] = x;
 							zz++;
 						}
@@ -457,35 +433,9 @@ public class JPEG {
 				}
 			}
 
-			((Ctrl_Output_Img)out).add(outRGB);
+			((Ctrl_Output_Img)Output).add(outRGB);
 		}
 
 	}
-
-	/**
-	 * @fn public Ctrl_Output print()
-	 * @brief Retorna el Ctrl_Output.
-	 * @return Retorna el Ctrl_Output on està l'arxiu comprimit o descomprimit.
-	 */
-	public Ctrl_Output print() {
-        return out;
-	}
-
-	/*public static void main(String[] args) {
-		
-		Ctrl_Input_Img img = new Ctrl_Input_Img(args[0]);
-		JPEG alg = new JPEG(args[1], false);
-		alg.Compressor(img);
-		Ctrl_Output out1 = alg.print();
-		out1.print();
-		System.out.println("--");
-		Ctrl_Input_JPEG jpeg = new Ctrl_Input_JPEG(args[1]);
-		JPEG alg2 = new JPEG(args[2], true);
-		alg2.Decompressor(jpeg);
-		Ctrl_Output out2 = alg2.print();
-		out2.print();
-	}*/
-	
-	
 }
 

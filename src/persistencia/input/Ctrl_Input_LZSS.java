@@ -10,11 +10,19 @@ public class Ctrl_Input_LZSS extends Ctrl_Input {
 
     /**
        * @brief El constructor on es crida a la classe pare.
-       * @param path Conté el path del arxiu.
+       * @param path Conté el path del arxiu que coemança a llegir.
        */
     public Ctrl_Input_LZSS(String path) {
         super(path);
         getMetadata();
+    }
+
+    /**
+       * @brief El constructor on es crida a la classe pare.
+       * @note Continua llegint el fitxer que s'estava llegint. Assumeix que la metadata ja ha estat llegida.
+       */
+    public Ctrl_Input_LZSS() {
+        super();
     }
 
     /**
@@ -25,25 +33,25 @@ public class Ctrl_Input_LZSS extends Ctrl_Input {
     public IntorByte getLZSS()
     {
 
-        byte aux = Input_class.getBits(1);
+        byte aux = Input.getInstance().getBits(1);
         IntorByte ioc;
         if(aux == (byte)0) //char
         {
-            aux = Input_class.getBits(8);
+            aux = Input.getInstance().getBits(8);
             ioc = new IntorByte(true);
             ioc.SetByte(aux);
         }
         else
         {
             List<Byte> lb = new ArrayList<Byte>();
-            aux = Input_class.getBits(3);
+            aux = Input.getInstance().getBits(3);
             lb.add(aux);
-            aux = Input_class.getBits(8);
+            aux = Input.getInstance().getBits(8);
             lb.add(aux);
             int despl = byteToConversion.byteToInteger(lb);
             ioc = new IntorByte(false);
             ioc.SetDespl(despl);
-            aux = Input_class.getBits(5);
+            aux = Input.getInstance().getBits(5);
             lb = new ArrayList<Byte>();
             lb.add(aux);
             int mida = byteToConversion.byteToInteger(lb) + 3;

@@ -1,8 +1,9 @@
 package presentacion.master;
+
 import domini.algorithm.Ctrl_Algorithm;
 import domini.estadistica.Estadistica;
 import presentacion.form.mainForm;
-
+import domini.utils.Pair;
 /**
  * @class Ctrl_Master
  * @brief Classe Ctrl_Master
@@ -70,38 +71,42 @@ public class Ctrl_Master {
     public String Work() {
         Ctrl_Algorithm CAlg = new Ctrl_Algorithm();
         String tornada = "";
+        int i = Path.lastIndexOf(".");
+        String out = "";
+        Estadistica est;
+
+        //Descompressio
         if(Function == 2)
         {
-            String extension = "";
-            int i = Path.lastIndexOf(".");
-            extension = Path.substring(i+1);
-            tornada = CAlg.Auto_Decoder(Path, extension);
+            est = new Estadistica(false);
+            Pair<String,String> ret = CAlg.Auto_Decoder(Path);
+            tornada = ret.R;
+            out = ret.L;
+            est.work_done();
         }
-        else
-        {
-            String extension = "";
-            int i = Path.lastIndexOf(".");
-            extension = Path.substring(i+1);
-            if(extension == "ppm") tornada = CAlg.Choose_Encoder(Path, "ppm");
-            else
-            {	
-		        String mode = "";
-		        if (Function == 3)
-		        {
-                    System.out.println("Amb quin algorisme vol comprimir el fitxer: LZ78, LZW, LZSS o JPEG?");
-                    System.out.println("(escriviu-lo en minúsucules)");
-                    mode = System.console().readLine().toLowerCase();
-		        }
-		        else {
-			        mode = CAlg.Auto_Encoder(Path);
-		        }
-                Estadistica est = new Estadistica();
-                tornada = CAlg.Choose_Encoder(Path, mode);
-                //Generació de les estadístiques
-                String out_p = Path.substring(0, i+1) + mode;
-                est.show_estadistica(Path,out_p);
-            }            
+        //Compressio
+        else {
+            out = "jm";
+            String mode;
+            //Manual		
+            if (Function == 3) {
+                System.out.println("Amb quin algorisme vol comprimir el fitxer: LZ78, LZW, LZSS o JPEG?");
+                System.out.println("(escriviu-lo en minúsucules)");
+                mode = System.console().readLine().toLowerCase();
+            }
+            //Automatica
+            else {
+                mode = CAlg.Auto_Encoder(Path); 	
+            }	
+            est = new Estadistica(true);
+            tornada = CAlg.Choose_Encoder(Path, mode);
+            est.work_done();          
         }
+
+        //Generació de les estadístiques
+        String out_p = Path.substring(0, i+1) + out;
+        est.show_estadistica(Path,out_p); 
+         
         return tornada;
     }
 
