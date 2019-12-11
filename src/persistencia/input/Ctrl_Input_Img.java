@@ -118,7 +118,7 @@ public class Ctrl_Input_Img extends Ctrl_Input {
     }
 
     /**
-     * @fn private char getChar()
+     * @fn private String getWord()
      * @brief Llegeix caràcters fins al pròxim whitespace
      * @return Retorna la paraula llegida
      */

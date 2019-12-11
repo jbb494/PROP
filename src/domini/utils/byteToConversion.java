@@ -27,7 +27,7 @@ public class byteToConversion {
     /**
      * @fn public static Integer byteToInteger(List<Byte> bArg)
      * @brief Transforma un Array de bytes a un Enter
-     * @param bArg Llista de bytes que volem transformar
+     * @param bArg Llista de bytes que volem transformar (de més a menys significatius)
      * @return Integer resultat de la conversió
      */
     public static Integer byteToInteger(List<Byte> bArg)

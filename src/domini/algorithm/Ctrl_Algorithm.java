@@ -24,7 +24,7 @@ public class Ctrl_Algorithm {
      * @param method Algoritme a emprar
      * @return Informacio sobre la compressio
      */
-    static public String Choose_Encoder(String Path, String method) {
+    public String Choose_Encoder(String Path, String method) {
         String new_path = FileNames.getPrefix(Path) + ".jm";
 
         Algorithm alg;
@@ -56,7 +56,7 @@ public class Ctrl_Algorithm {
      * @param Path Path de l'arxiu a comprimir
      * @return Nom del mètode a emprar
      */
-    static public String Auto_Encoder(String Path)
+    public String Auto_Encoder(String Path)
     {
 	    int i = Path.lastIndexOf(".");
         String ext = Path.substring(i+1);
@@ -73,7 +73,7 @@ public class Ctrl_Algorithm {
      * @param Path Path de l'arxiu a descomprimir
      * @return Informació sobre la descompressió
      */
-    static public Pair<String,String> Auto_Decoder(String Path)
+    public Pair<String,String> Auto_Decoder(String Path)
     {
         String type;
         int i = Path.lastIndexOf(".");
