@@ -51,7 +51,7 @@ public class Ctrl_Input_CompFolder extends Ctrl_Input {
         Input.getInstance().startFragment(Integer.MAX_VALUE);
     }
 
-    private String getWord() {
+    public String getWord() {
         String str = "";
         byte b;
         while (true) {
