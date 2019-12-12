@@ -23,6 +23,7 @@ public class Ctrl_FolderFile {
      * de la carpeta.
      * @param img_quality és un número del 0 al 100 que representa la qualitat de la compressió JPEG 
      * amb què es compimiran les imatges ppm de la carpeta.
+     * Com més gran sigui menys informació es perdrà però més ocuparà el fitxer.
      */
     public void EncodeManualFolder(String text_method, double img_quality) {
         if (!text_method.toLowerCase().equals("lz78") && !text_method.toLowerCase().equals("lzss") && !text_method.toLowerCase().equals("lzw"))
@@ -46,6 +47,7 @@ public class Ctrl_FolderFile {
      * @brief Comprimeix una imatge ppm.
      * @param img_quality és un número del 0 al 100 que representa la qualitat de la compressió JPEG 
      * amb què es compimiran la imatge.
+     * Com més gran sigui menys informació es perdrà però més ocuparà el fitxer.
      */
     public void EncodeManualImg(double img_quality) {
         if (img_quality < 0 || img_quality > 100)
