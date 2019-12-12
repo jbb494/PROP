@@ -94,5 +94,4 @@ public abstract class Algorithm {
 	public void print() {
         Output.print();
 	}
-
 }

@@ -2,7 +2,8 @@ package domini.algorithm;
 
 import domini.utils.Pair;
 import persistencia.input.Ctrl_Input;
-import persistencia.output.Ctrl_Output;
+
+import domini.folders.FileNames;
 
 /**
  * @class Ctrl_Algorithm
@@ -24,8 +25,7 @@ public class Ctrl_Algorithm {
      * @return Informacio sobre la compressio
      */
     public String Choose_Encoder(String Path, String method) {
-        int i = Path.lastIndexOf(".");
-        String new_path = Path.substring(0, i+1) + "jm";
+        String new_path = FileNames.getPrefix(Path) + ".jm";
 
         Algorithm alg;
         if(method.toLowerCase().equals("lzss")) {
@@ -71,7 +71,6 @@ public class Ctrl_Algorithm {
      * @fn public String Auto_Decoder(String Path, String method)
      * @brief Escull de manera automàtica quin descompressor emprar
      * @param Path Path de l'arxiu a descomprimir
-     * @param method Descompressor a emprar
      * @return Informació sobre la descompressió
      */
     public Pair<String,String> Auto_Decoder(String Path)
