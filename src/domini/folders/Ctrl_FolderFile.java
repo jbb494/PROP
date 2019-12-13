@@ -6,9 +6,33 @@ package domini.folders;
  * Tota la comunicació entre la capa de presentació i la capa de domini relativa a comprimir i descomprimir 
  * passa perquè les classes de la capa de presentació instanciïn la classe Ctrl_FolderFile.
  * 
+
  * @author Joan Lapeyra
  */
 public class Ctrl_FolderFile {
+    /*
+        Una carpeta comprimida (de n fills) té la seguent estructura:
+
+         1B              1B                                 1B
+        +--+------------+--+--------+---------+------------+--+--------+
+        |F0| nom fill 1 |00| fill 1 |   ...   | nom fill n |00| fill n |
+        +--+------------+--+--------+---------+------------+--+--------+
+
+        Un fill pot ser una carpeta comprimida o un fitxer comprimit.
+
+        Un fitxer comprimit te la següent estroctura.
+
+         1B   8B        mida B
+        +--+------+-----------------+
+        |F1| mida |      DATA       |
+        +--+------+-----------------+
+
+        Tot element de l'estrura descrita (nom fill 1, fill 1, DATA, etc) té una mida
+        d'un numbre enter de bytes.
+
+        La responsabilitat de llegir i escriure DATA és delegada a Ctrl_Algorithm.
+    */
+
 
     /**
      * @brief Constructor de la classe
@@ -30,6 +54,8 @@ public class Ctrl_FolderFile {
             throw new IllegalArgumentException("text_method ha de ser lz78, lzss o lzw");
         if (img_quality < 0 || img_quality > 100)
             throw new IllegalArgumentException("img_quality ha de ser un real entre 0 i 100 incolsos");
+
+        
     }
     
     /**

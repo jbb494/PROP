@@ -1,7 +1,6 @@
 package persistencia.input;
 
 import domini.utils.byteToConversion;
-import domini.utils.stringConversion;
 
 /**
  * @class Ctrl_Input_Img
@@ -144,6 +143,6 @@ public class Ctrl_Input_Img extends Ctrl_Input {
      * @return Retorna el número llegit
      */
     private int getIntASCII() {
-        return stringConversion.atoi( getWord() );
+        return Integer.parseInt( getWord() );
     }
 }

@@ -85,6 +85,7 @@ public class Output {
     }
 
     private void write() {
+        file_length++;
 
         try {
             byte[] aux = {(byte)next_byte};

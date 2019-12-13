@@ -2,7 +2,6 @@ package persistencia.input;
 
 import java.io.BufferedInputStream;
 import java.io.FileInputStream;
-import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.util.ArrayList;
@@ -38,14 +37,14 @@ public class Input {
     
 
     /**
-     * @param file_length llargada del fragment
+     * @param frag_length llargada del fragment
      */
-    private int file_length;
+    private long frag_length;
 
     /**
      * @param read_bytes nombre de bytes llegits del fragment
      */
-    private int read_bytes;
+    private long read_bytes;
 
     /**
      * @param end Indica si hem arribat al final de l'arxiu o el fragment
@@ -88,7 +87,7 @@ public class Input {
      */
     private Input(String path) {
         try {   
-            file_length = Integer.MAX_VALUE;
+            frag_length = Long.MAX_VALUE;
             read_bytes = 0;
             illegals = 0;
             end = false;
@@ -116,7 +115,7 @@ public class Input {
     private void read() {
         Integer c;
         read_bytes++;
-        if (read_bytes <= file_length) {
+        if (read_bytes <= frag_length) {
             try {
                 if ((c = bin.read()) != -1) {
                     last_byte = c.byteValue();
@@ -237,13 +236,13 @@ public class Input {
     }
 
     /**
-     * @fn public void startSubfile(int length)
+     * @fn public void startFragment(long length)
      * @brief Comença a llegir un fragment. 
      * Considerarem que el fragment son els length bytes a partir del byte que estem llegint en aquest moment.
      * @param length llargada del fragment
      */
-    public void startFragment(int length) {
-        file_length = length;
+    public void startFragment(long length) {
+        frag_length = length;
         read_bytes = 0;
         end = false;
     }

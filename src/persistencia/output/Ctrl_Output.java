@@ -105,7 +105,7 @@ public class Ctrl_Output {
 
     /**
      * @fn public void add(Integer x, Integer mida)
-     * @brief Afegeix un enter amb mida. Guarda els bits més significatius primer.
+     * @brief Afegeix un enter amb mida. Big endian (bytes més significatius primer).
      * @param x Enter a afegir
      * @param mida Mida del enter que volem afegir
      */
@@ -139,7 +139,7 @@ public class Ctrl_Output {
 
     /**
      * @fn public void add2(int x, int mida)
-     * @brief Afegeix un enter amb mida. Guarda els bits menys significatius primer.
+     * @brief Afegeix un enter amb mida. Little endian (bytes menys significatius primer).
      * @param x Int a afegir.
      * @param mida Mida de "x".
      */
@@ -163,6 +163,10 @@ public class Ctrl_Output {
      */
     public void print() {   
         Output.getInstance().print();
+    }
+
+    public long getLength() {
+        return Output.getInstance().getLength();
     }
 
 }
