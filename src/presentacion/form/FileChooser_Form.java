@@ -14,6 +14,7 @@ public class FileChooser_Form extends JFrame {
         jfc = new JFileChooser(FileSystemView.getFileSystemView().getHomeDirectory());
         jfc.setFileSelectionMode(JFileChooser.FILES_AND_DIRECTORIES );
         jfc.setLocale(Locale.CHINESE);
+        //sdsfs
     }
 
     public String getPath() {
