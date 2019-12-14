@@ -14,7 +14,27 @@ public class FileChooser_Form extends JFrame {
         jfc = new JFileChooser(FileSystemView.getFileSystemView().getHomeDirectory());
         jfc.setFileSelectionMode(JFileChooser.FILES_AND_DIRECTORIES);
         jfc.setLocale(Locale.CHINESE);
-        //sdsfs
+        UIManager.put("FileChooser.openButtonText", "Abrir");
+        UIManager.put("FileChooser.cancelButtonText", "Cancelar");
+        UIManager.put("FileChooser.saveButtonText", "Guardar");
+        UIManager.put("FileChooser.cancelButtonToolTipText",
+                "Cancelar la operacion");
+        UIManager.put("FileChooser.saveButtonToolTipText", "Guardar la operacion");
+        UIManager.put("FileChooser.openButtonToolTipText", "Abrir este archivo");
+        /*
+        UIManager.put("FileChooser.lookInLabelText", "Szukaj w :");
+        UIManager.put("FileChooser.fileNameLabelText", "Plik:");
+        UIManager.put("FileChooser.filesOfTypeLabelText", "Pliki
+                typu:");
+        UIManager.put("FileChooser.upFolderToolTipText", "Do góry");
+        UIManager.put("FileChooser.homeFolderToolTipText", "Glówny
+                pulpit");
+                UIManager.put("FileChooser.newFolderToolTipText", "Nowy
+                        folder");
+                        UIManager.put("FileChooser.listViewButtonToolTipText",
+                                "Lista");
+        UIManager.put("FileChooser.detailsViewButtonToolTipText",
+                "Szczególy");*/
     }
 
     public String getPath() {
