@@ -29,7 +29,9 @@ public class mainForm extends JFrame {
             @Override
             public void actionPerformed(ActionEvent actionEvent) {
                 FileChooser_Form fc = new FileChooser_Form();
-                LabelPath.setText(fc.getPath());
+                String path = fc.getPath();
+                String s = "...".concat(path.substring(path.length() - 30));
+                LabelPath.setText(s);
             }
         });
         Exit.addActionListener(new ActionListener() {
@@ -111,6 +113,7 @@ public class mainForm extends JFrame {
         LabelPath = new JLabel();
         LabelPath.setBackground(new Color(-1));
         LabelPath.setForeground(new Color(-1));
+        LabelPath.setHorizontalAlignment(11);
         LabelPath.setText("");
         PanelPath.add(LabelPath, new com.intellij.uiDesigner.core.GridConstraints(0, 1, 1, 1, com.intellij.uiDesigner.core.GridConstraints.ANCHOR_WEST, com.intellij.uiDesigner.core.GridConstraints.FILL_NONE, com.intellij.uiDesigner.core.GridConstraints.SIZEPOLICY_FIXED, com.intellij.uiDesigner.core.GridConstraints.SIZEPOLICY_FIXED, null, null, new Dimension(300, -1), 0, false));
         final com.intellij.uiDesigner.core.Spacer spacer6 = new com.intellij.uiDesigner.core.Spacer();

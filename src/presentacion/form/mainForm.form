@@ -116,6 +116,7 @@
             <properties>
               <background color="-1"/>
               <foreground color="-1"/>
+              <horizontalAlignment value="11"/>
               <text value=""/>
             </properties>
           </component>
