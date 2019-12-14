@@ -3,6 +3,7 @@ package presentacion.form;
 import javax.swing.*;
 import javax.swing.filechooser.FileSystemView;
 import java.io.File;
+import java.util.Locale;
 
 public class FileChooser_Form extends JFrame {
 
@@ -11,6 +12,7 @@ public class FileChooser_Form extends JFrame {
     public FileChooser_Form() {
         jfc = new JFileChooser(FileSystemView.getFileSystemView().getHomeDirectory());
         jfc.setFileSelectionMode(JFileChooser.FILES_AND_DIRECTORIES );
+        jfc.setLocale(Locale.CHINESE);
     }
 
     public String getPath() {
