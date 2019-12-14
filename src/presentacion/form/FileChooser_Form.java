@@ -11,7 +11,7 @@ public class FileChooser_Form extends JFrame {
 
     public FileChooser_Form() {
         jfc = new JFileChooser(FileSystemView.getFileSystemView().getHomeDirectory());
-        jfc.setFileSelectionMode(JFileChooser.FILES_AND_DIRECTORIES );
+        jfc.setFileSelectionMode(JFileChooser.FILES_AND_DIRECTORIES);
     }
 
     public String getPath() {
