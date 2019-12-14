@@ -31,7 +31,7 @@
           <borderPainted value="false"/>
           <focusPainted value="false"/>
           <foreground color="-1"/>
-          <text value="Exit"/>
+          <text value="Salir"/>
         </properties>
       </component>
       <hspacer id="be869">
@@ -109,12 +109,14 @@
         <children>
           <component id="9dc02" class="javax.swing.JLabel" binding="LabelPath">
             <constraints>
-              <grid row="0" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+              <grid row="0" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false">
+                <maximum-size width="300" height="-1"/>
+              </grid>
             </constraints>
             <properties>
               <background color="-1"/>
               <foreground color="-1"/>
-              <text value="tnjerogbnejlkfnsdjfgnjkefnjkd"/>
+              <text value=""/>
             </properties>
           </component>
           <hspacer id="887f5">
