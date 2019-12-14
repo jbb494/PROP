@@ -2,11 +2,13 @@
 
 2)  Capa de presentacion (JFrame) --> Layaout Managers
     - Preview: Poder agafar el output com string i fer preview. # Joan
-    - Listeners funcionin.
+    - Listeners funcionin. # Joan
     - Fer jpanel comprimir/descomprimir mentres comprimeix + barra.
         - Fer jframe frontend. # Manel
         - Fer listeners per barra.
     - Popup errors.
+
+4)  Arreglar Doxygen
 
 4)  Compresion Automática
 
