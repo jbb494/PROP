@@ -5,6 +5,8 @@ import presentacion.master.Ctrl_Master;
 import javax.swing.*;
 import javax.swing.border.TitledBorder;
 import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
 public class mainForm extends JFrame {
     private JPanel panel1;
@@ -16,11 +18,19 @@ public class mainForm extends JFrame {
     private JLabel LabelPath;
     private JPanel PanelPath;
     private JCheckBox previewCheckBox;
+    private JEditorPane AreaPre;
+    private JScrollPane PanelPre;
     Ctrl_Master CM;
 
     public mainForm() {
         super("Compressor/Descompressor");
         $$$setupUI$$$();
+        button4.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent actionEvent) {
+                
+            }
+        });
     }
 
     public void inicialitza_panel() {
@@ -40,7 +50,7 @@ public class mainForm extends JFrame {
      */
     private void $$$setupUI$$$() {
         panel1 = new JPanel();
-        panel1.setLayout(new com.intellij.uiDesigner.core.GridLayoutManager(6, 2, new Insets(20, 20, 20, 20), -1, -1));
+        panel1.setLayout(new com.intellij.uiDesigner.core.GridLayoutManager(7, 2, new Insets(20, 20, 20, 20), -1, -1));
         panel1.setAlignmentX(0.0f);
         panel1.setAlignmentY(0.0f);
         panel1.setBackground(new Color(-14013910));
@@ -58,13 +68,13 @@ public class mainForm extends JFrame {
         Exit.setFocusPainted(false);
         Exit.setForeground(new Color(-1));
         Exit.setText("Exit");
-        panel1.add(Exit, new com.intellij.uiDesigner.core.GridConstraints(5, 1, 1, 1, com.intellij.uiDesigner.core.GridConstraints.ANCHOR_CENTER, com.intellij.uiDesigner.core.GridConstraints.FILL_HORIZONTAL, com.intellij.uiDesigner.core.GridConstraints.SIZEPOLICY_CAN_SHRINK | com.intellij.uiDesigner.core.GridConstraints.SIZEPOLICY_CAN_GROW, com.intellij.uiDesigner.core.GridConstraints.SIZEPOLICY_FIXED, null, null, null, 0, false));
+        panel1.add(Exit, new com.intellij.uiDesigner.core.GridConstraints(6, 1, 1, 1, com.intellij.uiDesigner.core.GridConstraints.ANCHOR_CENTER, com.intellij.uiDesigner.core.GridConstraints.FILL_HORIZONTAL, com.intellij.uiDesigner.core.GridConstraints.SIZEPOLICY_CAN_SHRINK | com.intellij.uiDesigner.core.GridConstraints.SIZEPOLICY_CAN_GROW, com.intellij.uiDesigner.core.GridConstraints.SIZEPOLICY_FIXED, null, null, null, 0, false));
         final com.intellij.uiDesigner.core.Spacer spacer1 = new com.intellij.uiDesigner.core.Spacer();
-        panel1.add(spacer1, new com.intellij.uiDesigner.core.GridConstraints(5, 0, 1, 1, com.intellij.uiDesigner.core.GridConstraints.ANCHOR_CENTER, com.intellij.uiDesigner.core.GridConstraints.FILL_HORIZONTAL, com.intellij.uiDesigner.core.GridConstraints.SIZEPOLICY_WANT_GROW, 1, null, null, null, 0, false));
+        panel1.add(spacer1, new com.intellij.uiDesigner.core.GridConstraints(6, 0, 1, 1, com.intellij.uiDesigner.core.GridConstraints.ANCHOR_CENTER, com.intellij.uiDesigner.core.GridConstraints.FILL_HORIZONTAL, com.intellij.uiDesigner.core.GridConstraints.SIZEPOLICY_WANT_GROW, 1, null, null, null, 0, false));
         Panel2 = new JPanel();
         Panel2.setLayout(new com.intellij.uiDesigner.core.GridLayoutManager(1, 4, new Insets(0, 0, 0, 0), -1, -1));
         Panel2.setBackground(new Color(-14013910));
-        panel1.add(Panel2, new com.intellij.uiDesigner.core.GridConstraints(3, 0, 1, 1, com.intellij.uiDesigner.core.GridConstraints.ANCHOR_CENTER, com.intellij.uiDesigner.core.GridConstraints.FILL_BOTH, com.intellij.uiDesigner.core.GridConstraints.SIZEPOLICY_CAN_SHRINK | com.intellij.uiDesigner.core.GridConstraints.SIZEPOLICY_CAN_GROW, com.intellij.uiDesigner.core.GridConstraints.SIZEPOLICY_CAN_SHRINK | com.intellij.uiDesigner.core.GridConstraints.SIZEPOLICY_CAN_GROW, null, null, null, 0, false));
+        panel1.add(Panel2, new com.intellij.uiDesigner.core.GridConstraints(4, 0, 1, 1, com.intellij.uiDesigner.core.GridConstraints.ANCHOR_CENTER, com.intellij.uiDesigner.core.GridConstraints.FILL_BOTH, com.intellij.uiDesigner.core.GridConstraints.SIZEPOLICY_CAN_SHRINK | com.intellij.uiDesigner.core.GridConstraints.SIZEPOLICY_CAN_GROW, com.intellij.uiDesigner.core.GridConstraints.SIZEPOLICY_CAN_SHRINK | com.intellij.uiDesigner.core.GridConstraints.SIZEPOLICY_CAN_GROW, null, null, null, 0, false));
         comprimirButton = new JButton();
         comprimirButton.setBackground(new Color(-12632257));
         comprimirButton.setBorderPainted(false);
@@ -84,13 +94,13 @@ public class mainForm extends JFrame {
         final com.intellij.uiDesigner.core.Spacer spacer3 = new com.intellij.uiDesigner.core.Spacer();
         Panel2.add(spacer3, new com.intellij.uiDesigner.core.GridConstraints(0, 3, 1, 1, com.intellij.uiDesigner.core.GridConstraints.ANCHOR_CENTER, com.intellij.uiDesigner.core.GridConstraints.FILL_HORIZONTAL, com.intellij.uiDesigner.core.GridConstraints.SIZEPOLICY_WANT_GROW, 1, null, null, null, 0, false));
         final com.intellij.uiDesigner.core.Spacer spacer4 = new com.intellij.uiDesigner.core.Spacer();
-        panel1.add(spacer4, new com.intellij.uiDesigner.core.GridConstraints(4, 0, 1, 1, com.intellij.uiDesigner.core.GridConstraints.ANCHOR_CENTER, com.intellij.uiDesigner.core.GridConstraints.FILL_VERTICAL, 1, com.intellij.uiDesigner.core.GridConstraints.SIZEPOLICY_WANT_GROW, null, null, null, 0, false));
+        panel1.add(spacer4, new com.intellij.uiDesigner.core.GridConstraints(5, 0, 1, 1, com.intellij.uiDesigner.core.GridConstraints.ANCHOR_CENTER, com.intellij.uiDesigner.core.GridConstraints.FILL_VERTICAL, 1, com.intellij.uiDesigner.core.GridConstraints.SIZEPOLICY_WANT_GROW, null, null, null, 0, false));
         final com.intellij.uiDesigner.core.Spacer spacer5 = new com.intellij.uiDesigner.core.Spacer();
-        panel1.add(spacer5, new com.intellij.uiDesigner.core.GridConstraints(0, 0, 1, 1, com.intellij.uiDesigner.core.GridConstraints.ANCHOR_CENTER, com.intellij.uiDesigner.core.GridConstraints.FILL_VERTICAL, 1, com.intellij.uiDesigner.core.GridConstraints.SIZEPOLICY_WANT_GROW, null, null, null, 0, false));
+        panel1.add(spacer5, new com.intellij.uiDesigner.core.GridConstraints(1, 0, 1, 1, com.intellij.uiDesigner.core.GridConstraints.ANCHOR_CENTER, com.intellij.uiDesigner.core.GridConstraints.FILL_VERTICAL, 1, com.intellij.uiDesigner.core.GridConstraints.SIZEPOLICY_WANT_GROW, null, null, null, 0, false));
         PanelPath = new JPanel();
         PanelPath.setLayout(new com.intellij.uiDesigner.core.GridLayoutManager(1, 4, new Insets(0, 0, 0, 0), -1, -1));
         PanelPath.setBackground(new Color(-11447983));
-        panel1.add(PanelPath, new com.intellij.uiDesigner.core.GridConstraints(1, 0, 1, 1, com.intellij.uiDesigner.core.GridConstraints.ANCHOR_CENTER, com.intellij.uiDesigner.core.GridConstraints.FILL_BOTH, com.intellij.uiDesigner.core.GridConstraints.SIZEPOLICY_CAN_SHRINK | com.intellij.uiDesigner.core.GridConstraints.SIZEPOLICY_CAN_GROW, com.intellij.uiDesigner.core.GridConstraints.SIZEPOLICY_CAN_SHRINK | com.intellij.uiDesigner.core.GridConstraints.SIZEPOLICY_CAN_GROW, null, new Dimension(-1, 25), null, 0, false));
+        panel1.add(PanelPath, new com.intellij.uiDesigner.core.GridConstraints(2, 0, 1, 1, com.intellij.uiDesigner.core.GridConstraints.ANCHOR_CENTER, com.intellij.uiDesigner.core.GridConstraints.FILL_BOTH, com.intellij.uiDesigner.core.GridConstraints.SIZEPOLICY_CAN_SHRINK | com.intellij.uiDesigner.core.GridConstraints.SIZEPOLICY_CAN_GROW, com.intellij.uiDesigner.core.GridConstraints.SIZEPOLICY_CAN_SHRINK | com.intellij.uiDesigner.core.GridConstraints.SIZEPOLICY_CAN_GROW, null, new Dimension(-1, 25), null, 0, false));
         LabelPath = new JLabel();
         LabelPath.setBackground(new Color(-1));
         LabelPath.setForeground(new Color(-1));
@@ -102,8 +112,9 @@ public class mainForm extends JFrame {
         button4.setBackground(new Color(-11447983));
         button4.setBorderPainted(false);
         button4.setFocusPainted(false);
+        button4.setIcon(new ImageIcon(getClass().getResource("/presentacion/imatgesInterficie/dsnjkfghjkdfg (1).png")));
         button4.setText("");
-        PanelPath.add(button4, new com.intellij.uiDesigner.core.GridConstraints(0, 3, 1, 1, com.intellij.uiDesigner.core.GridConstraints.ANCHOR_CENTER, com.intellij.uiDesigner.core.GridConstraints.FILL_HORIZONTAL, com.intellij.uiDesigner.core.GridConstraints.SIZEPOLICY_CAN_SHRINK | com.intellij.uiDesigner.core.GridConstraints.SIZEPOLICY_CAN_GROW, com.intellij.uiDesigner.core.GridConstraints.SIZEPOLICY_FIXED, null, new Dimension(-1, 25), null, 0, false));
+        PanelPath.add(button4, new com.intellij.uiDesigner.core.GridConstraints(0, 3, 1, 1, com.intellij.uiDesigner.core.GridConstraints.ANCHOR_CENTER, com.intellij.uiDesigner.core.GridConstraints.FILL_HORIZONTAL, com.intellij.uiDesigner.core.GridConstraints.SIZEPOLICY_CAN_SHRINK | com.intellij.uiDesigner.core.GridConstraints.SIZEPOLICY_CAN_GROW, com.intellij.uiDesigner.core.GridConstraints.SIZEPOLICY_FIXED, null, new Dimension(-1, 25), new Dimension(40, 30), 0, false));
         final com.intellij.uiDesigner.core.Spacer spacer7 = new com.intellij.uiDesigner.core.Spacer();
         PanelPath.add(spacer7, new com.intellij.uiDesigner.core.GridConstraints(0, 0, 1, 1, com.intellij.uiDesigner.core.GridConstraints.ANCHOR_CENTER, com.intellij.uiDesigner.core.GridConstraints.FILL_HORIZONTAL, com.intellij.uiDesigner.core.GridConstraints.SIZEPOLICY_WANT_GROW, 1, null, null, null, 0, false));
         previewCheckBox = new JCheckBox();
@@ -113,9 +124,22 @@ public class mainForm extends JFrame {
         previewCheckBox.setSelected(false);
         previewCheckBox.setText("Preview");
         previewCheckBox.setVisible(false);
-        panel1.add(previewCheckBox, new com.intellij.uiDesigner.core.GridConstraints(1, 1, 1, 1, com.intellij.uiDesigner.core.GridConstraints.ANCHOR_WEST, com.intellij.uiDesigner.core.GridConstraints.FILL_NONE, com.intellij.uiDesigner.core.GridConstraints.SIZEPOLICY_CAN_SHRINK | com.intellij.uiDesigner.core.GridConstraints.SIZEPOLICY_CAN_GROW, com.intellij.uiDesigner.core.GridConstraints.SIZEPOLICY_FIXED, null, null, null, 0, false));
+        panel1.add(previewCheckBox, new com.intellij.uiDesigner.core.GridConstraints(2, 1, 1, 1, com.intellij.uiDesigner.core.GridConstraints.ANCHOR_WEST, com.intellij.uiDesigner.core.GridConstraints.FILL_NONE, com.intellij.uiDesigner.core.GridConstraints.SIZEPOLICY_CAN_SHRINK | com.intellij.uiDesigner.core.GridConstraints.SIZEPOLICY_CAN_GROW, com.intellij.uiDesigner.core.GridConstraints.SIZEPOLICY_FIXED, null, null, null, 0, false));
         final com.intellij.uiDesigner.core.Spacer spacer8 = new com.intellij.uiDesigner.core.Spacer();
-        panel1.add(spacer8, new com.intellij.uiDesigner.core.GridConstraints(2, 0, 1, 1, com.intellij.uiDesigner.core.GridConstraints.ANCHOR_CENTER, com.intellij.uiDesigner.core.GridConstraints.FILL_VERTICAL, 1, com.intellij.uiDesigner.core.GridConstraints.SIZEPOLICY_FIXED, new Dimension(-1, 5), new Dimension(-1, 15), null, 0, false));
+        panel1.add(spacer8, new com.intellij.uiDesigner.core.GridConstraints(3, 0, 1, 1, com.intellij.uiDesigner.core.GridConstraints.ANCHOR_CENTER, com.intellij.uiDesigner.core.GridConstraints.FILL_VERTICAL, 1, com.intellij.uiDesigner.core.GridConstraints.SIZEPOLICY_FIXED, new Dimension(-1, 5), new Dimension(-1, 15), null, 0, false));
+        PanelPre = new JScrollPane();
+        PanelPre.setVisible(false);
+        panel1.add(PanelPre, new com.intellij.uiDesigner.core.GridConstraints(0, 0, 1, 1, com.intellij.uiDesigner.core.GridConstraints.ANCHOR_CENTER, com.intellij.uiDesigner.core.GridConstraints.FILL_BOTH, com.intellij.uiDesigner.core.GridConstraints.SIZEPOLICY_CAN_SHRINK | com.intellij.uiDesigner.core.GridConstraints.SIZEPOLICY_WANT_GROW, com.intellij.uiDesigner.core.GridConstraints.SIZEPOLICY_CAN_SHRINK | com.intellij.uiDesigner.core.GridConstraints.SIZEPOLICY_WANT_GROW, null, null, null, 0, false));
+        AreaPre = new JEditorPane();
+        AreaPre.setBackground(new Color(-12632257));
+        AreaPre.setEditable(false);
+        AreaPre.setForeground(new Color(-1));
+        AreaPre.setPreferredSize(new Dimension(896, 402));
+        AreaPre.setSelectedTextColor(new Color(-13290187));
+        AreaPre.setSelectionColor(new Color(-5723992));
+        AreaPre.setText("gfhklfgmgfhklfgmklmkfdgfhklfgmklmkfdgfhklfgmklmkfdgfhklfgmklmkfdgfhklfgmklmkfdgfhklfgmklmkfdgfhklfgmklmkfdgfhklfgmklmkfdgfhklfgmklmkfdgfhklfgmklmkfdgfhklfgmklmkfdgfhklfgmklmkfdgfhklfgmklmkfdgfhklfgmklmkfdgfhklfgmklmkfdgfhklfgmklmkfdgfhklfgmklmkfdgfhklfgmklmkfdgfhklfgmklmkfdgfhklfgmklmkfdgfhklfgmklmkfdgfhklfgmklmkfdgfhklfgmklmkfdgfhklfgmklmkfdgfhklfgmklmkfdgfhklfgmklmkfdgfhklfgmklmkfdgfhklfgmklmkfdgfhklfgmklmkfdgfhklfgmklmkfdgfhklfgmklmkfdgfhklfgmklmkfdgfhklfgmklmkfdgfhklfgmklmkfdgfhklfgmklmkfdgfhklfgmklmkfdgfhklfgmklmkfdgfhklfgmklmkfdgfhklfgmklmkfdgfhklfgmklmkfdgfhklfgmklmkfdgfhklfgmklmkfdgfhklfgmklmkfdgfhklfgmklmkfdgfhklfgmklmkfdgfhklfgmklmkfdgfhklfgmklmkfdgfhklfgmklmkfdgfhklfgmklmkfdgfhklfgmklmkfdgfhklfgmklmkfdgfhklfgmklmkfdgfhklfgmklmkfdgfhklfgmklmkfdgfhklfgmklmkgfhklfgmgfhklfgmklmkfdgfhklfgmklmkfdgfhklfgmklmkfdgfhklfgmklmkfdgfhklfgmklmkfdgfhklfgmklmkfdgfhklfgmklmkfdgfhklfgmklmkfdgfhklfgmklmkfdgfhklfgmklmkfdgfhklfgmklmkfdgfhklfgmklmkfdgfhklfgmklmkfdgfhklfgmklmkfdgfhklfgmklmkfdgfhklfgmklmkfdgfhklfgmklmkfdgfhklfgmklmkfdgfhklfgmklmkfdgfhklfgmklmkfdgfhklfgmklmkfdgfhklfgmklmkfdgfhklfgmklmkfdgfhklfgmklmkfdgfhklfgmklmkfdgfhklfgmklmkfdgfhklfgmklmkfdgfhklfgmklmkfdgfhklfgmklmkfdgfhklfgmklmkfdgfhklfgmklmkfdgfhklfgmklmkfdgfhklfgmklmkfdgfhklfgmklmkfdgfhklfgmklmkfdgfhklfgmklmkfdgfhklfgmklmkfdgfhklfgmklmkfdgfhklfgmklmkfdgfhklfgmklmkfdgfhklfgmklmkfdgfhklfgmklmkfdgfhklfgmklmkfdgfhklfgmklmkfdgfhklfgmklmkfdgfhklfgmklmkfdgfhklfgmklmkfdgfhklfgmklmkfdgfhklfgmklmkfdgfhklfgmklmkfdgfhklfgmklmkfdgfhklfgmklmkfdgfhklfgmklmkfdgfhklfgmklmkfdgfhklfgmklmkfdklmkfdgfhklfgmgfhklfgmklmkfdgfhklfgmklmkfdgfhklfgmklmkfdgfhklfgmklmkfdgfhklfgmklmkfdgfhklfgmklmkfdgfhklfgmklmkfdgfhklfgmklmkfdgfhklfgmklmkfdgfhklfgmklmkfdgfhklfgmklmkfdgfhklfgmklmkfdgfhklfgmklmkfdgfhklfgmklmkfdgfhklfgmklmkfdgfhklfgmklmkfdgfhklfgmklmkfdgfhklfgmklmkfdgfhklfgmklmkfdgfhklfgmklmkfdgfhklfgmklmkfdgfhklfgmklmkfdgfhklfgmklmkfdgfhklfgmklmkfdgfhklfgmklmkfdgfhklfgmklmkfdgfhklfgmklmkfdgfhklfgmklmkfdgfhklfgmklmkfdgfhklfgmklmkfdgfhklfgmklmkfdgfhklfgmklmkfdgfhklfgmklmkfdgfhklfgmklmkfdgfhklfgmklmkfdgfhklfgmklmkfdgfhklfgmklmkfdgfhklfgmklmkfdgfhklfgmklmkfdgfhklfgmklmkfdgfhklfgmklmkfdgfhklfgmklmkfdgfhklfgmklmkfdgfhklfgmklmkfdgfhklfgmklmkfdgfhklfgmklmkfdgfhklfgmklmkfdgfhklfgmklmkfdgfhklfgmklmkfdgfhklfgmklmkfdgfhklfgmklmkfdgfhklfgmklmkfdgfhklfgmklmkfdgfhklfgmklmkfdgfhklfgmklmkfdklmkfdfdklmkfd");
+        AreaPre.setVisible(true);
+        PanelPre.setViewportView(AreaPre);
     }
 
     /**
