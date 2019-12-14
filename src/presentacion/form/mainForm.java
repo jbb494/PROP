@@ -4,6 +4,8 @@ import presentacion.master.Ctrl_Master;
 
 import javax.swing.*;
 import javax.swing.border.TitledBorder;
+import javax.swing.event.ChangeEvent;
+import javax.swing.event.ChangeListener;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -30,14 +32,22 @@ public class mainForm extends JFrame {
             public void actionPerformed(ActionEvent actionEvent) {
                 FileChooser_Form fc = new FileChooser_Form();
                 String path = fc.getPath();
-                String s = "...".concat(path.substring(path.length() - 30));
+                String s = path.length() >= 30 ? "...".concat(path.substring(path.length() - 30)) : path;
                 LabelPath.setText(s);
             }
         });
+
         Exit.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent actionEvent) {
                 System.exit(0);
+            }
+        });
+
+        previewCheckBox.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent actionEvent) {
+                PanelPre.setVisible(previewCheckBox.isSelected());
             }
         });
     }
@@ -131,14 +141,14 @@ public class mainForm extends JFrame {
         previewCheckBox.setBackground(new Color(-14013910));
         previewCheckBox.setFocusPainted(false);
         previewCheckBox.setForeground(new Color(-1));
-        previewCheckBox.setSelected(false);
+        previewCheckBox.setSelected(true);
         previewCheckBox.setText("Preview");
-        previewCheckBox.setVisible(false);
+        previewCheckBox.setVisible(true);
         panel1.add(previewCheckBox, new com.intellij.uiDesigner.core.GridConstraints(2, 1, 1, 1, com.intellij.uiDesigner.core.GridConstraints.ANCHOR_WEST, com.intellij.uiDesigner.core.GridConstraints.FILL_NONE, com.intellij.uiDesigner.core.GridConstraints.SIZEPOLICY_CAN_SHRINK | com.intellij.uiDesigner.core.GridConstraints.SIZEPOLICY_CAN_GROW, com.intellij.uiDesigner.core.GridConstraints.SIZEPOLICY_FIXED, null, null, null, 0, false));
         final com.intellij.uiDesigner.core.Spacer spacer8 = new com.intellij.uiDesigner.core.Spacer();
         panel1.add(spacer8, new com.intellij.uiDesigner.core.GridConstraints(3, 0, 1, 1, com.intellij.uiDesigner.core.GridConstraints.ANCHOR_CENTER, com.intellij.uiDesigner.core.GridConstraints.FILL_VERTICAL, 1, com.intellij.uiDesigner.core.GridConstraints.SIZEPOLICY_FIXED, new Dimension(-1, 5), new Dimension(-1, 15), null, 0, false));
         PanelPre = new JScrollPane();
-        PanelPre.setVisible(false);
+        PanelPre.setVisible(true);
         panel1.add(PanelPre, new com.intellij.uiDesigner.core.GridConstraints(0, 0, 1, 1, com.intellij.uiDesigner.core.GridConstraints.ANCHOR_CENTER, com.intellij.uiDesigner.core.GridConstraints.FILL_BOTH, com.intellij.uiDesigner.core.GridConstraints.SIZEPOLICY_CAN_SHRINK | com.intellij.uiDesigner.core.GridConstraints.SIZEPOLICY_WANT_GROW, com.intellij.uiDesigner.core.GridConstraints.SIZEPOLICY_CAN_SHRINK | com.intellij.uiDesigner.core.GridConstraints.SIZEPOLICY_WANT_GROW, null, null, null, 0, false));
         AreaPre = new JEditorPane();
         AreaPre.setBackground(new Color(-12632257));
@@ -147,7 +157,7 @@ public class mainForm extends JFrame {
         AreaPre.setPreferredSize(new Dimension(896, 402));
         AreaPre.setSelectedTextColor(new Color(-13290187));
         AreaPre.setSelectionColor(new Color(-5723992));
-        AreaPre.setText("gfhklfgmgfhklfgmklmkfdgfhklfgmklmkfdgfhklfgmklmkfdgfhklfgmklmkfdgfhklfgmklmkfdgfhklfgmklmkfdgfhklfgmklmkfdgfhklfgmklmkfdgfhklfgmklmkfdgfhklfgmklmkfdgfhklfgmklmkfdgfhklfgmklmkfdgfhklfgmklmkfdgfhklfgmklmkfdgfhklfgmklmkfdgfhklfgmklmkfdgfhklfgmklmkfdgfhklfgmklmkfdgfhklfgmklmkfdgfhklfgmklmkfdgfhklfgmklmkfdgfhklfgmklmkfdgfhklfgmklmkfdgfhklfgmklmkfdgfhklfgmklmkfdgfhklfgmklmkfdgfhklfgmklmkfdgfhklfgmklmkfdgfhklfgmklmkfdgfhklfgmklmkfdgfhklfgmklmkfdgfhklfgmklmkfdgfhklfgmklmkfdgfhklfgmklmkfdgfhklfgmklmkfdgfhklfgmklmkfdgfhklfgmklmkfdgfhklfgmklmkfdgfhklfgmklmkfdgfhklfgmklmkfdgfhklfgmklmkfdgfhklfgmklmkfdgfhklfgmklmkfdgfhklfgmklmkfdgfhklfgmklmkfdgfhklfgmklmkfdgfhklfgmklmkfdgfhklfgmklmkfdgfhklfgmklmkfdgfhklfgmklmkfdgfhklfgmklmkfdgfhklfgmklmkfdgfhklfgmklmkfdgfhklfgmklmkfdgfhklfgmklmkgfhklfgmgfhklfgmklmkfdgfhklfgmklmkfdgfhklfgmklmkfdgfhklfgmklmkfdgfhklfgmklmkfdgfhklfgmklmkfdgfhklfgmklmkfdgfhklfgmklmkfdgfhklfgmklmkfdgfhklfgmklmkfdgfhklfgmklmkfdgfhklfgmklmkfdgfhklfgmklmkfdgfhklfgmklmkfdgfhklfgmklmkfdgfhklfgmklmkfdgfhklfgmklmkfdgfhklfgmklmkfdgfhklfgmklmkfdgfhklfgmklmkfdgfhklfgmklmkfdgfhklfgmklmkfdgfhklfgmklmkfdgfhklfgmklmkfdgfhklfgmklmkfdgfhklfgmklmkfdgfhklfgmklmkfdgfhklfgmklmkfdgfhklfgmklmkfdgfhklfgmklmkfdgfhklfgmklmkfdgfhklfgmklmkfdgfhklfgmklmkfdgfhklfgmklmkfdgfhklfgmklmkfdgfhklfgmklmkfdgfhklfgmklmkfdgfhklfgmklmkfdgfhklfgmklmkfdgfhklfgmklmkfdgfhklfgmklmkfdgfhklfgmklmkfdgfhklfgmklmkfdgfhklfgmklmkfdgfhklfgmklmkfdgfhklfgmklmkfdgfhklfgmklmkfdgfhklfgmklmkfdgfhklfgmklmkfdgfhklfgmklmkfdgfhklfgmklmkfdgfhklfgmklmkfdgfhklfgmklmkfdgfhklfgmklmkfdgfhklfgmklmkfdklmkfdgfhklfgmgfhklfgmklmkfdgfhklfgmklmkfdgfhklfgmklmkfdgfhklfgmklmkfdgfhklfgmklmkfdgfhklfgmklmkfdgfhklfgmklmkfdgfhklfgmklmkfdgfhklfgmklmkfdgfhklfgmklmkfdgfhklfgmklmkfdgfhklfgmklmkfdgfhklfgmklmkfdgfhklfgmklmkfdgfhklfgmklmkfdgfhklfgmklmkfdgfhklfgmklmkfdgfhklfgmklmkfdgfhklfgmklmkfdgfhklfgmklmkfdgfhklfgmklmkfdgfhklfgmklmkfdgfhklfgmklmkfdgfhklfgmklmkfdgfhklfgmklmkfdgfhklfgmklmkfdgfhklfgmklmkfdgfhklfgmklmkfdgfhklfgmklmkfdgfhklfgmklmkfdgfhklfgmklmkfdgfhklfgmklmkfdgfhklfgmklmkfdgfhklfgmklmkfdgfhklfgmklmkfdgfhklfgmklmkfdgfhklfgmklmkfdgfhklfgmklmkfdgfhklfgmklmkfdgfhklfgmklmkfdgfhklfgmklmkfdgfhklfgmklmkfdgfhklfgmklmkfdgfhklfgmklmkfdgfhklfgmklmkfdgfhklfgmklmkfdgfhklfgmklmkfdgfhklfgmklmkfdgfhklfgmklmkfdgfhklfgmklmkfdgfhklfgmklmkfdgfhklfgmklmkfdgfhklfgmklmkfdgfhklfgmklmkfdgfhklfgmklmkfdklmkfdfdklmkfd");
+        AreaPre.setText("Texto de previsualización");
         AreaPre.setVisible(true);
         PanelPre.setViewportView(AreaPre);
     }
