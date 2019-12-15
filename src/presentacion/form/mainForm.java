@@ -8,6 +8,9 @@ import javax.swing.border.TitledBorder;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.io.FileNotFoundException;
+import java.io.IOException;
+
 import presentacion.form.components.ProgressBar;
 
 public class mainForm extends JFrame {
@@ -50,6 +53,25 @@ public class mainForm extends JFrame {
                         descomprimirButton.setEnabled(true);
                         CheckEstadistic.setEnabled(true);
                         CP = new Ctrl_Presentacio(path);
+                        if (previewCheckBox.isSelected()) {
+                            EventQueue.invokeLater(new Runnable() {
+                                @Override
+                                public void run() {
+                                    String pathTemp = CP.DecodeTemp();
+                                    String file = null;
+                                    System.out.println("decoded");
+                                    try {
+                                        System.out.println("FINISHED");
+                                        file = CP.getFile(pathTemp);
+                                        AreaPre.setText(file);
+                                    } catch (FileNotFoundException e) {
+                                        e.printStackTrace();
+                                    } catch (IOException e) {
+                                        e.printStackTrace();
+                                    }
+                                }
+                            });
+                        }
                     }
                 }
             }
@@ -62,12 +84,14 @@ public class mainForm extends JFrame {
                 pop.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
                 pop.pack();
                 pop.setVisible(true);
-                EventQueue.invokeLater(new Runnable() {
-                    @Override
-                    public void run() {
-                        CP.Encode(pop.getMethod().toString(), pop.getGc_jpeg());
-                    }
-                });
+                if (pop.getAccepted()) {
+                    EventQueue.invokeLater(new Runnable() {
+                        @Override
+                        public void run() {
+                            CP.Encode(pop.getMethod().toString(), pop.getGc_jpeg());
+                        }
+                    });
+                }
             }
         });
 
@@ -111,8 +135,7 @@ public class mainForm extends JFrame {
         });
     }
 
-    public global.type getFolderOrFile()
-    {
+    public global.type getFolderOrFile() {
         return CP.isFolderOrFile();
     }
 

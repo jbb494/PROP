@@ -23,10 +23,11 @@ public class PopUp_Comp extends JDialog {
     private JLabel GradoJPEG;
     private boolean enableAccept1;
     private boolean enableAccept2;
-
+    private boolean Accepted;
 
     public PopUp_Comp(global.type type) {
         super();
+        Accepted = false;
         setModal(true);
         setResizable(false);
         enableAccept1 = enableAccept2 = false;
@@ -36,22 +37,19 @@ public class PopUp_Comp extends JDialog {
             LZ78RadioButton.setEnabled(false);
             LZSSRadioButton.setEnabled(false);
             ArchTexto.setEnabled(false);
+            medioRadioButton.setSelected(true);
         } else if (type == global.type.text) {
             bajoRadioButton.setEnabled(false);
             medioRadioButton.setEnabled(false);
             altoRadioButton.setEnabled(false);
             GradoJPEG.setEnabled(false);
+            LZWRadioButton.setSelected(true);
         }
         aceptarButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent actionEvent) {
-                if ((LZWRadioButton.isSelected() || LZ78RadioButton.isSelected()
-                        || LZSSRadioButton.isSelected()) && (bajoRadioButton.isSelected() ||
-                        medioRadioButton.isSelected() || altoRadioButton.isSelected())) {
-                    dispose();
-                } else {
-                    System.out.println("ERROR SELECCIONA ALMENYS UNA OPCIO");
-                }
+                Accepted = true;
+                dispose();
             }
         });
 
@@ -89,6 +87,9 @@ public class PopUp_Comp extends JDialog {
             ret = global.method.lzss;
         }
         return ret;
+    }
+    public boolean getAccepted() {
+        return Accepted;
     }
 
     float getGc_jpeg() {

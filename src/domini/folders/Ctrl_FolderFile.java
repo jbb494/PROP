@@ -5,8 +5,12 @@ import domini.algorithm.Ctrl_Algorithm;
 import global.global;
 import persistencia.Utils.FolderOrFile;
 import persistencia.browser.Ctrl_Browser;
+import persistencia.input.Ctrl_Input;
 import persistencia.input.Ctrl_Input_Encoded;
 import persistencia.output.Ctrl_Output_Encoded;
+
+import java.io.FileNotFoundException;
+import java.io.IOException;
 
 /**
  * @class Ctrl_FolderFile
@@ -363,4 +367,7 @@ public class Ctrl_FolderFile {
         return (magic_word == 0xF1);
     }
 
+    public String getFile(String pathTemp) throws IOException {
+        return Ctrl_Input.getFile(pathTemp);
+    }
 }
