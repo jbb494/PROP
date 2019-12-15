@@ -175,20 +175,6 @@
           </hspacer>
         </children>
       </grid>
-      <component id="2ff67" class="javax.swing.JCheckBox" binding="previewCheckBox" default-binding="true">
-        <constraints>
-          <grid row="1" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
-        </constraints>
-        <properties>
-          <background color="-14013910"/>
-          <enabled value="false"/>
-          <focusPainted value="false"/>
-          <foreground color="-1"/>
-          <selected value="true"/>
-          <text value="Preview"/>
-          <visible value="true"/>
-        </properties>
-      </component>
       <vspacer id="bb2e7">
         <constraints>
           <grid row="2" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="1" anchor="0" fill="2" indent="0" use-parent-layout="false">
@@ -235,7 +221,7 @@
                   <background color="-12632257"/>
                   <editable value="false"/>
                   <foreground color="-1"/>
-                  <preferredSize width="876" height="402"/>
+                  <preferredSize width="872" height="402"/>
                   <selectedTextColor color="-13290187"/>
                   <selectionColor color="-5723992"/>
                   <text value="Texto de previsualización"/>
@@ -248,19 +234,38 @@
             <constraints>
               <grid row="1" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="6" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
             </constraints>
-            <properties/>
+            <properties>
+              <background color="-11447983"/>
+              <borderPainted value="false"/>
+              <foreground color="-7434610"/>
+            </properties>
           </component>
         </children>
       </grid>
       <vspacer id="e566f">
         <constraints>
           <grid row="0" column="1" row-span="1" col-span="1" vsize-policy="6" hsize-policy="1" anchor="0" fill="2" indent="0" use-parent-layout="false">
-            <minimum-size width="-1" height="150"/>
-            <preferred-size width="-1" height="150"/>
-            <maximum-size width="-1" height="150"/>
+            <minimum-size width="-1" height="140"/>
+            <preferred-size width="-1" height="140"/>
+            <maximum-size width="-1" height="140"/>
           </grid>
         </constraints>
       </vspacer>
+      <component id="2660e" class="javax.swing.JCheckBox" binding="previewCheckBox" default-binding="true">
+        <constraints>
+          <grid row="1" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+        </constraints>
+        <properties>
+          <background color="-14013910"/>
+          <enabled value="false"/>
+          <focusPainted value="false"/>
+          <foreground color="-1"/>
+          <label value="Visualizar"/>
+          <selected value="true"/>
+          <text value="Visualizar"/>
+          <visible value="true"/>
+        </properties>
+      </component>
     </children>
   </grid>
 </form>
