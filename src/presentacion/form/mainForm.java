@@ -6,7 +6,6 @@ import presentacion.Ctrl_Presentacio.Ctrl_Presentacio;
 import javax.swing.*;
 import javax.swing.border.TitledBorder;
 import java.awt.*;
-import java.awt.event.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.io.FileNotFoundException;
@@ -31,8 +30,6 @@ public class mainForm extends JFrame {
     private JCheckBox CheckEstadistic;
     private ProgressBar ProgressPre;
     private JPanel PaneBarText;
-    private JPanel PanelTextBar;
-    private JPanel PanelProgress;
 
     private Ctrl_Presentacio CP;
     private boolean show_est;

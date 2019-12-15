@@ -33,8 +33,7 @@ public class Ctrl_Presentacio {
     public String DecodeTemp() {
         return CF.DecodeTemp();
     }
-    public global.type isFolderOrFile()
-    {
+    public global.type isFolderOrFile() {
         return FolderOrFile;
     }
 
