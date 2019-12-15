@@ -66,6 +66,13 @@ public class mainForm extends JFrame {
                 PanelPre.setVisible(previewCheckBox.isSelected());
             }
         });
+        ButMenu.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent actionEvent) {
+                PopUp_Comp pop = new PopUp_Comp();
+                setResizable(false);
+            }
+        });
     }
 
     public void inicialitza_panel() {
