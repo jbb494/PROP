@@ -72,7 +72,7 @@ public class Ctrl_Output_Img extends Ctrl_Output {
             Integer.toString(width) + " " + 
             Integer.toString(height) + " " +
             Integer.toString(max_val) + " ";
-        add(s1);
+        add(s1); //cal assegurar-se que escrivim en ASCII
 
         if (max_val < 256) bits_per_val = 8;
         else               bits_per_val = 16;

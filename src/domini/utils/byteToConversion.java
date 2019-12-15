@@ -47,7 +47,7 @@ public class byteToConversion {
     /**
      * @fn public static long byteToLong(List<Byte> bArg)
      * @brief Transforma un Array de bytes a un long no negatiu
-     * @param bArg Llista de bytes que volem transformar (de més a menys significatius, aka little endian)
+     * @param bArg Llista de bytes que volem transformar (de més a menys significatius, aka big endian)
      * @return long resultat de la conversió
      */
     public static Long byteToLong(List<Byte> bArg)
@@ -63,6 +63,12 @@ public class byteToConversion {
         return ret;
     }
 
+    /**
+     * @fn public static ArrayList<Byte> longToByte(long x)
+     * @brief Transforma un long a un array de 8 bytes en big endian
+     * @param x El long que volem transformar
+     * @return L'array de bytes resultant (de més a menys significatius, aka big endian)
+     */
     public static ArrayList<Byte> longToByte(long x)
     {
 

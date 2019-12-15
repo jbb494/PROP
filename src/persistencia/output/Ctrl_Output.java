@@ -93,7 +93,7 @@ public class Ctrl_Output {
 
     /**
      * @fn public void add(Integer x)
-     * @brief Afegeix un enter de 4 bytes
+     * @brief Afegeix un enter de 4 bytes. Big endian (bytes més significatius primer).
      * @param x Enter a afegir
     */
     public void add(Integer x) {
@@ -165,8 +165,5 @@ public class Ctrl_Output {
         Output.getInstance().print();
     }
 
-    public long getLength() {
-        return Output.getInstance().getLength();
-    }
 
 }
