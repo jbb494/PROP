@@ -44,6 +44,7 @@ public class PopUp_Comp extends JDialog {
             altoRadioButton.setEnabled(false);
             GradoJPEG.setEnabled(false);
         }
+
         aceptarButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent actionEvent) {
