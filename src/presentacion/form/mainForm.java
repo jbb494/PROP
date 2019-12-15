@@ -61,6 +61,13 @@ public class mainForm extends JFrame {
                 pop.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
                 pop.pack();
                 pop.setVisible(true);
+
+                EventQueue.invokeLater(new Runnable() {
+                    @Override
+                    public void run() {
+                        CP.Encode(pop.getMethod(), pop.getGc_jpeg());
+                    }
+                });
             }
         });
 

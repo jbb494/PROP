@@ -1,9 +1,12 @@
 package presentacion.form;
 
+import domini.algorithm.LZW;
+
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.util.ArrayList;
 
 public class PopUp_Comp extends JDialog {
     private JRadioButton LZWRadioButton;
@@ -15,8 +18,6 @@ public class PopUp_Comp extends JDialog {
     private JButton aceptarButton;
     public JPanel Compresión;
 
-    private String method;
-    private float gc_jpeg;
 
     public PopUp_Comp() {
         super();
@@ -27,7 +28,13 @@ public class PopUp_Comp extends JDialog {
         aceptarButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent actionEvent) {
-                dispose();
+                if ((LZWRadioButton.isSelected() || LZ78RadioButton.isSelected()
+                        || LZSSRadioButton.isSelected()) && (bajoRadioButton.isSelected() ||
+                        medioRadioButton.isSelected() || altoRadioButton.isSelected())) {
+                    dispose();
+                } else {
+                    System.out.println("ERROR SELECCIONA ALMENYS UNA OPCIO");
+                }
             }
         });
 
@@ -38,6 +45,30 @@ public class PopUp_Comp extends JDialog {
 
             }
         });
+    }
+
+    String getMethod() {
+        String ret = "";
+        if (LZWRadioButton.isSelected()) {
+            ret = "lzw";
+        } else if (LZ78RadioButton.isSelected()) {
+            ret = "lz78";
+        } else if (LZ78RadioButton.isSelected()) {
+            ret = "lzss";
+        }
+        return ret;
+    }
+
+    float getGc_jpeg() {
+        float ret = 0.5f;
+        if (bajoRadioButton.isSelected()) {
+            ret = 0.f;
+        } else if (medioRadioButton.isSelected()) {
+            ret = 0.5f;
+        } else if (altoRadioButton.isSelected()) {
+            ret = 1.f;
+        }
+        return ret;
     }
 
     /**
