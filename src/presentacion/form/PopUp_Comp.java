@@ -21,15 +21,18 @@ public class PopUp_Comp extends JDialog {
     public JPanel Compresión;
     private JLabel ArchTexto;
     private JLabel GradoJPEG;
+    private JButton ExitBut;
     private boolean enableAccept1;
     private boolean enableAccept2;
     private boolean Accepted;
+    private global.type type;
 
     public PopUp_Comp(global.type type) {
         super();
         Accepted = false;
         setModal(true);
         setResizable(false);
+        this.type = type;
         enableAccept1 = enableAccept2 = false;
         $$$setupUI$$$();
         if (type == global.type.image) {
@@ -45,6 +48,7 @@ public class PopUp_Comp extends JDialog {
             GradoJPEG.setEnabled(false);
             LZWRadioButton.setSelected(true);
         }
+
         aceptarButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent actionEvent) {
@@ -58,21 +62,54 @@ public class PopUp_Comp extends JDialog {
             @Override
             public void actionPerformed(ActionEvent actionEvent) {
                 enableAccept1 = true;
-                if (enableAccept1) aceptarButton.setEnabled(true);
+                if (type == global.type.text) aceptarButton.setEnabled(true);
+                else if (type == global.type.folder && enableAccept2) aceptarButton.setEnabled(true);
             }
         });
         LZ78RadioButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent actionEvent) {
                 enableAccept1 = true;
-                if (enableAccept1) aceptarButton.setEnabled(true);
+                if (type == global.type.text) aceptarButton.setEnabled(true);
+                else if (type == global.type.folder && enableAccept2) aceptarButton.setEnabled(true);
             }
         });
         LZSSRadioButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent actionEvent) {
                 enableAccept1 = true;
-                if (enableAccept1) aceptarButton.setEnabled(true);
+                if (type == global.type.text) aceptarButton.setEnabled(true);
+                else if (type == global.type.folder && enableAccept2) aceptarButton.setEnabled(true);
+            }
+        });
+        bajoRadioButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent actionEvent) {
+                enableAccept2 = true;
+                if (type == global.type.image) aceptarButton.setEnabled(true);
+                else if (type == global.type.folder && enableAccept1) aceptarButton.setEnabled(true);
+            }
+        });
+        medioRadioButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent actionEvent) {
+                enableAccept2 = true;
+                if (type == global.type.image) aceptarButton.setEnabled(true);
+                else if (type == global.type.folder && enableAccept1) aceptarButton.setEnabled(true);
+            }
+        });
+        altoRadioButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent actionEvent) {
+                enableAccept2 = true;
+                if (type == global.type.image) aceptarButton.setEnabled(true);
+                else if (type == global.type.folder && enableAccept1) aceptarButton.setEnabled(true);
+            }
+        });
+        ExitBut.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent actionEvent) {
+                dispose();
             }
         });
     }
@@ -113,7 +150,7 @@ public class PopUp_Comp extends JDialog {
      */
     private void $$$setupUI$$$() {
         Compresión = new JPanel();
-        Compresión.setLayout(new com.intellij.uiDesigner.core.GridLayoutManager(3, 6, new Insets(20, 20, 20, 20), -1, -1));
+        Compresión.setLayout(new com.intellij.uiDesigner.core.GridLayoutManager(3, 5, new Insets(20, 20, 20, 20), -1, -1));
         Compresión.setBackground(new Color(-14013910));
         Compresión.setEnabled(false);
         ArchTexto = new JLabel();
@@ -129,37 +166,44 @@ public class PopUp_Comp extends JDialog {
         LZWRadioButton.setFocusPainted(false);
         LZWRadioButton.setForeground(new Color(-1));
         LZWRadioButton.setText("LZW");
-        Compresión.add(LZWRadioButton, new com.intellij.uiDesigner.core.GridConstraints(0, 3, 1, 1, com.intellij.uiDesigner.core.GridConstraints.ANCHOR_WEST, com.intellij.uiDesigner.core.GridConstraints.FILL_NONE, com.intellij.uiDesigner.core.GridConstraints.SIZEPOLICY_CAN_SHRINK | com.intellij.uiDesigner.core.GridConstraints.SIZEPOLICY_CAN_GROW, com.intellij.uiDesigner.core.GridConstraints.SIZEPOLICY_FIXED, null, null, null, 0, false));
+        Compresión.add(LZWRadioButton, new com.intellij.uiDesigner.core.GridConstraints(0, 2, 1, 1, com.intellij.uiDesigner.core.GridConstraints.ANCHOR_WEST, com.intellij.uiDesigner.core.GridConstraints.FILL_NONE, com.intellij.uiDesigner.core.GridConstraints.SIZEPOLICY_CAN_SHRINK | com.intellij.uiDesigner.core.GridConstraints.SIZEPOLICY_CAN_GROW, com.intellij.uiDesigner.core.GridConstraints.SIZEPOLICY_FIXED, null, null, null, 0, false));
         LZ78RadioButton = new JRadioButton();
         LZ78RadioButton.setBackground(new Color(-14013910));
         LZ78RadioButton.setFocusPainted(false);
         LZ78RadioButton.setForeground(new Color(-1));
         LZ78RadioButton.setText("LZ78");
-        Compresión.add(LZ78RadioButton, new com.intellij.uiDesigner.core.GridConstraints(0, 4, 1, 1, com.intellij.uiDesigner.core.GridConstraints.ANCHOR_WEST, com.intellij.uiDesigner.core.GridConstraints.FILL_NONE, com.intellij.uiDesigner.core.GridConstraints.SIZEPOLICY_CAN_SHRINK | com.intellij.uiDesigner.core.GridConstraints.SIZEPOLICY_CAN_GROW, com.intellij.uiDesigner.core.GridConstraints.SIZEPOLICY_FIXED, null, null, null, 0, false));
+        Compresión.add(LZ78RadioButton, new com.intellij.uiDesigner.core.GridConstraints(0, 3, 1, 1, com.intellij.uiDesigner.core.GridConstraints.ANCHOR_WEST, com.intellij.uiDesigner.core.GridConstraints.FILL_NONE, com.intellij.uiDesigner.core.GridConstraints.SIZEPOLICY_CAN_SHRINK | com.intellij.uiDesigner.core.GridConstraints.SIZEPOLICY_CAN_GROW, com.intellij.uiDesigner.core.GridConstraints.SIZEPOLICY_FIXED, null, null, null, 0, false));
         LZSSRadioButton = new JRadioButton();
         LZSSRadioButton.setBackground(new Color(-14013910));
         LZSSRadioButton.setFocusPainted(false);
         LZSSRadioButton.setForeground(new Color(-1));
         LZSSRadioButton.setText("LZSS");
-        Compresión.add(LZSSRadioButton, new com.intellij.uiDesigner.core.GridConstraints(0, 5, 1, 1, com.intellij.uiDesigner.core.GridConstraints.ANCHOR_WEST, com.intellij.uiDesigner.core.GridConstraints.FILL_NONE, com.intellij.uiDesigner.core.GridConstraints.SIZEPOLICY_CAN_SHRINK | com.intellij.uiDesigner.core.GridConstraints.SIZEPOLICY_CAN_GROW, com.intellij.uiDesigner.core.GridConstraints.SIZEPOLICY_FIXED, null, null, null, 0, false));
+        Compresión.add(LZSSRadioButton, new com.intellij.uiDesigner.core.GridConstraints(0, 4, 1, 1, com.intellij.uiDesigner.core.GridConstraints.ANCHOR_WEST, com.intellij.uiDesigner.core.GridConstraints.FILL_NONE, com.intellij.uiDesigner.core.GridConstraints.SIZEPOLICY_CAN_SHRINK | com.intellij.uiDesigner.core.GridConstraints.SIZEPOLICY_CAN_GROW, com.intellij.uiDesigner.core.GridConstraints.SIZEPOLICY_FIXED, null, null, null, 0, false));
         bajoRadioButton = new JRadioButton();
         bajoRadioButton.setBackground(new Color(-14013910));
         bajoRadioButton.setFocusPainted(false);
         bajoRadioButton.setForeground(new Color(-1));
         bajoRadioButton.setText("Bajo");
-        Compresión.add(bajoRadioButton, new com.intellij.uiDesigner.core.GridConstraints(1, 3, 1, 1, com.intellij.uiDesigner.core.GridConstraints.ANCHOR_WEST, com.intellij.uiDesigner.core.GridConstraints.FILL_NONE, com.intellij.uiDesigner.core.GridConstraints.SIZEPOLICY_CAN_SHRINK | com.intellij.uiDesigner.core.GridConstraints.SIZEPOLICY_CAN_GROW, com.intellij.uiDesigner.core.GridConstraints.SIZEPOLICY_FIXED, null, null, null, 0, false));
+        Compresión.add(bajoRadioButton, new com.intellij.uiDesigner.core.GridConstraints(1, 2, 1, 1, com.intellij.uiDesigner.core.GridConstraints.ANCHOR_WEST, com.intellij.uiDesigner.core.GridConstraints.FILL_NONE, com.intellij.uiDesigner.core.GridConstraints.SIZEPOLICY_CAN_SHRINK | com.intellij.uiDesigner.core.GridConstraints.SIZEPOLICY_CAN_GROW, com.intellij.uiDesigner.core.GridConstraints.SIZEPOLICY_FIXED, null, null, null, 0, false));
         medioRadioButton = new JRadioButton();
         medioRadioButton.setBackground(new Color(-14013910));
         medioRadioButton.setFocusPainted(false);
         medioRadioButton.setForeground(new Color(-1));
         medioRadioButton.setText("Medio");
-        Compresión.add(medioRadioButton, new com.intellij.uiDesigner.core.GridConstraints(1, 4, 1, 1, com.intellij.uiDesigner.core.GridConstraints.ANCHOR_WEST, com.intellij.uiDesigner.core.GridConstraints.FILL_NONE, com.intellij.uiDesigner.core.GridConstraints.SIZEPOLICY_CAN_SHRINK | com.intellij.uiDesigner.core.GridConstraints.SIZEPOLICY_CAN_GROW, com.intellij.uiDesigner.core.GridConstraints.SIZEPOLICY_FIXED, null, null, null, 0, false));
+        Compresión.add(medioRadioButton, new com.intellij.uiDesigner.core.GridConstraints(1, 3, 1, 1, com.intellij.uiDesigner.core.GridConstraints.ANCHOR_WEST, com.intellij.uiDesigner.core.GridConstraints.FILL_NONE, com.intellij.uiDesigner.core.GridConstraints.SIZEPOLICY_CAN_SHRINK | com.intellij.uiDesigner.core.GridConstraints.SIZEPOLICY_CAN_GROW, com.intellij.uiDesigner.core.GridConstraints.SIZEPOLICY_FIXED, null, null, null, 0, false));
         altoRadioButton = new JRadioButton();
         altoRadioButton.setBackground(new Color(-14013910));
         altoRadioButton.setFocusPainted(false);
         altoRadioButton.setForeground(new Color(-1));
         altoRadioButton.setText("Alto");
-        Compresión.add(altoRadioButton, new com.intellij.uiDesigner.core.GridConstraints(1, 5, 1, 1, com.intellij.uiDesigner.core.GridConstraints.ANCHOR_WEST, com.intellij.uiDesigner.core.GridConstraints.FILL_NONE, com.intellij.uiDesigner.core.GridConstraints.SIZEPOLICY_CAN_SHRINK | com.intellij.uiDesigner.core.GridConstraints.SIZEPOLICY_CAN_GROW, com.intellij.uiDesigner.core.GridConstraints.SIZEPOLICY_FIXED, null, null, null, 0, false));
+        Compresión.add(altoRadioButton, new com.intellij.uiDesigner.core.GridConstraints(1, 4, 1, 1, com.intellij.uiDesigner.core.GridConstraints.ANCHOR_WEST, com.intellij.uiDesigner.core.GridConstraints.FILL_NONE, com.intellij.uiDesigner.core.GridConstraints.SIZEPOLICY_CAN_SHRINK | com.intellij.uiDesigner.core.GridConstraints.SIZEPOLICY_CAN_GROW, com.intellij.uiDesigner.core.GridConstraints.SIZEPOLICY_FIXED, null, null, null, 0, false));
+        ExitBut = new JButton();
+        ExitBut.setBackground(new Color(-12961222));
+        ExitBut.setBorderPainted(false);
+        ExitBut.setFocusPainted(false);
+        ExitBut.setForeground(new Color(-1));
+        ExitBut.setText("Salir");
+        Compresión.add(ExitBut, new com.intellij.uiDesigner.core.GridConstraints(2, 4, 1, 1, com.intellij.uiDesigner.core.GridConstraints.ANCHOR_CENTER, com.intellij.uiDesigner.core.GridConstraints.FILL_HORIZONTAL, com.intellij.uiDesigner.core.GridConstraints.SIZEPOLICY_CAN_SHRINK | com.intellij.uiDesigner.core.GridConstraints.SIZEPOLICY_CAN_GROW, com.intellij.uiDesigner.core.GridConstraints.SIZEPOLICY_FIXED, null, null, null, 0, false));
         aceptarButton = new JButton();
         aceptarButton.setBackground(new Color(-12961222));
         aceptarButton.setBorderPainted(false);
@@ -168,7 +212,7 @@ public class PopUp_Comp extends JDialog {
         aceptarButton.setFocusable(true);
         aceptarButton.setForeground(new Color(-1));
         aceptarButton.setText("Aceptar");
-        Compresión.add(aceptarButton, new com.intellij.uiDesigner.core.GridConstraints(2, 2, 1, 1, com.intellij.uiDesigner.core.GridConstraints.ANCHOR_CENTER, com.intellij.uiDesigner.core.GridConstraints.FILL_HORIZONTAL, com.intellij.uiDesigner.core.GridConstraints.SIZEPOLICY_CAN_SHRINK | com.intellij.uiDesigner.core.GridConstraints.SIZEPOLICY_CAN_GROW, com.intellij.uiDesigner.core.GridConstraints.SIZEPOLICY_FIXED, null, null, null, 0, false));
+        Compresión.add(aceptarButton, new com.intellij.uiDesigner.core.GridConstraints(2, 3, 1, 1, com.intellij.uiDesigner.core.GridConstraints.ANCHOR_CENTER, com.intellij.uiDesigner.core.GridConstraints.FILL_HORIZONTAL, com.intellij.uiDesigner.core.GridConstraints.SIZEPOLICY_CAN_SHRINK | com.intellij.uiDesigner.core.GridConstraints.SIZEPOLICY_CAN_GROW, com.intellij.uiDesigner.core.GridConstraints.SIZEPOLICY_FIXED, null, null, null, 0, false));
         ButtonGroup buttonGroup;
         buttonGroup = new ButtonGroup();
         buttonGroup.add(LZWRadioButton);

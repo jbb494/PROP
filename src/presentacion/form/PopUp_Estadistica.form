@@ -7,9 +7,9 @@
     </constraints>
     <properties>
       <background color="-14013910"/>
-      <preferredSize width="300" height="200"/>
+      <preferredSize width="300" height="400"/>
     </properties>
-    <border type="none"/>
+    <border type="bevel-lowered"/>
     <children>
       <component id="78222" class="javax.swing.JButton" binding="cerrarButton" default-binding="true">
         <constraints>

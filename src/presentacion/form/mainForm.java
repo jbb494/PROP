@@ -6,6 +6,7 @@ import presentacion.Ctrl_Presentacio.Ctrl_Presentacio;
 import javax.swing.*;
 import javax.swing.border.TitledBorder;
 import java.awt.*;
+import java.awt.event.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.io.FileNotFoundException;
@@ -34,10 +35,13 @@ public class mainForm extends JFrame {
     private JPanel PanelProgress;
 
     private Ctrl_Presentacio CP;
+    private boolean show_est;
 
     public mainForm() {
         super("Compresor/Descompresor");
         $$$setupUI$$$();
+        show_est = false;
+
         ChoosePathButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent actionEvent) {
@@ -76,6 +80,7 @@ public class mainForm extends JFrame {
                 }
             }
         });
+
         ButMenu.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent actionEvent) {
@@ -131,6 +136,24 @@ public class mainForm extends JFrame {
                                            }
                                        }
                 );
+            }
+        });
+
+
+        CheckEstadistic.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent actionEvent) {
+                PopUp_Estadistica pop = new PopUp_Estadistica("SAFSDDFS");
+                pop.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+                pop.pack();
+                pop.setVisible(true);
+
+                EventQueue.invokeLater(new Runnable() {
+                    @Override
+                    public void run() {
+                        show_est = !show_est;
+                    }
+                });
             }
         });
     }
