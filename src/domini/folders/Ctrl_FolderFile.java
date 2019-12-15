@@ -2,6 +2,7 @@ package domini.folders;
 
 import domini.utils.FileNames;
 import domini.algorithm.Ctrl_Algorithm;
+import persistencia.Utils.FolderOrFile;
 import persistencia.browser.Ctrl_Browser;
 import persistencia.input.Ctrl_Input_Encoded;
 import persistencia.output.Ctrl_Output_Encoded;
@@ -210,7 +211,9 @@ public class Ctrl_FolderFile {
         out.endSubfile();
     }
 
-    
+    public String FolderOrFile(String Path){
+        return FolderOrFile.FolderOrFile(Path);
+    }
     
     
 
