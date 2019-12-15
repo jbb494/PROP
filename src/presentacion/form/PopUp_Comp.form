@@ -102,7 +102,7 @@
         <properties>
           <background color="-12961222"/>
           <borderPainted value="false"/>
-          <enabled value="true"/>
+          <enabled value="false"/>
           <focusPainted value="false"/>
           <focusable value="true"/>
           <foreground color="-1"/>

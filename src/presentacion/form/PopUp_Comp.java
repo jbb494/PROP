@@ -14,6 +14,8 @@ public class PopUp_Comp extends JDialog {
     private JRadioButton altoRadioButton;
     private JButton aceptarButton;
     public JPanel Compresión;
+    private boolean enableAccept1;
+    private boolean enableAccept2;
 
     private String method;
     private float gc_jpeg;
@@ -22,6 +24,7 @@ public class PopUp_Comp extends JDialog {
         super();
         setModal(true);
         setResizable(false);
+        enableAccept1 = enableAccept2 = false;
         $$$setupUI$$$();
 
         aceptarButton.addActionListener(new ActionListener() {
@@ -35,7 +38,22 @@ public class PopUp_Comp extends JDialog {
         LZWRadioButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent actionEvent) {
-
+                enableAccept1 = true;
+                if (enableAccept1) aceptarButton.setEnabled(true);
+            }
+        });
+        LZ78RadioButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent actionEvent) {
+                enableAccept1 = true;
+                if (enableAccept1) aceptarButton.setEnabled(true);
+            }
+        });
+        LZSSRadioButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent actionEvent) {
+                enableAccept1 = true;
+                if (enableAccept1) aceptarButton.setEnabled(true);
             }
         });
     }
@@ -99,7 +117,7 @@ public class PopUp_Comp extends JDialog {
         aceptarButton = new JButton();
         aceptarButton.setBackground(new Color(-12961222));
         aceptarButton.setBorderPainted(false);
-        aceptarButton.setEnabled(true);
+        aceptarButton.setEnabled(false);
         aceptarButton.setFocusPainted(false);
         aceptarButton.setFocusable(true);
         aceptarButton.setForeground(new Color(-1));

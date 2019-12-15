@@ -49,6 +49,7 @@ public class mainForm extends JFrame {
                         descomprimirButton.setEnabled(true);
                         CheckEstadistic.setEnabled(true);
                         CP = new Ctrl_Presentacio(path);
+                        CP.FolderOrFile(path);
                     }
                 }
             }
