@@ -58,7 +58,7 @@ public class mainForm extends JFrame {
             @Override
             public void actionPerformed(ActionEvent actionEvent) {
                 PopUp_Comp pop = new PopUp_Comp();
-                pop.setContentPane(pop.Compresión);
+                pop.setContentPane(pop.Compresion);
                 pop.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
                 pop.pack();
                 pop.setVisible(true);
@@ -66,7 +66,7 @@ public class mainForm extends JFrame {
                 EventQueue.invokeLater(new Runnable() {
                     @Override
                     public void run() {
-                        CP.Encode(pop.getMethod(), pop.getGc_jpeg());
+                        CP.Encode(pop.getMethod().toString(), pop.getGc_jpeg());
                     }
                 });
             }

@@ -1,12 +1,12 @@
 package presentacion.form;
 
-import domini.algorithm.LZW;
+
+import global.global;
 
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.util.ArrayList;
 
 public class PopUp_Comp extends JDialog {
     private JRadioButton LZWRadioButton;
@@ -16,7 +16,7 @@ public class PopUp_Comp extends JDialog {
     private JRadioButton medioRadioButton;
     private JRadioButton altoRadioButton;
     private JButton aceptarButton;
-    public JPanel Compresión;
+    public JPanel Compresion;
     private boolean enableAccept1;
     private boolean enableAccept2;
 
@@ -62,17 +62,17 @@ public class PopUp_Comp extends JDialog {
                 enableAccept1 = true;
                 if (enableAccept1) aceptarButton.setEnabled(true);
             }
-        });*/
+        });
     }
 
-    String getMethod() {
-        String ret = "";
+    global.method getMethod() {
+        global.method ret = global.method.lzw;
         if (LZWRadioButton.isSelected()) {
-            ret = "lzw";
+            ret =  global.method.lzw;
         } else if (LZ78RadioButton.isSelected()) {
-            ret = "lz78";
+            ret = global.method.lz78;
         } else if (LZ78RadioButton.isSelected()) {
-            ret = "lzss";
+            ret = global.method.lzss;
         }
         return ret;
     }

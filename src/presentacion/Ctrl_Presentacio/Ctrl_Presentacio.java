@@ -4,12 +4,11 @@ import domini.folders.Ctrl_FolderFile;
 
 public class Ctrl_Presentacio {
     Ctrl_FolderFile CF;
-    String type;
-    public String FolderOrFile;
+    public String type;
 
     public Ctrl_Presentacio(String path_input) {
         CF = new Ctrl_FolderFile(path_input);
-        FolderOrFile = "";
+        type = CF.FolderOrFile(path_input);
     }
 
     public void EncodeAuto() {
@@ -29,12 +28,7 @@ public class Ctrl_Presentacio {
         CF.Decode();
     }
 
-    public void FolderOrFile(String Path)
-    {
-        FolderOrFile = CF.FolderOrFile(Path);
-    }
-    public String isFolderOrFile()
-    {
+    public String isFolderOrFile() {
         return FolderOrFile;
     }
 

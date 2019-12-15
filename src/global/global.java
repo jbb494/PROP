@@ -1,7 +1,5 @@
 package global;
 
-import java.util.Enumeration;
-
 public abstract class global {
     public enum type{
         folder,
