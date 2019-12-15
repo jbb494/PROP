@@ -5,7 +5,7 @@ import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-public class PopUp_Comp extends JFrame {
+public class PopUp_Comp extends JDialog {
     private JRadioButton LZWRadioButton;
     private JRadioButton LZ78RadioButton;
     private JRadioButton LZSSRadioButton;
@@ -19,9 +19,10 @@ public class PopUp_Comp extends JFrame {
     private float gc_jpeg;
 
     public PopUp_Comp() {
-        super("");
+        super();
+        setModal(true);
+        setResizable(false);
         $$$setupUI$$$();
-
         aceptarButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent actionEvent) {
@@ -97,6 +98,7 @@ public class PopUp_Comp extends JFrame {
         aceptarButton = new JButton();
         aceptarButton.setBackground(new Color(-12961222));
         aceptarButton.setBorderPainted(false);
+        aceptarButton.setEnabled(true);
         aceptarButton.setFocusPainted(false);
         aceptarButton.setFocusable(true);
         aceptarButton.setForeground(new Color(-1));
