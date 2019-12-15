@@ -1,5 +1,6 @@
 package presentacion.form;
 
+import global.global;
 import presentacion.Ctrl_Presentacio.Ctrl_Presentacio;
 
 import javax.swing.*;
@@ -49,7 +50,6 @@ public class mainForm extends JFrame {
                         descomprimirButton.setEnabled(true);
                         CheckEstadistic.setEnabled(true);
                         CP = new Ctrl_Presentacio(path);
-                        CP.FolderOrFile(path);
                     }
                 }
             }
@@ -57,12 +57,11 @@ public class mainForm extends JFrame {
         ButMenu.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent actionEvent) {
-                PopUp_Comp pop = new PopUp_Comp();
+                PopUp_Comp pop = new PopUp_Comp(getFolderOrFile());
                 pop.setContentPane(pop.Compresión);
                 pop.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
                 pop.pack();
                 pop.setVisible(true);
-
                 EventQueue.invokeLater(new Runnable() {
                     @Override
                     public void run() {
@@ -110,6 +109,11 @@ public class mainForm extends JFrame {
                 );
             }
         });
+    }
+
+    public global.type getFolderOrFile()
+    {
+        return CP.isFolderOrFile();
     }
 
     public void inicialitza_panel() {
