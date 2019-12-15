@@ -1,6 +1,5 @@
 package presentacion.form;
 
-import domini.folders.Ctrl_FolderFile;
 import presentacion.Ctrl_Presentacio.Ctrl_Presentacio;
 
 import javax.swing.*;
@@ -14,7 +13,7 @@ public class mainForm extends JFrame {
     private JPanel panel1;
     private JButton Exit;
     private JButton descomprimirButton;
-    private JButton button4;
+    private JButton ChoosePathButton;
     private JPanel Panel2;
     private JLabel LabelPath;
     private JPanel PanelPath;
@@ -30,10 +29,12 @@ public class mainForm extends JFrame {
     private JPanel PanelTextBar;
     private JPanel PanelProgress;
 
+    private Ctrl_Presentacio CP;
+
     public mainForm() {
         super("Compresor/Descompresor");
         $$$setupUI$$$();
-        button4.addActionListener(new ActionListener() {
+        ChoosePathButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent actionEvent) {
                 FileChooser_Form fc = new FileChooser_Form();
@@ -47,7 +48,7 @@ public class mainForm extends JFrame {
                         ButMenu.setEnabled(true);
                         descomprimirButton.setEnabled(true);
                         CheckEstadistic.setEnabled(true);
-
+                        CP = new Ctrl_Presentacio(path);
                     }
                 }
             }
@@ -65,6 +66,30 @@ public class mainForm extends JFrame {
             public void actionPerformed(ActionEvent actionEvent) {
                 ProgressPre.setVisible(previewCheckBox.isSelected());
                 PanelPre.setVisible(previewCheckBox.isSelected());
+            }
+        });
+        ComprimirBut.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent actionEvent) {
+                EventQueue.invokeLater(new Runnable() {
+                                           @Override
+                                           public void run() {
+                                               CP.EncodeAuto();
+                                           }
+                                       }
+                );
+            }
+        });
+        descomprimirButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent actionEvent) {
+                EventQueue.invokeLater(new Runnable() {
+                                           @Override
+                                           public void run() {
+                                               CP.Decode();
+                                           }
+                                       }
+                );
             }
         });
     }
@@ -159,13 +184,13 @@ public class mainForm extends JFrame {
         PanelPath.add(LabelPath, new com.intellij.uiDesigner.core.GridConstraints(0, 1, 1, 1, com.intellij.uiDesigner.core.GridConstraints.ANCHOR_WEST, com.intellij.uiDesigner.core.GridConstraints.FILL_NONE, com.intellij.uiDesigner.core.GridConstraints.SIZEPOLICY_FIXED, com.intellij.uiDesigner.core.GridConstraints.SIZEPOLICY_FIXED, null, null, new Dimension(300, -1), 0, false));
         final com.intellij.uiDesigner.core.Spacer spacer5 = new com.intellij.uiDesigner.core.Spacer();
         PanelPath.add(spacer5, new com.intellij.uiDesigner.core.GridConstraints(0, 2, 1, 1, com.intellij.uiDesigner.core.GridConstraints.ANCHOR_CENTER, com.intellij.uiDesigner.core.GridConstraints.FILL_HORIZONTAL, com.intellij.uiDesigner.core.GridConstraints.SIZEPOLICY_WANT_GROW, 1, null, null, null, 0, false));
-        button4 = new JButton();
-        button4.setBackground(new Color(-11447983));
-        button4.setBorderPainted(false);
-        button4.setFocusPainted(false);
-        button4.setIcon(new ImageIcon(getClass().getResource("/presentacion/imatgesInterficie/dsnjkfghjkdfg (1).png")));
-        button4.setText("");
-        PanelPath.add(button4, new com.intellij.uiDesigner.core.GridConstraints(0, 3, 1, 1, com.intellij.uiDesigner.core.GridConstraints.ANCHOR_CENTER, com.intellij.uiDesigner.core.GridConstraints.FILL_HORIZONTAL, com.intellij.uiDesigner.core.GridConstraints.SIZEPOLICY_CAN_SHRINK | com.intellij.uiDesigner.core.GridConstraints.SIZEPOLICY_CAN_GROW, com.intellij.uiDesigner.core.GridConstraints.SIZEPOLICY_FIXED, null, new Dimension(-1, 25), new Dimension(40, 30), 0, false));
+        ChoosePathButton = new JButton();
+        ChoosePathButton.setBackground(new Color(-11447983));
+        ChoosePathButton.setBorderPainted(false);
+        ChoosePathButton.setFocusPainted(false);
+        ChoosePathButton.setIcon(new ImageIcon(getClass().getResource("/presentacion/imatgesInterficie/dsnjkfghjkdfg (1).png")));
+        ChoosePathButton.setText("");
+        PanelPath.add(ChoosePathButton, new com.intellij.uiDesigner.core.GridConstraints(0, 3, 1, 1, com.intellij.uiDesigner.core.GridConstraints.ANCHOR_CENTER, com.intellij.uiDesigner.core.GridConstraints.FILL_HORIZONTAL, com.intellij.uiDesigner.core.GridConstraints.SIZEPOLICY_CAN_SHRINK | com.intellij.uiDesigner.core.GridConstraints.SIZEPOLICY_CAN_GROW, com.intellij.uiDesigner.core.GridConstraints.SIZEPOLICY_FIXED, null, new Dimension(-1, 25), new Dimension(40, 30), 0, false));
         final com.intellij.uiDesigner.core.Spacer spacer6 = new com.intellij.uiDesigner.core.Spacer();
         PanelPath.add(spacer6, new com.intellij.uiDesigner.core.GridConstraints(0, 0, 1, 1, com.intellij.uiDesigner.core.GridConstraints.ANCHOR_CENTER, com.intellij.uiDesigner.core.GridConstraints.FILL_HORIZONTAL, com.intellij.uiDesigner.core.GridConstraints.SIZEPOLICY_WANT_GROW, 1, null, null, null, 0, false));
         previewCheckBox = new JCheckBox();
