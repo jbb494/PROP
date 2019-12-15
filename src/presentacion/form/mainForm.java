@@ -178,15 +178,6 @@ public class mainForm extends JFrame {
         PanelPath.add(button4, new com.intellij.uiDesigner.core.GridConstraints(0, 3, 1, 1, com.intellij.uiDesigner.core.GridConstraints.ANCHOR_CENTER, com.intellij.uiDesigner.core.GridConstraints.FILL_HORIZONTAL, com.intellij.uiDesigner.core.GridConstraints.SIZEPOLICY_CAN_SHRINK | com.intellij.uiDesigner.core.GridConstraints.SIZEPOLICY_CAN_GROW, com.intellij.uiDesigner.core.GridConstraints.SIZEPOLICY_FIXED, null, new Dimension(-1, 25), new Dimension(40, 30), 0, false));
         final com.intellij.uiDesigner.core.Spacer spacer6 = new com.intellij.uiDesigner.core.Spacer();
         PanelPath.add(spacer6, new com.intellij.uiDesigner.core.GridConstraints(0, 0, 1, 1, com.intellij.uiDesigner.core.GridConstraints.ANCHOR_CENTER, com.intellij.uiDesigner.core.GridConstraints.FILL_HORIZONTAL, com.intellij.uiDesigner.core.GridConstraints.SIZEPOLICY_WANT_GROW, 1, null, null, null, 0, false));
-        previewCheckBox = new JCheckBox();
-        previewCheckBox.setBackground(new Color(-14013910));
-        previewCheckBox.setEnabled(false);
-        previewCheckBox.setFocusPainted(false);
-        previewCheckBox.setForeground(new Color(-1));
-        previewCheckBox.setSelected(true);
-        previewCheckBox.setText("Preview");
-        previewCheckBox.setVisible(true);
-        panel1.add(previewCheckBox, new com.intellij.uiDesigner.core.GridConstraints(1, 1, 1, 1, com.intellij.uiDesigner.core.GridConstraints.ANCHOR_WEST, com.intellij.uiDesigner.core.GridConstraints.FILL_NONE, com.intellij.uiDesigner.core.GridConstraints.SIZEPOLICY_CAN_SHRINK | com.intellij.uiDesigner.core.GridConstraints.SIZEPOLICY_CAN_GROW, com.intellij.uiDesigner.core.GridConstraints.SIZEPOLICY_FIXED, null, null, null, 0, false));
         final com.intellij.uiDesigner.core.Spacer spacer7 = new com.intellij.uiDesigner.core.Spacer();
         panel1.add(spacer7, new com.intellij.uiDesigner.core.GridConstraints(2, 0, 1, 1, com.intellij.uiDesigner.core.GridConstraints.ANCHOR_CENTER, com.intellij.uiDesigner.core.GridConstraints.FILL_VERTICAL, 1, com.intellij.uiDesigner.core.GridConstraints.SIZEPOLICY_FIXED, new Dimension(-1, 5), new Dimension(-1, 15), null, 0, false));
         CheckEstadistic = new JCheckBox();
@@ -208,7 +199,7 @@ public class mainForm extends JFrame {
         AreaPre.setBackground(new Color(-12632257));
         AreaPre.setEditable(false);
         AreaPre.setForeground(new Color(-1));
-        AreaPre.setPreferredSize(new Dimension(876, 402));
+        AreaPre.setPreferredSize(new Dimension(872, 402));
         AreaPre.setSelectedTextColor(new Color(-13290187));
         AreaPre.setSelectionColor(new Color(-5723992));
         AreaPre.setText("Texto de previsualización");
@@ -220,6 +211,16 @@ public class mainForm extends JFrame {
         PaneBarText.add(ProgressPre, new com.intellij.uiDesigner.core.GridConstraints(1, 0, 1, 1, com.intellij.uiDesigner.core.GridConstraints.ANCHOR_CENTER, com.intellij.uiDesigner.core.GridConstraints.FILL_HORIZONTAL, com.intellij.uiDesigner.core.GridConstraints.SIZEPOLICY_WANT_GROW, com.intellij.uiDesigner.core.GridConstraints.SIZEPOLICY_FIXED, null, null, null, 0, false));
         final com.intellij.uiDesigner.core.Spacer spacer8 = new com.intellij.uiDesigner.core.Spacer();
         panel1.add(spacer8, new com.intellij.uiDesigner.core.GridConstraints(0, 1, 1, 1, com.intellij.uiDesigner.core.GridConstraints.ANCHOR_CENTER, com.intellij.uiDesigner.core.GridConstraints.FILL_VERTICAL, 1, com.intellij.uiDesigner.core.GridConstraints.SIZEPOLICY_WANT_GROW, new Dimension(-1, 140), new Dimension(-1, 140), new Dimension(-1, 140), 0, false));
+        previewCheckBox = new JCheckBox();
+        previewCheckBox.setBackground(new Color(-14013910));
+        previewCheckBox.setEnabled(false);
+        previewCheckBox.setFocusPainted(false);
+        previewCheckBox.setForeground(new Color(-1));
+        previewCheckBox.setLabel("Visualizar");
+        previewCheckBox.setSelected(true);
+        previewCheckBox.setText("Visualizar");
+        previewCheckBox.setVisible(true);
+        panel1.add(previewCheckBox, new com.intellij.uiDesigner.core.GridConstraints(1, 1, 1, 1, com.intellij.uiDesigner.core.GridConstraints.ANCHOR_WEST, com.intellij.uiDesigner.core.GridConstraints.FILL_NONE, com.intellij.uiDesigner.core.GridConstraints.SIZEPOLICY_CAN_SHRINK | com.intellij.uiDesigner.core.GridConstraints.SIZEPOLICY_CAN_GROW, com.intellij.uiDesigner.core.GridConstraints.SIZEPOLICY_FIXED, null, null, null, 0, false));
     }
 
     /**
