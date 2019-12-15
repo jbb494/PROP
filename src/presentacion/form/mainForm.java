@@ -53,6 +53,16 @@ public class mainForm extends JFrame {
                 }
             }
         });
+        ButMenu.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent actionEvent) {
+                PopUp_Comp pop = new PopUp_Comp();
+                pop.setContentPane(pop.Compresión);
+                pop.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+                pop.pack();
+                pop.setVisible(true);
+            }
+        });
 
         Exit.addActionListener(new ActionListener() {
             @Override
