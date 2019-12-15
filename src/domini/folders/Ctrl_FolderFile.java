@@ -336,7 +336,7 @@ public class Ctrl_FolderFile {
     public boolean isEncoded() {
         Ctrl_Input_Encoded in = new Ctrl_Input_Encoded(path_in);
         byte magic_word = in.getByte();
-        return (magic_word == 0xF0) || (magic_word == 0xF1);
+        return (magic_word == (byte)0xF0) || (magic_word == (byte)0xF1);
     }
 
     /**
@@ -346,7 +346,7 @@ public class Ctrl_FolderFile {
     public boolean isEncodedFolder() {
         Ctrl_Input_Encoded in = new Ctrl_Input_Encoded(path_in);
         byte magic_word = in.getByte();
-        return (magic_word == 0xF0);
+        return (magic_word == (byte)0xF0);
     }
 
     /**
@@ -356,7 +356,19 @@ public class Ctrl_FolderFile {
     public boolean isEncodedFile() {
         Ctrl_Input_Encoded in = new Ctrl_Input_Encoded(path_in);
         byte magic_word = in.getByte();
-        return (magic_word == 0xF1);
+        return (magic_word == (byte)0xF1);
+    }
+
+    /**
+     * 
+     * @return L'extensió que tenia un comprimit abans de ser comprimit.
+     */
+    public String getEncodedExtension() {
+        Ctrl_Input_Encoded in = new Ctrl_Input_Encoded(path_in);
+        byte magic_word = in.getByte();
+        if (magic_word == (byte)0xF1) return in.getWord();
+        if (magic_word == (byte)0xF0) return "";
+        throw new IllegalArgumentException("No es un comprimit.");
     }
 
 }
