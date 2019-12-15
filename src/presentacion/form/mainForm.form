@@ -59,6 +59,7 @@
             <properties>
               <background color="-12632257"/>
               <borderPainted value="false"/>
+              <enabled value="false"/>
               <focusPainted value="false"/>
               <foreground color="-1"/>
               <text value="Descomprimir"/>
@@ -91,6 +92,7 @@
                 <properties>
                   <background color="-12632257"/>
                   <borderPainted value="false"/>
+                  <enabled value="false"/>
                   <focusPainted value="false"/>
                   <foreground color="-1"/>
                   <text value="Comprimir"/>
@@ -106,6 +108,7 @@
                 <properties>
                   <background color="-12632257"/>
                   <borderPainted value="false"/>
+                  <enabled value="false"/>
                   <focusPainted value="false"/>
                   <icon value="presentacion/imatgesInterficie/1 (1).png"/>
                   <text value=""/>
@@ -183,6 +186,7 @@
         </constraints>
         <properties>
           <background color="-14013910"/>
+          <enabled value="false"/>
           <focusPainted value="false"/>
           <foreground color="-1"/>
           <selected value="true"/>
@@ -227,6 +231,18 @@
           <grid row="1" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="6" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
         </constraints>
         <properties/>
+      </component>
+      <component id="a81e6" class="javax.swing.JCheckBox" binding="CheckEstadistic">
+        <constraints>
+          <grid row="5" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+        </constraints>
+        <properties>
+          <background color="-14013906"/>
+          <enabled value="false"/>
+          <focusPainted value="false"/>
+          <foreground color="-1"/>
+          <text value="Estadística"/>
+        </properties>
       </component>
     </children>
   </grid>
