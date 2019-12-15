@@ -13,7 +13,7 @@ public class PopUp_Comp extends JFrame {
     private JRadioButton medioRadioButton;
     private JRadioButton altoRadioButton;
     private JButton aceptarButton;
-    private JPanel Compresión;
+    public JPanel Compresión;
 
     private String method;
     private float gc_jpeg;
@@ -25,7 +25,7 @@ public class PopUp_Comp extends JFrame {
         aceptarButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent actionEvent) {
-                System.exit(0);
+                dispose();
             }
         });
 
