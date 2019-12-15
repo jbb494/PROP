@@ -1,5 +1,6 @@
 package domini.utils;
 
+
 import java.util.*;
 
 /**
@@ -26,8 +27,8 @@ public class byteToConversion {
 
     /**
      * @fn public static Integer byteToInteger(List<Byte> bArg)
-     * @brief Transforma un Array de bytes a un Enter
-     * @param bArg Llista de bytes que volem transformar
+     * @brief Transforma un Array de bytes a un Enter no negatiu
+     * @param bArg Llista de bytes que volem transformar (de més a menys significatius, aka big endian)
      * @return Integer resultat de la conversió
      */
     public static Integer byteToInteger(List<Byte> bArg)
@@ -38,9 +39,46 @@ public class byteToConversion {
         {
             Byte b = bArg.get(i);
             
-            ret += (b&0xFF) << (8*(bArg.size() - i -1));
+            ret += ( (b&0xFF) << (8*(bArg.size() - i -1)) );
         }
         return ret;
+    }
+
+    /**
+     * @fn public static long byteToLong(List<Byte> bArg)
+     * @brief Transforma un Array de bytes a un long no negatiu
+     * @param bArg Llista de bytes que volem transformar (de més a menys significatius, aka big endian)
+     * @return long resultat de la conversió
+     */
+    public static Long byteToLong(List<Byte> bArg)
+    {
+        Long ret = (long)0;
+
+        for (int i = 0; i < bArg.size(); i++)
+        {
+            Byte b = bArg.get(i);
+            
+            ret += ( (long)(b&0xFF) << (8*(bArg.size() - i -1)) );
+        }
+        return ret;
+    }
+
+    /**
+     * @fn public static ArrayList<Byte> longToByte(long x)
+     * @brief Transforma un long a un array de 8 bytes en big endian
+     * @param x El long que volem transformar
+     * @return L'array de bytes resultant (de més a menys significatius, aka big endian)
+     */
+    public static ArrayList<Byte> longToByte(long x)
+    {
+
+        ArrayList<Byte> al = new ArrayList<>();
+        for (int i = 7; i >= 0; i--)
+        {
+            al.add(0, (byte)x);
+            x = (x >> 8);  
+        }
+        return al;
     }
 
     /**
@@ -53,6 +91,7 @@ public class byteToConversion {
     public static byte shift_right_logic(byte b, int despl) {
         return (byte) ((byte) (b >>> despl) &~ (byte) (0xff << (8-despl)));
     }
+  
 
     
 }

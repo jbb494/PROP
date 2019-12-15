@@ -1,7 +1,5 @@
 package persistencia.output;
 
-import domini.utils.stringConversion;
-
 /**
  * @class Ctrl_Output_Img
  * @brief Controlador de Output que permet escriure una imatge ppm
@@ -71,10 +69,10 @@ public class Ctrl_Output_Img extends Ctrl_Output {
 
         String s1 =
             "P6 " +
-            stringConversion.intToString(width) + " " + 
-            stringConversion.intToString(height) + " " +
-            stringConversion.intToString(max_val) + " ";
-        add(s1);
+            Integer.toString(width) + " " + 
+            Integer.toString(height) + " " +
+            Integer.toString(max_val) + " ";
+        add(s1); //cal assegurar-se que escrivim en ASCII
 
         if (max_val < 256) bits_per_val = 8;
         else               bits_per_val = 16;

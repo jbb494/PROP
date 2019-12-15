@@ -14,6 +14,7 @@ import domini.utils.byteToConversion;
 /**
  * @class Input
  * @brief Classe Input
+ * Pot llegir fitxers de fins a 2 GB
  * @author Joan Bellavista
  */
 public class Input {
@@ -32,10 +33,21 @@ public class Input {
     /**
      * @param last_byte Ultim byte llegit
      */
-    private Byte last_byte; 
+    private Byte last_byte;
+    
 
     /**
-     * @param end Indica si hem arribat al final de l'arxiu 
+     * @param frag_length llargada del fragment
+     */
+    private long frag_length;
+
+    /**
+     * @param read_bytes nombre de bytes llegits del fragment
+     */
+    private long read_bytes;
+
+    /**
+     * @param end Indica si hem arribat al final de l'arxiu o el fragment
      */
     private boolean end;
 
@@ -43,6 +55,7 @@ public class Input {
      * @param illegals Nombre de bits que s'han intentat llegir pero queden fora del fitxer
      */
     private int illegals;
+
     
 
     /**
@@ -74,8 +87,11 @@ public class Input {
      */
     private Input(String path) {
         try {   
-            end = false;
+            frag_length = Long.MAX_VALUE;
+            read_bytes = 0;
             illegals = 0;
+            end = false;
+
             punter = 0;
             FileInputStream fin = new FileInputStream(path);
             bin = new BufferedInputStream(fin);
@@ -98,16 +114,24 @@ public class Input {
      */
     private void read() {
         Integer c;
-        try {
-            if ((c = bin.read()) != -1) {
-                last_byte = c.byteValue();
+        read_bytes++;
+        if (read_bytes <= frag_length) {
+            try {
+                if ((c = bin.read()) != -1) {
+                    last_byte = c.byteValue();
+                }
+                else {
+                    end = true;
+                }
+            } catch (IOException e) {
+                e.printStackTrace();
             }
-            else {
-                end = true;
-            }
-        } catch (IOException e) {
-            e.printStackTrace();
         }
+        else {
+            end = true;
+            last_byte = 0;
+        }
+
     }
     
     /**
@@ -171,7 +195,7 @@ public class Input {
     //Passar la funció a Ctrl_Input
     /**
      * @fn public boolean finished()
-     * @return Retorna si hem arribat al final de l'arxiu o no
+     * @return Indica si hem arribat al final del fitxer o fragment
      */
     public boolean finished() {
         return end;
@@ -179,9 +203,9 @@ public class Input {
 
     /**
      * @fn public int outOfFile()
-     * @return Retorna el nombre de bits que s'han intentat llegir però queden fora del fitxer
+     * @return Retorna el nombre de bits que s'han intentat llegir però queden fora del fitxer o fragment
      */
-    public int outOfFile() { //nombre de bits que s'han intentat llegir però queden fora del fitxer
+    public int outOfFile() { //nombre de bits que s'han intentat llegir però queden fora del fitxer o fragment
         return illegals;
     }
 
@@ -200,5 +224,26 @@ public class Input {
         else if(aux == (byte)1) return "lzw";
         else if(aux == (byte)2) return "lzss";
         else return "jpeg";
+    }
+
+    /**
+     * @fn void ignoreTheRestOfTheByte()
+     * @breaf Si el pròxim bit a llegir no és el primer bit d'un byte,
+     *   avança la lectura fins a l'inici del proper byte
+     */
+    public void ignoreTheRestOfTheByte() {
+        punter = 0;
+    }
+
+    /**
+     * @fn public void startFragment(long length)
+     * @brief Comença a llegir un fragment. 
+     * Considerarem que el fragment son els length bytes a partir del byte que estem llegint en aquest moment.
+     * @param length llargada del fragment
+     */
+    public void startFragment(long length) {
+        frag_length = length;
+        read_bytes = 0;
+        end = false;
     }
 }
