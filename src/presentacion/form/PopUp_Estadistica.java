@@ -5,13 +5,14 @@ import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-public class PopUp_Estadistica extends JFrame {
-    private JPanel panel1;
+public class PopUp_Estadistica extends JDialog {
+    public JPanel panel1;
     private JLabel lab;
     private JButton cerrarButton;
 
     public PopUp_Estadistica(String s) {
         super();
+        setModal(true);
         setResizable(false);
         $$$setupUI$$$();
         lab.setText(s);
