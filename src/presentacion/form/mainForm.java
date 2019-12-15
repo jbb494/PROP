@@ -22,6 +22,7 @@ public class mainForm extends JFrame {
     private JButton ComprimirBut;
     private JButton ButMenu;
     private JPanel PanelCompr;
+    private JProgressBar progressPre;
     Ctrl_Master CM;
 
     public mainForm() {
