@@ -18,6 +18,7 @@ public class Ctrl_Presentacio {
     public void EncodeAuto() {
         CF.EncodeAuto();
     }
+
     public void Encode(String text_method, double img_quality) {
         if (FolderOrFile == global.type.folder){
             CF.EncodeManualFolder(text_method, img_quality);
@@ -27,13 +28,17 @@ public class Ctrl_Presentacio {
             CF.EncodeManualText(text_method);
         }
     }
+
     public void Decode() {
         CF.Decode();
     }
+
     public String DecodeTemp() {
         return CF.DecodeTemp();
     }
-    public global.type isFolderOrFile() {
+
+    public global.type isFolderOrFile()
+    {
         return FolderOrFile;
     }
 
