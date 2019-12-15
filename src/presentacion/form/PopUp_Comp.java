@@ -22,12 +22,14 @@ public class PopUp_Comp extends JDialog {
     private JLabel GradoJPEG;
     private boolean enableAccept1;
     private boolean enableAccept2;
+    private global.type type;
 
 
     public PopUp_Comp(global.type type) {
         super();
         setModal(true);
         setResizable(false);
+        this.type = type;
         enableAccept1 = enableAccept2 = false;
         $$$setupUI$$$();
         if (type == global.type.image) {
@@ -59,21 +61,48 @@ public class PopUp_Comp extends JDialog {
             @Override
             public void actionPerformed(ActionEvent actionEvent) {
                 enableAccept1 = true;
-                if (enableAccept1) aceptarButton.setEnabled(true);
+                if (type == global.type.text) aceptarButton.setEnabled(true);
+                else if (type == global.type.folder && enableAccept2) aceptarButton.setEnabled(true);
             }
         });
         LZ78RadioButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent actionEvent) {
                 enableAccept1 = true;
-                if (enableAccept1) aceptarButton.setEnabled(true);
+                if (type == global.type.text) aceptarButton.setEnabled(true);
+                else if (type == global.type.folder && enableAccept2) aceptarButton.setEnabled(true);
             }
         });
         LZSSRadioButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent actionEvent) {
                 enableAccept1 = true;
-                if (enableAccept1) aceptarButton.setEnabled(true);
+                if (type == global.type.text) aceptarButton.setEnabled(true);
+                else if (type == global.type.folder && enableAccept2) aceptarButton.setEnabled(true);
+            }
+        });
+        bajoRadioButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent actionEvent) {
+                enableAccept2 = true;
+                if (type == global.type.image) aceptarButton.setEnabled(true);
+                else if (type == global.type.folder && enableAccept1) aceptarButton.setEnabled(true);
+            }
+        });
+        medioRadioButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent actionEvent) {
+                enableAccept2 = true;
+                if (type == global.type.image) aceptarButton.setEnabled(true);
+                else if (type == global.type.folder && enableAccept1) aceptarButton.setEnabled(true);
+            }
+        });
+        altoRadioButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent actionEvent) {
+                enableAccept2 = true;
+                if (type == global.type.image) aceptarButton.setEnabled(true);
+                else if (type == global.type.folder && enableAccept1) aceptarButton.setEnabled(true);
             }
         });
     }
