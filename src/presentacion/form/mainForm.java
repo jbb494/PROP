@@ -144,6 +144,7 @@ public class mainForm extends JFrame {
             @Override
             public void actionPerformed(ActionEvent actionEvent) {
                 PopUp_Estadistica pop = new PopUp_Estadistica("SAFSDDFS");
+                pop.setContentPane(pop.panel1);
                 pop.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
                 pop.pack();
                 pop.setVisible(true);
