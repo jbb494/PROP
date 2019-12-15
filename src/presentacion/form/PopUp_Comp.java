@@ -15,9 +15,21 @@ public class PopUp_Comp {
     private JButton aceptarButton;
     private JPanel Compresión;
 
+    private String method;
+    private float gc_jpeg;
 
     public PopUp_Comp() {
+        $$$setupUI$$$();
+        
         aceptarButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent actionEvent) {
+                System.exit(0);
+            }
+        });
+
+
+        LZWRadioButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent actionEvent) {
 
@@ -43,6 +55,7 @@ public class PopUp_Comp {
         Compresión = new JPanel();
         Compresión.setLayout(new com.intellij.uiDesigner.core.GridLayoutManager(3, 6, new Insets(20, 20, 20, 20), -1, -1));
         Compresión.setBackground(new Color(-14013910));
+        Compresión.setEnabled(false);
         final JLabel label1 = new JLabel();
         label1.setForeground(new Color(-1));
         label1.setText("Archivo de texto:");

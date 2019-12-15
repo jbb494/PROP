@@ -1,6 +1,7 @@
 package presentacion.form;
 
-import presentacion.master.Ctrl_Master;
+import domini.folders.Ctrl_FolderFile;
+import presentacion.Ctrl_Presentacio.Ctrl_Presentacio;
 
 import javax.swing.*;
 import javax.swing.border.TitledBorder;
@@ -28,7 +29,6 @@ public class mainForm extends JFrame {
     private JPanel PaneBarText;
     private JPanel PanelTextBar;
     private JPanel PanelProgress;
-    Ctrl_Master CM;
 
     public mainForm() {
         super("Compresor/Descompresor");
@@ -47,6 +47,7 @@ public class mainForm extends JFrame {
                         ButMenu.setEnabled(true);
                         descomprimirButton.setEnabled(true);
                         CheckEstadistic.setEnabled(true);
+
                     }
                 }
             }
