@@ -71,7 +71,7 @@ public class mainForm extends JFrame {
             @Override
             public void actionPerformed(ActionEvent actionEvent) {
                 PopUp_Comp pop = new PopUp_Comp();
-                setResizable(false);
+                pop.setResizable(false);
             }
         });
     }
@@ -211,6 +211,9 @@ public class mainForm extends JFrame {
         AreaPre.setText("Texto de previsualización");
         AreaPre.setVisible(true);
         PanelPre.setViewportView(AreaPre);
+        ProgressPre.setBackground(new Color(-11447983));
+        ProgressPre.setBorderPainted(false);
+        ProgressPre.setForeground(new Color(-7434610));
         PaneBarText.add(ProgressPre, new com.intellij.uiDesigner.core.GridConstraints(1, 0, 1, 1, com.intellij.uiDesigner.core.GridConstraints.ANCHOR_CENTER, com.intellij.uiDesigner.core.GridConstraints.FILL_HORIZONTAL, com.intellij.uiDesigner.core.GridConstraints.SIZEPOLICY_WANT_GROW, com.intellij.uiDesigner.core.GridConstraints.SIZEPOLICY_FIXED, null, null, null, 0, false));
         final com.intellij.uiDesigner.core.Spacer spacer8 = new com.intellij.uiDesigner.core.Spacer();
         panel1.add(spacer8, new com.intellij.uiDesigner.core.GridConstraints(0, 1, 1, 1, com.intellij.uiDesigner.core.GridConstraints.ANCHOR_CENTER, com.intellij.uiDesigner.core.GridConstraints.FILL_VERTICAL, 1, com.intellij.uiDesigner.core.GridConstraints.SIZEPOLICY_WANT_GROW, new Dimension(-1, 150), new Dimension(-1, 150), new Dimension(-1, 150), 0, false));
