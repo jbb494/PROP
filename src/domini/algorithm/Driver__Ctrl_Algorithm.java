@@ -3,8 +3,6 @@ package domini.algorithm;
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
 
-import domini.utils.Pair;
-
 /**
  * @class Driver__Ctrl_Algorithm
  * @brief Driver de Ctrl_Algorithm

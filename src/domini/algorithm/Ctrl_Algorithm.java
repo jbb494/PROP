@@ -3,6 +3,7 @@ package domini.algorithm;
 import domini.utils.Pair;
 import persistencia.input.Ctrl_Input;
 import persistencia.output.Ctrl_Output;
+import domini.utils.FileNames;
 
 /**
  * @class Ctrl_Algorithm
@@ -24,8 +25,7 @@ public class Ctrl_Algorithm {
      * @return Informacio sobre la compressio
      */
     public String Choose_Encoder(String Path, String method) {
-        int i = Path.lastIndexOf(".");
-        String new_path = Path.substring(0, i+1) + "jm";
+        String new_path = FileNames.getPrefix(Path) + ".jm";
 
         Algorithm alg;
         if(method.toLowerCase().equals("lzss")) {
@@ -60,18 +60,17 @@ public class Ctrl_Algorithm {
     {
 	    int i = Path.lastIndexOf(".");
         String ext = Path.substring(i+1);
-        if (ext.toLowerCase().equals("txt")) 
-            return "lzw";
-        else if (ext.toLowerCase().equals("ppm")) 
+        if (ext.toLowerCase().equals("ppm")) 
             return "jpeg";
-	    else throw new IllegalArgumentException("Format no reconegut");
+        else  /* (ext.toLowerCase().equals("txt"))  */
+            return "lzw";
+	    //else throw new IllegalArgumentException("Format no reconegut");
     }
 
     /**
      * @fn public String Auto_Decoder(String Path, String method)
      * @brief Escull de manera automàtica quin descompressor emprar
      * @param Path Path de l'arxiu a descomprimir
-     * @param method Descompressor a emprar
      * @return Informació sobre la descompressió
      */
     public Pair<String,String> Auto_Decoder(String Path)
@@ -106,5 +105,63 @@ public class Ctrl_Algorithm {
         alg.print();
 
         return new Pair<String,String>(type, "Descompressió de " + Path);
+    }
+
+
+
+    public void Decode(String path_out) {
+
+        Ctrl_Input inP2 = new Ctrl_Input();
+        int metadata_alg = inP2.getMetadata();
+
+        Algorithm alg;
+        if      (metadata_alg == 3)   alg = new JPEG(path_out, true);
+        else if (metadata_alg == 2)   alg = new LZSS(path_out, true);
+        else if (metadata_alg == 1)   alg = new LZW(path_out, true);
+        else /* (metadata_alg == 0)*/ alg = new LZ78(path_out, true);
+        
+        alg.Decompressor();      
+        alg.print();
+    }
+
+    public void Encode(String path_in, String method, Double img_quality) {
+        
+        if (method == null)
+            throw new IllegalArgumentException("no s'ha especificat el metode de compressió");
+
+        //System.out.println(method);
+
+        Algorithm alg;
+        if(method.toLowerCase().equals("lzss")) {
+            alg = new LZSS(false);
+        }
+        else if(method.toLowerCase().equals("lzw")) {
+            alg = new LZW(false);
+        }
+        else if(method.toLowerCase().equals("lz78")) {
+            alg = new LZ78(false);
+        }
+        else if(method.toLowerCase().equals("jpeg")) {
+            alg = new JPEG(false);
+            if (img_quality == null) 
+                throw new IllegalArgumentException("no s'ha especificat la qualitat de compressió de la imatge");
+            System.out.println("Img quality: "+img_quality); //cal tractar-ho
+        }
+        else {
+            throw new IllegalArgumentException(method+" no es correspon a cap dels algorismes.");
+        }
+
+        /*
+        Ctrl_Output out = new Ctrl_Output();
+        out.add(0, 6);
+        for (byte i = 0; i < 10; ++i) {
+            out.add(0x30 + i, 8);
+        }
+        if (0<1) return;
+        */
+
+        
+        Ctrl_Input.initialize(path_in);
+        alg.Compressor();
     }
 }

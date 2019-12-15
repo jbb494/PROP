@@ -28,6 +28,11 @@ public class Output {
     String path;
 
     /**
+     * @param file_length és el nombre total de bytes escrits al fitxer.
+     */
+    private long file_length;
+
+    /**
      * @param next_byte Ultim byte llegit
      */
     private Byte next_byte; 
@@ -80,6 +85,7 @@ public class Output {
     }
 
     private void write() {
+        file_length++;
 
         try {
             byte[] aux = {(byte)next_byte};
@@ -136,6 +142,7 @@ public class Output {
     public void print()
     {
         if (Pos > 0) write();
+        Pos = 0;
         try {
             buff.flush();
         }
@@ -158,6 +165,14 @@ public class Output {
      */
     public String getPath() {
         return path;
+    }
+
+    /**
+     * @fn public long getLength()
+     * @return el nombre de bytes escrits al fitxers
+     */
+    public long getLength() {
+        return file_length;
     }
 
 
