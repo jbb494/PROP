@@ -1,18 +1,19 @@
 package persistencia.Utils;
 
+import global.global;
+
 import java.io.File;
 
 public abstract class FolderOrFile {
 
-    public static String FolderOrFile(String Path)
+    public static global.type FolderOrFile(String Path)
     {
         File f = new File(Path);
-        boolean aux = f.isDirectory();
-        if(aux) return "Carpeta";
+        if(f.isDirectory()) return global.type.folder;
         else
         {
-            if(Path.endsWith(".ppm")) return "Imatge";
-            else return "Fitxer";
+            if(Path.endsWith(".ppm")) return global.type.image;
+            else return global.type.text;
         }
     }
 }

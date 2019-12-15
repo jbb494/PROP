@@ -1,14 +1,15 @@
 package presentacion.Ctrl_Presentacio;
 
 import domini.folders.Ctrl_FolderFile;
+import global.global;
 
 public class Ctrl_Presentacio {
     Ctrl_FolderFile CF;
-    public String type;
+    private global.type FolderOrFile;
 
     public Ctrl_Presentacio(String path_input) {
         CF = new Ctrl_FolderFile(path_input);
-        type = CF.FolderOrFile(path_input);
+        FolderOrFile = CF.FolderOrFile(path_input);
     }
 
     public void EncodeAuto() {
@@ -28,7 +29,8 @@ public class Ctrl_Presentacio {
         CF.Decode();
     }
 
-    public String isFolderOrFile() {
+    public global.type isFolderOrFile()
+    {
         return FolderOrFile;
     }
 
