@@ -371,7 +371,7 @@ public class Ctrl_FolderFile {
     }
 
     /**
-     * @fn public boolean isEncoded()
+     * @fn public boolean isEncodedFolder()
      * @return retorna true <=> el path que s'ha passat al constructor és a una carpeta comprimida.
      */
     public boolean isEncodedFolder() {
@@ -382,7 +382,7 @@ public class Ctrl_FolderFile {
     }
 
     /**
-     * @fn public boolean isEncoded()
+     * @fn public boolean isEncodedFolder()
      * @return retorna true <=> el path que s'ha passat al constructor és a un fitxer comprimit.
      */
     public boolean isEncodedFile() {
@@ -393,7 +393,7 @@ public class Ctrl_FolderFile {
     }
 
     /**
-     * 
+     * @fn public String getEncodedExtension()
      * @return L'extensió que tenia un comprimit abans de ser comprimit.
      */
     public String getEncodedExtension() {
