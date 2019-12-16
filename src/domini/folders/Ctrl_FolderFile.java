@@ -1,5 +1,6 @@
 package domini.folders;
 
+import domini.estadistica.Estadistica;
 import domini.utils.FileNames;
 import domini.algorithm.Ctrl_Algorithm;
 import global.global;
@@ -164,8 +165,12 @@ public class Ctrl_FolderFile {
     private String Encode() {
         String path_out = get_outPathPrefix() + ".jm";
         new Ctrl_Output_Encoded(path_out);
+
+        Estadistica est = new Estadistica(true);
         Encode(path_in);
-        return path_out;
+        est.work_done();
+
+        return est.show_estadistica(path_in,path_out);
     }
 
     private void Encode(String path) { //path in
@@ -232,7 +237,12 @@ public class Ctrl_FolderFile {
     public String Decode() {
         new Ctrl_Input_Encoded(path_in);
         temporal_output = false;
-        return Decode(null);
+
+        Estadistica est = new Estadistica(false);
+        String path_out = Decode(null);
+        est.work_done();
+
+        return est.show_estadistica(path_in, path_out);
     }
 
     /**

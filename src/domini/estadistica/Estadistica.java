@@ -4,6 +4,7 @@ import java.io.File;
 import java.util.Date;
 
 import domini.utils.Pair;
+import persistencia.browser.Ctrl_Browser;
 
 /**
  * @class Estadistica
@@ -37,9 +38,9 @@ public class Estadistica {
     public Estadistica(Boolean b) {
         start = new Date();
         if (b) 
-            info = new Pair<Boolean,String>(b, "compressio");
+            info = new Pair<Boolean,String>(b, "compresion");
         else 
-            info = new Pair<Boolean,String>(b,"descompressio");
+            info = new Pair<Boolean,String>(b,"descompresion");
     }
 
     //Functions
@@ -66,11 +67,13 @@ public class Estadistica {
      * @param inp Path de l'arxiu que havíem de comprimir
      * @param out Path de l'arxiu comprimit
      */
-    public void show_estadistica(String inp, String out) {
+    public String show_estadistica(String inp, String out) {
         long ts = time(start,end);
-        
-        File input = new File(inp);
-        File output = new File(out);
+
+        Ctrl_Browser input = new Ctrl_Browser(inp);
+        Ctrl_Browser output = new Ctrl_Browser(out);
+
+        String ret = "<html> <h1> Estadisticas de " + info.R + "</h1> <br />";
 
         if (input.exists() && output.exists()) {
             if (ts == 0) ts = 1;
@@ -83,20 +86,23 @@ public class Estadistica {
             if(gc == 0.0) 
                 gc = 1.0;
             
-
-            System.out.println("La velocitat de " + info.R + " ha sigut de " + spd + " bytes/ms.");
-            System.out.println("El grau de " + info.R + " és de " + String.format("%.6f", gc));
-            if(ts/1000 < 1) System.out.println("Temps de " + info.R + " : " + ts + " ms.\n");
-            else System.out.println("Temps de " + info.R + " : " + (ts/1000) + " segons.\n");
+            ret += "La velocidad de " + info.R + " ha sido de " + spd + " bytes/ms. <br />";
+            ret += "El grado de " + info.R + " es de " + String.format("%.6f", gc) + "<br />";
+            if(ts/1000 < 1)
+                ret += "Tiempo de " + info.R + " : " + ts + " ms. <br />";
+            else
+                ret += "Tiempo de " + info.R + " : " + (ts/1000) + " segundos. <br />";
         
         }
         else {
-            System.err.println("Generación de estadísticas fallida:");
-            if (! input.exists()) { System.out.println("-Input no existe"); }
-            if (! output.exists()) { System.out.println("-Output no existe"); }
+            ret += "Generación de estadísticas fallida: <br /> ";
+            if (! input.exists())
+                ret += "-Input no existe <br />";
+            if (! output.exists())
+                ret += "-Output no existe";
         }
 
-            
+        return ret;
     }
 
 

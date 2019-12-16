@@ -46,7 +46,6 @@ public class PopUp_Comp extends JDialog {
             medioRadioButton.setEnabled(false);
             altoRadioButton.setEnabled(false);
             GradoJPEG.setEnabled(false);
-            LZWRadioButton.setSelected(true);
         }
 
         aceptarButton.addActionListener(new ActionListener() {
@@ -62,14 +61,21 @@ public class PopUp_Comp extends JDialog {
             @Override
             public void actionPerformed(ActionEvent actionEvent) {
                 enableAccept1 = true;
+                LZWRadioButton.setSelected(true);
+                LZ78RadioButton.setSelected(false);
+                LZSSRadioButton.setSelected(false);
                 if (type == global.type.text) aceptarButton.setEnabled(true);
                 else if (type == global.type.folder && enableAccept2) aceptarButton.setEnabled(true);
             }
         });
+
         LZ78RadioButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent actionEvent) {
                 enableAccept1 = true;
+                LZWRadioButton.setSelected(false);
+                LZ78RadioButton.setSelected(true);
+                LZSSRadioButton.setSelected(false);
                 if (type == global.type.text) aceptarButton.setEnabled(true);
                 else if (type == global.type.folder && enableAccept2) aceptarButton.setEnabled(true);
             }
@@ -78,6 +84,9 @@ public class PopUp_Comp extends JDialog {
             @Override
             public void actionPerformed(ActionEvent actionEvent) {
                 enableAccept1 = true;
+                LZWRadioButton.setSelected(false);
+                LZ78RadioButton.setSelected(false);
+                LZSSRadioButton.setSelected(true);
                 if (type == global.type.text) aceptarButton.setEnabled(true);
                 else if (type == global.type.folder && enableAccept2) aceptarButton.setEnabled(true);
             }
@@ -120,7 +129,7 @@ public class PopUp_Comp extends JDialog {
             ret =  global.method.lzw;
         } else if (LZ78RadioButton.isSelected()) {
             ret = global.method.lz78;
-        } else if (LZ78RadioButton.isSelected()) {
+        } else if (LZSSRadioButton.isSelected()) {
             ret = global.method.lzss;
         }
         return ret;

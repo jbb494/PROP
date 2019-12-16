@@ -12,7 +12,7 @@ public class PopUp_Estadistica extends JDialog {
 
     public PopUp_Estadistica(String s) {
         super();
-        setModal(true);
+        setModal(false);
         setResizable(false);
         $$$setupUI$$$();
         lab.setText(s);
@@ -36,7 +36,7 @@ public class PopUp_Estadistica extends JDialog {
         panel1 = new JPanel();
         panel1.setLayout(new com.intellij.uiDesigner.core.GridLayoutManager(2, 1, new Insets(20, 20, 20, 20), -1, -1));
         panel1.setBackground(new Color(-14013910));
-        panel1.setPreferredSize(new Dimension(300, 400));
+        panel1.setPreferredSize(new Dimension(500, 200));
         panel1.setBorder(BorderFactory.createTitledBorder(BorderFactory.createLoweredBevelBorder(), null));
         cerrarButton = new JButton();
         cerrarButton.setBackground(new Color(-12961222));
@@ -44,7 +44,7 @@ public class PopUp_Estadistica extends JDialog {
         cerrarButton.setFocusPainted(false);
         cerrarButton.setForeground(new Color(-1));
         cerrarButton.setText("Cerrar");
-        panel1.add(cerrarButton, new com.intellij.uiDesigner.core.GridConstraints(1, 0, 1, 1, com.intellij.uiDesigner.core.GridConstraints.ANCHOR_CENTER, com.intellij.uiDesigner.core.GridConstraints.FILL_HORIZONTAL, com.intellij.uiDesigner.core.GridConstraints.SIZEPOLICY_CAN_SHRINK | com.intellij.uiDesigner.core.GridConstraints.SIZEPOLICY_CAN_GROW, com.intellij.uiDesigner.core.GridConstraints.SIZEPOLICY_FIXED, null, new Dimension(10, 20), null, 0, false));
+        panel1.add(cerrarButton, new com.intellij.uiDesigner.core.GridConstraints(1, 0, 1, 1, com.intellij.uiDesigner.core.GridConstraints.ANCHOR_CENTER, com.intellij.uiDesigner.core.GridConstraints.FILL_NONE, com.intellij.uiDesigner.core.GridConstraints.SIZEPOLICY_FIXED, com.intellij.uiDesigner.core.GridConstraints.SIZEPOLICY_FIXED, null, new Dimension(10, 20), null, 0, false));
         lab = new JLabel();
         lab.setBackground(new Color(-14013910));
         lab.setForeground(new Color(-1));

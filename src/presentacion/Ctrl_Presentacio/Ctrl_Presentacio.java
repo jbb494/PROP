@@ -15,22 +15,26 @@ public class Ctrl_Presentacio {
         FolderOrFile = CF.FolderOrFile(path_input);
     }
 
-    public void EncodeAuto() {
-        CF.EncodeAuto();
+    public String EncodeAuto() {
+        return CF.EncodeAuto();
     }
 
-    public void Encode(String text_method, double img_quality) {
+    public String Encode(String text_method, double img_quality) {
+        String estadistica = "";
         if (FolderOrFile == global.type.folder){
-            CF.EncodeManualFolder(text_method, img_quality);
-        } else if(FolderOrFile == global.type.image) {
-            CF.EncodeManualImg(img_quality);
-        } else if (FolderOrFile == global.type.text) {
-            CF.EncodeManualText(text_method);
+            estadistica = CF.EncodeManualFolder(text_method, img_quality);
         }
+        else if(FolderOrFile == global.type.image) {
+            estadistica = CF.EncodeManualImg(img_quality);
+        }
+        else if (FolderOrFile == global.type.text) {
+            estadistica = CF.EncodeManualText(text_method);
+        }
+        return estadistica;
     }
 
-    public void Decode() {
-        CF.Decode();
+    public String Decode() {
+        return CF.Decode();
     }
 
     public String DecodeTemp() {

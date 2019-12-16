@@ -1,5 +1,6 @@
 package presentacion.form;
 
+import domini.estadistica.Estadistica;
 import global.global;
 import presentacion.Ctrl_Presentacio.Ctrl_Presentacio;
 
@@ -27,17 +28,15 @@ public class mainForm extends JFrame {
     private JButton ComprimirBut;
     private JButton ButMenu;
     private JPanel PanelCompr;
-    private JCheckBox CheckEstadistic;
     private ProgressBar ProgressPre;
     private JPanel PaneBarText;
 
     private Ctrl_Presentacio CP;
-    private boolean show_est;
+    private PopUp_Estadistica pop_est;
 
     public mainForm() {
         super("Compresor/Descompresor");
         $$$setupUI$$$();
-        show_est = false;
 
         ChoosePathButton.addActionListener(new ActionListener() {
             @Override
@@ -52,7 +51,6 @@ public class mainForm extends JFrame {
                         ComprimirBut.setEnabled(true);
                         ButMenu.setEnabled(true);
                         descomprimirButton.setEnabled(true);
-                        CheckEstadistic.setEnabled(true);
                         CP = new Ctrl_Presentacio(path);
                         if (previewCheckBox.isSelected()) {
                             EventQueue.invokeLater(new Runnable() {
@@ -90,7 +88,9 @@ public class mainForm extends JFrame {
                     EventQueue.invokeLater(new Runnable() {
                         @Override
                         public void run() {
-                            CP.Encode(pop.getMethod().toString(), pop.getGc_jpeg());
+                            generando_estadistica("compresion");
+                            String est = CP.Encode(pop.getMethod().toString(), pop.getGc_jpeg());
+                            show_est(est);
                         }
                     });
                 }
@@ -111,49 +111,48 @@ public class mainForm extends JFrame {
                 PanelPre.setVisible(previewCheckBox.isSelected());
             }
         });
+
+
         ComprimirBut.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent actionEvent) {
                 EventQueue.invokeLater(new Runnable() {
-                                           @Override
-                                           public void run() {
-                                               CP.EncodeAuto();
-                                           }
-                                       }
-                );
-            }
-        });
-        descomprimirButton.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent actionEvent) {
-                EventQueue.invokeLater(new Runnable() {
-                                           @Override
-                                           public void run() {
-                                               CP.Decode();
-                                           }
-                                       }
-                );
-            }
-        });
-
-
-        CheckEstadistic.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent actionEvent) {
-                PopUp_Estadistica pop = new PopUp_Estadistica("SAFSDDFS");
-                pop.setContentPane(pop.panel1);
-                pop.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
-                pop.pack();
-                pop.setVisible(true);
-
-                EventQueue.invokeLater(new Runnable() {
                     @Override
                     public void run() {
-                        show_est = !show_est;
+                        generando_estadistica("compresion");
+                        String est = CP.EncodeAuto();
+                        show_est(est);
                     }
                 });
             }
         });
+
+        descomprimirButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent actionEvent) {
+                generando_estadistica("descompresion");
+                String est = CP.Decode();
+                show_est(est);
+            }
+        });
+    }
+
+    private void show_est(String s) {
+        pop_est.dispose();
+        pop_est = new PopUp_Estadistica(s);
+        pop_est.setContentPane(pop_est.panel1);
+        pop_est.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+        pop_est.pack();
+        pop_est.setVisible(true);
+    }
+
+    private void generando_estadistica(String s) {
+        String txt = "<html> <h1> Generando la " + s + "</h1>";
+        pop_est = new PopUp_Estadistica(txt);
+        pop_est.setContentPane(pop_est.panel1);
+        pop_est.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+        pop_est.pack();
+        pop_est.setVisible(true);
     }
 
     public global.type getFolderOrFile() {
@@ -261,13 +260,6 @@ public class mainForm extends JFrame {
         PanelPath.add(spacer6, new com.intellij.uiDesigner.core.GridConstraints(0, 0, 1, 1, com.intellij.uiDesigner.core.GridConstraints.ANCHOR_CENTER, com.intellij.uiDesigner.core.GridConstraints.FILL_HORIZONTAL, com.intellij.uiDesigner.core.GridConstraints.SIZEPOLICY_WANT_GROW, 1, null, null, null, 0, false));
         final com.intellij.uiDesigner.core.Spacer spacer7 = new com.intellij.uiDesigner.core.Spacer();
         panel1.add(spacer7, new com.intellij.uiDesigner.core.GridConstraints(2, 0, 1, 1, com.intellij.uiDesigner.core.GridConstraints.ANCHOR_CENTER, com.intellij.uiDesigner.core.GridConstraints.FILL_VERTICAL, 1, com.intellij.uiDesigner.core.GridConstraints.SIZEPOLICY_FIXED, new Dimension(-1, 5), new Dimension(-1, 15), null, 0, false));
-        CheckEstadistic = new JCheckBox();
-        CheckEstadistic.setBackground(new Color(-14013906));
-        CheckEstadistic.setEnabled(false);
-        CheckEstadistic.setFocusPainted(false);
-        CheckEstadistic.setForeground(new Color(-1));
-        CheckEstadistic.setText("Estadística");
-        panel1.add(CheckEstadistic, new com.intellij.uiDesigner.core.GridConstraints(3, 1, 1, 1, com.intellij.uiDesigner.core.GridConstraints.ANCHOR_WEST, com.intellij.uiDesigner.core.GridConstraints.FILL_NONE, com.intellij.uiDesigner.core.GridConstraints.SIZEPOLICY_CAN_SHRINK | com.intellij.uiDesigner.core.GridConstraints.SIZEPOLICY_CAN_GROW, com.intellij.uiDesigner.core.GridConstraints.SIZEPOLICY_FIXED, null, null, null, 0, false));
         PaneBarText = new JPanel();
         PaneBarText.setLayout(new com.intellij.uiDesigner.core.GridLayoutManager(2, 1, new Insets(0, 0, 0, 0), -1, -1));
         PaneBarText.setBackground(new Color(-14013910));

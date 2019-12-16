@@ -183,18 +183,6 @@
           </grid>
         </constraints>
       </vspacer>
-      <component id="a81e6" class="javax.swing.JCheckBox" binding="CheckEstadistic">
-        <constraints>
-          <grid row="3" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
-        </constraints>
-        <properties>
-          <background color="-14013906"/>
-          <enabled value="false"/>
-          <focusPainted value="false"/>
-          <foreground color="-1"/>
-          <text value="Estadística"/>
-        </properties>
-      </component>
       <grid id="84df4" binding="PaneBarText" layout-manager="GridLayoutManager" row-count="2" column-count="1" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
         <margin top="0" left="0" bottom="0" right="0"/>
         <constraints>
