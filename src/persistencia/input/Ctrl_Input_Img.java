@@ -25,6 +25,14 @@ public class Ctrl_Input_Img extends Ctrl_Input {
      * @param bits_per_val Quantitat de bits per valor.
      */
     int bits_per_val;
+    /**
+     * @param rows Quantitat files llegides.
+     */
+    int rows;
+    /**
+     * @param matrix Última matriu retornada a la fnció get()
+     */
+    double[][][][] matrix = null;
 
     /**
      * @brief Constructor de la classe.
@@ -78,10 +86,19 @@ public class Ctrl_Input_Img extends Ctrl_Input {
     public int getWidth() {
         return width;
     }
+    /**
+     * @fn public int getMaxVal()
+     * @brief Retorna el valor màxim que poden prendre els enters que representan quantitat de color. 
+     * @return Valor màxim que poden prendre els enters que representan quantitat de color.
+     */
+    public int getMaxVal() {
+        return max_val;
+    }
+
     
     /** 
      * @fn public double[][][][] get()
-     * @brief Retorna una matriu ret[width/8][8][8][3],
+     * @brief Retorna una matriu ret[upper(width/8)][8][8][3],
      * on ret[block][x][y][color] 
      *      és el la qantitat de color 'color' (rgb)
      *      al píxel (x+8*n, y+8*block), 
@@ -91,18 +108,28 @@ public class Ctrl_Input_Img extends Ctrl_Input {
      */
     public double[][][][] get()
     {
-        int n_blocks = width/8;
-        double[][][][] ret = new double[n_blocks][8][8][3];
-        for (int x = 0; x < 8; ++x) {
+        int n_blocks;
+        if (width%8 == 0) n_blocks = width/8;
+        else n_blocks = width/8 + 1;
+
+        if (matrix == null) matrix = new double[n_blocks][8][8][3];
+
+        for (int x = 0; x < 8 && rows < height; ++x) {
+            ++rows;
+            //if (rows >= height) return matrix;
             for (int j = 0; j < 8*n_blocks; ++j) {
                 for (int color = 0; color < 3; ++color) {
-                    int val = byteToConversion.byteToInteger(Input.getInstance().getMoreBits(bits_per_val));
-                    ret[j/8][x][j%8][color] = (double)val / (double)max_val * 255.0;
+                    if (j < width) {
+                        int val = byteToConversion.byteToInteger(Input.getInstance().getMoreBits(bits_per_val));
+                        matrix[j/8][x][j%8][color] = (double)val / (double)max_val * 255.0;
+                    }
+                    else if (j-8 >= 0) {
+                        matrix[j/8][x][j%8][color] = matrix[j/8-1][x][j%8][color];
+                    }
                 }
             }
-            Input.getInstance().getMoreBits((width - 8*n_blocks)*3*bits_per_val);
         }
-        return ret;
+        return matrix;
     }
 
     ////////////
@@ -126,12 +153,12 @@ public class Ctrl_Input_Img extends Ctrl_Input {
         char c;
 
         do c = getChar(); 
-        while (Character.isWhitespace(c));
+        while (Character.isWhitespace(c) && !finished());
 
         do {
             str += c;
             c = getChar();
-        } while (!Character.isWhitespace(c));
+        } while (!Character.isWhitespace(c) && !finished());
 
         return str;
         

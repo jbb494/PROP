@@ -19,7 +19,11 @@ public class Ctrl_Algorithm {
 
     /**
      * @fn public String Choose_Encoder(String Path, String method)
-     * @brief Realitzar la compressió d'un fitxer segons un algoritme concret
+     * @brief 
+     * CAL DEIXAR DE CRIDAR AQUESTA FUNCIÓ.
+     * S'HAURÀ DE BORRAR QUAN NINGÚ LA CRIDI.
+     * 
+     * Realitzar la compressió d'un fitxer segons un algoritme concret
      * @param Path Path de l'arxiu a comprimir
      * @param method Algoritme a emprar
      * @return Informacio sobre la compressio
@@ -69,7 +73,11 @@ public class Ctrl_Algorithm {
 
     /**
      * @fn public String Auto_Decoder(String Path, String method)
-     * @brief Escull de manera automàtica quin descompressor emprar
+     * @brief 
+     * CAL DEIXAR DE CRIDAR AQUESTA FUNCIÓ.
+     * S'HAURÀ DE BORRAR QUAN NINGÚ LA CRIDI.
+     * 
+     * Escull de manera automàtica quin descompressor emprar
      * @param Path Path de l'arxiu a descomprimir
      * @return Informació sobre la descompressió
      */
@@ -145,7 +153,7 @@ public class Ctrl_Algorithm {
             alg = new JPEG(false);
             if (img_quality == null) 
                 throw new IllegalArgumentException("no s'ha especificat la qualitat de compressió de la imatge");
-            System.out.println("Img quality: "+img_quality); //cal tractar-ho
+            ((JPEG)alg).resetQuality((int)(double)img_quality);
         }
         else {
             throw new IllegalArgumentException(method+" no es correspon a cap dels algorismes.");

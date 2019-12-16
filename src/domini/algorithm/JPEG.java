@@ -5,6 +5,7 @@ import persistencia.input.Ctrl_Input_Img;
 import persistencia.input.Ctrl_Input_JPEG;
 import persistencia.output.Ctrl_Output;
 import persistencia.output.Ctrl_Output_Img;
+import java.util.Random;
 
 /**
  * @class JPEG
@@ -46,22 +47,6 @@ public class JPEG extends Algorithm {
 		}
 		huff = new Huffman();
 	}
-
-	
-	/**
-	 *  @param quantization_matrix és la matriu de quantització
-	*/
-	private static int[][] quantization_matrix =
-	{
-		{16, 11, 10, 16, 24, 40, 51, 61},
-		{12, 12, 14, 19, 26, 58, 60, 55},
-		{14, 13, 16, 24, 40, 57, 69, 56},
-		{14, 17, 22, 29, 51, 87, 80, 62},
-		{18, 22, 37, 56, 68, 109, 103, 77},
-		{24, 35, 55, 64, 81, 104, 113, 92},
-		{49, 64, 78, 87, 103, 121, 120, 101},
-		{72, 92, 95, 98, 112, 100, 103, 99}
-	};
 
 	/**
 	 *  @param zigZag_X[i] és la fila que es cnsulta a la ièssima iteració 
@@ -106,6 +91,61 @@ public class JPEG extends Algorithm {
 		7, 6,
 		7
 	};
+
+	/**
+	 *  @param quantization_matrix és la matriu de quantització
+	*/
+	private int[][] quantization_matrix = null;
+
+	
+	/**
+	 *  @param base_quantization_matrix és la matriu de quantització per una qualitat 50%
+	*/
+	private static int[][] base_quantization_matrix =
+	{
+		{16, 11, 10, 16, 24, 40, 51, 61},
+		{12, 12, 14, 19, 26, 58, 60, 55},
+		{14, 13, 16, 24, 40, 57, 69, 56},
+		{14, 17, 22, 29, 51, 87, 80, 62},
+		{18, 22, 37, 56, 68, 109, 103, 77},
+		{24, 35, 55, 64, 81, 104, 113, 92},
+		{49, 64, 78, 87, 103, 121, 120, 101},
+		{72, 92, 95, 98, 112, 100, 103, 99}
+	};
+
+	
+
+	/**
+	 * @param q és un número de 0 a 100 que expressa la qualitat de la compressió/descompressió
+	 */
+	private int quality;
+
+	/**
+	 * @fn public void resetQuality(int q)
+	 * @brief Construeix la matriu de quantització a partir de la qualitat
+	 * @param q és un número de 0 a 100 que expressa la qualitat de la compressió/descompressió
+	 */
+	public void resetQuality(int q) {
+		// https://stackoverflow.com/questions/29215879/how-can-i-generalize-the-quantization-matrix-in-jpeg-compression
+		quality = q;
+		quantization_matrix = new int[8][8];
+		for (int i = 0; i < 8; ++i) {
+			for (int j = 0; j < 8; ++j) {
+				if (q == 0) quantization_matrix[i][j] = Integer.MAX_VALUE;
+				else {
+					double s;
+					if (q < 50) s = 5000/q;
+					else s = 200 - 2*q;
+
+					double Tb = (double)base_quantization_matrix[i][j];
+					int Ts = (int)((s*Tb + 50.0)/100.0);
+					if (Ts == 0) Ts = 1; // Prevent divide by 0 error
+					quantization_matrix[i][j] = Ts;
+				}
+
+			}
+		}
+	}
 
 
 	/**
@@ -260,16 +300,29 @@ public class JPEG extends Algorithm {
 	 * @brief Comprimim una imatge amb l'algoritme JPEG
 	 */
 	public void Compressor() {
+		
 
 		checkCompressor();
+		
 		Ctrl_Input_Img in = new Ctrl_Input_Img();
 
+		
+		int num_i_blocks;
+		if (in.getHeight()%8 == 0) num_i_blocks = in.getHeight()/8;
+		else num_i_blocks = in.getHeight()/8 + 1;
+		
+		int num_j_blocks;
+		if (in.getWidth()%8 == 0) num_j_blocks = in.getWidth()/8;
+		else num_j_blocks = in.getWidth()/8 + 1;
+		
+		
 
-		int num_i_blocks = in.getHeight()/8;
-		int num_j_blocks = in.getWidth()/8;
+		Output.add2(in.getWidth(), 32);
+		Output.add2(in.getHeight(), 32);
+		Output.add2(in.getMaxVal(), 32);
+		Output.add2(quality, 8);
 
-		Output.add2(num_j_blocks*8, 32);
-		Output.add2(num_i_blocks*8, 32);
+		
 
 		for (int i_block = 0; i_block < num_i_blocks; i_block++)  {
 
@@ -350,10 +403,19 @@ public class JPEG extends Algorithm {
 		checkDecompressor();
 		Ctrl_Input_JPEG in = new Ctrl_Input_JPEG();
 
-		int num_i_blocks = in.getHeight()/8;
-		int num_j_blocks = in.getWidth()/8;
+		int num_i_blocks;
+		if (in.getHeight()%8 == 0) num_i_blocks = in.getHeight()/8;
+		else num_i_blocks = in.getHeight()/8 + 1;
+		
+		int num_j_blocks;
+		if (in.getWidth()%8 == 0) num_j_blocks = in.getWidth()/8;
+		else num_j_blocks = in.getWidth()/8 + 1;
 
-		Output = new Ctrl_Output_Img(in.getWidth(), in.getHeight(), 255);
+
+		quality = in.get(8);
+		resetQuality(quality);
+
+		Output = new Ctrl_Output_Img(in.getWidth(), in.getHeight(), in.getMaxVal());
 
 		//int it = 0;
 

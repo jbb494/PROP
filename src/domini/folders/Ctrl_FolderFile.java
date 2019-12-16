@@ -363,7 +363,7 @@ public class Ctrl_FolderFile {
     }
 
     /**
-     * 
+     * @fn public String getEncodedExtension()
      * @return L'extensió que tenia un comprimit abans de ser comprimit.
      */
     public String getEncodedExtension() {

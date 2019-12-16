@@ -1,5 +1,7 @@
 package persistencia.output;
 
+
+
 /**
  * @class Ctrl_Output_Img
  * @brief Controlador de Output que permet escriure una imatge ppm
@@ -27,6 +29,10 @@ public class Ctrl_Output_Img extends Ctrl_Output {
      * @param rows Nombre de files llegides.
      */
     int rows;
+
+    
+    
+    
 
     /**
      * @brief Constructor de la classe.
@@ -62,8 +68,8 @@ public class Ctrl_Output_Img extends Ctrl_Output {
             throw new IllegalArgumentException("Width and height must be non-negative.");
         }
 
-        width = (w/8)*8;  // cal permetre que width sigui no-múltiple de 8 
-        height = (h/8)*8; // cal permetre que height sigui no-múltiple de 8 
+        width = w;
+        height = h;
         max_val = mv;
         rows = 0;
 
@@ -76,6 +82,7 @@ public class Ctrl_Output_Img extends Ctrl_Output {
 
         if (max_val < 256) bits_per_val = 8;
         else               bits_per_val = 16;
+
     }
 
     /**
@@ -107,26 +114,24 @@ public class Ctrl_Output_Img extends Ctrl_Output {
      */
     public void add(double[][][][] mat)
     {
-        int n_blocks = width/8; //width de moment és múltiple de 8
-        rows += 8;
-        for (int x = 0; x < 8; ++x) {
-            for (int j = 0; j < 8*n_blocks; ++j) {
+        for (int x = 0; x < 8 && rows < height; ++x) {
+            ++rows;
+            //if (rows >= height) return;
+            for (int j = 0; j < width; ++j) {
                 for (int color = 0; color < 3; ++color) {
-                    int val = (int)mat[j/8][x][j%8][color];  //cal tenir en compte que max_val pot ser diferenta a 255
-                    if (bits_per_val == 16) {
-                        Byte b = (byte)(val >> 8);
-                        add(b,8);
-                    }
-                    Byte b = (byte)val;
-                    add(b,8);
+                    double aux = mat[j/8][x][j%8][color];
+                    int val = (int)(aux * (double)max_val / 255.0);
+                    add(val, bits_per_val);
                 }
-            } // cal permetre escriure dummy data
+            }
         }
     }
 
+    
+
     /**
      * @fn public boolean finished()
-     * @brief inica si s'han llegit totes les files de la imatge.
+     * @brief inica si s'han escrit totes les files de la imatge.
      */
     public boolean finished() {
         return (rows >= height);

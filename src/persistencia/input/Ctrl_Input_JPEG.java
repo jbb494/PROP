@@ -15,6 +15,10 @@ public class Ctrl_Input_JPEG extends Ctrl_Input {
      * @param width Amplada de la imatge
      */
     int width;
+    /**
+     * @param max_val Valor màxim que tenien els codis de color a la imatge original.
+     */
+    int max_val;
 
     /**
      * @brief Constructor de la classe
@@ -25,6 +29,7 @@ public class Ctrl_Input_JPEG extends Ctrl_Input {
         getMetadata();
         width = get(32);
         height = get(32);
+        max_val = get(32);
     }
 
     /**
@@ -35,6 +40,7 @@ public class Ctrl_Input_JPEG extends Ctrl_Input {
         super();
         width = get(32);
         height = get(32);
+        max_val = get(32);
     }
 
     /**
@@ -52,6 +58,14 @@ public class Ctrl_Input_JPEG extends Ctrl_Input {
      */
     public int getWidth() {
         return width;
+    }
+    /**
+     * @fn public int getMaxVal()
+     * @brief Retorna el valor màxim que poden prendre els enters que representan quantitat de color. 
+     * @return Valor màxim que poden prendre els enters que representan quantitat de color.
+     */
+    public int getMaxVal() {
+        return max_val;
     }
  
     /**
