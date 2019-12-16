@@ -51,6 +51,8 @@ public class mainForm extends JFrame {
                         ButMenu.setEnabled(true);
                         descomprimirButton.setEnabled(true);
                         CP = new Ctrl_Presentacio(path);
+                        System.out.println(CP.getType());
+
                         if (previewCheckBox.isSelected()) {
                             EventQueue.invokeLater(new Runnable() {
                                 @Override
@@ -161,7 +163,7 @@ public class mainForm extends JFrame {
     }
 
     public global.type getFolderOrFile() {
-        return CP.isFolderOrFile();
+        return CP.getType();
     }
 
     public void inicialitza_panel() {

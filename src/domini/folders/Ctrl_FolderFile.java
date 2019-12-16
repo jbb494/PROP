@@ -10,7 +10,6 @@ import persistencia.input.Ctrl_Input;
 import persistencia.input.Ctrl_Input_Encoded;
 import persistencia.output.Ctrl_Output_Encoded;
 
-import java.io.FileNotFoundException;
 import java.io.IOException;
 
 /**
@@ -221,8 +220,17 @@ public class Ctrl_FolderFile {
         out.endSubfile();
     }
 
-    public global.type FolderOrFile(String Path){
-        return FolderOrFile.FolderOrFile(Path);
+    public global.type getType(String Path){
+
+        global.type file = FolderOrFile.getType(Path);
+        if (file == global.type.comprimit) {
+            if (isEncodedFile()) {
+                return global.type.textComprimit;
+            }else if(isEncodedFolder()) {
+                return global.type.folderComprimit;
+            }
+        }
+        return file;
     }
     
     

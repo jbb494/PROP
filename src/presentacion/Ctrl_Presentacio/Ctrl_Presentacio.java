@@ -3,16 +3,15 @@ package presentacion.Ctrl_Presentacio;
 import domini.folders.Ctrl_FolderFile;
 import global.global;
 
-import java.io.FileNotFoundException;
 import java.io.IOException;
 
 public class Ctrl_Presentacio {
     Ctrl_FolderFile CF;
-    private global.type FolderOrFile;
+    private global.type type;
 
     public Ctrl_Presentacio(String path_input) {
         CF = new Ctrl_FolderFile(path_input);
-        FolderOrFile = CF.FolderOrFile(path_input);
+        type = CF.getType(path_input);
     }
 
     public String EncodeAuto() {
@@ -21,13 +20,13 @@ public class Ctrl_Presentacio {
 
     public String Encode(String text_method, double img_quality) {
         String estadistica = "";
-        if (FolderOrFile == global.type.folder){
+        if (type == global.type.folder){
             estadistica = CF.EncodeManualFolder(text_method, img_quality);
         }
-        else if(FolderOrFile == global.type.image) {
+        else if(type == global.type.image) {
             estadistica = CF.EncodeManualImg(img_quality);
         }
-        else if (FolderOrFile == global.type.text) {
+        else if (type == global.type.text) {
             estadistica = CF.EncodeManualText(text_method);
         }
         return estadistica;
@@ -41,9 +40,9 @@ public class Ctrl_Presentacio {
         return CF.DecodeTemp();
     }
 
-    public global.type isFolderOrFile()
+    public global.type getType()
     {
-        return FolderOrFile;
+        return type;
     }
 
     public String getFile(String pathTemp) throws IOException {

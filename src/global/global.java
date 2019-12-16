@@ -4,7 +4,11 @@ public abstract class global {
     public enum type{
         folder,
         text,
-        image
+        image,
+        comprimit,
+        imatgeComprimit,
+        textComprimit,
+        folderComprimit
     }
 
     public enum method {
