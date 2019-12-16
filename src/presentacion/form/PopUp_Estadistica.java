@@ -37,6 +37,7 @@ public class PopUp_Estadistica extends JDialog {
         panel1 = new JPanel();
         panel1.setLayout(new com.intellij.uiDesigner.core.GridLayoutManager(2, 1, new Insets(20, 20, 20, 20), -1, -1));
         panel1.setBackground(new Color(-14013910));
+        panel1.setEnabled(false);
         panel1.setPreferredSize(new Dimension(500, 200));
         panel1.setBorder(BorderFactory.createTitledBorder(BorderFactory.createLoweredBevelBorder(), null));
         cerrarButton = new JButton();

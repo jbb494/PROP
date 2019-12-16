@@ -32,6 +32,7 @@ public class mainForm extends JFrame {
 
     private Ctrl_Presentacio CP;
     private PopUp_Estadistica pop_est;
+    private Thread t;
 
     public mainForm() {
         super("Compresor/Descompresor");
@@ -88,9 +89,23 @@ public class mainForm extends JFrame {
                     EventQueue.invokeLater(new Runnable() {
                         @Override
                         public void run() {
-                            generando_estadistica("compresion");
-                            String est = CP.Encode(pop.getMethod().toString(), pop.getGc_jpeg());
-                            show_est(est);
+                            t = new Thread(new Runnable() {
+                                @Override
+                                public synchronized void run() {
+                                    String est = CP.Encode(pop.getMethod().toString(), pop.getGc_jpeg());
+                                    show_est(est);
+                                }
+                            });
+
+                            Thread t2 = new Thread(new Runnable() {
+                                public Thread aux = getThread();
+                                @Override
+                                public synchronized void run() {
+                                    generando_estadistica("compresion");
+                                    aux.start();
+                                }
+                            });
+                            t2.start();
                         }
                     });
                 }
@@ -119,9 +134,28 @@ public class mainForm extends JFrame {
                 EventQueue.invokeLater(new Runnable() {
                     @Override
                     public void run() {
-                        generando_estadistica("compresion");
-                        String est = CP.EncodeAuto();
-                        show_est(est);
+                        EventQueue.invokeLater(new Runnable() {
+                            @Override
+                            public void run() {
+                                t = new Thread(new Runnable() {
+                                    @Override
+                                    public synchronized void run() {
+                                        String est = CP.EncodeAuto();
+                                        show_est(est);
+                                    }
+                                });
+
+                                Thread t2 = new Thread(new Runnable() {
+                                    public Thread aux = getThread();
+                                    @Override
+                                    public synchronized void run() {
+                                        generando_estadistica("compresion");
+                                        aux.start();
+                                    }
+                                });
+                                t2.start();
+                            }
+                        });
                     }
                 });
             }
@@ -133,9 +167,23 @@ public class mainForm extends JFrame {
                 EventQueue.invokeLater(new Runnable() {
                     @Override
                     public void run() {
-                        generando_estadistica("descompresion");
-                        String est = CP.Decode();
-                        show_est(est);
+                        t = new Thread(new Runnable() {
+                            @Override
+                            public synchronized void run() {
+                                String est = CP.Decode();
+                                show_est(est);
+                            }
+                        });
+
+                        Thread t2 = new Thread(new Runnable() {
+                            public Thread aux = getThread();
+                            @Override
+                            public synchronized void run() {
+                                generando_estadistica("compresion");
+                                aux.start();
+                            }
+                        });
+                        t2.start();
                     }
                 });
             }
@@ -158,6 +206,10 @@ public class mainForm extends JFrame {
         pop_est.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
         pop_est.pack();
         pop_est.setVisible(true);
+    }
+
+    private Thread getThread() {
+        return t;
     }
 
     public global.type getFolderOrFile() {
