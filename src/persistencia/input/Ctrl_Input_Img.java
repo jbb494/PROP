@@ -155,6 +155,14 @@ public class Ctrl_Input_Img extends Ctrl_Input {
         do c = getChar(); 
         while (Character.isWhitespace(c) && !finished());
 
+        while (c == '#') {
+            do c = getChar();
+            while (c != '\n');
+
+            do c = getChar(); 
+            while (Character.isWhitespace(c) && !finished());
+        }
+        
         do {
             str += c;
             c = getChar();
