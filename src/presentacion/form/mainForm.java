@@ -12,7 +12,9 @@ import java.awt.event.ActionListener;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 
+import presentacion.form.components.MainThread;
 import presentacion.form.components.ProgressBar;
+import sun.applet.Main;
 
 public class mainForm extends JFrame {
     private JPanel panel1;
@@ -84,6 +86,7 @@ public class mainForm extends JFrame {
                 pop.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
                 pop.pack();
                 pop.setVisible(true);
+
                 if (pop.getAccepted()) {
                     EventQueue.invokeLater(new Runnable() {
                         @Override
@@ -130,9 +133,19 @@ public class mainForm extends JFrame {
         descomprimirButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent actionEvent) {
-                generando_estadistica("descompresion");
-                String est = CP.Decode();
-                show_est(est);
+                EventQueue.invokeLater(new Runnable() {
+                    @Override
+                    public void run() {
+                        EventQueue.invokeLater(new Runnable() {
+                            @Override
+                            public void run() {
+                                generando_estadistica("descompresion");
+                                String est = CP.Decode();
+                                show_est(est);
+                            }
+                        });
+                    }
+                });
             }
         });
     }
