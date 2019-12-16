@@ -179,7 +179,7 @@ public class mainForm extends JFrame {
                             public Thread aux = getThread();
                             @Override
                             public synchronized void run() {
-                                generando_estadistica("compresion");
+                                generando_estadistica("descompresión");
                                 aux.start();
                             }
                         });
