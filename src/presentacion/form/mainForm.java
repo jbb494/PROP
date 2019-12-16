@@ -1,6 +1,5 @@
 package presentacion.form;
 
-import domini.estadistica.Estadistica;
 import global.global;
 import presentacion.Ctrl_Presentacio.Ctrl_Presentacio;
 
@@ -12,9 +11,7 @@ import java.awt.event.ActionListener;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 
-import presentacion.form.components.MainThread;
 import presentacion.form.components.ProgressBar;
-import sun.applet.Main;
 
 public class mainForm extends JFrame {
     private JPanel panel1;
@@ -136,14 +133,9 @@ public class mainForm extends JFrame {
                 EventQueue.invokeLater(new Runnable() {
                     @Override
                     public void run() {
-                        EventQueue.invokeLater(new Runnable() {
-                            @Override
-                            public void run() {
-                                generando_estadistica("descompresion");
-                                String est = CP.Decode();
-                                show_est(est);
-                            }
-                        });
+                        generando_estadistica("descompresion");
+                        String est = CP.Decode();
+                        show_est(est);
                     }
                 });
             }
