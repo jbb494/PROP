@@ -12,6 +12,14 @@ public class Ctrl_Presentacio {
     public Ctrl_Presentacio(String path_input) {
         CF = new Ctrl_FolderFile(path_input);
         type = CF.getType(path_input);
+        switch (type) {
+            case textComprimit:
+
+                break;
+            case imageComprimit:
+
+                break;
+        }
     }
 
     public String EncodeAuto() {

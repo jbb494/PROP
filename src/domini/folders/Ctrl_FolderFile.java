@@ -225,7 +225,11 @@ public class Ctrl_FolderFile {
         global.type file = FolderOrFile.getType(Path);
         if (file == global.type.comprimit) {
             if (isEncodedFile()) {
-                return global.type.textComprimit;
+                if (getEncodedExtension().equals("ppm")) {
+                    return global.type.imageComprimit;
+                }else {
+                    return global.type.textComprimit;
+                }
             }else if(isEncodedFolder()) {
                 return global.type.folderComprimit;
             }

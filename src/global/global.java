@@ -6,7 +6,7 @@ public abstract class global {
         text,
         image,
         comprimit,
-        imatgeComprimit,
+        imageComprimit,
         textComprimit,
         folderComprimit
     }

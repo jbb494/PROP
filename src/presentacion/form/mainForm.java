@@ -10,6 +10,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.io.FileNotFoundException;
 import java.io.IOException;
+import java.util.function.Function;
 
 import presentacion.form.components.ProgressBar;
 
@@ -51,26 +52,40 @@ public class mainForm extends JFrame {
                         ButMenu.setEnabled(true);
                         descomprimirButton.setEnabled(true);
                         CP = new Ctrl_Presentacio(path);
-                        System.out.println(CP.getType());
 
                         if (previewCheckBox.isSelected()) {
-                            EventQueue.invokeLater(new Runnable() {
-                                @Override
-                                public void run() {
-                                    String pathTemp = CP.DecodeTemp();
-                                    String file = null;
-                                    System.out.println("decoded");
-                                    try {
-                                        System.out.println("FINISHED");
-                                        file = CP.getFile(pathTemp);
-                                        AreaPre.setText(file);
-                                    } catch (FileNotFoundException e) {
-                                        e.printStackTrace();
-                                    } catch (IOException e) {
-                                        e.printStackTrace();
+
+                            System.out.println(CP.getType().toString());
+                            switch (CP.getType()) {
+                                case imageComprimit:
+                                    System.out.println(PanelPre.getParent());
+                                    if (PanelPre.getParent() != null) {
+                                        PaneBarText.remove(PanelPre);
+                                        PaneBarText.validate();
+                                        PaneBarText.repaint();
                                     }
-                                }
-                            });
+                                    break;
+                                case textComprimit:
+                                    if (PanelPre.getParent() == null) {
+                                        PaneBarText.add(PanelPre, new com.intellij.uiDesigner.core.GridConstraints(0, 0, 1, 1, com.intellij.uiDesigner.core.GridConstraints.ANCHOR_CENTER, com.intellij.uiDesigner.core.GridConstraints.FILL_BOTH, com.intellij.uiDesigner.core.GridConstraints.SIZEPOLICY_CAN_SHRINK | com.intellij.uiDesigner.core.GridConstraints.SIZEPOLICY_WANT_GROW, com.intellij.uiDesigner.core.GridConstraints.SIZEPOLICY_CAN_SHRINK | com.intellij.uiDesigner.core.GridConstraints.SIZEPOLICY_WANT_GROW, null, null, null, 0, false));
+                                        PaneBarText.validate();
+                                        PaneBarText.repaint();
+                                    }
+                                    break;
+                            }
+
+                            String pathTemp = CP.DecodeTemp();
+                            String file = null;
+                            System.out.println("decoded");
+                            try {
+                                System.out.println("FINISHED");
+                                file = CP.getFile(pathTemp);
+                                AreaPre.setText(file);
+                            } catch (FileNotFoundException e) {
+                                e.printStackTrace();
+                            } catch (IOException e) {
+                                e.printStackTrace();
+                            }
                         }
                     }
                 }
