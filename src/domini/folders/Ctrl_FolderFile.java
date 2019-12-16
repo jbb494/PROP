@@ -360,9 +360,10 @@ public class Ctrl_FolderFile {
      * @return retorna true <=> el path que s'ha passat al constructor és a un comprimit.
      */
     public boolean isEncoded() {
+        if (!FileNames.getExtension(path_in).equals("jm")) return false;
         Ctrl_Input_Encoded in = new Ctrl_Input_Encoded(path_in);
         byte magic_word = in.getByte();
-        return (magic_word == 0xF0) || (magic_word == 0xF1);
+        return (magic_word == (byte)0xF0) || (magic_word == (byte)0xF1);
     }
 
     /**
@@ -370,9 +371,10 @@ public class Ctrl_FolderFile {
      * @return retorna true <=> el path que s'ha passat al constructor és a una carpeta comprimida.
      */
     public boolean isEncodedFolder() {
+        if (!FileNames.getExtension(path_in).equals("jm")) return false;
         Ctrl_Input_Encoded in = new Ctrl_Input_Encoded(path_in);
         byte magic_word = in.getByte();
-        return (magic_word == 0xF0);
+        return (magic_word == (byte)0xF0);
     }
 
     /**
@@ -380,9 +382,23 @@ public class Ctrl_FolderFile {
      * @return retorna true <=> el path que s'ha passat al constructor és a un fitxer comprimit.
      */
     public boolean isEncodedFile() {
+        if (!FileNames.getExtension(path_in).equals("jm")) return false;
         Ctrl_Input_Encoded in = new Ctrl_Input_Encoded(path_in);
         byte magic_word = in.getByte();
-        return (magic_word == 0xF1);
+        return (magic_word == (byte)0xF1);
+    }
+
+    /**
+     * 
+     * @return L'extensió que tenia un comprimit abans de ser comprimit.
+     */
+    public String getEncodedExtension() {
+        if (!FileNames.getExtension(path_in).equals("jm")) throw new IllegalArgumentException("No es un comprimit.");
+        Ctrl_Input_Encoded in = new Ctrl_Input_Encoded(path_in);
+        byte magic_word = in.getByte();
+        if (magic_word == (byte)0xF1) return in.getWord();
+        if (magic_word == (byte)0xF0) return "";
+        throw new IllegalArgumentException("No es un comprimit.");
     }
 
     public String getFile(String pathTemp) throws IOException {
