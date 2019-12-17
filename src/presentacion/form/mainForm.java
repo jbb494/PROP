@@ -12,7 +12,6 @@ import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.util.function.Function;
 
-import presentacion.form.components.ProgressBar;
 
 public class mainForm extends JFrame {
     private JPanel panel1;
@@ -28,7 +27,6 @@ public class mainForm extends JFrame {
     private JButton ComprimirBut;
     private JButton ButMenu;
     private JPanel PanelCompr;
-    private ProgressBar ProgressPre;
     private JPanel PaneBarText;
 
     private Ctrl_Presentacio CP;
@@ -150,7 +148,6 @@ public class mainForm extends JFrame {
         previewCheckBox.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent actionEvent) {
-                ProgressPre.setVisible(previewCheckBox.isSelected());
                 PanelPre.setVisible(previewCheckBox.isSelected());
             }
         });
@@ -402,10 +399,6 @@ public class mainForm extends JFrame {
      */
     public JComponent $$$getRootComponent$$$() {
         return panel1;
-    }
-
-    private void createUIComponents() {
-        ProgressPre = new ProgressBar(0, 100);
     }
 
 
