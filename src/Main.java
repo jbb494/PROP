@@ -8,7 +8,7 @@ import presentacion.form.mainForm;
 public class Main {
 
     /**
-     * @brief Main de la classe
+     * @brief Main del projecte
      * @param args
      */
     public static void main(String[] args)

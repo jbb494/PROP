@@ -42,7 +42,7 @@ public class LZSS extends Algorithm {
 	}
 
     /**
-     * @fn private int KMPSearch(ArrayList<Byte> paraula, ArrayCircular text)
+     * @fn public int KMPSearch(ArrayList<Byte> paraula, ArrayCircular text)
      * @brief Mètode auxiliar del compressor utilitzant l'algorisme de Knuth-Morris-Pratt.
      * @param paraula 
      * @param text
