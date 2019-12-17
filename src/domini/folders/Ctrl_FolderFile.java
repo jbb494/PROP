@@ -172,6 +172,11 @@ public class Ctrl_FolderFile {
         return est.show_estadistica(path_in,path_out);
     }
 
+    /**
+     * @fn private void Encode(String path)
+     * @brief Comprimeix un fitxer o carpeta
+     * @param path Path al fitxer o carpeta
+     */
     private void Encode(String path) { //path in
         Ctrl_Output_Encoded out = new Ctrl_Output_Encoded();
         Ctrl_Browser in = new Ctrl_Browser(path);
@@ -185,6 +190,11 @@ public class Ctrl_FolderFile {
         }
     }
 
+    /**
+     * @fn private void EncodeFolder(String path)
+     * @brief Comprimeix una carpeta
+     * @param path Path a la carpeta
+     */
     private void EncodeFolder(String path) {
         Ctrl_Output_Encoded out = new Ctrl_Output_Encoded();
         Ctrl_Browser in = new Ctrl_Browser(path);
@@ -199,6 +209,11 @@ public class Ctrl_FolderFile {
         }
     }
 
+    /**
+     * @fn private void EncodeFile(String path)
+     * @brief Comprimeix un fitxer
+     * @param path Path a fitxer
+     */
     private void EncodeFile(String path) {
         Ctrl_Output_Encoded out = new Ctrl_Output_Encoded();
 
@@ -220,6 +235,11 @@ public class Ctrl_FolderFile {
         out.endSubfile();
     }
 
+    /**
+     * @fn public global.type getType(String Path)
+     * @param Path Path al fixer o carpeta
+     * @return Retorna una enumeration indicant el tipus de Path
+     */
     public global.type getType(String Path){
 
         global.type file = FolderOrFile.getType(Path);
