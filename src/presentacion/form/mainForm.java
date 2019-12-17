@@ -53,6 +53,16 @@ public class mainForm extends JFrame {
                         ButMenu.setEnabled(true);
                         descomprimirButton.setEnabled(true);
                         CP = new Ctrl_Presentacio(path);
+                        global.type gt = CP.getType();
+                        if (gt == global.type.imageComprimit || gt == global.type.textComprimit || gt == global.type.folderComprimit) {
+                            descomprimirButton.setEnabled(true);
+                            ComprimirBut.setEnabled(false);
+                            ButMenu.setEnabled(false);
+                        } else {
+                            descomprimirButton.setEnabled(false);
+                            ComprimirBut.setEnabled(true);
+                            ButMenu.setEnabled(true);
+                        }
 
                         if (previewCheckBox.isSelected()) {
 
@@ -116,6 +126,7 @@ public class mainForm extends JFrame {
 
                             Thread t2 = new Thread(new Runnable() {
                                 public Thread aux = getThread();
+
                                 @Override
                                 public synchronized void run() {
                                     generando_estadistica("compresion");
@@ -164,6 +175,7 @@ public class mainForm extends JFrame {
 
                                 Thread t2 = new Thread(new Runnable() {
                                     public Thread aux = getThread();
+
                                     @Override
                                     public synchronized void run() {
                                         generando_estadistica("compresion");
@@ -194,6 +206,7 @@ public class mainForm extends JFrame {
 
                         Thread t2 = new Thread(new Runnable() {
                             public Thread aux = getThread();
+
                             @Override
                             public synchronized void run() {
                                 generando_estadistica("descompresión");

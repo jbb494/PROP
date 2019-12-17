@@ -22,8 +22,6 @@ public class PopUp_Comp extends JDialog {
     private JLabel ArchTexto;
     private JLabel GradoJPEG;
     private JButton ExitBut;
-    private boolean enableAccept1;
-    private boolean enableAccept2;
     private boolean Accepted;
     private global.type type;
 
@@ -33,19 +31,22 @@ public class PopUp_Comp extends JDialog {
         setModal(true);
         setResizable(false);
         this.type = type;
-        enableAccept1 = enableAccept2 = false;
         $$$setupUI$$$();
         if (type == global.type.image) {
             LZWRadioButton.setEnabled(false);
             LZ78RadioButton.setEnabled(false);
             LZSSRadioButton.setEnabled(false);
             ArchTexto.setEnabled(false);
-            medioRadioButton.setSelected(true);
+            bajoRadioButton.setSelected(true);
         } else if (type == global.type.text) {
             bajoRadioButton.setEnabled(false);
             medioRadioButton.setEnabled(false);
             altoRadioButton.setEnabled(false);
             GradoJPEG.setEnabled(false);
+            LZWRadioButton.setSelected(true);
+        } else if (type == global.type.folder) {
+            bajoRadioButton.setSelected(true);
+            LZWRadioButton.setSelected(true);
         }
 
         aceptarButton.addActionListener(new ActionListener() {
@@ -60,59 +61,26 @@ public class PopUp_Comp extends JDialog {
         LZWRadioButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent actionEvent) {
-                enableAccept1 = true;
                 LZWRadioButton.setSelected(true);
                 LZ78RadioButton.setSelected(false);
                 LZSSRadioButton.setSelected(false);
-                if (type == global.type.text) aceptarButton.setEnabled(true);
-                else if (type == global.type.folder && enableAccept2) aceptarButton.setEnabled(true);
             }
         });
 
         LZ78RadioButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent actionEvent) {
-                enableAccept1 = true;
                 LZWRadioButton.setSelected(false);
                 LZ78RadioButton.setSelected(true);
                 LZSSRadioButton.setSelected(false);
-                if (type == global.type.text) aceptarButton.setEnabled(true);
-                else if (type == global.type.folder && enableAccept2) aceptarButton.setEnabled(true);
             }
         });
         LZSSRadioButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent actionEvent) {
-                enableAccept1 = true;
                 LZWRadioButton.setSelected(false);
                 LZ78RadioButton.setSelected(false);
                 LZSSRadioButton.setSelected(true);
-                if (type == global.type.text) aceptarButton.setEnabled(true);
-                else if (type == global.type.folder && enableAccept2) aceptarButton.setEnabled(true);
-            }
-        });
-        bajoRadioButton.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent actionEvent) {
-                enableAccept2 = true;
-                if (type == global.type.image) aceptarButton.setEnabled(true);
-                else if (type == global.type.folder && enableAccept1) aceptarButton.setEnabled(true);
-            }
-        });
-        medioRadioButton.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent actionEvent) {
-                enableAccept2 = true;
-                if (type == global.type.image) aceptarButton.setEnabled(true);
-                else if (type == global.type.folder && enableAccept1) aceptarButton.setEnabled(true);
-            }
-        });
-        altoRadioButton.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent actionEvent) {
-                enableAccept2 = true;
-                if (type == global.type.image) aceptarButton.setEnabled(true);
-                else if (type == global.type.folder && enableAccept1) aceptarButton.setEnabled(true);
             }
         });
         ExitBut.addActionListener(new ActionListener() {
@@ -126,7 +94,7 @@ public class PopUp_Comp extends JDialog {
     global.method getMethod() {
         global.method ret = global.method.lzw;
         if (LZWRadioButton.isSelected()) {
-            ret =  global.method.lzw;
+            ret = global.method.lzw;
         } else if (LZ78RadioButton.isSelected()) {
             ret = global.method.lz78;
         } else if (LZSSRadioButton.isSelected()) {
@@ -134,6 +102,7 @@ public class PopUp_Comp extends JDialog {
         }
         return ret;
     }
+
     public boolean getAccepted() {
         return Accepted;
     }
@@ -216,7 +185,7 @@ public class PopUp_Comp extends JDialog {
         aceptarButton = new JButton();
         aceptarButton.setBackground(new Color(-12961222));
         aceptarButton.setBorderPainted(false);
-        aceptarButton.setEnabled(false);
+        aceptarButton.setEnabled(true);
         aceptarButton.setFocusPainted(false);
         aceptarButton.setFocusable(true);
         aceptarButton.setForeground(new Color(-1));
