@@ -212,7 +212,7 @@
                   <preferredSize width="872" height="402"/>
                   <selectedTextColor color="-13290187"/>
                   <selectionColor color="-5723992"/>
-                  <text value="Texto de previsualización de un fichero o una imagen comprimida."/>
+                  <text value="Texto de previsualización de un fichero o una imagen     comprimida."/>
                   <visible value="true"/>
                 </properties>
               </component>
