@@ -79,8 +79,8 @@ public class PopUp_Comp extends JDialog {
 
 
     /**
-     * @brief Constructor de la clase
      * @param type Tipo de fichero sobre el que se ejecuta la compresión manual
+     * @brief Constructor de la clase
      */
     public PopUp_Comp(global.type type) {
         super();
@@ -149,9 +149,9 @@ public class PopUp_Comp extends JDialog {
     }
 
     /**
+     * @return Devuelve un tipo de la enumeration dependiendo del radioButton seleccionado.
      * @fn global.method getMethod()
      * @brief Método para saber el tipo de algoritmo seleccionado de los radioButton's.
-     * @return Devuelve un tipo de la enumeration dependiendo del radioButton seleccionado.
      */
     global.method getMethod() {
         global.method ret = global.method.lzw;
@@ -166,17 +166,17 @@ public class PopUp_Comp extends JDialog {
     }
 
     /**
-     * @fn public boolean getAccepted()
      * @return Devuelve el atributo Accepted.
+     * @fn public boolean getAccepted()
      */
     public boolean getAccepted() {
         return Accepted;
     }
 
     /**
+     * @return Devuelve un tipo de la enumeration dependiendo del radioButton seleccionado.
      * @fn float getGc_jpeg()
      * @brief Método para saber el grado de compresión seleccionado de los radioButton's.
-     * @return Devuelve un tipo de la enumeration dependiendo del radioButton seleccionado.
      */
     float getGc_jpeg() {
         float ret = 0.5f;
