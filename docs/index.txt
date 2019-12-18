@@ -1,0 +1,8 @@
+-Carpeta HARDCODE: Contiene los ficheros de los diagramas uml, casos de uso... en codigo.
+-Fichero Descripcio_Casos_Us.txt: Contiene la descripcion de los casos de uso
+-Fichero Descripcio_del_diagrama_de_classes.txt: Contiene la descripcion del diagrama de clases.
+-Fichero Drivers joc_proves.txt: Contiene todos los juegos de prueba de los drivers.
+-Fichero EDA.md: Estructuras de datos y algoritmos en Markdown.
+-Fichero EDA.pdf: Estructuras de datos y algoritmos.
+-Fichero Jocs de proves.pdf: Juegos de pruebas para cada fichero .txt para comprimir/descomprimir.
+-Fichero LlistaClasesMembres.txt: Lista de las clases hechas por cada miembro del grupo.
