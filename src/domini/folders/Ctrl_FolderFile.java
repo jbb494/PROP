@@ -1,10 +1,16 @@
 package domini.folders;
 
+import domini.estadistica.Estadistica;
 import domini.utils.FileNames;
 import domini.algorithm.Ctrl_Algorithm;
+import global.global;
+import persistencia.Utils.FolderOrFile;
 import persistencia.browser.Ctrl_Browser;
+import persistencia.input.Ctrl_Input;
 import persistencia.input.Ctrl_Input_Encoded;
 import persistencia.output.Ctrl_Output_Encoded;
+
+import java.io.IOException;
 
 /**
  * @class Ctrl_FolderFile
@@ -158,10 +164,19 @@ public class Ctrl_FolderFile {
     private String Encode() {
         String path_out = get_outPathPrefix() + ".jm";
         new Ctrl_Output_Encoded(path_out);
+
+        Estadistica est = new Estadistica(true);
         Encode(path_in);
-        return path_out;
+        est.work_done();
+
+        return est.show_estadistica(path_in,path_out);
     }
 
+    /**
+     * @fn private void Encode(String path)
+     * @brief Comprimeix un fitxer o carpeta
+     * @param path Path al fitxer o carpeta
+     */
     private void Encode(String path) { //path in
         Ctrl_Output_Encoded out = new Ctrl_Output_Encoded();
         Ctrl_Browser in = new Ctrl_Browser(path);
@@ -175,6 +190,11 @@ public class Ctrl_FolderFile {
         }
     }
 
+    /**
+     * @fn private void EncodeFolder(String path)
+     * @brief Comprimeix una carpeta
+     * @param path Path a la carpeta
+     */
     private void EncodeFolder(String path) {
         Ctrl_Output_Encoded out = new Ctrl_Output_Encoded();
         Ctrl_Browser in = new Ctrl_Browser(path);
@@ -189,6 +209,11 @@ public class Ctrl_FolderFile {
         }
     }
 
+    /**
+     * @fn private void EncodeFile(String path)
+     * @brief Comprimeix un fitxer
+     * @param path Path a fitxer
+     */
     private void EncodeFile(String path) {
         Ctrl_Output_Encoded out = new Ctrl_Output_Encoded();
 
@@ -210,7 +235,27 @@ public class Ctrl_FolderFile {
         out.endSubfile();
     }
 
-    
+    /**
+     * @fn public global.type getType(String Path)
+     * @param Path Path al fixer o carpeta
+     * @return Retorna una enumeration indicant el tipus de Path
+     */
+    public global.type getType(String Path){
+
+        global.type file = FolderOrFile.getType(Path);
+        if (file == global.type.comprimit) {
+            if (isEncodedFile()) {
+                if (getEncodedExtension().equals("ppm")) {
+                    return global.type.imageComprimit;
+                }else {
+                    return global.type.textComprimit;
+                }
+            }else if(isEncodedFolder()) {
+                return global.type.folderComprimit;
+            }
+        }
+        return file;
+    }
     
     
 
@@ -224,7 +269,12 @@ public class Ctrl_FolderFile {
     public String Decode() {
         new Ctrl_Input_Encoded(path_in);
         temporal_output = false;
-        return Decode(null);
+
+        Estadistica est = new Estadistica(false);
+        String path_out = Decode(null);
+        est.work_done();
+
+        return est.show_estadistica(path_in, path_out);
     }
 
     /**
@@ -341,7 +391,7 @@ public class Ctrl_FolderFile {
     }
 
     /**
-     * @fn public boolean isEncoded()
+     * @fn public boolean isEncodedFolder()
      * @return retorna true <=> el path que s'ha passat al constructor és a una carpeta comprimida.
      */
     public boolean isEncodedFolder() {
@@ -352,7 +402,7 @@ public class Ctrl_FolderFile {
     }
 
     /**
-     * @fn public boolean isEncoded()
+     * @fn public boolean isEncodedFolder()
      * @return retorna true <=> el path que s'ha passat al constructor és a un fitxer comprimit.
      */
     public boolean isEncodedFile() {
@@ -375,4 +425,7 @@ public class Ctrl_FolderFile {
         throw new IllegalArgumentException("No es un comprimit.");
     }
 
+    public String getFile(String pathTemp) throws IOException {
+        return Ctrl_Input.getFile(pathTemp);
+    }
 }

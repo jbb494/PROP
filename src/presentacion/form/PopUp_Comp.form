@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<form xmlns="http://www.intellij.com/uidesigner/form/" version="1" bind-to-class="presentacion.form.PopUp_Comp">
+  <grid id="27dc6" binding="Compresión" layout-manager="GridLayoutManager" row-count="3" column-count="5" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
+    <margin top="20" left="20" bottom="20" right="20"/>
+    <constraints>
+      <xy x="20" y="20" width="655" height="532"/>
+    </constraints>
+    <properties>
+      <background color="-14013910"/>
+      <enabled value="false"/>
+    </properties>
+    <border type="none"/>
+    <children>
+      <component id="a7b0e" class="javax.swing.JLabel" binding="ArchTexto">
+        <constraints>
+          <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+        </constraints>
+        <properties>
+          <foreground color="-1"/>
+          <text value="Archivo de texto:"/>
+        </properties>
+      </component>
+      <component id="33599" class="javax.swing.JLabel" binding="GradoJPEG">
+        <constraints>
+          <grid row="1" column="0" row-span="1" col-span="2" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+        </constraints>
+        <properties>
+          <foreground color="-1"/>
+          <text value="Grado de Compresion .ppm:"/>
+        </properties>
+      </component>
+      <component id="dbfc5" class="javax.swing.JRadioButton" binding="LZWRadioButton" default-binding="true">
+        <constraints>
+          <grid row="0" column="2" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+        </constraints>
+        <properties>
+          <background color="-14013910"/>
+          <focusPainted value="false"/>
+          <foreground color="-1"/>
+          <text value="LZW"/>
+        </properties>
+      </component>
+      <component id="7ae75" class="javax.swing.JRadioButton" binding="LZ78RadioButton" default-binding="true">
+        <constraints>
+          <grid row="0" column="3" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+        </constraints>
+        <properties>
+          <background color="-14013910"/>
+          <focusPainted value="false"/>
+          <foreground color="-1"/>
+          <text value="LZ78"/>
+        </properties>
+      </component>
+      <component id="9223f" class="javax.swing.JRadioButton" binding="LZSSRadioButton" default-binding="true">
+        <constraints>
+          <grid row="0" column="4" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+        </constraints>
+        <properties>
+          <background color="-14013910"/>
+          <focusPainted value="false"/>
+          <foreground color="-1"/>
+          <text value="LZSS"/>
+        </properties>
+      </component>
+      <component id="2be53" class="javax.swing.JRadioButton" binding="bajoRadioButton" default-binding="true">
+        <constraints>
+          <grid row="1" column="2" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+        </constraints>
+        <properties>
+          <background color="-14013910"/>
+          <focusPainted value="false"/>
+          <foreground color="-1"/>
+          <text value="Bajo"/>
+        </properties>
+      </component>
+      <component id="5b86a" class="javax.swing.JRadioButton" binding="medioRadioButton" default-binding="true">
+        <constraints>
+          <grid row="1" column="3" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+        </constraints>
+        <properties>
+          <background color="-14013910"/>
+          <focusPainted value="false"/>
+          <foreground color="-1"/>
+          <text value="Medio"/>
+        </properties>
+      </component>
+      <component id="72ca2" class="javax.swing.JRadioButton" binding="altoRadioButton" default-binding="true">
+        <constraints>
+          <grid row="1" column="4" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+        </constraints>
+        <properties>
+          <background color="-14013910"/>
+          <focusPainted value="false"/>
+          <foreground color="-1"/>
+          <text value="Alto"/>
+        </properties>
+      </component>
+      <component id="2a4a0" class="javax.swing.JButton" binding="ExitBut">
+        <constraints>
+          <grid row="2" column="4" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+        </constraints>
+        <properties>
+          <background color="-12961222"/>
+          <borderPainted value="false"/>
+          <focusPainted value="false"/>
+          <foreground color="-1"/>
+          <text value="Salir"/>
+        </properties>
+      </component>
+      <component id="74c99" class="javax.swing.JButton" binding="aceptarButton" default-binding="true">
+        <constraints>
+          <grid row="2" column="3" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+        </constraints>
+        <properties>
+          <background color="-12961222"/>
+          <borderPainted value="false"/>
+          <enabled value="true"/>
+          <focusPainted value="false"/>
+          <focusable value="true"/>
+          <foreground color="-1"/>
+          <text value="Aceptar"/>
+        </properties>
+      </component>
+    </children>
+  </grid>
+  <buttonGroups>
+    <group name="Text_Buttons">
+      <member id="dbfc5"/>
+      <member id="7ae75"/>
+      <member id="9223f"/>
+    </group>
+    <group name="JPEG_Buttons">
+      <member id="2be53"/>
+      <member id="5b86a"/>
+      <member id="72ca2"/>
+    </group>
+  </buttonGroups>
+</form>

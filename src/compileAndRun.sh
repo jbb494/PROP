@@ -7,7 +7,7 @@ if [[ $1 == "make" ]]; then
         mkdir bin
     fi
     cd src
-    javac -Xlint:unchecked $ArxiusAcompilar -d ../bin
+    javac -Xlint:unchecked $ArxiusAcompilar -d ../bin -cp ../bin/forms_rt.jar
 elif [[ $1 == "-driver" ]]; then
     echo "Executem driver"
     cd ../bin

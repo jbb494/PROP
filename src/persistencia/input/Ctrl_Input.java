@@ -1,5 +1,7 @@
 package persistencia.input;
 
+import java.io.*;
+import java.util.Scanner;
 import java.util.regex.Pattern;
 
 /**
@@ -53,7 +55,22 @@ public class Ctrl_Input {
     public static void initialize(String path) {
         Input.initialize(path);
     }
-    
+
+    public static String getFile(String pathTemp) throws IOException {
+        File file = new File(pathTemp);
+        Scanner s = new Scanner(file);  // Create a Scanner object
+
+        String ret = "";
+        int n = 0;
+        System.out.println("hi");
+        while(s.hasNext()) {
+            ret = ret.concat(s.nextLine()) + '\n';
+            n++;
+        }
+        System.out.println("bye");
+        return ret;
+    }
+
     //Function
     /**
      * @fn public String getExtension()

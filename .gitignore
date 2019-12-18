@@ -1,5 +1,4 @@
-#Ignorem .class
-
 *.class
 *.out
 .idea/
+/bin
