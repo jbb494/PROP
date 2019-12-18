@@ -63,7 +63,7 @@ public class Ctrl_Input {
         String ret = "";
         int n = 0;
         System.out.println("hi");
-        while(s.hasNext()) {
+        while(s.hasNext() && n < 20) {
             ret = ret.concat(s.nextLine()) + '\n';
             n++;
         }

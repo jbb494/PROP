@@ -456,7 +456,7 @@ public class mainForm extends JFrame {
         AreaPre.setPreferredSize(new Dimension(890, 402));
         AreaPre.setSelectedTextColor(new Color(-13290187));
         AreaPre.setSelectionColor(new Color(-5723992));
-        AreaPre.setText("Texto de previsualización de un fichero o una imagen     comprimida.");
+        AreaPre.setText("Texto de previsualización de un fichero o una imagen comprimida.");
         AreaPre.setVisible(true);
         PanelPre.setViewportView(AreaPre);
         final com.intellij.uiDesigner.core.Spacer spacer8 = new com.intellij.uiDesigner.core.Spacer();

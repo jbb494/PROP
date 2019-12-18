@@ -8,14 +8,25 @@ import java.util.Locale;
 
 public class FileChooser_Form extends JFrame {
 
+    /**
+     * @param jfc Atributo de tipo JFileChooser.
+     */
     private JFileChooser jfc;
 
+    /**
+     * @brief Constructor de la clase
+     * @brief Crea una nueva instancia para el atributo de la clase para poder seleccionar Path's con interficie gráfica.
+     */
     public FileChooser_Form() {
         jfc = new JFileChooser(FileSystemView.getFileSystemView().getHomeDirectory());
         jfc.setFileSelectionMode(JFileChooser.FILES_AND_DIRECTORIES);
 
     }
 
+    /**
+     * @fn public String getPath()
+     * @return Devuelve el Path seleccionado mediante el JFileChooser.
+     */
     public String getPath() {
         String ret = "";
 
@@ -66,3 +77,8 @@ public class FileChooser_Form extends JFrame {
         panel1.add(spacer2, gbc);
     }
 }
+/** @class FileChooser_Form
+ *  @brief Clase del form para seleccionar un Path a un fichero/carpeta.
+ *
+ *  @author
+ */
