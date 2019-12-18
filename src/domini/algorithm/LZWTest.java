@@ -3,6 +3,8 @@ package domini.algorithm;
 import static org.junit.Assert.*;
 import org.junit.Test; 
 import java.util.ArrayList;
+
+import persistencia.browser.Ctrl_Browser;
 import persistencia.input.Ctrl_Input_LZW;
 import persistencia.input.Ctrl_Input_Text;
 import persistencia.output.Ctrl_Output;
@@ -10,6 +12,7 @@ import persistencia.output.Ctrl_Output;
 /**
  *@class LZWTest
  *@brief Junit de la classe LZW
+ *@note Ha d'existir l'arxiu junit.jm a ../src/persistencia/data/
  *@author Miguel Paracuellos Ocaña
 */
 public class LZWTest {
@@ -17,9 +20,9 @@ public class LZWTest {
 	/**
 	 * @param lzw Atribut de tipu LZW per a la comprovació de la classe
 	 */
-    private LZW lzw;
+    public LZW lzw;
 
-    private String path_lzw = "../src/persistencia/data/junit.lzw";
+    private String path_lzw = "../src/persistencia/data/junit.jm";
     private String path_txt = "../src/persistencia/data/junit.txt";
 
     /**
@@ -39,16 +42,19 @@ public class LZWTest {
 	 * @param descrp Text a treure a treure per pantalla en cas de correcte funcionament
 	 */
     private void compare_Ctrl_Output(Ctrl_Output aux, String descrp) {
-        ArrayList<Byte> exp = aux.getOut().getOut();
+        assertEquals(descrp + "El contigut no és l'esperat", aux, lzw.Output);
+
+
+        /*ArrayList<Byte> exp = aux.getOut().getOut();
         ArrayList<Byte> act = lzw.print().getOut().getOut();
         assertEquals(descrp + "El contigut no és l'esperat",exp.size(),act.size());
         for (int i = 0; i < exp.size(); ++i) {
             assertEquals(descrp + "El contigut no és l'esperat",exp.get(i), act.get(i));
         }
 
-        assertEquals(descrp + "El path de sortida no coincideix",aux.getOut().getPath(),lzw.print().getOut().getPath());
+        assertEquals(descrp + "El path de sortida no coincideix", aux.getOut().getPath(),lzw.print().getOut().getPath());
         assertEquals(descrp + "La posicio del punter de la classe no coincideix",aux.getOut().getPos(), lzw.print().getOut().getPos());
-
+        */
     }
 
     @Test
@@ -60,9 +66,8 @@ public class LZWTest {
         String descp = "Comprovació del constructor de LZW... ";
         
         String path = "output.txt";
-        boolean b = true;
-        Ctrl_Output aux = new Ctrl_Output(path, "lzw", b);
-        initialize(path, b);
+        Ctrl_Output aux = new Ctrl_Output(path);
+        initialize(path, true);
         compare_Ctrl_Output(aux, descp);
     }
 
@@ -77,14 +82,14 @@ public class LZWTest {
         
         boolean b = true;   
         
-        Ctrl_Output aux = new Ctrl_Output(path_lzw, "lzw", b);
+        Ctrl_Output aux = new Ctrl_Output(path_lzw);
         Integer[] compr = {66,65,256,257,65,260};
         for (Integer x : compr) 
             aux.add(x);
         
         initialize(path_lzw, true);
         Ctrl_Input_Text in = new Ctrl_Input_Text(path_txt);
-        lzw.compression(in);
+        lzw.Compressor();
         compare_Ctrl_Output(aux,descp);    
     }
 
@@ -98,7 +103,7 @@ public class LZWTest {
                 
         boolean b = false;
 
-        Ctrl_Output aux = new Ctrl_Output(path_txt, "lzw", b);
+        Ctrl_Output aux = new Ctrl_Output(path_txt);
         byte[] decomp = {66,65,66,65,65,66,65,65,65};
         for (byte bt : decomp)
             aux.add(bt,8);
@@ -106,7 +111,7 @@ public class LZWTest {
         
         initialize(path_txt, false);
         Ctrl_Input_LZW in = new Ctrl_Input_LZW(path_lzw);
-        lzw.decompression(in);
+        lzw.Decompressor();
         compare_Ctrl_Output(aux,descp);
     }
 
@@ -121,8 +126,8 @@ public class LZWTest {
         String path = "output.txt";
         boolean b = true;
 
-        Ctrl_Output aux = new Ctrl_Output(path, "lzw", b);
-        initialize(path, b);
+        Ctrl_Output aux = new Ctrl_Output(path);
+        initialize(path, true);
         compare_Ctrl_Output(aux,descp);
     }  
 }
