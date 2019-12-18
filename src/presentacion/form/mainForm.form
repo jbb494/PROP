@@ -199,17 +199,20 @@
             </constraints>
             <properties>
               <background color="-14013910"/>
+              <horizontalScrollBarPolicy value="31"/>
+              <verticalScrollBarPolicy value="20"/>
               <visible value="true"/>
             </properties>
             <border type="none"/>
             <children>
-              <component id="39f5e" class="javax.swing.JEditorPane" binding="AreaPre">
+              <component id="70a51" class="javax.swing.JEditorPane" binding="AreaPre">
                 <constraints/>
                 <properties>
                   <background color="-12632257"/>
                   <editable value="false"/>
                   <foreground color="-1"/>
-                  <preferredSize width="872" height="402"/>
+                  <margin top="3" left="3" bottom="3" right="20"/>
+                  <preferredSize width="890" height="402"/>
                   <selectedTextColor color="-13290187"/>
                   <selectionColor color="-5723992"/>
                   <text value="Texto de previsualización de un fichero o una imagen     comprimida."/>

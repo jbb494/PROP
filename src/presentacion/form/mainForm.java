@@ -6,8 +6,9 @@ import presentacion.Ctrl_Presentacio.Ctrl_Presentacio;
 import javax.swing.*;
 import javax.swing.border.TitledBorder;
 import java.awt.*;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
+import java.awt.event.*;
+import java.beans.PropertyChangeEvent;
+import java.beans.PropertyChangeListener;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 
@@ -131,39 +132,36 @@ public class mainForm extends JFrame {
                             ButMenu.setEnabled(true);
                         }
 
-                        if (previewCheckBox.isSelected()) {
-
-                            System.out.println(CP.getType().toString());
-                            switch (CP.getType()) {
-                                case imageComprimit:
-                                    System.out.println(PanelPre.getParent());
-                                    if (PanelPre.getParent() != null) {
-                                        PaneBarText.remove(PanelPre);
-                                        PaneBarText.validate();
-                                        PaneBarText.repaint();
-                                    }
-                                    break;
-                                case textComprimit:
-                                    if (PanelPre.getParent() == null) {
-                                        PaneBarText.add(PanelPre, new com.intellij.uiDesigner.core.GridConstraints(0, 0, 1, 1, com.intellij.uiDesigner.core.GridConstraints.ANCHOR_CENTER, com.intellij.uiDesigner.core.GridConstraints.FILL_BOTH, com.intellij.uiDesigner.core.GridConstraints.SIZEPOLICY_CAN_SHRINK | com.intellij.uiDesigner.core.GridConstraints.SIZEPOLICY_WANT_GROW, com.intellij.uiDesigner.core.GridConstraints.SIZEPOLICY_CAN_SHRINK | com.intellij.uiDesigner.core.GridConstraints.SIZEPOLICY_WANT_GROW, null, null, null, 0, false));
-                                        PaneBarText.validate();
-                                        PaneBarText.repaint();
-
-                                        String pathTemp = CP.DecodeTemp();
-                                        String file = null;
-                                        System.out.println("decoded");
-                                        try {
-                                            System.out.println("FINISHED");
-                                            file = CP.getFile(pathTemp);
-                                            AreaPre.setText(file);
-                                        } catch (FileNotFoundException e) {
-                                            e.printStackTrace();
-                                        } catch (IOException e) {
-                                            e.printStackTrace();
-                                        }
-                                    }
-                                    break;
-                            }
+                        System.out.println(CP.getType().toString());
+                        switch (CP.getType()) {
+                            case imageComprimit:
+                                System.out.println(PanelPre.getParent());
+                                if (PanelPre.getParent() != null) {
+                                    PaneBarText.remove(PanelPre);
+                                    PaneBarText.validate();
+                                    PaneBarText.repaint();
+                                }
+                                break;
+                            case textComprimit:
+                                if (PanelPre.getParent() == null) {
+                                    PaneBarText.add(PanelPre, new com.intellij.uiDesigner.core.GridConstraints(0, 0, 1, 1, com.intellij.uiDesigner.core.GridConstraints.ANCHOR_CENTER, com.intellij.uiDesigner.core.GridConstraints.FILL_BOTH, com.intellij.uiDesigner.core.GridConstraints.SIZEPOLICY_CAN_SHRINK | com.intellij.uiDesigner.core.GridConstraints.SIZEPOLICY_WANT_GROW, com.intellij.uiDesigner.core.GridConstraints.SIZEPOLICY_CAN_SHRINK | com.intellij.uiDesigner.core.GridConstraints.SIZEPOLICY_WANT_GROW, null, null, null, 0, false));
+                                    PaneBarText.validate();
+                                    PaneBarText.repaint();
+                                }
+                                String pathTemp = CP.DecodeTemp();
+                                String file = null;
+                                System.out.println("decoded");
+                                try {
+                                    System.out.println("FINISHED");
+                                    file = CP.getFile(pathTemp);
+                                    AreaPre.setText(file);
+                                    AreaPre.setCaretPosition(0);
+                                } catch (FileNotFoundException e) {
+                                    e.printStackTrace();
+                                } catch (IOException e) {
+                                    e.printStackTrace();
+                                }
+                                break;
                         }
                     }
                 }
@@ -285,6 +283,12 @@ public class mainForm extends JFrame {
             }
         });
     }
+/*
+*                 Integer last = AreaPre.getDocument().getLength();
+                System.out.println("Last: " + last + ", PositionActual: " + AreaPre.getCaretPosition());
+                if (AreaPre.getCaretPosition() >= last - 30) {
+                    System.out.println("HI");
+                }*/
 
     /**
      * @param s Texto a mostrar.
@@ -440,13 +444,16 @@ public class mainForm extends JFrame {
         panel1.add(PaneBarText, new com.intellij.uiDesigner.core.GridConstraints(0, 0, 1, 1, com.intellij.uiDesigner.core.GridConstraints.ANCHOR_CENTER, com.intellij.uiDesigner.core.GridConstraints.FILL_BOTH, com.intellij.uiDesigner.core.GridConstraints.SIZEPOLICY_CAN_SHRINK | com.intellij.uiDesigner.core.GridConstraints.SIZEPOLICY_CAN_GROW, com.intellij.uiDesigner.core.GridConstraints.SIZEPOLICY_CAN_SHRINK | com.intellij.uiDesigner.core.GridConstraints.SIZEPOLICY_CAN_GROW, null, null, null, 0, false));
         PanelPre = new JScrollPane();
         PanelPre.setBackground(new Color(-14013910));
+        PanelPre.setHorizontalScrollBarPolicy(31);
+        PanelPre.setVerticalScrollBarPolicy(20);
         PanelPre.setVisible(true);
         PaneBarText.add(PanelPre, new com.intellij.uiDesigner.core.GridConstraints(0, 0, 1, 1, com.intellij.uiDesigner.core.GridConstraints.ANCHOR_CENTER, com.intellij.uiDesigner.core.GridConstraints.FILL_BOTH, com.intellij.uiDesigner.core.GridConstraints.SIZEPOLICY_CAN_SHRINK | com.intellij.uiDesigner.core.GridConstraints.SIZEPOLICY_WANT_GROW, com.intellij.uiDesigner.core.GridConstraints.SIZEPOLICY_CAN_SHRINK | com.intellij.uiDesigner.core.GridConstraints.SIZEPOLICY_WANT_GROW, null, null, null, 0, false));
         AreaPre = new JEditorPane();
         AreaPre.setBackground(new Color(-12632257));
         AreaPre.setEditable(false);
         AreaPre.setForeground(new Color(-1));
-        AreaPre.setPreferredSize(new Dimension(872, 402));
+        AreaPre.setMargin(new Insets(3, 3, 3, 20));
+        AreaPre.setPreferredSize(new Dimension(890, 402));
         AreaPre.setSelectedTextColor(new Color(-13290187));
         AreaPre.setSelectionColor(new Color(-5723992));
         AreaPre.setText("Texto de previsualización de un fichero o una imagen     comprimida.");

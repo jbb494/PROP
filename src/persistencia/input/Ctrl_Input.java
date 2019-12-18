@@ -62,10 +62,12 @@ public class Ctrl_Input {
 
         String ret = "";
         int n = 0;
-        while(s.hasNext() && n < 200){
-            ret = ret.concat(s.next());
+        System.out.println("hi");
+        while(s.hasNext()) {
+            ret = ret.concat(s.nextLine()) + '\n';
             n++;
         }
+        System.out.println("bye");
         return ret;
     }
 
