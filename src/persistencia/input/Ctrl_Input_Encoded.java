@@ -51,6 +51,10 @@ public class Ctrl_Input_Encoded extends Ctrl_Input {
         Input.getInstance().startFragment(Long.MAX_VALUE);
     }
 
+    /**
+     * @fn public String getWord()
+     * @return Retorna l'String cridant al mètode getByte()
+     */
     public String getWord() {
         
         int mida = (int)getByte();
@@ -64,10 +68,18 @@ public class Ctrl_Input_Encoded extends Ctrl_Input {
         return new String(arr);
     }
 
+    /**
+     * @fn public Byte getByte()
+     * @return Retorna un byte del Input.
+     */
     public Byte getByte() {
         return Input.getInstance().getBits(8);
     }
 
+    /**
+     * @fn public int getInt()
+     * @return Retorna un int del Input.
+     */
     public int getInt() { //big endian
         ArrayList<Byte> al = Input.getInstance().getMoreBits(32);
         return byteToConversion.byteToInteger(al);

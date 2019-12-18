@@ -56,6 +56,10 @@ public class Ctrl_Input {
         Input.initialize(path);
     }
 
+    /**
+     * @fn public static String getFile(String pathTemp)
+     * @return Retorna un String amb el valor del fitxer descomprimit.
+     */
     public static String getFile(String pathTemp) throws IOException {
         File file = new File(pathTemp);
         Scanner s = new Scanner(file);  // Create a Scanner object
