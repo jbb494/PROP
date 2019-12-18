@@ -1,7 +1,7 @@
 package domini.algorithm;
 
 import static org.junit.Assert.*;
-import org.junit.Test; 
+import org.junit.Test;
 import java.util.ArrayList;
 
 import persistencia.browser.Ctrl_Browser;
@@ -42,7 +42,7 @@ public class LZWTest {
 	 * @param descrp Text a treure a treure per pantalla en cas de correcte funcionament
 	 */
     private void compare_Ctrl_Output(Ctrl_Output aux, String descrp) {
-        assertEquals(descrp + "El contigut no és l'esperat", aux, lzw.Output);
+        assertEquals(descrp + "El contigut no és l'esperat", aux, lzw.Output.Output.getInstance());
 
 
         /*ArrayList<Byte> exp = aux.getOut().getOut();
@@ -67,7 +67,7 @@ public class LZWTest {
         
         String path = "output.txt";
         Ctrl_Output aux = new Ctrl_Output(path);
-        initialize(path, true);
+        initialize(path, false);
         compare_Ctrl_Output(aux, descp);
     }
 
@@ -87,7 +87,7 @@ public class LZWTest {
         for (Integer x : compr) 
             aux.add(x);
         
-        initialize(path_lzw, true);
+        initialize(path_lzw, false);
         Ctrl_Input_Text in = new Ctrl_Input_Text(path_txt);
         lzw.Compressor();
         compare_Ctrl_Output(aux,descp);    
@@ -109,7 +109,7 @@ public class LZWTest {
             aux.add(bt,8);
         
         
-        initialize(path_txt, false);
+        initialize(path_txt, true);
         Ctrl_Input_LZW in = new Ctrl_Input_LZW(path_lzw);
         lzw.Decompressor();
         compare_Ctrl_Output(aux,descp);
@@ -127,7 +127,7 @@ public class LZWTest {
         boolean b = true;
 
         Ctrl_Output aux = new Ctrl_Output(path);
-        initialize(path, true);
+        initialize(path, b);
         compare_Ctrl_Output(aux,descp);
-    }  
+    }
 }
