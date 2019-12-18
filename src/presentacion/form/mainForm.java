@@ -10,7 +10,6 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.io.FileNotFoundException;
 import java.io.IOException;
-import java.util.function.Function;
 
 
 public class mainForm extends JFrame {
@@ -407,7 +406,7 @@ public class mainForm extends JFrame {
         ButMenu.setBorderPainted(false);
         ButMenu.setEnabled(false);
         ButMenu.setFocusPainted(false);
-        ButMenu.setIcon(new ImageIcon(getClass().getResource("/presentacion/imatgesInterficie/1 (1).png")));
+        ButMenu.setIcon(new ImageIcon(getClass().getResource("/presentacion/imatgesInterficie/points-icon.png")));
         ButMenu.setText("");
         PanelCompr.add(ButMenu, new com.intellij.uiDesigner.core.GridConstraints(0, 1, 1, 1, com.intellij.uiDesigner.core.GridConstraints.ANCHOR_CENTER, com.intellij.uiDesigner.core.GridConstraints.FILL_HORIZONTAL, com.intellij.uiDesigner.core.GridConstraints.SIZEPOLICY_CAN_SHRINK | com.intellij.uiDesigner.core.GridConstraints.SIZEPOLICY_CAN_GROW, com.intellij.uiDesigner.core.GridConstraints.SIZEPOLICY_FIXED, new Dimension(-1, 10), null, new Dimension(40, -1), 0, false));
         final com.intellij.uiDesigner.core.Spacer spacer4 = new com.intellij.uiDesigner.core.Spacer();
@@ -428,8 +427,8 @@ public class mainForm extends JFrame {
         ChoosePathButton.setBackground(new Color(-11447983));
         ChoosePathButton.setBorderPainted(false);
         ChoosePathButton.setFocusPainted(false);
-        ChoosePathButton.setIcon(new ImageIcon(getClass().getResource("/presentacion/imatgesInterficie/dsnjkfghjkdfg (1).png")));
-        ChoosePathButton.setText("z");
+        ChoosePathButton.setIcon(new ImageIcon(getClass().getResource("/presentacion/imatgesInterficie/folder-icon.png")));
+        ChoosePathButton.setText("");
         PanelPath.add(ChoosePathButton, new com.intellij.uiDesigner.core.GridConstraints(0, 3, 1, 1, com.intellij.uiDesigner.core.GridConstraints.ANCHOR_CENTER, com.intellij.uiDesigner.core.GridConstraints.FILL_HORIZONTAL, com.intellij.uiDesigner.core.GridConstraints.SIZEPOLICY_CAN_SHRINK | com.intellij.uiDesigner.core.GridConstraints.SIZEPOLICY_CAN_GROW, com.intellij.uiDesigner.core.GridConstraints.SIZEPOLICY_FIXED, null, new Dimension(-1, 25), new Dimension(40, 30), 0, false));
         final com.intellij.uiDesigner.core.Spacer spacer6 = new com.intellij.uiDesigner.core.Spacer();
         PanelPath.add(spacer6, new com.intellij.uiDesigner.core.GridConstraints(0, 0, 1, 1, com.intellij.uiDesigner.core.GridConstraints.ANCHOR_CENTER, com.intellij.uiDesigner.core.GridConstraints.FILL_HORIZONTAL, com.intellij.uiDesigner.core.GridConstraints.SIZEPOLICY_WANT_GROW, 1, null, null, null, 0, false));

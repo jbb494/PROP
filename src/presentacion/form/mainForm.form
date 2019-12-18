@@ -110,7 +110,7 @@
                   <borderPainted value="false"/>
                   <enabled value="false"/>
                   <focusPainted value="false"/>
-                  <icon value="presentacion/imatgesInterficie/1 (1).png"/>
+                  <icon value="presentacion/imatgesInterficie/points-icon.png"/>
                   <text value=""/>
                 </properties>
               </component>
@@ -164,8 +164,8 @@
               <background color="-11447983"/>
               <borderPainted value="false"/>
               <focusPainted value="false"/>
-              <icon value="presentacion/imatgesInterficie/dsnjkfghjkdfg (1).png"/>
-              <text value="z"/>
+              <icon value="presentacion/imatgesInterficie/folder-icon.png"/>
+              <text value=""/>
             </properties>
           </component>
           <hspacer id="e338b">
