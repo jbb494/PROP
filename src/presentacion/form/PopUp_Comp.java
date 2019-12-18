@@ -179,13 +179,13 @@ public class PopUp_Comp extends JDialog {
      * @brief Método para saber el grado de compresión seleccionado de los radioButton's.
      */
     float getGc_jpeg() {
-        float ret = 0.5f;
+        float ret = 0;
         if (bajoRadioButton.isSelected()) {
-            ret = 0.f;
+            ret = 40;
         } else if (medioRadioButton.isSelected()) {
-            ret = 0.5f;
+            ret = 70;
         } else if (altoRadioButton.isSelected()) {
-            ret = 1.f;
+            ret = 100;
         }
         return ret;
     }
