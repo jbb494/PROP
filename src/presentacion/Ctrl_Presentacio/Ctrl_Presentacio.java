@@ -91,12 +91,4 @@ public class Ctrl_Presentacio {
         return type;
     }
 
-    /**
-     * @fn public String getFile(String pathTemp)
-     * @param pathTemp Path al fichero temporal.
-     * @return Devuelve el String para la previsualización.
-     */
-    public String getFile(String pathTemp) throws IOException {
-        return CF.getFile(pathTemp);
-    }
 }
