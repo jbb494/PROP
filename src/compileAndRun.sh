@@ -7,7 +7,7 @@ if [[ $1 == "make" ]]; then
         mkdir bin
     fi
     cd src
-    javac -Xlint:unchecked $ArxiusAcompilar -d ../bin -cp ../bin/forms_rt.jar
+    javac -Xlint:unchecked $ArxiusAcompilar -d ../bin -cp ../bin/forms_rt.jar:../bin/intellij.jar
 elif [[ $1 == "-driver" ]]; then
     echo "Executem driver"
     cd ../bin
@@ -19,16 +19,16 @@ elif [[ $1 == "-ctest" ]]; then
     echo "Compilem tests"
     TestsAcompilar=$(find | grep .java | sed "/.*Test\./! d" | tr "\n" " ")
     echo $TestsAcompilar | sed "s/ /\n/g"
-    javac -cp .:../bin/junit-4.12.jar:../bin/hamcrest-core-1.3.jar $TestsAcompilar -d ../bin
+    javac -cp .:../bin/junit-4.13-rc-2.jar:../bin/hamcrest-core-1.3.jar $TestsAcompilar -d ../bin
 elif [[ $1 == "-etest" ]]; then
     echo "Executem tests"
     cd ../bin
-    java -cp .:junit-4.12.jar:hamcrest-core-1.3.jar org.junit.runner.JUnitCore $2
+    java -cp .:junit-4.13-rc-2.jar:hamcrest-core-1.3.jar org.junit.runner.JUnitCore $2
     cd ../src
 elif [[ $1 == "-clean" || $1 == "-remove" ]]; then
     echo "Borrem els seguents arxius: "
     cd ../bin
-    ArxiusABorrar=$(find | grep "\.class" | tr "\n" " ")
+    ArxiusABorrar=$(find | grep "\.class" | sed "/\.\/presentacion/ d;" | tr "\n" " ")
     echo $ArxiusABorrar | sed "s/ /\n/g;"
     rm $ArxiusABorrar
     cd ../src
@@ -36,7 +36,7 @@ elif [[ $1 == "run" ]]; then
     echo ""
     echo ""
     cd ../bin
-    java Main
+    java -cp .:intellij.jar Main
     cd ../src
 else
     echo -e "Usage:  make compila el projecte."

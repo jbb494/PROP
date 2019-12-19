@@ -56,6 +56,10 @@ public class Ctrl_Input {
         Input.initialize(path);
     }
 
+    /**
+     * @fn public static String getFile(String pathTemp)
+     * @return Retorna un String amb el valor del fitxer descomprimit.
+     */
     public static String getFile(String pathTemp) throws IOException {
         File file = new File(pathTemp);
         Scanner s = new Scanner(file);  // Create a Scanner object
@@ -63,7 +67,7 @@ public class Ctrl_Input {
         String ret = "";
         int n = 0;
         System.out.println("hi");
-        while(s.hasNext()) {
+        while(s.hasNext() && n < 20) {
             ret = ret.concat(s.nextLine()) + '\n';
             n++;
         }

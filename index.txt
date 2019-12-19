@@ -1,0 +1,8 @@
+-Carpeta bin: Contiene todos los .class del proyecto.
+-Carpeta docs: Contiene los diagramas UML, casos de uso, estructuras de datos...
+-Carpeta Doxygen: Contiene todos los ficheros necesarios para poder ejecutar Doxygen.
+-Carpeta scripts: Scripts auxiliares para poder inicializar valores internos.
+-Carpeta src: Contiene todo el codigo fuente del proyecto.
+-Fichero DescripcioGrup.txt: Contiene la descripcion del grupo.
+-Fichero doxygenConfig: Contiene la configuracion del doxygen.
+-Fichero README.md: Pagina principal del proyecto a visualizar en github.

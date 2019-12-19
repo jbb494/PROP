@@ -11,20 +11,77 @@ import java.util.ArrayList;
 import global.global;
 
 public class PopUp_Comp extends JDialog {
+
+    /**
+     * @param LZWRadioButton RadioButton del algoritmo LZW.
+     */
     private JRadioButton LZWRadioButton;
+
+    /**
+     * @param LZ78RadioButton RadioButton del algoritmo LZ78.
+     */
     private JRadioButton LZ78RadioButton;
+
+    /**
+     * @param LZSSRadioButton RadioButton del algoritmo LZSS.
+     */
     private JRadioButton LZSSRadioButton;
+
+    /**
+     * @param bajoRadioButton RadioButton del grado de compresión del algoritmo JPEG bajo.
+     */
     private JRadioButton bajoRadioButton;
+
+    /**
+     * @param medioRadioButton RadioButton del grado de compresión del algoritmo JPEG medio.
+     */
     private JRadioButton medioRadioButton;
+
+    /**
+     * @param altoRadioButton RadioButton del grado de compresión del algoritmo JPEG alto.
+     */
     private JRadioButton altoRadioButton;
+
+    /**
+     * @param aceptarButton Button para aceptar las decisiones tomadas.
+     */
     private JButton aceptarButton;
+
+    /**
+     * @param Compresión Panel principal del form.
+     */
     public JPanel Compresión;
+
+    /**
+     * @param ArchTexto Label con información sobre algoritmos.
+     */
     private JLabel ArchTexto;
+
+    /**
+     * @param GradoJPEG Label con información sobre el grado de compresión del algoritmo JPEG.
+     */
     private JLabel GradoJPEG;
+
+    /**
+     * @param ExitBut Button para salir del form.
+     */
     private JButton ExitBut;
+
+    /**
+     * @param Accepted Boolean que indica si se ha apretado el botón aceptarButton.
+     */
     private boolean Accepted;
+
+    /**
+     * @param type Enumeration que indica el tipo de archino sobre el que se ejecuta el form.
+     */
     private global.type type;
 
+
+    /**
+     * @param type Tipo de fichero sobre el que se ejecuta la compresión manual
+     * @brief Constructor de la clase
+     */
     public PopUp_Comp(global.type type) {
         super();
         Accepted = false;
@@ -91,6 +148,11 @@ public class PopUp_Comp extends JDialog {
         });
     }
 
+    /**
+     * @return Devuelve un tipo de la enumeration dependiendo del radioButton seleccionado.
+     * @fn global.method getMethod()
+     * @brief Método para saber el tipo de algoritmo seleccionado de los radioButton's.
+     */
     global.method getMethod() {
         global.method ret = global.method.lzw;
         if (LZWRadioButton.isSelected()) {
@@ -103,18 +165,27 @@ public class PopUp_Comp extends JDialog {
         return ret;
     }
 
+    /**
+     * @return Devuelve el atributo Accepted.
+     * @fn public boolean getAccepted()
+     */
     public boolean getAccepted() {
         return Accepted;
     }
 
+    /**
+     * @return Devuelve un tipo de la enumeration dependiendo del radioButton seleccionado.
+     * @fn float getGc_jpeg()
+     * @brief Método para saber el grado de compresión seleccionado de los radioButton's.
+     */
     float getGc_jpeg() {
-        float ret = 0.5f;
+        float ret = 0;
         if (bajoRadioButton.isSelected()) {
-            ret = 0.f;
+            ret = 40;
         } else if (medioRadioButton.isSelected()) {
-            ret = 0.5f;
+            ret = 70;
         } else if (altoRadioButton.isSelected()) {
-            ret = 1.f;
+            ret = 100;
         }
         return ret;
     }
@@ -210,3 +281,9 @@ public class PopUp_Comp extends JDialog {
     }
 
 }
+
+/** @class PopUp_Comp
+ *  @brief Clase del form para seleccionar la compresión manual.
+ *
+ *  @author
+ */

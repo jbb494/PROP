@@ -84,6 +84,10 @@ public class Output {
         }
     }
 
+    /**
+     * @fn private void write()
+     * @brief Escribe en el buffer el siguiente byte.
+     */
     private void write() {
         file_length++;
 

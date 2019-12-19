@@ -290,6 +290,9 @@ public class Ctrl_FolderFile {
     }
 
 
+    /**
+     * @param temporal_output Boolean que indica si hay un output temporal.
+     */
     private boolean temporal_output;
 
     
