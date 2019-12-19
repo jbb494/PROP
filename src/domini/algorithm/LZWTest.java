@@ -97,8 +97,7 @@ public class LZWTest {
         
         initialize(path_txt, true);
 
-        Ctrl_Input.initialize(path_lzw);
-        Ctrl_Input.getMetadata();
+        new Ctrl_Input_LZW(path_lzw);
         lzw.Decompressor();
         lzw.print();
 
