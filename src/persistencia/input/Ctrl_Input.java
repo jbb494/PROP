@@ -105,7 +105,7 @@ public class Ctrl_Input {
      * @fn public void getMetadata()
      * @brief Llegeix el dos primers bits de l'arxiu comprimit per saber amb quin algoritme ha sigut tractat
      */
-    public int getMetadata() {
+    public static int getMetadata() {
         return (int)Input.getInstance().getBits(2);
     }
 }

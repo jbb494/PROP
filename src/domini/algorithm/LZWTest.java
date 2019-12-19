@@ -21,10 +21,10 @@ public class LZWTest {
 	 */
     private LZW lzw;
 
-    private String path_lzw = "../src/persistencia/data/junit.jm";
-    private String path_lzw_check = "../src/persistencia/data/junit_check.jm";
-    private String path_txt_check = "../src/persistencia/data/junit_check.txt";
-    private String path_txt = "../src/persistencia/data/junit.txt";
+    private String path_lzw = "../src/persistencia/data/junit/junit.jm";
+    private String path_lzw_check = "../src/persistencia/data/junit/junit_check.jm";
+    private String path_txt_check = "../src/persistencia/data/junit/junit_check.txt";
+    private String path_txt = "../src/persistencia/data/junit/junit.txt";
 
     /**
      * @fn private void initialize(String path, boolean b)
@@ -73,12 +73,12 @@ public class LZWTest {
     
 
 
-    //@Test
+    @Test
     /**
      * @fn public void testCompression()
      * @brief Comprovació del correcte funcionament de la compressio per LZW
      */
-	/*public void testCompression() {
+	public void testCompression() {
         String descp = "Comprovació de la compressio amb LZW... ";
 
         Ctrl_Output aux = new Ctrl_Output(path_lzw_check);
@@ -113,7 +113,7 @@ public class LZWTest {
         for (int i = 0; i < arr1.size(); ++i) {
             assertEquals("El contigut no és l'esperat",arr1.get(i), arr2.get(i));
         }
-    }*/
+    }
 
     @Test
     /**
@@ -130,7 +130,9 @@ public class LZWTest {
         aux.print();
         
         initialize(path_txt, true);
+
         Ctrl_Input.initialize(path_lzw);
+        Ctrl_Input.getMetadata();
         lzw.Decompressor();
         lzw.print();
 
