@@ -16,7 +16,7 @@ import domini.utils.*;
 public class Ctrl_Input_LZ78 extends Ctrl_Input {
 
     /**
-     * @brief Constructor de la classe. Crida al constructor pare Ctrl_Input. a més interepreta la metadata.
+     * @brief Constructor de la classe. Crida al constructor pare Ctrl_Input. A més interepreta la metadata.
      * @param path Path de l'arxiu comprimit que comença a llegir.
      */
     public Ctrl_Input_LZ78(String path)
@@ -26,7 +26,7 @@ public class Ctrl_Input_LZ78 extends Ctrl_Input {
     }
 
     /**
-     * @brief Constructor de la classe. Crida al constructor pare Ctrl_Input. a més interepreta la metadata.
+     * @brief Constructor de la classe. Crida al constructor pare Ctrl_Input. Assumeix que la metadata ja ha estat llegida.
      * @note Continua llegint el fitxer que s'estava llegint. Assumeix que la metadata ja ha estat llegida.
      */
     public Ctrl_Input_LZ78()

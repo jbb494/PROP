@@ -61,7 +61,8 @@ public class Ctrl_Input_JPEG extends Ctrl_Input {
     }
     /**
      * @fn public int getMaxVal()
-     * @brief Retorna el valor màxim que poden prendre els enters que representan quantitat de color. 
+     * @brief Retorna el valor màxim que poden prendre els enters 
+     * que representan quantitat de color en la imatge ppm orignial. 
      * @return Valor màxim que poden prendre els enters que representan quantitat de color.
      */
     public int getMaxVal() {

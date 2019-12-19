@@ -1,7 +1,7 @@
 package persistencia.output;
 
 import persistencia.output.Output;
-import persistencia.output.RandomAccessOutput;;
+import persistencia.output.RandomAccessOutput;
 
 /**
  * @class Ctrl_Output_Encoded

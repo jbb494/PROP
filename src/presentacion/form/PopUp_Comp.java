@@ -181,11 +181,11 @@ public class PopUp_Comp extends JDialog {
     float getGc_jpeg() {
         float ret = 0;
         if (bajoRadioButton.isSelected()) {
-            ret = 40;
+            ret = 100;
         } else if (medioRadioButton.isSelected()) {
             ret = 70;
         } else if (altoRadioButton.isSelected()) {
-            ret = 100;
+            ret = 40;
         }
         return ret;
     }
