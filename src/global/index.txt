@@ -1,0 +1,1 @@
+-Clase global: Contiene diferentes tipos de enumerations para saber caracteristicas sobre un path en concreto.
