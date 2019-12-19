@@ -22,7 +22,7 @@ En el caso de que tengamos la casilla de previsualización marcada, veremos la p
 
 Al pinchar sobre el icono de la carpeta se abrirá un panel donde podremos escoger cualquier archivo visible de nuestro directorio, cuya dirección será mostrada en la barra de "path".
 
-![image-20191219170131047](/home/miguel/.config/Typora/typora-user-images/image-20191219170131047.png)
+<img src="/home/miguel/.config/Typora/typora-user-images/image-20191219170131047.png" alt="image-20191219170131047" style="zoom: 50%;" />
 
 ### 4. Barra de path
 
@@ -36,7 +36,7 @@ Una vez tengamos un fichero seleccionado, si no se trata de un archivo ya compri
 
 De la misma manera que en la **compresión Automática**, una vez tengamos seleccionado un fichero (a excepción de los ya comprimidos) podremos hacer click en esta opción. Una vez hecho se nos abrirá una ventana donde podremos escoger como queremos que sea tratado nuestro archivo durante el proceso.
 
-![image-20191219170647072](/home/miguel/.config/Typora/typora-user-images/image-20191219170647072.png)
+<img src="/home/miguel/.config/Typora/typora-user-images/image-20191219170647072.png" alt="image-20191219170647072" style="zoom:67%;" />
 
 Por defecto viene seleccionado un *grado de compresión bajo* para los archivos ***.ppm*** (los cuales serán procesados con *JPEG*) y el algoritmo *LZW* para el resto de archivos. En caso de que queramos modificar la decisión simplemente tendremos que escoger lo que deseemos y darle a **Aceptar**. 
 
@@ -50,7 +50,7 @@ A diferencia de la compresión, únicamente se nos proporcionará una opción au
 
 Una vez hayamos acabado de realizar todo lo que necesitásemos, no tenemos más que hacer click sobre este botón para que el programa finalice y se cierre.
 
-
+<bloquote>
 
 ## Funcionamiento
 
@@ -75,8 +75,6 @@ Una vez acabado el proceso podemos volver a empezar de 0 seleccionando un nuevo 
 
 * Una vez tengamos seleccionado un archivo y lo comprimamos o descomprimamos, el resultado generado será guardado en el mismo directorio donde se encuentre el original.
 * Si nos disponemos a descomprimir un fichero con su original (o uno con el mismo nombre) en ese mismo directorio, es importante tener en cuenta que el nuevo fichero **sobreescribirá** al anterior.
-
-
 
 
 
