@@ -7,7 +7,7 @@ import domini.utils.*;
 /**
  * @class Ctrl_Input_LZ78
  * @brief Acces a un arxiu comprimit amb LZ78
- * 
+ * @file
  * Aquesta classe és un fill de Ctrl_Input. Té una funció get que retorna l'entrada en 
  * el format que el algoritme LZ78 necessita. (parells de integer i byte).
  * 

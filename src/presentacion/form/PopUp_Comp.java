@@ -284,6 +284,8 @@ public class PopUp_Comp extends JDialog {
 
 /** @class PopUp_Comp
  *  @brief Clase del form para seleccionar la compresión manual.
+ * @file
+
  *
  *  @author
  */

@@ -5,6 +5,8 @@ import domini.utils.byteToConversion;
 /**
  * @class Ctrl_Input_Img
  * @brief Controlador de Input que permet llegir una imatge ppm
+ * @file
+
  * @author Joan Lapeyra Amat
  */
 public class Ctrl_Input_Img extends Ctrl_Input {

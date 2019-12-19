@@ -22,11 +22,6 @@ static void \hyperlink{classdomini_1_1algorithm_1_1Driver____JPEG_ae75883665dbbf
 \subsection{Detailed Description}
 Driver de \hyperlink{classdomini_1_1algorithm_1_1JPEG}{J\+P\+EG}. 
 
-\begin{DoxyAuthor}{Author}
-Joan Lapeyra Amat 
-\end{DoxyAuthor}
-
-
 \subsection{Member Function Documentation}
 \mbox{\Hypertarget{classdomini_1_1algorithm_1_1Driver____JPEG_ae75883665dbbf55adaa8db46f2211c75}\label{classdomini_1_1algorithm_1_1Driver____JPEG_ae75883665dbbf55adaa8db46f2211c75}} 
 \index{domini\+::algorithm\+::\+Driver\+\_\+\+\_\+\+J\+P\+EG@{domini\+::algorithm\+::\+Driver\+\_\+\+\_\+\+J\+P\+EG}!comprovar\+Excepcions@{comprovar\+Excepcions}}
@@ -47,12 +42,12 @@ Comprovarà les possibles excepcions que puguin apareixer a la classe.
 \end{DoxyParams}
 
 \begin{DoxyCode}
-44                                                                     \{
-45         \textcolor{keywordtype}{int} op = Integer.parseInt(linea);
-46         \textcolor{keywordflow}{if}(jpeg == null && op > 1) \{
-47             \textcolor{keywordflow}{throw} \textcolor{keyword}{new} IllegalArgumentException(\textcolor{stringliteral}{"Debes llamar al constructor antes"});
-48         \}
-49     \}
+45                                                                     \{
+46         \textcolor{keywordtype}{int} op = Integer.parseInt(linea);
+47         \textcolor{keywordflow}{if}(jpeg == null && op > 1) \{
+48             \textcolor{keywordflow}{throw} \textcolor{keyword}{new} IllegalArgumentException(\textcolor{stringliteral}{"Debes llamar al constructor antes"});
+49         \}
+50     \}
 \end{DoxyCode}
 \mbox{\Hypertarget{classdomini_1_1algorithm_1_1Driver____JPEG_a0e1370b743ad9782e31cb6b380dd60a5}\label{classdomini_1_1algorithm_1_1Driver____JPEG_a0e1370b743ad9782e31cb6b380dd60a5}} 
 \index{domini\+::algorithm\+::\+Driver\+\_\+\+\_\+\+J\+P\+EG@{domini\+::algorithm\+::\+Driver\+\_\+\+\_\+\+J\+P\+EG}!main@{main}}
@@ -62,52 +57,52 @@ Comprovarà les possibles excepcions que puguin apareixer a la classe.
 
 
 \begin{DoxyCode}
-51                                            \{
-52     \textcolor{keywordflow}{try} \{
-53         JPEG jpeg = null;
-54         \hyperlink{classdomini_1_1algorithm_1_1Driver____JPEG_a62ce35e061afe893bd03af9bfff41c33}{showOptions}();
-55         BufferedReader reader = \textcolor{keyword}{new} BufferedReader(\textcolor{keyword}{new} InputStreamReader(System.in));
-56         String linea = \textcolor{stringliteral}{""};
-57         \textcolor{keywordflow}{while}(linea != null)\{
-58             System.out.println(\textcolor{stringliteral}{"Selecciona una opción:"});
-59             linea = reader.readLine().trim();
-60             System.out.println(\textcolor{stringliteral}{"Opción: "} + linea + \textcolor{stringliteral}{" seleccionada"});
-61             \hyperlink{classdomini_1_1algorithm_1_1Driver____JPEG_ae75883665dbbf55adaa8db46f2211c75}{comprovarExcepcions}(jpeg, linea);
-62             \textcolor{keywordflow}{switch}(linea)\{
-63                 \textcolor{keywordflow}{case} \textcolor{stringliteral}{"1"}:
-64                     System.out.println(\textcolor{stringliteral}{"Introduce el path del output"});
-65                     String aux11 = reader.readLine().trim();
-66                     System.out.println(\textcolor{stringliteral}{"Quiere comprimir o descomprimir?"});
-67                     String aux12 = reader.readLine().trim();
-68                     jpeg = \textcolor{keyword}{new} JPEG(aux11, !aux12.toLowerCase().equals(\textcolor{stringliteral}{"comprimir"}));
-69                 \textcolor{keywordflow}{break};
-70                 \textcolor{keywordflow}{case} \textcolor{stringliteral}{"2"}:
-71                     System.out.println(\textcolor{stringliteral}{"Introduce el path del input"});
-72                     String aux2 = reader.readLine().trim();
-73                     Ctrl\_Input.initialize(aux2);
-74                     jpeg.Compressor();
-75                 \textcolor{keywordflow}{break};
-76                 \textcolor{keywordflow}{case} \textcolor{stringliteral}{"3"}:
-77                     System.out.println(\textcolor{stringliteral}{"Introduce el path del input"});
-78                     String aux3 = reader.readLine().trim();
-79                     Ctrl\_Input in2 = \textcolor{keyword}{new} Ctrl\_Input(aux3);
-80                     System.out.println(\textcolor{stringliteral}{"La metadata del fitxer correspon al tipus "}+in2.getAlg());
-81                     jpeg.Decompressor();
-82                 \textcolor{keywordflow}{break};
-83                 \textcolor{keywordflow}{case} \textcolor{stringliteral}{"4"}:
-84                     jpeg.print();
-85                 \textcolor{keywordflow}{break};
-86                 \textcolor{keywordflow}{case} \textcolor{stringliteral}{"0"}:
-87                     \textcolor{keywordflow}{return};
-88                 \textcolor{keywordflow}{default}:
-89                     System.out.println(\textcolor{stringliteral}{"La opción no es válida"});
-90                 \textcolor{keywordflow}{break};
-91             \}
-92         \}
-93     \}\textcolor{keywordflow}{catch} (Exception e) \{
-94         e.printStackTrace();
-95     \}
+52                                            \{
+53     \textcolor{keywordflow}{try} \{
+54         JPEG jpeg = null;
+55         \hyperlink{classdomini_1_1algorithm_1_1Driver____JPEG_a62ce35e061afe893bd03af9bfff41c33}{showOptions}();
+56         BufferedReader reader = \textcolor{keyword}{new} BufferedReader(\textcolor{keyword}{new} InputStreamReader(System.in));
+57         String linea = \textcolor{stringliteral}{""};
+58         \textcolor{keywordflow}{while}(linea != null)\{
+59             System.out.println(\textcolor{stringliteral}{"Selecciona una opción:"});
+60             linea = reader.readLine().trim();
+61             System.out.println(\textcolor{stringliteral}{"Opción: "} + linea + \textcolor{stringliteral}{" seleccionada"});
+62             \hyperlink{classdomini_1_1algorithm_1_1Driver____JPEG_ae75883665dbbf55adaa8db46f2211c75}{comprovarExcepcions}(jpeg, linea);
+63             \textcolor{keywordflow}{switch}(linea)\{
+64                 \textcolor{keywordflow}{case} \textcolor{stringliteral}{"1"}:
+65                     System.out.println(\textcolor{stringliteral}{"Introduce el path del output"});
+66                     String aux11 = reader.readLine().trim();
+67                     System.out.println(\textcolor{stringliteral}{"Quiere comprimir o descomprimir?"});
+68                     String aux12 = reader.readLine().trim();
+69                     jpeg = \textcolor{keyword}{new} JPEG(aux11, !aux12.toLowerCase().equals(\textcolor{stringliteral}{"comprimir"}));
+70                 \textcolor{keywordflow}{break};
+71                 \textcolor{keywordflow}{case} \textcolor{stringliteral}{"2"}:
+72                     System.out.println(\textcolor{stringliteral}{"Introduce el path del input"});
+73                     String aux2 = reader.readLine().trim();
+74                     Ctrl\_Input.initialize(aux2);
+75                     jpeg.Compressor();
+76                 \textcolor{keywordflow}{break};
+77                 \textcolor{keywordflow}{case} \textcolor{stringliteral}{"3"}:
+78                     System.out.println(\textcolor{stringliteral}{"Introduce el path del input"});
+79                     String aux3 = reader.readLine().trim();
+80                     Ctrl\_Input in2 = \textcolor{keyword}{new} Ctrl\_Input(aux3);
+81                     System.out.println(\textcolor{stringliteral}{"La metadata del fitxer correspon al tipus "}+in2.getAlg());
+82                     jpeg.Decompressor();
+83                 \textcolor{keywordflow}{break};
+84                 \textcolor{keywordflow}{case} \textcolor{stringliteral}{"4"}:
+85                     jpeg.print();
+86                 \textcolor{keywordflow}{break};
+87                 \textcolor{keywordflow}{case} \textcolor{stringliteral}{"0"}:
+88                     \textcolor{keywordflow}{return};
+89                 \textcolor{keywordflow}{default}:
+90                     System.out.println(\textcolor{stringliteral}{"La opción no es válida"});
+91                 \textcolor{keywordflow}{break};
+92             \}
+93         \}
+94     \}\textcolor{keywordflow}{catch} (Exception e) \{
+95         e.printStackTrace();
 96     \}
+97     \}
 \end{DoxyCode}
 \mbox{\Hypertarget{classdomini_1_1algorithm_1_1Driver____JPEG_a62ce35e061afe893bd03af9bfff41c33}\label{classdomini_1_1algorithm_1_1Driver____JPEG_a62ce35e061afe893bd03af9bfff41c33}} 
 \index{domini\+::algorithm\+::\+Driver\+\_\+\+\_\+\+J\+P\+EG@{domini\+::algorithm\+::\+Driver\+\_\+\+\_\+\+J\+P\+EG}!show\+Options@{show\+Options}}
@@ -121,25 +116,25 @@ Mostra les accions a realitzar durant l\textquotesingle{}execució
 
 
 \begin{DoxyCode}
-19                                      \{
-20         System.out.println(\textcolor{stringliteral}{"Driver de JPEG"});
-21         System.out.println(\textcolor{stringliteral}{"Constructores: "});
-22         System.out.println(\textcolor{stringliteral}{"     1. JPEG(String aux, boolean b)"});
-23         System.out.println(\textcolor{stringliteral}{"     Input: 1"});
-24 
-25         System.out.println(\textcolor{stringliteral}{"Funciones: "});
-26         System.out.println(\textcolor{stringliteral}{"     2. Compressor() "});
-27         System.out.println(\textcolor{stringliteral}{"     Input: 2"});
-28         System.out.println(\textcolor{stringliteral}{"     3. Decompressor() "});
-29         System.out.println(\textcolor{stringliteral}{"     Input: 3"});
-30         System.out.println(\textcolor{stringliteral}{"     4. print() "});
-31         System.out.println(\textcolor{stringliteral}{"     Input: 4"});
-32         System.out.println();
-33 
-34         System.out.println(\textcolor{stringliteral}{"     0. Sortir"});
-35         System.out.println(\textcolor{stringliteral}{"     Input: 0"});
-36         System.out.println(\textcolor{stringliteral}{"----------------------------------------"});
-37     \}
+20                                      \{
+21         System.out.println(\textcolor{stringliteral}{"Driver de JPEG"});
+22         System.out.println(\textcolor{stringliteral}{"Constructores: "});
+23         System.out.println(\textcolor{stringliteral}{"     1. JPEG(String aux, boolean b)"});
+24         System.out.println(\textcolor{stringliteral}{"     Input: 1"});
+25 
+26         System.out.println(\textcolor{stringliteral}{"Funciones: "});
+27         System.out.println(\textcolor{stringliteral}{"     2. Compressor() "});
+28         System.out.println(\textcolor{stringliteral}{"     Input: 2"});
+29         System.out.println(\textcolor{stringliteral}{"     3. Decompressor() "});
+30         System.out.println(\textcolor{stringliteral}{"     Input: 3"});
+31         System.out.println(\textcolor{stringliteral}{"     4. print() "});
+32         System.out.println(\textcolor{stringliteral}{"     Input: 4"});
+33         System.out.println();
+34 
+35         System.out.println(\textcolor{stringliteral}{"     0. Sortir"});
+36         System.out.println(\textcolor{stringliteral}{"     Input: 0"});
+37         System.out.println(\textcolor{stringliteral}{"----------------------------------------"});
+38     \}
 \end{DoxyCode}
 
 

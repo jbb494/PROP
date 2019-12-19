@@ -7,6 +7,8 @@ import persistencia.input.Input;
 /**
  * @class Ctrl_Input_Encoded
  * @brief Classe Ctrl_Input_Encoded
+ * @file
+
  */
 public class Ctrl_Input_Encoded extends Ctrl_Input {
 

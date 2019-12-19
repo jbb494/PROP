@@ -15,6 +15,8 @@ import java.io.IOException;
 /**
  * @class Ctrl_FolderFile
  * @brief Classe Ctrl_FolderFile
+ * @file
+
  * Tota la comunicació entre la capa de presentació i la capa de domini relativa a comprimir i descomprimir 
  * passa perquè les classes de la capa de presentació instanciïn la classe Ctrl_FolderFile.
  * 

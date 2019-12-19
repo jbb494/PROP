@@ -85,7 +85,10 @@ Inheritance diagram for persistencia.input.Ctrl_Input_LZ78:</div>
 Collaboration diagram for persistencia.input.Ctrl_Input_LZ78:</div>
 <div class="dyncontent">
 <div class="center"><img src="classpersistencia_1_1input_1_1Ctrl__Input__LZ78__coll__graph.png" border="0" usemap="#persistencia_8input_8Ctrl__Input__LZ78_coll__map" alt="Collaboration graph"/></div>
-<!-- MAP 0 -->
+<map name="persistencia_8input_8Ctrl__Input__LZ78_coll__map" id="persistencia_8input_8Ctrl__Input__LZ78_coll__map">
+<area shape="rect" id="node2" href="classpersistencia_1_1input_1_1Ctrl__Input.html" title="Classe de Ctrl_Input. " alt="" coords="9,184,159,225"/>
+<area shape="rect" id="node3" href="classpersistencia_1_1input_1_1Input.html" title="Classe Input. " alt="" coords="5,95,163,121"/>
+</map>
 <center><span class="legend">[<a href="graph_legend.html">legend</a>]</span></center></div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
@@ -127,8 +130,6 @@ Additional Inherited Members</h2></td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Acces a un arxiu comprimit amb LZ78. </p>
-<p>Aquesta classe és un fill de <a class="el" href="classpersistencia_1_1input_1_1Ctrl__Input.html" title="Classe de Ctrl_Input. ">Ctrl_Input</a>. Té una funció get que retorna l'entrada en el format que el algoritme LZ78 necessita. (parells de integer i byte).</p>
-<dl class="section author"><dt>Author</dt><dd>Joan Bellavista Bartroli </dd></dl>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="a3629302a8c1eb2b0c7367ad0ea542780"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a3629302a8c1eb2b0c7367ad0ea542780">&#9670;&nbsp;</a></span>Ctrl_Input_LZ78() <span class="overload">[1/2]</span></h2>
@@ -161,7 +162,7 @@ Additional Inherited Members</h2></td></tr>
   </table>
   </dd>
 </dl>
-<div class="fragment"><div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;    {</div><div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;        super(path);</div><div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;        <a class="code" href="classpersistencia_1_1input_1_1Ctrl__Input.html#a46e05fce164a6803820c02565c1769c8">getMetadata</a>();</div><div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;    }</div><div class="ttc" id="classpersistencia_1_1input_1_1Ctrl__Input_html_a46e05fce164a6803820c02565c1769c8"><div class="ttname"><a href="classpersistencia_1_1input_1_1Ctrl__Input.html#a46e05fce164a6803820c02565c1769c8">persistencia.input.Ctrl_Input.getMetadata</a></div><div class="ttdeci">int getMetadata()</div><div class="ttdoc">Llegeix el dos primers bits de l&amp;#39;arxiu comprimit per saber amb quin algoritme ha sigut tractat...</div><div class="ttdef"><b>Definition:</b> Ctrl_Input.java:89</div></div>
+<div class="fragment"><div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;    {</div><div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;        super(path);</div><div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;        <a class="code" href="classpersistencia_1_1input_1_1Ctrl__Input.html#a46e05fce164a6803820c02565c1769c8">getMetadata</a>();</div><div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;    }</div><div class="ttc" id="classpersistencia_1_1input_1_1Ctrl__Input_html_a46e05fce164a6803820c02565c1769c8"><div class="ttname"><a href="classpersistencia_1_1input_1_1Ctrl__Input.html#a46e05fce164a6803820c02565c1769c8">persistencia.input.Ctrl_Input.getMetadata</a></div><div class="ttdeci">int getMetadata()</div><div class="ttdoc">Llegeix el dos primers bits de l&amp;#39;arxiu comprimit per saber amb quin algoritme ha sigut tractat...</div><div class="ttdef"><b>Definition:</b> Ctrl_Input.java:91</div></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -217,9 +218,9 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 <dl class="section return"><dt>Returns</dt><dd>Primer parell enter-byte no llegit de l'arxiu comprimit amb LZ78 </dd></dl>
-<div class="fragment"><div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;                                      {</div><div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;        Integer intAux = <a class="code" href="classdomini_1_1utils_1_1byteToConversion.html">byteToConversion</a>.<a class="code" href="classdomini_1_1utils_1_1byteToConversion.html#a3242a47adade49b6cfa6a9232944f587">byteToInteger</a>(Input.getInstance().getMoreBits(32));</div><div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;        Byte byteAux = Input.getInstance().getBits(8);</div><div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;        <span class="keywordflow">return</span> <span class="keyword">new</span> <a class="code" href="classdomini_1_1utils_1_1Pair.html">Pair &lt;Integer, Byte&gt;</a>(intAux, byteAux);</div><div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;    }</div><div class="ttc" id="classdomini_1_1utils_1_1byteToConversion_html"><div class="ttname"><a href="classdomini_1_1utils_1_1byteToConversion.html">domini.utils.byteToConversion</a></div><div class="ttdoc">Classe byteToConversion. </div><div class="ttdef"><b>Definition:</b> byteToConversion.java:11</div></div>
-<div class="ttc" id="classdomini_1_1utils_1_1byteToConversion_html_a3242a47adade49b6cfa6a9232944f587"><div class="ttname"><a href="classdomini_1_1utils_1_1byteToConversion.html#a3242a47adade49b6cfa6a9232944f587">domini.utils.byteToConversion.byteToInteger</a></div><div class="ttdeci">static Integer byteToInteger(List&lt; Byte &gt; bArg)</div><div class="ttdoc">Transforma un Array de bytes a un Enter no negatiu. </div><div class="ttdef"><b>Definition:</b> byteToConversion.java:34</div></div>
-<div class="ttc" id="classdomini_1_1utils_1_1Pair_html"><div class="ttname"><a href="classdomini_1_1utils_1_1Pair.html">domini.utils.Pair</a></div><div class="ttdoc">Template d&amp;#39;una classe Pair. </div><div class="ttdef"><b>Definition:</b> Pair.java:8</div></div>
+<div class="fragment"><div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;                                      {</div><div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;        Integer intAux = <a class="code" href="classdomini_1_1utils_1_1byteToConversion.html">byteToConversion</a>.<a class="code" href="classdomini_1_1utils_1_1byteToConversion.html#a3242a47adade49b6cfa6a9232944f587">byteToInteger</a>(Input.getInstance().getMoreBits(32));</div><div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;        Byte byteAux = Input.getInstance().getBits(8);</div><div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;        <span class="keywordflow">return</span> <span class="keyword">new</span> <a class="code" href="classdomini_1_1utils_1_1Pair.html">Pair &lt;Integer, Byte&gt;</a>(intAux, byteAux);</div><div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;    }</div><div class="ttc" id="classdomini_1_1utils_1_1byteToConversion_html"><div class="ttname"><a href="classdomini_1_1utils_1_1byteToConversion.html">domini.utils.byteToConversion</a></div><div class="ttdoc">Classe byteToConversion. </div><div class="ttdef"><b>Definition:</b> byteToConversion.java:13</div></div>
+<div class="ttc" id="classdomini_1_1utils_1_1byteToConversion_html_a3242a47adade49b6cfa6a9232944f587"><div class="ttname"><a href="classdomini_1_1utils_1_1byteToConversion.html#a3242a47adade49b6cfa6a9232944f587">domini.utils.byteToConversion.byteToInteger</a></div><div class="ttdeci">static Integer byteToInteger(List&lt; Byte &gt; bArg)</div><div class="ttdoc">Transforma un Array de bytes a un Enter no negatiu. </div><div class="ttdef"><b>Definition:</b> byteToConversion.java:36</div></div>
+<div class="ttc" id="classdomini_1_1utils_1_1Pair_html"><div class="ttname"><a href="classdomini_1_1utils_1_1Pair.html">domini.utils.Pair</a></div><div class="ttdoc">Template d&amp;#39;una classe Pair. </div><div class="ttdef"><b>Definition:</b> Pair.java:10</div></div>
 </div><!-- fragment -->
 </div>
 </div>

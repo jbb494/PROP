@@ -22,11 +22,6 @@ static void \hyperlink{classpersistencia_1_1output_1_1Driver____Ctrl__Output__Im
 \subsection{Detailed Description}
 Driver de \hyperlink{classpersistencia_1_1output_1_1Ctrl__Output__Img}{Ctrl\+\_\+\+Output\+\_\+\+Img}. 
 
-\begin{DoxyAuthor}{Author}
-Joan Lapeyra Amat 
-\end{DoxyAuthor}
-
-
 \subsection{Member Function Documentation}
 \mbox{\Hypertarget{classpersistencia_1_1output_1_1Driver____Ctrl__Output__Img_ab6af9c875a2582dbb7e466be9bb6bbbb}\label{classpersistencia_1_1output_1_1Driver____Ctrl__Output__Img_ab6af9c875a2582dbb7e466be9bb6bbbb}} 
 \index{persistencia\+::output\+::\+Driver\+\_\+\+\_\+\+Ctrl\+\_\+\+Output\+\_\+\+Img@{persistencia\+::output\+::\+Driver\+\_\+\+\_\+\+Ctrl\+\_\+\+Output\+\_\+\+Img}!comprovar\+Excepcions@{comprovar\+Excepcions}}
@@ -47,12 +42,12 @@ Comprovarà les possibles excepcions que puguin apareixer a la classe.
 \end{DoxyParams}
 
 \begin{DoxyCode}
-45                                                                                           \{
-46         \textcolor{keywordtype}{int} op = Integer.parseInt(linea);
-47         \textcolor{keywordflow}{if}(ctrl\_output\_img == null && op > 1) \{
-48             \textcolor{keywordflow}{throw} \textcolor{keyword}{new} IllegalArgumentException(\textcolor{stringliteral}{"Debes llamar al constructor antes"});
-49         \}
-50     \}
+46                                                                                           \{
+47         \textcolor{keywordtype}{int} op = Integer.parseInt(linea);
+48         \textcolor{keywordflow}{if}(ctrl\_output\_img == null && op > 1) \{
+49             \textcolor{keywordflow}{throw} \textcolor{keyword}{new} IllegalArgumentException(\textcolor{stringliteral}{"Debes llamar al constructor antes"});
+50         \}
+51     \}
 \end{DoxyCode}
 \mbox{\Hypertarget{classpersistencia_1_1output_1_1Driver____Ctrl__Output__Img_a7ea6be01dbe68f043b4fb50b7ba41f8b}\label{classpersistencia_1_1output_1_1Driver____Ctrl__Output__Img_a7ea6be01dbe68f043b4fb50b7ba41f8b}} 
 \index{persistencia\+::output\+::\+Driver\+\_\+\+\_\+\+Ctrl\+\_\+\+Output\+\_\+\+Img@{persistencia\+::output\+::\+Driver\+\_\+\+\_\+\+Ctrl\+\_\+\+Output\+\_\+\+Img}!main@{main}}
@@ -62,69 +57,69 @@ Comprovarà les possibles excepcions que puguin apareixer a la classe.
 
 
 \begin{DoxyCode}
-52                                            \{
-53     \textcolor{keywordflow}{try} \{
-54         Ctrl\_Output\_Img ctrl\_output\_img = null;
-55         \hyperlink{classpersistencia_1_1output_1_1Driver____Ctrl__Output__Img_a407a2c1e80b099b7cae5dd0a19683d09}{showOptions}();
-56         BufferedReader reader = \textcolor{keyword}{new} BufferedReader(\textcolor{keyword}{new} InputStreamReader(System.in));
-57         String linea = \textcolor{stringliteral}{""};
-58         \textcolor{keywordflow}{while}(linea != null)\{
-59             System.out.println(\textcolor{stringliteral}{"Selecciona una opción:"});
-60             linea = reader.readLine().trim();
-61             System.out.println(\textcolor{stringliteral}{"Opción: "} + linea + \textcolor{stringliteral}{" seleccionada"});
-62             \hyperlink{classpersistencia_1_1output_1_1Driver____Ctrl__Output__Img_ab6af9c875a2582dbb7e466be9bb6bbbb}{comprovarExcepcions}(ctrl\_output\_img, linea);
-63             \textcolor{keywordtype}{int} x;
-64             \textcolor{keywordflow}{switch}(linea)\{
-65                 \textcolor{keywordflow}{case} \textcolor{stringliteral}{"1"}:
-66                     System.out.println(\textcolor{stringliteral}{"Indica el path del fichero de salida, su width, su heigth y su
+53                                            \{
+54     \textcolor{keywordflow}{try} \{
+55         Ctrl\_Output\_Img ctrl\_output\_img = null;
+56         \hyperlink{classpersistencia_1_1output_1_1Driver____Ctrl__Output__Img_a407a2c1e80b099b7cae5dd0a19683d09}{showOptions}();
+57         BufferedReader reader = \textcolor{keyword}{new} BufferedReader(\textcolor{keyword}{new} InputStreamReader(System.in));
+58         String linea = \textcolor{stringliteral}{""};
+59         \textcolor{keywordflow}{while}(linea != null)\{
+60             System.out.println(\textcolor{stringliteral}{"Selecciona una opción:"});
+61             linea = reader.readLine().trim();
+62             System.out.println(\textcolor{stringliteral}{"Opción: "} + linea + \textcolor{stringliteral}{" seleccionada"});
+63             \hyperlink{classpersistencia_1_1output_1_1Driver____Ctrl__Output__Img_ab6af9c875a2582dbb7e466be9bb6bbbb}{comprovarExcepcions}(ctrl\_output\_img, linea);
+64             \textcolor{keywordtype}{int} x;
+65             \textcolor{keywordflow}{switch}(linea)\{
+66                 \textcolor{keywordflow}{case} \textcolor{stringliteral}{"1"}:
+67                     System.out.println(\textcolor{stringliteral}{"Indica el path del fichero de salida, su width, su heigth y su
        maxVal"});
-67                     String[] aux1 = reader.readLine().trim().split(\textcolor{stringliteral}{" "});
-68                     \textcolor{keywordflow}{if} (aux1.length != 4) \textcolor{keywordflow}{throw} \textcolor{keyword}{new} IllegalArgumentException(\textcolor{stringliteral}{"Formato incorrecto"});
-69                     String path = aux1[0];
-70                     \textcolor{keywordtype}{int} w = Integer.parseInt(aux1[1]);
-71                     \textcolor{keywordtype}{int} h = Integer.parseInt(aux1[2]);
-72                     \textcolor{keywordtype}{int} mv = Integer.parseInt(aux1[3]);
-73                     ctrl\_output\_img = \textcolor{keyword}{new} Ctrl\_Output\_Img(path, w, h, mv);
-74                 \textcolor{keywordflow}{break};
-75                 \textcolor{keywordflow}{case} \textcolor{stringliteral}{"2"}:
-76                     x = ctrl\_output\_img.getHeight();
-77                     System.out.println(x);
-78                 \textcolor{keywordflow}{break};
-79                 \textcolor{keywordflow}{case} \textcolor{stringliteral}{"3"}:
-80                     x = ctrl\_output\_img.getWidth();
-81                     System.out.println(x);
-82                 \textcolor{keywordflow}{break};
-83                 \textcolor{keywordflow}{case} \textcolor{stringliteral}{"4"}:
-84                     \textcolor{keywordtype}{boolean} b = ctrl\_output\_img.finished();
-85                     System.out.println(b);
-86                 \textcolor{keywordflow}{break};
-87                 \textcolor{keywordflow}{case} \textcolor{stringliteral}{"5"}:
-88                     \textcolor{keywordtype}{int} n = ctrl\_output\_img.getWidth()/8;
-89                     System.out.println(\textcolor{stringliteral}{"Escribe una matriz "}+Integer.toString(n)+\textcolor{stringliteral}{"x8x8x3, cada entero en
+68                     String[] aux1 = reader.readLine().trim().split(\textcolor{stringliteral}{" "});
+69                     \textcolor{keywordflow}{if} (aux1.length != 4) \textcolor{keywordflow}{throw} \textcolor{keyword}{new} IllegalArgumentException(\textcolor{stringliteral}{"Formato incorrecto"});
+70                     String path = aux1[0];
+71                     \textcolor{keywordtype}{int} w = Integer.parseInt(aux1[1]);
+72                     \textcolor{keywordtype}{int} h = Integer.parseInt(aux1[2]);
+73                     \textcolor{keywordtype}{int} mv = Integer.parseInt(aux1[3]);
+74                     ctrl\_output\_img = \textcolor{keyword}{new} Ctrl\_Output\_Img(path, w, h, mv);
+75                 \textcolor{keywordflow}{break};
+76                 \textcolor{keywordflow}{case} \textcolor{stringliteral}{"2"}:
+77                     x = ctrl\_output\_img.getHeight();
+78                     System.out.println(x);
+79                 \textcolor{keywordflow}{break};
+80                 \textcolor{keywordflow}{case} \textcolor{stringliteral}{"3"}:
+81                     x = ctrl\_output\_img.getWidth();
+82                     System.out.println(x);
+83                 \textcolor{keywordflow}{break};
+84                 \textcolor{keywordflow}{case} \textcolor{stringliteral}{"4"}:
+85                     \textcolor{keywordtype}{boolean} b = ctrl\_output\_img.finished();
+86                     System.out.println(b);
+87                 \textcolor{keywordflow}{break};
+88                 \textcolor{keywordflow}{case} \textcolor{stringliteral}{"5"}:
+89                     \textcolor{keywordtype}{int} n = ctrl\_output\_img.getWidth()/8;
+90                     System.out.println(\textcolor{stringliteral}{"Escribe una matriz "}+Integer.toString(n)+\textcolor{stringliteral}{"x8x8x3, cada entero en
        una lína distinta."});
-90                     \textcolor{keywordtype}{double}[][][][] mat = \textcolor{keyword}{new} \textcolor{keywordtype}{double}[n][8][8][3];
-91                     \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} bk = 0; bk < n; ++bk) \{
-92                         \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i = 0; i < 8; ++i) \{
-93                             \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} j = 0; j < 8; ++j) \{
-94                                 \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} k = 0; k < 3; ++k) \{
-95                                     String s = reader.readLine().trim();
-96                                     mat[bk][i][j][k] = (double)Integer.parseInt(s);
-97                                 \}
-98                             \}
-99                         \}
-100                     \}
-101                 \textcolor{keywordflow}{break};
-102                 \textcolor{keywordflow}{case} \textcolor{stringliteral}{"0"}:
-103                     \textcolor{keywordflow}{return};
-104                 \textcolor{keywordflow}{default}:
-105                     System.out.println(\textcolor{stringliteral}{"La opción no es válida"});
-106                 \textcolor{keywordflow}{break};
-107             \}
-108         \}
-109     \}\textcolor{keywordflow}{catch} (Exception e) \{
-110         e.printStackTrace();
-111     \}
+91                     \textcolor{keywordtype}{double}[][][][] mat = \textcolor{keyword}{new} \textcolor{keywordtype}{double}[n][8][8][3];
+92                     \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} bk = 0; bk < n; ++bk) \{
+93                         \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i = 0; i < 8; ++i) \{
+94                             \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} j = 0; j < 8; ++j) \{
+95                                 \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} k = 0; k < 3; ++k) \{
+96                                     String s = reader.readLine().trim();
+97                                     mat[bk][i][j][k] = (double)Integer.parseInt(s);
+98                                 \}
+99                             \}
+100                         \}
+101                     \}
+102                 \textcolor{keywordflow}{break};
+103                 \textcolor{keywordflow}{case} \textcolor{stringliteral}{"0"}:
+104                     \textcolor{keywordflow}{return};
+105                 \textcolor{keywordflow}{default}:
+106                     System.out.println(\textcolor{stringliteral}{"La opción no es válida"});
+107                 \textcolor{keywordflow}{break};
+108             \}
+109         \}
+110     \}\textcolor{keywordflow}{catch} (Exception e) \{
+111         e.printStackTrace();
 112     \}
+113     \}
 \end{DoxyCode}
 \mbox{\Hypertarget{classpersistencia_1_1output_1_1Driver____Ctrl__Output__Img_a407a2c1e80b099b7cae5dd0a19683d09}\label{classpersistencia_1_1output_1_1Driver____Ctrl__Output__Img_a407a2c1e80b099b7cae5dd0a19683d09}} 
 \index{persistencia\+::output\+::\+Driver\+\_\+\+\_\+\+Ctrl\+\_\+\+Output\+\_\+\+Img@{persistencia\+::output\+::\+Driver\+\_\+\+\_\+\+Ctrl\+\_\+\+Output\+\_\+\+Img}!show\+Options@{show\+Options}}
@@ -138,27 +133,27 @@ Mostra les accions a realitzar durant l\textquotesingle{}execució
 
 
 \begin{DoxyCode}
-18                                      \{
-19         System.out.println(\textcolor{stringliteral}{"Driver de Ctrl\_Output\_Img"});
-20         System.out.println(\textcolor{stringliteral}{"Constructores: "});
-21         System.out.println(\textcolor{stringliteral}{"     1. Ctrl\_Output\_Img(String path, int w, int h, int mv)"});
-22         System.out.println(\textcolor{stringliteral}{"     Input: 1"});
-23 
-24         System.out.println(\textcolor{stringliteral}{"Funciones: "});
-25         System.out.println(\textcolor{stringliteral}{"     2. getHeight() "});
-26         System.out.println(\textcolor{stringliteral}{"     Input: 2"});
-27         System.out.println(\textcolor{stringliteral}{"     3. getWidth() "});
-28         System.out.println(\textcolor{stringliteral}{"     Input: 3"});
-29         System.out.println(\textcolor{stringliteral}{"     4. finished() "});
-30         System.out.println(\textcolor{stringliteral}{"     Input: 4"});
-31         System.out.println(\textcolor{stringliteral}{"     5. add(double[][][][] mat) "});
-32         System.out.println(\textcolor{stringliteral}{"     Input: 5"});
-33         System.out.println();
-34 
-35         System.out.println(\textcolor{stringliteral}{"     0. Sortir"});
-36         System.out.println(\textcolor{stringliteral}{"     Input: 0"});
-37         System.out.println(\textcolor{stringliteral}{"----------------------------------------"});
-38     \}
+19                                      \{
+20         System.out.println(\textcolor{stringliteral}{"Driver de Ctrl\_Output\_Img"});
+21         System.out.println(\textcolor{stringliteral}{"Constructores: "});
+22         System.out.println(\textcolor{stringliteral}{"     1. Ctrl\_Output\_Img(String path, int w, int h, int mv)"});
+23         System.out.println(\textcolor{stringliteral}{"     Input: 1"});
+24 
+25         System.out.println(\textcolor{stringliteral}{"Funciones: "});
+26         System.out.println(\textcolor{stringliteral}{"     2. getHeight() "});
+27         System.out.println(\textcolor{stringliteral}{"     Input: 2"});
+28         System.out.println(\textcolor{stringliteral}{"     3. getWidth() "});
+29         System.out.println(\textcolor{stringliteral}{"     Input: 3"});
+30         System.out.println(\textcolor{stringliteral}{"     4. finished() "});
+31         System.out.println(\textcolor{stringliteral}{"     Input: 4"});
+32         System.out.println(\textcolor{stringliteral}{"     5. add(double[][][][] mat) "});
+33         System.out.println(\textcolor{stringliteral}{"     Input: 5"});
+34         System.out.println();
+35 
+36         System.out.println(\textcolor{stringliteral}{"     0. Sortir"});
+37         System.out.println(\textcolor{stringliteral}{"     Input: 0"});
+38         System.out.println(\textcolor{stringliteral}{"----------------------------------------"});
+39     \}
 \end{DoxyCode}
 
 

@@ -6,7 +6,6 @@ var searchData=
   ['mainform_2ejava',['mainForm.java',['../mainForm_8java.html',1,'']]],
   ['manual_5fusuari_2emd',['Manual_Usuari.md',['../Manual__Usuari_8md.html',1,'']]],
   ['matrix',['matrix',['../classpersistencia_1_1input_1_1Ctrl__Input__Img.html#ae61f4eb4fa38ea6dfb1e03f443711948',1,'persistencia::input::Ctrl_Input_Img']]],
-  ['max',['MAX',['../classpresentacion_1_1form_1_1components_1_1ProgressBar.html#a3f6a2544b74d1b12812202c794bd0495',1,'presentacion::form::components::ProgressBar']]],
   ['max_5fval',['max_val',['../classpersistencia_1_1input_1_1Ctrl__Input__Img.html#a1b8fa2d000a1d5d873be62d1f609e4be',1,'persistencia.input.Ctrl_Input_Img.max_val()'],['../classpersistencia_1_1input_1_1Ctrl__Input__JPEG.html#a8720235be6a11ef90085217064bbb1b0',1,'persistencia.input.Ctrl_Input_JPEG.max_val()'],['../classpersistencia_1_1output_1_1Ctrl__Output__Img.html#ab9e685dae026afe43188c62d7c4fad53',1,'persistencia.output.Ctrl_Output_Img.max_val()']]],
   ['manual_5fusuari',['Manual_Usuari',['../md_docs_HARDCODE_Manual_Usuari.html',1,'']]],
   ['medioradiobutton',['medioRadioButton',['../classpresentacion_1_1form_1_1PopUp__Comp.html#ad1daa09264648f37642b24a698e32206',1,'presentacion::form::PopUp_Comp']]],
@@ -14,8 +13,6 @@ var searchData=
   ['method',['method',['../enumglobal_1_1global_1_1method.html',1,'global::global']]],
   ['mida',['mida',['../classdomini_1_1utils_1_1IntorByte.html#a6dd2ad21efcfb2bcfff716f5e04794d9',1,'domini::utils::IntorByte']]],
   ['mkdir',['mkdir',['../classpersistencia_1_1browser_1_1Ctrl__Browser.html#a947773ee38a780bae338aa0e4f396f6f',1,'persistencia::browser::Ctrl_Browser']]],
-  ['modelbrowser',['modelBrowser',['../classpresentacion_1_1form_1_1components_1_1browserTree_1_1modelBrowser.html',1,'presentacion.form.components.browserTree.modelBrowser'],['../classpresentacion_1_1form_1_1components_1_1browserTree_1_1modelBrowser.html#afe4a3636c2b53161acb015dde9bfa58e',1,'presentacion.form.components.browserTree.modelBrowser.modelBrowser()']]],
-  ['modelbrowser_2ejava',['modelBrowser.java',['../modelBrowser_8java.html',1,'']]],
   ['modify_5ffirst',['Modify_First',['../classdomini_1_1utils_1_1Node.html#a3fe2e958308c90d24607a4e191680089',1,'domini::utils::Node']]],
   ['modify_5fleft',['Modify_Left',['../classdomini_1_1utils_1_1Node.html#a5a1cbd1e7f1fd78b42050f563520a709',1,'domini::utils::Node']]],
   ['modify_5fright',['Modify_Right',['../classdomini_1_1utils_1_1Node.html#a58d22f8330339b6d807cdef44d0eddf6',1,'domini::utils::Node']]]

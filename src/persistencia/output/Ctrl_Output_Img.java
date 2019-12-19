@@ -5,6 +5,8 @@ package persistencia.output;
 /**
  * @class Ctrl_Output_Img
  * @brief Controlador de Output que permet escriure una imatge ppm
+ * @file
+
  * @author Joan Lapeyra Amat
  */
 public class Ctrl_Output_Img extends Ctrl_Output {

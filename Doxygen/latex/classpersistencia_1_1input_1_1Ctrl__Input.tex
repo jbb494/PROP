@@ -7,8 +7,13 @@ Classe de \hyperlink{classpersistencia_1_1input_1_1Ctrl__Input}{Ctrl\+\_\+\+Inpu
 
 
 
-Inheritance diagram for persistencia.\+input.\+Ctrl\+\_\+\+Input\+:
-% FIG 0
+Inheritance diagram for persistencia.\+input.\+Ctrl\+\_\+\+Input\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=340pt]{classpersistencia_1_1input_1_1Ctrl__Input__inherit__graph}
+\end{center}
+\end{figure}
 \subsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
@@ -39,11 +44,6 @@ String \hyperlink{classpersistencia_1_1input_1_1Ctrl__Input_a6041b56aa31f01f75d0
 \subsection{Detailed Description}
 Classe de \hyperlink{classpersistencia_1_1input_1_1Ctrl__Input}{Ctrl\+\_\+\+Input}. 
 
-Cal tenir en compte que no es poden llegir dos fitxers simultàniament. El fitxer que llegeixen les instàncies de \hyperlink{classpersistencia_1_1input_1_1Ctrl__Input}{Ctrl\+\_\+\+Input} i els seus fills s\textquotesingle{}inicialitza cada cop que es crida a \hyperlink{classpersistencia_1_1input_1_1Input_abe53dec7aca98b94d0ec5e3200483513}{Input.\+initialize(\+String path)} o Ctrl\+\_\+\+Input$\ast$(String path), on Ctrl\+\_\+\+Input$\ast$ és \hyperlink{classpersistencia_1_1input_1_1Ctrl__Input}{Ctrl\+\_\+\+Input} o un dels seus fills. \begin{DoxyAuthor}{Author}
-Joan Lapeyra 
-\end{DoxyAuthor}
-
-
 \subsection{Constructor \& Destructor Documentation}
 \mbox{\Hypertarget{classpersistencia_1_1input_1_1Ctrl__Input_a00f3fa14d0329d6e4b9ddbe39ada1258}\label{classpersistencia_1_1input_1_1Ctrl__Input_a00f3fa14d0329d6e4b9ddbe39ada1258}} 
 \index{persistencia\+::input\+::\+Ctrl\+\_\+\+Input@{persistencia\+::input\+::\+Ctrl\+\_\+\+Input}!Ctrl\+\_\+\+Input@{Ctrl\+\_\+\+Input}}
@@ -62,17 +62,17 @@ Constructor de la classe. Comança a llegir un fitxer.
 \end{DoxyParams}
 
 \begin{DoxyCode}
-30                                    \{
-31   
-32         Input.initialize(path);
-33 
-34         Pattern p = Pattern.compile(\textcolor{stringliteral}{"\(\backslash\)\(\backslash\)."});
+32                                    \{
+33   
+34         Input.initialize(path);
 35 
-36         String spl[] = p.split(path);
+36         Pattern p = Pattern.compile(\textcolor{stringliteral}{"\(\backslash\)\(\backslash\)."});
 37 
-38         this.\hyperlink{classpersistencia_1_1input_1_1Ctrl__Input_a6041b56aa31f01f75d02382f98e259e5}{Extensio} = spl[1];
+38         String spl[] = p.split(path);
 39 
-40     \}
+40         this.\hyperlink{classpersistencia_1_1input_1_1Ctrl__Input_a6041b56aa31f01f75d02382f98e259e5}{Extensio} = spl[1];
+41 
+42     \}
 \end{DoxyCode}
 \mbox{\Hypertarget{classpersistencia_1_1input_1_1Ctrl__Input_a817ed61e715eb12261d844de34d84bec}\label{classpersistencia_1_1input_1_1Ctrl__Input_a817ed61e715eb12261d844de34d84bec}} 
 \index{persistencia\+::input\+::\+Ctrl\+\_\+\+Input@{persistencia\+::input\+::\+Ctrl\+\_\+\+Input}!Ctrl\+\_\+\+Input@{Ctrl\+\_\+\+Input}}
@@ -86,9 +86,9 @@ Constructor de la classe. Segueix llegint del fitxer del qual s\textquotesingle{
 
 
 \begin{DoxyCode}
-45                         \{
-46         this.\hyperlink{classpersistencia_1_1input_1_1Ctrl__Input_a6041b56aa31f01f75d02382f98e259e5}{Extensio} = null;
-47     \}
+47                         \{
+48         this.\hyperlink{classpersistencia_1_1input_1_1Ctrl__Input_a6041b56aa31f01f75d02382f98e259e5}{Extensio} = null;
+49     \}
 \end{DoxyCode}
 
 
@@ -104,9 +104,9 @@ Retorna si hem acabat de llegir l\textquotesingle{}arxiu o no
 \end{DoxyReturn}
 
 \begin{DoxyCode}
-72                               \{
-73         \textcolor{keywordflow}{return} Input.getInstance().finished();
-74     \}
+74                               \{
+75         \textcolor{keywordflow}{return} Input.getInstance().finished();
+76     \}
 \end{DoxyCode}
 \mbox{\Hypertarget{classpersistencia_1_1input_1_1Ctrl__Input_aa69f79fb581f6d80c5a9609148794570}\label{classpersistencia_1_1input_1_1Ctrl__Input_aa69f79fb581f6d80c5a9609148794570}} 
 \index{persistencia\+::input\+::\+Ctrl\+\_\+\+Input@{persistencia\+::input\+::\+Ctrl\+\_\+\+Input}!get\+Alg@{get\+Alg}}
@@ -119,9 +119,9 @@ Proporciona el algoritme mes adient per tractar la descompressio
 \end{DoxyReturn}
 
 \begin{DoxyCode}
-81     \{
-82         \textcolor{keywordflow}{return} Input.getInstance().getDecodeAlg();
-83     \}
+83     \{
+84         \textcolor{keywordflow}{return} Input.getInstance().getDecodeAlg();
+85     \}
 \end{DoxyCode}
 \mbox{\Hypertarget{classpersistencia_1_1input_1_1Ctrl__Input_a46d569c2f3ceb0ab6cf9900708b3316a}\label{classpersistencia_1_1input_1_1Ctrl__Input_a46d569c2f3ceb0ab6cf9900708b3316a}} 
 \index{persistencia\+::input\+::\+Ctrl\+\_\+\+Input@{persistencia\+::input\+::\+Ctrl\+\_\+\+Input}!get\+Extension@{get\+Extension}}
@@ -134,9 +134,9 @@ Retorna l\textquotesingle{}extensio de l\textquotesingle{}arxiu
 \end{DoxyReturn}
 
 \begin{DoxyCode}
-64                                  \{
-65         \textcolor{keywordflow}{return} \hyperlink{classpersistencia_1_1input_1_1Ctrl__Input_a6041b56aa31f01f75d02382f98e259e5}{Extensio};
-66     \}
+66                                  \{
+67         \textcolor{keywordflow}{return} \hyperlink{classpersistencia_1_1input_1_1Ctrl__Input_a6041b56aa31f01f75d02382f98e259e5}{Extensio};
+68     \}
 \end{DoxyCode}
 \mbox{\Hypertarget{classpersistencia_1_1input_1_1Ctrl__Input_a46e05fce164a6803820c02565c1769c8}\label{classpersistencia_1_1input_1_1Ctrl__Input_a46e05fce164a6803820c02565c1769c8}} 
 \index{persistencia\+::input\+::\+Ctrl\+\_\+\+Input@{persistencia\+::input\+::\+Ctrl\+\_\+\+Input}!get\+Metadata@{get\+Metadata}}
@@ -150,9 +150,9 @@ Llegeix el dos primers bits de l\textquotesingle{}arxiu comprimit per saber amb 
 
 
 \begin{DoxyCode}
-89                              \{
-90         \textcolor{keywordflow}{return} (\textcolor{keywordtype}{int})Input.getInstance().getBits(2);
-91     \}
+91                              \{
+92         \textcolor{keywordflow}{return} (\textcolor{keywordtype}{int})Input.getInstance().getBits(2);
+93     \}
 \end{DoxyCode}
 \mbox{\Hypertarget{classpersistencia_1_1input_1_1Ctrl__Input_a0b62b5bc05ac4a7fd919a49b201eb4fd}\label{classpersistencia_1_1input_1_1Ctrl__Input_a0b62b5bc05ac4a7fd919a49b201eb4fd}} 
 \index{persistencia\+::input\+::\+Ctrl\+\_\+\+Input@{persistencia\+::input\+::\+Ctrl\+\_\+\+Input}!initialize@{initialize}}
@@ -174,9 +174,9 @@ Més info a la descripció de la classe.
 \end{DoxyNote}
 
 \begin{DoxyCode}
-55                                                \{
-56         Input.initialize(path);
-57     \}
+57                                                \{
+58         Input.initialize(path);
+59     \}
 \end{DoxyCode}
 
 

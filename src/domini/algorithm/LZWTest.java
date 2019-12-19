@@ -12,6 +12,8 @@ import persistencia.output.Ctrl_Output;
 /**
  *@class LZWTest
  *@brief Junit de la classe LZW
+ * @file
+
  *@author Miguel Paracuellos Ocaña
 */
 public class LZWTest {

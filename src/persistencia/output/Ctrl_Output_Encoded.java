@@ -6,6 +6,8 @@ import persistencia.output.RandomAccessOutput;
 /**
  * @class Ctrl_Output_Encoded
  * @brief Classe Ctrl_Output_Encoded
+ * @file
+
  * @author Joan Lapeyra Amat
  */
 public class Ctrl_Output_Encoded extends Ctrl_Output {

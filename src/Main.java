@@ -1,6 +1,7 @@
 /**
  * @class Main
  * @brief Classe Main
+ * @file
  * @author Joan Lapeyra
  */
 import presentacion.form.mainForm;

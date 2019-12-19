@@ -7,6 +7,7 @@ import java.io.InputStreamReader;
 /**
  * @class Driver__Huffman
  * @brief Driver de Huffman
+ * @file
  * @author Joan Lapeyra Amat
  */
 public class Driver__Huffman {

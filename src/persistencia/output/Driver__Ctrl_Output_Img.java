@@ -7,6 +7,7 @@ import java.io.InputStreamReader;
 /**
  * @class Driver__Ctrl_Output_Img
  * @brief Driver de Ctrl_Output_Img
+ * @file
  * @author Joan Lapeyra Amat
  */
 public class Driver__Ctrl_Output_Img {

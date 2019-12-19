@@ -22,11 +22,6 @@ static void \hyperlink{classdomini_1_1estadistica_1_1Driver____Estadistica_a3459
 \subsection{Detailed Description}
 Driver de \hyperlink{classdomini_1_1estadistica_1_1Estadistica}{Estadistica}. 
 
-\begin{DoxyAuthor}{Author}
-Joan Bellavista Bartroli 
-\end{DoxyAuthor}
-
-
 \subsection{Member Function Documentation}
 \mbox{\Hypertarget{classdomini_1_1estadistica_1_1Driver____Estadistica_a3459f11af9841b23ac81a409a3e84e22}\label{classdomini_1_1estadistica_1_1Driver____Estadistica_a3459f11af9841b23ac81a409a3e84e22}} 
 \index{domini\+::estadistica\+::\+Driver\+\_\+\+\_\+\+Estadistica@{domini\+::estadistica\+::\+Driver\+\_\+\+\_\+\+Estadistica}!comprovar\+Excepcions@{comprovar\+Excepcions}}
@@ -47,12 +42,12 @@ Comprovarà les possibles excepcions que puguin apareixer a la classe.
 \end{DoxyParams}
 
 \begin{DoxyCode}
-38                                                                                   \{
-39         \textcolor{keywordtype}{int} op = Integer.parseInt(linea);
-40         \textcolor{keywordflow}{if}(estadistica == null && op > 1) \{
-41             \textcolor{keywordflow}{throw} \textcolor{keyword}{new} IllegalArgumentException(\textcolor{stringliteral}{"Debes llamar al constructor antes"});
-42         \}
-43     \}
+39                                                                                   \{
+40         \textcolor{keywordtype}{int} op = Integer.parseInt(linea);
+41         \textcolor{keywordflow}{if}(estadistica == null && op > 1) \{
+42             \textcolor{keywordflow}{throw} \textcolor{keyword}{new} IllegalArgumentException(\textcolor{stringliteral}{"Debes llamar al constructor antes"});
+43         \}
+44     \}
 \end{DoxyCode}
 \mbox{\Hypertarget{classdomini_1_1estadistica_1_1Driver____Estadistica_a7f11e0ccad919e427af9c591cf910bfe}\label{classdomini_1_1estadistica_1_1Driver____Estadistica_a7f11e0ccad919e427af9c591cf910bfe}} 
 \index{domini\+::estadistica\+::\+Driver\+\_\+\+\_\+\+Estadistica@{domini\+::estadistica\+::\+Driver\+\_\+\+\_\+\+Estadistica}!main@{main}}
@@ -62,39 +57,39 @@ Comprovarà les possibles excepcions que puguin apareixer a la classe.
 
 
 \begin{DoxyCode}
-45                                            \{
-46     \textcolor{keywordflow}{try} \{
-47         Estadistica estadistica = null;
-48         \hyperlink{classdomini_1_1estadistica_1_1Driver____Estadistica_ab42f06b8996094e10bd087ccf2f749e7}{showOptions}();
-49         BufferedReader reader = \textcolor{keyword}{new} BufferedReader(\textcolor{keyword}{new} InputStreamReader(System.in));
-50         String linea = \textcolor{stringliteral}{""};
-51         \textcolor{keywordflow}{while}(linea != null)\{
-52             System.out.println(\textcolor{stringliteral}{"Selecciona una opción:"});
-53             linea = reader.readLine().trim();
-54             System.out.println(\textcolor{stringliteral}{"Opción: "} + linea + \textcolor{stringliteral}{" seleccionada"});
-55             \hyperlink{classdomini_1_1estadistica_1_1Driver____Estadistica_a3459f11af9841b23ac81a409a3e84e22}{comprovarExcepcions}(estadistica, linea);
-56             \textcolor{keywordflow}{switch}(linea)\{
-57                 \textcolor{keywordflow}{case} \textcolor{stringliteral}{"1"}:
-58                     estadistica = \textcolor{keyword}{new} Estadistica(\textcolor{keyword}{true});
-59                 \textcolor{keywordflow}{break};
-60                 \textcolor{keywordflow}{case} \textcolor{stringliteral}{"2"}:
-61                     System.out.println(\textcolor{stringliteral}{"Indica el fichero para comprimir y el comprimido"});
-62                     String[] aux = reader.readLine().trim().split(\textcolor{stringliteral}{" "});
-63                     String inp = aux[0];
-64                     String out = aux[1];
-65                     estadistica.show\_estadistica(inp, out);
-66                 \textcolor{keywordflow}{break};
-67                 \textcolor{keywordflow}{case} \textcolor{stringliteral}{"0"}:
-68                     \textcolor{keywordflow}{return};
-69                 \textcolor{keywordflow}{default}:
-70                     System.out.println(\textcolor{stringliteral}{"La opción no es válida"});
-71                 \textcolor{keywordflow}{break};
-72             \}
-73         \}
-74     \}\textcolor{keywordflow}{catch} (Exception e) \{
-75         e.printStackTrace();
-76     \}
+46                                            \{
+47     \textcolor{keywordflow}{try} \{
+48         Estadistica estadistica = null;
+49         \hyperlink{classdomini_1_1estadistica_1_1Driver____Estadistica_ab42f06b8996094e10bd087ccf2f749e7}{showOptions}();
+50         BufferedReader reader = \textcolor{keyword}{new} BufferedReader(\textcolor{keyword}{new} InputStreamReader(System.in));
+51         String linea = \textcolor{stringliteral}{""};
+52         \textcolor{keywordflow}{while}(linea != null)\{
+53             System.out.println(\textcolor{stringliteral}{"Selecciona una opción:"});
+54             linea = reader.readLine().trim();
+55             System.out.println(\textcolor{stringliteral}{"Opción: "} + linea + \textcolor{stringliteral}{" seleccionada"});
+56             \hyperlink{classdomini_1_1estadistica_1_1Driver____Estadistica_a3459f11af9841b23ac81a409a3e84e22}{comprovarExcepcions}(estadistica, linea);
+57             \textcolor{keywordflow}{switch}(linea)\{
+58                 \textcolor{keywordflow}{case} \textcolor{stringliteral}{"1"}:
+59                     estadistica = \textcolor{keyword}{new} Estadistica(\textcolor{keyword}{true});
+60                 \textcolor{keywordflow}{break};
+61                 \textcolor{keywordflow}{case} \textcolor{stringliteral}{"2"}:
+62                     System.out.println(\textcolor{stringliteral}{"Indica el fichero para comprimir y el comprimido"});
+63                     String[] aux = reader.readLine().trim().split(\textcolor{stringliteral}{" "});
+64                     String inp = aux[0];
+65                     String out = aux[1];
+66                     estadistica.show\_estadistica(inp, out);
+67                 \textcolor{keywordflow}{break};
+68                 \textcolor{keywordflow}{case} \textcolor{stringliteral}{"0"}:
+69                     \textcolor{keywordflow}{return};
+70                 \textcolor{keywordflow}{default}:
+71                     System.out.println(\textcolor{stringliteral}{"La opción no es válida"});
+72                 \textcolor{keywordflow}{break};
+73             \}
+74         \}
+75     \}\textcolor{keywordflow}{catch} (Exception e) \{
+76         e.printStackTrace();
 77     \}
+78     \}
 \end{DoxyCode}
 \mbox{\Hypertarget{classdomini_1_1estadistica_1_1Driver____Estadistica_ab42f06b8996094e10bd087ccf2f749e7}\label{classdomini_1_1estadistica_1_1Driver____Estadistica_ab42f06b8996094e10bd087ccf2f749e7}} 
 \index{domini\+::estadistica\+::\+Driver\+\_\+\+\_\+\+Estadistica@{domini\+::estadistica\+::\+Driver\+\_\+\+\_\+\+Estadistica}!show\+Options@{show\+Options}}
@@ -108,21 +103,21 @@ Mostra les accions a realitzar durant l\textquotesingle{}execució
 
 
 \begin{DoxyCode}
-17                                      \{
-18         System.out.println(\textcolor{stringliteral}{"Driver de Estadistica"});
-19         System.out.println(\textcolor{stringliteral}{"Constructores: "});
-20         System.out.println(\textcolor{stringliteral}{"     1. Estadistica()"});
-21         System.out.println(\textcolor{stringliteral}{"     Input: 1"});
-22 
-23         System.out.println(\textcolor{stringliteral}{"\(\backslash\)nFunciones: "});
-24         System.out.println(\textcolor{stringliteral}{"     2. show\_estadistica(String inp, String out) "});
-25         System.out.println(\textcolor{stringliteral}{"     Input: 2"});
-26         System.out.println();
-27 
-28         System.out.println(\textcolor{stringliteral}{"     0. Sortir"});
-29         System.out.println(\textcolor{stringliteral}{"     Input: 0"});
-30         System.out.println(\textcolor{stringliteral}{"----------------------------------------"});
-31     \}
+18                                      \{
+19         System.out.println(\textcolor{stringliteral}{"Driver de Estadistica"});
+20         System.out.println(\textcolor{stringliteral}{"Constructores: "});
+21         System.out.println(\textcolor{stringliteral}{"     1. Estadistica()"});
+22         System.out.println(\textcolor{stringliteral}{"     Input: 1"});
+23 
+24         System.out.println(\textcolor{stringliteral}{"\(\backslash\)nFunciones: "});
+25         System.out.println(\textcolor{stringliteral}{"     2. show\_estadistica(String inp, String out) "});
+26         System.out.println(\textcolor{stringliteral}{"     Input: 2"});
+27         System.out.println();
+28 
+29         System.out.println(\textcolor{stringliteral}{"     0. Sortir"});
+30         System.out.println(\textcolor{stringliteral}{"     Input: 0"});
+31         System.out.println(\textcolor{stringliteral}{"----------------------------------------"});
+32     \}
 \end{DoxyCode}
 
 

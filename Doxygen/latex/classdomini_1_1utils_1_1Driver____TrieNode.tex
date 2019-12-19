@@ -22,11 +22,6 @@ static void \hyperlink{classdomini_1_1utils_1_1Driver____TrieNode_aa763a74162f64
 \subsection{Detailed Description}
 Driver de \hyperlink{classdomini_1_1utils_1_1TrieNode}{Trie\+Node}. 
 
-\begin{DoxyAuthor}{Author}
-Joan Bellavista Bartroli 
-\end{DoxyAuthor}
-
-
 \subsection{Member Function Documentation}
 \mbox{\Hypertarget{classdomini_1_1utils_1_1Driver____TrieNode_aa763a74162f647ee153c5cea01d371d0}\label{classdomini_1_1utils_1_1Driver____TrieNode_aa763a74162f647ee153c5cea01d371d0}} 
 \index{domini\+::utils\+::\+Driver\+\_\+\+\_\+\+Trie\+Node@{domini\+::utils\+::\+Driver\+\_\+\+\_\+\+Trie\+Node}!comprovar\+Excepcions@{comprovar\+Excepcions}}
@@ -47,12 +42,12 @@ Comprovarà les possibles excepcions que puguin apareixer a la classe.
 \end{DoxyParams}
 
 \begin{DoxyCode}
-40                                                                                   \{
-41         \textcolor{keywordtype}{int} op = Integer.parseInt(linea);
-42         \textcolor{keywordflow}{if}(trienode == null && op > 1) \{
-43             \textcolor{keywordflow}{throw} \textcolor{keyword}{new} IllegalArgumentException(\textcolor{stringliteral}{"Debes llamar al constructor antes"});
-44         \}
-45     \}
+42                                                                                   \{
+43         \textcolor{keywordtype}{int} op = Integer.parseInt(linea);
+44         \textcolor{keywordflow}{if}(trienode == null && op > 1) \{
+45             \textcolor{keywordflow}{throw} \textcolor{keyword}{new} IllegalArgumentException(\textcolor{stringliteral}{"Debes llamar al constructor antes"});
+46         \}
+47     \}
 \end{DoxyCode}
 \mbox{\Hypertarget{classdomini_1_1utils_1_1Driver____TrieNode_a19cb816408fb6b32cca0ea8ae8bc4153}\label{classdomini_1_1utils_1_1Driver____TrieNode_a19cb816408fb6b32cca0ea8ae8bc4153}} 
 \index{domini\+::utils\+::\+Driver\+\_\+\+\_\+\+Trie\+Node@{domini\+::utils\+::\+Driver\+\_\+\+\_\+\+Trie\+Node}!main@{main}}
@@ -62,41 +57,41 @@ Comprovarà les possibles excepcions que puguin apareixer a la classe.
 
 
 \begin{DoxyCode}
-47                                            \{
-48     \textcolor{keywordflow}{try} \{
-49         TrieNode<Byte> trienode = null;
-50         \hyperlink{classdomini_1_1utils_1_1Driver____TrieNode_ab9e971ebb4f8e219efaab32c6654243a}{showOptions}();
-51         BufferedReader reader = \textcolor{keyword}{new} BufferedReader(\textcolor{keyword}{new} InputStreamReader(System.in));
-52         String linea = \textcolor{stringliteral}{""};
-53         \textcolor{keywordflow}{while}(linea != null)\{
-54             System.out.println(\textcolor{stringliteral}{"Selecciona una opción:"});
-55             linea = reader.readLine().trim();
-56             System.out.println(\textcolor{stringliteral}{"Opción: "} + linea + \textcolor{stringliteral}{" seleccionada"});
-57             \hyperlink{classdomini_1_1utils_1_1Driver____TrieNode_aa763a74162f647ee153c5cea01d371d0}{comprovarExcepcions}(trienode, linea);
-58             \textcolor{keywordflow}{switch}(linea)\{
-59                 \textcolor{keywordflow}{case} \textcolor{stringliteral}{"1"}:
-60                     System.out.println(\textcolor{stringliteral}{"Escribe un entero que dara un valor al nodo root"});
-61                     String aux1 = reader.readLine().trim();
-62                     Integer index = Integer.parseInt(aux1);
-63                     trienode = \textcolor{keyword}{new} TrieNode<Byte>(index);
-64                 \textcolor{keywordflow}{break};
-65                 \textcolor{keywordflow}{case} \textcolor{stringliteral}{"2"}:
-66                     trienode.getChildren();
-67                 \textcolor{keywordflow}{break};
-68                 \textcolor{keywordflow}{case} \textcolor{stringliteral}{"3"}:
-69                     System.out.println(trienode.getIndex());
-70                 \textcolor{keywordflow}{break};
-71                 \textcolor{keywordflow}{case} \textcolor{stringliteral}{"0"}:
-72                     \textcolor{keywordflow}{return};
-73                 \textcolor{keywordflow}{default}:
-74                     System.out.println(\textcolor{stringliteral}{"La opción no es válida"});
-75                 \textcolor{keywordflow}{break};
-76             \}
-77         \}
-78     \}\textcolor{keywordflow}{catch} (Exception e) \{
-79         e.printStackTrace();
-80     \}
-81     \}
+49                                            \{
+50     \textcolor{keywordflow}{try} \{
+51         TrieNode<Byte> trienode = null;
+52         \hyperlink{classdomini_1_1utils_1_1Driver____TrieNode_ab9e971ebb4f8e219efaab32c6654243a}{showOptions}();
+53         BufferedReader reader = \textcolor{keyword}{new} BufferedReader(\textcolor{keyword}{new} InputStreamReader(System.in));
+54         String linea = \textcolor{stringliteral}{""};
+55         \textcolor{keywordflow}{while}(linea != null)\{
+56             System.out.println(\textcolor{stringliteral}{"Selecciona una opción:"});
+57             linea = reader.readLine().trim();
+58             System.out.println(\textcolor{stringliteral}{"Opción: "} + linea + \textcolor{stringliteral}{" seleccionada"});
+59             \hyperlink{classdomini_1_1utils_1_1Driver____TrieNode_aa763a74162f647ee153c5cea01d371d0}{comprovarExcepcions}(trienode, linea);
+60             \textcolor{keywordflow}{switch}(linea)\{
+61                 \textcolor{keywordflow}{case} \textcolor{stringliteral}{"1"}:
+62                     System.out.println(\textcolor{stringliteral}{"Escribe un entero que dara un valor al nodo root"});
+63                     String aux1 = reader.readLine().trim();
+64                     Integer index = Integer.parseInt(aux1);
+65                     trienode = \textcolor{keyword}{new} TrieNode<Byte>(index);
+66                 \textcolor{keywordflow}{break};
+67                 \textcolor{keywordflow}{case} \textcolor{stringliteral}{"2"}:
+68                     trienode.getChildren();
+69                 \textcolor{keywordflow}{break};
+70                 \textcolor{keywordflow}{case} \textcolor{stringliteral}{"3"}:
+71                     System.out.println(trienode.getIndex());
+72                 \textcolor{keywordflow}{break};
+73                 \textcolor{keywordflow}{case} \textcolor{stringliteral}{"0"}:
+74                     \textcolor{keywordflow}{return};
+75                 \textcolor{keywordflow}{default}:
+76                     System.out.println(\textcolor{stringliteral}{"La opción no es válida"});
+77                 \textcolor{keywordflow}{break};
+78             \}
+79         \}
+80     \}\textcolor{keywordflow}{catch} (Exception e) \{
+81         e.printStackTrace();
+82     \}
+83     \}
 \end{DoxyCode}
 \mbox{\Hypertarget{classdomini_1_1utils_1_1Driver____TrieNode_ab9e971ebb4f8e219efaab32c6654243a}\label{classdomini_1_1utils_1_1Driver____TrieNode_ab9e971ebb4f8e219efaab32c6654243a}} 
 \index{domini\+::utils\+::\+Driver\+\_\+\+\_\+\+Trie\+Node@{domini\+::utils\+::\+Driver\+\_\+\+\_\+\+Trie\+Node}!show\+Options@{show\+Options}}
@@ -110,23 +105,23 @@ Mostra les accions a realitzar durant l\textquotesingle{}execució
 
 
 \begin{DoxyCode}
-17                                      \{
-18         System.out.println(\textcolor{stringliteral}{"Driver de TrieNode"});
-19         System.out.println(\textcolor{stringliteral}{"Constructores: "});
-20         System.out.println(\textcolor{stringliteral}{"     1. TrieNode(Integer index)"});
-21         System.out.println(\textcolor{stringliteral}{"     Input: 1"});
-22 
-23         System.out.println(\textcolor{stringliteral}{"Funciones: "});
-24         System.out.println(\textcolor{stringliteral}{"     2. getChildren() "});
-25         System.out.println(\textcolor{stringliteral}{"     Input: 2"});
-26         System.out.println(\textcolor{stringliteral}{"     3. getIndex()"});
-27         System.out.println(\textcolor{stringliteral}{"     Input: 3"});
-28         System.out.println();
-29 
-30         System.out.println(\textcolor{stringliteral}{"     0. Sortir"});
-31         System.out.println(\textcolor{stringliteral}{"     Input: 0"});
-32         System.out.println(\textcolor{stringliteral}{"----------------------------------------"});
-33     \}
+19                                      \{
+20         System.out.println(\textcolor{stringliteral}{"Driver de TrieNode"});
+21         System.out.println(\textcolor{stringliteral}{"Constructores: "});
+22         System.out.println(\textcolor{stringliteral}{"     1. TrieNode(Integer index)"});
+23         System.out.println(\textcolor{stringliteral}{"     Input: 1"});
+24 
+25         System.out.println(\textcolor{stringliteral}{"Funciones: "});
+26         System.out.println(\textcolor{stringliteral}{"     2. getChildren() "});
+27         System.out.println(\textcolor{stringliteral}{"     Input: 2"});
+28         System.out.println(\textcolor{stringliteral}{"     3. getIndex()"});
+29         System.out.println(\textcolor{stringliteral}{"     Input: 3"});
+30         System.out.println();
+31 
+32         System.out.println(\textcolor{stringliteral}{"     0. Sortir"});
+33         System.out.println(\textcolor{stringliteral}{"     Input: 0"});
+34         System.out.println(\textcolor{stringliteral}{"----------------------------------------"});
+35     \}
 \end{DoxyCode}
 
 

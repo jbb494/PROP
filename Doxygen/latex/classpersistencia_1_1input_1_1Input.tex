@@ -2,13 +2,18 @@
 \label{classpersistencia_1_1input_1_1Input}\index{persistencia.\+input.\+Input@{persistencia.\+input.\+Input}}
 
 
-Classe \hyperlink{classpersistencia_1_1input_1_1Input}{Input} Pot llegir fitxers de fins a 2 GB.  
+Classe \hyperlink{classpersistencia_1_1input_1_1Input}{Input}.  
 
 
 
 
-Collaboration diagram for persistencia.\+input.\+Input\+:
-% FIG 0
+Collaboration diagram for persistencia.\+input.\+Input\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=227pt]{classpersistencia_1_1input_1_1Input__coll__graph}
+\end{center}
+\end{figure}
 \subsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
@@ -65,12 +70,7 @@ static \hyperlink{classpersistencia_1_1input_1_1Input}{Input} \hyperlink{classpe
 
 
 \subsection{Detailed Description}
-Classe \hyperlink{classpersistencia_1_1input_1_1Input}{Input} Pot llegir fitxers de fins a 2 GB. 
-
-\begin{DoxyAuthor}{Author}
-Joan Bellavista 
-\end{DoxyAuthor}
-
+Classe \hyperlink{classpersistencia_1_1input_1_1Input}{Input}. 
 
 \subsection{Constructor \& Destructor Documentation}
 \mbox{\Hypertarget{classpersistencia_1_1input_1_1Input_a9b30ef8d489a1fc5b4aa04a14474349a}\label{classpersistencia_1_1input_1_1Input_a9b30ef8d489a1fc5b4aa04a14474349a}} 
@@ -90,28 +90,28 @@ Constructor de la classe.
 \end{DoxyParams}
 
 \begin{DoxyCode}
-88                                \{
-89         \textcolor{keywordflow}{try} \{   
-90             \hyperlink{classpersistencia_1_1input_1_1Input_adae91120899054fe5200d5e307840042}{frag\_length} = Long.MAX\_VALUE;
-91             \hyperlink{classpersistencia_1_1input_1_1Input_ace2c934234f82fb07ae169b50f71cd32}{read\_bytes} = 0;
-92             \hyperlink{classpersistencia_1_1input_1_1Input_ad3132949d4ac469b5f4d77373389f9f1}{illegals} = 0;
-93             \hyperlink{classpersistencia_1_1input_1_1Input_aa986cd4af0178e1a80f551dcd8936125}{end} = \textcolor{keyword}{false};
-94 
-95             \hyperlink{classpersistencia_1_1input_1_1Input_abe76388d0ac9eeafdba673ad2138f8dc}{punter} = 0;
-96             FileInputStream fin = \textcolor{keyword}{new} FileInputStream(path);
-97             \hyperlink{classpersistencia_1_1input_1_1Input_aa4b622d30a090256ce05c5082cdb0791}{bin} = \textcolor{keyword}{new} BufferedInputStream(fin);
-98         \} \textcolor{keywordflow}{catch} (FileNotFoundException e) \{
-99             e.printStackTrace();
-100         \} \textcolor{keywordflow}{finally} \{
-101             \textcolor{keywordflow}{try} \{ \textcolor{comment}{//saltaven excepcions fins que he comentat aquestes línies i no entenc per què}
-102                 \textcolor{comment}{//if (inputStreamReader != null);}
-103                 \textcolor{comment}{//    inputStreamReader.close();}
-104             \} \textcolor{keywordflow}{catch} (Exception ex2) \{
-105                 System.out.println(\textcolor{stringliteral}{"Msg 2: "} + ex2.getMessage());
-106             \}
-107         \}
-108 
-109     \}
+90                                \{
+91         \textcolor{keywordflow}{try} \{   
+92             \hyperlink{classpersistencia_1_1input_1_1Input_adae91120899054fe5200d5e307840042}{frag\_length} = Long.MAX\_VALUE;
+93             \hyperlink{classpersistencia_1_1input_1_1Input_ace2c934234f82fb07ae169b50f71cd32}{read\_bytes} = 0;
+94             \hyperlink{classpersistencia_1_1input_1_1Input_ad3132949d4ac469b5f4d77373389f9f1}{illegals} = 0;
+95             \hyperlink{classpersistencia_1_1input_1_1Input_aa986cd4af0178e1a80f551dcd8936125}{end} = \textcolor{keyword}{false};
+96 
+97             \hyperlink{classpersistencia_1_1input_1_1Input_abe76388d0ac9eeafdba673ad2138f8dc}{punter} = 0;
+98             FileInputStream fin = \textcolor{keyword}{new} FileInputStream(path);
+99             \hyperlink{classpersistencia_1_1input_1_1Input_aa4b622d30a090256ce05c5082cdb0791}{bin} = \textcolor{keyword}{new} BufferedInputStream(fin);
+100         \} \textcolor{keywordflow}{catch} (FileNotFoundException e) \{
+101             e.printStackTrace();
+102         \} \textcolor{keywordflow}{finally} \{
+103             \textcolor{keywordflow}{try} \{ \textcolor{comment}{//saltaven excepcions fins que he comentat aquestes línies i no entenc per què}
+104                 \textcolor{comment}{//if (inputStreamReader != null);}
+105                 \textcolor{comment}{//    inputStreamReader.close();}
+106             \} \textcolor{keywordflow}{catch} (Exception ex2) \{
+107                 System.out.println(\textcolor{stringliteral}{"Msg 2: "} + ex2.getMessage());
+108             \}
+109         \}
+110 
+111     \}
 \end{DoxyCode}
 
 
@@ -127,9 +127,9 @@ Indica si hem arribat al final del fitxer o fragment
 \end{DoxyReturn}
 
 \begin{DoxyCode}
-200                               \{
-201         \textcolor{keywordflow}{return} \hyperlink{classpersistencia_1_1input_1_1Input_aa986cd4af0178e1a80f551dcd8936125}{end};
-202     \}
+202                               \{
+203         \textcolor{keywordflow}{return} \hyperlink{classpersistencia_1_1input_1_1Input_aa986cd4af0178e1a80f551dcd8936125}{end};
+204     \}
 \end{DoxyCode}
 \mbox{\Hypertarget{classpersistencia_1_1input_1_1Input_a3fa5a378b2155a3022a4a4ef38d63a8e}\label{classpersistencia_1_1input_1_1Input_a3fa5a378b2155a3022a4a4ef38d63a8e}} 
 \index{persistencia\+::input\+::\+Input@{persistencia\+::input\+::\+Input}!get\+Bits@{get\+Bits}}
@@ -147,40 +147,40 @@ Retorna un byte amb num\+\_\+bits bits valids
 \end{DoxyReturn}
 
 \begin{DoxyCode}
-144     \{
-145         \textcolor{keywordflow}{if}(num\_bits < 1 || num\_bits > 8)\textcolor{keywordflow}{throw} \textcolor{keyword}{new} IllegalArgumentException(\textcolor{stringliteral}{"num\_bits tiene que ser un valor
+146     \{
+147         \textcolor{keywordflow}{if}(num\_bits < 1 || num\_bits > 8)\textcolor{keywordflow}{throw} \textcolor{keyword}{new} IllegalArgumentException(\textcolor{stringliteral}{"num\_bits tiene que ser un valor
        entre 1 y 8 incluidos"});
-146         \textcolor{keywordflow}{if} (\hyperlink{classpersistencia_1_1input_1_1Input_aa986cd4af0178e1a80f551dcd8936125}{end}) \{
-147             \hyperlink{classpersistencia_1_1input_1_1Input_ad3132949d4ac469b5f4d77373389f9f1}{illegals} += num\_bits;
-148             \textcolor{keywordflow}{return} 0;
-149         \}
-150         \textcolor{keywordflow}{if} (\hyperlink{classpersistencia_1_1input_1_1Input_abe76388d0ac9eeafdba673ad2138f8dc}{punter} == 0) \{
-151             \hyperlink{classpersistencia_1_1input_1_1Input_a24eae4109b4ff4954ff2d7feef2fa4e4}{read}();
-152             \textcolor{keywordflow}{if} (\hyperlink{classpersistencia_1_1input_1_1Input_aa986cd4af0178e1a80f551dcd8936125}{end}) \{
-153                 \hyperlink{classpersistencia_1_1input_1_1Input_ad3132949d4ac469b5f4d77373389f9f1}{illegals} += num\_bits;
-154                 \textcolor{keywordflow}{return} 0;
-155             \}
-156         \}
-157         
-158         byte b = byteToConversion.shift\_right\_logic(\hyperlink{classpersistencia_1_1input_1_1Input_a45d4bdcdb96823fc8ffe5c1a430727f2}{last\_byte}, \hyperlink{classpersistencia_1_1input_1_1Input_abe76388d0ac9eeafdba673ad2138f8dc}{punter});
-159         \textcolor{keywordflow}{if}(\hyperlink{classpersistencia_1_1input_1_1Input_abe76388d0ac9eeafdba673ad2138f8dc}{punter} + num\_bits > 8) 
-160         \{
-161             \textcolor{keywordtype}{int} mou = 8 - \hyperlink{classpersistencia_1_1input_1_1Input_abe76388d0ac9eeafdba673ad2138f8dc}{punter};
-162             \textcolor{keywordtype}{int} restants = \hyperlink{classpersistencia_1_1input_1_1Input_abe76388d0ac9eeafdba673ad2138f8dc}{punter} + num\_bits - 8;
-163             \hyperlink{classpersistencia_1_1input_1_1Input_abe76388d0ac9eeafdba673ad2138f8dc}{punter} = 0;
-164             b = (byte) (b | (\hyperlink{classpersistencia_1_1input_1_1Input_a3fa5a378b2155a3022a4a4ef38d63a8e}{getBits}(restants) << mou));
-165         \}
-166         \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (\hyperlink{classpersistencia_1_1input_1_1Input_abe76388d0ac9eeafdba673ad2138f8dc}{punter} + num\_bits == 8) 
-167         \{
-168             \hyperlink{classpersistencia_1_1input_1_1Input_abe76388d0ac9eeafdba673ad2138f8dc}{punter} = 0;
-169         \}
-170         \textcolor{keywordflow}{else} \textcolor{comment}{//punter + num\_bits < 8}
-171         \{ 
-172             b = (byte) (b & ~(byte) (0xff << num\_bits)); \textcolor{comment}{// neteja els bits brossa a posicions altes}
-173             \hyperlink{classpersistencia_1_1input_1_1Input_abe76388d0ac9eeafdba673ad2138f8dc}{punter} += num\_bits;
-174         \}
-175         \textcolor{keywordflow}{return} b;
-176     \}
+148         \textcolor{keywordflow}{if} (\hyperlink{classpersistencia_1_1input_1_1Input_aa986cd4af0178e1a80f551dcd8936125}{end}) \{
+149             \hyperlink{classpersistencia_1_1input_1_1Input_ad3132949d4ac469b5f4d77373389f9f1}{illegals} += num\_bits;
+150             \textcolor{keywordflow}{return} 0;
+151         \}
+152         \textcolor{keywordflow}{if} (\hyperlink{classpersistencia_1_1input_1_1Input_abe76388d0ac9eeafdba673ad2138f8dc}{punter} == 0) \{
+153             \hyperlink{classpersistencia_1_1input_1_1Input_a24eae4109b4ff4954ff2d7feef2fa4e4}{read}();
+154             \textcolor{keywordflow}{if} (\hyperlink{classpersistencia_1_1input_1_1Input_aa986cd4af0178e1a80f551dcd8936125}{end}) \{
+155                 \hyperlink{classpersistencia_1_1input_1_1Input_ad3132949d4ac469b5f4d77373389f9f1}{illegals} += num\_bits;
+156                 \textcolor{keywordflow}{return} 0;
+157             \}
+158         \}
+159         
+160         byte b = byteToConversion.shift\_right\_logic(\hyperlink{classpersistencia_1_1input_1_1Input_a45d4bdcdb96823fc8ffe5c1a430727f2}{last\_byte}, \hyperlink{classpersistencia_1_1input_1_1Input_abe76388d0ac9eeafdba673ad2138f8dc}{punter});
+161         \textcolor{keywordflow}{if}(\hyperlink{classpersistencia_1_1input_1_1Input_abe76388d0ac9eeafdba673ad2138f8dc}{punter} + num\_bits > 8) 
+162         \{
+163             \textcolor{keywordtype}{int} mou = 8 - \hyperlink{classpersistencia_1_1input_1_1Input_abe76388d0ac9eeafdba673ad2138f8dc}{punter};
+164             \textcolor{keywordtype}{int} restants = \hyperlink{classpersistencia_1_1input_1_1Input_abe76388d0ac9eeafdba673ad2138f8dc}{punter} + num\_bits - 8;
+165             \hyperlink{classpersistencia_1_1input_1_1Input_abe76388d0ac9eeafdba673ad2138f8dc}{punter} = 0;
+166             b = (byte) (b | (\hyperlink{classpersistencia_1_1input_1_1Input_a3fa5a378b2155a3022a4a4ef38d63a8e}{getBits}(restants) << mou));
+167         \}
+168         \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (\hyperlink{classpersistencia_1_1input_1_1Input_abe76388d0ac9eeafdba673ad2138f8dc}{punter} + num\_bits == 8) 
+169         \{
+170             \hyperlink{classpersistencia_1_1input_1_1Input_abe76388d0ac9eeafdba673ad2138f8dc}{punter} = 0;
+171         \}
+172         \textcolor{keywordflow}{else} \textcolor{comment}{//punter + num\_bits < 8}
+173         \{ 
+174             b = (byte) (b & ~(byte) (0xff << num\_bits)); \textcolor{comment}{// neteja els bits brossa a posicions altes}
+175             \hyperlink{classpersistencia_1_1input_1_1Input_abe76388d0ac9eeafdba673ad2138f8dc}{punter} += num\_bits;
+176         \}
+177         \textcolor{keywordflow}{return} b;
+178     \}
 \end{DoxyCode}
 \mbox{\Hypertarget{classpersistencia_1_1input_1_1Input_a95e2068bd17e415f0487f8193f066160}\label{classpersistencia_1_1input_1_1Input_a95e2068bd17e415f0487f8193f066160}} 
 \index{persistencia\+::input\+::\+Input@{persistencia\+::input\+::\+Input}!get\+Decode\+Alg@{get\+Decode\+Alg}}
@@ -193,17 +193,17 @@ Retorna l\textquotesingle{}algoritme que hem d\textquotesingle{}emprar per la de
 \end{DoxyReturn}
 
 \begin{DoxyCode}
-217     \{
-218         \textcolor{comment}{/*if(gotExtension) \{}
-219 \textcolor{comment}{            throw new IllegalArgumentException("Ya hemos cogido la metada");}
-220 \textcolor{comment}{        \}}
-221 \textcolor{comment}{        this.gotExtension = true;*/}
-222         byte aux = \hyperlink{classpersistencia_1_1input_1_1Input_a3fa5a378b2155a3022a4a4ef38d63a8e}{getBits}(2);
-223         \textcolor{keywordflow}{if}(aux == (byte)0) \textcolor{keywordflow}{return} \textcolor{stringliteral}{"lz78"};
-224         \textcolor{keywordflow}{else} \textcolor{keywordflow}{if}(aux == (byte)1) \textcolor{keywordflow}{return} \textcolor{stringliteral}{"lzw"};
-225         \textcolor{keywordflow}{else} \textcolor{keywordflow}{if}(aux == (byte)2) \textcolor{keywordflow}{return} \textcolor{stringliteral}{"lzss"};
-226         \textcolor{keywordflow}{else} \textcolor{keywordflow}{return} \textcolor{stringliteral}{"jpeg"};
-227     \}
+219     \{
+220         \textcolor{comment}{/*if(gotExtension) \{}
+221 \textcolor{comment}{            throw new IllegalArgumentException("Ya hemos cogido la metada");}
+222 \textcolor{comment}{        \}}
+223 \textcolor{comment}{        this.gotExtension = true;*/}
+224         byte aux = \hyperlink{classpersistencia_1_1input_1_1Input_a3fa5a378b2155a3022a4a4ef38d63a8e}{getBits}(2);
+225         \textcolor{keywordflow}{if}(aux == (byte)0) \textcolor{keywordflow}{return} \textcolor{stringliteral}{"lz78"};
+226         \textcolor{keywordflow}{else} \textcolor{keywordflow}{if}(aux == (byte)1) \textcolor{keywordflow}{return} \textcolor{stringliteral}{"lzw"};
+227         \textcolor{keywordflow}{else} \textcolor{keywordflow}{if}(aux == (byte)2) \textcolor{keywordflow}{return} \textcolor{stringliteral}{"lzss"};
+228         \textcolor{keywordflow}{else} \textcolor{keywordflow}{return} \textcolor{stringliteral}{"jpeg"};
+229     \}
 \end{DoxyCode}
 \mbox{\Hypertarget{classpersistencia_1_1input_1_1Input_aa45459b94e501548a7b223d24b560ad0}\label{classpersistencia_1_1input_1_1Input_aa45459b94e501548a7b223d24b560ad0}} 
 \index{persistencia\+::input\+::\+Input@{persistencia\+::input\+::\+Input}!get\+Instance@{get\+Instance}}
@@ -217,11 +217,11 @@ Retorna l\textquotesingle{}única instància de \hyperlink{classpersistencia_1_1
 
 
 \begin{DoxyCode}
-70                                       \{
-71         \textcolor{keywordflow}{if}(\hyperlink{classpersistencia_1_1input_1_1Input_a2e516b1cbef9b704c10fd932b3d11afd}{instance} == null) \textcolor{keywordflow}{throw} \textcolor{keyword}{new} IllegalArgumentException(\textcolor{stringliteral}{"Input not initialized. You must
+72                                       \{
+73         \textcolor{keywordflow}{if}(\hyperlink{classpersistencia_1_1input_1_1Input_a2e516b1cbef9b704c10fd932b3d11afd}{instance} == null) \textcolor{keywordflow}{throw} \textcolor{keyword}{new} IllegalArgumentException(\textcolor{stringliteral}{"Input not initialized. You must
        call initialize(String)"});
-72         \textcolor{keywordflow}{return} \hyperlink{classpersistencia_1_1input_1_1Input_a2e516b1cbef9b704c10fd932b3d11afd}{instance};
-73     \}
+74         \textcolor{keywordflow}{return} \hyperlink{classpersistencia_1_1input_1_1Input_a2e516b1cbef9b704c10fd932b3d11afd}{instance};
+75     \}
 \end{DoxyCode}
 \mbox{\Hypertarget{classpersistencia_1_1input_1_1Input_a81e96a5ac3ca41b5001ffff9f9acc76a}\label{classpersistencia_1_1input_1_1Input_a81e96a5ac3ca41b5001ffff9f9acc76a}} 
 \index{persistencia\+::input\+::\+Input@{persistencia\+::input\+::\+Input}!get\+More\+Bits@{get\+More\+Bits}}
@@ -239,15 +239,15 @@ Array\+List de Bytes amb num\+\_\+bits bits valids
 \end{DoxyReturn}
 
 \begin{DoxyCode}
-185     \{
-186         ArrayList<Byte> al = \textcolor{keyword}{new} ArrayList<Byte>();
-187         \textcolor{keywordflow}{while} (num\_bits > 0) \{
-188             Byte b = \hyperlink{classpersistencia_1_1input_1_1Input_a3fa5a378b2155a3022a4a4ef38d63a8e}{getBits}(Math.min(num\_bits, 8));
-189             al.add(b);
-190             num\_bits -= 8;
-191         \}
-192         \textcolor{keywordflow}{return} al;
-193     \}
+187     \{
+188         ArrayList<Byte> al = \textcolor{keyword}{new} ArrayList<Byte>();
+189         \textcolor{keywordflow}{while} (num\_bits > 0) \{
+190             Byte b = \hyperlink{classpersistencia_1_1input_1_1Input_a3fa5a378b2155a3022a4a4ef38d63a8e}{getBits}(Math.min(num\_bits, 8));
+191             al.add(b);
+192             num\_bits -= 8;
+193         \}
+194         \textcolor{keywordflow}{return} al;
+195     \}
 \end{DoxyCode}
 \mbox{\Hypertarget{classpersistencia_1_1input_1_1Input_a2b9b57fce6cb83efe70d5dc205737249}\label{classpersistencia_1_1input_1_1Input_a2b9b57fce6cb83efe70d5dc205737249}} 
 \index{persistencia\+::input\+::\+Input@{persistencia\+::input\+::\+Input}!ignore\+The\+Rest\+Of\+The\+Byte@{ignore\+The\+Rest\+Of\+The\+Byte}}
@@ -257,9 +257,9 @@ Array\+List de Bytes amb num\+\_\+bits bits valids
 
 Si el pròxim bit a llegir no és el primer bit d\textquotesingle{}un byte, avança la lectura fins a l\textquotesingle{}inici del proper byte 
 \begin{DoxyCode}
-234                                          \{
-235         \hyperlink{classpersistencia_1_1input_1_1Input_abe76388d0ac9eeafdba673ad2138f8dc}{punter} = 0;
-236     \}
+236                                          \{
+237         \hyperlink{classpersistencia_1_1input_1_1Input_abe76388d0ac9eeafdba673ad2138f8dc}{punter} = 0;
+238     \}
 \end{DoxyCode}
 \mbox{\Hypertarget{classpersistencia_1_1input_1_1Input_abe53dec7aca98b94d0ec5e3200483513}\label{classpersistencia_1_1input_1_1Input_abe53dec7aca98b94d0ec5e3200483513}} 
 \index{persistencia\+::input\+::\+Input@{persistencia\+::input\+::\+Input}!initialize@{initialize}}
@@ -278,9 +278,9 @@ Reinicialitza l\textquotesingle{}úniaca instància de \hyperlink{classpersisten
 \end{DoxyParams}
 
 \begin{DoxyCode}
-80                                                \{
-81         \hyperlink{classpersistencia_1_1input_1_1Input_a2e516b1cbef9b704c10fd932b3d11afd}{instance} = \textcolor{keyword}{new} \hyperlink{classpersistencia_1_1input_1_1Input_a9b30ef8d489a1fc5b4aa04a14474349a}{Input}(path);
-82     \}
+82                                                \{
+83         \hyperlink{classpersistencia_1_1input_1_1Input_a2e516b1cbef9b704c10fd932b3d11afd}{instance} = \textcolor{keyword}{new} \hyperlink{classpersistencia_1_1input_1_1Input_a9b30ef8d489a1fc5b4aa04a14474349a}{Input}(path);
+84     \}
 \end{DoxyCode}
 \mbox{\Hypertarget{classpersistencia_1_1input_1_1Input_a3f0fc057e91430b81f5f2c92f91b8ed7}\label{classpersistencia_1_1input_1_1Input_a3f0fc057e91430b81f5f2c92f91b8ed7}} 
 \index{persistencia\+::input\+::\+Input@{persistencia\+::input\+::\+Input}!out\+Of\+File@{out\+Of\+File}}
@@ -293,10 +293,10 @@ Retorna el nombre de bits que s\textquotesingle{}han intentat llegir però quede
 \end{DoxyReturn}
 
 \begin{DoxyCode}
-208                            \{ \textcolor{comment}{//nombre de bits que s'han intentat llegir però queden fora del fitxer o
+210                            \{ \textcolor{comment}{//nombre de bits que s'han intentat llegir però queden fora del fitxer o
        fragment}
-209         \textcolor{keywordflow}{return} \hyperlink{classpersistencia_1_1input_1_1Input_ad3132949d4ac469b5f4d77373389f9f1}{illegals};
-210     \}
+211         \textcolor{keywordflow}{return} \hyperlink{classpersistencia_1_1input_1_1Input_ad3132949d4ac469b5f4d77373389f9f1}{illegals};
+212     \}
 \end{DoxyCode}
 \mbox{\Hypertarget{classpersistencia_1_1input_1_1Input_a24eae4109b4ff4954ff2d7feef2fa4e4}\label{classpersistencia_1_1input_1_1Input_a24eae4109b4ff4954ff2d7feef2fa4e4}} 
 \index{persistencia\+::input\+::\+Input@{persistencia\+::input\+::\+Input}!read@{read}}
@@ -310,27 +310,27 @@ Llegeix el proxim byte de l\textquotesingle{}arxiu.
 
 
 \begin{DoxyCode}
-115                         \{
-116         Integer c;
-117         \hyperlink{classpersistencia_1_1input_1_1Input_ace2c934234f82fb07ae169b50f71cd32}{read\_bytes}++;
-118         \textcolor{keywordflow}{if} (\hyperlink{classpersistencia_1_1input_1_1Input_ace2c934234f82fb07ae169b50f71cd32}{read\_bytes} <= \hyperlink{classpersistencia_1_1input_1_1Input_adae91120899054fe5200d5e307840042}{frag\_length}) \{
-119             \textcolor{keywordflow}{try} \{
-120                 \textcolor{keywordflow}{if} ((c = \hyperlink{classpersistencia_1_1input_1_1Input_aa4b622d30a090256ce05c5082cdb0791}{bin}.read()) != -1) \{
-121                     \hyperlink{classpersistencia_1_1input_1_1Input_a45d4bdcdb96823fc8ffe5c1a430727f2}{last\_byte} = c.byteValue();
-122                 \}
-123                 \textcolor{keywordflow}{else} \{
-124                     \hyperlink{classpersistencia_1_1input_1_1Input_aa986cd4af0178e1a80f551dcd8936125}{end} = \textcolor{keyword}{true};
-125                 \}
-126             \} \textcolor{keywordflow}{catch} (IOException e) \{
-127                 e.printStackTrace();
-128             \}
-129         \}
-130         \textcolor{keywordflow}{else} \{
-131             \hyperlink{classpersistencia_1_1input_1_1Input_aa986cd4af0178e1a80f551dcd8936125}{end} = \textcolor{keyword}{true};
-132             \hyperlink{classpersistencia_1_1input_1_1Input_a45d4bdcdb96823fc8ffe5c1a430727f2}{last\_byte} = 0;
-133         \}
-134 
-135     \}
+117                         \{
+118         Integer c;
+119         \hyperlink{classpersistencia_1_1input_1_1Input_ace2c934234f82fb07ae169b50f71cd32}{read\_bytes}++;
+120         \textcolor{keywordflow}{if} (\hyperlink{classpersistencia_1_1input_1_1Input_ace2c934234f82fb07ae169b50f71cd32}{read\_bytes} <= \hyperlink{classpersistencia_1_1input_1_1Input_adae91120899054fe5200d5e307840042}{frag\_length}) \{
+121             \textcolor{keywordflow}{try} \{
+122                 \textcolor{keywordflow}{if} ((c = \hyperlink{classpersistencia_1_1input_1_1Input_aa4b622d30a090256ce05c5082cdb0791}{bin}.read()) != -1) \{
+123                     \hyperlink{classpersistencia_1_1input_1_1Input_a45d4bdcdb96823fc8ffe5c1a430727f2}{last\_byte} = c.byteValue();
+124                 \}
+125                 \textcolor{keywordflow}{else} \{
+126                     \hyperlink{classpersistencia_1_1input_1_1Input_aa986cd4af0178e1a80f551dcd8936125}{end} = \textcolor{keyword}{true};
+127                 \}
+128             \} \textcolor{keywordflow}{catch} (IOException e) \{
+129                 e.printStackTrace();
+130             \}
+131         \}
+132         \textcolor{keywordflow}{else} \{
+133             \hyperlink{classpersistencia_1_1input_1_1Input_aa986cd4af0178e1a80f551dcd8936125}{end} = \textcolor{keyword}{true};
+134             \hyperlink{classpersistencia_1_1input_1_1Input_a45d4bdcdb96823fc8ffe5c1a430727f2}{last\_byte} = 0;
+135         \}
+136 
+137     \}
 \end{DoxyCode}
 \mbox{\Hypertarget{classpersistencia_1_1input_1_1Input_a619abf26ddafb7a1bde420622d3c7aa5}\label{classpersistencia_1_1input_1_1Input_a619abf26ddafb7a1bde420622d3c7aa5}} 
 \index{persistencia\+::input\+::\+Input@{persistencia\+::input\+::\+Input}!start\+Fragment@{start\+Fragment}}
@@ -349,11 +349,11 @@ Comença a llegir un fragment. Considerarem que el fragment son els length bytes
 \end{DoxyParams}
 
 \begin{DoxyCode}
-244                                            \{
-245         \hyperlink{classpersistencia_1_1input_1_1Input_adae91120899054fe5200d5e307840042}{frag\_length} = length;
-246         \hyperlink{classpersistencia_1_1input_1_1Input_ace2c934234f82fb07ae169b50f71cd32}{read\_bytes} = 0;
-247         \hyperlink{classpersistencia_1_1input_1_1Input_aa986cd4af0178e1a80f551dcd8936125}{end} = \textcolor{keyword}{false};
-248     \}
+246                                            \{
+247         \hyperlink{classpersistencia_1_1input_1_1Input_adae91120899054fe5200d5e307840042}{frag\_length} = length;
+248         \hyperlink{classpersistencia_1_1input_1_1Input_ace2c934234f82fb07ae169b50f71cd32}{read\_bytes} = 0;
+249         \hyperlink{classpersistencia_1_1input_1_1Input_aa986cd4af0178e1a80f551dcd8936125}{end} = \textcolor{keyword}{false};
+250     \}
 \end{DoxyCode}
 
 

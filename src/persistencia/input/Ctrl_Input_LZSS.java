@@ -61,8 +61,9 @@ public class Ctrl_Input_LZSS extends Ctrl_Input {
     }
        
 }
-/** @class Ctrl_Input_LZSS 
+/** @class Ctrl_Input_LZSS
  *  @brief Aquesta és la classe fill del controlador Ctrl_Input.
+  * @file
  *   
  *  Aquesta classe tracta d'obtenir la unitat mínima necessària per al
  *  input de l'algorisme LZSS.

@@ -6,6 +6,8 @@ import java.io.InputStreamReader;
 /**
  * @class Driver__TrieNode
  * @brief Driver de TrieNode
+ * @file
+
  * @author Joan Bellavista Bartroli
  */
 public class Driver__TrieNode {

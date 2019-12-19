@@ -7,6 +7,8 @@ import domini.utils.byteToConversion;
 /**
  * @class Ctrl_Input_LZW
  * @brief Acces a un arxiu comprimit amb LZW
+ * @file
+
  * @author Miguel Paracuellos Ocana
  */
 public class Ctrl_Input_LZW extends Ctrl_Input {

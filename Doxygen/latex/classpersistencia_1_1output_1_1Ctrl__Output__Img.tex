@@ -16,8 +16,13 @@ Inheritance diagram for persistencia.\+output.\+Ctrl\+\_\+\+Output\+\_\+\+Img\+:
 \end{figure}
 
 
-Collaboration diagram for persistencia.\+output.\+Ctrl\+\_\+\+Output\+\_\+\+Img\+:
-% FIG 0
+Collaboration diagram for persistencia.\+output.\+Ctrl\+\_\+\+Output\+\_\+\+Img\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=211pt]{classpersistencia_1_1output_1_1Ctrl__Output__Img__coll__graph}
+\end{center}
+\end{figure}
 \subsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
@@ -57,11 +62,6 @@ void \hyperlink{classpersistencia_1_1output_1_1Ctrl__Output__Img_aab3258280bd6ab
 \subsection{Detailed Description}
 Controlador de \hyperlink{classpersistencia_1_1output_1_1Output}{Output} que permet escriure una imatge ppm. 
 
-\begin{DoxyAuthor}{Author}
-Joan Lapeyra Amat 
-\end{DoxyAuthor}
-
-
 \subsection{Constructor \& Destructor Documentation}
 \mbox{\Hypertarget{classpersistencia_1_1output_1_1Ctrl__Output__Img_aa3f2948dd4645d8b121eedf30daa0c3f}\label{classpersistencia_1_1output_1_1Ctrl__Output__Img_aa3f2948dd4645d8b121eedf30daa0c3f}} 
 \index{persistencia\+::output\+::\+Ctrl\+\_\+\+Output\+\_\+\+Img@{persistencia\+::output\+::\+Ctrl\+\_\+\+Output\+\_\+\+Img}!Ctrl\+\_\+\+Output\+\_\+\+Img@{Ctrl\+\_\+\+Output\+\_\+\+Img}}
@@ -80,10 +80,10 @@ Constructor de la classe. Escriu les dades de la capçalera ppm (magic number, w
 \end{DoxyParams}
 
 \begin{DoxyCode}
-42                                                               \{
-43         super(path);
-44         \hyperlink{classpersistencia_1_1output_1_1Ctrl__Output__Img_aab3258280bd6abb81d580c93eb68fb28}{init}(w, h, mv);        
-45     \}
+44                                                               \{
+45         super(path);
+46         \hyperlink{classpersistencia_1_1output_1_1Ctrl__Output__Img_aab3258280bd6abb81d580c93eb68fb28}{init}(w, h, mv);        
+47     \}
 \end{DoxyCode}
 \mbox{\Hypertarget{classpersistencia_1_1output_1_1Ctrl__Output__Img_aa0e106a1fc829ebba51e0ba6d9d65a63}\label{classpersistencia_1_1output_1_1Ctrl__Output__Img_aa0e106a1fc829ebba51e0ba6d9d65a63}} 
 \index{persistencia\+::output\+::\+Ctrl\+\_\+\+Output\+\_\+\+Img@{persistencia\+::output\+::\+Ctrl\+\_\+\+Output\+\_\+\+Img}!Ctrl\+\_\+\+Output\+\_\+\+Img@{Ctrl\+\_\+\+Output\+\_\+\+Img}}
@@ -100,10 +100,10 @@ Continua escrivint al fitxer on s\textquotesingle{}estava escrivint
 \end{DoxyNote}
 
 \begin{DoxyCode}
-52                                                  \{
-53         super();
-54         \hyperlink{classpersistencia_1_1output_1_1Ctrl__Output__Img_aab3258280bd6abb81d580c93eb68fb28}{init}(w, h, mv);        
-55     \}
+54                                                  \{
+55         super();
+56         \hyperlink{classpersistencia_1_1output_1_1Ctrl__Output__Img_aab3258280bd6abb81d580c93eb68fb28}{init}(w, h, mv);        
+57     \}
 \end{DoxyCode}
 
 
@@ -116,19 +116,19 @@ Continua escrivint al fitxer on s\textquotesingle{}estava escrivint
 
 
 \begin{DoxyCode}
-116     \{
-117         \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} x = 0; x < 8 && \hyperlink{classpersistencia_1_1output_1_1Ctrl__Output__Img_a586ee8128a26b6786471e040a705bdbc}{rows} < \hyperlink{classpersistencia_1_1output_1_1Ctrl__Output__Img_a1d7bc52c64c79e8545ae6d1ae8b9ee2e}{height}; ++x) \{
-118             ++\hyperlink{classpersistencia_1_1output_1_1Ctrl__Output__Img_a586ee8128a26b6786471e040a705bdbc}{rows};
-119             \textcolor{comment}{//if (rows >= height) return;}
-120             \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} j = 0; j < \hyperlink{classpersistencia_1_1output_1_1Ctrl__Output__Img_ae4a01ec459078cece4815d2fe7db8a64}{width}; ++j) \{
-121                 \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} color = 0; color < 3; ++color) \{
-122                     \textcolor{keywordtype}{double} aux = mat[j/8][x][j%8][color];
-123                     \textcolor{keywordtype}{int} val = (int)(aux * (\textcolor{keywordtype}{double})\hyperlink{classpersistencia_1_1output_1_1Ctrl__Output__Img_ab9e685dae026afe43188c62d7c4fad53}{max\_val} / 255.0);
-124                     \hyperlink{classpersistencia_1_1output_1_1Ctrl__Output__Img_a305a977f4d4b999cf65e14e7106b6c5e}{add}(val, \hyperlink{classpersistencia_1_1output_1_1Ctrl__Output__Img_ad40e63d16abd9058889249f5ad84f200}{bits\_per\_val});
-125                 \}
-126             \}
-127         \}
-128     \}
+118     \{
+119         \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} x = 0; x < 8 && \hyperlink{classpersistencia_1_1output_1_1Ctrl__Output__Img_a586ee8128a26b6786471e040a705bdbc}{rows} < \hyperlink{classpersistencia_1_1output_1_1Ctrl__Output__Img_a1d7bc52c64c79e8545ae6d1ae8b9ee2e}{height}; ++x) \{
+120             ++\hyperlink{classpersistencia_1_1output_1_1Ctrl__Output__Img_a586ee8128a26b6786471e040a705bdbc}{rows};
+121             \textcolor{comment}{//if (rows >= height) return;}
+122             \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} j = 0; j < \hyperlink{classpersistencia_1_1output_1_1Ctrl__Output__Img_ae4a01ec459078cece4815d2fe7db8a64}{width}; ++j) \{
+123                 \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} color = 0; color < 3; ++color) \{
+124                     \textcolor{keywordtype}{double} aux = mat[j/8][x][j%8][color];
+125                     \textcolor{keywordtype}{int} val = (int)(aux * (\textcolor{keywordtype}{double})\hyperlink{classpersistencia_1_1output_1_1Ctrl__Output__Img_ab9e685dae026afe43188c62d7c4fad53}{max\_val} / 255.0);
+126                     \hyperlink{classpersistencia_1_1output_1_1Ctrl__Output__Img_a305a977f4d4b999cf65e14e7106b6c5e}{add}(val, \hyperlink{classpersistencia_1_1output_1_1Ctrl__Output__Img_ad40e63d16abd9058889249f5ad84f200}{bits\_per\_val});
+127                 \}
+128             \}
+129         \}
+130     \}
 \end{DoxyCode}
 \mbox{\Hypertarget{classpersistencia_1_1output_1_1Ctrl__Output__Img_a365d043ee5bd08c4e470bff468773552}\label{classpersistencia_1_1output_1_1Ctrl__Output__Img_a365d043ee5bd08c4e470bff468773552}} 
 \index{persistencia\+::output\+::\+Ctrl\+\_\+\+Output\+\_\+\+Img@{persistencia\+::output\+::\+Ctrl\+\_\+\+Output\+\_\+\+Img}!finished@{finished}}
@@ -142,9 +142,9 @@ inica si s\textquotesingle{}han escrit totes les files de la imatge.
 
 
 \begin{DoxyCode}
-136                               \{
-137         \textcolor{keywordflow}{return} (\hyperlink{classpersistencia_1_1output_1_1Ctrl__Output__Img_a586ee8128a26b6786471e040a705bdbc}{rows} >= \hyperlink{classpersistencia_1_1output_1_1Ctrl__Output__Img_a1d7bc52c64c79e8545ae6d1ae8b9ee2e}{height});
-138     \}
+138                               \{
+139         \textcolor{keywordflow}{return} (\hyperlink{classpersistencia_1_1output_1_1Ctrl__Output__Img_a586ee8128a26b6786471e040a705bdbc}{rows} >= \hyperlink{classpersistencia_1_1output_1_1Ctrl__Output__Img_a1d7bc52c64c79e8545ae6d1ae8b9ee2e}{height});
+140     \}
 \end{DoxyCode}
 \mbox{\Hypertarget{classpersistencia_1_1output_1_1Ctrl__Output__Img_a736bcf38410d875d9b4a17fd2a95cc4d}\label{classpersistencia_1_1output_1_1Ctrl__Output__Img_a736bcf38410d875d9b4a17fd2a95cc4d}} 
 \index{persistencia\+::output\+::\+Ctrl\+\_\+\+Output\+\_\+\+Img@{persistencia\+::output\+::\+Ctrl\+\_\+\+Output\+\_\+\+Img}!get\+Height@{get\+Height}}
@@ -161,9 +161,9 @@ Alçada
 \end{DoxyReturn}
 
 \begin{DoxyCode}
-93                            \{
-94         \textcolor{keywordflow}{return} \hyperlink{classpersistencia_1_1output_1_1Ctrl__Output__Img_a1d7bc52c64c79e8545ae6d1ae8b9ee2e}{height};
-95     \}
+95                            \{
+96         \textcolor{keywordflow}{return} \hyperlink{classpersistencia_1_1output_1_1Ctrl__Output__Img_a1d7bc52c64c79e8545ae6d1ae8b9ee2e}{height};
+97     \}
 \end{DoxyCode}
 \mbox{\Hypertarget{classpersistencia_1_1output_1_1Ctrl__Output__Img_ab6e88e466e6b7d7d847be2ac9c26c529}\label{classpersistencia_1_1output_1_1Ctrl__Output__Img_ab6e88e466e6b7d7d847be2ac9c26c529}} 
 \index{persistencia\+::output\+::\+Ctrl\+\_\+\+Output\+\_\+\+Img@{persistencia\+::output\+::\+Ctrl\+\_\+\+Output\+\_\+\+Img}!get\+Width@{get\+Width}}
@@ -180,9 +180,9 @@ Amplada
 \end{DoxyReturn}
 
 \begin{DoxyCode}
-101                           \{
-102         \textcolor{keywordflow}{return} \hyperlink{classpersistencia_1_1output_1_1Ctrl__Output__Img_ae4a01ec459078cece4815d2fe7db8a64}{width};
-103     \}
+103                           \{
+104         \textcolor{keywordflow}{return} \hyperlink{classpersistencia_1_1output_1_1Ctrl__Output__Img_ae4a01ec459078cece4815d2fe7db8a64}{width};
+105     \}
 \end{DoxyCode}
 \mbox{\Hypertarget{classpersistencia_1_1output_1_1Ctrl__Output__Img_aab3258280bd6abb81d580c93eb68fb28}\label{classpersistencia_1_1output_1_1Ctrl__Output__Img_aab3258280bd6abb81d580c93eb68fb28}} 
 \index{persistencia\+::output\+::\+Ctrl\+\_\+\+Output\+\_\+\+Img@{persistencia\+::output\+::\+Ctrl\+\_\+\+Output\+\_\+\+Img}!init@{init}}
@@ -201,31 +201,31 @@ Funció cridada per les constructores encarregada d\textquotesingle{}escriure le
 \end{DoxyParams}
 
 \begin{DoxyCode}
-63                                             \{
-64         \textcolor{keywordflow}{if} (mv <= 0 || mv >= 65536) \{
-65             \textcolor{keywordflow}{throw} \textcolor{keyword}{new} IllegalArgumentException(\textcolor{stringliteral}{"The maximum color value (Maxval) must be less than 65536
+65                                             \{
+66         \textcolor{keywordflow}{if} (mv <= 0 || mv >= 65536) \{
+67             \textcolor{keywordflow}{throw} \textcolor{keyword}{new} IllegalArgumentException(\textcolor{stringliteral}{"The maximum color value (Maxval) must be less than 65536
        and more than zero."});
-66         \}
-67         \textcolor{keywordflow}{if} (w < 0 || h < 0) \{
-68             \textcolor{keywordflow}{throw} \textcolor{keyword}{new} IllegalArgumentException(\textcolor{stringliteral}{"Width and height must be non-negative."});
-69         \}
-70 
-71         \hyperlink{classpersistencia_1_1output_1_1Ctrl__Output__Img_ae4a01ec459078cece4815d2fe7db8a64}{width} = w;
-72         \hyperlink{classpersistencia_1_1output_1_1Ctrl__Output__Img_a1d7bc52c64c79e8545ae6d1ae8b9ee2e}{height} = h;
-73         \hyperlink{classpersistencia_1_1output_1_1Ctrl__Output__Img_ab9e685dae026afe43188c62d7c4fad53}{max\_val} = mv;
-74         \hyperlink{classpersistencia_1_1output_1_1Ctrl__Output__Img_a586ee8128a26b6786471e040a705bdbc}{rows} = 0;
-75 
-76         String s1 =
-77             \textcolor{stringliteral}{"P6 "} +
-78             Integer.toString(\hyperlink{classpersistencia_1_1output_1_1Ctrl__Output__Img_ae4a01ec459078cece4815d2fe7db8a64}{width}) + \textcolor{stringliteral}{" "} + 
-79             Integer.toString(\hyperlink{classpersistencia_1_1output_1_1Ctrl__Output__Img_a1d7bc52c64c79e8545ae6d1ae8b9ee2e}{height}) + \textcolor{stringliteral}{" "} +
-80             Integer.toString(\hyperlink{classpersistencia_1_1output_1_1Ctrl__Output__Img_ab9e685dae026afe43188c62d7c4fad53}{max\_val}) + \textcolor{stringliteral}{" "};
-81         \hyperlink{classpersistencia_1_1output_1_1Ctrl__Output__Img_a305a977f4d4b999cf65e14e7106b6c5e}{add}(s1); \textcolor{comment}{//cal assegurar-se que escrivim en ASCII}
-82 
-83         \textcolor{keywordflow}{if} (\hyperlink{classpersistencia_1_1output_1_1Ctrl__Output__Img_ab9e685dae026afe43188c62d7c4fad53}{max\_val} < 256) \hyperlink{classpersistencia_1_1output_1_1Ctrl__Output__Img_ad40e63d16abd9058889249f5ad84f200}{bits\_per\_val} = 8;
-84         \textcolor{keywordflow}{else}               \hyperlink{classpersistencia_1_1output_1_1Ctrl__Output__Img_ad40e63d16abd9058889249f5ad84f200}{bits\_per\_val} = 16;
-85 
-86     \}
+68         \}
+69         \textcolor{keywordflow}{if} (w < 0 || h < 0) \{
+70             \textcolor{keywordflow}{throw} \textcolor{keyword}{new} IllegalArgumentException(\textcolor{stringliteral}{"Width and height must be non-negative."});
+71         \}
+72 
+73         \hyperlink{classpersistencia_1_1output_1_1Ctrl__Output__Img_ae4a01ec459078cece4815d2fe7db8a64}{width} = w;
+74         \hyperlink{classpersistencia_1_1output_1_1Ctrl__Output__Img_a1d7bc52c64c79e8545ae6d1ae8b9ee2e}{height} = h;
+75         \hyperlink{classpersistencia_1_1output_1_1Ctrl__Output__Img_ab9e685dae026afe43188c62d7c4fad53}{max\_val} = mv;
+76         \hyperlink{classpersistencia_1_1output_1_1Ctrl__Output__Img_a586ee8128a26b6786471e040a705bdbc}{rows} = 0;
+77 
+78         String s1 =
+79             \textcolor{stringliteral}{"P6 "} +
+80             Integer.toString(\hyperlink{classpersistencia_1_1output_1_1Ctrl__Output__Img_ae4a01ec459078cece4815d2fe7db8a64}{width}) + \textcolor{stringliteral}{" "} + 
+81             Integer.toString(\hyperlink{classpersistencia_1_1output_1_1Ctrl__Output__Img_a1d7bc52c64c79e8545ae6d1ae8b9ee2e}{height}) + \textcolor{stringliteral}{" "} +
+82             Integer.toString(\hyperlink{classpersistencia_1_1output_1_1Ctrl__Output__Img_ab9e685dae026afe43188c62d7c4fad53}{max\_val}) + \textcolor{stringliteral}{" "};
+83         \hyperlink{classpersistencia_1_1output_1_1Ctrl__Output__Img_a305a977f4d4b999cf65e14e7106b6c5e}{add}(s1); \textcolor{comment}{//cal assegurar-se que escrivim en ASCII}
+84 
+85         \textcolor{keywordflow}{if} (\hyperlink{classpersistencia_1_1output_1_1Ctrl__Output__Img_ab9e685dae026afe43188c62d7c4fad53}{max\_val} < 256) \hyperlink{classpersistencia_1_1output_1_1Ctrl__Output__Img_ad40e63d16abd9058889249f5ad84f200}{bits\_per\_val} = 8;
+86         \textcolor{keywordflow}{else}               \hyperlink{classpersistencia_1_1output_1_1Ctrl__Output__Img_ad40e63d16abd9058889249f5ad84f200}{bits\_per\_val} = 16;
+87 
+88     \}
 \end{DoxyCode}
 
 

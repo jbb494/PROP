@@ -6,6 +6,7 @@ import persistencia.input.Ctrl_Input;
 /**
  * @class Ctrl_Algorithm
  * @brief Classe de Ctrl_Algorithm
+ * @file
  * @author Manel Aguilar
  */
 public class Ctrl_Algorithm {
