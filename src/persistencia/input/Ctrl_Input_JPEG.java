@@ -3,7 +3,9 @@ package persistencia.input;
 /**
 * @class Ctrl_Input_JPEG
 * @brief Classe Ctrl_Input_JPEG
-* @author Joan Lapeyra
+ * @file
+
+ * @author Joan Lapeyra
 */
 public class Ctrl_Input_JPEG extends Ctrl_Input {
 

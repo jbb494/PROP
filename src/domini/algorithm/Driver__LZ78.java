@@ -8,6 +8,7 @@ import persistencia.input.Ctrl_Input;
 /**
  * @class Driver__LZ78
  * @brief Driver de LZ78
+ * @file
  * @author Joan Bellavista Bartroli
  */
 public class Driver__LZ78 {

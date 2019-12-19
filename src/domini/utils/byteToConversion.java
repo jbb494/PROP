@@ -6,6 +6,8 @@ import java.util.*;
 /**
  * @class byteToConversion
  * @brief Classe byteToConversion
+ * @file
+
  * @author Joan Bellavista
  */
 public class byteToConversion {

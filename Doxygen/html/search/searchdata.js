@@ -5,7 +5,7 @@ var indexSectionsWithContent =
   2: "dgp",
   3: "abcdefghijlmnoprt",
   4: "$[abcdefgijklmnoprstuw",
-  5: "abcdefghijlmnopqrstuvwz",
+  5: "abcdefghijlmnopqrstvwz",
   6: "eimp"
 };
 

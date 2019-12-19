@@ -1,7 +1,0 @@
-digraph "Graphical Class Hierarchy"
-{
-  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
-  node [fontname="Helvetica",fontsize="10",shape=record];
-  rankdir="LR";
-  Node0 [label="domini.algorithm.Driver\l__Ctrl_Algorithm",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classdomini_1_1algorithm_1_1Driver____Ctrl__Algorithm.html",tooltip="Driver de Ctrl_Algorithm. "];
-}

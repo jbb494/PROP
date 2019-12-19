@@ -7,7 +7,8 @@ import java.util.*;
 /**
  * @class LZ78
  * @brief Compressió i descompressió pel mètode LZ78
- * 
+ * @file
+
  * Aquest algoritme de compresió es basa en utilitzar una estructura de dades (Trie en el meu cas), per guardar
  * seqüencies de bytes i fer referència a aquestes seqüències amb punters al Trie.
  * 

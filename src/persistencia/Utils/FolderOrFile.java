@@ -25,6 +25,8 @@ public abstract class FolderOrFile {
 }
 /** @class FolderOrFile
  *  @brief Clase abstracta que consulta al SO el tipo de Path que nos han pasado (carpeta, fichero, ...).
+ * @file
+
  *
  *  @author
  */

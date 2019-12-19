@@ -8,6 +8,7 @@ import domini.utils.Pair;
 /**
  * @class Driver__Ctrl_Input_LZ78
  * @brief Driver de Ctrl_Input_LZ78
+ * @file
  * @author Manel Aguilar
  */
 public class Driver__Ctrl_Input_LZ78 {

@@ -2,8 +2,18 @@
 \label{classdomini_1_1estadistica_1_1Estadistica}\index{domini.\+estadistica.\+Estadistica@{domini.\+estadistica.\+Estadistica}}
 
 
-Collaboration diagram for domini.\+estadistica.\+Estadistica\+:
-% FIG 0
+Generació de les estadístiques durant la compressió  
+
+
+
+
+Collaboration diagram for domini.\+estadistica.\+Estadistica\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=227pt]{classdomini_1_1estadistica_1_1Estadistica__coll__graph}
+\end{center}
+\end{figure}
 \subsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
@@ -29,6 +39,9 @@ Date \hyperlink{classdomini_1_1estadistica_1_1Estadistica_ae99e664f0569e308009ec
 \begin{DoxyCompactList}\small\item\em Si es True es tracta d\textquotesingle{}una compressio, sino d\textquotesingle{}una descompressio. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
+\subsection{Detailed Description}
+Generació de les estadístiques durant la compressió 
+
 \subsection{Constructor \& Destructor Documentation}
 \mbox{\Hypertarget{classdomini_1_1estadistica_1_1Estadistica_aab5e956c9a7e31945ddf93cb4f332746}\label{classdomini_1_1estadistica_1_1Estadistica_aab5e956c9a7e31945ddf93cb4f332746}} 
 \index{domini\+::estadistica\+::\+Estadistica@{domini\+::estadistica\+::\+Estadistica}!Estadistica@{Estadistica}}
@@ -45,13 +58,13 @@ Generem l\textquotesingle{}Instància d\textquotesingle{}inici de temps de compr
 \end{DoxyNote}
 
 \begin{DoxyCode}
-37                                   \{
-38         \hyperlink{classdomini_1_1estadistica_1_1Estadistica_aee0ae604272563ceab4e61392cbd343e}{start} = \textcolor{keyword}{new} Date();
-39         \textcolor{keywordflow}{if} (b) 
-40             \hyperlink{classdomini_1_1estadistica_1_1Estadistica_a57776a71683b3717b638377073b8a99e}{info} = \textcolor{keyword}{new} Pair<Boolean,String>(b, \textcolor{stringliteral}{"compresion"});
-41         \textcolor{keywordflow}{else} 
-42             \hyperlink{classdomini_1_1estadistica_1_1Estadistica_a57776a71683b3717b638377073b8a99e}{info} = \textcolor{keyword}{new} Pair<Boolean,String>(b,\textcolor{stringliteral}{"descompresion"});
-43     \}
+38                                   \{
+39         \hyperlink{classdomini_1_1estadistica_1_1Estadistica_aee0ae604272563ceab4e61392cbd343e}{start} = \textcolor{keyword}{new} Date();
+40         \textcolor{keywordflow}{if} (b) 
+41             \hyperlink{classdomini_1_1estadistica_1_1Estadistica_a57776a71683b3717b638377073b8a99e}{info} = \textcolor{keyword}{new} Pair<Boolean,String>(b, \textcolor{stringliteral}{"compresion"});
+42         \textcolor{keywordflow}{else} 
+43             \hyperlink{classdomini_1_1estadistica_1_1Estadistica_a57776a71683b3717b638377073b8a99e}{info} = \textcolor{keyword}{new} Pair<Boolean,String>(b,\textcolor{stringliteral}{"descompresion"});
+44     \}
 \end{DoxyCode}
 
 
@@ -75,43 +88,43 @@ Mostrarà les estadístiques de la compressió
 \end{DoxyParams}
 
 \begin{DoxyCode}
-69                                                            \{
-70         \textcolor{keywordtype}{long} ts = \hyperlink{classdomini_1_1estadistica_1_1Estadistica_a7587e21e3f7f177afe0dd36483c8fe5d}{time}(\hyperlink{classdomini_1_1estadistica_1_1Estadistica_aee0ae604272563ceab4e61392cbd343e}{start},\hyperlink{classdomini_1_1estadistica_1_1Estadistica_ae99e664f0569e308009ec7ca32864006}{end});
-71 
-72         Ctrl\_Browser input = \textcolor{keyword}{new} Ctrl\_Browser(inp);
-73         Ctrl\_Browser output = \textcolor{keyword}{new} Ctrl\_Browser(out);
-74 
-75         String ret = \textcolor{stringliteral}{"<html> <h1> Estadisticas de "} + \hyperlink{classdomini_1_1estadistica_1_1Estadistica_a57776a71683b3717b638377073b8a99e}{info}.\hyperlink{classdomini_1_1utils_1_1Pair_aebf54d48000999b84e5e24a2c62088d4}{R} + \textcolor{stringliteral}{"</h1> <br />"};
-76 
-77         \textcolor{keywordflow}{if} (input.exists() && output.exists()) \{
-78             \textcolor{keywordflow}{if} (ts == 0) ts = 1;
-79             \textcolor{keywordtype}{long} spd = input.length() / ts;
-80             \textcolor{keywordtype}{double} gc;
-81             \textcolor{keywordflow}{if} (\hyperlink{classdomini_1_1estadistica_1_1Estadistica_a57776a71683b3717b638377073b8a99e}{info}.\hyperlink{classdomini_1_1utils_1_1Pair_a276a0eee9fa97fc27b37fab887f07cea}{L}) 
-82                 gc = (double)input.length() / (double)output.length();
-83             \textcolor{keywordflow}{else} 
-84                 gc = (double)output.length() / (double)input.length();
-85             \textcolor{keywordflow}{if}(gc == 0.0) 
-86                 gc = 1.0;
-87             
-88             ret += \textcolor{stringliteral}{"La velocidad de "} + \hyperlink{classdomini_1_1estadistica_1_1Estadistica_a57776a71683b3717b638377073b8a99e}{info}.\hyperlink{classdomini_1_1utils_1_1Pair_aebf54d48000999b84e5e24a2c62088d4}{R} + \textcolor{stringliteral}{" ha sido de "} + spd + \textcolor{stringliteral}{" bytes/ms. <br />"};
-89             ret += \textcolor{stringliteral}{"El grado de "} + \hyperlink{classdomini_1_1estadistica_1_1Estadistica_a57776a71683b3717b638377073b8a99e}{info}.\hyperlink{classdomini_1_1utils_1_1Pair_aebf54d48000999b84e5e24a2c62088d4}{R} + \textcolor{stringliteral}{" es de "} + String.format(\textcolor{stringliteral}{"%.6f"}, gc) + \textcolor{stringliteral}{"<br />"};
-90             \textcolor{keywordflow}{if}(ts/1000 < 1)
-91                 ret += \textcolor{stringliteral}{"Tiempo de "} + \hyperlink{classdomini_1_1estadistica_1_1Estadistica_a57776a71683b3717b638377073b8a99e}{info}.\hyperlink{classdomini_1_1utils_1_1Pair_aebf54d48000999b84e5e24a2c62088d4}{R} + \textcolor{stringliteral}{" : "} + ts + \textcolor{stringliteral}{" ms. <br />"};
-92             \textcolor{keywordflow}{else}
-93                 ret += \textcolor{stringliteral}{"Tiempo de "} + \hyperlink{classdomini_1_1estadistica_1_1Estadistica_a57776a71683b3717b638377073b8a99e}{info}.\hyperlink{classdomini_1_1utils_1_1Pair_aebf54d48000999b84e5e24a2c62088d4}{R} + \textcolor{stringliteral}{" : "} + (ts/1000) + \textcolor{stringliteral}{" segundos. <br />"};
-94         
-95         \}
-96         \textcolor{keywordflow}{else} \{
-97             ret += \textcolor{stringliteral}{"Generación de estadísticas fallida: <br /> "};
-98             \textcolor{keywordflow}{if} (! input.exists())
-99                 ret += \textcolor{stringliteral}{"-Input no existe <br />"};
-100             \textcolor{keywordflow}{if} (! output.exists())
-101                 ret += \textcolor{stringliteral}{"-Output no existe"};
-102         \}
-103 
-104         \textcolor{keywordflow}{return} ret;
-105     \}
+70                                                            \{
+71         \textcolor{keywordtype}{long} ts = \hyperlink{classdomini_1_1estadistica_1_1Estadistica_a7587e21e3f7f177afe0dd36483c8fe5d}{time}(\hyperlink{classdomini_1_1estadistica_1_1Estadistica_aee0ae604272563ceab4e61392cbd343e}{start},\hyperlink{classdomini_1_1estadistica_1_1Estadistica_ae99e664f0569e308009ec7ca32864006}{end});
+72 
+73         Ctrl\_Browser input = \textcolor{keyword}{new} Ctrl\_Browser(inp);
+74         Ctrl\_Browser output = \textcolor{keyword}{new} Ctrl\_Browser(out);
+75 
+76         String ret = \textcolor{stringliteral}{"<html> <h1> Estadisticas de "} + \hyperlink{classdomini_1_1estadistica_1_1Estadistica_a57776a71683b3717b638377073b8a99e}{info}.\hyperlink{classdomini_1_1utils_1_1Pair_aebf54d48000999b84e5e24a2c62088d4}{R} + \textcolor{stringliteral}{"</h1> <br />"};
+77 
+78         \textcolor{keywordflow}{if} (input.exists() && output.exists()) \{
+79             \textcolor{keywordflow}{if} (ts == 0) ts = 1;
+80             \textcolor{keywordtype}{long} spd = input.length() / ts;
+81             \textcolor{keywordtype}{double} gc;
+82             \textcolor{keywordflow}{if} (\hyperlink{classdomini_1_1estadistica_1_1Estadistica_a57776a71683b3717b638377073b8a99e}{info}.\hyperlink{classdomini_1_1utils_1_1Pair_a276a0eee9fa97fc27b37fab887f07cea}{L}) 
+83                 gc = (double)input.length() / (double)output.length();
+84             \textcolor{keywordflow}{else} 
+85                 gc = (double)output.length() / (double)input.length();
+86             \textcolor{keywordflow}{if}(gc == 0.0) 
+87                 gc = 1.0;
+88             
+89             ret += \textcolor{stringliteral}{"La velocidad de "} + \hyperlink{classdomini_1_1estadistica_1_1Estadistica_a57776a71683b3717b638377073b8a99e}{info}.\hyperlink{classdomini_1_1utils_1_1Pair_aebf54d48000999b84e5e24a2c62088d4}{R} + \textcolor{stringliteral}{" ha sido de "} + spd + \textcolor{stringliteral}{" bytes/ms. <br />"};
+90             ret += \textcolor{stringliteral}{"El grado de "} + \hyperlink{classdomini_1_1estadistica_1_1Estadistica_a57776a71683b3717b638377073b8a99e}{info}.\hyperlink{classdomini_1_1utils_1_1Pair_aebf54d48000999b84e5e24a2c62088d4}{R} + \textcolor{stringliteral}{" es de "} + String.format(\textcolor{stringliteral}{"%.6f"}, gc) + \textcolor{stringliteral}{"<br />"};
+91             \textcolor{keywordflow}{if}(ts/1000 < 1)
+92                 ret += \textcolor{stringliteral}{"Tiempo de "} + \hyperlink{classdomini_1_1estadistica_1_1Estadistica_a57776a71683b3717b638377073b8a99e}{info}.\hyperlink{classdomini_1_1utils_1_1Pair_aebf54d48000999b84e5e24a2c62088d4}{R} + \textcolor{stringliteral}{" : "} + ts + \textcolor{stringliteral}{" ms. <br />"};
+93             \textcolor{keywordflow}{else}
+94                 ret += \textcolor{stringliteral}{"Tiempo de "} + \hyperlink{classdomini_1_1estadistica_1_1Estadistica_a57776a71683b3717b638377073b8a99e}{info}.\hyperlink{classdomini_1_1utils_1_1Pair_aebf54d48000999b84e5e24a2c62088d4}{R} + \textcolor{stringliteral}{" : "} + (ts/1000) + \textcolor{stringliteral}{" segundos. <br />"};
+95         
+96         \}
+97         \textcolor{keywordflow}{else} \{
+98             ret += \textcolor{stringliteral}{"Generación de estadísticas fallida: <br /> "};
+99             \textcolor{keywordflow}{if} (! input.exists())
+100                 ret += \textcolor{stringliteral}{"-Input no existe <br />"};
+101             \textcolor{keywordflow}{if} (! output.exists())
+102                 ret += \textcolor{stringliteral}{"-Output no existe"};
+103         \}
+104 
+105         \textcolor{keywordflow}{return} ret;
+106     \}
 \end{DoxyCode}
 \mbox{\Hypertarget{classdomini_1_1estadistica_1_1Estadistica_a7587e21e3f7f177afe0dd36483c8fe5d}\label{classdomini_1_1estadistica_1_1Estadistica_a7587e21e3f7f177afe0dd36483c8fe5d}} 
 \index{domini\+::estadistica\+::\+Estadistica@{domini\+::estadistica\+::\+Estadistica}!time@{time}}
@@ -121,10 +134,10 @@ Mostrarà les estadístiques de la compressió
 
 
 \begin{DoxyCode}
-54                                       \{
-55         \textcolor{keywordtype}{long} res = (f.getTime() - i.getTime());
-56         \textcolor{keywordflow}{return} res;
-57     \}
+55                                       \{
+56         \textcolor{keywordtype}{long} res = (f.getTime() - i.getTime());
+57         \textcolor{keywordflow}{return} res;
+58     \}
 \end{DoxyCode}
 \mbox{\Hypertarget{classdomini_1_1estadistica_1_1Estadistica_a2fb112c0f85d0a831b858a994731497c}\label{classdomini_1_1estadistica_1_1Estadistica_a2fb112c0f85d0a831b858a994731497c}} 
 \index{domini\+::estadistica\+::\+Estadistica@{domini\+::estadistica\+::\+Estadistica}!work\+\_\+done@{work\+\_\+done}}
@@ -134,9 +147,9 @@ Mostrarà les estadístiques de la compressió
 
 
 \begin{DoxyCode}
-59                             \{
-60         \hyperlink{classdomini_1_1estadistica_1_1Estadistica_ae99e664f0569e308009ec7ca32864006}{end} = \textcolor{keyword}{new} Date();
-61     \} 
+60                             \{
+61         \hyperlink{classdomini_1_1estadistica_1_1Estadistica_ae99e664f0569e308009ec7ca32864006}{end} = \textcolor{keyword}{new} Date();
+62     \} 
 \end{DoxyCode}
 
 

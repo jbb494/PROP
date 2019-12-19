@@ -1,6 +1,5 @@
 package domini.utils;
 
-import domini.utils.BinTree;
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
 import java.util.ArrayList;
@@ -9,6 +8,7 @@ import java.util.ArrayList;
 /**
  * @class Driver__BinTree
  * @brief Driver de BinTree
+ * @file
  * @author Joan Lapeyra Amat
  */
 public class Driver__BinTree {

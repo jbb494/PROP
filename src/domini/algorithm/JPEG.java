@@ -8,6 +8,7 @@ import persistencia.output.Ctrl_Output_Img;
 /**
  * @class JPEG
  * @brief Compressió i descompressió pel mètode JPEG
+ * @file
  * 
  * @author Joan Lapeyra Amat
  */

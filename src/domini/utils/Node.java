@@ -3,6 +3,7 @@ package domini.utils;
 /**
  * @class Node
  * @brief Representa un node emprat per la representació de cadenes de caràcters.
+ * @file
  * @author Miguel Paracuellos Ocaña
  */
 public class Node {

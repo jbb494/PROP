@@ -41,11 +41,6 @@ Integer \hyperlink{classdomini_1_1utils_1_1Dict__Decode_a6ef2d17f449cf7a658a4bf9
 \subsection{Detailed Description}
 Diccionari (amb els mètodes corresponents) emprat per a la descompressió. 
 
-Estructura de dades on cada posició indicarà una seqüencia de bytes b0,b1,...,bn-\/1,bn. El primer valor indica la posició del següent bytes de la subcadena b0,...,bn-\/1 mentre que el segon valor és bn. \begin{DoxyAuthor}{Author}
-Miguel Paracuellos Ocaña 
-\end{DoxyAuthor}
-
-
 \subsection{Constructor \& Destructor Documentation}
 \mbox{\Hypertarget{classdomini_1_1utils_1_1Dict__Decode_a8a0f9e67c530bafc031e72c218ce74f8}\label{classdomini_1_1utils_1_1Dict__Decode_a8a0f9e67c530bafc031e72c218ce74f8}} 
 \index{domini\+::utils\+::\+Dict\+\_\+\+Decode@{domini\+::utils\+::\+Dict\+\_\+\+Decode}!Dict\+\_\+\+Decode@{Dict\+\_\+\+Decode}}
@@ -69,11 +64,11 @@ Inicialitzem el vector
 \end{DoxyParams}
 
 \begin{DoxyCode}
-32                                                                      \{
-33         \hyperlink{classdomini_1_1utils_1_1Dict__Decode_a351bb8836b391e5e21ebc9cc1943a22d}{v} = \textcolor{keyword}{new} ArrayList<Pair<Integer,Byte> >();
-34         \hyperlink{classdomini_1_1utils_1_1Dict__Decode_a635432505df1ceaa58a987bb80c6b0a3}{reset\_dictionary}(inicializeAscii);
-35         this.\hyperlink{classdomini_1_1utils_1_1Dict__Decode_a6ef2d17f449cf7a658a4bf983e2fb474}{valorNeutre} = \hyperlink{classdomini_1_1utils_1_1Dict__Decode_a6ef2d17f449cf7a658a4bf983e2fb474}{valorNeutre};
-36     \}
+34                                                                      \{
+35         \hyperlink{classdomini_1_1utils_1_1Dict__Decode_a351bb8836b391e5e21ebc9cc1943a22d}{v} = \textcolor{keyword}{new} ArrayList<Pair<Integer,Byte> >();
+36         \hyperlink{classdomini_1_1utils_1_1Dict__Decode_a635432505df1ceaa58a987bb80c6b0a3}{reset\_dictionary}(inicializeAscii);
+37         this.\hyperlink{classdomini_1_1utils_1_1Dict__Decode_a6ef2d17f449cf7a658a4bf983e2fb474}{valorNeutre} = \hyperlink{classdomini_1_1utils_1_1Dict__Decode_a6ef2d17f449cf7a658a4bf983e2fb474}{valorNeutre};
+38     \}
 \end{DoxyCode}
 
 
@@ -97,9 +92,9 @@ Afegeix un element al vector de la classe.
 \end{DoxyParams}
 
 \begin{DoxyCode}
-87                                        \{
-88         \hyperlink{classdomini_1_1utils_1_1Dict__Decode_a351bb8836b391e5e21ebc9cc1943a22d}{v}.add( \textcolor{keyword}{new} Pair<Integer,Byte>(i,c) );
-89     \}
+89                                        \{
+90         \hyperlink{classdomini_1_1utils_1_1Dict__Decode_a351bb8836b391e5e21ebc9cc1943a22d}{v}.add( \textcolor{keyword}{new} Pair<Integer,Byte>(i,c) );
+91     \}
 \end{DoxyCode}
 \mbox{\Hypertarget{classdomini_1_1utils_1_1Dict__Decode_aac69020c3515649e8c2d70e2908e3f3e}\label{classdomini_1_1utils_1_1Dict__Decode_aac69020c3515649e8c2d70e2908e3f3e}} 
 \index{domini\+::utils\+::\+Dict\+\_\+\+Decode@{domini\+::utils\+::\+Dict\+\_\+\+Decode}!get\+Size@{get\+Size}}
@@ -112,9 +107,9 @@ Size del vector
 \end{DoxyReturn}
 
 \begin{DoxyCode}
-77                              \{
-78         \textcolor{keywordflow}{return} \hyperlink{classdomini_1_1utils_1_1Dict__Decode_a351bb8836b391e5e21ebc9cc1943a22d}{v}.size();
-79     \}
+79                              \{
+80         \textcolor{keywordflow}{return} \hyperlink{classdomini_1_1utils_1_1Dict__Decode_a351bb8836b391e5e21ebc9cc1943a22d}{v}.size();
+81     \}
 \end{DoxyCode}
 \mbox{\Hypertarget{classdomini_1_1utils_1_1Dict__Decode_a0f6457460aefe9df50f0cad48f58feee}\label{classdomini_1_1utils_1_1Dict__Decode_a0f6457460aefe9df50f0cad48f58feee}} 
 \index{domini\+::utils\+::\+Dict\+\_\+\+Decode@{domini\+::utils\+::\+Dict\+\_\+\+Decode}!get\+Word@{get\+Word}}
@@ -136,18 +131,18 @@ Retorna la paraula corresponent a l\textquotesingle{}enter
 \end{DoxyReturn}
 
 \begin{DoxyCode}
-60                                               \{
-61         ArrayList<Byte> result = \textcolor{keyword}{new} ArrayList<>();
-62         result.clear();
-63         \textcolor{comment}{//result.ensureCapacity(Limit);}
-64         Integer diff = this.\hyperlink{classdomini_1_1utils_1_1Dict__Decode_a6ef2d17f449cf7a658a4bf983e2fb474}{valorNeutre} +1;
-65         \textcolor{keywordflow}{while} (i != this.\hyperlink{classdomini_1_1utils_1_1Dict__Decode_a6ef2d17f449cf7a658a4bf983e2fb474}{valorNeutre}) \{
-66             result.add(0, \hyperlink{classdomini_1_1utils_1_1Dict__Decode_a351bb8836b391e5e21ebc9cc1943a22d}{v}.get(i-diff).getRight());
-67             i = \hyperlink{classdomini_1_1utils_1_1Dict__Decode_a351bb8836b391e5e21ebc9cc1943a22d}{v}.get(i-diff).getLeft();
-68         \}
-69 
-70         \textcolor{keywordflow}{return} result;
-71     \}
+62                                               \{
+63         ArrayList<Byte> result = \textcolor{keyword}{new} ArrayList<>();
+64         result.clear();
+65         \textcolor{comment}{//result.ensureCapacity(Limit);}
+66         Integer diff = this.\hyperlink{classdomini_1_1utils_1_1Dict__Decode_a6ef2d17f449cf7a658a4bf983e2fb474}{valorNeutre} +1;
+67         \textcolor{keywordflow}{while} (i != this.\hyperlink{classdomini_1_1utils_1_1Dict__Decode_a6ef2d17f449cf7a658a4bf983e2fb474}{valorNeutre}) \{
+68             result.add(0, \hyperlink{classdomini_1_1utils_1_1Dict__Decode_a351bb8836b391e5e21ebc9cc1943a22d}{v}.get(i-diff).getRight());
+69             i = \hyperlink{classdomini_1_1utils_1_1Dict__Decode_a351bb8836b391e5e21ebc9cc1943a22d}{v}.get(i-diff).getLeft();
+70         \}
+71 
+72         \textcolor{keywordflow}{return} result;
+73     \}
 \end{DoxyCode}
 \mbox{\Hypertarget{classdomini_1_1utils_1_1Dict__Decode_a635432505df1ceaa58a987bb80c6b0a3}\label{classdomini_1_1utils_1_1Dict__Decode_a635432505df1ceaa58a987bb80c6b0a3}} 
 \index{domini\+::utils\+::\+Dict\+\_\+\+Decode@{domini\+::utils\+::\+Dict\+\_\+\+Decode}!reset\+\_\+dictionary@{reset\+\_\+dictionary}}
@@ -169,14 +164,14 @@ Es crida quan sigui ple o si es instanciat a la construcció.
 \end{DoxyParams}
 
 \begin{DoxyCode}
-43                                             \{
-44         \hyperlink{classdomini_1_1utils_1_1Dict__Decode_a351bb8836b391e5e21ebc9cc1943a22d}{v}.clear();
-45         \textcolor{comment}{//v.ensureCapacity(Limit);}
-46         \textcolor{keywordflow}{if}(!b)return ;
-47         \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i = 0; i < 256; ++i) \{
-48             \hyperlink{classdomini_1_1utils_1_1Dict__Decode_a351bb8836b391e5e21ebc9cc1943a22d}{v}.add( \textcolor{keyword}{new} Pair<Integer,Byte>(-1, (byte)i) );
-49         \}
-50     \}
+45                                             \{
+46         \hyperlink{classdomini_1_1utils_1_1Dict__Decode_a351bb8836b391e5e21ebc9cc1943a22d}{v}.clear();
+47         \textcolor{comment}{//v.ensureCapacity(Limit);}
+48         \textcolor{keywordflow}{if}(!b)return ;
+49         \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i = 0; i < 256; ++i) \{
+50             \hyperlink{classdomini_1_1utils_1_1Dict__Decode_a351bb8836b391e5e21ebc9cc1943a22d}{v}.add( \textcolor{keyword}{new} Pair<Integer,Byte>(-1, (byte)i) );
+51         \}
+52     \}
 \end{DoxyCode}
 
 

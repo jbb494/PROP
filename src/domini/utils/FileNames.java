@@ -3,6 +3,8 @@ package domini.utils;
 /**
  * @class FileNames
  * @brief Classe FileNames
+ * @file
+
  * @author Joan Lapeyra
  */
 public class FileNames {

@@ -3,6 +3,8 @@ package domini.utils;
 /**
  * @class Pair
  * @brief Template d'una classe Pair
+ * @file
+
  * @author Miguel Paracuellos Ocaña
  */
 public class Pair<T1,T2> {

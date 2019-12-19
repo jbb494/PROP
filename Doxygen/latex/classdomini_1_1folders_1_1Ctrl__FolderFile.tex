@@ -2,7 +2,7 @@
 \label{classdomini_1_1folders_1_1Ctrl__FolderFile}\index{domini.\+folders.\+Ctrl\+\_\+\+Folder\+File@{domini.\+folders.\+Ctrl\+\_\+\+Folder\+File}}
 
 
-Classe \hyperlink{classdomini_1_1folders_1_1Ctrl__FolderFile}{Ctrl\+\_\+\+Folder\+File} Tota la comunicació entre la capa de presentació i la capa de domini relativa a comprimir i descomprimir passa perquè les classes de la capa de presentació instanciïn la classe \hyperlink{classdomini_1_1folders_1_1Ctrl__FolderFile}{Ctrl\+\_\+\+Folder\+File}.  
+Classe \hyperlink{classdomini_1_1folders_1_1Ctrl__FolderFile}{Ctrl\+\_\+\+Folder\+File}.  
 
 
 \subsection*{Public Member Functions}
@@ -67,12 +67,7 @@ boolean \hyperlink{classdomini_1_1folders_1_1Ctrl__FolderFile_a0db81590abe27b21a
 
 
 \subsection{Detailed Description}
-Classe \hyperlink{classdomini_1_1folders_1_1Ctrl__FolderFile}{Ctrl\+\_\+\+Folder\+File} Tota la comunicació entre la capa de presentació i la capa de domini relativa a comprimir i descomprimir passa perquè les classes de la capa de presentació instanciïn la classe \hyperlink{classdomini_1_1folders_1_1Ctrl__FolderFile}{Ctrl\+\_\+\+Folder\+File}. 
-
-\begin{DoxyAuthor}{Author}
-Joan Lapeyra 
-\end{DoxyAuthor}
-
+Classe \hyperlink{classdomini_1_1folders_1_1Ctrl__FolderFile}{Ctrl\+\_\+\+Folder\+File}. 
 
 \subsection{Constructor \& Destructor Documentation}
 \mbox{\Hypertarget{classdomini_1_1folders_1_1Ctrl__FolderFile_aabe2038931ca63100a2fc4b12936142d}\label{classdomini_1_1folders_1_1Ctrl__FolderFile_aabe2038931ca63100a2fc4b12936142d}} 
@@ -92,13 +87,13 @@ Constructor de la classe.
 \end{DoxyParams}
 
 \begin{DoxyCode}
-59                                               \{
-60         Ctrl\_Browser brow = \textcolor{keyword}{new} Ctrl\_Browser(path\_input);
-61         \textcolor{keywordflow}{if} (!brow.exists()) \textcolor{keywordflow}{throw} \textcolor{keyword}{new} IllegalArgumentException(path\_input+\textcolor{stringliteral}{" no existeix"});
-62 
-63 
-64         this.\hyperlink{classdomini_1_1folders_1_1Ctrl__FolderFile_a0d3946bb2832a1f34d0c2227df5c71c4}{path\_in} = brow.getAbsolutePath();
-65     \}
+61                                               \{
+62         Ctrl\_Browser brow = \textcolor{keyword}{new} Ctrl\_Browser(path\_input);
+63         \textcolor{keywordflow}{if} (!brow.exists()) \textcolor{keywordflow}{throw} \textcolor{keyword}{new} IllegalArgumentException(path\_input+\textcolor{stringliteral}{" no existeix"});
+64 
+65 
+66         this.\hyperlink{classdomini_1_1folders_1_1Ctrl__FolderFile_a0d3946bb2832a1f34d0c2227df5c71c4}{path\_in} = brow.getAbsolutePath();
+67     \}
 \end{DoxyCode}
 
 
@@ -120,16 +115,16 @@ el path de sortida
 \end{DoxyReturn}
 
 \begin{DoxyCode}
-269                            \{
-270         \textcolor{keyword}{new} Ctrl\_Input\_Encoded(\hyperlink{classdomini_1_1folders_1_1Ctrl__FolderFile_a0d3946bb2832a1f34d0c2227df5c71c4}{path\_in});
-271         \hyperlink{classdomini_1_1folders_1_1Ctrl__FolderFile_a0db81590abe27b21a9b8c37633c86fa6}{temporal\_output} = \textcolor{keyword}{false};
-272 
-273         Estadistica est = \textcolor{keyword}{new} Estadistica(\textcolor{keyword}{false});
-274         String path\_out = \hyperlink{classdomini_1_1folders_1_1Ctrl__FolderFile_a5d28ac7f5223ecd40a242148e86447c1}{Decode}(null);
-275         est.work\_done();
-276 
-277         \textcolor{keywordflow}{return} est.show\_estadistica(\hyperlink{classdomini_1_1folders_1_1Ctrl__FolderFile_a0d3946bb2832a1f34d0c2227df5c71c4}{path\_in}, path\_out);
-278     \}
+271                            \{
+272         \textcolor{keyword}{new} Ctrl\_Input\_Encoded(\hyperlink{classdomini_1_1folders_1_1Ctrl__FolderFile_a0d3946bb2832a1f34d0c2227df5c71c4}{path\_in});
+273         \hyperlink{classdomini_1_1folders_1_1Ctrl__FolderFile_a0db81590abe27b21a9b8c37633c86fa6}{temporal\_output} = \textcolor{keyword}{false};
+274 
+275         Estadistica est = \textcolor{keyword}{new} Estadistica(\textcolor{keyword}{false});
+276         String path\_out = \hyperlink{classdomini_1_1folders_1_1Ctrl__FolderFile_a5d28ac7f5223ecd40a242148e86447c1}{Decode}(null);
+277         est.work\_done();
+278 
+279         \textcolor{keywordflow}{return} est.show\_estadistica(\hyperlink{classdomini_1_1folders_1_1Ctrl__FolderFile_a0d3946bb2832a1f34d0c2227df5c71c4}{path\_in}, path\_out);
+280     \}
 \end{DoxyCode}
 \mbox{\Hypertarget{classdomini_1_1folders_1_1Ctrl__FolderFile_ababd536f11319589ce3c371e3701afc6}\label{classdomini_1_1folders_1_1Ctrl__FolderFile_ababd536f11319589ce3c371e3701afc6}} 
 \index{domini\+::folders\+::\+Ctrl\+\_\+\+Folder\+File@{domini\+::folders\+::\+Ctrl\+\_\+\+Folder\+File}!Decode@{Decode}}
@@ -151,17 +146,17 @@ el path de sortida
 \end{DoxyReturn}
 
 \begin{DoxyCode}
-308                                        \{ \textcolor{comment}{//path out}
-309         Ctrl\_Input\_Encoded in = \textcolor{keyword}{new} Ctrl\_Input\_Encoded();
-310 
-311         byte magic\_word = in.getByte();
-312         \textcolor{keywordflow}{if} (magic\_word == (byte)0xF0)
-313             \textcolor{keywordflow}{return} \hyperlink{classdomini_1_1folders_1_1Ctrl__FolderFile_ae8f46feaced983c27c6537794f823dd8}{DecodeFolder}(path);
-314         \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (magic\_word == (byte)0xF1) 
-315             \textcolor{keywordflow}{return} \hyperlink{classdomini_1_1folders_1_1Ctrl__FolderFile_aa12178fff5fbb832759b7328cbdb4415}{DecodeFile}(path);
-316         \textcolor{keywordflow}{else}
-317             \textcolor{keywordflow}{throw} \textcolor{keyword}{new} IllegalArgumentException(\hyperlink{classdomini_1_1folders_1_1Ctrl__FolderFile_a0d3946bb2832a1f34d0c2227df5c71c4}{path\_in}+\textcolor{stringliteral}{" no es un comprimit."});
-318     \}
+310                                        \{ \textcolor{comment}{//path out}
+311         Ctrl\_Input\_Encoded in = \textcolor{keyword}{new} Ctrl\_Input\_Encoded();
+312 
+313         byte magic\_word = in.getByte();
+314         \textcolor{keywordflow}{if} (magic\_word == (byte)0xF0)
+315             \textcolor{keywordflow}{return} \hyperlink{classdomini_1_1folders_1_1Ctrl__FolderFile_ae8f46feaced983c27c6537794f823dd8}{DecodeFolder}(path);
+316         \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (magic\_word == (byte)0xF1) 
+317             \textcolor{keywordflow}{return} \hyperlink{classdomini_1_1folders_1_1Ctrl__FolderFile_aa12178fff5fbb832759b7328cbdb4415}{DecodeFile}(path);
+318         \textcolor{keywordflow}{else}
+319             \textcolor{keywordflow}{throw} \textcolor{keyword}{new} IllegalArgumentException(\hyperlink{classdomini_1_1folders_1_1Ctrl__FolderFile_a0d3946bb2832a1f34d0c2227df5c71c4}{path\_in}+\textcolor{stringliteral}{" no es un comprimit."});
+320     \}
 \end{DoxyCode}
 \mbox{\Hypertarget{classdomini_1_1folders_1_1Ctrl__FolderFile_aa12178fff5fbb832759b7328cbdb4415}\label{classdomini_1_1folders_1_1Ctrl__FolderFile_aa12178fff5fbb832759b7328cbdb4415}} 
 \index{domini\+::folders\+::\+Ctrl\+\_\+\+Folder\+File@{domini\+::folders\+::\+Ctrl\+\_\+\+Folder\+File}!Decode\+File@{Decode\+File}}
@@ -183,26 +178,26 @@ el path de sortida
 \end{DoxyReturn}
 
 \begin{DoxyCode}
-353                                              \{ \textcolor{comment}{//path out}
-354         Ctrl\_Input\_Encoded in = \textcolor{keyword}{new} Ctrl\_Input\_Encoded();
-355         String extension = in.getWord();
-356         \textcolor{keywordflow}{if} (prefix == null) \{
-357             \textcolor{keywordflow}{if} (\hyperlink{classdomini_1_1folders_1_1Ctrl__FolderFile_a0db81590abe27b21a9b8c37633c86fa6}{temporal\_output}) \{
-358                 String aux = Ctrl\_Browser.createTempFile(extension);
-359                 prefix = FileNames.getPrefix(aux);
-360             \}
-361             \textcolor{keywordflow}{else}
-362                 prefix = \hyperlink{classdomini_1_1folders_1_1Ctrl__FolderFile_a11c6b1b4a25d12b8091c7c96b3da1ea7}{get\_outPathPrefix}();
-363         \}
-364         String path = FileNames.getPath(prefix, extension);
-365 
-366         in.startSubfile();
-367         Ctrl\_Algorithm CAlg = \textcolor{keyword}{new} Ctrl\_Algorithm();
-368         CAlg.Decode(path);
-369         in.endSubfile();
-370 
-371         \textcolor{keywordflow}{return} path;
-372     \}
+355                                              \{ \textcolor{comment}{//path out}
+356         Ctrl\_Input\_Encoded in = \textcolor{keyword}{new} Ctrl\_Input\_Encoded();
+357         String extension = in.getWord();
+358         \textcolor{keywordflow}{if} (prefix == null) \{
+359             \textcolor{keywordflow}{if} (\hyperlink{classdomini_1_1folders_1_1Ctrl__FolderFile_a0db81590abe27b21a9b8c37633c86fa6}{temporal\_output}) \{
+360                 String aux = Ctrl\_Browser.createTempFile(extension);
+361                 prefix = FileNames.getPrefix(aux);
+362             \}
+363             \textcolor{keywordflow}{else}
+364                 prefix = \hyperlink{classdomini_1_1folders_1_1Ctrl__FolderFile_a11c6b1b4a25d12b8091c7c96b3da1ea7}{get\_outPathPrefix}();
+365         \}
+366         String path = FileNames.getPath(prefix, extension);
+367 
+368         in.startSubfile();
+369         Ctrl\_Algorithm CAlg = \textcolor{keyword}{new} Ctrl\_Algorithm();
+370         CAlg.Decode(path);
+371         in.endSubfile();
+372 
+373         \textcolor{keywordflow}{return} path;
+374     \}
 \end{DoxyCode}
 \mbox{\Hypertarget{classdomini_1_1folders_1_1Ctrl__FolderFile_ae8f46feaced983c27c6537794f823dd8}\label{classdomini_1_1folders_1_1Ctrl__FolderFile_ae8f46feaced983c27c6537794f823dd8}} 
 \index{domini\+::folders\+::\+Ctrl\+\_\+\+Folder\+File@{domini\+::folders\+::\+Ctrl\+\_\+\+Folder\+File}!Decode\+Folder@{Decode\+Folder}}
@@ -224,23 +219,23 @@ el path de sortida
 \end{DoxyReturn}
 
 \begin{DoxyCode}
-327                                              \{ \textcolor{comment}{//path out }
-328         Ctrl\_Input\_Encoded in = \textcolor{keyword}{new} Ctrl\_Input\_Encoded();
-329         \textcolor{keywordflow}{if} (path == null) \{
-330             \textcolor{keywordflow}{if} (\hyperlink{classdomini_1_1folders_1_1Ctrl__FolderFile_a0db81590abe27b21a9b8c37633c86fa6}{temporal\_output})
-331                 \textcolor{keywordflow}{throw} \textcolor{keyword}{new} IllegalArgumentException(\textcolor{stringliteral}{"No podem desar directoris temporals."});
-332             \textcolor{keywordflow}{else}
-333                 path = \hyperlink{classdomini_1_1folders_1_1Ctrl__FolderFile_a11c6b1b4a25d12b8091c7c96b3da1ea7}{get\_outPathPrefix}();
-334         \}
-335         Ctrl\_Browser out = \textcolor{keyword}{new} Ctrl\_Browser(path);
-336         out.mkdir();
-337         \textcolor{keywordtype}{int} n = in.getInt();
-338         \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i = 0; i < n; ++i) \{
-339             String name = in.getWord();
-340             \hyperlink{classdomini_1_1folders_1_1Ctrl__FolderFile_a5d28ac7f5223ecd40a242148e86447c1}{Decode}(path + \textcolor{stringliteral}{"/"} + name);
-341         \}
-342         \textcolor{keywordflow}{return} path;
-343     \}
+329                                              \{ \textcolor{comment}{//path out }
+330         Ctrl\_Input\_Encoded in = \textcolor{keyword}{new} Ctrl\_Input\_Encoded();
+331         \textcolor{keywordflow}{if} (path == null) \{
+332             \textcolor{keywordflow}{if} (\hyperlink{classdomini_1_1folders_1_1Ctrl__FolderFile_a0db81590abe27b21a9b8c37633c86fa6}{temporal\_output})
+333                 \textcolor{keywordflow}{throw} \textcolor{keyword}{new} IllegalArgumentException(\textcolor{stringliteral}{"No podem desar directoris temporals."});
+334             \textcolor{keywordflow}{else}
+335                 path = \hyperlink{classdomini_1_1folders_1_1Ctrl__FolderFile_a11c6b1b4a25d12b8091c7c96b3da1ea7}{get\_outPathPrefix}();
+336         \}
+337         Ctrl\_Browser out = \textcolor{keyword}{new} Ctrl\_Browser(path);
+338         out.mkdir();
+339         \textcolor{keywordtype}{int} n = in.getInt();
+340         \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i = 0; i < n; ++i) \{
+341             String name = in.getWord();
+342             \hyperlink{classdomini_1_1folders_1_1Ctrl__FolderFile_a5d28ac7f5223ecd40a242148e86447c1}{Decode}(path + \textcolor{stringliteral}{"/"} + name);
+343         \}
+344         \textcolor{keywordflow}{return} path;
+345     \}
 \end{DoxyCode}
 \mbox{\Hypertarget{classdomini_1_1folders_1_1Ctrl__FolderFile_afa0f6968113855feccccfdbacc00444e}\label{classdomini_1_1folders_1_1Ctrl__FolderFile_afa0f6968113855feccccfdbacc00444e}} 
 \index{domini\+::folders\+::\+Ctrl\+\_\+\+Folder\+File@{domini\+::folders\+::\+Ctrl\+\_\+\+Folder\+File}!Decode\+Temp@{Decode\+Temp}}
@@ -250,11 +245,11 @@ el path de sortida
 
 
 \begin{DoxyCode}
-286                                \{
-287         \textcolor{keyword}{new} Ctrl\_Input\_Encoded(\hyperlink{classdomini_1_1folders_1_1Ctrl__FolderFile_a0d3946bb2832a1f34d0c2227df5c71c4}{path\_in});
-288         \hyperlink{classdomini_1_1folders_1_1Ctrl__FolderFile_a0db81590abe27b21a9b8c37633c86fa6}{temporal\_output} = \textcolor{keyword}{true};
-289         \textcolor{keywordflow}{return} \hyperlink{classdomini_1_1folders_1_1Ctrl__FolderFile_a5d28ac7f5223ecd40a242148e86447c1}{Decode}(null);
-290     \}
+288                                \{
+289         \textcolor{keyword}{new} Ctrl\_Input\_Encoded(\hyperlink{classdomini_1_1folders_1_1Ctrl__FolderFile_a0d3946bb2832a1f34d0c2227df5c71c4}{path\_in});
+290         \hyperlink{classdomini_1_1folders_1_1Ctrl__FolderFile_a0db81590abe27b21a9b8c37633c86fa6}{temporal\_output} = \textcolor{keyword}{true};
+291         \textcolor{keywordflow}{return} \hyperlink{classdomini_1_1folders_1_1Ctrl__FolderFile_a5d28ac7f5223ecd40a242148e86447c1}{Decode}(null);
+292     \}
 \end{DoxyCode}
 \mbox{\Hypertarget{classdomini_1_1folders_1_1Ctrl__FolderFile_a7c47fd5127ae6f713a4fa7f75002a6f6}\label{classdomini_1_1folders_1_1Ctrl__FolderFile_a7c47fd5127ae6f713a4fa7f75002a6f6}} 
 \index{domini\+::folders\+::\+Ctrl\+\_\+\+Folder\+File@{domini\+::folders\+::\+Ctrl\+\_\+\+Folder\+File}!Encode@{Encode}}
@@ -271,16 +266,16 @@ el path de sortida
 \end{DoxyReturn}
 
 \begin{DoxyCode}
-164                             \{
-165         String path\_out = \hyperlink{classdomini_1_1folders_1_1Ctrl__FolderFile_a11c6b1b4a25d12b8091c7c96b3da1ea7}{get\_outPathPrefix}() + \textcolor{stringliteral}{".jm"};
-166         \textcolor{keyword}{new} Ctrl\_Output\_Encoded(path\_out);
-167 
-168         Estadistica est = \textcolor{keyword}{new} Estadistica(\textcolor{keyword}{true});
-169         \hyperlink{classdomini_1_1folders_1_1Ctrl__FolderFile_a7c47fd5127ae6f713a4fa7f75002a6f6}{Encode}(\hyperlink{classdomini_1_1folders_1_1Ctrl__FolderFile_a0d3946bb2832a1f34d0c2227df5c71c4}{path\_in});
-170         est.work\_done();
-171 
-172         \textcolor{keywordflow}{return} est.show\_estadistica(\hyperlink{classdomini_1_1folders_1_1Ctrl__FolderFile_a0d3946bb2832a1f34d0c2227df5c71c4}{path\_in},path\_out);
-173     \}
+166                             \{
+167         String path\_out = \hyperlink{classdomini_1_1folders_1_1Ctrl__FolderFile_a11c6b1b4a25d12b8091c7c96b3da1ea7}{get\_outPathPrefix}() + \textcolor{stringliteral}{".jm"};
+168         \textcolor{keyword}{new} Ctrl\_Output\_Encoded(path\_out);
+169 
+170         Estadistica est = \textcolor{keyword}{new} Estadistica(\textcolor{keyword}{true});
+171         \hyperlink{classdomini_1_1folders_1_1Ctrl__FolderFile_a7c47fd5127ae6f713a4fa7f75002a6f6}{Encode}(\hyperlink{classdomini_1_1folders_1_1Ctrl__FolderFile_a0d3946bb2832a1f34d0c2227df5c71c4}{path\_in});
+172         est.work\_done();
+173 
+174         \textcolor{keywordflow}{return} est.show\_estadistica(\hyperlink{classdomini_1_1folders_1_1Ctrl__FolderFile_a0d3946bb2832a1f34d0c2227df5c71c4}{path\_in},path\_out);
+175     \}
 \end{DoxyCode}
 \mbox{\Hypertarget{classdomini_1_1folders_1_1Ctrl__FolderFile_ac2cb74a86677ce947b403cc63b91e874}\label{classdomini_1_1folders_1_1Ctrl__FolderFile_ac2cb74a86677ce947b403cc63b91e874}} 
 \index{domini\+::folders\+::\+Ctrl\+\_\+\+Folder\+File@{domini\+::folders\+::\+Ctrl\+\_\+\+Folder\+File}!Encode@{Encode}}
@@ -299,18 +294,18 @@ Comprimeix un fitxer o carpeta.
 \end{DoxyParams}
 
 \begin{DoxyCode}
-180                                      \{ \textcolor{comment}{//path in}
-181         Ctrl\_Output\_Encoded out = \textcolor{keyword}{new} Ctrl\_Output\_Encoded();
-182         Ctrl\_Browser in = \textcolor{keyword}{new} Ctrl\_Browser(path);
-183         \textcolor{keywordflow}{if} (in.isDirectory()) \{
-184             out.add((byte)0xF0, 8);
-185             \hyperlink{classdomini_1_1folders_1_1Ctrl__FolderFile_a6b18175639009f0186307710fb88a18f}{EncodeFolder}(path);
-186         \}
-187         \textcolor{keywordflow}{else} \{
-188             out.add((byte)0xF1, 8);
-189             \hyperlink{classdomini_1_1folders_1_1Ctrl__FolderFile_a0b2b642b6c23124539d0306955be7f0c}{EncodeFile}(path);
-190         \}
-191     \}
+182                                      \{ \textcolor{comment}{//path in}
+183         Ctrl\_Output\_Encoded out = \textcolor{keyword}{new} Ctrl\_Output\_Encoded();
+184         Ctrl\_Browser in = \textcolor{keyword}{new} Ctrl\_Browser(path);
+185         \textcolor{keywordflow}{if} (in.isDirectory()) \{
+186             out.add((byte)0xF0, 8);
+187             \hyperlink{classdomini_1_1folders_1_1Ctrl__FolderFile_a6b18175639009f0186307710fb88a18f}{EncodeFolder}(path);
+188         \}
+189         \textcolor{keywordflow}{else} \{
+190             out.add((byte)0xF1, 8);
+191             \hyperlink{classdomini_1_1folders_1_1Ctrl__FolderFile_a0b2b642b6c23124539d0306955be7f0c}{EncodeFile}(path);
+192         \}
+193     \}
 \end{DoxyCode}
 \mbox{\Hypertarget{classdomini_1_1folders_1_1Ctrl__FolderFile_aa88b27fc271590c8c16642db5c1bb329}\label{classdomini_1_1folders_1_1Ctrl__FolderFile_aa88b27fc271590c8c16642db5c1bb329}} 
 \index{domini\+::folders\+::\+Ctrl\+\_\+\+Folder\+File@{domini\+::folders\+::\+Ctrl\+\_\+\+Folder\+File}!Encode\+Auto@{Encode\+Auto}}
@@ -330,12 +325,12 @@ el path de sortida
 \end{DoxyReturn}
 
 \begin{DoxyCode}
-148                                \{
-149         this.\textcolor{keyword}{auto} = \textcolor{keyword}{true};
-150         this.\hyperlink{classdomini_1_1folders_1_1Ctrl__FolderFile_a7990a74c394d53a58ebbf4a7872c700d}{img\_quality} = 50.0;
-151 
-152         \textcolor{keywordflow}{return} \hyperlink{classdomini_1_1folders_1_1Ctrl__FolderFile_a7c47fd5127ae6f713a4fa7f75002a6f6}{Encode}();
-153     \}
+150                                \{
+151         this.\textcolor{keyword}{auto} = \textcolor{keyword}{true};
+152         this.\hyperlink{classdomini_1_1folders_1_1Ctrl__FolderFile_a7990a74c394d53a58ebbf4a7872c700d}{img\_quality} = 50.0;
+153 
+154         \textcolor{keywordflow}{return} \hyperlink{classdomini_1_1folders_1_1Ctrl__FolderFile_a7c47fd5127ae6f713a4fa7f75002a6f6}{Encode}();
+155     \}
 \end{DoxyCode}
 \mbox{\Hypertarget{classdomini_1_1folders_1_1Ctrl__FolderFile_a0b2b642b6c23124539d0306955be7f0c}\label{classdomini_1_1folders_1_1Ctrl__FolderFile_a0b2b642b6c23124539d0306955be7f0c}} 
 \index{domini\+::folders\+::\+Ctrl\+\_\+\+Folder\+File@{domini\+::folders\+::\+Ctrl\+\_\+\+Folder\+File}!Encode\+File@{Encode\+File}}
@@ -354,26 +349,26 @@ Comprimeix un fitxer.
 \end{DoxyParams}
 
 \begin{DoxyCode}
-217                                          \{
-218         Ctrl\_Output\_Encoded out = \textcolor{keyword}{new} Ctrl\_Output\_Encoded();
-219 
-220         String extension = FileNames.getExtension(path);
-221         out.add(extension);
-222         out.startSubfile();
-223         Ctrl\_Algorithm CAlg = \textcolor{keyword}{new} Ctrl\_Algorithm();
-224         String method;
-225         \textcolor{keywordflow}{if} (\textcolor{keyword}{auto}) \{
-226             method = CAlg.Auto\_Encoder(path);
-227         \}
-228         \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (extension.toLowerCase().equals(\textcolor{stringliteral}{"ppm"})) \{
-229             method = \textcolor{stringliteral}{"jpeg"};
-230         \}
-231         \textcolor{keywordflow}{else} \{
-232             method = \hyperlink{classdomini_1_1folders_1_1Ctrl__FolderFile_a75ef571be454360b835f552d2cf20741}{text\_method};
-233         \}
-234         CAlg.Encode(path, method, \hyperlink{classdomini_1_1folders_1_1Ctrl__FolderFile_a7990a74c394d53a58ebbf4a7872c700d}{img\_quality});
-235         out.endSubfile();
-236     \}
+219                                          \{
+220         Ctrl\_Output\_Encoded out = \textcolor{keyword}{new} Ctrl\_Output\_Encoded();
+221 
+222         String extension = FileNames.getExtension(path);
+223         out.add(extension);
+224         out.startSubfile();
+225         Ctrl\_Algorithm CAlg = \textcolor{keyword}{new} Ctrl\_Algorithm();
+226         String method;
+227         \textcolor{keywordflow}{if} (\textcolor{keyword}{auto}) \{
+228             method = CAlg.Auto\_Encoder(path);
+229         \}
+230         \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (extension.toLowerCase().equals(\textcolor{stringliteral}{"ppm"})) \{
+231             method = \textcolor{stringliteral}{"jpeg"};
+232         \}
+233         \textcolor{keywordflow}{else} \{
+234             method = \hyperlink{classdomini_1_1folders_1_1Ctrl__FolderFile_a75ef571be454360b835f552d2cf20741}{text\_method};
+235         \}
+236         CAlg.Encode(path, method, \hyperlink{classdomini_1_1folders_1_1Ctrl__FolderFile_a7990a74c394d53a58ebbf4a7872c700d}{img\_quality});
+237         out.endSubfile();
+238     \}
 \end{DoxyCode}
 \mbox{\Hypertarget{classdomini_1_1folders_1_1Ctrl__FolderFile_a6b18175639009f0186307710fb88a18f}\label{classdomini_1_1folders_1_1Ctrl__FolderFile_a6b18175639009f0186307710fb88a18f}} 
 \index{domini\+::folders\+::\+Ctrl\+\_\+\+Folder\+File@{domini\+::folders\+::\+Ctrl\+\_\+\+Folder\+File}!Encode\+Folder@{Encode\+Folder}}
@@ -392,19 +387,19 @@ Comprimeix una carpeta.
 \end{DoxyParams}
 
 \begin{DoxyCode}
-198                                            \{
-199         Ctrl\_Output\_Encoded out = \textcolor{keyword}{new} Ctrl\_Output\_Encoded();
-200         Ctrl\_Browser in = \textcolor{keyword}{new} Ctrl\_Browser(path);
-201 
-202         String[] children = in.list();
-203         \textcolor{keywordtype}{int} n = children.length;
-204         out.add(n);
-205         \textcolor{keywordflow}{for} (String name : children) \{
-206             String name\_prefix = FileNames.getPrefix(name);
-207             out.add(name\_prefix);
-208             \hyperlink{classdomini_1_1folders_1_1Ctrl__FolderFile_a7c47fd5127ae6f713a4fa7f75002a6f6}{Encode}(path + \textcolor{stringliteral}{"/"} + name);
-209         \}
-210     \}
+200                                            \{
+201         Ctrl\_Output\_Encoded out = \textcolor{keyword}{new} Ctrl\_Output\_Encoded();
+202         Ctrl\_Browser in = \textcolor{keyword}{new} Ctrl\_Browser(path);
+203 
+204         String[] children = in.list();
+205         \textcolor{keywordtype}{int} n = children.length;
+206         out.add(n);
+207         \textcolor{keywordflow}{for} (String name : children) \{
+208             String name\_prefix = FileNames.getPrefix(name);
+209             out.add(name\_prefix);
+210             \hyperlink{classdomini_1_1folders_1_1Ctrl__FolderFile_a7c47fd5127ae6f713a4fa7f75002a6f6}{Encode}(path + \textcolor{stringliteral}{"/"} + name);
+211         \}
+212     \}
 \end{DoxyCode}
 \mbox{\Hypertarget{classdomini_1_1folders_1_1Ctrl__FolderFile_a8cb5f1a979d5882dd244d69806d5b237}\label{classdomini_1_1folders_1_1Ctrl__FolderFile_a8cb5f1a979d5882dd244d69806d5b237}} 
 \index{domini\+::folders\+::\+Ctrl\+\_\+\+Folder\+File@{domini\+::folders\+::\+Ctrl\+\_\+\+Folder\+File}!Encode\+Manual\+Folder@{Encode\+Manual\+Folder}}
@@ -428,24 +423,24 @@ el path de sortida
 \end{DoxyReturn}
 
 \begin{DoxyCode}
-84                                                                              \{
-85         \textcolor{keywordflow}{if} (!\hyperlink{classdomini_1_1folders_1_1Ctrl__FolderFile_a75ef571be454360b835f552d2cf20741}{text\_method}.toLowerCase().equals(\textcolor{stringliteral}{"lz78"}) && !\hyperlink{classdomini_1_1folders_1_1Ctrl__FolderFile_a75ef571be454360b835f552d2cf20741}{text\_method}.toLowerCase().
+86                                                                              \{
+87         \textcolor{keywordflow}{if} (!\hyperlink{classdomini_1_1folders_1_1Ctrl__FolderFile_a75ef571be454360b835f552d2cf20741}{text\_method}.toLowerCase().equals(\textcolor{stringliteral}{"lz78"}) && !\hyperlink{classdomini_1_1folders_1_1Ctrl__FolderFile_a75ef571be454360b835f552d2cf20741}{text\_method}.toLowerCase().
       equals(\textcolor{stringliteral}{"lzss"}) && !\hyperlink{classdomini_1_1folders_1_1Ctrl__FolderFile_a75ef571be454360b835f552d2cf20741}{text\_method}.toLowerCase().equals(\textcolor{stringliteral}{"lzw"}))
-86             \textcolor{keywordflow}{throw} \textcolor{keyword}{new} IllegalArgumentException(\textcolor{stringliteral}{"text\_method ha de ser lz78, lzss o lzw"});
-87         \textcolor{keywordflow}{if} (img\_quality < 0 || img\_quality > 100)
-88             \textcolor{keywordflow}{throw} \textcolor{keyword}{new} IllegalArgumentException(\textcolor{stringliteral}{"img\_quality ha de ser un real entre 0 i 100 incolsos"});
-89 
-90         \textcolor{keywordflow}{if} (\hyperlink{classdomini_1_1folders_1_1Ctrl__FolderFile_a7990a74c394d53a58ebbf4a7872c700d}{img\_quality} > 0 && \hyperlink{classdomini_1_1folders_1_1Ctrl__FolderFile_a7990a74c394d53a58ebbf4a7872c700d}{img\_quality} < 1)
-91             \textcolor{keywordflow}{throw} \textcolor{keyword}{new} IllegalArgumentException(\textcolor{stringliteral}{"N'estas segur? Llegeix l'especificació, rata."});
-92 
-93         this.\textcolor{keyword}{auto} = \textcolor{keyword}{false};
-94         this.\hyperlink{classdomini_1_1folders_1_1Ctrl__FolderFile_a75ef571be454360b835f552d2cf20741}{text\_method} = \hyperlink{classdomini_1_1folders_1_1Ctrl__FolderFile_a75ef571be454360b835f552d2cf20741}{text\_method}.toLowerCase();
-95         this.\hyperlink{classdomini_1_1folders_1_1Ctrl__FolderFile_a7990a74c394d53a58ebbf4a7872c700d}{img\_quality} = \hyperlink{classdomini_1_1folders_1_1Ctrl__FolderFile_a7990a74c394d53a58ebbf4a7872c700d}{img\_quality};
-96         
-97 
-98         \textcolor{keywordflow}{return} \hyperlink{classdomini_1_1folders_1_1Ctrl__FolderFile_a7c47fd5127ae6f713a4fa7f75002a6f6}{Encode}();          
-99         
-100     \}
+88             \textcolor{keywordflow}{throw} \textcolor{keyword}{new} IllegalArgumentException(\textcolor{stringliteral}{"text\_method ha de ser lz78, lzss o lzw"});
+89         \textcolor{keywordflow}{if} (img\_quality < 0 || img\_quality > 100)
+90             \textcolor{keywordflow}{throw} \textcolor{keyword}{new} IllegalArgumentException(\textcolor{stringliteral}{"img\_quality ha de ser un real entre 0 i 100 incolsos"});
+91 
+92         \textcolor{keywordflow}{if} (\hyperlink{classdomini_1_1folders_1_1Ctrl__FolderFile_a7990a74c394d53a58ebbf4a7872c700d}{img\_quality} > 0 && \hyperlink{classdomini_1_1folders_1_1Ctrl__FolderFile_a7990a74c394d53a58ebbf4a7872c700d}{img\_quality} < 1)
+93             \textcolor{keywordflow}{throw} \textcolor{keyword}{new} IllegalArgumentException(\textcolor{stringliteral}{"N'estas segur? Llegeix l'especificació, rata."});
+94 
+95         this.\textcolor{keyword}{auto} = \textcolor{keyword}{false};
+96         this.\hyperlink{classdomini_1_1folders_1_1Ctrl__FolderFile_a75ef571be454360b835f552d2cf20741}{text\_method} = \hyperlink{classdomini_1_1folders_1_1Ctrl__FolderFile_a75ef571be454360b835f552d2cf20741}{text\_method}.toLowerCase();
+97         this.\hyperlink{classdomini_1_1folders_1_1Ctrl__FolderFile_a7990a74c394d53a58ebbf4a7872c700d}{img\_quality} = \hyperlink{classdomini_1_1folders_1_1Ctrl__FolderFile_a7990a74c394d53a58ebbf4a7872c700d}{img\_quality};
+98         
+99 
+100         \textcolor{keywordflow}{return} \hyperlink{classdomini_1_1folders_1_1Ctrl__FolderFile_a7c47fd5127ae6f713a4fa7f75002a6f6}{Encode}();          
+101         
+102     \}
 \end{DoxyCode}
 \mbox{\Hypertarget{classdomini_1_1folders_1_1Ctrl__FolderFile_aa12af32101598eebcaaad4d0dbe69902}\label{classdomini_1_1folders_1_1Ctrl__FolderFile_aa12af32101598eebcaaad4d0dbe69902}} 
 \index{domini\+::folders\+::\+Ctrl\+\_\+\+Folder\+File@{domini\+::folders\+::\+Ctrl\+\_\+\+Folder\+File}!Encode\+Manual\+Img@{Encode\+Manual\+Img}}
@@ -467,19 +462,19 @@ el path de sortida
 \end{DoxyReturn}
 
 \begin{DoxyCode}
-127                                                       \{
-128         \textcolor{keywordflow}{if} (img\_quality < 0 || img\_quality > 100)
-129             \textcolor{keywordflow}{throw} \textcolor{keyword}{new} IllegalArgumentException(\textcolor{stringliteral}{"img\_quality ha de ser un real entre 0 i 100 incolsos"});
-130 
-131         \textcolor{keywordflow}{if} (\hyperlink{classdomini_1_1folders_1_1Ctrl__FolderFile_a7990a74c394d53a58ebbf4a7872c700d}{img\_quality} > 0 && \hyperlink{classdomini_1_1folders_1_1Ctrl__FolderFile_a7990a74c394d53a58ebbf4a7872c700d}{img\_quality} < 1)
-132             \textcolor{keywordflow}{throw} \textcolor{keyword}{new} IllegalArgumentException(\textcolor{stringliteral}{"N'estas segur? Llegeix l'especificació, rata."});
-133 
-134         this.\textcolor{keyword}{auto} = \textcolor{keyword}{false};
-135         this.\hyperlink{classdomini_1_1folders_1_1Ctrl__FolderFile_a75ef571be454360b835f552d2cf20741}{text\_method} = null;
-136         this.\hyperlink{classdomini_1_1folders_1_1Ctrl__FolderFile_a7990a74c394d53a58ebbf4a7872c700d}{img\_quality} = \hyperlink{classdomini_1_1folders_1_1Ctrl__FolderFile_a7990a74c394d53a58ebbf4a7872c700d}{img\_quality};
-137 
-138         \textcolor{keywordflow}{return} \hyperlink{classdomini_1_1folders_1_1Ctrl__FolderFile_a7c47fd5127ae6f713a4fa7f75002a6f6}{Encode}();
-139     \}
+129                                                       \{
+130         \textcolor{keywordflow}{if} (img\_quality < 0 || img\_quality > 100)
+131             \textcolor{keywordflow}{throw} \textcolor{keyword}{new} IllegalArgumentException(\textcolor{stringliteral}{"img\_quality ha de ser un real entre 0 i 100 incolsos"});
+132 
+133         \textcolor{keywordflow}{if} (\hyperlink{classdomini_1_1folders_1_1Ctrl__FolderFile_a7990a74c394d53a58ebbf4a7872c700d}{img\_quality} > 0 && \hyperlink{classdomini_1_1folders_1_1Ctrl__FolderFile_a7990a74c394d53a58ebbf4a7872c700d}{img\_quality} < 1)
+134             \textcolor{keywordflow}{throw} \textcolor{keyword}{new} IllegalArgumentException(\textcolor{stringliteral}{"N'estas segur? Llegeix l'especificació, rata."});
+135 
+136         this.\textcolor{keyword}{auto} = \textcolor{keyword}{false};
+137         this.\hyperlink{classdomini_1_1folders_1_1Ctrl__FolderFile_a75ef571be454360b835f552d2cf20741}{text\_method} = null;
+138         this.\hyperlink{classdomini_1_1folders_1_1Ctrl__FolderFile_a7990a74c394d53a58ebbf4a7872c700d}{img\_quality} = \hyperlink{classdomini_1_1folders_1_1Ctrl__FolderFile_a7990a74c394d53a58ebbf4a7872c700d}{img\_quality};
+139 
+140         \textcolor{keywordflow}{return} \hyperlink{classdomini_1_1folders_1_1Ctrl__FolderFile_a7c47fd5127ae6f713a4fa7f75002a6f6}{Encode}();
+141     \}
 \end{DoxyCode}
 \mbox{\Hypertarget{classdomini_1_1folders_1_1Ctrl__FolderFile_a77b9d8244dd36e77516a9dc43ec50ed8}\label{classdomini_1_1folders_1_1Ctrl__FolderFile_a77b9d8244dd36e77516a9dc43ec50ed8}} 
 \index{domini\+::folders\+::\+Ctrl\+\_\+\+Folder\+File@{domini\+::folders\+::\+Ctrl\+\_\+\+Folder\+File}!Encode\+Manual\+Text@{Encode\+Manual\+Text}}
@@ -501,17 +496,17 @@ el path de sortida
 \end{DoxyReturn}
 
 \begin{DoxyCode}
-108                                                        \{
-109         \textcolor{keywordflow}{if} (!\hyperlink{classdomini_1_1folders_1_1Ctrl__FolderFile_a75ef571be454360b835f552d2cf20741}{text\_method}.toLowerCase().equals(\textcolor{stringliteral}{"lz78"}) && !\hyperlink{classdomini_1_1folders_1_1Ctrl__FolderFile_a75ef571be454360b835f552d2cf20741}{text\_method}.toLowerCase().
+110                                                        \{
+111         \textcolor{keywordflow}{if} (!\hyperlink{classdomini_1_1folders_1_1Ctrl__FolderFile_a75ef571be454360b835f552d2cf20741}{text\_method}.toLowerCase().equals(\textcolor{stringliteral}{"lz78"}) && !\hyperlink{classdomini_1_1folders_1_1Ctrl__FolderFile_a75ef571be454360b835f552d2cf20741}{text\_method}.toLowerCase().
       equals(\textcolor{stringliteral}{"lzss"}) && !\hyperlink{classdomini_1_1folders_1_1Ctrl__FolderFile_a75ef571be454360b835f552d2cf20741}{text\_method}.toLowerCase().equals(\textcolor{stringliteral}{"lzw"}))
-110             \textcolor{keywordflow}{throw} \textcolor{keyword}{new} IllegalArgumentException(\textcolor{stringliteral}{"text\_method ha de ser lz78, lzss o lzw"});
-111 
-112         this.\textcolor{keyword}{auto} = \textcolor{keyword}{false};
-113         this.\hyperlink{classdomini_1_1folders_1_1Ctrl__FolderFile_a75ef571be454360b835f552d2cf20741}{text\_method} = \hyperlink{classdomini_1_1folders_1_1Ctrl__FolderFile_a75ef571be454360b835f552d2cf20741}{text\_method}.toLowerCase();
-114         this.\hyperlink{classdomini_1_1folders_1_1Ctrl__FolderFile_a7990a74c394d53a58ebbf4a7872c700d}{img\_quality} = null; \textcolor{comment}{//valor invàlid}
-115 
-116         \textcolor{keywordflow}{return} \hyperlink{classdomini_1_1folders_1_1Ctrl__FolderFile_a7c47fd5127ae6f713a4fa7f75002a6f6}{Encode}();
-117     \}
+112             \textcolor{keywordflow}{throw} \textcolor{keyword}{new} IllegalArgumentException(\textcolor{stringliteral}{"text\_method ha de ser lz78, lzss o lzw"});
+113 
+114         this.\textcolor{keyword}{auto} = \textcolor{keyword}{false};
+115         this.\hyperlink{classdomini_1_1folders_1_1Ctrl__FolderFile_a75ef571be454360b835f552d2cf20741}{text\_method} = \hyperlink{classdomini_1_1folders_1_1Ctrl__FolderFile_a75ef571be454360b835f552d2cf20741}{text\_method}.toLowerCase();
+116         this.\hyperlink{classdomini_1_1folders_1_1Ctrl__FolderFile_a7990a74c394d53a58ebbf4a7872c700d}{img\_quality} = null; \textcolor{comment}{//valor invàlid}
+117 
+118         \textcolor{keywordflow}{return} \hyperlink{classdomini_1_1folders_1_1Ctrl__FolderFile_a7c47fd5127ae6f713a4fa7f75002a6f6}{Encode}();
+119     \}
 \end{DoxyCode}
 \mbox{\Hypertarget{classdomini_1_1folders_1_1Ctrl__FolderFile_a11c6b1b4a25d12b8091c7c96b3da1ea7}\label{classdomini_1_1folders_1_1Ctrl__FolderFile_a11c6b1b4a25d12b8091c7c96b3da1ea7}} 
 \index{domini\+::folders\+::\+Ctrl\+\_\+\+Folder\+File@{domini\+::folders\+::\+Ctrl\+\_\+\+Folder\+File}!get\+\_\+out\+Path\+Prefix@{get\+\_\+out\+Path\+Prefix}}
@@ -521,9 +516,9 @@ el path de sortida
 
 
 \begin{DoxyCode}
-69                                        \{
-70         \textcolor{keywordflow}{return} FileNames.getPrefix(\hyperlink{classdomini_1_1folders_1_1Ctrl__FolderFile_a0d3946bb2832a1f34d0c2227df5c71c4}{path\_in});
-71     \}
+71                                        \{
+72         \textcolor{keywordflow}{return} FileNames.getPrefix(\hyperlink{classdomini_1_1folders_1_1Ctrl__FolderFile_a0d3946bb2832a1f34d0c2227df5c71c4}{path\_in});
+73     \}
 \end{DoxyCode}
 \mbox{\Hypertarget{classdomini_1_1folders_1_1Ctrl__FolderFile_a61d9dfde0932787a2398af3ddf99c34b}\label{classdomini_1_1folders_1_1Ctrl__FolderFile_a61d9dfde0932787a2398af3ddf99c34b}} 
 \index{domini\+::folders\+::\+Ctrl\+\_\+\+Folder\+File@{domini\+::folders\+::\+Ctrl\+\_\+\+Folder\+File}!get\+Encoded\+Extension@{get\+Encoded\+Extension}}
@@ -536,15 +531,15 @@ L\textquotesingle{}extensió que tenia un comprimit abans de ser comprimit.
 \end{DoxyReturn}
 
 \begin{DoxyCode}
-422                                         \{
-423         \textcolor{keywordflow}{if} (!FileNames.getExtension(\hyperlink{classdomini_1_1folders_1_1Ctrl__FolderFile_a0d3946bb2832a1f34d0c2227df5c71c4}{path\_in}).equals(\textcolor{stringliteral}{"jm"})) \textcolor{keywordflow}{throw} \textcolor{keyword}{new} IllegalArgumentException(\textcolor{stringliteral}{"No es
+424                                         \{
+425         \textcolor{keywordflow}{if} (!FileNames.getExtension(\hyperlink{classdomini_1_1folders_1_1Ctrl__FolderFile_a0d3946bb2832a1f34d0c2227df5c71c4}{path\_in}).equals(\textcolor{stringliteral}{"jm"})) \textcolor{keywordflow}{throw} \textcolor{keyword}{new} IllegalArgumentException(\textcolor{stringliteral}{"No es
        un comprimit."});
-424         Ctrl\_Input\_Encoded in = \textcolor{keyword}{new} Ctrl\_Input\_Encoded(\hyperlink{classdomini_1_1folders_1_1Ctrl__FolderFile_a0d3946bb2832a1f34d0c2227df5c71c4}{path\_in});
-425         byte magic\_word = in.getByte();
-426         \textcolor{keywordflow}{if} (magic\_word == (byte)0xF1) \textcolor{keywordflow}{return} in.getWord();
-427         \textcolor{keywordflow}{if} (magic\_word == (byte)0xF0) \textcolor{keywordflow}{return} \textcolor{stringliteral}{""};
-428         \textcolor{keywordflow}{throw} \textcolor{keyword}{new} IllegalArgumentException(\textcolor{stringliteral}{"No es un comprimit."});
-429     \}
+426         Ctrl\_Input\_Encoded in = \textcolor{keyword}{new} Ctrl\_Input\_Encoded(\hyperlink{classdomini_1_1folders_1_1Ctrl__FolderFile_a0d3946bb2832a1f34d0c2227df5c71c4}{path\_in});
+427         byte magic\_word = in.getByte();
+428         \textcolor{keywordflow}{if} (magic\_word == (byte)0xF1) \textcolor{keywordflow}{return} in.getWord();
+429         \textcolor{keywordflow}{if} (magic\_word == (byte)0xF0) \textcolor{keywordflow}{return} \textcolor{stringliteral}{""};
+430         \textcolor{keywordflow}{throw} \textcolor{keyword}{new} IllegalArgumentException(\textcolor{stringliteral}{"No es un comprimit."});
+431     \}
 \end{DoxyCode}
 \mbox{\Hypertarget{classdomini_1_1folders_1_1Ctrl__FolderFile_a9e2ef751bdcb99083831c6b4e4761169}\label{classdomini_1_1folders_1_1Ctrl__FolderFile_a9e2ef751bdcb99083831c6b4e4761169}} 
 \index{domini\+::folders\+::\+Ctrl\+\_\+\+Folder\+File@{domini\+::folders\+::\+Ctrl\+\_\+\+Folder\+File}!get\+Type@{get\+Type}}
@@ -562,22 +557,22 @@ Retorna una enumeration indicant el tipus de Path
 \end{DoxyReturn}
 
 \begin{DoxyCode}
-243                                            \{
-244 
-245         \hyperlink{namespaceglobal}{global}.type file = FolderOrFile.getType(Path);
-246         \textcolor{keywordflow}{if} (file == \hyperlink{namespaceglobal}{global}.type.comprimit) \{
-247             \textcolor{keywordflow}{if} (\hyperlink{classdomini_1_1folders_1_1Ctrl__FolderFile_a3198690e1ecc46e00431f35d87080d79}{isEncodedFile}()) \{
-248                 \textcolor{keywordflow}{if} (\hyperlink{classdomini_1_1folders_1_1Ctrl__FolderFile_a61d9dfde0932787a2398af3ddf99c34b}{getEncodedExtension}().equals(\textcolor{stringliteral}{"ppm"})) \{
-249                     \textcolor{keywordflow}{return} \hyperlink{namespaceglobal}{global}.type.imageComprimit;
-250                 \}\textcolor{keywordflow}{else} \{
-251                     \textcolor{keywordflow}{return} \hyperlink{namespaceglobal}{global}.type.textComprimit;
-252                 \}
-253             \}\textcolor{keywordflow}{else} \textcolor{keywordflow}{if}(\hyperlink{classdomini_1_1folders_1_1Ctrl__FolderFile_a095e6037e5cdf9a43806a308ca028791}{isEncodedFolder}()) \{
-254                 \textcolor{keywordflow}{return} \hyperlink{namespaceglobal}{global}.type.folderComprimit;
-255             \}
-256         \}
-257         \textcolor{keywordflow}{return} file;
-258     \}
+245                                            \{
+246 
+247         \hyperlink{namespaceglobal}{global}.type file = FolderOrFile.getType(Path);
+248         \textcolor{keywordflow}{if} (file == \hyperlink{namespaceglobal}{global}.type.comprimit) \{
+249             \textcolor{keywordflow}{if} (\hyperlink{classdomini_1_1folders_1_1Ctrl__FolderFile_a3198690e1ecc46e00431f35d87080d79}{isEncodedFile}()) \{
+250                 \textcolor{keywordflow}{if} (\hyperlink{classdomini_1_1folders_1_1Ctrl__FolderFile_a61d9dfde0932787a2398af3ddf99c34b}{getEncodedExtension}().equals(\textcolor{stringliteral}{"ppm"})) \{
+251                     \textcolor{keywordflow}{return} \hyperlink{namespaceglobal}{global}.type.imageComprimit;
+252                 \}\textcolor{keywordflow}{else} \{
+253                     \textcolor{keywordflow}{return} \hyperlink{namespaceglobal}{global}.type.textComprimit;
+254                 \}
+255             \}\textcolor{keywordflow}{else} \textcolor{keywordflow}{if}(\hyperlink{classdomini_1_1folders_1_1Ctrl__FolderFile_a095e6037e5cdf9a43806a308ca028791}{isEncodedFolder}()) \{
+256                 \textcolor{keywordflow}{return} \hyperlink{namespaceglobal}{global}.type.folderComprimit;
+257             \}
+258         \}
+259         \textcolor{keywordflow}{return} file;
+260     \}
 \end{DoxyCode}
 \mbox{\Hypertarget{classdomini_1_1folders_1_1Ctrl__FolderFile_a47a7ad955f1c579384dfba08bc7be8e0}\label{classdomini_1_1folders_1_1Ctrl__FolderFile_a47a7ad955f1c579384dfba08bc7be8e0}} 
 \index{domini\+::folders\+::\+Ctrl\+\_\+\+Folder\+File@{domini\+::folders\+::\+Ctrl\+\_\+\+Folder\+File}!is\+Encoded@{is\+Encoded}}
@@ -590,12 +585,12 @@ retorna true $<$=$>$ el path que s\textquotesingle{}ha passat al constructor és
 \end{DoxyReturn}
 
 \begin{DoxyCode}
-389                                \{
-390         \textcolor{keywordflow}{if} (!FileNames.getExtension(\hyperlink{classdomini_1_1folders_1_1Ctrl__FolderFile_a0d3946bb2832a1f34d0c2227df5c71c4}{path\_in}).equals(\textcolor{stringliteral}{"jm"})) \textcolor{keywordflow}{return} \textcolor{keyword}{false};
-391         Ctrl\_Input\_Encoded in = \textcolor{keyword}{new} Ctrl\_Input\_Encoded(\hyperlink{classdomini_1_1folders_1_1Ctrl__FolderFile_a0d3946bb2832a1f34d0c2227df5c71c4}{path\_in});
-392         byte magic\_word = in.getByte();
-393         \textcolor{keywordflow}{return} (magic\_word == (byte)0xF0) || (magic\_word == (byte)0xF1);
-394     \}
+391                                \{
+392         \textcolor{keywordflow}{if} (!FileNames.getExtension(\hyperlink{classdomini_1_1folders_1_1Ctrl__FolderFile_a0d3946bb2832a1f34d0c2227df5c71c4}{path\_in}).equals(\textcolor{stringliteral}{"jm"})) \textcolor{keywordflow}{return} \textcolor{keyword}{false};
+393         Ctrl\_Input\_Encoded in = \textcolor{keyword}{new} Ctrl\_Input\_Encoded(\hyperlink{classdomini_1_1folders_1_1Ctrl__FolderFile_a0d3946bb2832a1f34d0c2227df5c71c4}{path\_in});
+394         byte magic\_word = in.getByte();
+395         \textcolor{keywordflow}{return} (magic\_word == (byte)0xF0) || (magic\_word == (byte)0xF1);
+396     \}
 \end{DoxyCode}
 \mbox{\Hypertarget{classdomini_1_1folders_1_1Ctrl__FolderFile_a3198690e1ecc46e00431f35d87080d79}\label{classdomini_1_1folders_1_1Ctrl__FolderFile_a3198690e1ecc46e00431f35d87080d79}} 
 \index{domini\+::folders\+::\+Ctrl\+\_\+\+Folder\+File@{domini\+::folders\+::\+Ctrl\+\_\+\+Folder\+File}!is\+Encoded\+File@{is\+Encoded\+File}}
@@ -605,12 +600,12 @@ retorna true $<$=$>$ el path que s\textquotesingle{}ha passat al constructor és
 
 
 \begin{DoxyCode}
-411                                    \{
-412         \textcolor{keywordflow}{if} (!FileNames.getExtension(\hyperlink{classdomini_1_1folders_1_1Ctrl__FolderFile_a0d3946bb2832a1f34d0c2227df5c71c4}{path\_in}).equals(\textcolor{stringliteral}{"jm"})) \textcolor{keywordflow}{return} \textcolor{keyword}{false};
-413         Ctrl\_Input\_Encoded in = \textcolor{keyword}{new} Ctrl\_Input\_Encoded(\hyperlink{classdomini_1_1folders_1_1Ctrl__FolderFile_a0d3946bb2832a1f34d0c2227df5c71c4}{path\_in});
-414         byte magic\_word = in.getByte();
-415         \textcolor{keywordflow}{return} (magic\_word == (byte)0xF1);
-416     \}
+413                                    \{
+414         \textcolor{keywordflow}{if} (!FileNames.getExtension(\hyperlink{classdomini_1_1folders_1_1Ctrl__FolderFile_a0d3946bb2832a1f34d0c2227df5c71c4}{path\_in}).equals(\textcolor{stringliteral}{"jm"})) \textcolor{keywordflow}{return} \textcolor{keyword}{false};
+415         Ctrl\_Input\_Encoded in = \textcolor{keyword}{new} Ctrl\_Input\_Encoded(\hyperlink{classdomini_1_1folders_1_1Ctrl__FolderFile_a0d3946bb2832a1f34d0c2227df5c71c4}{path\_in});
+416         byte magic\_word = in.getByte();
+417         \textcolor{keywordflow}{return} (magic\_word == (byte)0xF1);
+418     \}
 \end{DoxyCode}
 \mbox{\Hypertarget{classdomini_1_1folders_1_1Ctrl__FolderFile_a095e6037e5cdf9a43806a308ca028791}\label{classdomini_1_1folders_1_1Ctrl__FolderFile_a095e6037e5cdf9a43806a308ca028791}} 
 \index{domini\+::folders\+::\+Ctrl\+\_\+\+Folder\+File@{domini\+::folders\+::\+Ctrl\+\_\+\+Folder\+File}!is\+Encoded\+Folder@{is\+Encoded\+Folder}}
@@ -625,12 +620,12 @@ retorna true $<$=$>$ el path que s\textquotesingle{}ha passat al constructor és
 \end{DoxyReturn}
 
 \begin{DoxyCode}
-400                                      \{
-401         \textcolor{keywordflow}{if} (!FileNames.getExtension(\hyperlink{classdomini_1_1folders_1_1Ctrl__FolderFile_a0d3946bb2832a1f34d0c2227df5c71c4}{path\_in}).equals(\textcolor{stringliteral}{"jm"})) \textcolor{keywordflow}{return} \textcolor{keyword}{false};
-402         Ctrl\_Input\_Encoded in = \textcolor{keyword}{new} Ctrl\_Input\_Encoded(\hyperlink{classdomini_1_1folders_1_1Ctrl__FolderFile_a0d3946bb2832a1f34d0c2227df5c71c4}{path\_in});
-403         byte magic\_word = in.getByte();
-404         \textcolor{keywordflow}{return} (magic\_word == (byte)0xF0);
-405     \}
+402                                      \{
+403         \textcolor{keywordflow}{if} (!FileNames.getExtension(\hyperlink{classdomini_1_1folders_1_1Ctrl__FolderFile_a0d3946bb2832a1f34d0c2227df5c71c4}{path\_in}).equals(\textcolor{stringliteral}{"jm"})) \textcolor{keywordflow}{return} \textcolor{keyword}{false};
+404         Ctrl\_Input\_Encoded in = \textcolor{keyword}{new} Ctrl\_Input\_Encoded(\hyperlink{classdomini_1_1folders_1_1Ctrl__FolderFile_a0d3946bb2832a1f34d0c2227df5c71c4}{path\_in});
+405         byte magic\_word = in.getByte();
+406         \textcolor{keywordflow}{return} (magic\_word == (byte)0xF0);
+407     \}
 \end{DoxyCode}
 
 

@@ -7,6 +7,7 @@ import java.io.InputStreamReader;
 /**
  * @class Driver__Huffman
  * @brief Driver de Huffman
+ * @file
  * @author Joan Lapeyra Amat
  */
 public class Driver__Huffman {
@@ -18,7 +19,7 @@ public class Driver__Huffman {
 	private static void showOptions(){
 		System.out.println("Driver de Huffman");
 		System.out.println("Constructores: ");
-		System.out.println("	 1. Huffman(boolean automatic)");
+		System.out.println("	 1. Huffman()");
 		System.out.println("	 Input: 1");
 
 		System.out.println("Funciones: ");
@@ -68,7 +69,7 @@ public class Driver__Huffman {
 			switch(linea){
 				case "1":
 					System.out.println("");
-					System.out.println("Escribe un 0 para Huffman manual y un 1 para Huffman automatico");
+					//System.out.println("Escribe un 0 para Huffman manual y un 1 para Huffman automatico");
 					//String aux1 = reader.readLine().trim();
 					huffman = new Huffman();
 				break;

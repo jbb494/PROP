@@ -7,6 +7,8 @@ import java.util.regex.Pattern;
 /**
  * @class Ctrl_Input
  * @brief Classe de Ctrl_Input
+ * @file
+
  * 
  * Cal tenir en compte que no es poden llegir dos fitxers simultàniament.
  * El fitxer que llegeixen les instàncies de Ctrl_Input i els seus fills s'inicialitza 

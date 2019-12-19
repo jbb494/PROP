@@ -255,9 +255,9 @@ public class LZSS extends Algorithm {
     }
 }
 
-/** @class LZSS 
+/** @class LZSS
  *  @brief Aquesta és la classe del algoritme LZSS.
- *   
+ * @file
  *  En aquesta classe es tracta la compressió mitjançant l'algorisme
  *  LZSS i la descompressió d'un input el qual ha estat comprimit amb
  *  aquest mateix algoritme.

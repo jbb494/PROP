@@ -7,8 +7,9 @@ import persistencia.browser.Ctrl_Browser;
 
 /**
  * @class Estadistica
- * @file
  * @brief Generació de les estadístiques durant la compressió
+ * @file
+
  * @author Manel Aguilar
  */
 

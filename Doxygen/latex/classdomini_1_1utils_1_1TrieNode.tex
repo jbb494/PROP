@@ -35,13 +35,6 @@ final Map$<$ T, \hyperlink{classdomini_1_1utils_1_1TrieNode}{Trie\+Node}$<$ T $>
 \subsection{Detailed Description}
 Classe \hyperlink{classdomini_1_1utils_1_1TrieNode}{Trie\+Node}. 
 
-Aquesta estructura de dades són els nodes del \hyperlink{classdomini_1_1utils_1_1Trie}{Trie}. Cada node representa la seqüencia de bytes des d\textquotesingle{}ell fins a l\textquotesingle{}arrel. L\textquotesingle{}atribut index representa l\textquotesingle{}índex del node (que és l\textquotesingle{}identificador d\textquotesingle{}aquest). Després tenim children, que es un Hash\+Map que cada entrada té com a key un byte i com a value un \hyperlink{classdomini_1_1utils_1_1TrieNode}{Trie\+Node}. Després tenim dos consultores, una que retorna el Has\+Map que conté children. La segona constructora retorna l\textquotesingle{}índex d\textquotesingle{}aquest mateix \hyperlink{classdomini_1_1utils_1_1TrieNode}{Trie\+Node}. Per últim, el constructor, que se li passa com a paràmetre l\textquotesingle{}índex.
-
-\begin{DoxyAuthor}{Author}
-Joan Bellavista Bartroli 
-\end{DoxyAuthor}
-
-
 \subsection{Constructor \& Destructor Documentation}
 \mbox{\Hypertarget{classdomini_1_1utils_1_1TrieNode_af9a18353151b5e3dea5966f50629319a}\label{classdomini_1_1utils_1_1TrieNode_af9a18353151b5e3dea5966f50629319a}} 
 \index{domini\+::utils\+::\+Trie\+Node@{domini\+::utils\+::\+Trie\+Node}!Trie\+Node@{Trie\+Node}}
@@ -60,9 +53,9 @@ Constructor de la classe.
 \end{DoxyParams}
 
 \begin{DoxyCode}
-33                                   \{
-34         this.\hyperlink{classdomini_1_1utils_1_1TrieNode_a9c247bc6568131e5e6ad0758adb67bfa}{index} = \hyperlink{classdomini_1_1utils_1_1TrieNode_a9c247bc6568131e5e6ad0758adb67bfa}{index};
-35     \}
+34                                   \{
+35         this.\hyperlink{classdomini_1_1utils_1_1TrieNode_a9c247bc6568131e5e6ad0758adb67bfa}{index} = \hyperlink{classdomini_1_1utils_1_1TrieNode_a9c247bc6568131e5e6ad0758adb67bfa}{index};
+36     \}
 \end{DoxyCode}
 
 
@@ -75,9 +68,9 @@ Constructor de la classe.
 
 
 \begin{DoxyCode}
-41                                              \{
-42         \textcolor{keywordflow}{return} \hyperlink{classdomini_1_1utils_1_1TrieNode_ae64d9c12696f526eecb3ff15aa290640}{children};
-43     \}
+42                                              \{
+43         \textcolor{keywordflow}{return} \hyperlink{classdomini_1_1utils_1_1TrieNode_ae64d9c12696f526eecb3ff15aa290640}{children};
+44     \}
 \end{DoxyCode}
 \mbox{\Hypertarget{classdomini_1_1utils_1_1TrieNode_ac8e79df6ce5e7b33c6d08a0fe0681916}\label{classdomini_1_1utils_1_1TrieNode_ac8e79df6ce5e7b33c6d08a0fe0681916}} 
 \index{domini\+::utils\+::\+Trie\+Node@{domini\+::utils\+::\+Trie\+Node}!get\+Index@{get\+Index}}
@@ -90,9 +83,9 @@ Devuelve el indice de este nodo
 \end{DoxyReturn}
 
 \begin{DoxyCode}
-49                              \{
-50         \textcolor{keywordflow}{return} \hyperlink{classdomini_1_1utils_1_1TrieNode_a9c247bc6568131e5e6ad0758adb67bfa}{index};
-51     \}
+50                              \{
+51         \textcolor{keywordflow}{return} \hyperlink{classdomini_1_1utils_1_1TrieNode_a9c247bc6568131e5e6ad0758adb67bfa}{index};
+52     \}
 \end{DoxyCode}
 
 

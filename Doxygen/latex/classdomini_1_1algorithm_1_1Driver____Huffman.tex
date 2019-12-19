@@ -22,11 +22,6 @@ static void \hyperlink{classdomini_1_1algorithm_1_1Driver____Huffman_a5d56f18f1d
 \subsection{Detailed Description}
 Driver de \hyperlink{classHuffman}{Huffman}. 
 
-\begin{DoxyAuthor}{Author}
-Joan Lapeyra Amat 
-\end{DoxyAuthor}
-
-
 \subsection{Member Function Documentation}
 \mbox{\Hypertarget{classdomini_1_1algorithm_1_1Driver____Huffman_a5d56f18f1d8f96dfc735b9a127094319}\label{classdomini_1_1algorithm_1_1Driver____Huffman_a5d56f18f1d8f96dfc735b9a127094319}} 
 \index{domini\+::algorithm\+::\+Driver\+\_\+\+\_\+\+Huffman@{domini\+::algorithm\+::\+Driver\+\_\+\+\_\+\+Huffman}!comprovar\+Excepcions@{comprovar\+Excepcions}}
@@ -47,12 +42,12 @@ Comprovarà les possibles excepcions que puguin apareixer a la classe.
 \end{DoxyParams}
 
 \begin{DoxyCode}
-49                                                                           \{
-50         \textcolor{keywordtype}{int} op = Integer.parseInt(linea);
-51         \textcolor{keywordflow}{if}(huffman == null && op > 1) \{
-52             \textcolor{keywordflow}{throw} \textcolor{keyword}{new} IllegalArgumentException(\textcolor{stringliteral}{"Debes llamar al constructor antes"});
-53         \}
-54     \}
+50                                                                           \{
+51         \textcolor{keywordtype}{int} op = Integer.parseInt(linea);
+52         \textcolor{keywordflow}{if}(huffman == null && op > 1) \{
+53             \textcolor{keywordflow}{throw} \textcolor{keyword}{new} IllegalArgumentException(\textcolor{stringliteral}{"Debes llamar al constructor antes"});
+54         \}
+55     \}
 \end{DoxyCode}
 \mbox{\Hypertarget{classdomini_1_1algorithm_1_1Driver____Huffman_a2fe727dd4ebafefce42bdc94f5dd80fe}\label{classdomini_1_1algorithm_1_1Driver____Huffman_a2fe727dd4ebafefce42bdc94f5dd80fe}} 
 \index{domini\+::algorithm\+::\+Driver\+\_\+\+\_\+\+Huffman@{domini\+::algorithm\+::\+Driver\+\_\+\+\_\+\+Huffman}!main@{main}}
@@ -62,70 +57,70 @@ Comprovarà les possibles excepcions que puguin apareixer a la classe.
 
 
 \begin{DoxyCode}
-56                                            \{
-57     \textcolor{keywordflow}{try} \{
-58         \hyperlink{classHuffman}{Huffman} huffman = null;
-59         \hyperlink{classdomini_1_1algorithm_1_1Driver____Huffman_a0504e4a97aa7c7a0ad7c1a75187adb10}{showOptions}();
-60         BufferedReader reader = \textcolor{keyword}{new} BufferedReader(\textcolor{keyword}{new} InputStreamReader(System.in));
-61         String linea = \textcolor{stringliteral}{""};
-62         \textcolor{keywordflow}{while}(linea != null)\{
-63             System.out.println(\textcolor{stringliteral}{"Selecciona una opción:"});
-64             linea = reader.readLine().trim();
-65             System.out.println(\textcolor{stringliteral}{"Opción: "} + linea + \textcolor{stringliteral}{" seleccionada"});
-66             \hyperlink{classdomini_1_1algorithm_1_1Driver____Huffman_a5d56f18f1d8f96dfc735b9a127094319}{comprovarExcepcions}(huffman, linea);
-67             \textcolor{keywordtype}{int} x;
-68             \textcolor{keywordflow}{switch}(linea)\{
-69                 \textcolor{keywordflow}{case} \textcolor{stringliteral}{"1"}:
-70                     System.out.println(\textcolor{stringliteral}{""});
-71                     System.out.println(\textcolor{stringliteral}{"Escribe un 0 para Huffman manual y un 1 para Huffman automatico"});
-72                     \textcolor{comment}{//String aux1 = reader.readLine().trim();}
-73                     huffman = \textcolor{keyword}{new} \hyperlink{classHuffman}{Huffman}();
-74                 \textcolor{keywordflow}{break};
-75                 \textcolor{keywordflow}{case} \textcolor{stringliteral}{"2"}:
-76                     System.out.println(\textcolor{stringliteral}{""});
-77                     System.out.println(\textcolor{stringliteral}{"Escribe un simbolo"});
-78                     x = huffman.getCode(Integer.parseInt(reader.readLine().trim()));
-79                     System.out.println(x);
-80                 \textcolor{keywordflow}{break};
-81                 \textcolor{keywordflow}{case} \textcolor{stringliteral}{"3"}:
-82                     System.out.println(\textcolor{stringliteral}{""});
-83                     System.out.println(\textcolor{stringliteral}{"Escribe un simbolo"});
-84                     x = huffman.getSize(Integer.parseInt(reader.readLine().trim()));
-85                     System.out.println(x);
-86                 \textcolor{keywordflow}{break};
-87                 \textcolor{keywordflow}{case} \textcolor{stringliteral}{"4"}:
-88                     System.out.println(\textcolor{stringliteral}{""});
-89                     System.out.println(\textcolor{stringliteral}{"Escribe un simbolo"});
-90                     x = huffman.getSymbol(Integer.parseInt(reader.readLine().trim()));
-91                     System.out.println(x);
-92                 \textcolor{keywordflow}{break};
-93                 \textcolor{keywordflow}{case} \textcolor{stringliteral}{"5"}:
-94                     huffman.initSearchSymbol();
-95                 \textcolor{keywordflow}{break};
-96                 \textcolor{keywordflow}{case} \textcolor{stringliteral}{"6"}:
-97                     System.out.println(\textcolor{stringliteral}{""});
-98                     System.out.println(\textcolor{stringliteral}{"Escribe un bit"});
-99                     x = huffman.searchSymbol(Integer.parseInt(reader.readLine().trim()));
-100                     \textcolor{keywordflow}{if} (x == 0) System.out.println(\textcolor{stringliteral}{"Sigue buscando."});
-101                     \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (x == 1) System.out.println(\textcolor{stringliteral}{"Simbolo encontrado. Consultalo con
+57                                            \{
+58     \textcolor{keywordflow}{try} \{
+59         \hyperlink{classHuffman}{Huffman} huffman = null;
+60         \hyperlink{classdomini_1_1algorithm_1_1Driver____Huffman_a0504e4a97aa7c7a0ad7c1a75187adb10}{showOptions}();
+61         BufferedReader reader = \textcolor{keyword}{new} BufferedReader(\textcolor{keyword}{new} InputStreamReader(System.in));
+62         String linea = \textcolor{stringliteral}{""};
+63         \textcolor{keywordflow}{while}(linea != null)\{
+64             System.out.println(\textcolor{stringliteral}{"Selecciona una opción:"});
+65             linea = reader.readLine().trim();
+66             System.out.println(\textcolor{stringliteral}{"Opción: "} + linea + \textcolor{stringliteral}{" seleccionada"});
+67             \hyperlink{classdomini_1_1algorithm_1_1Driver____Huffman_a5d56f18f1d8f96dfc735b9a127094319}{comprovarExcepcions}(huffman, linea);
+68             \textcolor{keywordtype}{int} x;
+69             \textcolor{keywordflow}{switch}(linea)\{
+70                 \textcolor{keywordflow}{case} \textcolor{stringliteral}{"1"}:
+71                     System.out.println(\textcolor{stringliteral}{""});
+72                     System.out.println(\textcolor{stringliteral}{"Escribe un 0 para Huffman manual y un 1 para Huffman automatico"});
+73                     \textcolor{comment}{//String aux1 = reader.readLine().trim();}
+74                     huffman = \textcolor{keyword}{new} \hyperlink{classHuffman}{Huffman}();
+75                 \textcolor{keywordflow}{break};
+76                 \textcolor{keywordflow}{case} \textcolor{stringliteral}{"2"}:
+77                     System.out.println(\textcolor{stringliteral}{""});
+78                     System.out.println(\textcolor{stringliteral}{"Escribe un simbolo"});
+79                     x = huffman.getCode(Integer.parseInt(reader.readLine().trim()));
+80                     System.out.println(x);
+81                 \textcolor{keywordflow}{break};
+82                 \textcolor{keywordflow}{case} \textcolor{stringliteral}{"3"}:
+83                     System.out.println(\textcolor{stringliteral}{""});
+84                     System.out.println(\textcolor{stringliteral}{"Escribe un simbolo"});
+85                     x = huffman.getSize(Integer.parseInt(reader.readLine().trim()));
+86                     System.out.println(x);
+87                 \textcolor{keywordflow}{break};
+88                 \textcolor{keywordflow}{case} \textcolor{stringliteral}{"4"}:
+89                     System.out.println(\textcolor{stringliteral}{""});
+90                     System.out.println(\textcolor{stringliteral}{"Escribe un simbolo"});
+91                     x = huffman.getSymbol(Integer.parseInt(reader.readLine().trim()));
+92                     System.out.println(x);
+93                 \textcolor{keywordflow}{break};
+94                 \textcolor{keywordflow}{case} \textcolor{stringliteral}{"5"}:
+95                     huffman.initSearchSymbol();
+96                 \textcolor{keywordflow}{break};
+97                 \textcolor{keywordflow}{case} \textcolor{stringliteral}{"6"}:
+98                     System.out.println(\textcolor{stringliteral}{""});
+99                     System.out.println(\textcolor{stringliteral}{"Escribe un bit"});
+100                     x = huffman.searchSymbol(Integer.parseInt(reader.readLine().trim()));
+101                     \textcolor{keywordflow}{if} (x == 0) System.out.println(\textcolor{stringliteral}{"Sigue buscando."});
+102                     \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (x == 1) System.out.println(\textcolor{stringliteral}{"Simbolo encontrado. Consultalo con
        getFoundSymbol()"});
-102                     \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (x == -1) System.out.println(\textcolor{stringliteral}{"No encontrado"});
-103                 \textcolor{keywordflow}{break};
-104                 \textcolor{keywordflow}{case} \textcolor{stringliteral}{"7"}:
-105                     x = huffman.getFoundSymbol();
-106                     System.out.println(x);
-107                 \textcolor{keywordflow}{break};
-108                 \textcolor{keywordflow}{case} \textcolor{stringliteral}{"0"}:
-109                     \textcolor{keywordflow}{return};
-110                 \textcolor{keywordflow}{default}:
-111                     System.out.println(\textcolor{stringliteral}{"La opción no es válida"});
-112                 \textcolor{keywordflow}{break};
-113             \}
-114         \}
-115     \}\textcolor{keywordflow}{catch} (Exception e) \{
-116         e.printStackTrace();
-117     \}
+103                     \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (x == -1) System.out.println(\textcolor{stringliteral}{"No encontrado"});
+104                 \textcolor{keywordflow}{break};
+105                 \textcolor{keywordflow}{case} \textcolor{stringliteral}{"7"}:
+106                     x = huffman.getFoundSymbol();
+107                     System.out.println(x);
+108                 \textcolor{keywordflow}{break};
+109                 \textcolor{keywordflow}{case} \textcolor{stringliteral}{"0"}:
+110                     \textcolor{keywordflow}{return};
+111                 \textcolor{keywordflow}{default}:
+112                     System.out.println(\textcolor{stringliteral}{"La opción no es válida"});
+113                 \textcolor{keywordflow}{break};
+114             \}
+115         \}
+116     \}\textcolor{keywordflow}{catch} (Exception e) \{
+117         e.printStackTrace();
 118     \}
+119     \}
 \end{DoxyCode}
 \mbox{\Hypertarget{classdomini_1_1algorithm_1_1Driver____Huffman_a0504e4a97aa7c7a0ad7c1a75187adb10}\label{classdomini_1_1algorithm_1_1Driver____Huffman_a0504e4a97aa7c7a0ad7c1a75187adb10}} 
 \index{domini\+::algorithm\+::\+Driver\+\_\+\+\_\+\+Huffman@{domini\+::algorithm\+::\+Driver\+\_\+\+\_\+\+Huffman}!show\+Options@{show\+Options}}
@@ -139,31 +134,31 @@ Mostra les accions a realitzar durant l\textquotesingle{}execució
 
 
 \begin{DoxyCode}
-18                                      \{
-19         System.out.println(\textcolor{stringliteral}{"Driver de Huffman"});
-20         System.out.println(\textcolor{stringliteral}{"Constructores: "});
-21         System.out.println(\textcolor{stringliteral}{"     1. Huffman(boolean automatic)"});
-22         System.out.println(\textcolor{stringliteral}{"     Input: 1"});
-23 
-24         System.out.println(\textcolor{stringliteral}{"Funciones: "});
-25         System.out.println(\textcolor{stringliteral}{"     2. getCode(int symbol) "});
-26         System.out.println(\textcolor{stringliteral}{"     Input: 2"});
-27         System.out.println(\textcolor{stringliteral}{"     3. getSize(int symbol) "});
-28         System.out.println(\textcolor{stringliteral}{"     Input: 3"});
-29         System.out.println(\textcolor{stringliteral}{"     4. getSymbol(int code) "});
-30         System.out.println(\textcolor{stringliteral}{"     Input: 4"});
-31         System.out.println(\textcolor{stringliteral}{"     5. initSearchSymbol() "});
-32         System.out.println(\textcolor{stringliteral}{"     Input: 5"});
-33         System.out.println(\textcolor{stringliteral}{"     6. searchSymbol(int bit) "});
-34         System.out.println(\textcolor{stringliteral}{"     Input: 6"});
-35         System.out.println(\textcolor{stringliteral}{"     7. getFoundSymbol() "});
-36         System.out.println(\textcolor{stringliteral}{"     Input: 7"});
-37         System.out.println();
-38 
-39         System.out.println(\textcolor{stringliteral}{"     0. Sortir"});
-40         System.out.println(\textcolor{stringliteral}{"     Input: 0"});
-41         System.out.println(\textcolor{stringliteral}{"----------------------------------------"});
-42     \}
+19                                      \{
+20         System.out.println(\textcolor{stringliteral}{"Driver de Huffman"});
+21         System.out.println(\textcolor{stringliteral}{"Constructores: "});
+22         System.out.println(\textcolor{stringliteral}{"     1. Huffman(boolean automatic)"});
+23         System.out.println(\textcolor{stringliteral}{"     Input: 1"});
+24 
+25         System.out.println(\textcolor{stringliteral}{"Funciones: "});
+26         System.out.println(\textcolor{stringliteral}{"     2. getCode(int symbol) "});
+27         System.out.println(\textcolor{stringliteral}{"     Input: 2"});
+28         System.out.println(\textcolor{stringliteral}{"     3. getSize(int symbol) "});
+29         System.out.println(\textcolor{stringliteral}{"     Input: 3"});
+30         System.out.println(\textcolor{stringliteral}{"     4. getSymbol(int code) "});
+31         System.out.println(\textcolor{stringliteral}{"     Input: 4"});
+32         System.out.println(\textcolor{stringliteral}{"     5. initSearchSymbol() "});
+33         System.out.println(\textcolor{stringliteral}{"     Input: 5"});
+34         System.out.println(\textcolor{stringliteral}{"     6. searchSymbol(int bit) "});
+35         System.out.println(\textcolor{stringliteral}{"     Input: 6"});
+36         System.out.println(\textcolor{stringliteral}{"     7. getFoundSymbol() "});
+37         System.out.println(\textcolor{stringliteral}{"     Input: 7"});
+38         System.out.println();
+39 
+40         System.out.println(\textcolor{stringliteral}{"     0. Sortir"});
+41         System.out.println(\textcolor{stringliteral}{"     Input: 0"});
+42         System.out.println(\textcolor{stringliteral}{"----------------------------------------"});
+43     \}
 \end{DoxyCode}
 
 

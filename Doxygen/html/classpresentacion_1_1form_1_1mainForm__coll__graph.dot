@@ -11,9 +11,9 @@ digraph "presentacion.form.mainForm"
   Node5 -> Node4 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
   Node5 [label="JDialog",height=0.2,width=0.4,color="grey75", fillcolor="white", style="filled"];
   Node6 -> Node2 [dir="back",color="darkorchid3",fontsize="10",style="dashed",label=" CP" ,fontname="Helvetica"];
-  Node6 [label="presentacion.Ctrl_Presentacio.\lCtrl_Presentacio",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classpresentacion_1_1Ctrl__Presentacio_1_1Ctrl__Presentacio.html"];
+  Node6 [label="presentacion.Ctrl_Presentacio.\lCtrl_Presentacio",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classpresentacion_1_1Ctrl__Presentacio_1_1Ctrl__Presentacio.html",tooltip="Clase Ctrl_Presentacio. "];
   Node7 -> Node6 [dir="back",color="darkorchid3",fontsize="10",style="dashed",label=" CF" ,fontname="Helvetica"];
-  Node7 [label="domini.folders.Ctrl\l_FolderFile",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classdomini_1_1folders_1_1Ctrl__FolderFile.html",tooltip="Classe Ctrl_FolderFile Tota la comunicació entre la capa de presentació i la capa de domini relativa ..."];
+  Node7 [label="domini.folders.Ctrl\l_FolderFile",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classdomini_1_1folders_1_1Ctrl__FolderFile.html",tooltip="Classe Ctrl_FolderFile. "];
   Node8 -> Node6 [dir="back",color="darkorchid3",fontsize="10",style="dashed",label=" type" ,fontname="Helvetica"];
   Node8 [label="global.global",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classglobal_1_1global.html"];
 }

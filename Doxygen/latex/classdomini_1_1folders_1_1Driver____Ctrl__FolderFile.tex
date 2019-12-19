@@ -22,11 +22,6 @@ static void \hyperlink{classdomini_1_1folders_1_1Driver____Ctrl__FolderFile_add8
 \subsection{Detailed Description}
 Driver de \hyperlink{classdomini_1_1folders_1_1Ctrl__FolderFile}{Ctrl\+\_\+\+Folder\+File}. 
 
-\begin{DoxyAuthor}{Author}
-Joan Bellavista Bartroli 
-\end{DoxyAuthor}
-
-
 \subsection{Member Function Documentation}
 \mbox{\Hypertarget{classdomini_1_1folders_1_1Driver____Ctrl__FolderFile_add85c568af9cc21b5b4dc8c413b8d565}\label{classdomini_1_1folders_1_1Driver____Ctrl__FolderFile_add85c568af9cc21b5b4dc8c413b8d565}} 
 \index{domini\+::folders\+::\+Driver\+\_\+\+\_\+\+Ctrl\+\_\+\+Folder\+File@{domini\+::folders\+::\+Driver\+\_\+\+\_\+\+Ctrl\+\_\+\+Folder\+File}!comprovar\+Excepcions@{comprovar\+Excepcions}}
@@ -47,12 +42,12 @@ Comprovarà les possibles excepcions que puguin apareixer a la classe.
 \end{DoxyParams}
 
 \begin{DoxyCode}
-56                                                                                           \{
-57         \textcolor{keywordtype}{int} op = Integer.parseInt(linea);
-58         \textcolor{keywordflow}{if}(ctrl\_folderfile == null && op > 1) \{
-59             \textcolor{keywordflow}{throw} \textcolor{keyword}{new} IllegalArgumentException(\textcolor{stringliteral}{"Debes llamar al constructor antes"});
-60         \}
-61     \}
+57                                                                                           \{
+58         \textcolor{keywordtype}{int} op = Integer.parseInt(linea);
+59         \textcolor{keywordflow}{if}(ctrl\_folderfile == null && op > 1) \{
+60             \textcolor{keywordflow}{throw} \textcolor{keyword}{new} IllegalArgumentException(\textcolor{stringliteral}{"Debes llamar al constructor antes"});
+61         \}
+62     \}
 \end{DoxyCode}
 \mbox{\Hypertarget{classdomini_1_1folders_1_1Driver____Ctrl__FolderFile_abc98f0085a68ed640e01816cd9a389ef}\label{classdomini_1_1folders_1_1Driver____Ctrl__FolderFile_abc98f0085a68ed640e01816cd9a389ef}} 
 \index{domini\+::folders\+::\+Driver\+\_\+\+\_\+\+Ctrl\+\_\+\+Folder\+File@{domini\+::folders\+::\+Driver\+\_\+\+\_\+\+Ctrl\+\_\+\+Folder\+File}!main@{main}}
@@ -62,89 +57,89 @@ Comprovarà les possibles excepcions que puguin apareixer a la classe.
 
 
 \begin{DoxyCode}
-63                                            \{
-64     \textcolor{keywordflow}{try} \{
-65         Ctrl\_FolderFile ctrl\_folderfile = null;
-66         \hyperlink{classdomini_1_1folders_1_1Driver____Ctrl__FolderFile_a5343134690950988d119d5e124edb1b4}{showOptions}();
-67         BufferedReader reader = \textcolor{keyword}{new} BufferedReader(\textcolor{keyword}{new} InputStreamReader(System.in));
-68         String linea = \textcolor{stringliteral}{""};
-69         \textcolor{keywordflow}{while}(linea != null)\{
-70             System.out.println(\textcolor{stringliteral}{"Selecciona una opción:"});
-71             linea = reader.readLine().trim();
-72             System.out.println(\textcolor{stringliteral}{"Opción: "} + linea + \textcolor{stringliteral}{" seleccionada"});
-73             \hyperlink{classdomini_1_1folders_1_1Driver____Ctrl__FolderFile_add85c568af9cc21b5b4dc8c413b8d565}{comprovarExcepcions}(ctrl\_folderfile, linea);
-74             \textcolor{keywordflow}{switch}(linea)\{
-75                 \textcolor{keywordflow}{case} \textcolor{stringliteral}{"1"}:
-76                     System.out.println(\textcolor{stringliteral}{"Escribe el path de lo que quieres comprimir o descomprimir (No
+64                                            \{
+65     \textcolor{keywordflow}{try} \{
+66         Ctrl\_FolderFile ctrl\_folderfile = null;
+67         \hyperlink{classdomini_1_1folders_1_1Driver____Ctrl__FolderFile_a5343134690950988d119d5e124edb1b4}{showOptions}();
+68         BufferedReader reader = \textcolor{keyword}{new} BufferedReader(\textcolor{keyword}{new} InputStreamReader(System.in));
+69         String linea = \textcolor{stringliteral}{""};
+70         \textcolor{keywordflow}{while}(linea != null)\{
+71             System.out.println(\textcolor{stringliteral}{"Selecciona una opción:"});
+72             linea = reader.readLine().trim();
+73             System.out.println(\textcolor{stringliteral}{"Opción: "} + linea + \textcolor{stringliteral}{" seleccionada"});
+74             \hyperlink{classdomini_1_1folders_1_1Driver____Ctrl__FolderFile_add85c568af9cc21b5b4dc8c413b8d565}{comprovarExcepcions}(ctrl\_folderfile, linea);
+75             \textcolor{keywordflow}{switch}(linea)\{
+76                 \textcolor{keywordflow}{case} \textcolor{stringliteral}{"1"}:
+77                     System.out.println(\textcolor{stringliteral}{"Escribe el path de lo que quieres comprimir o descomprimir (No
        cableado)"});
-77                     String aux1 = reader.readLine().trim();
-78                     String path\_input = aux1;
-79                     ctrl\_folderfile = \textcolor{keyword}{new} Ctrl\_FolderFile(path\_input);
-80                 \textcolor{keywordflow}{break};
-81                 \textcolor{keywordflow}{case} \textcolor{stringliteral}{"2"}:
-82                     System.out.println(\textcolor{stringliteral}{"Escribe separado por espacios el nombre del metodo con el que
+78                     String aux1 = reader.readLine().trim();
+79                     String path\_input = aux1;
+80                     ctrl\_folderfile = \textcolor{keyword}{new} Ctrl\_FolderFile(path\_input);
+81                 \textcolor{keywordflow}{break};
+82                 \textcolor{keywordflow}{case} \textcolor{stringliteral}{"2"}:
+83                     System.out.println(\textcolor{stringliteral}{"Escribe separado por espacios el nombre del metodo con el que
        quieres que "} +
-83                             \textcolor{stringliteral}{"se compriman todos los archivos no ppm (\(\backslash\)"lz78\(\backslash\)" \(\backslash\)"lzss\(\backslash\)" \(\backslash\)"lzw\(\backslash\)") y un entero
+84                             \textcolor{stringliteral}{"se compriman todos los archivos no ppm (\(\backslash\)"lz78\(\backslash\)" \(\backslash\)"lzss\(\backslash\)" \(\backslash\)"lzw\(\backslash\)") y un entero
        del 1-100"} +
-84                             \textcolor{stringliteral}{" que representarà la calidad de todas las imagenes comprimidas dentro de la
+85                             \textcolor{stringliteral}{" que representarà la calidad de todas las imagenes comprimidas dentro de la
        carpeta."});
-85                     String[] aux2 = reader.readLine().trim().split(\textcolor{stringliteral}{" "});
-86                     String text\_method = aux2[0];
-87                     \textcolor{keywordtype}{double} img\_quality = Double.parseDouble(aux2[1]);
-88                     ctrl\_folderfile.EncodeManualFolder(text\_method, img\_quality);
-89                 \textcolor{keywordflow}{break};
-90                 \textcolor{keywordflow}{case} \textcolor{stringliteral}{"3"}:
-91                     System.out.println(\textcolor{stringliteral}{"Escribe el nombre del metodo con el que quieres que se comprima el
+86                     String[] aux2 = reader.readLine().trim().split(\textcolor{stringliteral}{" "});
+87                     String text\_method = aux2[0];
+88                     \textcolor{keywordtype}{double} img\_quality = Double.parseDouble(aux2[1]);
+89                     ctrl\_folderfile.EncodeManualFolder(text\_method, img\_quality);
+90                 \textcolor{keywordflow}{break};
+91                 \textcolor{keywordflow}{case} \textcolor{stringliteral}{"3"}:
+92                     System.out.println(\textcolor{stringliteral}{"Escribe el nombre del metodo con el que quieres que se comprima el
        archivo "} +
-92                             \textcolor{stringliteral}{"(\(\backslash\)"lz78\(\backslash\)" \(\backslash\)"lzss\(\backslash\)" \(\backslash\)"lzw\(\backslash\)")"});
-93                     String aux3 = reader.readLine().trim();
-94                     String text\_method2 = aux3;
-95                     ctrl\_folderfile.EncodeManualText(text\_method2);
-96                 \textcolor{keywordflow}{break};
-97                 \textcolor{keywordflow}{case} \textcolor{stringliteral}{"4"}:
-98                     System.out.println(\textcolor{stringliteral}{"Escribe un entero entre 1-100 que representara la qualidad de la
+93                             \textcolor{stringliteral}{"(\(\backslash\)"lz78\(\backslash\)" \(\backslash\)"lzss\(\backslash\)" \(\backslash\)"lzw\(\backslash\)")"});
+94                     String aux3 = reader.readLine().trim();
+95                     String text\_method2 = aux3;
+96                     ctrl\_folderfile.EncodeManualText(text\_method2);
+97                 \textcolor{keywordflow}{break};
+98                 \textcolor{keywordflow}{case} \textcolor{stringliteral}{"4"}:
+99                     System.out.println(\textcolor{stringliteral}{"Escribe un entero entre 1-100 que representara la qualidad de la
        imagen"} +
-99                             \textcolor{stringliteral}{"comprimida"});
-100                     String aux4 = reader.readLine().trim();
-101                     \textcolor{keywordtype}{double} img\_quality2 = Double.parseDouble(aux4);
-102                     ctrl\_folderfile.EncodeManualImg(img\_quality2);
-103                 \textcolor{keywordflow}{break};
-104                 \textcolor{keywordflow}{case} \textcolor{stringliteral}{"5"}:
-105                     ctrl\_folderfile.EncodeAuto();
-106                 \textcolor{keywordflow}{break};
-107                 \textcolor{keywordflow}{case} \textcolor{stringliteral}{"6"}:
-108                     ctrl\_folderfile.Decode();
-109                 \textcolor{keywordflow}{break};
-110                 \textcolor{keywordflow}{case} \textcolor{stringliteral}{"7"}:
-111                     ctrl\_folderfile.DecodeTemp();
-112                 \textcolor{keywordflow}{break};
-113                 \textcolor{keywordflow}{case} \textcolor{stringliteral}{"8"}:
-114                     System.out.println(\textcolor{stringliteral}{"It "} + (ctrl\_folderfile.isEncoded() ? \textcolor{stringliteral}{"is Encoded"} : \textcolor{stringliteral}{"is not
+100                             \textcolor{stringliteral}{"comprimida"});
+101                     String aux4 = reader.readLine().trim();
+102                     \textcolor{keywordtype}{double} img\_quality2 = Double.parseDouble(aux4);
+103                     ctrl\_folderfile.EncodeManualImg(img\_quality2);
+104                 \textcolor{keywordflow}{break};
+105                 \textcolor{keywordflow}{case} \textcolor{stringliteral}{"5"}:
+106                     ctrl\_folderfile.EncodeAuto();
+107                 \textcolor{keywordflow}{break};
+108                 \textcolor{keywordflow}{case} \textcolor{stringliteral}{"6"}:
+109                     ctrl\_folderfile.Decode();
+110                 \textcolor{keywordflow}{break};
+111                 \textcolor{keywordflow}{case} \textcolor{stringliteral}{"7"}:
+112                     ctrl\_folderfile.DecodeTemp();
+113                 \textcolor{keywordflow}{break};
+114                 \textcolor{keywordflow}{case} \textcolor{stringliteral}{"8"}:
+115                     System.out.println(\textcolor{stringliteral}{"It "} + (ctrl\_folderfile.isEncoded() ? \textcolor{stringliteral}{"is Encoded"} : \textcolor{stringliteral}{"is not
        Encoded"}));
-115                 \textcolor{keywordflow}{break};
-116                 \textcolor{keywordflow}{case} \textcolor{stringliteral}{"9"}:
-117                     System.out.println(\textcolor{stringliteral}{"The folder "} + (ctrl\_folderfile.isEncodedFolder() ? \textcolor{stringliteral}{"is Encoded"} : \textcolor{stringliteral}{
+116                 \textcolor{keywordflow}{break};
+117                 \textcolor{keywordflow}{case} \textcolor{stringliteral}{"9"}:
+118                     System.out.println(\textcolor{stringliteral}{"The folder "} + (ctrl\_folderfile.isEncodedFolder() ? \textcolor{stringliteral}{"is Encoded"} : \textcolor{stringliteral}{
       "is not Encoded"}));
-118                 \textcolor{keywordflow}{break};
-119                 \textcolor{keywordflow}{case} \textcolor{stringliteral}{"10"}:
-120                     System.out.println(\textcolor{stringliteral}{"The file "} + (ctrl\_folderfile.isEncodedFile() ? \textcolor{stringliteral}{"is Encoded"} : \textcolor{stringliteral}{"is
+119                 \textcolor{keywordflow}{break};
+120                 \textcolor{keywordflow}{case} \textcolor{stringliteral}{"10"}:
+121                     System.out.println(\textcolor{stringliteral}{"The file "} + (ctrl\_folderfile.isEncodedFile() ? \textcolor{stringliteral}{"is Encoded"} : \textcolor{stringliteral}{"is
        not Encoded"}));
-121                 \textcolor{keywordflow}{break};
-122                 \textcolor{keywordflow}{case} \textcolor{stringliteral}{"11"}:
-123                     System.out.println(\textcolor{stringliteral}{"La extensio es la següent: "} + ctrl\_folderfile.getEncodedExtension(
+122                 \textcolor{keywordflow}{break};
+123                 \textcolor{keywordflow}{case} \textcolor{stringliteral}{"11"}:
+124                     System.out.println(\textcolor{stringliteral}{"La extensio es la següent: "} + ctrl\_folderfile.getEncodedExtension(
       ));
-124                 \textcolor{keywordflow}{break};
-125                 \textcolor{keywordflow}{case} \textcolor{stringliteral}{"0"}:
-126                     \textcolor{keywordflow}{return};
-127                 \textcolor{keywordflow}{default}:
-128                     System.out.println(\textcolor{stringliteral}{"La opción no es válida"});
-129                 \textcolor{keywordflow}{break};
-130             \}
-131         \}
-132     \}\textcolor{keywordflow}{catch} (Exception e) \{
-133         e.printStackTrace();
-134     \}
+125                 \textcolor{keywordflow}{break};
+126                 \textcolor{keywordflow}{case} \textcolor{stringliteral}{"0"}:
+127                     \textcolor{keywordflow}{return};
+128                 \textcolor{keywordflow}{default}:
+129                     System.out.println(\textcolor{stringliteral}{"La opción no es válida"});
+130                 \textcolor{keywordflow}{break};
+131             \}
+132         \}
+133     \}\textcolor{keywordflow}{catch} (Exception e) \{
+134         e.printStackTrace();
 135     \}
+136     \}
 \end{DoxyCode}
 \mbox{\Hypertarget{classdomini_1_1folders_1_1Driver____Ctrl__FolderFile_a5343134690950988d119d5e124edb1b4}\label{classdomini_1_1folders_1_1Driver____Ctrl__FolderFile_a5343134690950988d119d5e124edb1b4}} 
 \index{domini\+::folders\+::\+Driver\+\_\+\+\_\+\+Ctrl\+\_\+\+Folder\+File@{domini\+::folders\+::\+Driver\+\_\+\+\_\+\+Ctrl\+\_\+\+Folder\+File}!show\+Options@{show\+Options}}
@@ -158,39 +153,39 @@ Mostra les accions a realitzar durant l\textquotesingle{}execució
 
 
 \begin{DoxyCode}
-17                                      \{
-18         System.out.println(\textcolor{stringliteral}{"Driver de Ctrl\_FolderFile"});
-19         System.out.println(\textcolor{stringliteral}{"Constructores: "});
-20         System.out.println(\textcolor{stringliteral}{"     1. Ctrl\_FolderFile(String path\_input)"});
-21         System.out.println(\textcolor{stringliteral}{"     Input: 1"});
-22 
-23         System.out.println(\textcolor{stringliteral}{"Funciones: "});
-24         System.out.println(\textcolor{stringliteral}{"     2. EncodeManualFolder(String text\_method, double img\_quality) "});
-25         System.out.println(\textcolor{stringliteral}{"     Input: 2"});
-26         System.out.println(\textcolor{stringliteral}{"     3. EncodeManualText(String text\_method) "});
-27         System.out.println(\textcolor{stringliteral}{"     Input: 3"});
-28         System.out.println(\textcolor{stringliteral}{"     4. EncodeManualImg(double img\_quality) "});
-29         System.out.println(\textcolor{stringliteral}{"     Input: 4"});
-30         System.out.println(\textcolor{stringliteral}{"     5. EncodeAuto() "});
-31         System.out.println(\textcolor{stringliteral}{"     Input: 5"});
-32         System.out.println(\textcolor{stringliteral}{"     6. Decode() "});
-33         System.out.println(\textcolor{stringliteral}{"     Input: 6"});
-34         System.out.println(\textcolor{stringliteral}{"     7. DecodeTemp() "});
-35         System.out.println(\textcolor{stringliteral}{"     Input: 7"});
-36         System.out.println(\textcolor{stringliteral}{"     8. isEncoded() "});
-37         System.out.println(\textcolor{stringliteral}{"     Input: 8"});
-38         System.out.println(\textcolor{stringliteral}{"     9. isEncodedFolder() "});
-39         System.out.println(\textcolor{stringliteral}{"     Input: 9"});
-40         System.out.println(\textcolor{stringliteral}{"     10. isEncodedFile() "});
-41         System.out.println(\textcolor{stringliteral}{"     Input: 10"});
-42         System.out.println(\textcolor{stringliteral}{"     11. getEncodedExtension() "});
-43         System.out.println(\textcolor{stringliteral}{"     Input: 11"});
-44         System.out.println();
-45 
-46         System.out.println(\textcolor{stringliteral}{"     0. Sortir"});
-47         System.out.println(\textcolor{stringliteral}{"     Input: 0"});
-48         System.out.println(\textcolor{stringliteral}{"----------------------------------------"});
-49     \}
+18                                      \{
+19         System.out.println(\textcolor{stringliteral}{"Driver de Ctrl\_FolderFile"});
+20         System.out.println(\textcolor{stringliteral}{"Constructores: "});
+21         System.out.println(\textcolor{stringliteral}{"     1. Ctrl\_FolderFile(String path\_input)"});
+22         System.out.println(\textcolor{stringliteral}{"     Input: 1"});
+23 
+24         System.out.println(\textcolor{stringliteral}{"Funciones: "});
+25         System.out.println(\textcolor{stringliteral}{"     2. EncodeManualFolder(String text\_method, double img\_quality) "});
+26         System.out.println(\textcolor{stringliteral}{"     Input: 2"});
+27         System.out.println(\textcolor{stringliteral}{"     3. EncodeManualText(String text\_method) "});
+28         System.out.println(\textcolor{stringliteral}{"     Input: 3"});
+29         System.out.println(\textcolor{stringliteral}{"     4. EncodeManualImg(double img\_quality) "});
+30         System.out.println(\textcolor{stringliteral}{"     Input: 4"});
+31         System.out.println(\textcolor{stringliteral}{"     5. EncodeAuto() "});
+32         System.out.println(\textcolor{stringliteral}{"     Input: 5"});
+33         System.out.println(\textcolor{stringliteral}{"     6. Decode() "});
+34         System.out.println(\textcolor{stringliteral}{"     Input: 6"});
+35         System.out.println(\textcolor{stringliteral}{"     7. DecodeTemp() "});
+36         System.out.println(\textcolor{stringliteral}{"     Input: 7"});
+37         System.out.println(\textcolor{stringliteral}{"     8. isEncoded() "});
+38         System.out.println(\textcolor{stringliteral}{"     Input: 8"});
+39         System.out.println(\textcolor{stringliteral}{"     9. isEncodedFolder() "});
+40         System.out.println(\textcolor{stringliteral}{"     Input: 9"});
+41         System.out.println(\textcolor{stringliteral}{"     10. isEncodedFile() "});
+42         System.out.println(\textcolor{stringliteral}{"     Input: 10"});
+43         System.out.println(\textcolor{stringliteral}{"     11. getEncodedExtension() "});
+44         System.out.println(\textcolor{stringliteral}{"     Input: 11"});
+45         System.out.println();
+46 
+47         System.out.println(\textcolor{stringliteral}{"     0. Sortir"});
+48         System.out.println(\textcolor{stringliteral}{"     Input: 0"});
+49         System.out.println(\textcolor{stringliteral}{"----------------------------------------"});
+50     \}
 \end{DoxyCode}
 
 

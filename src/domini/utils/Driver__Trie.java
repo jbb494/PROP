@@ -7,6 +7,8 @@ import java.util.ArrayList;
 /**
  * @class Driver__Trie
  * @brief Driver de Trie
+ * @file
+
  * @author Joan Bellavista Bartroli
  */
 public class Driver__Trie {

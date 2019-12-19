@@ -1,7 +1,0 @@
-digraph "Graphical Class Hierarchy"
-{
-  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
-  node [fontname="Helvetica",fontsize="10",shape=record];
-  rankdir="LR";
-  Node0 [label="domini.folders.Ctrl\l_FolderFile",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classdomini_1_1folders_1_1Ctrl__FolderFile.html",tooltip="Classe Ctrl_FolderFile Tota la comunicació entre la capa de presentació i la capa de domini relativa ..."];
-}

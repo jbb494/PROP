@@ -15,11 +15,6 @@ static void \hyperlink{classpersistencia_1_1output_1_1RandomAccessOutput_a204709
 \subsection{Detailed Description}
 Classe \hyperlink{classpersistencia_1_1output_1_1RandomAccessOutput}{Random\+Access\+Output}. 
 
-\begin{DoxyAuthor}{Author}
-Joan Lapeyra 
-\end{DoxyAuthor}
-
-
 \subsection{Member Function Documentation}
 \mbox{\Hypertarget{classpersistencia_1_1output_1_1RandomAccessOutput_a204709eb802b6f934007c786a95ebe3f}\label{classpersistencia_1_1output_1_1RandomAccessOutput_a204709eb802b6f934007c786a95ebe3f}} 
 \index{persistencia\+::output\+::\+Random\+Access\+Output@{persistencia\+::output\+::\+Random\+Access\+Output}!write\+Long@{write\+Long}}
@@ -42,26 +37,26 @@ Desa els 8 bytes de data a la posició address del fitxer path en big endian.
 \end{DoxyParams}
 
 \begin{DoxyCode}
-24                                                                        \{
-25         RandomAccessFile raf = null;
-26         \textcolor{keywordflow}{try} \{
-27             raf = \textcolor{keyword}{new} RandomAccessFile(path, \textcolor{stringliteral}{"rw"});
-28         \} \textcolor{keywordflow}{catch} (FileNotFoundException e) \{
-29             e.printStackTrace();
-30         \}
-31         \textcolor{keywordflow}{finally} \{
-32             \textcolor{keywordflow}{try} \{
-33                 raf.seek(address);
-34                 ArrayList<Byte> al = byteToConversion.longToByte(data);
-35                 \textcolor{keywordflow}{for} (Byte b : al) \{
-36                     raf.write(b);
-37                 \}
-38                 raf.close();
-39             \} \textcolor{keywordflow}{catch} (IOException e) \{
-40                 e.printStackTrace();
-41             \}
-42         \}
-43     \}
+26                                                                        \{
+27         RandomAccessFile raf = null;
+28         \textcolor{keywordflow}{try} \{
+29             raf = \textcolor{keyword}{new} RandomAccessFile(path, \textcolor{stringliteral}{"rw"});
+30         \} \textcolor{keywordflow}{catch} (FileNotFoundException e) \{
+31             e.printStackTrace();
+32         \}
+33         \textcolor{keywordflow}{finally} \{
+34             \textcolor{keywordflow}{try} \{
+35                 raf.seek(address);
+36                 ArrayList<Byte> al = byteToConversion.longToByte(data);
+37                 \textcolor{keywordflow}{for} (Byte b : al) \{
+38                     raf.write(b);
+39                 \}
+40                 raf.close();
+41             \} \textcolor{keywordflow}{catch} (IOException e) \{
+42                 e.printStackTrace();
+43             \}
+44         \}
+45     \}
 \end{DoxyCode}
 
 

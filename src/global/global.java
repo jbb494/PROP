@@ -1,3 +1,7 @@
+/**
+ * @file
+ * */
+
 package global;
 
 public abstract class global {
@@ -27,6 +31,7 @@ public abstract class global {
 
 /** @class global
  *  @brief Clase que contiene diferentes tipos de enumeration.
+ * @file
  *
- *  @author
+ *  @author Joan Bellavista
  */

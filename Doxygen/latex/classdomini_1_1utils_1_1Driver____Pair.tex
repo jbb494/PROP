@@ -22,11 +22,6 @@ static void \hyperlink{classdomini_1_1utils_1_1Driver____Pair_a640e07e7811e0b56a
 \subsection{Detailed Description}
 Driver de \hyperlink{classdomini_1_1utils_1_1Pair}{Pair}. 
 
-\begin{DoxyAuthor}{Author}
-Joan Bellavista Bartroli 
-\end{DoxyAuthor}
-
-
 \subsection{Member Function Documentation}
 \mbox{\Hypertarget{classdomini_1_1utils_1_1Driver____Pair_a640e07e7811e0b56a99ca1afb7e16b65}\label{classdomini_1_1utils_1_1Driver____Pair_a640e07e7811e0b56a99ca1afb7e16b65}} 
 \index{domini\+::utils\+::\+Driver\+\_\+\+\_\+\+Pair@{domini\+::utils\+::\+Driver\+\_\+\+\_\+\+Pair}!comprovar\+Excepcions@{comprovar\+Excepcions}}
@@ -47,12 +42,12 @@ Comprovarà les possibles excepcions que puguin apareixer a la classe.
 \end{DoxyParams}
 
 \begin{DoxyCode}
-40                                                                                 \{
-41         \textcolor{keywordtype}{int} op = Integer.parseInt(linea);
-42         \textcolor{keywordflow}{if}(pair == null && op > 1) \{
-43             \textcolor{keywordflow}{throw} \textcolor{keyword}{new} IllegalArgumentException(\textcolor{stringliteral}{"Debes llamar al constructor antes"});
-44         \}
-45     \}
+42                                                                                 \{
+43         \textcolor{keywordtype}{int} op = Integer.parseInt(linea);
+44         \textcolor{keywordflow}{if}(pair == null && op > 1) \{
+45             \textcolor{keywordflow}{throw} \textcolor{keyword}{new} IllegalArgumentException(\textcolor{stringliteral}{"Debes llamar al constructor antes"});
+46         \}
+47     \}
 \end{DoxyCode}
 \mbox{\Hypertarget{classdomini_1_1utils_1_1Driver____Pair_a6f6dda90b506c692dd03c4fc174550b7}\label{classdomini_1_1utils_1_1Driver____Pair_a6f6dda90b506c692dd03c4fc174550b7}} 
 \index{domini\+::utils\+::\+Driver\+\_\+\+\_\+\+Pair@{domini\+::utils\+::\+Driver\+\_\+\+\_\+\+Pair}!main@{main}}
@@ -62,43 +57,43 @@ Comprovarà les possibles excepcions que puguin apareixer a la classe.
 
 
 \begin{DoxyCode}
-47                                            \{
-48     \textcolor{keywordflow}{try} \{
-49         Pair<Byte, Byte> pair = null;
-50         \hyperlink{classdomini_1_1utils_1_1Driver____Pair_a97596378f21ba4ab9c0c4ccb4041425b}{showOptions}();
-51         BufferedReader reader = \textcolor{keyword}{new} BufferedReader(\textcolor{keyword}{new} InputStreamReader(System.in));
-52         String linea = \textcolor{stringliteral}{""};
-53         \textcolor{keywordflow}{while}(linea != null)\{
-54             System.out.println(\textcolor{stringliteral}{"Selecciona una opción:"});
-55             linea = reader.readLine().trim();
-56             System.out.println(\textcolor{stringliteral}{"Opción: "} + linea + \textcolor{stringliteral}{" seleccionada"});
-57             \hyperlink{classdomini_1_1utils_1_1Driver____Pair_a640e07e7811e0b56a99ca1afb7e16b65}{comprovarExcepcions}(pair, linea);
-58             \textcolor{keywordflow}{switch}(linea)\{
-59                 \textcolor{keywordflow}{case} \textcolor{stringliteral}{"1"}:
-60                     System.out.println(\textcolor{stringliteral}{"Escribe primero el Byte izquierdo y separado por un espacio el Byte
+49                                            \{
+50     \textcolor{keywordflow}{try} \{
+51         Pair<Byte, Byte> pair = null;
+52         \hyperlink{classdomini_1_1utils_1_1Driver____Pair_a97596378f21ba4ab9c0c4ccb4041425b}{showOptions}();
+53         BufferedReader reader = \textcolor{keyword}{new} BufferedReader(\textcolor{keyword}{new} InputStreamReader(System.in));
+54         String linea = \textcolor{stringliteral}{""};
+55         \textcolor{keywordflow}{while}(linea != null)\{
+56             System.out.println(\textcolor{stringliteral}{"Selecciona una opción:"});
+57             linea = reader.readLine().trim();
+58             System.out.println(\textcolor{stringliteral}{"Opción: "} + linea + \textcolor{stringliteral}{" seleccionada"});
+59             \hyperlink{classdomini_1_1utils_1_1Driver____Pair_a640e07e7811e0b56a99ca1afb7e16b65}{comprovarExcepcions}(pair, linea);
+60             \textcolor{keywordflow}{switch}(linea)\{
+61                 \textcolor{keywordflow}{case} \textcolor{stringliteral}{"1"}:
+62                     System.out.println(\textcolor{stringliteral}{"Escribe primero el Byte izquierdo y separado por un espacio el Byte
        derecho."});
-61                     String[] aux1 = reader.readLine().trim().split(\textcolor{stringliteral}{" "});
-62                     Byte i = Byte.parseByte(aux1[0]);
-63                     Byte c = Byte.parseByte(aux1[1]);;
-64                     pair = \textcolor{keyword}{new} Pair<Byte, Byte>(i, c);
-65                 \textcolor{keywordflow}{break};
-66                 \textcolor{keywordflow}{case} \textcolor{stringliteral}{"2"}:
-67                     System.out.println(pair.getLeft());
-68                 \textcolor{keywordflow}{break};
-69                 \textcolor{keywordflow}{case} \textcolor{stringliteral}{"3"}:
-70                 System.out.println(pair.getRight());
-71                 \textcolor{keywordflow}{break};
-72                 \textcolor{keywordflow}{case} \textcolor{stringliteral}{"0"}:
-73                     \textcolor{keywordflow}{return};
-74                 \textcolor{keywordflow}{default}:
-75                     System.out.println(\textcolor{stringliteral}{"La opción no es válida"});
-76                 \textcolor{keywordflow}{break};
-77             \}
-78         \}
-79     \}\textcolor{keywordflow}{catch} (Exception e) \{
-80         e.printStackTrace();
-81     \}
-82     \}
+63                     String[] aux1 = reader.readLine().trim().split(\textcolor{stringliteral}{" "});
+64                     Byte i = Byte.parseByte(aux1[0]);
+65                     Byte c = Byte.parseByte(aux1[1]);;
+66                     pair = \textcolor{keyword}{new} Pair<Byte, Byte>(i, c);
+67                 \textcolor{keywordflow}{break};
+68                 \textcolor{keywordflow}{case} \textcolor{stringliteral}{"2"}:
+69                     System.out.println(pair.getLeft());
+70                 \textcolor{keywordflow}{break};
+71                 \textcolor{keywordflow}{case} \textcolor{stringliteral}{"3"}:
+72                 System.out.println(pair.getRight());
+73                 \textcolor{keywordflow}{break};
+74                 \textcolor{keywordflow}{case} \textcolor{stringliteral}{"0"}:
+75                     \textcolor{keywordflow}{return};
+76                 \textcolor{keywordflow}{default}:
+77                     System.out.println(\textcolor{stringliteral}{"La opción no es válida"});
+78                 \textcolor{keywordflow}{break};
+79             \}
+80         \}
+81     \}\textcolor{keywordflow}{catch} (Exception e) \{
+82         e.printStackTrace();
+83     \}
+84     \}
 \end{DoxyCode}
 \mbox{\Hypertarget{classdomini_1_1utils_1_1Driver____Pair_a97596378f21ba4ab9c0c4ccb4041425b}\label{classdomini_1_1utils_1_1Driver____Pair_a97596378f21ba4ab9c0c4ccb4041425b}} 
 \index{domini\+::utils\+::\+Driver\+\_\+\+\_\+\+Pair@{domini\+::utils\+::\+Driver\+\_\+\+\_\+\+Pair}!show\+Options@{show\+Options}}
@@ -112,23 +107,23 @@ Mostra les accions a realitzar durant l\textquotesingle{}execució
 
 
 \begin{DoxyCode}
-17                                      \{
-18         System.out.println(\textcolor{stringliteral}{"Driver de Pair"});
-19         System.out.println(\textcolor{stringliteral}{"Constructores: "});
-20         System.out.println(\textcolor{stringliteral}{"     1. Pair(Byte i, Byte c)"});
-21         System.out.println(\textcolor{stringliteral}{"     Input: 1"});
-22 
-23         System.out.println(\textcolor{stringliteral}{"Funciones: "});
-24         System.out.println(\textcolor{stringliteral}{"     2. getLeft() "});
-25         System.out.println(\textcolor{stringliteral}{"     Input: 2"});
-26         System.out.println(\textcolor{stringliteral}{"     3. getRight() "});
-27         System.out.println(\textcolor{stringliteral}{"     Input: 3"});
-28         System.out.println();
-29 
-30         System.out.println(\textcolor{stringliteral}{"     0. Sortir"});
-31         System.out.println(\textcolor{stringliteral}{"     Input: 0"});
-32         System.out.println(\textcolor{stringliteral}{"----------------------------------------"});
-33     \}
+19                                      \{
+20         System.out.println(\textcolor{stringliteral}{"Driver de Pair"});
+21         System.out.println(\textcolor{stringliteral}{"Constructores: "});
+22         System.out.println(\textcolor{stringliteral}{"     1. Pair(Byte i, Byte c)"});
+23         System.out.println(\textcolor{stringliteral}{"     Input: 1"});
+24 
+25         System.out.println(\textcolor{stringliteral}{"Funciones: "});
+26         System.out.println(\textcolor{stringliteral}{"     2. getLeft() "});
+27         System.out.println(\textcolor{stringliteral}{"     Input: 2"});
+28         System.out.println(\textcolor{stringliteral}{"     3. getRight() "});
+29         System.out.println(\textcolor{stringliteral}{"     Input: 3"});
+30         System.out.println();
+31 
+32         System.out.println(\textcolor{stringliteral}{"     0. Sortir"});
+33         System.out.println(\textcolor{stringliteral}{"     Input: 0"});
+34         System.out.println(\textcolor{stringliteral}{"----------------------------------------"});
+35     \}
 \end{DoxyCode}
 
 

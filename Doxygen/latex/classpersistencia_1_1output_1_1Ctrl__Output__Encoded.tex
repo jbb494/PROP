@@ -37,11 +37,6 @@ long \hyperlink{classpersistencia_1_1output_1_1Ctrl__Output__Encoded_a297adbe954
 \subsection{Detailed Description}
 Classe \hyperlink{classpersistencia_1_1output_1_1Ctrl__Output__Encoded}{Ctrl\+\_\+\+Output\+\_\+\+Encoded}. 
 
-\begin{DoxyAuthor}{Author}
-Joan Lapeyra Amat 
-\end{DoxyAuthor}
-
-
 \subsection{Constructor \& Destructor Documentation}
 \mbox{\Hypertarget{classpersistencia_1_1output_1_1Ctrl__Output__Encoded_adf87a2fd9d945fea928324f09866e889}\label{classpersistencia_1_1output_1_1Ctrl__Output__Encoded_adf87a2fd9d945fea928324f09866e889}} 
 \index{persistencia\+::output\+::\+Ctrl\+\_\+\+Output\+\_\+\+Encoded@{persistencia\+::output\+::\+Ctrl\+\_\+\+Output\+\_\+\+Encoded}!Ctrl\+\_\+\+Output\+\_\+\+Encoded@{Ctrl\+\_\+\+Output\+\_\+\+Encoded}}
@@ -60,9 +55,9 @@ Constructor de la classe.
 \end{DoxyParams}
 
 \begin{DoxyCode}
-19                                             \{
-20         super(path);
-21     \}
+21                                             \{
+22         super(path);
+23     \}
 \end{DoxyCode}
 \mbox{\Hypertarget{classpersistencia_1_1output_1_1Ctrl__Output__Encoded_a996c8ce9df090ce109c90986390d8680}\label{classpersistencia_1_1output_1_1Ctrl__Output__Encoded_a996c8ce9df090ce109c90986390d8680}} 
 \index{persistencia\+::output\+::\+Ctrl\+\_\+\+Output\+\_\+\+Encoded@{persistencia\+::output\+::\+Ctrl\+\_\+\+Output\+\_\+\+Encoded}!Ctrl\+\_\+\+Output\+\_\+\+Encoded@{Ctrl\+\_\+\+Output\+\_\+\+Encoded}}
@@ -79,9 +74,9 @@ Continua escrivint al fitxer al qual s\textquotesingle{}estava escrivint.
 \end{DoxyNote}
 
 \begin{DoxyCode}
-27                                  \{
-28         super();
-29     \}
+29                                  \{
+30         super();
+31     \}
 \end{DoxyCode}
 
 
@@ -103,13 +98,13 @@ Afegeix un string precerit per un byte amb la seva mida.
 \end{DoxyParams}
 
 \begin{DoxyCode}
-36                               \{
-37         byte[] bytearray = s.getBytes();
-38         byte len = (byte)bytearray.length;
-39         \hyperlink{classpersistencia_1_1output_1_1Ctrl__Output__Encoded_a840c4e8c37c76677a0c4f5739649291d}{add}(len,8);
-40         \textcolor{keywordflow}{for} (byte b : bytearray) 
-41            \hyperlink{classpersistencia_1_1output_1_1Ctrl__Output__Encoded_a840c4e8c37c76677a0c4f5739649291d}{add}(b,8);
-42     \}
+38                               \{
+39         byte[] bytearray = s.getBytes();
+40         byte len = (byte)bytearray.length;
+41         \hyperlink{classpersistencia_1_1output_1_1Ctrl__Output__Encoded_a840c4e8c37c76677a0c4f5739649291d}{add}(len,8);
+42         \textcolor{keywordflow}{for} (byte b : bytearray) 
+43            \hyperlink{classpersistencia_1_1output_1_1Ctrl__Output__Encoded_a840c4e8c37c76677a0c4f5739649291d}{add}(b,8);
+44     \}
 \end{DoxyCode}
 \mbox{\Hypertarget{classpersistencia_1_1output_1_1Ctrl__Output__Encoded_a3864fa867e7533f3d0d82b8f6513dae1}\label{classpersistencia_1_1output_1_1Ctrl__Output__Encoded_a3864fa867e7533f3d0d82b8f6513dae1}} 
 \index{persistencia\+::output\+::\+Ctrl\+\_\+\+Output\+\_\+\+Encoded@{persistencia\+::output\+::\+Ctrl\+\_\+\+Output\+\_\+\+Encoded}!end\+Subfile@{end\+Subfile}}
@@ -123,11 +118,11 @@ Acaba d\textquotesingle{}escriure el subfixer que s\textquotesingle{}estava escr
 
 
 \begin{DoxyCode}
-61                              \{
-62         Output.getInstance().print();
-63         \textcolor{keywordtype}{long} len = Output.getInstance().getLength() - \hyperlink{classpersistencia_1_1output_1_1Ctrl__Output__Encoded_a297adbe95417ad0a03883da607ec6dfe}{start};
-64         RandomAccessOutput.writeLong(Output.getInstance().getPath(), \hyperlink{classpersistencia_1_1output_1_1Ctrl__Output__Encoded_a297adbe95417ad0a03883da607ec6dfe}{start} - 8, len);
-65     \}
+63                              \{
+64         Output.getInstance().print();
+65         \textcolor{keywordtype}{long} len = Output.getInstance().getLength() - \hyperlink{classpersistencia_1_1output_1_1Ctrl__Output__Encoded_a297adbe95417ad0a03883da607ec6dfe}{start};
+66         RandomAccessOutput.writeLong(Output.getInstance().getPath(), \hyperlink{classpersistencia_1_1output_1_1Ctrl__Output__Encoded_a297adbe95417ad0a03883da607ec6dfe}{start} - 8, len);
+67     \}
 \end{DoxyCode}
 \mbox{\Hypertarget{classpersistencia_1_1output_1_1Ctrl__Output__Encoded_a2cabdf68c3f3a5731933f78609d9c302}\label{classpersistencia_1_1output_1_1Ctrl__Output__Encoded_a2cabdf68c3f3a5731933f78609d9c302}} 
 \index{persistencia\+::output\+::\+Ctrl\+\_\+\+Output\+\_\+\+Encoded@{persistencia\+::output\+::\+Ctrl\+\_\+\+Output\+\_\+\+Encoded}!start\+Subfile@{start\+Subfile}}
@@ -141,11 +136,11 @@ Comença a escriure un subfitxer Un subfitxer és un conjunt de bytes d\textquot
 
 
 \begin{DoxyCode}
-49                                \{
-50         \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i = 0; i < 8; ++i)
-51             Output.getInstance().add((byte)0, 8);
-52         \hyperlink{classpersistencia_1_1output_1_1Ctrl__Output__Encoded_a297adbe95417ad0a03883da607ec6dfe}{start} = Output.getInstance().getLength();
-53     \}
+51                                \{
+52         \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i = 0; i < 8; ++i)
+53             Output.getInstance().add((byte)0, 8);
+54         \hyperlink{classpersistencia_1_1output_1_1Ctrl__Output__Encoded_a297adbe95417ad0a03883da607ec6dfe}{start} = Output.getInstance().getLength();
+55     \}
 \end{DoxyCode}
 
 

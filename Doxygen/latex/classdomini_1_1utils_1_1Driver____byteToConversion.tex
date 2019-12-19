@@ -22,11 +22,6 @@ static void \hyperlink{classdomini_1_1utils_1_1Driver____byteToConversion_a82c58
 \subsection{Detailed Description}
 Driver de \hyperlink{classdomini_1_1utils_1_1byteToConversion}{byte\+To\+Conversion}. 
 
-\begin{DoxyAuthor}{Author}
-Joan Bellavista Bartroli 
-\end{DoxyAuthor}
-
-
 \subsection{Member Function Documentation}
 \mbox{\Hypertarget{classdomini_1_1utils_1_1Driver____byteToConversion_a82c589da57bedb139b9254c8623a7fd4}\label{classdomini_1_1utils_1_1Driver____byteToConversion_a82c589da57bedb139b9254c8623a7fd4}} 
 \index{domini\+::utils\+::\+Driver\+\_\+\+\_\+byte\+To\+Conversion@{domini\+::utils\+::\+Driver\+\_\+\+\_\+byte\+To\+Conversion}!comprovar\+Excepcions@{comprovar\+Excepcions}}
@@ -47,9 +42,9 @@ Comprovarà les possibles excepcions que puguin apareixer a la classe.
 \end{DoxyParams}
 
 \begin{DoxyCode}
-41                                                                                             \{
-42         \textcolor{comment}{// int op = Integer.parseInt(linea);}
-43     \}
+43                                                                                             \{
+44         \textcolor{comment}{// int op = Integer.parseInt(linea);}
+45     \}
 \end{DoxyCode}
 \mbox{\Hypertarget{classdomini_1_1utils_1_1Driver____byteToConversion_a19510acac17ad211538d878b4de039b8}\label{classdomini_1_1utils_1_1Driver____byteToConversion_a19510acac17ad211538d878b4de039b8}} 
 \index{domini\+::utils\+::\+Driver\+\_\+\+\_\+byte\+To\+Conversion@{domini\+::utils\+::\+Driver\+\_\+\+\_\+byte\+To\+Conversion}!main@{main}}
@@ -59,55 +54,55 @@ Comprovarà les possibles excepcions que puguin apareixer a la classe.
 
 
 \begin{DoxyCode}
-45                                            \{
-46     \textcolor{keywordflow}{try} \{
-47         byteToConversion bytetoconversion = null;
-48         \hyperlink{classdomini_1_1utils_1_1Driver____byteToConversion_a58412c0a63cc729003ca6d28bbc3b83b}{showOptions}();
-49         BufferedReader reader = \textcolor{keyword}{new} BufferedReader(\textcolor{keyword}{new} InputStreamReader(System.in));
-50         String linea = \textcolor{stringliteral}{""};
-51         \textcolor{keywordflow}{while}(linea != null)\{
-52             System.out.println(\textcolor{stringliteral}{"Selecciona una opción:"});
-53             linea = reader.readLine().trim();
-54             System.out.println(\textcolor{stringliteral}{"Opción: "} + linea + \textcolor{stringliteral}{" seleccionada"});
-55             \hyperlink{classdomini_1_1utils_1_1Driver____byteToConversion_a82c589da57bedb139b9254c8623a7fd4}{comprovarExcepcions}(bytetoconversion, linea);
-56             \textcolor{keywordflow}{switch}(linea)\{
-57                 \textcolor{keywordflow}{case} \textcolor{stringliteral}{"1"}:
-58                     System.out.println(\textcolor{stringliteral}{"escribe un byte"});
-59                     String aux1 = reader.readLine().trim();
-60                     Byte b = Byte.parseByte(aux1);
-61                     Character ret = byteToConversion.byteToCharacter(b);
-62                     System.out.println(ret);
-63                 \textcolor{keywordflow}{break};
-64                 \textcolor{keywordflow}{case} \textcolor{stringliteral}{"2"}:
-65                     System.out.println(\textcolor{stringliteral}{"escribe 4 bytes separados por espacios"});
-66                     String[] aux2 = reader.readLine().trim().split(\textcolor{stringliteral}{" "});
-67                     List<Byte> bArg = \textcolor{keyword}{new} ArrayList<Byte>(0);
-68                     \textcolor{keywordflow}{for} (String aux22 : aux2)\{
-69                         bArg.add(Byte.parseByte(aux22));
-70                     \}
-71                     Integer ret2 = byteToConversion.byteToInteger(bArg);
-72                     System.out.println(ret2);
-73                 \textcolor{keywordflow}{break};
-74                 \textcolor{keywordflow}{case} \textcolor{stringliteral}{"3"}:
-75                     System.out.println(\textcolor{stringliteral}{"escribe un byte (entre 0 y 127) y un integer que indique el
+47                                            \{
+48     \textcolor{keywordflow}{try} \{
+49         byteToConversion bytetoconversion = null;
+50         \hyperlink{classdomini_1_1utils_1_1Driver____byteToConversion_a58412c0a63cc729003ca6d28bbc3b83b}{showOptions}();
+51         BufferedReader reader = \textcolor{keyword}{new} BufferedReader(\textcolor{keyword}{new} InputStreamReader(System.in));
+52         String linea = \textcolor{stringliteral}{""};
+53         \textcolor{keywordflow}{while}(linea != null)\{
+54             System.out.println(\textcolor{stringliteral}{"Selecciona una opción:"});
+55             linea = reader.readLine().trim();
+56             System.out.println(\textcolor{stringliteral}{"Opción: "} + linea + \textcolor{stringliteral}{" seleccionada"});
+57             \hyperlink{classdomini_1_1utils_1_1Driver____byteToConversion_a82c589da57bedb139b9254c8623a7fd4}{comprovarExcepcions}(bytetoconversion, linea);
+58             \textcolor{keywordflow}{switch}(linea)\{
+59                 \textcolor{keywordflow}{case} \textcolor{stringliteral}{"1"}:
+60                     System.out.println(\textcolor{stringliteral}{"escribe un byte"});
+61                     String aux1 = reader.readLine().trim();
+62                     Byte b = Byte.parseByte(aux1);
+63                     Character ret = byteToConversion.byteToCharacter(b);
+64                     System.out.println(ret);
+65                 \textcolor{keywordflow}{break};
+66                 \textcolor{keywordflow}{case} \textcolor{stringliteral}{"2"}:
+67                     System.out.println(\textcolor{stringliteral}{"escribe 4 bytes separados por espacios"});
+68                     String[] aux2 = reader.readLine().trim().split(\textcolor{stringliteral}{" "});
+69                     List<Byte> bArg = \textcolor{keyword}{new} ArrayList<Byte>(0);
+70                     \textcolor{keywordflow}{for} (String aux22 : aux2)\{
+71                         bArg.add(Byte.parseByte(aux22));
+72                     \}
+73                     Integer ret2 = byteToConversion.byteToInteger(bArg);
+74                     System.out.println(ret2);
+75                 \textcolor{keywordflow}{break};
+76                 \textcolor{keywordflow}{case} \textcolor{stringliteral}{"3"}:
+77                     System.out.println(\textcolor{stringliteral}{"escribe un byte (entre 0 y 127) y un integer que indique el
        desplazamiento"});
-76                     String[] aux3 = reader.readLine().trim().split(\textcolor{stringliteral}{" "});
-77                     b = Byte.parseByte(aux3[0]);
-78                     \textcolor{keywordtype}{int} despl = Integer.parseInt(aux3[1]);
-79                     byte ret3 = byteToConversion.shift\_right\_logic(b, despl);
-80                     System.out.println(ret3);
-81                 \textcolor{keywordflow}{break};
-82                 \textcolor{keywordflow}{case} \textcolor{stringliteral}{"0"}:
-83                     \textcolor{keywordflow}{return};
-84                 \textcolor{keywordflow}{default}:
-85                     System.out.println(\textcolor{stringliteral}{"La opción no es válida"});
-86                 \textcolor{keywordflow}{break};
-87             \}
-88         \}
-89     \}\textcolor{keywordflow}{catch} (Exception e) \{
-90         e.printStackTrace();
-91     \}
-92     \}
+78                     String[] aux3 = reader.readLine().trim().split(\textcolor{stringliteral}{" "});
+79                     b = Byte.parseByte(aux3[0]);
+80                     \textcolor{keywordtype}{int} despl = Integer.parseInt(aux3[1]);
+81                     byte ret3 = byteToConversion.shift\_right\_logic(b, despl);
+82                     System.out.println(ret3);
+83                 \textcolor{keywordflow}{break};
+84                 \textcolor{keywordflow}{case} \textcolor{stringliteral}{"0"}:
+85                     \textcolor{keywordflow}{return};
+86                 \textcolor{keywordflow}{default}:
+87                     System.out.println(\textcolor{stringliteral}{"La opción no es válida"});
+88                 \textcolor{keywordflow}{break};
+89             \}
+90         \}
+91     \}\textcolor{keywordflow}{catch} (Exception e) \{
+92         e.printStackTrace();
+93     \}
+94     \}
 \end{DoxyCode}
 \mbox{\Hypertarget{classdomini_1_1utils_1_1Driver____byteToConversion_a58412c0a63cc729003ca6d28bbc3b83b}\label{classdomini_1_1utils_1_1Driver____byteToConversion_a58412c0a63cc729003ca6d28bbc3b83b}} 
 \index{domini\+::utils\+::\+Driver\+\_\+\+\_\+byte\+To\+Conversion@{domini\+::utils\+::\+Driver\+\_\+\+\_\+byte\+To\+Conversion}!show\+Options@{show\+Options}}
@@ -121,22 +116,22 @@ Mostra les accions a realitzar durant l\textquotesingle{}execució
 
 
 \begin{DoxyCode}
-19                                      \{
-20         System.out.println(\textcolor{stringliteral}{"Driver de byteToConversion"});
-21         System.out.println(\textcolor{stringliteral}{"Constructores: "});
-22 
-23         System.out.println(\textcolor{stringliteral}{"     1. byteToCharacter(Byte b)"});
-24         System.out.println(\textcolor{stringliteral}{"     Input: 1"});
-25         System.out.println(\textcolor{stringliteral}{"     2. byteToInteger(List<Byte> bArg)"});
-26         System.out.println(\textcolor{stringliteral}{"     Input: 2"});
-27         System.out.println(\textcolor{stringliteral}{"     3. shift\_right\_logic(byte b, int despl) "});
-28         System.out.println(\textcolor{stringliteral}{"     Input: 3"});
-29         System.out.println();
-30 
-31         System.out.println(\textcolor{stringliteral}{"     0. Sortir"});
-32         System.out.println(\textcolor{stringliteral}{"     Input: 0"});
-33         System.out.println(\textcolor{stringliteral}{"----------------------------------------"});
-34     \}
+21                                      \{
+22         System.out.println(\textcolor{stringliteral}{"Driver de byteToConversion"});
+23         System.out.println(\textcolor{stringliteral}{"Constructores: "});
+24 
+25         System.out.println(\textcolor{stringliteral}{"     1. byteToCharacter(Byte b)"});
+26         System.out.println(\textcolor{stringliteral}{"     Input: 1"});
+27         System.out.println(\textcolor{stringliteral}{"     2. byteToInteger(List<Byte> bArg)"});
+28         System.out.println(\textcolor{stringliteral}{"     Input: 2"});
+29         System.out.println(\textcolor{stringliteral}{"     3. shift\_right\_logic(byte b, int despl) "});
+30         System.out.println(\textcolor{stringliteral}{"     Input: 3"});
+31         System.out.println();
+32 
+33         System.out.println(\textcolor{stringliteral}{"     0. Sortir"});
+34         System.out.println(\textcolor{stringliteral}{"     Input: 0"});
+35         System.out.println(\textcolor{stringliteral}{"----------------------------------------"});
+36     \}
 \end{DoxyCode}
 
 
