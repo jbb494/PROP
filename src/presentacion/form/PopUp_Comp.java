@@ -7,8 +7,6 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.util.ArrayList;
-import global.global;
 
 public class PopUp_Comp extends JDialog {
 
@@ -285,7 +283,6 @@ public class PopUp_Comp extends JDialog {
 /** @class PopUp_Comp
  *  @brief Clase del form para seleccionar la compresión manual.
  * @file
-
  *
- *  @author
+ *  @author Miguel Paracuellos
  */

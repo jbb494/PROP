@@ -7,8 +7,6 @@ import javax.swing.*;
 import javax.swing.border.TitledBorder;
 import java.awt.*;
 import java.awt.event.*;
-import java.beans.PropertyChangeEvent;
-import java.beans.PropertyChangeListener;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.IOException;
@@ -480,5 +478,6 @@ public class mainForm extends JFrame {
  *
  *  En esta clase se trata el form principal.
  *
- *  @author
+ *  @author Manel Aguilar
+ *  @author Joan Bellavista
  */

@@ -28,5 +28,5 @@ public abstract class FolderOrFile {
  * @file
 
  *
- *  @author
+ *  @author Manel Aguilar
  */
