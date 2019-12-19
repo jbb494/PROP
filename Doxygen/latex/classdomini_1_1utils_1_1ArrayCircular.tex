@@ -66,6 +66,16 @@ El constructor.
 \hline
 \end{DoxyParams}
 
+\begin{DoxyCode}
+36     \{
+37         \hyperlink{classdomini_1_1utils_1_1ArrayCircular_a1ffca5e28ff4dc515eddde9cd5926efd}{size} = mida;
+38         \hyperlink{classdomini_1_1utils_1_1ArrayCircular_a5206ac4a02c25c16c8a8ed50f65ea87b}{start} = 0;
+39         \hyperlink{classdomini_1_1utils_1_1ArrayCircular_a08291d877b2d4c71c219df6f983b279a}{afegits} = 0;
+40         \hyperlink{classdomini_1_1utils_1_1ArrayCircular_ad3f40ecb62a2503382fa5d1fa2025912}{end} = mida-2;
+41         \hyperlink{classdomini_1_1utils_1_1ArrayCircular_a2af77a58adf605b58d79a1879a0a593f}{array} = \textcolor{keyword}{new} byte[mida];
+42     \}
+\end{DoxyCode}
+
 
 \subsection{Member Function Documentation}
 \mbox{\Hypertarget{classdomini_1_1utils_1_1ArrayCircular_a1c65dd3b452fa82ab8827885a7a2fbe1}\label{classdomini_1_1utils_1_1ArrayCircular_a1c65dd3b452fa82ab8827885a7a2fbe1}} 
@@ -77,6 +87,12 @@ El constructor.
 \begin{DoxyReturn}{Returns}
 retorna el atribut privat afegits. 
 \end{DoxyReturn}
+
+\begin{DoxyCode}
+120     \{
+121         \textcolor{keywordflow}{return} \hyperlink{classdomini_1_1utils_1_1ArrayCircular_a08291d877b2d4c71c219df6f983b279a}{afegits};
+122     \}
+\end{DoxyCode}
 \mbox{\Hypertarget{classdomini_1_1utils_1_1ArrayCircular_a3fe38ed7aa9d3b4f99bc4c80cd72bb3e}\label{classdomini_1_1utils_1_1ArrayCircular_a3fe38ed7aa9d3b4f99bc4c80cd72bb3e}} 
 \index{domini\+::utils\+::\+Array\+Circular@{domini\+::utils\+::\+Array\+Circular}!get\+End@{get\+End}}
 \index{get\+End@{get\+End}!domini\+::utils\+::\+Array\+Circular@{domini\+::utils\+::\+Array\+Circular}}
@@ -90,6 +106,12 @@ dóna el int de la última posició vàlida del array.
 \begin{DoxyReturn}{Returns}
 Retorna l\textquotesingle{}atribut end 
 \end{DoxyReturn}
+
+\begin{DoxyCode}
+98     \{
+99         \textcolor{keywordflow}{return} \hyperlink{classdomini_1_1utils_1_1ArrayCircular_ad3f40ecb62a2503382fa5d1fa2025912}{end};
+100     \}
+\end{DoxyCode}
 \mbox{\Hypertarget{classdomini_1_1utils_1_1ArrayCircular_a3527e861f31137d21dd09e4fe452badd}\label{classdomini_1_1utils_1_1ArrayCircular_a3527e861f31137d21dd09e4fe452badd}} 
 \index{domini\+::utils\+::\+Array\+Circular@{domini\+::utils\+::\+Array\+Circular}!get\+Start@{get\+Start}}
 \index{get\+Start@{get\+Start}!domini\+::utils\+::\+Array\+Circular@{domini\+::utils\+::\+Array\+Circular}}
@@ -103,6 +125,12 @@ dóna el int de la primera posició vàlida del array.
 \begin{DoxyReturn}{Returns}
 Retorna l\textquotesingle{}atribut start 
 \end{DoxyReturn}
+
+\begin{DoxyCode}
+88     \{
+89         \textcolor{keywordflow}{return} \hyperlink{classdomini_1_1utils_1_1ArrayCircular_a5206ac4a02c25c16c8a8ed50f65ea87b}{start};
+90     \}
+\end{DoxyCode}
 \mbox{\Hypertarget{classdomini_1_1utils_1_1ArrayCircular_acbed36ebcc550922c4485c19ce5be53e}\label{classdomini_1_1utils_1_1ArrayCircular_acbed36ebcc550922c4485c19ce5be53e}} 
 \index{domini\+::utils\+::\+Array\+Circular@{domini\+::utils\+::\+Array\+Circular}!get\+Value@{get\+Value}}
 \index{get\+Value@{get\+Value}!domini\+::utils\+::\+Array\+Circular@{domini\+::utils\+::\+Array\+Circular}}
@@ -117,6 +145,13 @@ Retorna l\textquotesingle{}atribut start
 \begin{DoxyReturn}{Returns}
 Retorna el byte a la posició index de array 
 \end{DoxyReturn}
+
+\begin{DoxyCode}
+63     \{
+64         \textcolor{keywordflow}{if}(index < 0 || index >= \hyperlink{classdomini_1_1utils_1_1ArrayCircular_a1ffca5e28ff4dc515eddde9cd5926efd}{size}) \textcolor{keywordflow}{throw} \textcolor{keyword}{new} IndexOutOfBoundsException(\textcolor{stringliteral}{"Fora de rang"});
+65         \textcolor{keywordflow}{return} \hyperlink{classdomini_1_1utils_1_1ArrayCircular_a2af77a58adf605b58d79a1879a0a593f}{array}[index];
+66     \}
+\end{DoxyCode}
 \mbox{\Hypertarget{classdomini_1_1utils_1_1ArrayCircular_aa36c40061ff0f3ea0ae15f5b06900e94}\label{classdomini_1_1utils_1_1ArrayCircular_aa36c40061ff0f3ea0ae15f5b06900e94}} 
 \index{domini\+::utils\+::\+Array\+Circular@{domini\+::utils\+::\+Array\+Circular}!get\+Value\+Amb\+Despl@{get\+Value\+Amb\+Despl}}
 \index{get\+Value\+Amb\+Despl@{get\+Value\+Amb\+Despl}!domini\+::utils\+::\+Array\+Circular@{domini\+::utils\+::\+Array\+Circular}}
@@ -135,6 +170,15 @@ dóna el byte de despl vegades cap enrere (des de start).
 \begin{DoxyReturn}{Returns}
 Retorna el byte a la posició indicada del array 
 \end{DoxyReturn}
+
+\begin{DoxyCode}
+75     \{
+76         \textcolor{keywordtype}{int} ret = \hyperlink{classdomini_1_1utils_1_1ArrayCircular_a5206ac4a02c25c16c8a8ed50f65ea87b}{start} - despl;
+77         \textcolor{keywordflow}{if}(ret < 0) ret += \hyperlink{classdomini_1_1utils_1_1ArrayCircular_a1ffca5e28ff4dc515eddde9cd5926efd}{size};
+78         \textcolor{keywordflow}{if}(ret < 0 || ret >= \hyperlink{classdomini_1_1utils_1_1ArrayCircular_a1ffca5e28ff4dc515eddde9cd5926efd}{size}) \textcolor{keywordflow}{throw} \textcolor{keyword}{new} IndexOutOfBoundsException(\textcolor{stringliteral}{"Fora de rang"});
+79         \textcolor{keywordflow}{return} \hyperlink{classdomini_1_1utils_1_1ArrayCircular_a2af77a58adf605b58d79a1879a0a593f}{array}[ret];
+80     \}
+\end{DoxyCode}
 \mbox{\Hypertarget{classdomini_1_1utils_1_1ArrayCircular_aaf106d070b5937f2559a56257dc8cac3}\label{classdomini_1_1utils_1_1ArrayCircular_aaf106d070b5937f2559a56257dc8cac3}} 
 \index{domini\+::utils\+::\+Array\+Circular@{domini\+::utils\+::\+Array\+Circular}!is\+In@{is\+In}}
 \index{is\+In@{is\+In}!domini\+::utils\+::\+Array\+Circular@{domini\+::utils\+::\+Array\+Circular}}
@@ -153,6 +197,14 @@ Recorregut lineal sobre l\textquotesingle{}atribut array per trobar value.
 \begin{DoxyReturn}{Returns}
 true si value està a array else false. 
 \end{DoxyReturn}
+
+\begin{DoxyCode}
+109     \{
+110         \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int} i = 0; i < \hyperlink{classdomini_1_1utils_1_1ArrayCircular_a08291d877b2d4c71c219df6f983b279a}{afegits}; i++)
+111             \textcolor{keywordflow}{if}(\hyperlink{classdomini_1_1utils_1_1ArrayCircular_a2af77a58adf605b58d79a1879a0a593f}{array}[i] == value) \textcolor{keywordflow}{return} \textcolor{keyword}{true};
+112         \textcolor{keywordflow}{return} \textcolor{keyword}{false};
+113     \}
+\end{DoxyCode}
 \mbox{\Hypertarget{classdomini_1_1utils_1_1ArrayCircular_a29e48f57c422739fff65e1f5d14c72c2}\label{classdomini_1_1utils_1_1ArrayCircular_a29e48f57c422739fff65e1f5d14c72c2}} 
 \index{domini\+::utils\+::\+Array\+Circular@{domini\+::utils\+::\+Array\+Circular}!set\+Value@{set\+Value}}
 \index{set\+Value@{set\+Value}!domini\+::utils\+::\+Array\+Circular@{domini\+::utils\+::\+Array\+Circular}}
@@ -168,6 +220,15 @@ Mètode per assignar el valor value al atribut array a la posició start.
 {\em value} & \\
 \hline
 \end{DoxyParams}
+
+\begin{DoxyCode}
+50     \{
+51         \hyperlink{classdomini_1_1utils_1_1ArrayCircular_a2af77a58adf605b58d79a1879a0a593f}{array}[\hyperlink{classdomini_1_1utils_1_1ArrayCircular_a5206ac4a02c25c16c8a8ed50f65ea87b}{start}] = value;
+52         \hyperlink{classdomini_1_1utils_1_1ArrayCircular_a5206ac4a02c25c16c8a8ed50f65ea87b}{start} = (++\hyperlink{classdomini_1_1utils_1_1ArrayCircular_a5206ac4a02c25c16c8a8ed50f65ea87b}{start})%\hyperlink{classdomini_1_1utils_1_1ArrayCircular_a1ffca5e28ff4dc515eddde9cd5926efd}{size};
+53         \textcolor{keywordflow}{if}(\hyperlink{classdomini_1_1utils_1_1ArrayCircular_a08291d877b2d4c71c219df6f983b279a}{afegits} < \hyperlink{classdomini_1_1utils_1_1ArrayCircular_a1ffca5e28ff4dc515eddde9cd5926efd}{size}) \hyperlink{classdomini_1_1utils_1_1ArrayCircular_a08291d877b2d4c71c219df6f983b279a}{afegits}++;
+54         \textcolor{keywordflow}{if}(\hyperlink{classdomini_1_1utils_1_1ArrayCircular_a08291d877b2d4c71c219df6f983b279a}{afegits} == \hyperlink{classdomini_1_1utils_1_1ArrayCircular_a1ffca5e28ff4dc515eddde9cd5926efd}{size}) \hyperlink{classdomini_1_1utils_1_1ArrayCircular_ad3f40ecb62a2503382fa5d1fa2025912}{end} = (++\hyperlink{classdomini_1_1utils_1_1ArrayCircular_ad3f40ecb62a2503382fa5d1fa2025912}{end})%\hyperlink{classdomini_1_1utils_1_1ArrayCircular_a1ffca5e28ff4dc515eddde9cd5926efd}{size};
+55     \}
+\end{DoxyCode}
 
 
 \subsection{Member Data Documentation}

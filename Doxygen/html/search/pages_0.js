@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['introducció',['Introducció',['../md_docs_HARDCODE_Jocs_de_proves.html',1,'']]]
+  ['estructures_20de_20dades',['Estructures de Dades',['../md_docs_HARDCODE_EDA.html',1,'']]]
 ];

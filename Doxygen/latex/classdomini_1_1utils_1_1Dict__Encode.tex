@@ -62,6 +62,13 @@ Constructor de la classe.
 Inicialitzem el diccionari 
 \end{DoxyNote}
 
+\begin{DoxyCode}
+33                          \{
+34         \hyperlink{classdomini_1_1utils_1_1Dict__Encode_abc506ae01222e16d9b6581efbdad1a97}{arr\_n} = \textcolor{keyword}{new} ArrayList<Node>();
+35         \hyperlink{classdomini_1_1utils_1_1Dict__Encode_a6c3016286b3bb242d12799f8e7ebb585}{reset\_dictionary}();
+36     \}
+\end{DoxyCode}
+
 
 \subsection{Member Function Documentation}
 \mbox{\Hypertarget{classdomini_1_1utils_1_1Dict__Encode_a12e23ecdd9b0078cb6e56c01126248b9}\label{classdomini_1_1utils_1_1Dict__Encode_a12e23ecdd9b0078cb6e56c01126248b9}} 
@@ -82,6 +89,14 @@ Retorna el valor númeric d\textquotesingle{}un byte.
 \begin{DoxyReturn}{Returns}
 Valor numeric del byte 
 \end{DoxyReturn}
+
+\begin{DoxyCode}
+60                                        \{
+61         \textcolor{keywordtype}{int} x = (int) c;
+62         \textcolor{keywordflow}{if} (x < 0) x += 256;
+63         \textcolor{keywordflow}{return} (Integer)x;
+64     \}
+\end{DoxyCode}
 \mbox{\Hypertarget{classdomini_1_1utils_1_1Dict__Encode_a21a05b62b848a7ab9fbdf49a3a6e7edf}\label{classdomini_1_1utils_1_1Dict__Encode_a21a05b62b848a7ab9fbdf49a3a6e7edf}} 
 \index{domini\+::utils\+::\+Dict\+\_\+\+Encode@{domini\+::utils\+::\+Dict\+\_\+\+Encode}!get\+Limit@{get\+Limit}}
 \index{get\+Limit@{get\+Limit}!domini\+::utils\+::\+Dict\+\_\+\+Encode@{domini\+::utils\+::\+Dict\+\_\+\+Encode}}
@@ -91,6 +106,12 @@ Valor numeric del byte
 \begin{DoxyReturn}{Returns}
 Retorna el limit d\textquotesingle{}entrades que pot tenir el diccionari 
 \end{DoxyReturn}
+
+\begin{DoxyCode}
+132                               \{
+133         \textcolor{keywordflow}{return} \hyperlink{classdomini_1_1utils_1_1Dict__Encode_a48fe9a878056a119ad36a0aad2727a13}{Limit};
+134     \}
+\end{DoxyCode}
 \mbox{\Hypertarget{classdomini_1_1utils_1_1Dict__Encode_a6c3016286b3bb242d12799f8e7ebb585}\label{classdomini_1_1utils_1_1Dict__Encode_a6c3016286b3bb242d12799f8e7ebb585}} 
 \index{domini\+::utils\+::\+Dict\+\_\+\+Encode@{domini\+::utils\+::\+Dict\+\_\+\+Encode}!reset\+\_\+dictionary@{reset\+\_\+dictionary}}
 \index{reset\+\_\+dictionary@{reset\+\_\+dictionary}!domini\+::utils\+::\+Dict\+\_\+\+Encode@{domini\+::utils\+::\+Dict\+\_\+\+Encode}}
@@ -104,6 +125,16 @@ Reinicilització del diccionari de la classe.
 \begin{DoxyNote}{Note}
 Només quan el creem o quan estigui ple 
 \end{DoxyNote}
+
+\begin{DoxyCode}
+43                                    \{
+44         \hyperlink{classdomini_1_1utils_1_1Dict__Encode_abc506ae01222e16d9b6581efbdad1a97}{arr\_n}.clear();
+45 
+46         \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i = 0; i < 256; ++i) \{
+47             \hyperlink{classdomini_1_1utils_1_1Dict__Encode_abc506ae01222e16d9b6581efbdad1a97}{arr\_n}.add( \textcolor{keyword}{new} Node((byte)i) );
+48         \}
+49     \}
+\end{DoxyCode}
 \mbox{\Hypertarget{classdomini_1_1utils_1_1Dict__Encode_a1bafdca1835da3fa93b900ff0aa720e0}\label{classdomini_1_1utils_1_1Dict__Encode_a1bafdca1835da3fa93b900ff0aa720e0}} 
 \index{domini\+::utils\+::\+Dict\+\_\+\+Encode@{domini\+::utils\+::\+Dict\+\_\+\+Encode}!search\+\_\+and\+\_\+insert\+\_\+\+B\+ST@{search\+\_\+and\+\_\+insert\+\_\+\+B\+ST}}
 \index{search\+\_\+and\+\_\+insert\+\_\+\+B\+ST@{search\+\_\+and\+\_\+insert\+\_\+\+B\+ST}!domini\+::utils\+::\+Dict\+\_\+\+Encode@{domini\+::utils\+::\+Dict\+\_\+\+Encode}}
@@ -124,6 +155,63 @@ Cada cop que es crida es mira si ja tenim la combinació enter-\/byte al diccion
 \begin{DoxyReturn}{Returns}
 Retorna l\textquotesingle{}enter que farà referència a la nova cadena de byte 
 \end{DoxyReturn}
+
+\begin{DoxyCode}
+73                                                             \{
+74         
+75         \textcolor{comment}{//Dictionary's maximum size -> where reset it}
+76         \textcolor{keywordflow}{if} (\hyperlink{classdomini_1_1utils_1_1Dict__Encode_abc506ae01222e16d9b6581efbdad1a97}{arr\_n}.size() == \hyperlink{classdomini_1_1utils_1_1Dict__Encode_a48fe9a878056a119ad36a0aad2727a13}{Limit}) 
+77             \hyperlink{classdomini_1_1utils_1_1Dict__Encode_a6c3016286b3bb242d12799f8e7ebb585}{reset\_dictionary}();
+78 
+79         \textcolor{keywordflow}{if} (i == -1) 
+80             \textcolor{keywordflow}{return} \hyperlink{classdomini_1_1utils_1_1Dict__Encode_a12e23ecdd9b0078cb6e56c01126248b9}{Ascii\_value}(c);
+81         
+82         Integer pos = \hyperlink{classdomini_1_1utils_1_1Dict__Encode_abc506ae01222e16d9b6581efbdad1a97}{arr\_n}.get(i).First;
+83         Integer sz = \hyperlink{classdomini_1_1utils_1_1Dict__Encode_abc506ae01222e16d9b6581efbdad1a97}{arr\_n}.size();
+84 
+85         \textcolor{keywordflow}{if} (pos != -1) \{
+86             \textcolor{keywordflow}{while}(\textcolor{keyword}{true}) \{
+87                 \textcolor{keywordflow}{if} (c < \hyperlink{classdomini_1_1utils_1_1Dict__Encode_abc506ae01222e16d9b6581efbdad1a97}{arr\_n}.get(pos).c) \{
+88                     
+89                     \textcolor{keywordflow}{if} (\hyperlink{classdomini_1_1utils_1_1Dict__Encode_abc506ae01222e16d9b6581efbdad1a97}{arr\_n}.get(pos).Left == -1) \{
+90                         Node aux = \hyperlink{classdomini_1_1utils_1_1Dict__Encode_abc506ae01222e16d9b6581efbdad1a97}{arr\_n}.get(pos);
+91                         aux.Modify\_Left(sz);
+92                         \hyperlink{classdomini_1_1utils_1_1Dict__Encode_abc506ae01222e16d9b6581efbdad1a97}{arr\_n}.set(pos, aux);
+93                         \textcolor{comment}{//arr\_n.get(pos).Modify\_Left(sz);}
+94                         \textcolor{keywordflow}{break};
+95                     \}    
+96                     
+97                     \textcolor{keywordflow}{else} pos = \hyperlink{classdomini_1_1utils_1_1Dict__Encode_abc506ae01222e16d9b6581efbdad1a97}{arr\_n}.get(pos).Left;
+98                 \}
+99 
+100                 \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (c > \hyperlink{classdomini_1_1utils_1_1Dict__Encode_abc506ae01222e16d9b6581efbdad1a97}{arr\_n}.get(pos).c) \{
+101 
+102                     \textcolor{keywordflow}{if} (\hyperlink{classdomini_1_1utils_1_1Dict__Encode_abc506ae01222e16d9b6581efbdad1a97}{arr\_n}.get(pos).Right == -1) \{
+103                         Node aux = \hyperlink{classdomini_1_1utils_1_1Dict__Encode_abc506ae01222e16d9b6581efbdad1a97}{arr\_n}.get(pos);
+104                         aux.Modify\_Right(sz);
+105                         \hyperlink{classdomini_1_1utils_1_1Dict__Encode_abc506ae01222e16d9b6581efbdad1a97}{arr\_n}.set(pos, aux);
+106                         \textcolor{comment}{//arr\_n.get(pos).Modify\_Right(sz);}
+107                         \textcolor{keywordflow}{break};
+108                     \}
+109 
+110                     \textcolor{keywordflow}{else} pos = \hyperlink{classdomini_1_1utils_1_1Dict__Encode_abc506ae01222e16d9b6581efbdad1a97}{arr\_n}.get(pos).Right;
+111 
+112                 \}
+113 
+114                 \textcolor{keywordflow}{else} \textcolor{keywordflow}{return} pos;
+115             \}
+116 
+117         \}
+118         \textcolor{keywordflow}{else} \{
+119             Node aux = \hyperlink{classdomini_1_1utils_1_1Dict__Encode_abc506ae01222e16d9b6581efbdad1a97}{arr\_n}.get(i);
+120             aux.Modify\_First(sz);
+121             \hyperlink{classdomini_1_1utils_1_1Dict__Encode_abc506ae01222e16d9b6581efbdad1a97}{arr\_n}.set(i, aux);
+122             \textcolor{comment}{//arr\_n.get(i).Modify\_First(sz);}
+123         \}
+124         \hyperlink{classdomini_1_1utils_1_1Dict__Encode_abc506ae01222e16d9b6581efbdad1a97}{arr\_n}.add( \textcolor{keyword}{new} Node(c) );
+125         \textcolor{keywordflow}{return} -1;
+126     \}
+\end{DoxyCode}
 
 
 \subsection{Member Data Documentation}

@@ -45,12 +45,58 @@ Comprovarà les possibles excepcions que puguin apareixer a la classe.
 {\em linea} & Número de operació realitzada \\
 \hline
 \end{DoxyParams}
+
+\begin{DoxyCode}
+40                                                                                           \{
+41         \textcolor{keywordtype}{int} op = Integer.parseInt(linea);
+42         \textcolor{keywordflow}{if}(ctrl\_input\_lz78 == null && op > 1) \{
+43             \textcolor{keywordflow}{throw} \textcolor{keyword}{new} IllegalArgumentException(\textcolor{stringliteral}{"Debes llamar al constructor antes"});
+44         \}
+45     \}
+\end{DoxyCode}
 \mbox{\Hypertarget{classpersistencia_1_1input_1_1Driver____Ctrl__Input__LZ78_adb756847df72081fa229549543e03569}\label{classpersistencia_1_1input_1_1Driver____Ctrl__Input__LZ78_adb756847df72081fa229549543e03569}} 
 \index{persistencia\+::input\+::\+Driver\+\_\+\+\_\+\+Ctrl\+\_\+\+Input\+\_\+\+L\+Z78@{persistencia\+::input\+::\+Driver\+\_\+\+\_\+\+Ctrl\+\_\+\+Input\+\_\+\+L\+Z78}!main@{main}}
 \index{main@{main}!persistencia\+::input\+::\+Driver\+\_\+\+\_\+\+Ctrl\+\_\+\+Input\+\_\+\+L\+Z78@{persistencia\+::input\+::\+Driver\+\_\+\+\_\+\+Ctrl\+\_\+\+Input\+\_\+\+L\+Z78}}
 \subsubsection{\texorpdfstring{main()}{main()}}
 {\footnotesize\ttfamily static void persistencia.\+input.\+Driver\+\_\+\+\_\+\+Ctrl\+\_\+\+Input\+\_\+\+L\+Z78.\+main (\begin{DoxyParamCaption}\item[{String \mbox{[}$\,$\mbox{]}}]{args }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
 
+
+\begin{DoxyCode}
+47                                            \{
+48     \textcolor{keywordflow}{try} \{
+49         Ctrl\_Input\_LZ78 ctrl\_input\_lz78 = null;
+50         \hyperlink{classpersistencia_1_1input_1_1Driver____Ctrl__Input__LZ78_af3c2d5d864dec2d98d3d57c474f9c2b4}{showOptions}();
+51         BufferedReader reader = \textcolor{keyword}{new} BufferedReader(\textcolor{keyword}{new} InputStreamReader(System.in));
+52         String linea = \textcolor{stringliteral}{""};
+53         \textcolor{keywordflow}{while}(linea != null)\{
+54             System.out.println(\textcolor{stringliteral}{"Selecciona una opción:"});
+55             linea = reader.readLine().trim();
+56             System.out.println(\textcolor{stringliteral}{"Opción: "} + linea + \textcolor{stringliteral}{" seleccionada"});
+57             \hyperlink{classpersistencia_1_1input_1_1Driver____Ctrl__Input__LZ78_a285493e74dff1f6b2520f010f75b850c}{comprovarExcepcions}(ctrl\_input\_lz78, linea);
+58             \textcolor{keywordflow}{switch}(linea)\{
+59                 \textcolor{keywordflow}{case} \textcolor{stringliteral}{"1"}:
+60                     System.out.println(\textcolor{stringliteral}{"Escribe el path a un fichero comprimido por LZ78"});
+61                     String aux1 = reader.readLine().trim();
+62                     String path = aux1;
+63                     ctrl\_input\_lz78 = \textcolor{keyword}{new} Ctrl\_Input\_LZ78(path);
+64                 \textcolor{keywordflow}{break};
+65                 \textcolor{keywordflow}{case} \textcolor{stringliteral}{"2"}:
+66                     Pair <Integer,Byte> p = ctrl\_input\_lz78.get();
+67                     System.out.println(\textcolor{stringliteral}{"Integer: "} + p.getLeft());
+68                     System.out.println(\textcolor{stringliteral}{"Byte: "} + p.getRight());
+69                 \textcolor{keywordflow}{break};
+70                 \textcolor{keywordflow}{case} \textcolor{stringliteral}{"0"}:
+71                     \textcolor{keywordflow}{return};
+72                 \textcolor{keywordflow}{default}:
+73                     System.out.println(\textcolor{stringliteral}{"La opción no es válida"});
+74                 \textcolor{keywordflow}{break};
+75             \}
+76         \}
+77     \}\textcolor{keywordflow}{catch} (Exception e) \{
+78         e.printStackTrace();
+79     \}
+80     \}
+\end{DoxyCode}
 \mbox{\Hypertarget{classpersistencia_1_1input_1_1Driver____Ctrl__Input__LZ78_af3c2d5d864dec2d98d3d57c474f9c2b4}\label{classpersistencia_1_1input_1_1Driver____Ctrl__Input__LZ78_af3c2d5d864dec2d98d3d57c474f9c2b4}} 
 \index{persistencia\+::input\+::\+Driver\+\_\+\+\_\+\+Ctrl\+\_\+\+Input\+\_\+\+L\+Z78@{persistencia\+::input\+::\+Driver\+\_\+\+\_\+\+Ctrl\+\_\+\+Input\+\_\+\+L\+Z78}!show\+Options@{show\+Options}}
 \index{show\+Options@{show\+Options}!persistencia\+::input\+::\+Driver\+\_\+\+\_\+\+Ctrl\+\_\+\+Input\+\_\+\+L\+Z78@{persistencia\+::input\+::\+Driver\+\_\+\+\_\+\+Ctrl\+\_\+\+Input\+\_\+\+L\+Z78}}
@@ -61,6 +107,24 @@ Comprovarà les possibles excepcions que puguin apareixer a la classe.
 
 Mostra les accions a realitzar durant l\textquotesingle{}execució 
 
+
+\begin{DoxyCode}
+19                                      \{
+20         System.out.println(\textcolor{stringliteral}{"Driver de Ctrl\_Input\_LZ78"});
+21         System.out.println(\textcolor{stringliteral}{"Constructores: "});
+22         System.out.println(\textcolor{stringliteral}{"     1. Ctrl\_Input\_LZ78(String path)"});
+23         System.out.println(\textcolor{stringliteral}{"     Input: 1"});
+24 
+25         System.out.println(\textcolor{stringliteral}{"Funciones: "});
+26         System.out.println(\textcolor{stringliteral}{"     2. get()"});
+27         System.out.println(\textcolor{stringliteral}{"     Input: 2"});
+28         System.out.println();
+29 
+30         System.out.println(\textcolor{stringliteral}{"     0. Sortir"});
+31         System.out.println(\textcolor{stringliteral}{"     Input: 0"});
+32         System.out.println(\textcolor{stringliteral}{"----------------------------------------"});
+33     \}
+\end{DoxyCode}
 
 
 The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}

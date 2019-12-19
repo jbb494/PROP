@@ -1,7 +1,8 @@
 var searchData=
 [
-  ['seguent',['seguent',['../classpersistencia_1_1input_1_1Ctrl__Input__Text.html#a533e9e0497774114b57d8dd5a6bbb000',1,'persistencia::input::Ctrl_Input_Text']]],
-  ['size',['size',['../classdomini_1_1utils_1_1ArrayCircular.html#a1ffca5e28ff4dc515eddde9cd5926efd',1,'domini::utils::ArrayCircular']]],
-  ['start',['start',['../classdomini_1_1estadistica_1_1Estadistica.html#aee0ae604272563ceab4e61392cbd343e',1,'domini.estadistica.Estadistica.start()'],['../classdomini_1_1utils_1_1ArrayCircular.html#a5206ac4a02c25c16c8a8ed50f65ea87b',1,'domini.utils.ArrayCircular.start()']]],
-  ['sym_5ffound',['sym_found',['../classdomini_1_1algorithm_1_1Huffman.html#a3453c53e74badc739d51208d35ba372d',1,'domini::algorithm::Huffman']]]
+  ['r',['R',['../classdomini_1_1utils_1_1Pair.html#aebf54d48000999b84e5e24a2c62088d4',1,'domini::utils::Pair']]],
+  ['read_5fbytes',['read_bytes',['../classpersistencia_1_1input_1_1Input.html#ace2c934234f82fb07ae169b50f71cd32',1,'persistencia::input::Input']]],
+  ['right',['Right',['../classdomini_1_1utils_1_1Node.html#a73c97e595bad2513ee0a06ee4620236a',1,'domini::utils::Node']]],
+  ['root',['root',['../classdomini_1_1utils_1_1Trie.html#a60ef63a6c55d07710d33892ccc899bce',1,'domini::utils::Trie']]],
+  ['rows',['rows',['../classpersistencia_1_1input_1_1Ctrl__Input__Img.html#a1288870f941a6730df2aadbb767f6e6f',1,'persistencia.input.Ctrl_Input_Img.rows()'],['../classpersistencia_1_1output_1_1Ctrl__Output__Img.html#a586ee8128a26b6786471e040a705bdbc',1,'persistencia.output.Ctrl_Output_Img.rows()']]]
 ];

@@ -1,0 +1,7 @@
+digraph "Graphical Class Hierarchy"
+{
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  rankdir="LR";
+  Node0 [label="persistencia.output.Driver\l__Output",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classpersistencia_1_1output_1_1Driver____Output.html",tooltip="Classe Driver__Output. "];
+}

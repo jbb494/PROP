@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['projecte_20de_20programació',['Projecte de Programació',['../index.html',1,'']]]
+  ['introducció',['Introducció',['../md_docs_HARDCODE_Jocs_de_proves.html',1,'']]]
 ];

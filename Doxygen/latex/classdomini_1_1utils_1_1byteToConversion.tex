@@ -11,7 +11,11 @@ Classe \hyperlink{classdomini_1_1utils_1_1byteToConversion}{byte\+To\+Conversion
 static Character \hyperlink{classdomini_1_1utils_1_1byteToConversion_a5d2f5f8de52e4001cf6698ca03fe31e8}{byte\+To\+Character} (Byte b)
 \begin{DoxyCompactList}\small\item\em Transforma un byte a Character. \end{DoxyCompactList}\item 
 static Integer \hyperlink{classdomini_1_1utils_1_1byteToConversion_a3242a47adade49b6cfa6a9232944f587}{byte\+To\+Integer} (List$<$ Byte $>$ b\+Arg)
-\begin{DoxyCompactList}\small\item\em Transforma un Array de bytes a un Enter. \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em Transforma un Array de bytes a un Enter no negatiu. \end{DoxyCompactList}\item 
+static Long \hyperlink{classdomini_1_1utils_1_1byteToConversion_a18600284c32cae9284c16c6396425d5a}{byte\+To\+Long} (List$<$ Byte $>$ b\+Arg)
+\begin{DoxyCompactList}\small\item\em Transforma un Array de bytes a un long no negatiu. \end{DoxyCompactList}\item 
+static Array\+List$<$ Byte $>$ \hyperlink{classdomini_1_1utils_1_1byteToConversion_ab4466a4c6dd5f6a350953031e99a959d}{long\+To\+Byte} (long x)
+\begin{DoxyCompactList}\small\item\em Transforma un long a un array de 8 bytes en big endian. \end{DoxyCompactList}\item 
 static byte \hyperlink{classdomini_1_1utils_1_1byteToConversion_a0e232cb9d272ccc13accda58bab9f8e1}{shift\+\_\+right\+\_\+logic} (byte b, int despl)
 \begin{DoxyCompactList}\small\item\em Desplaçament lògic cap a la detra d\textquotesingle{}un byte. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
@@ -43,6 +47,16 @@ Transforma un byte a Character.
 \begin{DoxyReturn}{Returns}
 Character resultat de la transformació 
 \end{DoxyReturn}
+
+\begin{DoxyCode}
+20     \{
+21         Character ret;
+22 
+23         ret = (char)b.byteValue();
+24 
+25         \textcolor{keywordflow}{return} ret;
+26     \}
+\end{DoxyCode}
 \mbox{\Hypertarget{classdomini_1_1utils_1_1byteToConversion_a3242a47adade49b6cfa6a9232944f587}\label{classdomini_1_1utils_1_1byteToConversion_a3242a47adade49b6cfa6a9232944f587}} 
 \index{domini\+::utils\+::byte\+To\+Conversion@{domini\+::utils\+::byte\+To\+Conversion}!byte\+To\+Integer@{byte\+To\+Integer}}
 \index{byte\+To\+Integer@{byte\+To\+Integer}!domini\+::utils\+::byte\+To\+Conversion@{domini\+::utils\+::byte\+To\+Conversion}}
@@ -51,16 +65,93 @@ Character resultat de la transformació
 
 
 
-Transforma un Array de bytes a un Enter. 
+Transforma un Array de bytes a un Enter no negatiu. 
 
 
 \begin{DoxyParams}{Parameters}
-{\em b\+Arg} & Llista de bytes que volem transformar \\
+{\em b\+Arg} & Llista de bytes que volem transformar (de més a menys significatius, aka big endian) \\
 \hline
 \end{DoxyParams}
 \begin{DoxyReturn}{Returns}
 Integer resultat de la conversió 
 \end{DoxyReturn}
+
+\begin{DoxyCode}
+35     \{
+36         Integer ret = 0;
+37 
+38         \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i = 0; i < bArg.size(); i++)
+39         \{
+40             Byte b = bArg.get(i);
+41             
+42             ret += ( (b&0xFF) << (8*(bArg.size() - i -1)) );
+43         \}
+44         \textcolor{keywordflow}{return} ret;
+45     \}
+\end{DoxyCode}
+\mbox{\Hypertarget{classdomini_1_1utils_1_1byteToConversion_a18600284c32cae9284c16c6396425d5a}\label{classdomini_1_1utils_1_1byteToConversion_a18600284c32cae9284c16c6396425d5a}} 
+\index{domini\+::utils\+::byte\+To\+Conversion@{domini\+::utils\+::byte\+To\+Conversion}!byte\+To\+Long@{byte\+To\+Long}}
+\index{byte\+To\+Long@{byte\+To\+Long}!domini\+::utils\+::byte\+To\+Conversion@{domini\+::utils\+::byte\+To\+Conversion}}
+\subsubsection{\texorpdfstring{byte\+To\+Long()}{byteToLong()}}
+{\footnotesize\ttfamily public static long domini.\+utils.\+byte\+To\+Conversion.\+byte\+To\+Long (\begin{DoxyParamCaption}\item[{List$<$ Byte $>$}]{b\+Arg }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+
+
+Transforma un Array de bytes a un long no negatiu. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em b\+Arg} & Llista de bytes que volem transformar (de més a menys significatius, aka big endian) \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+long resultat de la conversió 
+\end{DoxyReturn}
+
+\begin{DoxyCode}
+54     \{
+55         Long ret = (long)0;
+56 
+57         \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i = 0; i < bArg.size(); i++)
+58         \{
+59             Byte b = bArg.get(i);
+60             
+61             ret += ( (long)(b&0xFF) << (8*(bArg.size() - i -1)) );
+62         \}
+63         \textcolor{keywordflow}{return} ret;
+64     \}
+\end{DoxyCode}
+\mbox{\Hypertarget{classdomini_1_1utils_1_1byteToConversion_ab4466a4c6dd5f6a350953031e99a959d}\label{classdomini_1_1utils_1_1byteToConversion_ab4466a4c6dd5f6a350953031e99a959d}} 
+\index{domini\+::utils\+::byte\+To\+Conversion@{domini\+::utils\+::byte\+To\+Conversion}!long\+To\+Byte@{long\+To\+Byte}}
+\index{long\+To\+Byte@{long\+To\+Byte}!domini\+::utils\+::byte\+To\+Conversion@{domini\+::utils\+::byte\+To\+Conversion}}
+\subsubsection{\texorpdfstring{long\+To\+Byte()}{longToByte()}}
+{\footnotesize\ttfamily public static Array\+List$<$ Byte $>$ domini.\+utils.\+byte\+To\+Conversion.\+long\+To\+Byte (\begin{DoxyParamCaption}\item[{long}]{x }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+
+
+Transforma un long a un array de 8 bytes en big endian. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em x} & El long que volem transformar \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+L\textquotesingle{}array de bytes resultant (de més a menys significatius, aka big endian) 
+\end{DoxyReturn}
+
+\begin{DoxyCode}
+73     \{
+74 
+75         ArrayList<Byte> al = \textcolor{keyword}{new} ArrayList<>();
+76         \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i = 7; i >= 0; i--)
+77         \{
+78             al.add(0, (byte)x);
+79             x = (x >> 8);  
+80         \}
+81         \textcolor{keywordflow}{return} al;
+82     \}
+\end{DoxyCode}
 \mbox{\Hypertarget{classdomini_1_1utils_1_1byteToConversion_a0e232cb9d272ccc13accda58bab9f8e1}\label{classdomini_1_1utils_1_1byteToConversion_a0e232cb9d272ccc13accda58bab9f8e1}} 
 \index{domini\+::utils\+::byte\+To\+Conversion@{domini\+::utils\+::byte\+To\+Conversion}!shift\+\_\+right\+\_\+logic@{shift\+\_\+right\+\_\+logic}}
 \index{shift\+\_\+right\+\_\+logic@{shift\+\_\+right\+\_\+logic}!domini\+::utils\+::byte\+To\+Conversion@{domini\+::utils\+::byte\+To\+Conversion}}
@@ -81,6 +172,12 @@ Desplaçament lògic cap a la detra d\textquotesingle{}un byte.
 \begin{DoxyReturn}{Returns}
 Byte desplaçat 
 \end{DoxyReturn}
+
+\begin{DoxyCode}
+91                                                             \{
+92         \textcolor{keywordflow}{return} (byte) ((byte) (b >>> despl) &~ (byte) (0xff << (8-despl)));
+93     \}
+\end{DoxyCode}
 
 
 The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}

@@ -79,15 +79,13 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:aa625781819b57512a3e42df15a3b2ffb"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classdomini_1_1algorithm_1_1Ctrl__Algorithm.html#aa625781819b57512a3e42df15a3b2ffb">Ctrl_Algorithm</a> ()</td></tr>
 <tr class="memdesc:aa625781819b57512a3e42df15a3b2ffb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructor de la classe.  <a href="#aa625781819b57512a3e42df15a3b2ffb">More...</a><br /></td></tr>
 <tr class="separator:aa625781819b57512a3e42df15a3b2ffb"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5af3b3afa4465c95093532396cecb8c7"><td class="memItemLeft" align="right" valign="top">String&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classdomini_1_1algorithm_1_1Ctrl__Algorithm.html#a5af3b3afa4465c95093532396cecb8c7">Choose_Encoder</a> (String Path, String method)</td></tr>
-<tr class="memdesc:a5af3b3afa4465c95093532396cecb8c7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Realitzar la compressió d'un fitxer segons un algoritme concret.  <a href="#a5af3b3afa4465c95093532396cecb8c7">More...</a><br /></td></tr>
-<tr class="separator:a5af3b3afa4465c95093532396cecb8c7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a6f7a706e07d4e6f8c1ea293d06e17318"><td class="memItemLeft" align="right" valign="top">String&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classdomini_1_1algorithm_1_1Ctrl__Algorithm.html#a6f7a706e07d4e6f8c1ea293d06e17318">Auto_Encoder</a> (String Path)</td></tr>
 <tr class="memdesc:a6f7a706e07d4e6f8c1ea293d06e17318"><td class="mdescLeft">&#160;</td><td class="mdescRight">Determina de manera automàtica quin compressor utilitzar.  <a href="#a6f7a706e07d4e6f8c1ea293d06e17318">More...</a><br /></td></tr>
 <tr class="separator:a6f7a706e07d4e6f8c1ea293d06e17318"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a613d15cc5326fc688b11d2c71ec9500a"><td class="memItemLeft" align="right" valign="top">String&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classdomini_1_1algorithm_1_1Ctrl__Algorithm.html#a613d15cc5326fc688b11d2c71ec9500a">Auto_Decoder</a> (String Path, String method)</td></tr>
-<tr class="memdesc:a613d15cc5326fc688b11d2c71ec9500a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Escull de manera automàtica quin descompressor emprar.  <a href="#a613d15cc5326fc688b11d2c71ec9500a">More...</a><br /></td></tr>
-<tr class="separator:a613d15cc5326fc688b11d2c71ec9500a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a344b213ee2eb3e0ed3306883624c5128"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classdomini_1_1algorithm_1_1Ctrl__Algorithm.html#a344b213ee2eb3e0ed3306883624c5128">Decode</a> (String path_out)</td></tr>
+<tr class="separator:a344b213ee2eb3e0ed3306883624c5128"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac03e09b1fd22f0857bf766fc692efc33"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classdomini_1_1algorithm_1_1Ctrl__Algorithm.html#ac03e09b1fd22f0857bf766fc692efc33">Encode</a> (String path_in, String method, Double img_quality)</td></tr>
+<tr class="separator:ac03e09b1fd22f0857bf766fc692efc33"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Classe de <a class="el" href="classdomini_1_1algorithm_1_1Ctrl__Algorithm.html" title="Classe de Ctrl_Algorithm. ">Ctrl_Algorithm</a>. </p>
@@ -117,56 +115,10 @@ Public Member Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Constructor de la classe. </p>
-
+<div class="fragment"><div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;{}</div></div><!-- fragment -->
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
-<a id="a613d15cc5326fc688b11d2c71ec9500a"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a613d15cc5326fc688b11d2c71ec9500a">&#9670;&nbsp;</a></span>Auto_Decoder()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">public String domini.algorithm.Ctrl_Algorithm.Auto_Decoder </td>
-          <td>(</td>
-          <td class="paramtype">String&#160;</td>
-          <td class="paramname"><em>Path</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">String&#160;</td>
-          <td class="paramname"><em>method</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Escull de manera automàtica quin descompressor emprar. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">Path</td><td>Path de l'arxiu a descomprimir </td></tr>
-    <tr><td class="paramname">method</td><td>Descompressor a emprar </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>Informació sobre la descompressió </dd></dl>
-
-</div>
-</div>
 <a id="a6f7a706e07d4e6f8c1ea293d06e17318"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a6f7a706e07d4e6f8c1ea293d06e17318">&#9670;&nbsp;</a></span>Auto_Encoder()</h2>
 
@@ -199,11 +151,11 @@ Public Member Functions</h2></td></tr>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>Nom del mètode a emprar </dd></dl>
-
+<div class="fragment"><div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;    {</div><div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;        <span class="keywordtype">int</span> i = Path.lastIndexOf(<span class="stringliteral">&quot;.&quot;</span>);</div><div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;        String ext = Path.substring(i+1);</div><div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;        <span class="keywordflow">if</span> (ext.toLowerCase().equals(<span class="stringliteral">&quot;ppm&quot;</span>)) </div><div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;            <span class="keywordflow">return</span> <span class="stringliteral">&quot;jpeg&quot;</span>;</div><div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;        <span class="keywordflow">else</span>  </div><div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;            <span class="keywordflow">return</span> <span class="stringliteral">&quot;lzw&quot;</span>;</div><div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;        <span class="comment">//else throw new IllegalArgumentException(&quot;Format no reconegut&quot;);</span></div><div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;    }</div></div><!-- fragment -->
 </div>
 </div>
-<a id="a5af3b3afa4465c95093532396cecb8c7"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a5af3b3afa4465c95093532396cecb8c7">&#9670;&nbsp;</a></span>Choose_Encoder()</h2>
+<a id="a344b213ee2eb3e0ed3306883624c5128"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a344b213ee2eb3e0ed3306883624c5128">&#9670;&nbsp;</a></span>Decode()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -212,16 +164,48 @@ Public Member Functions</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">public String domini.algorithm.Ctrl_Algorithm.Choose_Encoder </td>
+          <td class="memname">void domini.algorithm.Ctrl_Algorithm.Decode </td>
           <td>(</td>
           <td class="paramtype">String&#160;</td>
-          <td class="paramname"><em>Path</em>, </td>
+          <td class="paramname"><em>path_out</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<div class="fragment"><div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;                                        {</div><div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;</div><div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;        Ctrl_Input inP2 = <span class="keyword">new</span> Ctrl_Input();</div><div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;        <span class="keywordtype">int</span> metadata_alg = inP2.getMetadata();</div><div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;</div><div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;        Algorithm alg;</div><div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;        <span class="keywordflow">if</span>      (metadata_alg == 3)   alg = <span class="keyword">new</span> JPEG(path_out, <span class="keyword">true</span>);</div><div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;        <span class="keywordflow">else</span> <span class="keywordflow">if</span> (metadata_alg == 2)   alg = <span class="keyword">new</span> LZSS(path_out, <span class="keyword">true</span>);</div><div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;        <span class="keywordflow">else</span> <span class="keywordflow">if</span> (metadata_alg == 1)   alg = <span class="keyword">new</span> LZW(path_out, <span class="keyword">true</span>);</div><div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;        <span class="keywordflow">else</span> <span class="comment">/* (metadata_alg == 0)*/</span> alg = <span class="keyword">new</span> LZ78(path_out, <span class="keyword">true</span>);</div><div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;        </div><div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;        alg.Decompressor();      </div><div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;        alg.print();</div><div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;    }</div></div><!-- fragment -->
+</div>
+</div>
+<a id="ac03e09b1fd22f0857bf766fc692efc33"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac03e09b1fd22f0857bf766fc692efc33">&#9670;&nbsp;</a></span>Encode()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void domini.algorithm.Ctrl_Algorithm.Encode </td>
+          <td>(</td>
+          <td class="paramtype">String&#160;</td>
+          <td class="paramname"><em>path_in</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">String&#160;</td>
-          <td class="paramname"><em>method</em>&#160;</td>
+          <td class="paramname"><em>method</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">Double&#160;</td>
+          <td class="paramname"><em>img_quality</em>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -235,17 +219,7 @@ Public Member Functions</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
-
-<p>Realitzar la compressió d'un fitxer segons un algoritme concret. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">Path</td><td>Path de l'arxiu a comprimir </td></tr>
-    <tr><td class="paramname">method</td><td>Algoritme a emprar </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>Informacio sobre la compressio </dd></dl>
-
+<div class="fragment"><div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;                                                                          {</div><div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;        </div><div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;        <span class="keywordflow">if</span> (method == null)</div><div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;            <span class="keywordflow">throw</span> <span class="keyword">new</span> IllegalArgumentException(<span class="stringliteral">&quot;no s&#39;ha especificat el metode de compressió&quot;</span>);</div><div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;</div><div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;        <span class="comment">//System.out.println(method);</span></div><div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;</div><div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;        Algorithm alg;</div><div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;        <span class="keywordflow">if</span>(method.toLowerCase().equals(<span class="stringliteral">&quot;lzss&quot;</span>)) {</div><div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;            alg = <span class="keyword">new</span> LZSS(<span class="keyword">false</span>);</div><div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;        }</div><div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;        <span class="keywordflow">else</span> <span class="keywordflow">if</span>(method.toLowerCase().equals(<span class="stringliteral">&quot;lzw&quot;</span>)) {</div><div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;            alg = <span class="keyword">new</span> LZW(<span class="keyword">false</span>);</div><div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;        }</div><div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;        <span class="keywordflow">else</span> <span class="keywordflow">if</span>(method.toLowerCase().equals(<span class="stringliteral">&quot;lz78&quot;</span>)) {</div><div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;            alg = <span class="keyword">new</span> LZ78(<span class="keyword">false</span>);</div><div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;        }</div><div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;        <span class="keywordflow">else</span> <span class="keywordflow">if</span>(method.toLowerCase().equals(<span class="stringliteral">&quot;jpeg&quot;</span>)) {</div><div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;            alg = <span class="keyword">new</span> JPEG(<span class="keyword">false</span>);</div><div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;            <span class="keywordflow">if</span> (img_quality == null) </div><div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;                <span class="keywordflow">throw</span> <span class="keyword">new</span> IllegalArgumentException(<span class="stringliteral">&quot;no s&#39;ha especificat la qualitat de compressió de la imatge&quot;</span>);</div><div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;            ((JPEG)alg).resetQuality((<span class="keywordtype">int</span>)(<span class="keywordtype">double</span>)img_quality);</div><div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;        }</div><div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;        <span class="keywordflow">else</span> {</div><div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;            <span class="keywordflow">throw</span> <span class="keyword">new</span> IllegalArgumentException(method+<span class="stringliteral">&quot; no es correspon a cap dels algorismes.&quot;</span>);</div><div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;        }</div><div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;        </div><div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;        Ctrl_Input.initialize(path_in);</div><div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;        alg.Compressor();</div><div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;    }</div></div><!-- fragment -->
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following file:<ul>

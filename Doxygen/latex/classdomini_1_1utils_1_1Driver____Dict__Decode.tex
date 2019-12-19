@@ -45,12 +45,86 @@ Comprovarà les possibles excepcions que puguin apareixer a la classe.
 {\em linea} & Número de operació realitzada \\
 \hline
 \end{DoxyParams}
+
+\begin{DoxyCode}
+45                                                                                   \{
+46         \textcolor{keywordtype}{int} op = Integer.parseInt(linea);
+47         \textcolor{keywordflow}{if}(dict\_decode == null && op > 1) \{
+48             \textcolor{keywordflow}{throw} \textcolor{keyword}{new} IllegalArgumentException(\textcolor{stringliteral}{"Debes llamar al constructor antes"});
+49         \}
+50     \}
+\end{DoxyCode}
 \mbox{\Hypertarget{classdomini_1_1utils_1_1Driver____Dict__Decode_a5045c12e35617afd929dfeb30930d541}\label{classdomini_1_1utils_1_1Driver____Dict__Decode_a5045c12e35617afd929dfeb30930d541}} 
 \index{domini\+::utils\+::\+Driver\+\_\+\+\_\+\+Dict\+\_\+\+Decode@{domini\+::utils\+::\+Driver\+\_\+\+\_\+\+Dict\+\_\+\+Decode}!main@{main}}
 \index{main@{main}!domini\+::utils\+::\+Driver\+\_\+\+\_\+\+Dict\+\_\+\+Decode@{domini\+::utils\+::\+Driver\+\_\+\+\_\+\+Dict\+\_\+\+Decode}}
 \subsubsection{\texorpdfstring{main()}{main()}}
 {\footnotesize\ttfamily static void domini.\+utils.\+Driver\+\_\+\+\_\+\+Dict\+\_\+\+Decode.\+main (\begin{DoxyParamCaption}\item[{String \mbox{[}$\,$\mbox{]}}]{args }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
 
+
+\begin{DoxyCode}
+52                                            \{
+53     \textcolor{keywordflow}{try} \{
+54         Dict\_Decode dict\_decode = null;
+55         \hyperlink{classdomini_1_1utils_1_1Driver____Dict__Decode_af3ae63bfc55ea99e468d6c9c86ec26c9}{showOptions}();
+56         BufferedReader reader = \textcolor{keyword}{new} BufferedReader(\textcolor{keyword}{new} InputStreamReader(System.in));
+57         String linea = \textcolor{stringliteral}{""};
+58         \textcolor{keywordflow}{while}(linea != null)\{
+59             System.out.println(\textcolor{stringliteral}{"Selecciona una opción:"});
+60             linea = reader.readLine().trim();
+61             System.out.println(\textcolor{stringliteral}{"Opción: "} + linea + \textcolor{stringliteral}{" seleccionada"});
+62             \hyperlink{classdomini_1_1utils_1_1Driver____Dict__Decode_a41ddfd0f1473de9401aa7860cff2f3e8}{comprovarExcepcions}(dict\_decode, linea);
+63             \textcolor{keywordflow}{switch}(linea)\{
+64                 \textcolor{keywordflow}{case} \textcolor{stringliteral}{"1"}:
+65                     System.out.println(\textcolor{stringliteral}{"escribe \(\backslash\)"true\(\backslash\)" si quieres que el diccionario se inicialize con la
+       tabla ascii. escribe \(\backslash\)"false\(\backslash\)" de lo contrario. Separado de un espacio escribe un integer que represente el
+       valor neutro"});
+66                     String[] aux1 = reader.readLine().trim().split(\textcolor{stringliteral}{" "});
+67                     Boolean inicializeAscii = aux1[0].equals(\textcolor{stringliteral}{"true"});
+68                     \textcolor{keywordflow}{if}(!inicializeAscii && !aux1[0].equals(\textcolor{stringliteral}{"false"}))\textcolor{keywordflow}{throw} \textcolor{keyword}{new} IllegalArgumentException(\textcolor{stringliteral}{"
+      Entrada no valida"});
+69                     Integer valorNeutre = Integer.parseInt(aux1[1]);
+70                     dict\_decode = \textcolor{keyword}{new} Dict\_Decode(inicializeAscii, valorNeutre);
+71                 \textcolor{keywordflow}{break};
+72                 \textcolor{keywordflow}{case} \textcolor{stringliteral}{"2"}:
+73                     System.out.println(\textcolor{stringliteral}{"escribe \(\backslash\)"true\(\backslash\)" si quieres que el diccionario se reinicialize con
+       la tabla ascii. "});
+74                     String aux2 = reader.readLine().trim();
+75                     Boolean b = aux2.equals(\textcolor{stringliteral}{"true"});
+76                     \textcolor{keywordflow}{if}(!b && !aux2.equals(\textcolor{stringliteral}{"false"}))\textcolor{keywordflow}{throw} \textcolor{keyword}{new} IllegalArgumentException(\textcolor{stringliteral}{"Entrada no valida"});
+77                     dict\_decode.reset\_dictionary(b);
+78                     System.out.println(\textcolor{stringliteral}{"S'ha reiniciat el diccionari"});
+79                 \textcolor{keywordflow}{break};
+80                 \textcolor{keywordflow}{case} \textcolor{stringliteral}{"3"}:
+81                     System.out.println(\textcolor{stringliteral}{"Escribe un integer."});
+82                     String aux3 = reader.readLine().trim();
+83                     Integer i = Integer.parseInt(aux3);
+84                     ArrayList<Byte> ret = dict\_decode.getWord(i);
+85                     System.out.println(ret);
+86                 \textcolor{keywordflow}{break};
+87                 \textcolor{keywordflow}{case} \textcolor{stringliteral}{"4"}:
+88                     Integer ret2 = dict\_decode.getSize();
+89                     System.out.println(ret2);
+90                 \textcolor{keywordflow}{break};
+91                 \textcolor{keywordflow}{case} \textcolor{stringliteral}{"5"}:
+92                     System.out.println(\textcolor{stringliteral}{"escribe un integer que represente la cadena previa. Separado por un
+       espacio escribe un byte"});
+93                     String[] aux5 = reader.readLine().trim().split(\textcolor{stringliteral}{" "});
+94                     Integer i2 = Integer.parseInt(aux5[0]);
+95                     byte c = Byte.parseByte(aux5[1]);
+96                     dict\_decode.add(i2, c);
+97                 \textcolor{keywordflow}{break};
+98                 \textcolor{keywordflow}{case} \textcolor{stringliteral}{"0"}:
+99                     \textcolor{keywordflow}{return};
+100                 \textcolor{keywordflow}{default}:
+101                     System.out.println(\textcolor{stringliteral}{"La opción no es válida"});
+102                 \textcolor{keywordflow}{break};
+103             \}
+104         \}
+105     \}\textcolor{keywordflow}{catch} (Exception e) \{
+106         e.printStackTrace();
+107     \}
+108     \}
+\end{DoxyCode}
 \mbox{\Hypertarget{classdomini_1_1utils_1_1Driver____Dict__Decode_af3ae63bfc55ea99e468d6c9c86ec26c9}\label{classdomini_1_1utils_1_1Driver____Dict__Decode_af3ae63bfc55ea99e468d6c9c86ec26c9}} 
 \index{domini\+::utils\+::\+Driver\+\_\+\+\_\+\+Dict\+\_\+\+Decode@{domini\+::utils\+::\+Driver\+\_\+\+\_\+\+Dict\+\_\+\+Decode}!show\+Options@{show\+Options}}
 \index{show\+Options@{show\+Options}!domini\+::utils\+::\+Driver\+\_\+\+\_\+\+Dict\+\_\+\+Decode@{domini\+::utils\+::\+Driver\+\_\+\+\_\+\+Dict\+\_\+\+Decode}}
@@ -61,6 +135,30 @@ Comprovarà les possibles excepcions que puguin apareixer a la classe.
 
 Mostra les accions a realitzar durant l\textquotesingle{}execució 
 
+
+\begin{DoxyCode}
+18                                      \{
+19         System.out.println(\textcolor{stringliteral}{"Driver de Dict\_Decode"});
+20         System.out.println(\textcolor{stringliteral}{"Constructores: "});
+21         System.out.println(\textcolor{stringliteral}{"     1. Dict\_Decode(Boolean inicializeAscii, Integer valorNeutre)"});
+22         System.out.println(\textcolor{stringliteral}{"     Input: 1"});
+23 
+24         System.out.println(\textcolor{stringliteral}{"\(\backslash\)nFunciones: "});
+25         System.out.println(\textcolor{stringliteral}{"     2. reset\_dictionary(Boolean b) "});
+26         System.out.println(\textcolor{stringliteral}{"     Input: 2"});
+27         System.out.println(\textcolor{stringliteral}{"     3. getWord(Integer i) "});
+28         System.out.println(\textcolor{stringliteral}{"     Input: 3"});
+29         System.out.println(\textcolor{stringliteral}{"     4. getSize() "});
+30         System.out.println(\textcolor{stringliteral}{"     Input: 4"});
+31         System.out.println(\textcolor{stringliteral}{"     5. add(Integer i, byte c) "});
+32         System.out.println(\textcolor{stringliteral}{"     Input: 5"});
+33         System.out.println();
+34 
+35         System.out.println(\textcolor{stringliteral}{"     0. Sortir"});
+36         System.out.println(\textcolor{stringliteral}{"     Input: 0"});
+37         System.out.println(\textcolor{stringliteral}{"----------------------------------------"});
+38     \}
+\end{DoxyCode}
 
 
 The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}

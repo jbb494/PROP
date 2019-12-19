@@ -2,53 +2,39 @@
 \label{classdomini_1_1estadistica_1_1Estadistica}\index{domini.\+estadistica.\+Estadistica@{domini.\+estadistica.\+Estadistica}}
 
 
-Generació de les estadístiques durant la compressió  
-
-
-
-
-Collaboration diagram for domini.\+estadistica.\+Estadistica\+:\nopagebreak
-\begin{figure}[H]
-\begin{center}
-\leavevmode
-\includegraphics[width=227pt]{classdomini_1_1estadistica_1_1Estadistica__coll__graph}
-\end{center}
-\end{figure}
+Collaboration diagram for domini.\+estadistica.\+Estadistica\+:
+% FIG 0
 \subsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\hyperlink{classdomini_1_1estadistica_1_1Estadistica_a16c37d85709413fd65f8dee111faed49}{Estadistica} ()
+\hyperlink{classdomini_1_1estadistica_1_1Estadistica_aab5e956c9a7e31945ddf93cb4f332746}{Estadistica} (Boolean b)
 \begin{DoxyCompactList}\small\item\em Constructor de la classe Estadística. \end{DoxyCompactList}\item 
-void \hyperlink{classdomini_1_1estadistica_1_1Estadistica_a6cac6971be817fd985afb8f3b6725464}{show\+\_\+estadistica} (String inp, String out)
+void \hyperlink{classdomini_1_1estadistica_1_1Estadistica_a2fb112c0f85d0a831b858a994731497c}{work\+\_\+done} ()
+\item 
+String \hyperlink{classdomini_1_1estadistica_1_1Estadistica_a6cac6971be817fd985afb8f3b6725464}{show\+\_\+estadistica} (String inp, String out)
 \begin{DoxyCompactList}\small\item\em Mostrarà les estadístiques de la compressió \end{DoxyCompactList}\end{DoxyCompactItemize}
-\subsection*{Package Attributes}
-\begin{DoxyCompactItemize}
-\item 
-Date \hyperlink{classdomini_1_1estadistica_1_1Estadistica_aee0ae604272563ceab4e61392cbd343e}{start}
-\item 
-Date \hyperlink{classdomini_1_1estadistica_1_1Estadistica_ae99e664f0569e308009ec7ca32864006}{end}
-\end{DoxyCompactItemize}
 \subsection*{Private Member Functions}
 \begin{DoxyCompactItemize}
 \item 
 long \hyperlink{classdomini_1_1estadistica_1_1Estadistica_a7587e21e3f7f177afe0dd36483c8fe5d}{time} (Date i, Date f)
 \end{DoxyCompactItemize}
-
-
-\subsection{Detailed Description}
-Generació de les estadístiques durant la compressió 
-
-\begin{DoxyAuthor}{Author}
-Manel Aguilar 
-\end{DoxyAuthor}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+Date \hyperlink{classdomini_1_1estadistica_1_1Estadistica_aee0ae604272563ceab4e61392cbd343e}{start}
+\item 
+Date \hyperlink{classdomini_1_1estadistica_1_1Estadistica_ae99e664f0569e308009ec7ca32864006}{end}
+\item 
+\hyperlink{classdomini_1_1utils_1_1Pair}{Pair}$<$ Boolean, String $>$ \hyperlink{classdomini_1_1estadistica_1_1Estadistica_a57776a71683b3717b638377073b8a99e}{info}
+\begin{DoxyCompactList}\small\item\em Si es True es tracta d\textquotesingle{}una compressio, sino d\textquotesingle{}una descompressio. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \subsection{Constructor \& Destructor Documentation}
-\mbox{\Hypertarget{classdomini_1_1estadistica_1_1Estadistica_a16c37d85709413fd65f8dee111faed49}\label{classdomini_1_1estadistica_1_1Estadistica_a16c37d85709413fd65f8dee111faed49}} 
+\mbox{\Hypertarget{classdomini_1_1estadistica_1_1Estadistica_aab5e956c9a7e31945ddf93cb4f332746}\label{classdomini_1_1estadistica_1_1Estadistica_aab5e956c9a7e31945ddf93cb4f332746}} 
 \index{domini\+::estadistica\+::\+Estadistica@{domini\+::estadistica\+::\+Estadistica}!Estadistica@{Estadistica}}
 \index{Estadistica@{Estadistica}!domini\+::estadistica\+::\+Estadistica@{domini\+::estadistica\+::\+Estadistica}}
 \subsubsection{\texorpdfstring{Estadistica()}{Estadistica()}}
-{\footnotesize\ttfamily domini.\+estadistica.\+Estadistica.\+Estadistica (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+{\footnotesize\ttfamily domini.\+estadistica.\+Estadistica.\+Estadistica (\begin{DoxyParamCaption}\item[{Boolean}]{b }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
 
 
 
@@ -57,6 +43,16 @@ Constructor de la classe Estadística.
 \begin{DoxyNote}{Note}
 Generem l\textquotesingle{}Instància d\textquotesingle{}inici de temps de compressió 
 \end{DoxyNote}
+
+\begin{DoxyCode}
+37                                   \{
+38         \hyperlink{classdomini_1_1estadistica_1_1Estadistica_aee0ae604272563ceab4e61392cbd343e}{start} = \textcolor{keyword}{new} Date();
+39         \textcolor{keywordflow}{if} (b) 
+40             \hyperlink{classdomini_1_1estadistica_1_1Estadistica_a57776a71683b3717b638377073b8a99e}{info} = \textcolor{keyword}{new} Pair<Boolean,String>(b, \textcolor{stringliteral}{"compresion"});
+41         \textcolor{keywordflow}{else} 
+42             \hyperlink{classdomini_1_1estadistica_1_1Estadistica_a57776a71683b3717b638377073b8a99e}{info} = \textcolor{keyword}{new} Pair<Boolean,String>(b,\textcolor{stringliteral}{"descompresion"});
+43     \}
+\end{DoxyCode}
 
 
 \subsection{Member Function Documentation}
@@ -77,6 +73,46 @@ Mostrarà les estadístiques de la compressió
 {\em out} & Path de l\textquotesingle{}arxiu comprimit \\
 \hline
 \end{DoxyParams}
+
+\begin{DoxyCode}
+69                                                            \{
+70         \textcolor{keywordtype}{long} ts = \hyperlink{classdomini_1_1estadistica_1_1Estadistica_a7587e21e3f7f177afe0dd36483c8fe5d}{time}(\hyperlink{classdomini_1_1estadistica_1_1Estadistica_aee0ae604272563ceab4e61392cbd343e}{start},\hyperlink{classdomini_1_1estadistica_1_1Estadistica_ae99e664f0569e308009ec7ca32864006}{end});
+71 
+72         Ctrl\_Browser input = \textcolor{keyword}{new} Ctrl\_Browser(inp);
+73         Ctrl\_Browser output = \textcolor{keyword}{new} Ctrl\_Browser(out);
+74 
+75         String ret = \textcolor{stringliteral}{"<html> <h1> Estadisticas de "} + \hyperlink{classdomini_1_1estadistica_1_1Estadistica_a57776a71683b3717b638377073b8a99e}{info}.\hyperlink{classdomini_1_1utils_1_1Pair_aebf54d48000999b84e5e24a2c62088d4}{R} + \textcolor{stringliteral}{"</h1> <br />"};
+76 
+77         \textcolor{keywordflow}{if} (input.exists() && output.exists()) \{
+78             \textcolor{keywordflow}{if} (ts == 0) ts = 1;
+79             \textcolor{keywordtype}{long} spd = input.length() / ts;
+80             \textcolor{keywordtype}{double} gc;
+81             \textcolor{keywordflow}{if} (\hyperlink{classdomini_1_1estadistica_1_1Estadistica_a57776a71683b3717b638377073b8a99e}{info}.\hyperlink{classdomini_1_1utils_1_1Pair_a276a0eee9fa97fc27b37fab887f07cea}{L}) 
+82                 gc = (double)input.length() / (double)output.length();
+83             \textcolor{keywordflow}{else} 
+84                 gc = (double)output.length() / (double)input.length();
+85             \textcolor{keywordflow}{if}(gc == 0.0) 
+86                 gc = 1.0;
+87             
+88             ret += \textcolor{stringliteral}{"La velocidad de "} + \hyperlink{classdomini_1_1estadistica_1_1Estadistica_a57776a71683b3717b638377073b8a99e}{info}.\hyperlink{classdomini_1_1utils_1_1Pair_aebf54d48000999b84e5e24a2c62088d4}{R} + \textcolor{stringliteral}{" ha sido de "} + spd + \textcolor{stringliteral}{" bytes/ms. <br />"};
+89             ret += \textcolor{stringliteral}{"El grado de "} + \hyperlink{classdomini_1_1estadistica_1_1Estadistica_a57776a71683b3717b638377073b8a99e}{info}.\hyperlink{classdomini_1_1utils_1_1Pair_aebf54d48000999b84e5e24a2c62088d4}{R} + \textcolor{stringliteral}{" es de "} + String.format(\textcolor{stringliteral}{"%.6f"}, gc) + \textcolor{stringliteral}{"<br />"};
+90             \textcolor{keywordflow}{if}(ts/1000 < 1)
+91                 ret += \textcolor{stringliteral}{"Tiempo de "} + \hyperlink{classdomini_1_1estadistica_1_1Estadistica_a57776a71683b3717b638377073b8a99e}{info}.\hyperlink{classdomini_1_1utils_1_1Pair_aebf54d48000999b84e5e24a2c62088d4}{R} + \textcolor{stringliteral}{" : "} + ts + \textcolor{stringliteral}{" ms. <br />"};
+92             \textcolor{keywordflow}{else}
+93                 ret += \textcolor{stringliteral}{"Tiempo de "} + \hyperlink{classdomini_1_1estadistica_1_1Estadistica_a57776a71683b3717b638377073b8a99e}{info}.\hyperlink{classdomini_1_1utils_1_1Pair_aebf54d48000999b84e5e24a2c62088d4}{R} + \textcolor{stringliteral}{" : "} + (ts/1000) + \textcolor{stringliteral}{" segundos. <br />"};
+94         
+95         \}
+96         \textcolor{keywordflow}{else} \{
+97             ret += \textcolor{stringliteral}{"Generación de estadísticas fallida: <br /> "};
+98             \textcolor{keywordflow}{if} (! input.exists())
+99                 ret += \textcolor{stringliteral}{"-Input no existe <br />"};
+100             \textcolor{keywordflow}{if} (! output.exists())
+101                 ret += \textcolor{stringliteral}{"-Output no existe"};
+102         \}
+103 
+104         \textcolor{keywordflow}{return} ret;
+105     \}
+\end{DoxyCode}
 \mbox{\Hypertarget{classdomini_1_1estadistica_1_1Estadistica_a7587e21e3f7f177afe0dd36483c8fe5d}\label{classdomini_1_1estadistica_1_1Estadistica_a7587e21e3f7f177afe0dd36483c8fe5d}} 
 \index{domini\+::estadistica\+::\+Estadistica@{domini\+::estadistica\+::\+Estadistica}!time@{time}}
 \index{time@{time}!domini\+::estadistica\+::\+Estadistica@{domini\+::estadistica\+::\+Estadistica}}
@@ -84,24 +120,58 @@ Mostrarà les estadístiques de la compressió
 {\footnotesize\ttfamily long domini.\+estadistica.\+Estadistica.\+time (\begin{DoxyParamCaption}\item[{Date}]{i,  }\item[{Date}]{f }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [private]}}
 
 
+\begin{DoxyCode}
+54                                       \{
+55         \textcolor{keywordtype}{long} res = (f.getTime() - i.getTime());
+56         \textcolor{keywordflow}{return} res;
+57     \}
+\end{DoxyCode}
+\mbox{\Hypertarget{classdomini_1_1estadistica_1_1Estadistica_a2fb112c0f85d0a831b858a994731497c}\label{classdomini_1_1estadistica_1_1Estadistica_a2fb112c0f85d0a831b858a994731497c}} 
+\index{domini\+::estadistica\+::\+Estadistica@{domini\+::estadistica\+::\+Estadistica}!work\+\_\+done@{work\+\_\+done}}
+\index{work\+\_\+done@{work\+\_\+done}!domini\+::estadistica\+::\+Estadistica@{domini\+::estadistica\+::\+Estadistica}}
+\subsubsection{\texorpdfstring{work\+\_\+done()}{work\_done()}}
+{\footnotesize\ttfamily void domini.\+estadistica.\+Estadistica.\+work\+\_\+done (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+\begin{DoxyCode}
+59                             \{
+60         \hyperlink{classdomini_1_1estadistica_1_1Estadistica_ae99e664f0569e308009ec7ca32864006}{end} = \textcolor{keyword}{new} Date();
+61     \} 
+\end{DoxyCode}
+
 
 \subsection{Member Data Documentation}
 \mbox{\Hypertarget{classdomini_1_1estadistica_1_1Estadistica_ae99e664f0569e308009ec7ca32864006}\label{classdomini_1_1estadistica_1_1Estadistica_ae99e664f0569e308009ec7ca32864006}} 
 \index{domini\+::estadistica\+::\+Estadistica@{domini\+::estadistica\+::\+Estadistica}!end@{end}}
 \index{end@{end}!domini\+::estadistica\+::\+Estadistica@{domini\+::estadistica\+::\+Estadistica}}
 \subsubsection{\texorpdfstring{end}{end}}
-{\footnotesize\ttfamily Date domini.\+estadistica.\+Estadistica.\+end\hspace{0.3cm}{\ttfamily [package]}}
+{\footnotesize\ttfamily Date domini.\+estadistica.\+Estadistica.\+end\hspace{0.3cm}{\ttfamily [private]}}
 
 
 \begin{DoxyParams}{Parameters}
 {\em end} & Instància del moment en que acabem la compressió \\
 \hline
 \end{DoxyParams}
+\mbox{\Hypertarget{classdomini_1_1estadistica_1_1Estadistica_a57776a71683b3717b638377073b8a99e}\label{classdomini_1_1estadistica_1_1Estadistica_a57776a71683b3717b638377073b8a99e}} 
+\index{domini\+::estadistica\+::\+Estadistica@{domini\+::estadistica\+::\+Estadistica}!info@{info}}
+\index{info@{info}!domini\+::estadistica\+::\+Estadistica@{domini\+::estadistica\+::\+Estadistica}}
+\subsubsection{\texorpdfstring{info}{info}}
+{\footnotesize\ttfamily \hyperlink{classdomini_1_1utils_1_1Pair}{Pair}$<$Boolean,String$>$ domini.\+estadistica.\+Estadistica.\+info\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Si es True es tracta d\textquotesingle{}una compressio, sino d\textquotesingle{}una descompressio. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em info} & Indica si es tracta d\textquotesingle{}una compressio o descompressio \\
+\hline
+\end{DoxyParams}
 \mbox{\Hypertarget{classdomini_1_1estadistica_1_1Estadistica_aee0ae604272563ceab4e61392cbd343e}\label{classdomini_1_1estadistica_1_1Estadistica_aee0ae604272563ceab4e61392cbd343e}} 
 \index{domini\+::estadistica\+::\+Estadistica@{domini\+::estadistica\+::\+Estadistica}!start@{start}}
 \index{start@{start}!domini\+::estadistica\+::\+Estadistica@{domini\+::estadistica\+::\+Estadistica}}
 \subsubsection{\texorpdfstring{start}{start}}
-{\footnotesize\ttfamily Date domini.\+estadistica.\+Estadistica.\+start\hspace{0.3cm}{\ttfamily [package]}}
+{\footnotesize\ttfamily Date domini.\+estadistica.\+Estadistica.\+start\hspace{0.3cm}{\ttfamily [private]}}
 
 
 \begin{DoxyParams}{Parameters}

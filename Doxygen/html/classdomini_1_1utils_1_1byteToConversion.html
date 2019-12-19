@@ -80,8 +80,14 @@ Static Public Member Functions</h2></td></tr>
 <tr class="memdesc:a5d2f5f8de52e4001cf6698ca03fe31e8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Transforma un byte a Character.  <a href="#a5d2f5f8de52e4001cf6698ca03fe31e8">More...</a><br /></td></tr>
 <tr class="separator:a5d2f5f8de52e4001cf6698ca03fe31e8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a3242a47adade49b6cfa6a9232944f587"><td class="memItemLeft" align="right" valign="top">static Integer&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classdomini_1_1utils_1_1byteToConversion.html#a3242a47adade49b6cfa6a9232944f587">byteToInteger</a> (List&lt; Byte &gt; bArg)</td></tr>
-<tr class="memdesc:a3242a47adade49b6cfa6a9232944f587"><td class="mdescLeft">&#160;</td><td class="mdescRight">Transforma un Array de bytes a un Enter.  <a href="#a3242a47adade49b6cfa6a9232944f587">More...</a><br /></td></tr>
+<tr class="memdesc:a3242a47adade49b6cfa6a9232944f587"><td class="mdescLeft">&#160;</td><td class="mdescRight">Transforma un Array de bytes a un Enter no negatiu.  <a href="#a3242a47adade49b6cfa6a9232944f587">More...</a><br /></td></tr>
 <tr class="separator:a3242a47adade49b6cfa6a9232944f587"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a18600284c32cae9284c16c6396425d5a"><td class="memItemLeft" align="right" valign="top">static Long&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classdomini_1_1utils_1_1byteToConversion.html#a18600284c32cae9284c16c6396425d5a">byteToLong</a> (List&lt; Byte &gt; bArg)</td></tr>
+<tr class="memdesc:a18600284c32cae9284c16c6396425d5a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Transforma un Array de bytes a un long no negatiu.  <a href="#a18600284c32cae9284c16c6396425d5a">More...</a><br /></td></tr>
+<tr class="separator:a18600284c32cae9284c16c6396425d5a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab4466a4c6dd5f6a350953031e99a959d"><td class="memItemLeft" align="right" valign="top">static ArrayList&lt; Byte &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classdomini_1_1utils_1_1byteToConversion.html#ab4466a4c6dd5f6a350953031e99a959d">longToByte</a> (long x)</td></tr>
+<tr class="memdesc:ab4466a4c6dd5f6a350953031e99a959d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Transforma un long a un array de 8 bytes en big endian.  <a href="#ab4466a4c6dd5f6a350953031e99a959d">More...</a><br /></td></tr>
+<tr class="separator:ab4466a4c6dd5f6a350953031e99a959d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a0e232cb9d272ccc13accda58bab9f8e1"><td class="memItemLeft" align="right" valign="top">static byte&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classdomini_1_1utils_1_1byteToConversion.html#a0e232cb9d272ccc13accda58bab9f8e1">shift_right_logic</a> (byte b, int despl)</td></tr>
 <tr class="memdesc:a0e232cb9d272ccc13accda58bab9f8e1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Desplaçament lògic cap a la detra d'un byte.  <a href="#a0e232cb9d272ccc13accda58bab9f8e1">More...</a><br /></td></tr>
 <tr class="separator:a0e232cb9d272ccc13accda58bab9f8e1"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -122,7 +128,7 @@ Static Public Member Functions</h2></td></tr>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>Character resultat de la transformació </dd></dl>
-
+<div class="fragment"><div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;    {</div><div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;        Character ret;</div><div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;</div><div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;        ret = (char)b.byteValue();</div><div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;</div><div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;        <span class="keywordflow">return</span> ret;</div><div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;    }</div></div><!-- fragment -->
 </div>
 </div>
 <a id="a3242a47adade49b6cfa6a9232944f587"></a>
@@ -149,15 +155,85 @@ Static Public Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Transforma un Array de bytes a un Enter. </p>
+<p>Transforma un Array de bytes a un Enter no negatiu. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">bArg</td><td>Llista de bytes que volem transformar </td></tr>
+    <tr><td class="paramname">bArg</td><td>Llista de bytes que volem transformar (de més a menys significatius, aka big endian) </td></tr>
   </table>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>Integer resultat de la conversió </dd></dl>
+<div class="fragment"><div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;    {</div><div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;        Integer ret = 0;</div><div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;</div><div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; bArg.size(); i++)</div><div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;        {</div><div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;            Byte b = bArg.get(i);</div><div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;            </div><div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;            ret += ( (b&amp;0xFF) &lt;&lt; (8*(bArg.size() - i -1)) );</div><div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;        }</div><div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;        <span class="keywordflow">return</span> ret;</div><div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;    }</div></div><!-- fragment -->
+</div>
+</div>
+<a id="a18600284c32cae9284c16c6396425d5a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a18600284c32cae9284c16c6396425d5a">&#9670;&nbsp;</a></span>byteToLong()</h2>
 
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">public static long domini.utils.byteToConversion.byteToLong </td>
+          <td>(</td>
+          <td class="paramtype">List&lt; Byte &gt;&#160;</td>
+          <td class="paramname"><em>bArg</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Transforma un Array de bytes a un long no negatiu. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">bArg</td><td>Llista de bytes que volem transformar (de més a menys significatius, aka big endian) </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>long resultat de la conversió </dd></dl>
+<div class="fragment"><div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;    {</div><div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;        Long ret = (long)0;</div><div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;</div><div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; bArg.size(); i++)</div><div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;        {</div><div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;            Byte b = bArg.get(i);</div><div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;            </div><div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;            ret += ( (long)(b&amp;0xFF) &lt;&lt; (8*(bArg.size() - i -1)) );</div><div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;        }</div><div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;        <span class="keywordflow">return</span> ret;</div><div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;    }</div></div><!-- fragment -->
+</div>
+</div>
+<a id="ab4466a4c6dd5f6a350953031e99a959d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab4466a4c6dd5f6a350953031e99a959d">&#9670;&nbsp;</a></span>longToByte()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">public static ArrayList&lt; Byte &gt; domini.utils.byteToConversion.longToByte </td>
+          <td>(</td>
+          <td class="paramtype">long&#160;</td>
+          <td class="paramname"><em>x</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Transforma un long a un array de 8 bytes en big endian. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">x</td><td>El long que volem transformar </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>L'array de bytes resultant (de més a menys significatius, aka big endian) </dd></dl>
+<div class="fragment"><div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;    {</div><div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;</div><div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;        ArrayList&lt;Byte&gt; al = <span class="keyword">new</span> ArrayList&lt;&gt;();</div><div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 7; i &gt;= 0; i--)</div><div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;        {</div><div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;            al.add(0, (byte)x);</div><div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;            x = (x &gt;&gt; 8);  </div><div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;        }</div><div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;        <span class="keywordflow">return</span> al;</div><div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;    }</div></div><!-- fragment -->
 </div>
 </div>
 <a id="a0e232cb9d272ccc13accda58bab9f8e1"></a>
@@ -203,7 +279,7 @@ Static Public Member Functions</h2></td></tr>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>Byte desplaçat </dd></dl>
-
+<div class="fragment"><div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;                                                            {</div><div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;        <span class="keywordflow">return</span> (byte) ((byte) (b &gt;&gt;&gt; despl) &amp;~ (byte) (0xff &lt;&lt; (8-despl)));</div><div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;    }</div></div><!-- fragment -->
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following file:<ul>

@@ -45,12 +45,69 @@ Comprovarà les possibles excepcions que puguin apareixer a la classe.
 {\em linea} & \\
 \hline
 \end{DoxyParams}
+
+\begin{DoxyCode}
+43                                                                                           \{
+44         \textcolor{keywordtype}{int} op = Integer.parseInt(linea);
+45         \textcolor{keywordflow}{if}(ctrl\_input\_jpeg == null && op > 1) \{
+46             \textcolor{keywordflow}{throw} \textcolor{keyword}{new} IllegalArgumentException(\textcolor{stringliteral}{"Debes llamar al constructor antes"});
+47         \}
+48     \}
+\end{DoxyCode}
 \mbox{\Hypertarget{classpersistencia_1_1input_1_1Driver____Ctrl__Input__JPEG_ae46ec7babdaa3cf25854b21c693c4165}\label{classpersistencia_1_1input_1_1Driver____Ctrl__Input__JPEG_ae46ec7babdaa3cf25854b21c693c4165}} 
 \index{persistencia\+::input\+::\+Driver\+\_\+\+\_\+\+Ctrl\+\_\+\+Input\+\_\+\+J\+P\+EG@{persistencia\+::input\+::\+Driver\+\_\+\+\_\+\+Ctrl\+\_\+\+Input\+\_\+\+J\+P\+EG}!main@{main}}
 \index{main@{main}!persistencia\+::input\+::\+Driver\+\_\+\+\_\+\+Ctrl\+\_\+\+Input\+\_\+\+J\+P\+EG@{persistencia\+::input\+::\+Driver\+\_\+\+\_\+\+Ctrl\+\_\+\+Input\+\_\+\+J\+P\+EG}}
 \subsubsection{\texorpdfstring{main()}{main()}}
 {\footnotesize\ttfamily static void persistencia.\+input.\+Driver\+\_\+\+\_\+\+Ctrl\+\_\+\+Input\+\_\+\+J\+P\+E\+G.\+main (\begin{DoxyParamCaption}\item[{String \mbox{[}$\,$\mbox{]}}]{args }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
 
+
+\begin{DoxyCode}
+50                                            \{
+51     \textcolor{keywordflow}{try} \{
+52         Ctrl\_Input\_JPEG ctrl\_input\_jpeg = null;
+53         \hyperlink{classpersistencia_1_1input_1_1Driver____Ctrl__Input__JPEG_a3ffde336b648d23ae0a517210d0f8f38}{showOptions}();
+54         BufferedReader reader = \textcolor{keyword}{new} BufferedReader(\textcolor{keyword}{new} InputStreamReader(System.in));
+55         String linea = \textcolor{stringliteral}{""};
+56         \textcolor{keywordflow}{while}(linea != null)\{
+57             System.out.println(\textcolor{stringliteral}{"Selecciona una opción:"});
+58             linea = reader.readLine().trim();
+59             System.out.println(\textcolor{stringliteral}{"Opción: "} + linea + \textcolor{stringliteral}{" seleccionada"});
+60             \hyperlink{classpersistencia_1_1input_1_1Driver____Ctrl__Input__JPEG_ad40099d3188e58f93a2a57c4277b754e}{comprovarExcepcions}(ctrl\_input\_jpeg, linea);
+61             \textcolor{keywordtype}{int} x;
+62             \textcolor{keywordflow}{switch}(linea)\{
+63                 \textcolor{keywordflow}{case} \textcolor{stringliteral}{"1"}:
+64                     System.out.println(\textcolor{stringliteral}{"Indica el path de la fuente"});
+65                     String aux1 = reader.readLine().trim();
+66                     ctrl\_input\_jpeg = \textcolor{keyword}{new} Ctrl\_Input\_JPEG(aux1);
+67                 \textcolor{keywordflow}{break};
+68                 \textcolor{keywordflow}{case} \textcolor{stringliteral}{"2"}:
+69                     x = ctrl\_input\_jpeg.getHeight();
+70                     System.out.println(x);
+71                 \textcolor{keywordflow}{break};
+72                 \textcolor{keywordflow}{case} \textcolor{stringliteral}{"3"}:
+73                     x = ctrl\_input\_jpeg.getWidth();
+74                     System.out.println(x);
+75 
+76                 \textcolor{keywordflow}{break};
+77                 \textcolor{keywordflow}{case} \textcolor{stringliteral}{"4"}:
+78                     System.out.println(\textcolor{stringliteral}{"Cuantos bits quieres leer?"});
+79                     String aux4 = reader.readLine().trim();
+80                     \textcolor{keywordtype}{int} size = Integer.parseInt(aux4);
+81                     x = ctrl\_input\_jpeg.get(size);
+82                     System.out.println(x);
+83                 \textcolor{keywordflow}{break};
+84                 \textcolor{keywordflow}{case} \textcolor{stringliteral}{"0"}:
+85                     \textcolor{keywordflow}{return};
+86                 \textcolor{keywordflow}{default}:
+87                     System.out.println(\textcolor{stringliteral}{"La opción no es válida"});
+88                 \textcolor{keywordflow}{break};
+89             \}
+90         \}
+91     \}\textcolor{keywordflow}{catch} (Exception e) \{
+92         e.printStackTrace();
+93     \}
+94     \}
+\end{DoxyCode}
 \mbox{\Hypertarget{classpersistencia_1_1input_1_1Driver____Ctrl__Input__JPEG_a3ffde336b648d23ae0a517210d0f8f38}\label{classpersistencia_1_1input_1_1Driver____Ctrl__Input__JPEG_a3ffde336b648d23ae0a517210d0f8f38}} 
 \index{persistencia\+::input\+::\+Driver\+\_\+\+\_\+\+Ctrl\+\_\+\+Input\+\_\+\+J\+P\+EG@{persistencia\+::input\+::\+Driver\+\_\+\+\_\+\+Ctrl\+\_\+\+Input\+\_\+\+J\+P\+EG}!show\+Options@{show\+Options}}
 \index{show\+Options@{show\+Options}!persistencia\+::input\+::\+Driver\+\_\+\+\_\+\+Ctrl\+\_\+\+Input\+\_\+\+J\+P\+EG@{persistencia\+::input\+::\+Driver\+\_\+\+\_\+\+Ctrl\+\_\+\+Input\+\_\+\+J\+P\+EG}}
@@ -61,6 +118,28 @@ Comprovarà les possibles excepcions que puguin apareixer a la classe.
 
 Mostra les accions a realitzar durant l\textquotesingle{}execució 
 
+
+\begin{DoxyCode}
+18                                      \{
+19         System.out.println(\textcolor{stringliteral}{"Driver de Ctrl\_Input\_JPEG"});
+20         System.out.println(\textcolor{stringliteral}{"Constructores: "});
+21         System.out.println(\textcolor{stringliteral}{"     1. Ctrl\_Input\_JPEG(String path)"});
+22         System.out.println(\textcolor{stringliteral}{"     Input: 1"});
+23 
+24         System.out.println(\textcolor{stringliteral}{"Funciones: "});
+25         System.out.println(\textcolor{stringliteral}{"     2. getHeight() "});
+26         System.out.println(\textcolor{stringliteral}{"     Input: 2"});
+27         System.out.println(\textcolor{stringliteral}{"     3. getWidth() "});
+28         System.out.println(\textcolor{stringliteral}{"     Input: 3"});
+29         System.out.println(\textcolor{stringliteral}{"     4. get(int size) "});
+30         System.out.println(\textcolor{stringliteral}{"     Input: 4"});
+31         System.out.println();
+32 
+33         System.out.println(\textcolor{stringliteral}{"     0. Sortir"});
+34         System.out.println(\textcolor{stringliteral}{"     Input: 0"});
+35         System.out.println(\textcolor{stringliteral}{"----------------------------------------"});
+36     \}
+\end{DoxyCode}
 
 
 The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}

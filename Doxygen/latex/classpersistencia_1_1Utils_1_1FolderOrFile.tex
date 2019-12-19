@@ -1,0 +1,55 @@
+\hypertarget{classpersistencia_1_1Utils_1_1FolderOrFile}{}\section{persistencia.\+Utils.\+Folder\+Or\+File Class Reference}
+\label{classpersistencia_1_1Utils_1_1FolderOrFile}\index{persistencia.\+Utils.\+Folder\+Or\+File@{persistencia.\+Utils.\+Folder\+Or\+File}}
+
+
+Clase abstracta que consulta al SO el tipo de Path que nos han pasado (carpeta, fichero, ...).  
+
+
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static global.\+type \hyperlink{classpersistencia_1_1Utils_1_1FolderOrFile_a57af4d14d71521f8a9b2b1aaad891fb0}{get\+Type} (String Path)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Clase abstracta que consulta al SO el tipo de Path que nos han pasado (carpeta, fichero, ...). 
+
+\begin{DoxyAuthor}{Author}
+
+\end{DoxyAuthor}
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classpersistencia_1_1Utils_1_1FolderOrFile_a57af4d14d71521f8a9b2b1aaad891fb0}\label{classpersistencia_1_1Utils_1_1FolderOrFile_a57af4d14d71521f8a9b2b1aaad891fb0}} 
+\index{persistencia\+::\+Utils\+::\+Folder\+Or\+File@{persistencia\+::\+Utils\+::\+Folder\+Or\+File}!get\+Type@{get\+Type}}
+\index{get\+Type@{get\+Type}!persistencia\+::\+Utils\+::\+Folder\+Or\+File@{persistencia\+::\+Utils\+::\+Folder\+Or\+File}}
+\subsubsection{\texorpdfstring{get\+Type()}{getType()}}
+{\footnotesize\ttfamily public static \hyperlink{classglobal_1_1global}{global} type persistencia.\+Utils.\+Folder\+Or\+File.\+get\+Type (\begin{DoxyParamCaption}\item[{String}]{Path }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+
+\begin{DoxyParams}{Parameters}
+{\em Path} & Path a buscar \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Devuelve el tipo de fichero/carpeta que contiene el Path seleccionado. 
+\end{DoxyReturn}
+
+\begin{DoxyCode}
+15     \{
+16         File f = \textcolor{keyword}{new} File(Path);
+17         \textcolor{keywordflow}{if}(f.isDirectory()) \textcolor{keywordflow}{return} \hyperlink{namespaceglobal}{global}.type.folder;
+18         \textcolor{keywordflow}{else}
+19         \{
+20             \textcolor{keywordflow}{if}(Path.endsWith(\textcolor{stringliteral}{".ppm"})) \textcolor{keywordflow}{return} \hyperlink{namespaceglobal}{global}.type.image;
+21             \textcolor{keywordflow}{else} if (Path.endsWith(\textcolor{stringliteral}{".jm"})) \textcolor{keywordflow}{return} \hyperlink{namespaceglobal}{global}.type.comprimit;
+22             \textcolor{keywordflow}{else} \textcolor{keywordflow}{return} \hyperlink{namespaceglobal}{global}.type.text;
+23         \}
+24     \}
+\end{DoxyCode}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+src/persistencia/\+Utils/\hyperlink{FolderOrFile_8java}{Folder\+Or\+File.\+java}\end{DoxyCompactItemize}

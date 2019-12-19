@@ -45,12 +45,74 @@ Comprovarà les possibles excepcions que puguin apareixer a la classe.
 {\em linea} & Número de operació realitzada \\
 \hline
 \end{DoxyParams}
+
+\begin{DoxyCode}
+41                                                                           \{
+42         \textcolor{keywordtype}{int} op = Integer.parseInt(linea);
+43         \textcolor{keywordflow}{if}(trie == null && op > 1) \{
+44             \textcolor{keywordflow}{throw} \textcolor{keyword}{new} IllegalArgumentException(\textcolor{stringliteral}{"Debes llamar al constructor antes"});
+45         \}
+46     \}
+\end{DoxyCode}
 \mbox{\Hypertarget{classdomini_1_1utils_1_1Driver____Trie_a00769a23a8d74a6f4bc05c19a2bd8519}\label{classdomini_1_1utils_1_1Driver____Trie_a00769a23a8d74a6f4bc05c19a2bd8519}} 
 \index{domini\+::utils\+::\+Driver\+\_\+\+\_\+\+Trie@{domini\+::utils\+::\+Driver\+\_\+\+\_\+\+Trie}!main@{main}}
 \index{main@{main}!domini\+::utils\+::\+Driver\+\_\+\+\_\+\+Trie@{domini\+::utils\+::\+Driver\+\_\+\+\_\+\+Trie}}
 \subsubsection{\texorpdfstring{main()}{main()}}
 {\footnotesize\ttfamily static void domini.\+utils.\+Driver\+\_\+\+\_\+\+Trie.\+main (\begin{DoxyParamCaption}\item[{String \mbox{[}$\,$\mbox{]}}]{args }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
 
+
+\begin{DoxyCode}
+48                                            \{
+49     \textcolor{keywordflow}{try} \{
+50         Trie<Byte> trie = null;
+51         \hyperlink{classdomini_1_1utils_1_1Driver____Trie_a8b61698744500c2c6ffa92f861162ff5}{showOptions}();
+52         BufferedReader reader = \textcolor{keyword}{new} BufferedReader(\textcolor{keyword}{new} InputStreamReader(System.in));
+53         String linea = \textcolor{stringliteral}{""};
+54         \textcolor{keywordflow}{while}(linea != null)\{
+55             System.out.println(\textcolor{stringliteral}{"Selecciona una opción:"});
+56             linea = reader.readLine().trim();
+57             System.out.println(\textcolor{stringliteral}{"Opción: "} + linea + \textcolor{stringliteral}{" seleccionada"});
+58             \hyperlink{classdomini_1_1utils_1_1Driver____Trie_a6fd273250b3951144ce3a76f26330ab1}{comprovarExcepcions}(trie, linea);
+59             \textcolor{keywordflow}{switch}(linea)\{
+60                 \textcolor{keywordflow}{case} \textcolor{stringliteral}{"1"}:
+61                     trie = \textcolor{keyword}{new} Trie<Byte>();
+62                 \textcolor{keywordflow}{break};
+63                 \textcolor{keywordflow}{case} \textcolor{stringliteral}{"2"}:
+64                     System.out.println(\textcolor{stringliteral}{"Escribe un conjunto de bytes separado por espacios que
+       representaran una palabra que añadiremos a la estructura. Luego presiona enter y escribe el indice que identificara esta
+       palabra."});
+65                     String[] auxWord = reader.readLine().trim().split(\textcolor{stringliteral}{" "});
+66                     String auxIndex = reader.readLine().trim();
+67                     ArrayList<Byte> word = \textcolor{keyword}{new} ArrayList<Byte>();
+68                     \textcolor{keywordflow}{for}(String foraux : auxWord)\{
+69                         word.add(Byte.parseByte(foraux));
+70                     \}
+71                     Integer index = Integer.parseInt(auxIndex);
+72                     trie.insert(word, index);
+73                 \textcolor{keywordflow}{break};
+74                 \textcolor{keywordflow}{case} \textcolor{stringliteral}{"3"}:
+75                     System.out.println(\textcolor{stringliteral}{"Escribe un conjunto de bytes separado por espacios que
+       representaran una palabra."});
+76                     String[] aux3 = reader.readLine().trim().split(\textcolor{stringliteral}{" "});
+77                     word = \textcolor{keyword}{new} ArrayList<Byte>();
+78                     \textcolor{keywordflow}{for}(String foraux1 : aux3)\{
+79                         word.add(Byte.parseByte(foraux1));
+80                     \}
+81                     Integer ret = trie.indexNode(word);
+82                     System.out.println(ret == -1 ? \textcolor{stringliteral}{"No existe"} : ret);
+83                 \textcolor{keywordflow}{break};
+84                 \textcolor{keywordflow}{case} \textcolor{stringliteral}{"0"}:
+85                     \textcolor{keywordflow}{return};
+86                 \textcolor{keywordflow}{default}:
+87                     System.out.println(\textcolor{stringliteral}{"La opción no es válida"});
+88                 \textcolor{keywordflow}{break};
+89             \}
+90         \}
+91     \}\textcolor{keywordflow}{catch} (Exception e) \{
+92         e.printStackTrace();
+93     \}
+94     \}
+\end{DoxyCode}
 \mbox{\Hypertarget{classdomini_1_1utils_1_1Driver____Trie_a8b61698744500c2c6ffa92f861162ff5}\label{classdomini_1_1utils_1_1Driver____Trie_a8b61698744500c2c6ffa92f861162ff5}} 
 \index{domini\+::utils\+::\+Driver\+\_\+\+\_\+\+Trie@{domini\+::utils\+::\+Driver\+\_\+\+\_\+\+Trie}!show\+Options@{show\+Options}}
 \index{show\+Options@{show\+Options}!domini\+::utils\+::\+Driver\+\_\+\+\_\+\+Trie@{domini\+::utils\+::\+Driver\+\_\+\+\_\+\+Trie}}
@@ -61,6 +123,26 @@ Comprovarà les possibles excepcions que puguin apareixer a la classe.
 
 Mostra les accions a realitzar durant l\textquotesingle{}execució 
 
+
+\begin{DoxyCode}
+18                                      \{
+19         System.out.println(\textcolor{stringliteral}{"Driver de Trie"});
+20         System.out.println(\textcolor{stringliteral}{"Constructores: "});
+21         System.out.println(\textcolor{stringliteral}{"     1. Trie()"});
+22         System.out.println(\textcolor{stringliteral}{"     Input: 1"});
+23 
+24         System.out.println(\textcolor{stringliteral}{"Funciones: "});
+25         System.out.println(\textcolor{stringliteral}{"     2. insert(ArrayList<Byte> word, Integer index) "});
+26         System.out.println(\textcolor{stringliteral}{"     Input: 2"});
+27         System.out.println(\textcolor{stringliteral}{"     3. indexNode(ArrayList<Byte> word) "});
+28         System.out.println(\textcolor{stringliteral}{"     Input: 3"});
+29         System.out.println();
+30 
+31         System.out.println(\textcolor{stringliteral}{"     0. Sortir"});
+32         System.out.println(\textcolor{stringliteral}{"     Input: 0"});
+33         System.out.println(\textcolor{stringliteral}{"----------------------------------------"});
+34     \}
+\end{DoxyCode}
 
 
 The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}

@@ -7,27 +7,17 @@ Classe \hyperlink{classpersistencia_1_1output_1_1Ctrl__Output}{Ctrl\+\_\+\+Outpu
 
 
 
-Inheritance diagram for persistencia.\+output.\+Ctrl\+\_\+\+Output\+:\nopagebreak
-\begin{figure}[H]
-\begin{center}
-\leavevmode
-\includegraphics[width=198pt]{classpersistencia_1_1output_1_1Ctrl__Output__inherit__graph}
-\end{center}
-\end{figure}
-
-
-Collaboration diagram for persistencia.\+output.\+Ctrl\+\_\+\+Output\+:\nopagebreak
-\begin{figure}[H]
-\begin{center}
-\leavevmode
-\includegraphics[width=211pt]{classpersistencia_1_1output_1_1Ctrl__Output__coll__graph}
-\end{center}
-\end{figure}
+Inheritance diagram for persistencia.\+output.\+Ctrl\+\_\+\+Output\+:
+% FIG 0
 \subsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\hyperlink{classpersistencia_1_1output_1_1Ctrl__Output_afeb28ec6172b522bf6bdaf16238d622b}{Ctrl\+\_\+\+Output} (String path, String method, boolean b)
+\hyperlink{classpersistencia_1_1output_1_1Ctrl__Output_ab8a70c7d09789826249d8556ce3531f6}{Ctrl\+\_\+\+Output} (String path)
 \begin{DoxyCompactList}\small\item\em Constructor de la classe. \end{DoxyCompactList}\item 
+\hyperlink{classpersistencia_1_1output_1_1Ctrl__Output_a8f5bf9038ef97c01d13acd211985cd7a}{Ctrl\+\_\+\+Output} ()
+\begin{DoxyCompactList}\small\item\em Constructor de la classe. \end{DoxyCompactList}\item 
+void \hyperlink{classpersistencia_1_1output_1_1Ctrl__Output_ae6d6857910a023982900ddc857b891f0}{add\+Metadata} (String method)
+\begin{DoxyCompactList}\small\item\em Afageix la metadata corresponent a un determinat algorisme. \end{DoxyCompactList}\item 
 void \hyperlink{classpersistencia_1_1output_1_1Ctrl__Output_a8c5aa5a6acb5259faeb1c05c71ddd21c}{add} (Byte b, Integer n\+\_\+bits)
 \begin{DoxyCompactList}\small\item\em Afegeix un byte amb n\+\_\+bits valids. \end{DoxyCompactList}\item 
 void \hyperlink{classpersistencia_1_1output_1_1Ctrl__Output_a0e3bedb0b88d0e60b228cc49143e6f0e}{add} (String s)
@@ -35,28 +25,26 @@ void \hyperlink{classpersistencia_1_1output_1_1Ctrl__Output_a0e3bedb0b88d0e60b22
 void \hyperlink{classpersistencia_1_1output_1_1Ctrl__Output_a4070b40016edf1d959b3f7c60c90ef10}{add} (Character c)
 \begin{DoxyCompactList}\small\item\em Afegeix un Character. \end{DoxyCompactList}\item 
 void \hyperlink{classpersistencia_1_1output_1_1Ctrl__Output_aefe249b0ae9dbe578c44d96c6b56cf5d}{add} (Integer x)
-\begin{DoxyCompactList}\small\item\em Afegeix un enter de 4 bytes. \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em Afegeix un enter de 4 bytes. Big endian (bytes més significatius primer). \end{DoxyCompactList}\item 
 void \hyperlink{classpersistencia_1_1output_1_1Ctrl__Output_ac792cc55e30c9c769e10a20c2dd41bc8}{add} (Integer x, Integer mida)
-\begin{DoxyCompactList}\small\item\em Afegeix un enter amb mida. Guarda els bits més significatius primer. \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em Afegeix un enter amb mida. Big endian (bytes més significatius primer). \end{DoxyCompactList}\item 
 void \hyperlink{classpersistencia_1_1output_1_1Ctrl__Output_a5fb2f07198a77b4fac0f95ee48e3d0b9}{add} (Array\+List$<$ Byte $>$ arr)
 \begin{DoxyCompactList}\small\item\em Afegeix una llista de Bytes. \end{DoxyCompactList}\item 
 void \hyperlink{classpersistencia_1_1output_1_1Ctrl__Output_ad4738467c2312b0e079c14003e548dd6}{add2} (int x, int mida)
-\begin{DoxyCompactList}\small\item\em Afegeix un enter amb mida. Guarda els bits menys significatius primer. \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em Afegeix un enter amb mida. Little endian (bytes menys significatius primer). \end{DoxyCompactList}\item 
 void \hyperlink{classpersistencia_1_1output_1_1Ctrl__Output_a908955c29bfecc7ebac86613bc75e9ed}{print} ()
-\begin{DoxyCompactList}\small\item\em Escriu el contingut de la classe en un nou arxiu. \end{DoxyCompactList}\item 
-void \hyperlink{classpersistencia_1_1output_1_1Ctrl__Output_a4536ad32e96d0270655a21c7c84f3bdd}{print\+String} ()
-\begin{DoxyCompactList}\small\item\em Escriu el contingut de la classe per consola byte a byte (en format binari) \end{DoxyCompactList}\item 
-\hyperlink{classpersistencia_1_1output_1_1Output}{Output} \hyperlink{classpersistencia_1_1output_1_1Ctrl__Output_aa36fdf4d9efc14d95f5d0d77838c6280}{get\+Out} ()
-\end{DoxyCompactItemize}
-\subsection*{Package Attributes}
+\begin{DoxyCompactList}\small\item\em Escriu el buffer a la sortida i buida el buffer. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Static Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\hyperlink{classpersistencia_1_1output_1_1Output}{Output} \hyperlink{classpersistencia_1_1output_1_1Ctrl__Output_adbfbc3bef074ccf06131270fb9fafd8d}{Output\+\_\+\+Class}
-\end{DoxyCompactItemize}
+static void \hyperlink{classpersistencia_1_1output_1_1Ctrl__Output_a83bd01197acdeb0a697f21ca9854c457}{initialize} (String path)
+\begin{DoxyCompactList}\small\item\em Assigna un nou fitxer per esciure. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \subsection{Detailed Description}
 Classe \hyperlink{classpersistencia_1_1output_1_1Ctrl__Output}{Ctrl\+\_\+\+Output}. 
+
+Cal tenir en compte que no es poden escriure dos fitxers simultàniament. El fitxer que escriuen les instàncies de \hyperlink{classpersistencia_1_1output_1_1Ctrl__Output}{Ctrl\+\_\+\+Output} i els seus fills s\textquotesingle{}inicialitza cada cop que es crida a \hyperlink{classpersistencia_1_1output_1_1Ctrl__Output_a83bd01197acdeb0a697f21ca9854c457}{initialize(\+String path)} o Ctrl\+\_\+\+Output$\ast$(String path), on Ctrl\+\_\+\+Output$\ast$ és \hyperlink{classpersistencia_1_1output_1_1Ctrl__Output}{Ctrl\+\_\+\+Output} o un dels seus fills.
 
 \begin{DoxyAuthor}{Author}
 Miguel Paracuellos 
@@ -64,11 +52,11 @@ Miguel Paracuellos
 
 
 \subsection{Constructor \& Destructor Documentation}
-\mbox{\Hypertarget{classpersistencia_1_1output_1_1Ctrl__Output_afeb28ec6172b522bf6bdaf16238d622b}\label{classpersistencia_1_1output_1_1Ctrl__Output_afeb28ec6172b522bf6bdaf16238d622b}} 
+\mbox{\Hypertarget{classpersistencia_1_1output_1_1Ctrl__Output_ab8a70c7d09789826249d8556ce3531f6}\label{classpersistencia_1_1output_1_1Ctrl__Output_ab8a70c7d09789826249d8556ce3531f6}} 
 \index{persistencia\+::output\+::\+Ctrl\+\_\+\+Output@{persistencia\+::output\+::\+Ctrl\+\_\+\+Output}!Ctrl\+\_\+\+Output@{Ctrl\+\_\+\+Output}}
 \index{Ctrl\+\_\+\+Output@{Ctrl\+\_\+\+Output}!persistencia\+::output\+::\+Ctrl\+\_\+\+Output@{persistencia\+::output\+::\+Ctrl\+\_\+\+Output}}
-\subsubsection{\texorpdfstring{Ctrl\+\_\+\+Output()}{Ctrl\_Output()}}
-{\footnotesize\ttfamily persistencia.\+output.\+Ctrl\+\_\+\+Output.\+Ctrl\+\_\+\+Output (\begin{DoxyParamCaption}\item[{String}]{path,  }\item[{String}]{method,  }\item[{boolean}]{b }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+\subsubsection{\texorpdfstring{Ctrl\+\_\+\+Output()}{Ctrl\_Output()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily persistencia.\+output.\+Ctrl\+\_\+\+Output.\+Ctrl\+\_\+\+Output (\begin{DoxyParamCaption}\item[{String}]{path }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
 
 
 
@@ -76,13 +64,32 @@ Constructor de la classe.
 
 
 \begin{DoxyParams}{Parameters}
-{\em path} & Path de l\textquotesingle{}arxiu resultant de l\textquotesingle{}escritura \\
-\hline
-{\em method} & Indicara el valor de la metadata segons l\textquotesingle{}algoritme emprat \\
-\hline
-{\em b} & Indicació per a txt o ppm \\
+{\em path} & Path de l\textquotesingle{}arxiu que comença a escriure \\
 \hline
 \end{DoxyParams}
+
+\begin{DoxyCode}
+25                                     \{
+26         Output.initialize(path);
+27     \}
+\end{DoxyCode}
+\mbox{\Hypertarget{classpersistencia_1_1output_1_1Ctrl__Output_a8f5bf9038ef97c01d13acd211985cd7a}\label{classpersistencia_1_1output_1_1Ctrl__Output_a8f5bf9038ef97c01d13acd211985cd7a}} 
+\index{persistencia\+::output\+::\+Ctrl\+\_\+\+Output@{persistencia\+::output\+::\+Ctrl\+\_\+\+Output}!Ctrl\+\_\+\+Output@{Ctrl\+\_\+\+Output}}
+\index{Ctrl\+\_\+\+Output@{Ctrl\+\_\+\+Output}!persistencia\+::output\+::\+Ctrl\+\_\+\+Output@{persistencia\+::output\+::\+Ctrl\+\_\+\+Output}}
+\subsubsection{\texorpdfstring{Ctrl\+\_\+\+Output()}{Ctrl\_Output()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily persistencia.\+output.\+Ctrl\+\_\+\+Output.\+Ctrl\+\_\+\+Output (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Constructor de la classe. 
+
+\begin{DoxyNote}{Note}
+Continua escrivint al fitxer al qual s\textquotesingle{}estava escrivint. 
+\end{DoxyNote}
+
+\begin{DoxyCode}
+33 \{\}
+\end{DoxyCode}
 
 
 \subsection{Member Function Documentation}
@@ -103,6 +110,12 @@ Afegeix un byte amb n\+\_\+bits valids.
 {\em n\+\_\+bits} & Nombre de bits valids \\
 \hline
 \end{DoxyParams}
+
+\begin{DoxyCode}
+69                                             \{
+70         Output.getInstance().add(b, n\_bits);
+71     \}
+\end{DoxyCode}
 \mbox{\Hypertarget{classpersistencia_1_1output_1_1Ctrl__Output_a0e3bedb0b88d0e60b228cc49143e6f0e}\label{classpersistencia_1_1output_1_1Ctrl__Output_a0e3bedb0b88d0e60b228cc49143e6f0e}} 
 \index{persistencia\+::output\+::\+Ctrl\+\_\+\+Output@{persistencia\+::output\+::\+Ctrl\+\_\+\+Output}!add@{add}}
 \index{add@{add}!persistencia\+::output\+::\+Ctrl\+\_\+\+Output@{persistencia\+::output\+::\+Ctrl\+\_\+\+Output}}
@@ -118,6 +131,14 @@ Afegeix un String.
 {\em s} & String a afegir \\
 \hline
 \end{DoxyParams}
+
+\begin{DoxyCode}
+78                               \{
+79         byte[] bytearray = s.getBytes();
+80         \textcolor{keywordflow}{for} (byte b : bytearray) 
+81             Output.getInstance().add(b,8);
+82     \}
+\end{DoxyCode}
 \mbox{\Hypertarget{classpersistencia_1_1output_1_1Ctrl__Output_a4070b40016edf1d959b3f7c60c90ef10}\label{classpersistencia_1_1output_1_1Ctrl__Output_a4070b40016edf1d959b3f7c60c90ef10}} 
 \index{persistencia\+::output\+::\+Ctrl\+\_\+\+Output@{persistencia\+::output\+::\+Ctrl\+\_\+\+Output}!add@{add}}
 \index{add@{add}!persistencia\+::output\+::\+Ctrl\+\_\+\+Output@{persistencia\+::output\+::\+Ctrl\+\_\+\+Output}}
@@ -133,6 +154,13 @@ Afegeix un Character.
 {\em c} & Character a afegir \\
 \hline
 \end{DoxyParams}
+
+\begin{DoxyCode}
+89                                  \{
+90         \textcolor{comment}{//System.out.println(c);}
+91         \hyperlink{classpersistencia_1_1output_1_1Ctrl__Output_a8c5aa5a6acb5259faeb1c05c71ddd21c}{add}(Character.toString(c));
+92     \}
+\end{DoxyCode}
 \mbox{\Hypertarget{classpersistencia_1_1output_1_1Ctrl__Output_aefe249b0ae9dbe578c44d96c6b56cf5d}\label{classpersistencia_1_1output_1_1Ctrl__Output_aefe249b0ae9dbe578c44d96c6b56cf5d}} 
 \index{persistencia\+::output\+::\+Ctrl\+\_\+\+Output@{persistencia\+::output\+::\+Ctrl\+\_\+\+Output}!add@{add}}
 \index{add@{add}!persistencia\+::output\+::\+Ctrl\+\_\+\+Output@{persistencia\+::output\+::\+Ctrl\+\_\+\+Output}}
@@ -141,13 +169,22 @@ Afegeix un Character.
 
 
 
-Afegeix un enter de 4 bytes. 
+Afegeix un enter de 4 bytes. Big endian (bytes més significatius primer). 
 
 
 \begin{DoxyParams}{Parameters}
 {\em x} & Enter a afegir \\
 \hline
 \end{DoxyParams}
+
+\begin{DoxyCode}
+99                                \{
+100         ByteBuffer bb = ByteBuffer.allocate(4); 
+101         bb.putInt(x.intValue());
+102         \textcolor{keywordflow}{for} (byte b : bb.array()) 
+103             \hyperlink{classpersistencia_1_1output_1_1Ctrl__Output_a8c5aa5a6acb5259faeb1c05c71ddd21c}{add}(b,8);
+104     \}
+\end{DoxyCode}
 \mbox{\Hypertarget{classpersistencia_1_1output_1_1Ctrl__Output_ac792cc55e30c9c769e10a20c2dd41bc8}\label{classpersistencia_1_1output_1_1Ctrl__Output_ac792cc55e30c9c769e10a20c2dd41bc8}} 
 \index{persistencia\+::output\+::\+Ctrl\+\_\+\+Output@{persistencia\+::output\+::\+Ctrl\+\_\+\+Output}!add@{add}}
 \index{add@{add}!persistencia\+::output\+::\+Ctrl\+\_\+\+Output@{persistencia\+::output\+::\+Ctrl\+\_\+\+Output}}
@@ -156,7 +193,7 @@ Afegeix un enter de 4 bytes.
 
 
 
-Afegeix un enter amb mida. Guarda els bits més significatius primer. 
+Afegeix un enter amb mida. Big endian (bytes més significatius primer). 
 
 
 \begin{DoxyParams}{Parameters}
@@ -165,6 +202,25 @@ Afegeix un enter amb mida. Guarda els bits més significatius primer.
 {\em mida} & Mida del enter que volem afegir \\
 \hline
 \end{DoxyParams}
+
+\begin{DoxyCode}
+112                                             \{
+113 
+114         ByteBuffer bb = ByteBuffer.allocate(4); 
+115         bb.clear();
+116         Integer midaAux = mida%8;
+117         Double daux = \textcolor{keyword}{new} Double(mida)/8;
+118         Integer nombreBytes = \textcolor{keyword}{new} Double (Math.ceil(daux)).intValue();
+119         \textcolor{keywordflow}{if}(midaAux == 0)midaAux = 8;
+120         bb.putInt(x.intValue());
+121         \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i = 4-nombreBytes; i < 4; i++)
+122         \{
+123             byte b = bb.get(i);
+124             \hyperlink{classpersistencia_1_1output_1_1Ctrl__Output_a8c5aa5a6acb5259faeb1c05c71ddd21c}{add}(b,midaAux);
+125             midaAux = 8;
+126         \}
+127     \}
+\end{DoxyCode}
 \mbox{\Hypertarget{classpersistencia_1_1output_1_1Ctrl__Output_a5fb2f07198a77b4fac0f95ee48e3d0b9}\label{classpersistencia_1_1output_1_1Ctrl__Output_a5fb2f07198a77b4fac0f95ee48e3d0b9}} 
 \index{persistencia\+::output\+::\+Ctrl\+\_\+\+Output@{persistencia\+::output\+::\+Ctrl\+\_\+\+Output}!add@{add}}
 \index{add@{add}!persistencia\+::output\+::\+Ctrl\+\_\+\+Output@{persistencia\+::output\+::\+Ctrl\+\_\+\+Output}}
@@ -180,6 +236,14 @@ Afegeix una llista de Bytes.
 {\em arr} & Llista a afegir \\
 \hline
 \end{DoxyParams}
+
+\begin{DoxyCode}
+134                                         \{
+135         \textcolor{keywordflow}{for}(Byte b : arr)\{
+136             \hyperlink{classpersistencia_1_1output_1_1Ctrl__Output_a8c5aa5a6acb5259faeb1c05c71ddd21c}{add}(b,8);
+137         \}
+138     \}
+\end{DoxyCode}
 \mbox{\Hypertarget{classpersistencia_1_1output_1_1Ctrl__Output_ad4738467c2312b0e079c14003e548dd6}\label{classpersistencia_1_1output_1_1Ctrl__Output_ad4738467c2312b0e079c14003e548dd6}} 
 \index{persistencia\+::output\+::\+Ctrl\+\_\+\+Output@{persistencia\+::output\+::\+Ctrl\+\_\+\+Output}!add2@{add2}}
 \index{add2@{add2}!persistencia\+::output\+::\+Ctrl\+\_\+\+Output@{persistencia\+::output\+::\+Ctrl\+\_\+\+Output}}
@@ -188,7 +252,7 @@ Afegeix una llista de Bytes.
 
 
 
-Afegeix un enter amb mida. Guarda els bits menys significatius primer. 
+Afegeix un enter amb mida. Little endian (bytes menys significatius primer). 
 
 
 \begin{DoxyParams}{Parameters}
@@ -197,15 +261,72 @@ Afegeix un enter amb mida. Guarda els bits menys significatius primer.
 {\em mida} & Mida de \char`\"{}x\char`\"{}. \\
 \hline
 \end{DoxyParams}
-\mbox{\Hypertarget{classpersistencia_1_1output_1_1Ctrl__Output_aa36fdf4d9efc14d95f5d0d77838c6280}\label{classpersistencia_1_1output_1_1Ctrl__Output_aa36fdf4d9efc14d95f5d0d77838c6280}} 
-\index{persistencia\+::output\+::\+Ctrl\+\_\+\+Output@{persistencia\+::output\+::\+Ctrl\+\_\+\+Output}!get\+Out@{get\+Out}}
-\index{get\+Out@{get\+Out}!persistencia\+::output\+::\+Ctrl\+\_\+\+Output@{persistencia\+::output\+::\+Ctrl\+\_\+\+Output}}
-\subsubsection{\texorpdfstring{get\+Out()}{getOut()}}
-{\footnotesize\ttfamily public \hyperlink{classpersistencia_1_1output_1_1Output}{Output} persistencia.\+output.\+Ctrl\+\_\+\+Output.\+get\+Out (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
 
-\begin{DoxyReturn}{Returns}
-Retorna l\textquotesingle{}atribut de tipus \hyperlink{classpersistencia_1_1output_1_1Output}{Output} de la classe 
-\end{DoxyReturn}
+\begin{DoxyCode}
+148     \{
+149         \textcolor{keywordflow}{while}(mida > 0) \{
+150             \textcolor{keywordtype}{int} m;
+151             \textcolor{keywordflow}{if} (mida < 8) m = mida;
+152             \textcolor{keywordflow}{else} m = 8;
+153             byte aux = (byte)(x & ~(-1 << m));
+154             \hyperlink{classpersistencia_1_1output_1_1Ctrl__Output_a8c5aa5a6acb5259faeb1c05c71ddd21c}{add}(aux, m);
+155             x = x >> 8;
+156             mida -= 8;
+157         \}
+158     \}
+\end{DoxyCode}
+\mbox{\Hypertarget{classpersistencia_1_1output_1_1Ctrl__Output_ae6d6857910a023982900ddc857b891f0}\label{classpersistencia_1_1output_1_1Ctrl__Output_ae6d6857910a023982900ddc857b891f0}} 
+\index{persistencia\+::output\+::\+Ctrl\+\_\+\+Output@{persistencia\+::output\+::\+Ctrl\+\_\+\+Output}!add\+Metadata@{add\+Metadata}}
+\index{add\+Metadata@{add\+Metadata}!persistencia\+::output\+::\+Ctrl\+\_\+\+Output@{persistencia\+::output\+::\+Ctrl\+\_\+\+Output}}
+\subsubsection{\texorpdfstring{add\+Metadata()}{addMetadata()}}
+{\footnotesize\ttfamily void persistencia.\+output.\+Ctrl\+\_\+\+Output.\+add\+Metadata (\begin{DoxyParamCaption}\item[{String}]{method }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Afageix la metadata corresponent a un determinat algorisme. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em method} & És l\textquotesingle{}algorisme, del qual depèn la metadata. \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyCode}
+52                                            \{
+53         \textcolor{keywordflow}{if} (method.toLowerCase().equals(\textcolor{stringliteral}{"lzss"}))
+54             \hyperlink{classpersistencia_1_1output_1_1Ctrl__Output_a8c5aa5a6acb5259faeb1c05c71ddd21c}{add}((byte)2, 2);
+55         \textcolor{keywordflow}{else} \textcolor{keywordflow}{if}(method.toLowerCase().equals(\textcolor{stringliteral}{"lzw"}))
+56             \hyperlink{classpersistencia_1_1output_1_1Ctrl__Output_a8c5aa5a6acb5259faeb1c05c71ddd21c}{add}((byte)1, 2);
+57         \textcolor{keywordflow}{else} \textcolor{keywordflow}{if}(method.toLowerCase().equals(\textcolor{stringliteral}{"lz78"}))
+58             \hyperlink{classpersistencia_1_1output_1_1Ctrl__Output_a8c5aa5a6acb5259faeb1c05c71ddd21c}{add}((byte)0, 2);
+59         \textcolor{keywordflow}{else} \textcolor{keywordflow}{if}(method.toLowerCase().equals(\textcolor{stringliteral}{"jpeg"}))
+60             \hyperlink{classpersistencia_1_1output_1_1Ctrl__Output_a8c5aa5a6acb5259faeb1c05c71ddd21c}{add}((byte)3, 2);
+61     \}
+\end{DoxyCode}
+\mbox{\Hypertarget{classpersistencia_1_1output_1_1Ctrl__Output_a83bd01197acdeb0a697f21ca9854c457}\label{classpersistencia_1_1output_1_1Ctrl__Output_a83bd01197acdeb0a697f21ca9854c457}} 
+\index{persistencia\+::output\+::\+Ctrl\+\_\+\+Output@{persistencia\+::output\+::\+Ctrl\+\_\+\+Output}!initialize@{initialize}}
+\index{initialize@{initialize}!persistencia\+::output\+::\+Ctrl\+\_\+\+Output@{persistencia\+::output\+::\+Ctrl\+\_\+\+Output}}
+\subsubsection{\texorpdfstring{initialize()}{initialize()}}
+{\footnotesize\ttfamily public static void persistencia.\+output.\+Ctrl\+\_\+\+Output.\+initialize (\begin{DoxyParamCaption}\item[{String}]{path }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+
+
+Assigna un nou fitxer per esciure. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em path} & referencia el fitxer en qüestió. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyNote}{Note}
+Més info a la descripció de la classe. 
+\end{DoxyNote}
+
+\begin{DoxyCode}
+44                                                \{
+45         Output.initialize(path);
+46     \}
+\end{DoxyCode}
 \mbox{\Hypertarget{classpersistencia_1_1output_1_1Ctrl__Output_a908955c29bfecc7ebac86613bc75e9ed}\label{classpersistencia_1_1output_1_1Ctrl__Output_a908955c29bfecc7ebac86613bc75e9ed}} 
 \index{persistencia\+::output\+::\+Ctrl\+\_\+\+Output@{persistencia\+::output\+::\+Ctrl\+\_\+\+Output}!print@{print}}
 \index{print@{print}!persistencia\+::output\+::\+Ctrl\+\_\+\+Output@{persistencia\+::output\+::\+Ctrl\+\_\+\+Output}}
@@ -214,32 +335,14 @@ Retorna l\textquotesingle{}atribut de tipus \hyperlink{classpersistencia_1_1outp
 
 
 
-Escriu el contingut de la classe en un nou arxiu. 
-
-\mbox{\Hypertarget{classpersistencia_1_1output_1_1Ctrl__Output_a4536ad32e96d0270655a21c7c84f3bdd}\label{classpersistencia_1_1output_1_1Ctrl__Output_a4536ad32e96d0270655a21c7c84f3bdd}} 
-\index{persistencia\+::output\+::\+Ctrl\+\_\+\+Output@{persistencia\+::output\+::\+Ctrl\+\_\+\+Output}!print\+String@{print\+String}}
-\index{print\+String@{print\+String}!persistencia\+::output\+::\+Ctrl\+\_\+\+Output@{persistencia\+::output\+::\+Ctrl\+\_\+\+Output}}
-\subsubsection{\texorpdfstring{print\+String()}{printString()}}
-{\footnotesize\ttfamily public void persistencia.\+output.\+Ctrl\+\_\+\+Output.\+print\+String (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+Escriu el buffer a la sortida i buida el buffer. 
 
 
-
-Escriu el contingut de la classe per consola byte a byte (en format binari) 
-
-
-
-\subsection{Member Data Documentation}
-\mbox{\Hypertarget{classpersistencia_1_1output_1_1Ctrl__Output_adbfbc3bef074ccf06131270fb9fafd8d}\label{classpersistencia_1_1output_1_1Ctrl__Output_adbfbc3bef074ccf06131270fb9fafd8d}} 
-\index{persistencia\+::output\+::\+Ctrl\+\_\+\+Output@{persistencia\+::output\+::\+Ctrl\+\_\+\+Output}!Output\+\_\+\+Class@{Output\+\_\+\+Class}}
-\index{Output\+\_\+\+Class@{Output\+\_\+\+Class}!persistencia\+::output\+::\+Ctrl\+\_\+\+Output@{persistencia\+::output\+::\+Ctrl\+\_\+\+Output}}
-\subsubsection{\texorpdfstring{Output\+\_\+\+Class}{Output\_Class}}
-{\footnotesize\ttfamily \hyperlink{classpersistencia_1_1output_1_1Output}{Output} persistencia.\+output.\+Ctrl\+\_\+\+Output.\+Output\+\_\+\+Class\hspace{0.3cm}{\ttfamily [package]}}
-
-
-\begin{DoxyParams}{Parameters}
-{\em Output\+\_\+\+Class} & Classe \hyperlink{classpersistencia_1_1output_1_1Output}{Output} com atribut de la classe \\
-\hline
-\end{DoxyParams}
+\begin{DoxyCode}
+164                         \{   
+165         Output.getInstance().print();
+166     \}
+\end{DoxyCode}
 
 
 The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}

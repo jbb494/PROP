@@ -16,17 +16,14 @@ Inheritance diagram for persistencia.\+output.\+Ctrl\+\_\+\+Output\+\_\+\+Img\+:
 \end{figure}
 
 
-Collaboration diagram for persistencia.\+output.\+Ctrl\+\_\+\+Output\+\_\+\+Img\+:\nopagebreak
-\begin{figure}[H]
-\begin{center}
-\leavevmode
-\includegraphics[width=211pt]{classpersistencia_1_1output_1_1Ctrl__Output__Img__coll__graph}
-\end{center}
-\end{figure}
+Collaboration diagram for persistencia.\+output.\+Ctrl\+\_\+\+Output\+\_\+\+Img\+:
+% FIG 0
 \subsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
 \hyperlink{classpersistencia_1_1output_1_1Ctrl__Output__Img_aa3f2948dd4645d8b121eedf30daa0c3f}{Ctrl\+\_\+\+Output\+\_\+\+Img} (String path, int w, int h, int mv)
+\begin{DoxyCompactList}\small\item\em Constructor de la classe. Escriu les dades de la capçalera ppm (magic number, width, height, max\+\_\+val) \end{DoxyCompactList}\item 
+\hyperlink{classpersistencia_1_1output_1_1Ctrl__Output__Img_aa0e106a1fc829ebba51e0ba6d9d65a63}{Ctrl\+\_\+\+Output\+\_\+\+Img} (int w, int h, int mv)
 \begin{DoxyCompactList}\small\item\em Constructor de la classe. Escriu les dades de la capçalera ppm (magic number, width, height, max\+\_\+val) \end{DoxyCompactList}\item 
 int \hyperlink{classpersistencia_1_1output_1_1Ctrl__Output__Img_a736bcf38410d875d9b4a17fd2a95cc4d}{get\+Height} ()
 \begin{DoxyCompactList}\small\item\em Retorna l\textquotesingle{}alçada de la imatge. \end{DoxyCompactList}\item 
@@ -35,7 +32,7 @@ int \hyperlink{classpersistencia_1_1output_1_1Ctrl__Output__Img_ab6e88e466e6b7d7
 void \hyperlink{classpersistencia_1_1output_1_1Ctrl__Output__Img_a305a977f4d4b999cf65e14e7106b6c5e}{add} (double\mbox{[}$\,$\mbox{]}\mbox{[}$\,$\mbox{]}\mbox{[}$\,$\mbox{]}\mbox{[}$\,$\mbox{]} mat)
 \item 
 boolean \hyperlink{classpersistencia_1_1output_1_1Ctrl__Output__Img_a365d043ee5bd08c4e470bff468773552}{finished} ()
-\begin{DoxyCompactList}\small\item\em inica si s\textquotesingle{}han llegit totes les files de la imatge. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em inica si s\textquotesingle{}han escrit totes les files de la imatge. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Package Attributes}
 \begin{DoxyCompactItemize}
 \item 
@@ -49,6 +46,12 @@ int \hyperlink{classpersistencia_1_1output_1_1Ctrl__Output__Img_ad40e63d16abd905
 \item 
 int \hyperlink{classpersistencia_1_1output_1_1Ctrl__Output__Img_a586ee8128a26b6786471e040a705bdbc}{rows}
 \end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{classpersistencia_1_1output_1_1Ctrl__Output__Img_aab3258280bd6abb81d580c93eb68fb28}{init} (int w, int h, int mv)
+\begin{DoxyCompactList}\small\item\em Funció cridada per les constructores encarregada d\textquotesingle{}escriure les dades de la capçalera ppm (magic number, width, height, max\+\_\+val) \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
 
 
 \subsection{Detailed Description}
@@ -63,7 +66,7 @@ Joan Lapeyra Amat
 \mbox{\Hypertarget{classpersistencia_1_1output_1_1Ctrl__Output__Img_aa3f2948dd4645d8b121eedf30daa0c3f}\label{classpersistencia_1_1output_1_1Ctrl__Output__Img_aa3f2948dd4645d8b121eedf30daa0c3f}} 
 \index{persistencia\+::output\+::\+Ctrl\+\_\+\+Output\+\_\+\+Img@{persistencia\+::output\+::\+Ctrl\+\_\+\+Output\+\_\+\+Img}!Ctrl\+\_\+\+Output\+\_\+\+Img@{Ctrl\+\_\+\+Output\+\_\+\+Img}}
 \index{Ctrl\+\_\+\+Output\+\_\+\+Img@{Ctrl\+\_\+\+Output\+\_\+\+Img}!persistencia\+::output\+::\+Ctrl\+\_\+\+Output\+\_\+\+Img@{persistencia\+::output\+::\+Ctrl\+\_\+\+Output\+\_\+\+Img}}
-\subsubsection{\texorpdfstring{Ctrl\+\_\+\+Output\+\_\+\+Img()}{Ctrl\_Output\_Img()}}
+\subsubsection{\texorpdfstring{Ctrl\+\_\+\+Output\+\_\+\+Img()}{Ctrl\_Output\_Img()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
 {\footnotesize\ttfamily persistencia.\+output.\+Ctrl\+\_\+\+Output\+\_\+\+Img.\+Ctrl\+\_\+\+Output\+\_\+\+Img (\begin{DoxyParamCaption}\item[{String}]{path,  }\item[{int}]{w,  }\item[{int}]{h,  }\item[{int}]{mv }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
 
 
@@ -72,9 +75,36 @@ Constructor de la classe. Escriu les dades de la capçalera ppm (magic number, w
 
 
 \begin{DoxyParams}{Parameters}
-{\em path} & Path de l\textquotesingle{}arxiu output \\
+{\em path} & Path de l\textquotesingle{}arxiu output al qual comença a escriure \\
 \hline
 \end{DoxyParams}
+
+\begin{DoxyCode}
+42                                                               \{
+43         super(path);
+44         \hyperlink{classpersistencia_1_1output_1_1Ctrl__Output__Img_aab3258280bd6abb81d580c93eb68fb28}{init}(w, h, mv);        
+45     \}
+\end{DoxyCode}
+\mbox{\Hypertarget{classpersistencia_1_1output_1_1Ctrl__Output__Img_aa0e106a1fc829ebba51e0ba6d9d65a63}\label{classpersistencia_1_1output_1_1Ctrl__Output__Img_aa0e106a1fc829ebba51e0ba6d9d65a63}} 
+\index{persistencia\+::output\+::\+Ctrl\+\_\+\+Output\+\_\+\+Img@{persistencia\+::output\+::\+Ctrl\+\_\+\+Output\+\_\+\+Img}!Ctrl\+\_\+\+Output\+\_\+\+Img@{Ctrl\+\_\+\+Output\+\_\+\+Img}}
+\index{Ctrl\+\_\+\+Output\+\_\+\+Img@{Ctrl\+\_\+\+Output\+\_\+\+Img}!persistencia\+::output\+::\+Ctrl\+\_\+\+Output\+\_\+\+Img@{persistencia\+::output\+::\+Ctrl\+\_\+\+Output\+\_\+\+Img}}
+\subsubsection{\texorpdfstring{Ctrl\+\_\+\+Output\+\_\+\+Img()}{Ctrl\_Output\_Img()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily persistencia.\+output.\+Ctrl\+\_\+\+Output\+\_\+\+Img.\+Ctrl\+\_\+\+Output\+\_\+\+Img (\begin{DoxyParamCaption}\item[{int}]{w,  }\item[{int}]{h,  }\item[{int}]{mv }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Constructor de la classe. Escriu les dades de la capçalera ppm (magic number, width, height, max\+\_\+val) 
+
+\begin{DoxyNote}{Note}
+Continua escrivint al fitxer on s\textquotesingle{}estava escrivint 
+\end{DoxyNote}
+
+\begin{DoxyCode}
+52                                                  \{
+53         super();
+54         \hyperlink{classpersistencia_1_1output_1_1Ctrl__Output__Img_aab3258280bd6abb81d580c93eb68fb28}{init}(w, h, mv);        
+55     \}
+\end{DoxyCode}
 
 
 \subsection{Member Function Documentation}
@@ -84,6 +114,22 @@ Constructor de la classe. Escriu les dades de la capçalera ppm (magic number, w
 \subsubsection{\texorpdfstring{add()}{add()}}
 {\footnotesize\ttfamily void persistencia.\+output.\+Ctrl\+\_\+\+Output\+\_\+\+Img.\+add (\begin{DoxyParamCaption}\item[{double}]{mat\mbox{[}$\,$\mbox{]}\mbox{[}$\,$\mbox{]}\mbox{[}$\,$\mbox{]}\mbox{[}$\,$\mbox{]} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
 
+
+\begin{DoxyCode}
+116     \{
+117         \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} x = 0; x < 8 && \hyperlink{classpersistencia_1_1output_1_1Ctrl__Output__Img_a586ee8128a26b6786471e040a705bdbc}{rows} < \hyperlink{classpersistencia_1_1output_1_1Ctrl__Output__Img_a1d7bc52c64c79e8545ae6d1ae8b9ee2e}{height}; ++x) \{
+118             ++\hyperlink{classpersistencia_1_1output_1_1Ctrl__Output__Img_a586ee8128a26b6786471e040a705bdbc}{rows};
+119             \textcolor{comment}{//if (rows >= height) return;}
+120             \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} j = 0; j < \hyperlink{classpersistencia_1_1output_1_1Ctrl__Output__Img_ae4a01ec459078cece4815d2fe7db8a64}{width}; ++j) \{
+121                 \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} color = 0; color < 3; ++color) \{
+122                     \textcolor{keywordtype}{double} aux = mat[j/8][x][j%8][color];
+123                     \textcolor{keywordtype}{int} val = (int)(aux * (\textcolor{keywordtype}{double})\hyperlink{classpersistencia_1_1output_1_1Ctrl__Output__Img_ab9e685dae026afe43188c62d7c4fad53}{max\_val} / 255.0);
+124                     \hyperlink{classpersistencia_1_1output_1_1Ctrl__Output__Img_a305a977f4d4b999cf65e14e7106b6c5e}{add}(val, \hyperlink{classpersistencia_1_1output_1_1Ctrl__Output__Img_ad40e63d16abd9058889249f5ad84f200}{bits\_per\_val});
+125                 \}
+126             \}
+127         \}
+128     \}
+\end{DoxyCode}
 \mbox{\Hypertarget{classpersistencia_1_1output_1_1Ctrl__Output__Img_a365d043ee5bd08c4e470bff468773552}\label{classpersistencia_1_1output_1_1Ctrl__Output__Img_a365d043ee5bd08c4e470bff468773552}} 
 \index{persistencia\+::output\+::\+Ctrl\+\_\+\+Output\+\_\+\+Img@{persistencia\+::output\+::\+Ctrl\+\_\+\+Output\+\_\+\+Img}!finished@{finished}}
 \index{finished@{finished}!persistencia\+::output\+::\+Ctrl\+\_\+\+Output\+\_\+\+Img@{persistencia\+::output\+::\+Ctrl\+\_\+\+Output\+\_\+\+Img}}
@@ -92,8 +138,14 @@ Constructor de la classe. Escriu les dades de la capçalera ppm (magic number, w
 
 
 
-inica si s\textquotesingle{}han llegit totes les files de la imatge. 
+inica si s\textquotesingle{}han escrit totes les files de la imatge. 
 
+
+\begin{DoxyCode}
+136                               \{
+137         \textcolor{keywordflow}{return} (\hyperlink{classpersistencia_1_1output_1_1Ctrl__Output__Img_a586ee8128a26b6786471e040a705bdbc}{rows} >= \hyperlink{classpersistencia_1_1output_1_1Ctrl__Output__Img_a1d7bc52c64c79e8545ae6d1ae8b9ee2e}{height});
+138     \}
+\end{DoxyCode}
 \mbox{\Hypertarget{classpersistencia_1_1output_1_1Ctrl__Output__Img_a736bcf38410d875d9b4a17fd2a95cc4d}\label{classpersistencia_1_1output_1_1Ctrl__Output__Img_a736bcf38410d875d9b4a17fd2a95cc4d}} 
 \index{persistencia\+::output\+::\+Ctrl\+\_\+\+Output\+\_\+\+Img@{persistencia\+::output\+::\+Ctrl\+\_\+\+Output\+\_\+\+Img}!get\+Height@{get\+Height}}
 \index{get\+Height@{get\+Height}!persistencia\+::output\+::\+Ctrl\+\_\+\+Output\+\_\+\+Img@{persistencia\+::output\+::\+Ctrl\+\_\+\+Output\+\_\+\+Img}}
@@ -107,6 +159,12 @@ Retorna l\textquotesingle{}alçada de la imatge.
 \begin{DoxyReturn}{Returns}
 Alçada 
 \end{DoxyReturn}
+
+\begin{DoxyCode}
+93                            \{
+94         \textcolor{keywordflow}{return} \hyperlink{classpersistencia_1_1output_1_1Ctrl__Output__Img_a1d7bc52c64c79e8545ae6d1ae8b9ee2e}{height};
+95     \}
+\end{DoxyCode}
 \mbox{\Hypertarget{classpersistencia_1_1output_1_1Ctrl__Output__Img_ab6e88e466e6b7d7d847be2ac9c26c529}\label{classpersistencia_1_1output_1_1Ctrl__Output__Img_ab6e88e466e6b7d7d847be2ac9c26c529}} 
 \index{persistencia\+::output\+::\+Ctrl\+\_\+\+Output\+\_\+\+Img@{persistencia\+::output\+::\+Ctrl\+\_\+\+Output\+\_\+\+Img}!get\+Width@{get\+Width}}
 \index{get\+Width@{get\+Width}!persistencia\+::output\+::\+Ctrl\+\_\+\+Output\+\_\+\+Img@{persistencia\+::output\+::\+Ctrl\+\_\+\+Output\+\_\+\+Img}}
@@ -120,6 +178,55 @@ Retorna l\textquotesingle{}amplada de la imatge.
 \begin{DoxyReturn}{Returns}
 Amplada 
 \end{DoxyReturn}
+
+\begin{DoxyCode}
+101                           \{
+102         \textcolor{keywordflow}{return} \hyperlink{classpersistencia_1_1output_1_1Ctrl__Output__Img_ae4a01ec459078cece4815d2fe7db8a64}{width};
+103     \}
+\end{DoxyCode}
+\mbox{\Hypertarget{classpersistencia_1_1output_1_1Ctrl__Output__Img_aab3258280bd6abb81d580c93eb68fb28}\label{classpersistencia_1_1output_1_1Ctrl__Output__Img_aab3258280bd6abb81d580c93eb68fb28}} 
+\index{persistencia\+::output\+::\+Ctrl\+\_\+\+Output\+\_\+\+Img@{persistencia\+::output\+::\+Ctrl\+\_\+\+Output\+\_\+\+Img}!init@{init}}
+\index{init@{init}!persistencia\+::output\+::\+Ctrl\+\_\+\+Output\+\_\+\+Img@{persistencia\+::output\+::\+Ctrl\+\_\+\+Output\+\_\+\+Img}}
+\subsubsection{\texorpdfstring{init()}{init()}}
+{\footnotesize\ttfamily void persistencia.\+output.\+Ctrl\+\_\+\+Output\+\_\+\+Img.\+init (\begin{DoxyParamCaption}\item[{int}]{w,  }\item[{int}]{h,  }\item[{int}]{mv }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [private]}}
+
+
+
+Funció cridada per les constructores encarregada d\textquotesingle{}escriure les dades de la capçalera ppm (magic number, width, height, max\+\_\+val) 
+
+
+\begin{DoxyParams}{Parameters}
+{\em path} & Path de l\textquotesingle{}arxiu output \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyCode}
+63                                             \{
+64         \textcolor{keywordflow}{if} (mv <= 0 || mv >= 65536) \{
+65             \textcolor{keywordflow}{throw} \textcolor{keyword}{new} IllegalArgumentException(\textcolor{stringliteral}{"The maximum color value (Maxval) must be less than 65536
+       and more than zero."});
+66         \}
+67         \textcolor{keywordflow}{if} (w < 0 || h < 0) \{
+68             \textcolor{keywordflow}{throw} \textcolor{keyword}{new} IllegalArgumentException(\textcolor{stringliteral}{"Width and height must be non-negative."});
+69         \}
+70 
+71         \hyperlink{classpersistencia_1_1output_1_1Ctrl__Output__Img_ae4a01ec459078cece4815d2fe7db8a64}{width} = w;
+72         \hyperlink{classpersistencia_1_1output_1_1Ctrl__Output__Img_a1d7bc52c64c79e8545ae6d1ae8b9ee2e}{height} = h;
+73         \hyperlink{classpersistencia_1_1output_1_1Ctrl__Output__Img_ab9e685dae026afe43188c62d7c4fad53}{max\_val} = mv;
+74         \hyperlink{classpersistencia_1_1output_1_1Ctrl__Output__Img_a586ee8128a26b6786471e040a705bdbc}{rows} = 0;
+75 
+76         String s1 =
+77             \textcolor{stringliteral}{"P6 "} +
+78             Integer.toString(\hyperlink{classpersistencia_1_1output_1_1Ctrl__Output__Img_ae4a01ec459078cece4815d2fe7db8a64}{width}) + \textcolor{stringliteral}{" "} + 
+79             Integer.toString(\hyperlink{classpersistencia_1_1output_1_1Ctrl__Output__Img_a1d7bc52c64c79e8545ae6d1ae8b9ee2e}{height}) + \textcolor{stringliteral}{" "} +
+80             Integer.toString(\hyperlink{classpersistencia_1_1output_1_1Ctrl__Output__Img_ab9e685dae026afe43188c62d7c4fad53}{max\_val}) + \textcolor{stringliteral}{" "};
+81         \hyperlink{classpersistencia_1_1output_1_1Ctrl__Output__Img_a305a977f4d4b999cf65e14e7106b6c5e}{add}(s1); \textcolor{comment}{//cal assegurar-se que escrivim en ASCII}
+82 
+83         \textcolor{keywordflow}{if} (\hyperlink{classpersistencia_1_1output_1_1Ctrl__Output__Img_ab9e685dae026afe43188c62d7c4fad53}{max\_val} < 256) \hyperlink{classpersistencia_1_1output_1_1Ctrl__Output__Img_ad40e63d16abd9058889249f5ad84f200}{bits\_per\_val} = 8;
+84         \textcolor{keywordflow}{else}               \hyperlink{classpersistencia_1_1output_1_1Ctrl__Output__Img_ad40e63d16abd9058889249f5ad84f200}{bits\_per\_val} = 16;
+85 
+86     \}
+\end{DoxyCode}
 
 
 \subsection{Member Data Documentation}

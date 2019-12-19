@@ -21,6 +21,8 @@ Collaboration diagram for domini.\+utils.\+Bin\+Tree\+:\nopagebreak
 \begin{DoxyCompactList}\small\item\em Constructora\+: es crea un arbre amb un sol node que té els dos fills indefinits. \end{DoxyCompactList}\item 
 \hyperlink{classdomini_1_1utils_1_1BinTree_a83904c6ebf931ba29a134be5f29a66c7}{Bin\+Tree} (int data)
 \begin{DoxyCompactList}\small\item\em Constructora\+: es crea un arbre amb un sol node que té valor. \end{DoxyCompactList}\item 
+\hyperlink{classdomini_1_1utils_1_1BinTree_a27e66345747234352bf37b604519001a}{Bin\+Tree} (\hyperlink{classdomini_1_1utils_1_1BinTree}{Bin\+Tree} bt)
+\item 
 boolean \hyperlink{classdomini_1_1utils_1_1BinTree_a30f097b37ebea20379d9c2930e8fa27f}{well\+Defined} ()
 \begin{DoxyCompactList}\small\item\em Indica si l\textquotesingle{}arbre està ben deninit, és a dir, si tots els nodes estan inicialitzats. \end{DoxyCompactList}\item 
 int \hyperlink{classdomini_1_1utils_1_1BinTree_afb98cb560c437784fe3ce1b8d6aa046e}{size} ()
@@ -69,17 +71,26 @@ Joan Lapeyra Amat
 \mbox{\Hypertarget{classdomini_1_1utils_1_1BinTree_a46082da82a1186c5a99ae68eee6ece13}\label{classdomini_1_1utils_1_1BinTree_a46082da82a1186c5a99ae68eee6ece13}} 
 \index{domini\+::utils\+::\+Bin\+Tree@{domini\+::utils\+::\+Bin\+Tree}!Bin\+Tree@{Bin\+Tree}}
 \index{Bin\+Tree@{Bin\+Tree}!domini\+::utils\+::\+Bin\+Tree@{domini\+::utils\+::\+Bin\+Tree}}
-\subsubsection{\texorpdfstring{Bin\+Tree()}{BinTree()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+\subsubsection{\texorpdfstring{Bin\+Tree()}{BinTree()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
 {\footnotesize\ttfamily domini.\+utils.\+Bin\+Tree.\+Bin\+Tree (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
 
 
 
 Constructora\+: es crea un arbre amb un sol node que té els dos fills indefinits. 
 
+
+\begin{DoxyCode}
+37                      \{
+38         \hyperlink{classdomini_1_1utils_1_1BinTree_a357bcbcf07ba7fcb99d11b237d189e65}{arr} = \textcolor{keyword}{new} ArrayList<Integer>();
+39         \hyperlink{classdomini_1_1utils_1_1BinTree_a357bcbcf07ba7fcb99d11b237d189e65}{arr}.add(-1);
+40         \hyperlink{classdomini_1_1utils_1_1BinTree_a357bcbcf07ba7fcb99d11b237d189e65}{arr}.add(-1);
+41         \hyperlink{classdomini_1_1utils_1_1BinTree_a36f1212262c353accbc0a0385fa45a8d}{num\_undefs} = 2;
+42     \}
+\end{DoxyCode}
 \mbox{\Hypertarget{classdomini_1_1utils_1_1BinTree_a83904c6ebf931ba29a134be5f29a66c7}\label{classdomini_1_1utils_1_1BinTree_a83904c6ebf931ba29a134be5f29a66c7}} 
 \index{domini\+::utils\+::\+Bin\+Tree@{domini\+::utils\+::\+Bin\+Tree}!Bin\+Tree@{Bin\+Tree}}
 \index{Bin\+Tree@{Bin\+Tree}!domini\+::utils\+::\+Bin\+Tree@{domini\+::utils\+::\+Bin\+Tree}}
-\subsubsection{\texorpdfstring{Bin\+Tree()}{BinTree()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+\subsubsection{\texorpdfstring{Bin\+Tree()}{BinTree()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
 {\footnotesize\ttfamily domini.\+utils.\+Bin\+Tree.\+Bin\+Tree (\begin{DoxyParamCaption}\item[{int}]{data }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
 
 
@@ -91,6 +102,28 @@ Constructora\+: es crea un arbre amb un sol node que té valor.
 {\em data} & és el valor de l\textquotesingle{}unic node \\
 \hline
 \end{DoxyParams}
+
+\begin{DoxyCode}
+48                              \{
+49         \hyperlink{classdomini_1_1utils_1_1BinTree_a357bcbcf07ba7fcb99d11b237d189e65}{arr} = \textcolor{keyword}{new} ArrayList<Integer>();
+50         \hyperlink{classdomini_1_1utils_1_1BinTree_a357bcbcf07ba7fcb99d11b237d189e65}{arr}.add(-2);
+51         \hyperlink{classdomini_1_1utils_1_1BinTree_a357bcbcf07ba7fcb99d11b237d189e65}{arr}.add(data);
+52         \hyperlink{classdomini_1_1utils_1_1BinTree_a36f1212262c353accbc0a0385fa45a8d}{num\_undefs} = 0;
+53     \}
+\end{DoxyCode}
+\mbox{\Hypertarget{classdomini_1_1utils_1_1BinTree_a27e66345747234352bf37b604519001a}\label{classdomini_1_1utils_1_1BinTree_a27e66345747234352bf37b604519001a}} 
+\index{domini\+::utils\+::\+Bin\+Tree@{domini\+::utils\+::\+Bin\+Tree}!Bin\+Tree@{Bin\+Tree}}
+\index{Bin\+Tree@{Bin\+Tree}!domini\+::utils\+::\+Bin\+Tree@{domini\+::utils\+::\+Bin\+Tree}}
+\subsubsection{\texorpdfstring{Bin\+Tree()}{BinTree()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily domini.\+utils.\+Bin\+Tree.\+Bin\+Tree (\begin{DoxyParamCaption}\item[{\hyperlink{classdomini_1_1utils_1_1BinTree}{Bin\+Tree}}]{bt }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+\begin{DoxyCode}
+55                                \{
+56         \hyperlink{classdomini_1_1utils_1_1BinTree_a357bcbcf07ba7fcb99d11b237d189e65}{arr} = \textcolor{keyword}{new} ArrayList<Integer>(bt.arr);
+57         \hyperlink{classdomini_1_1utils_1_1BinTree_a36f1212262c353accbc0a0385fa45a8d}{num\_undefs} = bt.num\_undefs;
+58     \}
+\end{DoxyCode}
 
 
 \subsection{Member Function Documentation}
@@ -109,6 +142,13 @@ Salta una excepció si x no representa un node de l\textquotesingle{}arbre.
 {\em x} & vol representar un node \\
 \hline
 \end{DoxyParams}
+
+\begin{DoxyCode}
+64                                   \{
+65         \textcolor{keywordflow}{if} (2*x >= \hyperlink{classdomini_1_1utils_1_1BinTree_a357bcbcf07ba7fcb99d11b237d189e65}{arr}.size() || x < 0) \textcolor{keywordflow}{throw} \textcolor{keyword}{new} IllegalArgumentException(Integer.toString(x)+\textcolor{stringliteral}{" is an
+       invalid node"});
+66     \}
+\end{DoxyCode}
 \mbox{\Hypertarget{classdomini_1_1utils_1_1BinTree_aee1ed36b9433869f94a6ee8a6815d872}\label{classdomini_1_1utils_1_1BinTree_aee1ed36b9433869f94a6ee8a6815d872}} 
 \index{domini\+::utils\+::\+Bin\+Tree@{domini\+::utils\+::\+Bin\+Tree}!get\+Child@{get\+Child}}
 \index{get\+Child@{get\+Child}!domini\+::utils\+::\+Bin\+Tree@{domini\+::utils\+::\+Bin\+Tree}}
@@ -129,6 +169,15 @@ Retorna el node fill d\textquotesingle{}un node.
 \begin{DoxyReturn}{Returns}
 el fill del costat left\+\_\+right del node x 
 \end{DoxyReturn}
+
+\begin{DoxyCode}
+134                                                \{
+135         \textcolor{keywordflow}{if} (\hyperlink{classdomini_1_1utils_1_1BinTree_a37030e961f5613a5c74984ac002d965b}{isLeaf}(x)) \textcolor{keywordflow}{throw} \textcolor{keyword}{new} IllegalArgumentException(\textcolor{stringliteral}{"Leaf nodes have no children"});
+136         \textcolor{keywordtype}{int} despl = \hyperlink{classdomini_1_1utils_1_1BinTree_a357bcbcf07ba7fcb99d11b237d189e65}{arr}.get(2*x + (left\_right&1));
+137         \textcolor{keywordflow}{if} (despl==-1) \textcolor{keywordflow}{return} -1;
+138         \textcolor{keywordflow}{return} x + despl;
+139     \}
+\end{DoxyCode}
 \mbox{\Hypertarget{classdomini_1_1utils_1_1BinTree_ad8734786aa8ba40815e4b782264aef64}\label{classdomini_1_1utils_1_1BinTree_ad8734786aa8ba40815e4b782264aef64}} 
 \index{domini\+::utils\+::\+Bin\+Tree@{domini\+::utils\+::\+Bin\+Tree}!get\+Data@{get\+Data}}
 \index{get\+Data@{get\+Data}!domini\+::utils\+::\+Bin\+Tree@{domini\+::utils\+::\+Bin\+Tree}}
@@ -147,6 +196,13 @@ Retorna el valor d\textquotesingle{}un node.
 \begin{DoxyReturn}{Returns}
 el valor de la fulla x 
 \end{DoxyReturn}
+
+\begin{DoxyCode}
+110                               \{
+111         \textcolor{keywordflow}{if} (!\hyperlink{classdomini_1_1utils_1_1BinTree_a37030e961f5613a5c74984ac002d965b}{isLeaf}(x)) \textcolor{keywordflow}{throw} \textcolor{keyword}{new} IllegalArgumentException(\textcolor{stringliteral}{"Non-leaf nodes don't contain data"});
+112         \textcolor{keywordflow}{return} \hyperlink{classdomini_1_1utils_1_1BinTree_a357bcbcf07ba7fcb99d11b237d189e65}{arr}.get(2*x + 1);
+113     \}
+\end{DoxyCode}
 \mbox{\Hypertarget{classdomini_1_1utils_1_1BinTree_aefcc4df5059f9893eba9998cb267eced}\label{classdomini_1_1utils_1_1BinTree_aefcc4df5059f9893eba9998cb267eced}} 
 \index{domini\+::utils\+::\+Bin\+Tree@{domini\+::utils\+::\+Bin\+Tree}!is\+Init@{is\+Init}}
 \index{is\+Init@{is\+Init}!domini\+::utils\+::\+Bin\+Tree@{domini\+::utils\+::\+Bin\+Tree}}
@@ -165,6 +221,13 @@ Indica si un node està inicialitzat.
 \begin{DoxyReturn}{Returns}
 true $<$-\/$>$ x està inicialitzat 
 \end{DoxyReturn}
+
+\begin{DoxyCode}
+89                                  \{
+90         \hyperlink{classdomini_1_1utils_1_1BinTree_a32b3e2ad7dfee3425e0b1f6f8b5100f5}{checkNode}(x);
+91         \textcolor{keywordflow}{return} \hyperlink{classdomini_1_1utils_1_1BinTree_a357bcbcf07ba7fcb99d11b237d189e65}{arr}.get(2*x) != -1 || \hyperlink{classdomini_1_1utils_1_1BinTree_a357bcbcf07ba7fcb99d11b237d189e65}{arr}.get(2*x+1) != -1;
+92     \}
+\end{DoxyCode}
 \mbox{\Hypertarget{classdomini_1_1utils_1_1BinTree_a37030e961f5613a5c74984ac002d965b}\label{classdomini_1_1utils_1_1BinTree_a37030e961f5613a5c74984ac002d965b}} 
 \index{domini\+::utils\+::\+Bin\+Tree@{domini\+::utils\+::\+Bin\+Tree}!is\+Leaf@{is\+Leaf}}
 \index{is\+Leaf@{is\+Leaf}!domini\+::utils\+::\+Bin\+Tree@{domini\+::utils\+::\+Bin\+Tree}}
@@ -183,12 +246,41 @@ Indica si un node és una fulla amb valor.
 \begin{DoxyReturn}{Returns}
 true $<$-\/$>$ x és una fula amb valor 
 \end{DoxyReturn}
+
+\begin{DoxyCode}
+99                                  \{
+100         \hyperlink{classdomini_1_1utils_1_1BinTree_a32b3e2ad7dfee3425e0b1f6f8b5100f5}{checkNode}(x);
+101         \textcolor{keywordflow}{return} \hyperlink{classdomini_1_1utils_1_1BinTree_a357bcbcf07ba7fcb99d11b237d189e65}{arr}.get(2*x) == -2;
+102     \}
+\end{DoxyCode}
 \mbox{\Hypertarget{classdomini_1_1utils_1_1BinTree_a47c913594a3116b2e602c87fa4afc5c3}\label{classdomini_1_1utils_1_1BinTree_a47c913594a3116b2e602c87fa4afc5c3}} 
 \index{domini\+::utils\+::\+Bin\+Tree@{domini\+::utils\+::\+Bin\+Tree}!print@{print}}
 \index{print@{print}!domini\+::utils\+::\+Bin\+Tree@{domini\+::utils\+::\+Bin\+Tree}}
 \subsubsection{\texorpdfstring{print()}{print()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
 {\footnotesize\ttfamily void domini.\+utils.\+Bin\+Tree.\+print (\begin{DoxyParamCaption}\item[{int}]{tabs,  }\item[{int}]{x }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [private]}}
 
+
+\begin{DoxyCode}
+185                                         \{
+186         \textcolor{keywordflow}{if} (x == -1) \{
+187             \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int} i = 0; i < tabs; ++i) System.out.print(\textcolor{stringliteral}{"  "});
+188             System.out.println(\textcolor{stringliteral}{" -"});
+189             \textcolor{keywordflow}{return};
+190         \}
+191         \textcolor{comment}{//System.out.println(x);}
+192         \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int} i = 0; i < tabs; ++i) System.out.print(\textcolor{stringliteral}{"  "});
+193         \textcolor{keywordflow}{if} (\hyperlink{classdomini_1_1utils_1_1BinTree_a37030e961f5613a5c74984ac002d965b}{isLeaf}(x)) System.out.println(\textcolor{stringliteral}{"leaf: "}+Integer.toString(
+      \hyperlink{classdomini_1_1utils_1_1BinTree_ad8734786aa8ba40815e4b782264aef64}{getData}(x)));
+194         \textcolor{keywordflow}{else} \{
+195             System.out.println(\textcolor{stringliteral}{"->0"});
+196             \hyperlink{classdomini_1_1utils_1_1BinTree_a0dc4daeb2d0e221cc8fc702d1d0ec795}{print}(tabs+1, \hyperlink{classdomini_1_1utils_1_1BinTree_aee1ed36b9433869f94a6ee8a6815d872}{getChild}(x, 0));
+197             \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int} i = 0; i < tabs; ++i) System.out.print(\textcolor{stringliteral}{"  "});
+198             System.out.println(\textcolor{stringliteral}{"->1"});
+199             \hyperlink{classdomini_1_1utils_1_1BinTree_a0dc4daeb2d0e221cc8fc702d1d0ec795}{print}(tabs+1, \hyperlink{classdomini_1_1utils_1_1BinTree_aee1ed36b9433869f94a6ee8a6815d872}{getChild}(x, 1));
+200 
+201         \}
+202     \}
+\end{DoxyCode}
 \mbox{\Hypertarget{classdomini_1_1utils_1_1BinTree_a0dc4daeb2d0e221cc8fc702d1d0ec795}\label{classdomini_1_1utils_1_1BinTree_a0dc4daeb2d0e221cc8fc702d1d0ec795}} 
 \index{domini\+::utils\+::\+Bin\+Tree@{domini\+::utils\+::\+Bin\+Tree}!print@{print}}
 \index{print@{print}!domini\+::utils\+::\+Bin\+Tree@{domini\+::utils\+::\+Bin\+Tree}}
@@ -206,6 +298,12 @@ Imprimeix l\textquotesingle{}arbre en preordre inicant cada fill amb un 0 o un 1
 {\em x} & representa un node \\
 \hline
 \end{DoxyParams}
+
+\begin{DoxyCode}
+209                         \{
+210         \hyperlink{classdomini_1_1utils_1_1BinTree_a0dc4daeb2d0e221cc8fc702d1d0ec795}{print}(0,0);
+211     \}
+\end{DoxyCode}
 \mbox{\Hypertarget{classdomini_1_1utils_1_1BinTree_adbbdac6bb04a03f8f13c9152940ebbc6}\label{classdomini_1_1utils_1_1BinTree_adbbdac6bb04a03f8f13c9152940ebbc6}} 
 \index{domini\+::utils\+::\+Bin\+Tree@{domini\+::utils\+::\+Bin\+Tree}!set\+Child@{set\+Child}}
 \index{set\+Child@{set\+Child}!domini\+::utils\+::\+Bin\+Tree@{domini\+::utils\+::\+Bin\+Tree}}
@@ -228,6 +326,20 @@ Assigna un fill a un node.
 \begin{DoxyReturn}{Returns}
 el fill afegit. 
 \end{DoxyReturn}
+
+\begin{DoxyCode}
+149                                                               \{
+150         \textcolor{keywordflow}{if} (\hyperlink{classdomini_1_1utils_1_1BinTree_a37030e961f5613a5c74984ac002d965b}{isLeaf}(x)) \textcolor{keywordflow}{throw} \textcolor{keyword}{new} IllegalArgumentException(\textcolor{stringliteral}{"Leaf nodes can't have children"});
+151         \textcolor{keywordflow}{if} (\hyperlink{classdomini_1_1utils_1_1BinTree_a357bcbcf07ba7fcb99d11b237d189e65}{arr}.get(2*x + (left\_right&1)) != -1)
+152             \textcolor{keywordflow}{throw} \textcolor{keyword}{new} IllegalArgumentException(\textcolor{stringliteral}{"This node has alredy a child on this side"});
+153         \textcolor{keywordtype}{int} pos = \hyperlink{classdomini_1_1utils_1_1BinTree_afb98cb560c437784fe3ce1b8d6aa046e}{size}();
+154         \hyperlink{classdomini_1_1utils_1_1BinTree_a357bcbcf07ba7fcb99d11b237d189e65}{arr}.addAll(child.arr);
+155         \hyperlink{classdomini_1_1utils_1_1BinTree_a32b3e2ad7dfee3425e0b1f6f8b5100f5}{checkNode}(pos);
+156         \hyperlink{classdomini_1_1utils_1_1BinTree_a357bcbcf07ba7fcb99d11b237d189e65}{arr}.set(2*x + (left\_right&1), pos-x);
+157         \hyperlink{classdomini_1_1utils_1_1BinTree_a36f1212262c353accbc0a0385fa45a8d}{num\_undefs} += child.num\_undefs - 1;
+158         \textcolor{keywordflow}{return} pos;
+159     \}
+\end{DoxyCode}
 \mbox{\Hypertarget{classdomini_1_1utils_1_1BinTree_a785c86fc21b251e2252455ab4ec2b3e1}\label{classdomini_1_1utils_1_1BinTree_a785c86fc21b251e2252455ab4ec2b3e1}} 
 \index{domini\+::utils\+::\+Bin\+Tree@{domini\+::utils\+::\+Bin\+Tree}!set\+Data@{set\+Data}}
 \index{set\+Data@{set\+Data}!domini\+::utils\+::\+Bin\+Tree@{domini\+::utils\+::\+Bin\+Tree}}
@@ -243,6 +355,15 @@ Assigna un valor a un node x.
 {\em x} & representa un node no inicialitzat \\
 \hline
 \end{DoxyParams}
+
+\begin{DoxyCode}
+120                                          \{
+121         \textcolor{keywordflow}{if} (\hyperlink{classdomini_1_1utils_1_1BinTree_aefcc4df5059f9893eba9998cb267eced}{isInit}(x)) \textcolor{keywordflow}{throw} \textcolor{keyword}{new} IllegalArgumentException(\textcolor{stringliteral}{"This node has been alredy initialized"});;
+122         \hyperlink{classdomini_1_1utils_1_1BinTree_a357bcbcf07ba7fcb99d11b237d189e65}{arr}.set(2*x, -2);
+123         \hyperlink{classdomini_1_1utils_1_1BinTree_a357bcbcf07ba7fcb99d11b237d189e65}{arr}.set(2*x+1, data);
+124         \hyperlink{classdomini_1_1utils_1_1BinTree_a36f1212262c353accbc0a0385fa45a8d}{num\_undefs} -= 2;
+125     \}
+\end{DoxyCode}
 \mbox{\Hypertarget{classdomini_1_1utils_1_1BinTree_afb98cb560c437784fe3ce1b8d6aa046e}\label{classdomini_1_1utils_1_1BinTree_afb98cb560c437784fe3ce1b8d6aa046e}} 
 \index{domini\+::utils\+::\+Bin\+Tree@{domini\+::utils\+::\+Bin\+Tree}!size@{size}}
 \index{size@{size}!domini\+::utils\+::\+Bin\+Tree@{domini\+::utils\+::\+Bin\+Tree}}
@@ -256,6 +377,12 @@ Indica la mida de l\textquotesingle{}arbre.
 \begin{DoxyReturn}{Returns}
 el nombre de nodes 
 \end{DoxyReturn}
+
+\begin{DoxyCode}
+80                       \{
+81         \textcolor{keywordflow}{return} \hyperlink{classdomini_1_1utils_1_1BinTree_a357bcbcf07ba7fcb99d11b237d189e65}{arr}.size()/2;
+82     \}
+\end{DoxyCode}
 \mbox{\Hypertarget{classdomini_1_1utils_1_1BinTree_a30f097b37ebea20379d9c2930e8fa27f}\label{classdomini_1_1utils_1_1BinTree_a30f097b37ebea20379d9c2930e8fa27f}} 
 \index{domini\+::utils\+::\+Bin\+Tree@{domini\+::utils\+::\+Bin\+Tree}!well\+Defined@{well\+Defined}}
 \index{well\+Defined@{well\+Defined}!domini\+::utils\+::\+Bin\+Tree@{domini\+::utils\+::\+Bin\+Tree}}
@@ -269,6 +396,12 @@ Indica si l\textquotesingle{}arbre està ben deninit, és a dir, si tots els nod
 \begin{DoxyReturn}{Returns}
 true $<$-\/$>$ l\textquotesingle{}arbre està ben deninit 
 \end{DoxyReturn}
+
+\begin{DoxyCode}
+72                                  \{
+73         \textcolor{keywordflow}{return} \hyperlink{classdomini_1_1utils_1_1BinTree_a36f1212262c353accbc0a0385fa45a8d}{num\_undefs} == 0;
+74     \}
+\end{DoxyCode}
 
 
 \subsection{Member Data Documentation}
@@ -291,7 +424,7 @@ true $<$-\/$>$ l\textquotesingle{}arbre està ben deninit
 
 
 \begin{DoxyParams}{Parameters}
-{\em num\+\_\+undefs} & és el número de fills indefinits en el global desl nodes \\
+{\em num\+\_\+undefs} & és el número de fills indefinits en el global dels nodes \\
 \hline
 \end{DoxyParams}
 

@@ -1,4 +1,21 @@
 var searchData=
 [
-  ['jpeg',['JPEG',['../classdomini_1_1algorithm_1_1JPEG.html#a9dce5a80ccc8b626758cb4ae0b93e056',1,'domini::algorithm::JPEG']]]
+  ['ignoretherestofthebyte',['ignoreTheRestOfTheByte',['../classpersistencia_1_1input_1_1Input.html#a2b9b57fce6cb83efe70d5dc205737249',1,'persistencia::input::Input']]],
+  ['indexnode',['indexNode',['../classdomini_1_1utils_1_1Trie.html#a5c30e36df9ab804bbc054805358ecf2a',1,'domini::utils::Trie']]],
+  ['inicialitza_5fpanel',['inicialitza_panel',['../classpresentacion_1_1form_1_1mainForm.html#aae4c847b58c5d50945fa1dd27d534319',1,'presentacion::form::mainForm']]],
+  ['init',['init',['../classpersistencia_1_1output_1_1Ctrl__Output__Img.html#aab3258280bd6abb81d580c93eb68fb28',1,'persistencia::output::Ctrl_Output_Img']]],
+  ['initialize',['initialize',['../classdomini_1_1algorithm_1_1LZWTest.html#acf4cac88aafa2144dc8ce3a80453fa90',1,'domini.algorithm.LZWTest.initialize()'],['../classpersistencia_1_1input_1_1Ctrl__Input.html#a0b62b5bc05ac4a7fd919a49b201eb4fd',1,'persistencia.input.Ctrl_Input.initialize()'],['../classpersistencia_1_1input_1_1Input.html#abe53dec7aca98b94d0ec5e3200483513',1,'persistencia.input.Input.initialize()'],['../classpersistencia_1_1output_1_1Ctrl__Output.html#a83bd01197acdeb0a697f21ca9854c457',1,'persistencia.output.Ctrl_Output.initialize()'],['../classpersistencia_1_1output_1_1Output.html#a3c6c71990389c7142f5f362906c44f1a',1,'persistencia.output.Output.initialize()']]],
+  ['initreenode',['iniTreeNode',['../classpresentacion_1_1form_1_1components_1_1browserTree_1_1modelBrowser.html#afcbfb73081526954d46d410be9821848',1,'presentacion::form::components::browserTree::modelBrowser']]],
+  ['input',['Input',['../classpersistencia_1_1input_1_1Input.html#a9b30ef8d489a1fc5b4aa04a14474349a',1,'persistencia::input::Input']]],
+  ['insert',['insert',['../classdomini_1_1utils_1_1Trie.html#a3599001d9b056f0b54ab7eabb9d3510b',1,'domini::utils::Trie']]],
+  ['intorbyte',['IntorByte',['../classdomini_1_1utils_1_1IntorByte.html#ac2bae675cf6c4d8880acedeefaf24060',1,'domini::utils::IntorByte']]],
+  ['inverse_5fdiscrete_5fcosine_5ftransform',['inverse_discrete_cosine_transform',['../classdomini_1_1algorithm_1_1JPEG.html#a3a6e16b0ee34746e4b0118ed9107bd75',1,'domini::algorithm::JPEG']]],
+  ['isdirectory',['isDirectory',['../classpersistencia_1_1browser_1_1Ctrl__Browser.html#abdf13ea9a8d928b1efc6f3a69e18f6c6',1,'persistencia::browser::Ctrl_Browser']]],
+  ['isencoded',['isEncoded',['../classdomini_1_1folders_1_1Ctrl__FolderFile.html#a47a7ad955f1c579384dfba08bc7be8e0',1,'domini::folders::Ctrl_FolderFile']]],
+  ['isencodedfile',['isEncodedFile',['../classdomini_1_1folders_1_1Ctrl__FolderFile.html#a3198690e1ecc46e00431f35d87080d79',1,'domini::folders::Ctrl_FolderFile']]],
+  ['isencodedfolder',['isEncodedFolder',['../classdomini_1_1folders_1_1Ctrl__FolderFile.html#a095e6037e5cdf9a43806a308ca028791',1,'domini::folders::Ctrl_FolderFile']]],
+  ['isin',['isIn',['../classdomini_1_1utils_1_1ArrayCircular.html#aaf106d070b5937f2559a56257dc8cac3',1,'domini::utils::ArrayCircular']]],
+  ['isinit',['isInit',['../classdomini_1_1utils_1_1BinTree.html#aefcc4df5059f9893eba9998cb267eced',1,'domini::utils::BinTree']]],
+  ['isintorbyte',['IsIntorByte',['../classdomini_1_1utils_1_1IntorByte.html#a4fcfaf967d0c82b8147d632da4e238d0',1,'domini::utils::IntorByte']]],
+  ['isleaf',['isLeaf',['../classdomini_1_1utils_1_1BinTree.html#a37030e961f5613a5c74984ac002d965b',1,'domini::utils::BinTree']]]
 ];

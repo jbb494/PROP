@@ -16,18 +16,15 @@ Inheritance diagram for persistencia.\+input.\+Ctrl\+\_\+\+Input\+\_\+\+L\+Z78\+
 \end{figure}
 
 
-Collaboration diagram for persistencia.\+input.\+Ctrl\+\_\+\+Input\+\_\+\+L\+Z78\+:\nopagebreak
-\begin{figure}[H]
-\begin{center}
-\leavevmode
-\includegraphics[width=227pt]{classpersistencia_1_1input_1_1Ctrl__Input__LZ78__coll__graph}
-\end{center}
-\end{figure}
+Collaboration diagram for persistencia.\+input.\+Ctrl\+\_\+\+Input\+\_\+\+L\+Z78\+:
+% FIG 0
 \subsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
 \hyperlink{classpersistencia_1_1input_1_1Ctrl__Input__LZ78_a3629302a8c1eb2b0c7367ad0ea542780}{Ctrl\+\_\+\+Input\+\_\+\+L\+Z78} (String path)
-\begin{DoxyCompactList}\small\item\em Constructor de la classe. Crida al constructor pare \hyperlink{classpersistencia_1_1input_1_1Ctrl__Input}{Ctrl\+\_\+\+Input}. a més interepreta la metadata. \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em Constructor de la classe. Crida al constructor pare \hyperlink{classpersistencia_1_1input_1_1Ctrl__Input}{Ctrl\+\_\+\+Input}. A més interepreta la metadata. \end{DoxyCompactList}\item 
+\hyperlink{classpersistencia_1_1input_1_1Ctrl__Input__LZ78_acd6dce5cd53ccb3dd2d66d94ca1c3f58}{Ctrl\+\_\+\+Input\+\_\+\+L\+Z78} ()
+\begin{DoxyCompactList}\small\item\em Constructor de la classe. Crida al constructor pare \hyperlink{classpersistencia_1_1input_1_1Ctrl__Input}{Ctrl\+\_\+\+Input}. Assumeix que la metadata ja ha estat llegida. \end{DoxyCompactList}\item 
 \hyperlink{classdomini_1_1utils_1_1Pair}{Pair}$<$ Integer, Byte $>$ \hyperlink{classpersistencia_1_1input_1_1Ctrl__Input__LZ78_ae09535962f284be3a76369845c15b78c}{get} ()
 \end{DoxyCompactItemize}
 \subsection*{Additional Inherited Members}
@@ -47,18 +44,44 @@ Joan Bellavista Bartroli
 \mbox{\Hypertarget{classpersistencia_1_1input_1_1Ctrl__Input__LZ78_a3629302a8c1eb2b0c7367ad0ea542780}\label{classpersistencia_1_1input_1_1Ctrl__Input__LZ78_a3629302a8c1eb2b0c7367ad0ea542780}} 
 \index{persistencia\+::input\+::\+Ctrl\+\_\+\+Input\+\_\+\+L\+Z78@{persistencia\+::input\+::\+Ctrl\+\_\+\+Input\+\_\+\+L\+Z78}!Ctrl\+\_\+\+Input\+\_\+\+L\+Z78@{Ctrl\+\_\+\+Input\+\_\+\+L\+Z78}}
 \index{Ctrl\+\_\+\+Input\+\_\+\+L\+Z78@{Ctrl\+\_\+\+Input\+\_\+\+L\+Z78}!persistencia\+::input\+::\+Ctrl\+\_\+\+Input\+\_\+\+L\+Z78@{persistencia\+::input\+::\+Ctrl\+\_\+\+Input\+\_\+\+L\+Z78}}
-\subsubsection{\texorpdfstring{Ctrl\+\_\+\+Input\+\_\+\+L\+Z78()}{Ctrl\_Input\_LZ78()}}
+\subsubsection{\texorpdfstring{Ctrl\+\_\+\+Input\+\_\+\+L\+Z78()}{Ctrl\_Input\_LZ78()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
 {\footnotesize\ttfamily persistencia.\+input.\+Ctrl\+\_\+\+Input\+\_\+\+L\+Z78.\+Ctrl\+\_\+\+Input\+\_\+\+L\+Z78 (\begin{DoxyParamCaption}\item[{String}]{path }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
 
 
 
-Constructor de la classe. Crida al constructor pare \hyperlink{classpersistencia_1_1input_1_1Ctrl__Input}{Ctrl\+\_\+\+Input}. a més interepreta la metadata. 
+Constructor de la classe. Crida al constructor pare \hyperlink{classpersistencia_1_1input_1_1Ctrl__Input}{Ctrl\+\_\+\+Input}. A més interepreta la metadata. 
 
 
 \begin{DoxyParams}{Parameters}
-{\em path} & Path de l\textquotesingle{}arxiu comprimit \\
+{\em path} & Path de l\textquotesingle{}arxiu comprimit que comença a llegir. \\
 \hline
 \end{DoxyParams}
+
+\begin{DoxyCode}
+23     \{
+24         super(path);
+25         \hyperlink{classpersistencia_1_1input_1_1Ctrl__Input_a46e05fce164a6803820c02565c1769c8}{getMetadata}();
+26     \}
+\end{DoxyCode}
+\mbox{\Hypertarget{classpersistencia_1_1input_1_1Ctrl__Input__LZ78_acd6dce5cd53ccb3dd2d66d94ca1c3f58}\label{classpersistencia_1_1input_1_1Ctrl__Input__LZ78_acd6dce5cd53ccb3dd2d66d94ca1c3f58}} 
+\index{persistencia\+::input\+::\+Ctrl\+\_\+\+Input\+\_\+\+L\+Z78@{persistencia\+::input\+::\+Ctrl\+\_\+\+Input\+\_\+\+L\+Z78}!Ctrl\+\_\+\+Input\+\_\+\+L\+Z78@{Ctrl\+\_\+\+Input\+\_\+\+L\+Z78}}
+\index{Ctrl\+\_\+\+Input\+\_\+\+L\+Z78@{Ctrl\+\_\+\+Input\+\_\+\+L\+Z78}!persistencia\+::input\+::\+Ctrl\+\_\+\+Input\+\_\+\+L\+Z78@{persistencia\+::input\+::\+Ctrl\+\_\+\+Input\+\_\+\+L\+Z78}}
+\subsubsection{\texorpdfstring{Ctrl\+\_\+\+Input\+\_\+\+L\+Z78()}{Ctrl\_Input\_LZ78()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily persistencia.\+input.\+Ctrl\+\_\+\+Input\+\_\+\+L\+Z78.\+Ctrl\+\_\+\+Input\+\_\+\+L\+Z78 (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Constructor de la classe. Crida al constructor pare \hyperlink{classpersistencia_1_1input_1_1Ctrl__Input}{Ctrl\+\_\+\+Input}. Assumeix que la metadata ja ha estat llegida. 
+
+\begin{DoxyNote}{Note}
+Continua llegint el fitxer que s\textquotesingle{}estava llegint. Assumeix que la metadata ja ha estat llegida. 
+\end{DoxyNote}
+
+\begin{DoxyCode}
+33     \{
+34         super();
+35     \}
+\end{DoxyCode}
 
 
 \subsection{Member Function Documentation}
@@ -71,6 +94,15 @@ Constructor de la classe. Crida al constructor pare \hyperlink{classpersistencia
 \begin{DoxyReturn}{Returns}
 Primer parell enter-\/byte no llegit de l\textquotesingle{}arxiu comprimit amb L\+Z78 
 \end{DoxyReturn}
+
+\begin{DoxyCode}
+41                                       \{
+42         Integer intAux = \hyperlink{classdomini_1_1utils_1_1byteToConversion}{byteToConversion}.\hyperlink{classdomini_1_1utils_1_1byteToConversion_a3242a47adade49b6cfa6a9232944f587}{byteToInteger}(Input.getInstance().
+      getMoreBits(32));
+43         Byte byteAux = Input.getInstance().getBits(8);
+44         \textcolor{keywordflow}{return} \textcolor{keyword}{new} \hyperlink{classdomini_1_1utils_1_1Pair}{Pair <Integer, Byte>}(intAux, byteAux);
+45     \}
+\end{DoxyCode}
 
 
 The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}

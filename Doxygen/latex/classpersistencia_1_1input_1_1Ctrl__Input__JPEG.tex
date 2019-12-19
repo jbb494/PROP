@@ -16,22 +16,21 @@ Inheritance diagram for persistencia.\+input.\+Ctrl\+\_\+\+Input\+\_\+\+J\+P\+EG
 \end{figure}
 
 
-Collaboration diagram for persistencia.\+input.\+Ctrl\+\_\+\+Input\+\_\+\+J\+P\+EG\+:\nopagebreak
-\begin{figure}[H]
-\begin{center}
-\leavevmode
-\includegraphics[width=227pt]{classpersistencia_1_1input_1_1Ctrl__Input__JPEG__coll__graph}
-\end{center}
-\end{figure}
+Collaboration diagram for persistencia.\+input.\+Ctrl\+\_\+\+Input\+\_\+\+J\+P\+EG\+:
+% FIG 0
 \subsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
 \hyperlink{classpersistencia_1_1input_1_1Ctrl__Input__JPEG_aa7d81dfa6240a7ee82e5188fc2600c58}{Ctrl\+\_\+\+Input\+\_\+\+J\+P\+EG} (String path)
 \begin{DoxyCompactList}\small\item\em Constructor de la classe. \end{DoxyCompactList}\item 
+\hyperlink{classpersistencia_1_1input_1_1Ctrl__Input__JPEG_a5c340483ee0fc78f985bd5d2ddcbb3a0}{Ctrl\+\_\+\+Input\+\_\+\+J\+P\+EG} ()
+\begin{DoxyCompactList}\small\item\em Constructor de la classe. \end{DoxyCompactList}\item 
 int \hyperlink{classpersistencia_1_1input_1_1Ctrl__Input__JPEG_a173716ac8d17365965ede95f99a8e65a}{get\+Height} ()
 \begin{DoxyCompactList}\small\item\em Retorna l\textquotesingle{}alçada de la imatge. \end{DoxyCompactList}\item 
 int \hyperlink{classpersistencia_1_1input_1_1Ctrl__Input__JPEG_ab4cd4c26db5bd1ce89f6e53458c99ba8}{get\+Width} ()
 \begin{DoxyCompactList}\small\item\em Retorna l\textquotesingle{}amplada de la imatge. \end{DoxyCompactList}\item 
+int \hyperlink{classpersistencia_1_1input_1_1Ctrl__Input__JPEG_a7c07d70b1dd3881e3322e9e3403e2ae7}{get\+Max\+Val} ()
+\begin{DoxyCompactList}\small\item\em Retorna el valor màxim que poden prendre els enters que representan quantitat de color en la imatge ppm orignial. \end{DoxyCompactList}\item 
 int \hyperlink{classpersistencia_1_1input_1_1Ctrl__Input__JPEG_a702b13d096ba57f06b242987f0dbf4ec}{get} (int size)
 \end{DoxyCompactItemize}
 \subsection*{Package Attributes}
@@ -40,6 +39,8 @@ int \hyperlink{classpersistencia_1_1input_1_1Ctrl__Input__JPEG_a702b13d096ba57f0
 int \hyperlink{classpersistencia_1_1input_1_1Ctrl__Input__JPEG_a9e6805b998e58981f8cd7b8b6e609f27}{height}
 \item 
 int \hyperlink{classpersistencia_1_1input_1_1Ctrl__Input__JPEG_a07d902b25b54941dc0444398c7d380e7}{width}
+\item 
+int \hyperlink{classpersistencia_1_1input_1_1Ctrl__Input__JPEG_a8720235be6a11ef90085217064bbb1b0}{max\+\_\+val}
 \end{DoxyCompactItemize}
 \subsection*{Additional Inherited Members}
 
@@ -56,7 +57,7 @@ Joan Lapeyra
 \mbox{\Hypertarget{classpersistencia_1_1input_1_1Ctrl__Input__JPEG_aa7d81dfa6240a7ee82e5188fc2600c58}\label{classpersistencia_1_1input_1_1Ctrl__Input__JPEG_aa7d81dfa6240a7ee82e5188fc2600c58}} 
 \index{persistencia\+::input\+::\+Ctrl\+\_\+\+Input\+\_\+\+J\+P\+EG@{persistencia\+::input\+::\+Ctrl\+\_\+\+Input\+\_\+\+J\+P\+EG}!Ctrl\+\_\+\+Input\+\_\+\+J\+P\+EG@{Ctrl\+\_\+\+Input\+\_\+\+J\+P\+EG}}
 \index{Ctrl\+\_\+\+Input\+\_\+\+J\+P\+EG@{Ctrl\+\_\+\+Input\+\_\+\+J\+P\+EG}!persistencia\+::input\+::\+Ctrl\+\_\+\+Input\+\_\+\+J\+P\+EG@{persistencia\+::input\+::\+Ctrl\+\_\+\+Input\+\_\+\+J\+P\+EG}}
-\subsubsection{\texorpdfstring{Ctrl\+\_\+\+Input\+\_\+\+J\+P\+E\+G()}{Ctrl\_Input\_JPEG()}}
+\subsubsection{\texorpdfstring{Ctrl\+\_\+\+Input\+\_\+\+J\+P\+E\+G()}{Ctrl\_Input\_JPEG()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
 {\footnotesize\ttfamily persistencia.\+input.\+Ctrl\+\_\+\+Input\+\_\+\+J\+P\+E\+G.\+Ctrl\+\_\+\+Input\+\_\+\+J\+P\+EG (\begin{DoxyParamCaption}\item[{String}]{path }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
 
 
@@ -65,9 +66,41 @@ Constructor de la classe.
 
 
 \begin{DoxyParams}{Parameters}
-{\em path} & Path de l\textquotesingle{}arxiu input \\
+{\em path} & Path de l\textquotesingle{}arxiu que comença a lelgir. \\
 \hline
 \end{DoxyParams}
+
+\begin{DoxyCode}
+27                                         \{
+28         super(path);
+29         \hyperlink{classpersistencia_1_1input_1_1Ctrl__Input_a46e05fce164a6803820c02565c1769c8}{getMetadata}();
+30         \hyperlink{classpersistencia_1_1input_1_1Ctrl__Input__JPEG_a07d902b25b54941dc0444398c7d380e7}{width} = \textcolor{keyword}{get}(32);
+31         \hyperlink{classpersistencia_1_1input_1_1Ctrl__Input__JPEG_a9e6805b998e58981f8cd7b8b6e609f27}{height} = \textcolor{keyword}{get}(32);
+32         \hyperlink{classpersistencia_1_1input_1_1Ctrl__Input__JPEG_a8720235be6a11ef90085217064bbb1b0}{max\_val} = \textcolor{keyword}{get}(32);
+33     \}
+\end{DoxyCode}
+\mbox{\Hypertarget{classpersistencia_1_1input_1_1Ctrl__Input__JPEG_a5c340483ee0fc78f985bd5d2ddcbb3a0}\label{classpersistencia_1_1input_1_1Ctrl__Input__JPEG_a5c340483ee0fc78f985bd5d2ddcbb3a0}} 
+\index{persistencia\+::input\+::\+Ctrl\+\_\+\+Input\+\_\+\+J\+P\+EG@{persistencia\+::input\+::\+Ctrl\+\_\+\+Input\+\_\+\+J\+P\+EG}!Ctrl\+\_\+\+Input\+\_\+\+J\+P\+EG@{Ctrl\+\_\+\+Input\+\_\+\+J\+P\+EG}}
+\index{Ctrl\+\_\+\+Input\+\_\+\+J\+P\+EG@{Ctrl\+\_\+\+Input\+\_\+\+J\+P\+EG}!persistencia\+::input\+::\+Ctrl\+\_\+\+Input\+\_\+\+J\+P\+EG@{persistencia\+::input\+::\+Ctrl\+\_\+\+Input\+\_\+\+J\+P\+EG}}
+\subsubsection{\texorpdfstring{Ctrl\+\_\+\+Input\+\_\+\+J\+P\+E\+G()}{Ctrl\_Input\_JPEG()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily persistencia.\+input.\+Ctrl\+\_\+\+Input\+\_\+\+J\+P\+E\+G.\+Ctrl\+\_\+\+Input\+\_\+\+J\+P\+EG (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Constructor de la classe. 
+
+\begin{DoxyNote}{Note}
+Continua llegint el fitxer que s\textquotesingle{}estava llegint. Assumeix que la metadata ja ha estat llegida. 
+\end{DoxyNote}
+
+\begin{DoxyCode}
+39                              \{
+40         super();
+41         \hyperlink{classpersistencia_1_1input_1_1Ctrl__Input__JPEG_a07d902b25b54941dc0444398c7d380e7}{width} = \textcolor{keyword}{get}(32);
+42         \hyperlink{classpersistencia_1_1input_1_1Ctrl__Input__JPEG_a9e6805b998e58981f8cd7b8b6e609f27}{height} = \textcolor{keyword}{get}(32);
+43         \hyperlink{classpersistencia_1_1input_1_1Ctrl__Input__JPEG_a8720235be6a11ef90085217064bbb1b0}{max\_val} = \textcolor{keyword}{get}(32);
+44     \}
+\end{DoxyCode}
 
 
 \subsection{Member Function Documentation}
@@ -80,6 +113,19 @@ Constructor de la classe.
 llageix \textquotesingle{}size\textquotesingle{} bits \begin{DoxyReturn}{Returns}
 Retorna els bits llegits en forma de int. Els primers bits llegits son els menys significatius. 
 \end{DoxyReturn}
+
+\begin{DoxyCode}
+78                              \{
+79         \textcolor{keywordflow}{if} (size == 0) \textcolor{keywordflow}{return} 0;
+80         \textcolor{keywordtype}{int} sz;
+81         \textcolor{keywordflow}{if} (size < 8) sz = size;
+82         \textcolor{keywordflow}{else} sz = 8;
+83 
+84         \textcolor{keywordtype}{int} x = ((int)Input.getInstance().getBits(sz)) & ~(0xffffffff << sz);
+85         \textcolor{keywordflow}{if} (size > 8) x = x + (\textcolor{keyword}{get}(size-8) << 8);
+86         \textcolor{keywordflow}{return} x;
+87     \}
+\end{DoxyCode}
 \mbox{\Hypertarget{classpersistencia_1_1input_1_1Ctrl__Input__JPEG_a173716ac8d17365965ede95f99a8e65a}\label{classpersistencia_1_1input_1_1Ctrl__Input__JPEG_a173716ac8d17365965ede95f99a8e65a}} 
 \index{persistencia\+::input\+::\+Ctrl\+\_\+\+Input\+\_\+\+J\+P\+EG@{persistencia\+::input\+::\+Ctrl\+\_\+\+Input\+\_\+\+J\+P\+EG}!get\+Height@{get\+Height}}
 \index{get\+Height@{get\+Height}!persistencia\+::input\+::\+Ctrl\+\_\+\+Input\+\_\+\+J\+P\+EG@{persistencia\+::input\+::\+Ctrl\+\_\+\+Input\+\_\+\+J\+P\+EG}}
@@ -93,6 +139,31 @@ Retorna l\textquotesingle{}alçada de la imatge.
 \begin{DoxyReturn}{Returns}
 Alçada 
 \end{DoxyReturn}
+
+\begin{DoxyCode}
+51                            \{
+52         \textcolor{keywordflow}{return} \hyperlink{classpersistencia_1_1input_1_1Ctrl__Input__JPEG_a9e6805b998e58981f8cd7b8b6e609f27}{height};
+53     \}
+\end{DoxyCode}
+\mbox{\Hypertarget{classpersistencia_1_1input_1_1Ctrl__Input__JPEG_a7c07d70b1dd3881e3322e9e3403e2ae7}\label{classpersistencia_1_1input_1_1Ctrl__Input__JPEG_a7c07d70b1dd3881e3322e9e3403e2ae7}} 
+\index{persistencia\+::input\+::\+Ctrl\+\_\+\+Input\+\_\+\+J\+P\+EG@{persistencia\+::input\+::\+Ctrl\+\_\+\+Input\+\_\+\+J\+P\+EG}!get\+Max\+Val@{get\+Max\+Val}}
+\index{get\+Max\+Val@{get\+Max\+Val}!persistencia\+::input\+::\+Ctrl\+\_\+\+Input\+\_\+\+J\+P\+EG@{persistencia\+::input\+::\+Ctrl\+\_\+\+Input\+\_\+\+J\+P\+EG}}
+\subsubsection{\texorpdfstring{get\+Max\+Val()}{getMaxVal()}}
+{\footnotesize\ttfamily public int persistencia.\+input.\+Ctrl\+\_\+\+Input\+\_\+\+J\+P\+E\+G.\+get\+Max\+Val (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Retorna el valor màxim que poden prendre els enters que representan quantitat de color en la imatge ppm orignial. 
+
+\begin{DoxyReturn}{Returns}
+Valor màxim que poden prendre els enters que representan quantitat de color. 
+\end{DoxyReturn}
+
+\begin{DoxyCode}
+68                            \{
+69         \textcolor{keywordflow}{return} \hyperlink{classpersistencia_1_1input_1_1Ctrl__Input__JPEG_a8720235be6a11ef90085217064bbb1b0}{max\_val};
+70     \}
+\end{DoxyCode}
 \mbox{\Hypertarget{classpersistencia_1_1input_1_1Ctrl__Input__JPEG_ab4cd4c26db5bd1ce89f6e53458c99ba8}\label{classpersistencia_1_1input_1_1Ctrl__Input__JPEG_ab4cd4c26db5bd1ce89f6e53458c99ba8}} 
 \index{persistencia\+::input\+::\+Ctrl\+\_\+\+Input\+\_\+\+J\+P\+EG@{persistencia\+::input\+::\+Ctrl\+\_\+\+Input\+\_\+\+J\+P\+EG}!get\+Width@{get\+Width}}
 \index{get\+Width@{get\+Width}!persistencia\+::input\+::\+Ctrl\+\_\+\+Input\+\_\+\+J\+P\+EG@{persistencia\+::input\+::\+Ctrl\+\_\+\+Input\+\_\+\+J\+P\+EG}}
@@ -107,6 +178,12 @@ Retorna l\textquotesingle{}amplada de la imatge.
 Amplada 
 \end{DoxyReturn}
 
+\begin{DoxyCode}
+59                           \{
+60         \textcolor{keywordflow}{return} \hyperlink{classpersistencia_1_1input_1_1Ctrl__Input__JPEG_a07d902b25b54941dc0444398c7d380e7}{width};
+61     \}
+\end{DoxyCode}
+
 
 \subsection{Member Data Documentation}
 \mbox{\Hypertarget{classpersistencia_1_1input_1_1Ctrl__Input__JPEG_a9e6805b998e58981f8cd7b8b6e609f27}\label{classpersistencia_1_1input_1_1Ctrl__Input__JPEG_a9e6805b998e58981f8cd7b8b6e609f27}} 
@@ -118,6 +195,17 @@ Amplada
 
 \begin{DoxyParams}{Parameters}
 {\em height} & Alçada de la imatge \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classpersistencia_1_1input_1_1Ctrl__Input__JPEG_a8720235be6a11ef90085217064bbb1b0}\label{classpersistencia_1_1input_1_1Ctrl__Input__JPEG_a8720235be6a11ef90085217064bbb1b0}} 
+\index{persistencia\+::input\+::\+Ctrl\+\_\+\+Input\+\_\+\+J\+P\+EG@{persistencia\+::input\+::\+Ctrl\+\_\+\+Input\+\_\+\+J\+P\+EG}!max\+\_\+val@{max\+\_\+val}}
+\index{max\+\_\+val@{max\+\_\+val}!persistencia\+::input\+::\+Ctrl\+\_\+\+Input\+\_\+\+J\+P\+EG@{persistencia\+::input\+::\+Ctrl\+\_\+\+Input\+\_\+\+J\+P\+EG}}
+\subsubsection{\texorpdfstring{max\+\_\+val}{max\_val}}
+{\footnotesize\ttfamily int persistencia.\+input.\+Ctrl\+\_\+\+Input\+\_\+\+J\+P\+E\+G.\+max\+\_\+val\hspace{0.3cm}{\ttfamily [package]}}
+
+
+\begin{DoxyParams}{Parameters}
+{\em max\+\_\+val} & Valor màxim que tenien els codis de color a la imatge original. \\
 \hline
 \end{DoxyParams}
 \mbox{\Hypertarget{classpersistencia_1_1input_1_1Ctrl__Input__JPEG_a07d902b25b54941dc0444398c7d380e7}\label{classpersistencia_1_1input_1_1Ctrl__Input__JPEG_a07d902b25b54941dc0444398c7d380e7}} 

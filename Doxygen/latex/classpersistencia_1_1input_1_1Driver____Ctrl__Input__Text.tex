@@ -45,12 +45,56 @@ Comprovarà les possibles excepcions que puguin apareixer a la classe.
 {\em linea} & Número de operació realitzada \\
 \hline
 \end{DoxyParams}
+
+\begin{DoxyCode}
+38                                                                                           \{
+39         \textcolor{keywordtype}{int} op = Integer.parseInt(linea);
+40         \textcolor{keywordflow}{if}(ctrl\_input\_text == null && op > 1) \{
+41             \textcolor{keywordflow}{throw} \textcolor{keyword}{new} IllegalArgumentException(\textcolor{stringliteral}{"Debes llamar al constructor antes"});
+42         \}
+43     \}
+\end{DoxyCode}
 \mbox{\Hypertarget{classpersistencia_1_1input_1_1Driver____Ctrl__Input__Text_a38cebd4cadb9198cb6a2c87147646ec0}\label{classpersistencia_1_1input_1_1Driver____Ctrl__Input__Text_a38cebd4cadb9198cb6a2c87147646ec0}} 
 \index{persistencia\+::input\+::\+Driver\+\_\+\+\_\+\+Ctrl\+\_\+\+Input\+\_\+\+Text@{persistencia\+::input\+::\+Driver\+\_\+\+\_\+\+Ctrl\+\_\+\+Input\+\_\+\+Text}!main@{main}}
 \index{main@{main}!persistencia\+::input\+::\+Driver\+\_\+\+\_\+\+Ctrl\+\_\+\+Input\+\_\+\+Text@{persistencia\+::input\+::\+Driver\+\_\+\+\_\+\+Ctrl\+\_\+\+Input\+\_\+\+Text}}
 \subsubsection{\texorpdfstring{main()}{main()}}
 {\footnotesize\ttfamily static void persistencia.\+input.\+Driver\+\_\+\+\_\+\+Ctrl\+\_\+\+Input\+\_\+\+Text.\+main (\begin{DoxyParamCaption}\item[{String \mbox{[}$\,$\mbox{]}}]{args }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
 
+
+\begin{DoxyCode}
+45                                            \{
+46     \textcolor{keywordflow}{try} \{
+47         Ctrl\_Input\_Text ctrl\_input\_text = null;
+48         \hyperlink{classpersistencia_1_1input_1_1Driver____Ctrl__Input__Text_a51d02aa85468b0924d13e4060106459e}{showOptions}();
+49         BufferedReader reader = \textcolor{keyword}{new} BufferedReader(\textcolor{keyword}{new} InputStreamReader(System.in));
+50         String linea = \textcolor{stringliteral}{""};
+51         \textcolor{keywordflow}{while}(linea != null)\{
+52             System.out.println(\textcolor{stringliteral}{"Selecciona una opción:"});
+53             linea = reader.readLine().trim();
+54             System.out.println(\textcolor{stringliteral}{"Opción: "} + linea + \textcolor{stringliteral}{" seleccionada"});
+55             \hyperlink{classpersistencia_1_1input_1_1Driver____Ctrl__Input__Text_a3e4149adb11b97b330ce77f1c2b5ae9c}{comprovarExcepcions}(ctrl\_input\_text, linea);
+56             \textcolor{keywordflow}{switch}(linea)\{
+57                 \textcolor{keywordflow}{case} \textcolor{stringliteral}{"1"}:
+58                     System.out.println(\textcolor{stringliteral}{"Escribe el path al fichero a leer"});
+59                     String aux1 = reader.readLine().trim();
+60                     String path = aux1;
+61                     ctrl\_input\_text = \textcolor{keyword}{new} Ctrl\_Input\_Text(path);
+62                 \textcolor{keywordflow}{break};
+63                 \textcolor{keywordflow}{case} \textcolor{stringliteral}{"2"}:
+64                     System.out.println(ctrl\_input\_text.get());;
+65                 \textcolor{keywordflow}{break};
+66                 \textcolor{keywordflow}{case} \textcolor{stringliteral}{"0"}:
+67                     \textcolor{keywordflow}{return};
+68                 \textcolor{keywordflow}{default}:
+69                     System.out.println(\textcolor{stringliteral}{"La opción no es válida"});
+70                 \textcolor{keywordflow}{break};
+71             \}
+72         \}
+73     \}\textcolor{keywordflow}{catch} (Exception e) \{
+74         e.printStackTrace();
+75     \}
+76     \}
+\end{DoxyCode}
 \mbox{\Hypertarget{classpersistencia_1_1input_1_1Driver____Ctrl__Input__Text_a51d02aa85468b0924d13e4060106459e}\label{classpersistencia_1_1input_1_1Driver____Ctrl__Input__Text_a51d02aa85468b0924d13e4060106459e}} 
 \index{persistencia\+::input\+::\+Driver\+\_\+\+\_\+\+Ctrl\+\_\+\+Input\+\_\+\+Text@{persistencia\+::input\+::\+Driver\+\_\+\+\_\+\+Ctrl\+\_\+\+Input\+\_\+\+Text}!show\+Options@{show\+Options}}
 \index{show\+Options@{show\+Options}!persistencia\+::input\+::\+Driver\+\_\+\+\_\+\+Ctrl\+\_\+\+Input\+\_\+\+Text@{persistencia\+::input\+::\+Driver\+\_\+\+\_\+\+Ctrl\+\_\+\+Input\+\_\+\+Text}}
@@ -61,6 +105,24 @@ Comprovarà les possibles excepcions que puguin apareixer a la classe.
 
 Mostra les accions a realitzar durant l\textquotesingle{}execució 
 
+
+\begin{DoxyCode}
+17                                      \{
+18         System.out.println(\textcolor{stringliteral}{"Driver de Ctrl\_Input\_Text"});
+19         System.out.println(\textcolor{stringliteral}{"Constructores: "});
+20         System.out.println(\textcolor{stringliteral}{"     1. Ctrl\_Input\_Text(String path)"});
+21         System.out.println(\textcolor{stringliteral}{"     Input: 1"});
+22 
+23         System.out.println(\textcolor{stringliteral}{"Funciones: "});
+24         System.out.println(\textcolor{stringliteral}{"     2. get() "});
+25         System.out.println(\textcolor{stringliteral}{"     Input: 2"});
+26         System.out.println();
+27 
+28         System.out.println(\textcolor{stringliteral}{"     0. Sortir"});
+29         System.out.println(\textcolor{stringliteral}{"     Input: 0"});
+30         System.out.println(\textcolor{stringliteral}{"----------------------------------------"});
+31     \}
+\end{DoxyCode}
 
 
 The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}

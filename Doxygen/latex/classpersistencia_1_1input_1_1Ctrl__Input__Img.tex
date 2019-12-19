@@ -16,22 +16,21 @@ Inheritance diagram for persistencia.\+input.\+Ctrl\+\_\+\+Input\+\_\+\+Img\+:\n
 \end{figure}
 
 
-Collaboration diagram for persistencia.\+input.\+Ctrl\+\_\+\+Input\+\_\+\+Img\+:\nopagebreak
-\begin{figure}[H]
-\begin{center}
-\leavevmode
-\includegraphics[width=227pt]{classpersistencia_1_1input_1_1Ctrl__Input__Img__coll__graph}
-\end{center}
-\end{figure}
+Collaboration diagram for persistencia.\+input.\+Ctrl\+\_\+\+Input\+\_\+\+Img\+:
+% FIG 0
 \subsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
 \hyperlink{classpersistencia_1_1input_1_1Ctrl__Input__Img_a79318a62df31dfd107554e92e29f6d9a}{Ctrl\+\_\+\+Input\+\_\+\+Img} (String path)
+\begin{DoxyCompactList}\small\item\em Constructor de la classe. Llegeix les dades de la capçalera ppm (magic number, width, height, max\+\_\+val). \end{DoxyCompactList}\item 
+\hyperlink{classpersistencia_1_1input_1_1Ctrl__Input__Img_a835112b79aac4bcca9757b230063cbd4}{Ctrl\+\_\+\+Input\+\_\+\+Img} ()
 \begin{DoxyCompactList}\small\item\em Constructor de la classe. Llegeix les dades de la capçalera ppm (magic number, width, height, max\+\_\+val) \end{DoxyCompactList}\item 
 int \hyperlink{classpersistencia_1_1input_1_1Ctrl__Input__Img_a55dc2906950235559f83b4765aea73e8}{get\+Height} ()
 \begin{DoxyCompactList}\small\item\em Retorna l\textquotesingle{}alçada de la imatge. \end{DoxyCompactList}\item 
 int \hyperlink{classpersistencia_1_1input_1_1Ctrl__Input__Img_ab4cda237a52c99efb4411e0e86f3d3a2}{get\+Width} ()
 \begin{DoxyCompactList}\small\item\em Retorna l\textquotesingle{}amplada de la imatge. \end{DoxyCompactList}\item 
+int \hyperlink{classpersistencia_1_1input_1_1Ctrl__Input__Img_a53ec1b76b3fe590640ba6ed08adc2de2}{get\+Max\+Val} ()
+\begin{DoxyCompactList}\small\item\em Retorna el valor màxim que poden prendre els enters que representan quantitat de color. \end{DoxyCompactList}\item 
 double \mbox{[}$\,$\mbox{]}\mbox{[}$\,$\mbox{]}\mbox{[}$\,$\mbox{]}\mbox{[}$\,$\mbox{]} \hyperlink{classpersistencia_1_1input_1_1Ctrl__Input__Img_ac549527b5947a7ec9f40d53e492f4ffa}{get} ()
 \end{DoxyCompactItemize}
 \subsection*{Package Attributes}
@@ -44,14 +43,18 @@ int \hyperlink{classpersistencia_1_1input_1_1Ctrl__Input__Img_abc1dcc48714e9e74f
 int \hyperlink{classpersistencia_1_1input_1_1Ctrl__Input__Img_a51dd0b9243b854aa25ac4532acca4524}{width}
 \item 
 int \hyperlink{classpersistencia_1_1input_1_1Ctrl__Input__Img_a222ad0e7d241e5f396cf67c3b760f143}{bits\+\_\+per\+\_\+val}
+\item 
+int \hyperlink{classpersistencia_1_1input_1_1Ctrl__Input__Img_a1288870f941a6730df2aadbb767f6e6f}{rows}
+\item 
+double \mbox{[}$\,$\mbox{]}\mbox{[}$\,$\mbox{]}\mbox{[}$\,$\mbox{]}\mbox{[}$\,$\mbox{]} \hyperlink{classpersistencia_1_1input_1_1Ctrl__Input__Img_ae61f4eb4fa38ea6dfb1e03f443711948}{matrix} = null
 \end{DoxyCompactItemize}
 \subsection*{Private Member Functions}
 \begin{DoxyCompactItemize}
 \item 
 char \hyperlink{classpersistencia_1_1input_1_1Ctrl__Input__Img_a85a204b05c118b07d403e9b59d7f18c0}{get\+Char} ()
 \begin{DoxyCompactList}\small\item\em Llegeix un byte. \end{DoxyCompactList}\item 
-String \hyperlink{classpersistencia_1_1input_1_1Ctrl__Input__Img_a4219a110d7d84e7b883ffd88e18a0def}{get\+Word} ()
-\item 
+String \hyperlink{classpersistencia_1_1input_1_1Ctrl__Input__Img_a17676e8616da5821ca2323da4691d240}{get\+Word} ()
+\begin{DoxyCompactList}\small\item\em Llegeix caràcters fins al pròxim whitespace. \end{DoxyCompactList}\item 
 int \hyperlink{classpersistencia_1_1input_1_1Ctrl__Input__Img_a430158ff229038ddc3476d406239f4cd}{get\+Int\+A\+S\+C\+II} ()
 \end{DoxyCompactItemize}
 \subsection*{Additional Inherited Members}
@@ -69,18 +72,63 @@ Joan Lapeyra Amat
 \mbox{\Hypertarget{classpersistencia_1_1input_1_1Ctrl__Input__Img_a79318a62df31dfd107554e92e29f6d9a}\label{classpersistencia_1_1input_1_1Ctrl__Input__Img_a79318a62df31dfd107554e92e29f6d9a}} 
 \index{persistencia\+::input\+::\+Ctrl\+\_\+\+Input\+\_\+\+Img@{persistencia\+::input\+::\+Ctrl\+\_\+\+Input\+\_\+\+Img}!Ctrl\+\_\+\+Input\+\_\+\+Img@{Ctrl\+\_\+\+Input\+\_\+\+Img}}
 \index{Ctrl\+\_\+\+Input\+\_\+\+Img@{Ctrl\+\_\+\+Input\+\_\+\+Img}!persistencia\+::input\+::\+Ctrl\+\_\+\+Input\+\_\+\+Img@{persistencia\+::input\+::\+Ctrl\+\_\+\+Input\+\_\+\+Img}}
-\subsubsection{\texorpdfstring{Ctrl\+\_\+\+Input\+\_\+\+Img()}{Ctrl\_Input\_Img()}}
+\subsubsection{\texorpdfstring{Ctrl\+\_\+\+Input\+\_\+\+Img()}{Ctrl\_Input\_Img()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
 {\footnotesize\ttfamily persistencia.\+input.\+Ctrl\+\_\+\+Input\+\_\+\+Img.\+Ctrl\+\_\+\+Input\+\_\+\+Img (\begin{DoxyParamCaption}\item[{String}]{path }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Constructor de la classe. Llegeix les dades de la capçalera ppm (magic number, width, height, max\+\_\+val). 
+
+
+\begin{DoxyParams}{Parameters}
+{\em path} & Path de l\textquotesingle{}arxiu que comença a llegir. \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyCode}
+42                                        \{
+43         super(path);
+44         String str = \hyperlink{classpersistencia_1_1input_1_1Ctrl__Input__Img_a17676e8616da5821ca2323da4691d240}{getWord}();
+45         \textcolor{keywordflow}{if} (! str.equals(\textcolor{stringliteral}{"P6"})) \{
+46             \textcolor{keywordflow}{throw} \textcolor{keyword}{new} IllegalArgumentException(\textcolor{stringliteral}{"Magic number of "}+path+\textcolor{stringliteral}{" is "}+str+\textcolor{stringliteral}{". It should be P6. It
+       may not be in ppm format."});
+47         \}
+48         \hyperlink{classpersistencia_1_1input_1_1Ctrl__Input__Img_a51dd0b9243b854aa25ac4532acca4524}{width} = \hyperlink{classpersistencia_1_1input_1_1Ctrl__Input__Img_a430158ff229038ddc3476d406239f4cd}{getIntASCII}();
+49         \hyperlink{classpersistencia_1_1input_1_1Ctrl__Input__Img_abc1dcc48714e9e74fb8ae0e0b81f91bf}{height} = \hyperlink{classpersistencia_1_1input_1_1Ctrl__Input__Img_a430158ff229038ddc3476d406239f4cd}{getIntASCII}();
+50         \hyperlink{classpersistencia_1_1input_1_1Ctrl__Input__Img_a1b8fa2d000a1d5d873be62d1f609e4be}{max\_val} = \hyperlink{classpersistencia_1_1input_1_1Ctrl__Input__Img_a430158ff229038ddc3476d406239f4cd}{getIntASCII}();
+51         \textcolor{keywordflow}{if} (\hyperlink{classpersistencia_1_1input_1_1Ctrl__Input__Img_a1b8fa2d000a1d5d873be62d1f609e4be}{max\_val} < 256) \hyperlink{classpersistencia_1_1input_1_1Ctrl__Input__Img_a222ad0e7d241e5f396cf67c3b760f143}{bits\_per\_val} = 8;
+52         \textcolor{keywordflow}{else}               \hyperlink{classpersistencia_1_1input_1_1Ctrl__Input__Img_a222ad0e7d241e5f396cf67c3b760f143}{bits\_per\_val} = 16;
+53     \}
+\end{DoxyCode}
+\mbox{\Hypertarget{classpersistencia_1_1input_1_1Ctrl__Input__Img_a835112b79aac4bcca9757b230063cbd4}\label{classpersistencia_1_1input_1_1Ctrl__Input__Img_a835112b79aac4bcca9757b230063cbd4}} 
+\index{persistencia\+::input\+::\+Ctrl\+\_\+\+Input\+\_\+\+Img@{persistencia\+::input\+::\+Ctrl\+\_\+\+Input\+\_\+\+Img}!Ctrl\+\_\+\+Input\+\_\+\+Img@{Ctrl\+\_\+\+Input\+\_\+\+Img}}
+\index{Ctrl\+\_\+\+Input\+\_\+\+Img@{Ctrl\+\_\+\+Input\+\_\+\+Img}!persistencia\+::input\+::\+Ctrl\+\_\+\+Input\+\_\+\+Img@{persistencia\+::input\+::\+Ctrl\+\_\+\+Input\+\_\+\+Img}}
+\subsubsection{\texorpdfstring{Ctrl\+\_\+\+Input\+\_\+\+Img()}{Ctrl\_Input\_Img()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily persistencia.\+input.\+Ctrl\+\_\+\+Input\+\_\+\+Img.\+Ctrl\+\_\+\+Input\+\_\+\+Img (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
 
 
 
 Constructor de la classe. Llegeix les dades de la capçalera ppm (magic number, width, height, max\+\_\+val) 
 
+\begin{DoxyNote}{Note}
+Continua llegint el fitxer que s\textquotesingle{}estava llegint. 
+\end{DoxyNote}
 
-\begin{DoxyParams}{Parameters}
-{\em path} & Path de l\textquotesingle{}arxiu input \\
-\hline
-\end{DoxyParams}
+\begin{DoxyCode}
+60                             \{
+61         super();
+62         String str = \hyperlink{classpersistencia_1_1input_1_1Ctrl__Input__Img_a17676e8616da5821ca2323da4691d240}{getWord}();
+63         \textcolor{keywordflow}{if} (! str.equals(\textcolor{stringliteral}{"P6"})) \{
+64             \textcolor{keywordflow}{throw} \textcolor{keyword}{new} IllegalArgumentException(\textcolor{stringliteral}{"Magic number is "}+str+\textcolor{stringliteral}{". It should be P6. It may not be in
+       ppm format."});
+65         \}
+66         \hyperlink{classpersistencia_1_1input_1_1Ctrl__Input__Img_a51dd0b9243b854aa25ac4532acca4524}{width} = \hyperlink{classpersistencia_1_1input_1_1Ctrl__Input__Img_a430158ff229038ddc3476d406239f4cd}{getIntASCII}();
+67         \hyperlink{classpersistencia_1_1input_1_1Ctrl__Input__Img_abc1dcc48714e9e74fb8ae0e0b81f91bf}{height} = \hyperlink{classpersistencia_1_1input_1_1Ctrl__Input__Img_a430158ff229038ddc3476d406239f4cd}{getIntASCII}();
+68         \hyperlink{classpersistencia_1_1input_1_1Ctrl__Input__Img_a1b8fa2d000a1d5d873be62d1f609e4be}{max\_val} = \hyperlink{classpersistencia_1_1input_1_1Ctrl__Input__Img_a430158ff229038ddc3476d406239f4cd}{getIntASCII}();
+69         \textcolor{keywordflow}{if} (\hyperlink{classpersistencia_1_1input_1_1Ctrl__Input__Img_a1b8fa2d000a1d5d873be62d1f609e4be}{max\_val} < 256) \hyperlink{classpersistencia_1_1input_1_1Ctrl__Input__Img_a222ad0e7d241e5f396cf67c3b760f143}{bits\_per\_val} = 8;
+70         \textcolor{keywordflow}{else}               \hyperlink{classpersistencia_1_1input_1_1Ctrl__Input__Img_a222ad0e7d241e5f396cf67c3b760f143}{bits\_per\_val} = 16;
+71     \}
+\end{DoxyCode}
 
 
 \subsection{Member Function Documentation}
@@ -90,6 +138,35 @@ Constructor de la classe. Llegeix les dades de la capçalera ppm (magic number, 
 \subsubsection{\texorpdfstring{get()}{get()}}
 {\footnotesize\ttfamily double \mbox{[}$\,$\mbox{]}\mbox{[}$\,$\mbox{]}\mbox{[}$\,$\mbox{]}\mbox{[}$\,$\mbox{]} persistencia.\+input.\+Ctrl\+\_\+\+Input\+\_\+\+Img.\+get (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
 
+
+\begin{DoxyCode}
+110     \{
+111         \textcolor{keywordtype}{int} n\_blocks;
+112         \textcolor{keywordflow}{if} (\hyperlink{classpersistencia_1_1input_1_1Ctrl__Input__Img_a51dd0b9243b854aa25ac4532acca4524}{width}%8 == 0) n\_blocks = \hyperlink{classpersistencia_1_1input_1_1Ctrl__Input__Img_a51dd0b9243b854aa25ac4532acca4524}{width}/8;
+113         \textcolor{keywordflow}{else} n\_blocks = \hyperlink{classpersistencia_1_1input_1_1Ctrl__Input__Img_a51dd0b9243b854aa25ac4532acca4524}{width}/8 + 1;
+114 
+115         \textcolor{keywordflow}{if} (\hyperlink{classpersistencia_1_1input_1_1Ctrl__Input__Img_ae61f4eb4fa38ea6dfb1e03f443711948}{matrix} == null) \hyperlink{classpersistencia_1_1input_1_1Ctrl__Input__Img_ae61f4eb4fa38ea6dfb1e03f443711948}{matrix} = \textcolor{keyword}{new} \textcolor{keywordtype}{double}[n\_blocks][8][8][3];
+116 
+117         \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} x = 0; x < 8 && \hyperlink{classpersistencia_1_1input_1_1Ctrl__Input__Img_a1288870f941a6730df2aadbb767f6e6f}{rows} < \hyperlink{classpersistencia_1_1input_1_1Ctrl__Input__Img_abc1dcc48714e9e74fb8ae0e0b81f91bf}{height}; ++x) \{
+118             ++\hyperlink{classpersistencia_1_1input_1_1Ctrl__Input__Img_a1288870f941a6730df2aadbb767f6e6f}{rows};
+119             \textcolor{comment}{//if (rows >= height) return matrix;}
+120             \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} j = 0; j < 8*n\_blocks; ++j) \{
+121                 \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} color = 0; color < 3; ++color) \{
+122                     \textcolor{keywordflow}{if} (j < \hyperlink{classpersistencia_1_1input_1_1Ctrl__Input__Img_a51dd0b9243b854aa25ac4532acca4524}{width}) \{
+123                         \textcolor{keywordtype}{int} val = byteToConversion.byteToInteger(Input.getInstance().getMoreBits(
+      \hyperlink{classpersistencia_1_1input_1_1Ctrl__Input__Img_a222ad0e7d241e5f396cf67c3b760f143}{bits\_per\_val}));
+124                         \hyperlink{classpersistencia_1_1input_1_1Ctrl__Input__Img_ae61f4eb4fa38ea6dfb1e03f443711948}{matrix}[j/8][x][j%8][color] = (double)val / (\textcolor{keywordtype}{double})
+      \hyperlink{classpersistencia_1_1input_1_1Ctrl__Input__Img_a1b8fa2d000a1d5d873be62d1f609e4be}{max\_val} * 255.0;
+125                     \}
+126                     \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (j-8 >= 0) \{
+127                         \hyperlink{classpersistencia_1_1input_1_1Ctrl__Input__Img_ae61f4eb4fa38ea6dfb1e03f443711948}{matrix}[j/8][x][j%8][color] = \hyperlink{classpersistencia_1_1input_1_1Ctrl__Input__Img_ae61f4eb4fa38ea6dfb1e03f443711948}{matrix}[j/8-1][x][j%8][color];
+128                     \}
+129                 \}
+130             \}
+131         \}
+132         \textcolor{keywordflow}{return} \hyperlink{classpersistencia_1_1input_1_1Ctrl__Input__Img_ae61f4eb4fa38ea6dfb1e03f443711948}{matrix};
+133     \}
+\end{DoxyCode}
 \mbox{\Hypertarget{classpersistencia_1_1input_1_1Ctrl__Input__Img_a85a204b05c118b07d403e9b59d7f18c0}\label{classpersistencia_1_1input_1_1Ctrl__Input__Img_a85a204b05c118b07d403e9b59d7f18c0}} 
 \index{persistencia\+::input\+::\+Ctrl\+\_\+\+Input\+\_\+\+Img@{persistencia\+::input\+::\+Ctrl\+\_\+\+Input\+\_\+\+Img}!get\+Char@{get\+Char}}
 \index{get\+Char@{get\+Char}!persistencia\+::input\+::\+Ctrl\+\_\+\+Input\+\_\+\+Img@{persistencia\+::input\+::\+Ctrl\+\_\+\+Input\+\_\+\+Img}}
@@ -102,15 +179,17 @@ Llegeix un byte.
 
 Llegeix caràcters fins al pròxim whitespace.\+S\textquotesingle{}espera que representi un número.
 
-Llegeix caràcters fins al pròxim whitespace.
-
 \begin{DoxyReturn}{Returns}
 Retorna el byte llegit en forma de ceràcter
 
-Retorna la paraula llegida
-
 Retorna el número llegit 
 \end{DoxyReturn}
+
+\begin{DoxyCode}
+142                            \{
+143         \textcolor{keywordflow}{return} (\textcolor{keywordtype}{char})Input.getInstance().getBits(8);
+144     \}
+\end{DoxyCode}
 \mbox{\Hypertarget{classpersistencia_1_1input_1_1Ctrl__Input__Img_a55dc2906950235559f83b4765aea73e8}\label{classpersistencia_1_1input_1_1Ctrl__Input__Img_a55dc2906950235559f83b4765aea73e8}} 
 \index{persistencia\+::input\+::\+Ctrl\+\_\+\+Input\+\_\+\+Img@{persistencia\+::input\+::\+Ctrl\+\_\+\+Input\+\_\+\+Img}!get\+Height@{get\+Height}}
 \index{get\+Height@{get\+Height}!persistencia\+::input\+::\+Ctrl\+\_\+\+Input\+\_\+\+Img@{persistencia\+::input\+::\+Ctrl\+\_\+\+Input\+\_\+\+Img}}
@@ -124,12 +203,43 @@ Retorna l\textquotesingle{}alçada de la imatge.
 \begin{DoxyReturn}{Returns}
 Alçada 
 \end{DoxyReturn}
+
+\begin{DoxyCode}
+78                            \{
+79         \textcolor{keywordflow}{return} \hyperlink{classpersistencia_1_1input_1_1Ctrl__Input__Img_abc1dcc48714e9e74fb8ae0e0b81f91bf}{height};
+80     \}
+\end{DoxyCode}
 \mbox{\Hypertarget{classpersistencia_1_1input_1_1Ctrl__Input__Img_a430158ff229038ddc3476d406239f4cd}\label{classpersistencia_1_1input_1_1Ctrl__Input__Img_a430158ff229038ddc3476d406239f4cd}} 
 \index{persistencia\+::input\+::\+Ctrl\+\_\+\+Input\+\_\+\+Img@{persistencia\+::input\+::\+Ctrl\+\_\+\+Input\+\_\+\+Img}!get\+Int\+A\+S\+C\+II@{get\+Int\+A\+S\+C\+II}}
 \index{get\+Int\+A\+S\+C\+II@{get\+Int\+A\+S\+C\+II}!persistencia\+::input\+::\+Ctrl\+\_\+\+Input\+\_\+\+Img@{persistencia\+::input\+::\+Ctrl\+\_\+\+Input\+\_\+\+Img}}
 \subsubsection{\texorpdfstring{get\+Int\+A\+S\+C\+I\+I()}{getIntASCII()}}
 {\footnotesize\ttfamily int persistencia.\+input.\+Ctrl\+\_\+\+Input\+\_\+\+Img.\+get\+Int\+A\+S\+C\+II (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [private]}}
 
+
+\begin{DoxyCode}
+180                               \{
+181         \textcolor{keywordflow}{return} Integer.parseInt( \hyperlink{classpersistencia_1_1input_1_1Ctrl__Input__Img_a17676e8616da5821ca2323da4691d240}{getWord}() );
+182     \}
+\end{DoxyCode}
+\mbox{\Hypertarget{classpersistencia_1_1input_1_1Ctrl__Input__Img_a53ec1b76b3fe590640ba6ed08adc2de2}\label{classpersistencia_1_1input_1_1Ctrl__Input__Img_a53ec1b76b3fe590640ba6ed08adc2de2}} 
+\index{persistencia\+::input\+::\+Ctrl\+\_\+\+Input\+\_\+\+Img@{persistencia\+::input\+::\+Ctrl\+\_\+\+Input\+\_\+\+Img}!get\+Max\+Val@{get\+Max\+Val}}
+\index{get\+Max\+Val@{get\+Max\+Val}!persistencia\+::input\+::\+Ctrl\+\_\+\+Input\+\_\+\+Img@{persistencia\+::input\+::\+Ctrl\+\_\+\+Input\+\_\+\+Img}}
+\subsubsection{\texorpdfstring{get\+Max\+Val()}{getMaxVal()}}
+{\footnotesize\ttfamily public int persistencia.\+input.\+Ctrl\+\_\+\+Input\+\_\+\+Img.\+get\+Max\+Val (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Retorna el valor màxim que poden prendre els enters que representan quantitat de color. 
+
+\begin{DoxyReturn}{Returns}
+Valor màxim que poden prendre els enters que representan quantitat de color. 
+\end{DoxyReturn}
+
+\begin{DoxyCode}
+94                            \{
+95         \textcolor{keywordflow}{return} \hyperlink{classpersistencia_1_1input_1_1Ctrl__Input__Img_a1b8fa2d000a1d5d873be62d1f609e4be}{max\_val};
+96     \}
+\end{DoxyCode}
 \mbox{\Hypertarget{classpersistencia_1_1input_1_1Ctrl__Input__Img_ab4cda237a52c99efb4411e0e86f3d3a2}\label{classpersistencia_1_1input_1_1Ctrl__Input__Img_ab4cda237a52c99efb4411e0e86f3d3a2}} 
 \index{persistencia\+::input\+::\+Ctrl\+\_\+\+Input\+\_\+\+Img@{persistencia\+::input\+::\+Ctrl\+\_\+\+Input\+\_\+\+Img}!get\+Width@{get\+Width}}
 \index{get\+Width@{get\+Width}!persistencia\+::input\+::\+Ctrl\+\_\+\+Input\+\_\+\+Img@{persistencia\+::input\+::\+Ctrl\+\_\+\+Input\+\_\+\+Img}}
@@ -143,12 +253,51 @@ Retorna l\textquotesingle{}amplada de la imatge.
 \begin{DoxyReturn}{Returns}
 Amplada 
 \end{DoxyReturn}
-\mbox{\Hypertarget{classpersistencia_1_1input_1_1Ctrl__Input__Img_a4219a110d7d84e7b883ffd88e18a0def}\label{classpersistencia_1_1input_1_1Ctrl__Input__Img_a4219a110d7d84e7b883ffd88e18a0def}} 
+
+\begin{DoxyCode}
+86                           \{
+87         \textcolor{keywordflow}{return} \hyperlink{classpersistencia_1_1input_1_1Ctrl__Input__Img_a51dd0b9243b854aa25ac4532acca4524}{width};
+88     \}
+\end{DoxyCode}
+\mbox{\Hypertarget{classpersistencia_1_1input_1_1Ctrl__Input__Img_a17676e8616da5821ca2323da4691d240}\label{classpersistencia_1_1input_1_1Ctrl__Input__Img_a17676e8616da5821ca2323da4691d240}} 
 \index{persistencia\+::input\+::\+Ctrl\+\_\+\+Input\+\_\+\+Img@{persistencia\+::input\+::\+Ctrl\+\_\+\+Input\+\_\+\+Img}!get\+Word@{get\+Word}}
 \index{get\+Word@{get\+Word}!persistencia\+::input\+::\+Ctrl\+\_\+\+Input\+\_\+\+Img@{persistencia\+::input\+::\+Ctrl\+\_\+\+Input\+\_\+\+Img}}
 \subsubsection{\texorpdfstring{get\+Word()}{getWord()}}
-{\footnotesize\ttfamily String persistencia.\+input.\+Ctrl\+\_\+\+Input\+\_\+\+Img.\+get\+Word (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [private]}}
+{\footnotesize\ttfamily private String persistencia.\+input.\+Ctrl\+\_\+\+Input\+\_\+\+Img.\+get\+Word (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [private]}}
 
+
+
+Llegeix caràcters fins al pròxim whitespace. 
+
+\begin{DoxyReturn}{Returns}
+Retorna la paraula llegida 
+\end{DoxyReturn}
+
+\begin{DoxyCode}
+151                              \{
+152         String str = \textcolor{stringliteral}{""};
+153         \textcolor{keywordtype}{char} c;
+154 
+155         \textcolor{keywordflow}{do} c = \hyperlink{classpersistencia_1_1input_1_1Ctrl__Input__Img_a85a204b05c118b07d403e9b59d7f18c0}{getChar}(); 
+156         \textcolor{keywordflow}{while} (Character.isWhitespace(c) && !\hyperlink{classpersistencia_1_1input_1_1Ctrl__Input_a5a94d207dce0fd592b5ac17f55154d4f}{finished}());
+157 
+158         \textcolor{keywordflow}{while} (c == \textcolor{charliteral}{'#'}) \{
+159             \textcolor{keywordflow}{do} c = \hyperlink{classpersistencia_1_1input_1_1Ctrl__Input__Img_a85a204b05c118b07d403e9b59d7f18c0}{getChar}();
+160             \textcolor{keywordflow}{while} (c != \textcolor{charliteral}{'\(\backslash\)n'});
+161 
+162             \textcolor{keywordflow}{do} c = \hyperlink{classpersistencia_1_1input_1_1Ctrl__Input__Img_a85a204b05c118b07d403e9b59d7f18c0}{getChar}(); 
+163             \textcolor{keywordflow}{while} (Character.isWhitespace(c) && !\hyperlink{classpersistencia_1_1input_1_1Ctrl__Input_a5a94d207dce0fd592b5ac17f55154d4f}{finished}());
+164         \}
+165         
+166         \textcolor{keywordflow}{do} \{
+167             str += c;
+168             c = \hyperlink{classpersistencia_1_1input_1_1Ctrl__Input__Img_a85a204b05c118b07d403e9b59d7f18c0}{getChar}();
+169         \} \textcolor{keywordflow}{while} (!Character.isWhitespace(c) && !\hyperlink{classpersistencia_1_1input_1_1Ctrl__Input_a5a94d207dce0fd592b5ac17f55154d4f}{finished}());
+170 
+171         \textcolor{keywordflow}{return} str;
+172         
+173     \}
+\end{DoxyCode}
 
 
 \subsection{Member Data Documentation}
@@ -174,6 +323,17 @@ Amplada
 {\em height} & Alçada de la imatge \\
 \hline
 \end{DoxyParams}
+\mbox{\Hypertarget{classpersistencia_1_1input_1_1Ctrl__Input__Img_ae61f4eb4fa38ea6dfb1e03f443711948}\label{classpersistencia_1_1input_1_1Ctrl__Input__Img_ae61f4eb4fa38ea6dfb1e03f443711948}} 
+\index{persistencia\+::input\+::\+Ctrl\+\_\+\+Input\+\_\+\+Img@{persistencia\+::input\+::\+Ctrl\+\_\+\+Input\+\_\+\+Img}!matrix@{matrix}}
+\index{matrix@{matrix}!persistencia\+::input\+::\+Ctrl\+\_\+\+Input\+\_\+\+Img@{persistencia\+::input\+::\+Ctrl\+\_\+\+Input\+\_\+\+Img}}
+\subsubsection{\texorpdfstring{matrix}{matrix}}
+{\footnotesize\ttfamily double \mbox{[}$\,$\mbox{]}\mbox{[}$\,$\mbox{]}\mbox{[}$\,$\mbox{]}\mbox{[}$\,$\mbox{]} persistencia.\+input.\+Ctrl\+\_\+\+Input\+\_\+\+Img.\+matrix = null\hspace{0.3cm}{\ttfamily [package]}}
+
+
+\begin{DoxyParams}{Parameters}
+{\em matrix} & Última matriu retornada a la fnció \hyperlink{classpersistencia_1_1input_1_1Ctrl__Input__Img_ac549527b5947a7ec9f40d53e492f4ffa}{get()} \\
+\hline
+\end{DoxyParams}
 \mbox{\Hypertarget{classpersistencia_1_1input_1_1Ctrl__Input__Img_a1b8fa2d000a1d5d873be62d1f609e4be}\label{classpersistencia_1_1input_1_1Ctrl__Input__Img_a1b8fa2d000a1d5d873be62d1f609e4be}} 
 \index{persistencia\+::input\+::\+Ctrl\+\_\+\+Input\+\_\+\+Img@{persistencia\+::input\+::\+Ctrl\+\_\+\+Input\+\_\+\+Img}!max\+\_\+val@{max\+\_\+val}}
 \index{max\+\_\+val@{max\+\_\+val}!persistencia\+::input\+::\+Ctrl\+\_\+\+Input\+\_\+\+Img@{persistencia\+::input\+::\+Ctrl\+\_\+\+Input\+\_\+\+Img}}
@@ -183,6 +343,17 @@ Amplada
 
 \begin{DoxyParams}{Parameters}
 {\em max\+\_\+val} & Valor màxim que poden prendre els enters que representan quantitat de color. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classpersistencia_1_1input_1_1Ctrl__Input__Img_a1288870f941a6730df2aadbb767f6e6f}\label{classpersistencia_1_1input_1_1Ctrl__Input__Img_a1288870f941a6730df2aadbb767f6e6f}} 
+\index{persistencia\+::input\+::\+Ctrl\+\_\+\+Input\+\_\+\+Img@{persistencia\+::input\+::\+Ctrl\+\_\+\+Input\+\_\+\+Img}!rows@{rows}}
+\index{rows@{rows}!persistencia\+::input\+::\+Ctrl\+\_\+\+Input\+\_\+\+Img@{persistencia\+::input\+::\+Ctrl\+\_\+\+Input\+\_\+\+Img}}
+\subsubsection{\texorpdfstring{rows}{rows}}
+{\footnotesize\ttfamily int persistencia.\+input.\+Ctrl\+\_\+\+Input\+\_\+\+Img.\+rows\hspace{0.3cm}{\ttfamily [package]}}
+
+
+\begin{DoxyParams}{Parameters}
+{\em rows} & Quantitat files llegides. \\
 \hline
 \end{DoxyParams}
 \mbox{\Hypertarget{classpersistencia_1_1input_1_1Ctrl__Input__Img_a51dd0b9243b854aa25ac4532acca4524}\label{classpersistencia_1_1input_1_1Ctrl__Input__Img_a51dd0b9243b854aa25ac4532acca4524}} 

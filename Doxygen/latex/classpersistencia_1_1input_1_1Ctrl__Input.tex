@@ -7,40 +7,28 @@ Classe de \hyperlink{classpersistencia_1_1input_1_1Ctrl__Input}{Ctrl\+\_\+\+Inpu
 
 
 
-Inheritance diagram for persistencia.\+input.\+Ctrl\+\_\+\+Input\+:\nopagebreak
-\begin{figure}[H]
-\begin{center}
-\leavevmode
-\includegraphics[width=340pt]{classpersistencia_1_1input_1_1Ctrl__Input__inherit__graph}
-\end{center}
-\end{figure}
-
-
-Collaboration diagram for persistencia.\+input.\+Ctrl\+\_\+\+Input\+:\nopagebreak
-\begin{figure}[H]
-\begin{center}
-\leavevmode
-\includegraphics[width=227pt]{classpersistencia_1_1input_1_1Ctrl__Input__coll__graph}
-\end{center}
-\end{figure}
+Inheritance diagram for persistencia.\+input.\+Ctrl\+\_\+\+Input\+:
+% FIG 0
 \subsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
 \hyperlink{classpersistencia_1_1input_1_1Ctrl__Input_a00f3fa14d0329d6e4b9ddbe39ada1258}{Ctrl\+\_\+\+Input} (String path)
-\begin{DoxyCompactList}\small\item\em Constructor de la classe. \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em Constructor de la classe. Comança a llegir un fitxer. \end{DoxyCompactList}\item 
+\hyperlink{classpersistencia_1_1input_1_1Ctrl__Input_a817ed61e715eb12261d844de34d84bec}{Ctrl\+\_\+\+Input} ()
+\begin{DoxyCompactList}\small\item\em Constructor de la classe. Segueix llegint del fitxer del qual s\textquotesingle{}estava llegint. \end{DoxyCompactList}\item 
 String \hyperlink{classpersistencia_1_1input_1_1Ctrl__Input_a46d569c2f3ceb0ab6cf9900708b3316a}{get\+Extension} ()
 \item 
 boolean \hyperlink{classpersistencia_1_1input_1_1Ctrl__Input_a5a94d207dce0fd592b5ac17f55154d4f}{finished} ()
 \item 
 String \hyperlink{classpersistencia_1_1input_1_1Ctrl__Input_aa69f79fb581f6d80c5a9609148794570}{get\+Alg} ()
 \item 
-void \hyperlink{classpersistencia_1_1input_1_1Ctrl__Input_a46e05fce164a6803820c02565c1769c8}{get\+Metadata} ()
+int \hyperlink{classpersistencia_1_1input_1_1Ctrl__Input_a46e05fce164a6803820c02565c1769c8}{get\+Metadata} ()
 \begin{DoxyCompactList}\small\item\em Llegeix el dos primers bits de l\textquotesingle{}arxiu comprimit per saber amb quin algoritme ha sigut tractat. \end{DoxyCompactList}\end{DoxyCompactItemize}
-\subsection*{Protected Attributes}
+\subsection*{Static Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\hyperlink{classpersistencia_1_1input_1_1Input}{Input} \hyperlink{classpersistencia_1_1input_1_1Ctrl__Input_affe3c91673d80b61450970a69fe84611}{Input\+\_\+class}
-\end{DoxyCompactItemize}
+static void \hyperlink{classpersistencia_1_1input_1_1Ctrl__Input_a0b62b5bc05ac4a7fd919a49b201eb4fd}{initialize} (String path)
+\begin{DoxyCompactList}\small\item\em Assigna un nou fitxer per llegir. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Package Attributes}
 \begin{DoxyCompactItemize}
 \item 
@@ -51,7 +39,7 @@ String \hyperlink{classpersistencia_1_1input_1_1Ctrl__Input_a6041b56aa31f01f75d0
 \subsection{Detailed Description}
 Classe de \hyperlink{classpersistencia_1_1input_1_1Ctrl__Input}{Ctrl\+\_\+\+Input}. 
 
-\begin{DoxyAuthor}{Author}
+Cal tenir en compte que no es poden llegir dos fitxers simultàniament. El fitxer que llegeixen les instàncies de \hyperlink{classpersistencia_1_1input_1_1Ctrl__Input}{Ctrl\+\_\+\+Input} i els seus fills s\textquotesingle{}inicialitza cada cop que es crida a \hyperlink{classpersistencia_1_1input_1_1Input_abe53dec7aca98b94d0ec5e3200483513}{Input.\+initialize(\+String path)} o Ctrl\+\_\+\+Input$\ast$(String path), on Ctrl\+\_\+\+Input$\ast$ és \hyperlink{classpersistencia_1_1input_1_1Ctrl__Input}{Ctrl\+\_\+\+Input} o un dels seus fills. \begin{DoxyAuthor}{Author}
 Joan Lapeyra 
 \end{DoxyAuthor}
 
@@ -60,18 +48,48 @@ Joan Lapeyra
 \mbox{\Hypertarget{classpersistencia_1_1input_1_1Ctrl__Input_a00f3fa14d0329d6e4b9ddbe39ada1258}\label{classpersistencia_1_1input_1_1Ctrl__Input_a00f3fa14d0329d6e4b9ddbe39ada1258}} 
 \index{persistencia\+::input\+::\+Ctrl\+\_\+\+Input@{persistencia\+::input\+::\+Ctrl\+\_\+\+Input}!Ctrl\+\_\+\+Input@{Ctrl\+\_\+\+Input}}
 \index{Ctrl\+\_\+\+Input@{Ctrl\+\_\+\+Input}!persistencia\+::input\+::\+Ctrl\+\_\+\+Input@{persistencia\+::input\+::\+Ctrl\+\_\+\+Input}}
-\subsubsection{\texorpdfstring{Ctrl\+\_\+\+Input()}{Ctrl\_Input()}}
+\subsubsection{\texorpdfstring{Ctrl\+\_\+\+Input()}{Ctrl\_Input()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
 {\footnotesize\ttfamily persistencia.\+input.\+Ctrl\+\_\+\+Input.\+Ctrl\+\_\+\+Input (\begin{DoxyParamCaption}\item[{String}]{path }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
 
 
 
-Constructor de la classe. 
+Constructor de la classe. Comança a llegir un fitxer. 
 
 
 \begin{DoxyParams}{Parameters}
 {\em path} & Path de l\textquotesingle{}arxiu a tractar \\
 \hline
 \end{DoxyParams}
+
+\begin{DoxyCode}
+30                                    \{
+31   
+32         Input.initialize(path);
+33 
+34         Pattern p = Pattern.compile(\textcolor{stringliteral}{"\(\backslash\)\(\backslash\)."});
+35 
+36         String spl[] = p.split(path);
+37 
+38         this.\hyperlink{classpersistencia_1_1input_1_1Ctrl__Input_a6041b56aa31f01f75d02382f98e259e5}{Extensio} = spl[1];
+39 
+40     \}
+\end{DoxyCode}
+\mbox{\Hypertarget{classpersistencia_1_1input_1_1Ctrl__Input_a817ed61e715eb12261d844de34d84bec}\label{classpersistencia_1_1input_1_1Ctrl__Input_a817ed61e715eb12261d844de34d84bec}} 
+\index{persistencia\+::input\+::\+Ctrl\+\_\+\+Input@{persistencia\+::input\+::\+Ctrl\+\_\+\+Input}!Ctrl\+\_\+\+Input@{Ctrl\+\_\+\+Input}}
+\index{Ctrl\+\_\+\+Input@{Ctrl\+\_\+\+Input}!persistencia\+::input\+::\+Ctrl\+\_\+\+Input@{persistencia\+::input\+::\+Ctrl\+\_\+\+Input}}
+\subsubsection{\texorpdfstring{Ctrl\+\_\+\+Input()}{Ctrl\_Input()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily persistencia.\+input.\+Ctrl\+\_\+\+Input.\+Ctrl\+\_\+\+Input (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Constructor de la classe. Segueix llegint del fitxer del qual s\textquotesingle{}estava llegint. 
+
+
+\begin{DoxyCode}
+45                         \{
+46         this.\hyperlink{classpersistencia_1_1input_1_1Ctrl__Input_a6041b56aa31f01f75d02382f98e259e5}{Extensio} = null;
+47     \}
+\end{DoxyCode}
 
 
 \subsection{Member Function Documentation}
@@ -84,6 +102,12 @@ Constructor de la classe.
 \begin{DoxyReturn}{Returns}
 Retorna si hem acabat de llegir l\textquotesingle{}arxiu o no 
 \end{DoxyReturn}
+
+\begin{DoxyCode}
+72                               \{
+73         \textcolor{keywordflow}{return} Input.getInstance().finished();
+74     \}
+\end{DoxyCode}
 \mbox{\Hypertarget{classpersistencia_1_1input_1_1Ctrl__Input_aa69f79fb581f6d80c5a9609148794570}\label{classpersistencia_1_1input_1_1Ctrl__Input_aa69f79fb581f6d80c5a9609148794570}} 
 \index{persistencia\+::input\+::\+Ctrl\+\_\+\+Input@{persistencia\+::input\+::\+Ctrl\+\_\+\+Input}!get\+Alg@{get\+Alg}}
 \index{get\+Alg@{get\+Alg}!persistencia\+::input\+::\+Ctrl\+\_\+\+Input@{persistencia\+::input\+::\+Ctrl\+\_\+\+Input}}
@@ -93,6 +117,12 @@ Retorna si hem acabat de llegir l\textquotesingle{}arxiu o no
 \begin{DoxyReturn}{Returns}
 Proporciona el algoritme mes adient per tractar la descompressio 
 \end{DoxyReturn}
+
+\begin{DoxyCode}
+81     \{
+82         \textcolor{keywordflow}{return} Input.getInstance().getDecodeAlg();
+83     \}
+\end{DoxyCode}
 \mbox{\Hypertarget{classpersistencia_1_1input_1_1Ctrl__Input_a46d569c2f3ceb0ab6cf9900708b3316a}\label{classpersistencia_1_1input_1_1Ctrl__Input_a46d569c2f3ceb0ab6cf9900708b3316a}} 
 \index{persistencia\+::input\+::\+Ctrl\+\_\+\+Input@{persistencia\+::input\+::\+Ctrl\+\_\+\+Input}!get\+Extension@{get\+Extension}}
 \index{get\+Extension@{get\+Extension}!persistencia\+::input\+::\+Ctrl\+\_\+\+Input@{persistencia\+::input\+::\+Ctrl\+\_\+\+Input}}
@@ -102,6 +132,12 @@ Proporciona el algoritme mes adient per tractar la descompressio
 \begin{DoxyReturn}{Returns}
 Retorna l\textquotesingle{}extensio de l\textquotesingle{}arxiu 
 \end{DoxyReturn}
+
+\begin{DoxyCode}
+64                                  \{
+65         \textcolor{keywordflow}{return} \hyperlink{classpersistencia_1_1input_1_1Ctrl__Input_a6041b56aa31f01f75d02382f98e259e5}{Extensio};
+66     \}
+\end{DoxyCode}
 \mbox{\Hypertarget{classpersistencia_1_1input_1_1Ctrl__Input_a46e05fce164a6803820c02565c1769c8}\label{classpersistencia_1_1input_1_1Ctrl__Input_a46e05fce164a6803820c02565c1769c8}} 
 \index{persistencia\+::input\+::\+Ctrl\+\_\+\+Input@{persistencia\+::input\+::\+Ctrl\+\_\+\+Input}!get\+Metadata@{get\+Metadata}}
 \index{get\+Metadata@{get\+Metadata}!persistencia\+::input\+::\+Ctrl\+\_\+\+Input@{persistencia\+::input\+::\+Ctrl\+\_\+\+Input}}
@@ -112,6 +148,36 @@ Retorna l\textquotesingle{}extensio de l\textquotesingle{}arxiu
 
 Llegeix el dos primers bits de l\textquotesingle{}arxiu comprimit per saber amb quin algoritme ha sigut tractat. 
 
+
+\begin{DoxyCode}
+89                              \{
+90         \textcolor{keywordflow}{return} (\textcolor{keywordtype}{int})Input.getInstance().getBits(2);
+91     \}
+\end{DoxyCode}
+\mbox{\Hypertarget{classpersistencia_1_1input_1_1Ctrl__Input_a0b62b5bc05ac4a7fd919a49b201eb4fd}\label{classpersistencia_1_1input_1_1Ctrl__Input_a0b62b5bc05ac4a7fd919a49b201eb4fd}} 
+\index{persistencia\+::input\+::\+Ctrl\+\_\+\+Input@{persistencia\+::input\+::\+Ctrl\+\_\+\+Input}!initialize@{initialize}}
+\index{initialize@{initialize}!persistencia\+::input\+::\+Ctrl\+\_\+\+Input@{persistencia\+::input\+::\+Ctrl\+\_\+\+Input}}
+\subsubsection{\texorpdfstring{initialize()}{initialize()}}
+{\footnotesize\ttfamily public static void persistencia.\+input.\+Ctrl\+\_\+\+Input.\+initialize (\begin{DoxyParamCaption}\item[{String}]{path }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+
+
+Assigna un nou fitxer per llegir. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em path} & referencia el fitxer en qüestió. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyNote}{Note}
+Més info a la descripció de la classe. 
+\end{DoxyNote}
+
+\begin{DoxyCode}
+55                                                \{
+56         Input.initialize(path);
+57     \}
+\end{DoxyCode}
 
 
 \subsection{Member Data Documentation}
@@ -124,17 +190,6 @@ Llegeix el dos primers bits de l\textquotesingle{}arxiu comprimit per saber amb 
 
 \begin{DoxyParams}{Parameters}
 {\em Extensio} & Extensio de l\textquotesingle{}arxiu que estem tractant \\
-\hline
-\end{DoxyParams}
-\mbox{\Hypertarget{classpersistencia_1_1input_1_1Ctrl__Input_affe3c91673d80b61450970a69fe84611}\label{classpersistencia_1_1input_1_1Ctrl__Input_affe3c91673d80b61450970a69fe84611}} 
-\index{persistencia\+::input\+::\+Ctrl\+\_\+\+Input@{persistencia\+::input\+::\+Ctrl\+\_\+\+Input}!Input\+\_\+class@{Input\+\_\+class}}
-\index{Input\+\_\+class@{Input\+\_\+class}!persistencia\+::input\+::\+Ctrl\+\_\+\+Input@{persistencia\+::input\+::\+Ctrl\+\_\+\+Input}}
-\subsubsection{\texorpdfstring{Input\+\_\+class}{Input\_class}}
-{\footnotesize\ttfamily \hyperlink{classpersistencia_1_1input_1_1Input}{Input} persistencia.\+input.\+Ctrl\+\_\+\+Input.\+Input\+\_\+class\hspace{0.3cm}{\ttfamily [protected]}}
-
-
-\begin{DoxyParams}{Parameters}
-{\em Input\+\_\+class} & Classe \hyperlink{classpersistencia_1_1input_1_1Input}{Input} \\
 \hline
 \end{DoxyParams}
 

@@ -1,0 +1,205 @@
+\hypertarget{classpresentacion_1_1Ctrl__Presentacio_1_1Ctrl__Presentacio}{}\section{presentacion.\+Ctrl\+\_\+\+Presentacio.\+Ctrl\+\_\+\+Presentacio Class Reference}
+\label{classpresentacion_1_1Ctrl__Presentacio_1_1Ctrl__Presentacio}\index{presentacion.\+Ctrl\+\_\+\+Presentacio.\+Ctrl\+\_\+\+Presentacio@{presentacion.\+Ctrl\+\_\+\+Presentacio.\+Ctrl\+\_\+\+Presentacio}}
+
+
+Collaboration diagram for presentacion.\+Ctrl\+\_\+\+Presentacio.\+Ctrl\+\_\+\+Presentacio\+:
+% FIG 0
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classpresentacion_1_1Ctrl__Presentacio_1_1Ctrl__Presentacio_a3d3ac2a3c4b9fa715bb631fdf3a955dd}{Ctrl\+\_\+\+Presentacio} (String path\+\_\+input)
+\begin{DoxyCompactList}\small\item\em Constructor de la clase. \end{DoxyCompactList}\item 
+String \hyperlink{classpresentacion_1_1Ctrl__Presentacio_1_1Ctrl__Presentacio_a3c70338349a2890f5191162b22ee78dc}{Encode\+Auto} ()
+\begin{DoxyCompactList}\small\item\em Método para la compresión automática. \end{DoxyCompactList}\item 
+String \hyperlink{classpresentacion_1_1Ctrl__Presentacio_1_1Ctrl__Presentacio_a83ea715afbbe389c6f1fb68f29121205}{Encode} (String text\+\_\+method, double img\+\_\+quality)
+\begin{DoxyCompactList}\small\item\em Método para la compresión manual. \end{DoxyCompactList}\item 
+String \hyperlink{classpresentacion_1_1Ctrl__Presentacio_1_1Ctrl__Presentacio_adc652f63ed7619207a94a3a58b6bdd77}{Decode} ()
+\begin{DoxyCompactList}\small\item\em Método para la descompresión. \end{DoxyCompactList}\item 
+String \hyperlink{classpresentacion_1_1Ctrl__Presentacio_1_1Ctrl__Presentacio_aa9c12bc59a7e9fa0ccd09c0e007d4a4c}{Decode\+Temp} ()
+\begin{DoxyCompactList}\small\item\em Método para la descompresión de un fichero temporal. \end{DoxyCompactList}\item 
+global.\+type \hyperlink{classpresentacion_1_1Ctrl__Presentacio_1_1Ctrl__Presentacio_a029db5d77bf1e81be0811816a74d81a0}{get\+Type} ()
+\end{DoxyCompactItemize}
+\subsection*{Package Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classdomini_1_1folders_1_1Ctrl__FolderFile}{Ctrl\+\_\+\+Folder\+File} \hyperlink{classpresentacion_1_1Ctrl__Presentacio_1_1Ctrl__Presentacio_af46ef2ef420276ff830c2f0ff8c1a7e6}{CF}
+\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+global.\+type \hyperlink{classpresentacion_1_1Ctrl__Presentacio_1_1Ctrl__Presentacio_af72267ee1302df6b5982c3248d5a19b0}{type}
+\end{DoxyCompactItemize}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classpresentacion_1_1Ctrl__Presentacio_1_1Ctrl__Presentacio_a3d3ac2a3c4b9fa715bb631fdf3a955dd}\label{classpresentacion_1_1Ctrl__Presentacio_1_1Ctrl__Presentacio_a3d3ac2a3c4b9fa715bb631fdf3a955dd}} 
+\index{presentacion\+::\+Ctrl\+\_\+\+Presentacio\+::\+Ctrl\+\_\+\+Presentacio@{presentacion\+::\+Ctrl\+\_\+\+Presentacio\+::\+Ctrl\+\_\+\+Presentacio}!Ctrl\+\_\+\+Presentacio@{Ctrl\+\_\+\+Presentacio}}
+\index{Ctrl\+\_\+\+Presentacio@{Ctrl\+\_\+\+Presentacio}!presentacion\+::\+Ctrl\+\_\+\+Presentacio\+::\+Ctrl\+\_\+\+Presentacio@{presentacion\+::\+Ctrl\+\_\+\+Presentacio\+::\+Ctrl\+\_\+\+Presentacio}}
+\subsubsection{\texorpdfstring{Ctrl\+\_\+\+Presentacio()}{Ctrl\_Presentacio()}}
+{\footnotesize\ttfamily presentacion.\+Ctrl\+\_\+\+Presentacio.\+Ctrl\+\_\+\+Presentacio.\+Ctrl\+\_\+\+Presentacio (\begin{DoxyParamCaption}\item[{String}]{path\+\_\+input }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Constructor de la clase. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em path\+\_\+input} & Path a comprimir/descomprimir. \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyCode}
+24                                                \{
+25         \hyperlink{classpresentacion_1_1Ctrl__Presentacio_1_1Ctrl__Presentacio_af46ef2ef420276ff830c2f0ff8c1a7e6}{CF} = \textcolor{keyword}{new} Ctrl\_FolderFile(path\_input);
+26         \hyperlink{classpresentacion_1_1Ctrl__Presentacio_1_1Ctrl__Presentacio_af72267ee1302df6b5982c3248d5a19b0}{type} = \hyperlink{classpresentacion_1_1Ctrl__Presentacio_1_1Ctrl__Presentacio_af46ef2ef420276ff830c2f0ff8c1a7e6}{CF}.\hyperlink{classdomini_1_1folders_1_1Ctrl__FolderFile_a9e2ef751bdcb99083831c6b4e4761169}{getType}(path\_input);
+27         \textcolor{keywordflow}{switch} (\hyperlink{classpresentacion_1_1Ctrl__Presentacio_1_1Ctrl__Presentacio_af72267ee1302df6b5982c3248d5a19b0}{type}) \{
+28             \textcolor{keywordflow}{case} textComprimit:
+29 
+30                 \textcolor{keywordflow}{break};
+31             \textcolor{keywordflow}{case} imageComprimit:
+32 
+33                 \textcolor{keywordflow}{break};
+34         \}
+35     \}
+\end{DoxyCode}
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classpresentacion_1_1Ctrl__Presentacio_1_1Ctrl__Presentacio_adc652f63ed7619207a94a3a58b6bdd77}\label{classpresentacion_1_1Ctrl__Presentacio_1_1Ctrl__Presentacio_adc652f63ed7619207a94a3a58b6bdd77}} 
+\index{presentacion\+::\+Ctrl\+\_\+\+Presentacio\+::\+Ctrl\+\_\+\+Presentacio@{presentacion\+::\+Ctrl\+\_\+\+Presentacio\+::\+Ctrl\+\_\+\+Presentacio}!Decode@{Decode}}
+\index{Decode@{Decode}!presentacion\+::\+Ctrl\+\_\+\+Presentacio\+::\+Ctrl\+\_\+\+Presentacio@{presentacion\+::\+Ctrl\+\_\+\+Presentacio\+::\+Ctrl\+\_\+\+Presentacio}}
+\subsubsection{\texorpdfstring{Decode()}{Decode()}}
+{\footnotesize\ttfamily public String presentacion.\+Ctrl\+\_\+\+Presentacio.\+Ctrl\+\_\+\+Presentacio.\+Decode (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Método para la descompresión. 
+
+\begin{DoxyReturn}{Returns}
+Devuelve estadísticas de la descompresión. 
+\end{DoxyReturn}
+
+\begin{DoxyCode}
+72                            \{
+73         \textcolor{keywordflow}{return} \hyperlink{classpresentacion_1_1Ctrl__Presentacio_1_1Ctrl__Presentacio_af46ef2ef420276ff830c2f0ff8c1a7e6}{CF}.\hyperlink{classdomini_1_1folders_1_1Ctrl__FolderFile_a5d28ac7f5223ecd40a242148e86447c1}{Decode}();
+74     \}
+\end{DoxyCode}
+\mbox{\Hypertarget{classpresentacion_1_1Ctrl__Presentacio_1_1Ctrl__Presentacio_aa9c12bc59a7e9fa0ccd09c0e007d4a4c}\label{classpresentacion_1_1Ctrl__Presentacio_1_1Ctrl__Presentacio_aa9c12bc59a7e9fa0ccd09c0e007d4a4c}} 
+\index{presentacion\+::\+Ctrl\+\_\+\+Presentacio\+::\+Ctrl\+\_\+\+Presentacio@{presentacion\+::\+Ctrl\+\_\+\+Presentacio\+::\+Ctrl\+\_\+\+Presentacio}!Decode\+Temp@{Decode\+Temp}}
+\index{Decode\+Temp@{Decode\+Temp}!presentacion\+::\+Ctrl\+\_\+\+Presentacio\+::\+Ctrl\+\_\+\+Presentacio@{presentacion\+::\+Ctrl\+\_\+\+Presentacio\+::\+Ctrl\+\_\+\+Presentacio}}
+\subsubsection{\texorpdfstring{Decode\+Temp()}{DecodeTemp()}}
+{\footnotesize\ttfamily public String presentacion.\+Ctrl\+\_\+\+Presentacio.\+Ctrl\+\_\+\+Presentacio.\+Decode\+Temp (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Método para la descompresión de un fichero temporal. 
+
+\begin{DoxyReturn}{Returns}
+Devuelve estadísticas de la descompresión. 
+\end{DoxyReturn}
+
+\begin{DoxyCode}
+81                                \{
+82         \textcolor{keywordflow}{return} \hyperlink{classpresentacion_1_1Ctrl__Presentacio_1_1Ctrl__Presentacio_af46ef2ef420276ff830c2f0ff8c1a7e6}{CF}.\hyperlink{classdomini_1_1folders_1_1Ctrl__FolderFile_afa0f6968113855feccccfdbacc00444e}{DecodeTemp}();
+83     \}
+\end{DoxyCode}
+\mbox{\Hypertarget{classpresentacion_1_1Ctrl__Presentacio_1_1Ctrl__Presentacio_a83ea715afbbe389c6f1fb68f29121205}\label{classpresentacion_1_1Ctrl__Presentacio_1_1Ctrl__Presentacio_a83ea715afbbe389c6f1fb68f29121205}} 
+\index{presentacion\+::\+Ctrl\+\_\+\+Presentacio\+::\+Ctrl\+\_\+\+Presentacio@{presentacion\+::\+Ctrl\+\_\+\+Presentacio\+::\+Ctrl\+\_\+\+Presentacio}!Encode@{Encode}}
+\index{Encode@{Encode}!presentacion\+::\+Ctrl\+\_\+\+Presentacio\+::\+Ctrl\+\_\+\+Presentacio@{presentacion\+::\+Ctrl\+\_\+\+Presentacio\+::\+Ctrl\+\_\+\+Presentacio}}
+\subsubsection{\texorpdfstring{Encode()}{Encode()}}
+{\footnotesize\ttfamily public String presentacion.\+Ctrl\+\_\+\+Presentacio.\+Ctrl\+\_\+\+Presentacio.\+Encode (\begin{DoxyParamCaption}\item[{String}]{text\+\_\+method,  }\item[{double}]{img\+\_\+quality }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Método para la compresión manual. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em text\+\_\+method} & Modo de compresión del posible fichero. \\
+\hline
+{\em img\+\_\+quality} & Grado de compresión de la posible imagen. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Devuelve estadísticas de la compresión. 
+\end{DoxyReturn}
+
+\begin{DoxyCode}
+53                                                                  \{
+54         String estadistica = \textcolor{stringliteral}{""};
+55         \textcolor{keywordflow}{if} (\hyperlink{classpresentacion_1_1Ctrl__Presentacio_1_1Ctrl__Presentacio_af72267ee1302df6b5982c3248d5a19b0}{type} == \hyperlink{namespaceglobal}{global}.type.folder)\{
+56             estadistica = \hyperlink{classpresentacion_1_1Ctrl__Presentacio_1_1Ctrl__Presentacio_af46ef2ef420276ff830c2f0ff8c1a7e6}{CF}.\hyperlink{classdomini_1_1folders_1_1Ctrl__FolderFile_a8cb5f1a979d5882dd244d69806d5b237}{EncodeManualFolder}(text\_method, img\_quality);
+57         \}
+58         \textcolor{keywordflow}{else} \textcolor{keywordflow}{if}(\hyperlink{classpresentacion_1_1Ctrl__Presentacio_1_1Ctrl__Presentacio_af72267ee1302df6b5982c3248d5a19b0}{type} == \hyperlink{namespaceglobal}{global}.type.image) \{
+59             estadistica = \hyperlink{classpresentacion_1_1Ctrl__Presentacio_1_1Ctrl__Presentacio_af46ef2ef420276ff830c2f0ff8c1a7e6}{CF}.\hyperlink{classdomini_1_1folders_1_1Ctrl__FolderFile_aa12af32101598eebcaaad4d0dbe69902}{EncodeManualImg}(img\_quality);
+60         \}
+61         \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (\hyperlink{classpresentacion_1_1Ctrl__Presentacio_1_1Ctrl__Presentacio_af72267ee1302df6b5982c3248d5a19b0}{type} == \hyperlink{namespaceglobal}{global}.type.text) \{
+62             estadistica = \hyperlink{classpresentacion_1_1Ctrl__Presentacio_1_1Ctrl__Presentacio_af46ef2ef420276ff830c2f0ff8c1a7e6}{CF}.\hyperlink{classdomini_1_1folders_1_1Ctrl__FolderFile_a77b9d8244dd36e77516a9dc43ec50ed8}{EncodeManualText}(text\_method);
+63         \}
+64         \textcolor{keywordflow}{return} estadistica;
+65     \}
+\end{DoxyCode}
+\mbox{\Hypertarget{classpresentacion_1_1Ctrl__Presentacio_1_1Ctrl__Presentacio_a3c70338349a2890f5191162b22ee78dc}\label{classpresentacion_1_1Ctrl__Presentacio_1_1Ctrl__Presentacio_a3c70338349a2890f5191162b22ee78dc}} 
+\index{presentacion\+::\+Ctrl\+\_\+\+Presentacio\+::\+Ctrl\+\_\+\+Presentacio@{presentacion\+::\+Ctrl\+\_\+\+Presentacio\+::\+Ctrl\+\_\+\+Presentacio}!Encode\+Auto@{Encode\+Auto}}
+\index{Encode\+Auto@{Encode\+Auto}!presentacion\+::\+Ctrl\+\_\+\+Presentacio\+::\+Ctrl\+\_\+\+Presentacio@{presentacion\+::\+Ctrl\+\_\+\+Presentacio\+::\+Ctrl\+\_\+\+Presentacio}}
+\subsubsection{\texorpdfstring{Encode\+Auto()}{EncodeAuto()}}
+{\footnotesize\ttfamily public String presentacion.\+Ctrl\+\_\+\+Presentacio.\+Ctrl\+\_\+\+Presentacio.\+Encode\+Auto (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Método para la compresión automática. 
+
+\begin{DoxyReturn}{Returns}
+Devuelve estadísticas de la compresión. 
+\end{DoxyReturn}
+
+\begin{DoxyCode}
+42                                \{
+43         \textcolor{keywordflow}{return} \hyperlink{classpresentacion_1_1Ctrl__Presentacio_1_1Ctrl__Presentacio_af46ef2ef420276ff830c2f0ff8c1a7e6}{CF}.\hyperlink{classdomini_1_1folders_1_1Ctrl__FolderFile_aa88b27fc271590c8c16642db5c1bb329}{EncodeAuto}();
+44     \}
+\end{DoxyCode}
+\mbox{\Hypertarget{classpresentacion_1_1Ctrl__Presentacio_1_1Ctrl__Presentacio_a029db5d77bf1e81be0811816a74d81a0}\label{classpresentacion_1_1Ctrl__Presentacio_1_1Ctrl__Presentacio_a029db5d77bf1e81be0811816a74d81a0}} 
+\index{presentacion\+::\+Ctrl\+\_\+\+Presentacio\+::\+Ctrl\+\_\+\+Presentacio@{presentacion\+::\+Ctrl\+\_\+\+Presentacio\+::\+Ctrl\+\_\+\+Presentacio}!get\+Type@{get\+Type}}
+\index{get\+Type@{get\+Type}!presentacion\+::\+Ctrl\+\_\+\+Presentacio\+::\+Ctrl\+\_\+\+Presentacio@{presentacion\+::\+Ctrl\+\_\+\+Presentacio\+::\+Ctrl\+\_\+\+Presentacio}}
+\subsubsection{\texorpdfstring{get\+Type()}{getType()}}
+{\footnotesize\ttfamily public \hyperlink{classglobal_1_1global}{global} \hyperlink{classpresentacion_1_1Ctrl__Presentacio_1_1Ctrl__Presentacio_af72267ee1302df6b5982c3248d5a19b0}{type} presentacion.\+Ctrl\+\_\+\+Presentacio.\+Ctrl\+\_\+\+Presentacio.\+get\+Type (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\begin{DoxyReturn}{Returns}
+Devuelve el atributo type. 
+\end{DoxyReturn}
+
+\begin{DoxyCode}
+90     \{
+91         \textcolor{keywordflow}{return} \hyperlink{classpresentacion_1_1Ctrl__Presentacio_1_1Ctrl__Presentacio_af72267ee1302df6b5982c3248d5a19b0}{type};
+92     \}
+\end{DoxyCode}
+
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{classpresentacion_1_1Ctrl__Presentacio_1_1Ctrl__Presentacio_af46ef2ef420276ff830c2f0ff8c1a7e6}\label{classpresentacion_1_1Ctrl__Presentacio_1_1Ctrl__Presentacio_af46ef2ef420276ff830c2f0ff8c1a7e6}} 
+\index{presentacion\+::\+Ctrl\+\_\+\+Presentacio\+::\+Ctrl\+\_\+\+Presentacio@{presentacion\+::\+Ctrl\+\_\+\+Presentacio\+::\+Ctrl\+\_\+\+Presentacio}!CF@{CF}}
+\index{CF@{CF}!presentacion\+::\+Ctrl\+\_\+\+Presentacio\+::\+Ctrl\+\_\+\+Presentacio@{presentacion\+::\+Ctrl\+\_\+\+Presentacio\+::\+Ctrl\+\_\+\+Presentacio}}
+\subsubsection{\texorpdfstring{CF}{CF}}
+{\footnotesize\ttfamily \hyperlink{classdomini_1_1folders_1_1Ctrl__FolderFile}{Ctrl\+\_\+\+Folder\+File} presentacion.\+Ctrl\+\_\+\+Presentacio.\+Ctrl\+\_\+\+Presentacio.\+CF\hspace{0.3cm}{\ttfamily [package]}}
+
+
+\begin{DoxyParams}{Parameters}
+{\em CF} & Instancia Ctrl\+\_\+\+Folder\+File. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classpresentacion_1_1Ctrl__Presentacio_1_1Ctrl__Presentacio_af72267ee1302df6b5982c3248d5a19b0}\label{classpresentacion_1_1Ctrl__Presentacio_1_1Ctrl__Presentacio_af72267ee1302df6b5982c3248d5a19b0}} 
+\index{presentacion\+::\+Ctrl\+\_\+\+Presentacio\+::\+Ctrl\+\_\+\+Presentacio@{presentacion\+::\+Ctrl\+\_\+\+Presentacio\+::\+Ctrl\+\_\+\+Presentacio}!type@{type}}
+\index{type@{type}!presentacion\+::\+Ctrl\+\_\+\+Presentacio\+::\+Ctrl\+\_\+\+Presentacio@{presentacion\+::\+Ctrl\+\_\+\+Presentacio\+::\+Ctrl\+\_\+\+Presentacio}}
+\subsubsection{\texorpdfstring{type}{type}}
+{\footnotesize\ttfamily global.\+type presentacion.\+Ctrl\+\_\+\+Presentacio.\+Ctrl\+\_\+\+Presentacio.\+type\hspace{0.3cm}{\ttfamily [private]}}
+
+
+\begin{DoxyParams}{Parameters}
+{\em type} & Enumeration para saber el tipo de un fichero determinado. \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+src/presentacion/\+Ctrl\+\_\+\+Presentacio/\hyperlink{Ctrl__Presentacio_8java}{Ctrl\+\_\+\+Presentacio.\+java}\end{DoxyCompactItemize}

@@ -15,7 +15,7 @@ static void \hyperlink{classpersistencia_1_1input_1_1Driver____Input_a6a020d7486
 \item 
 static void \hyperlink{classpersistencia_1_1input_1_1Driver____Input_a4f8a0f13847071d675771817ee212f2c}{show\+Options} ()
 \begin{DoxyCompactList}\small\item\em Mostra les accions a realitzar durant l\textquotesingle{}execució \end{DoxyCompactList}\item 
-static void \hyperlink{classpersistencia_1_1input_1_1Driver____Input_a46e7f159cd6fda2de6eaac3cec973963}{comprovar\+Excepcions} (\hyperlink{classpersistencia_1_1input_1_1Input}{Input} inp, String linea, String path)
+static void \hyperlink{classpersistencia_1_1input_1_1Driver____Input_a0d86ebc99984018efe2b52c6f97de708}{comprovar\+Excepcions} (String linea, String path)
 \begin{DoxyCompactList}\small\item\em Comprovarà les possibles excepcions que puguin apareixer a la classe. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
@@ -28,11 +28,11 @@ Joan Bellavista
 
 
 \subsection{Member Function Documentation}
-\mbox{\Hypertarget{classpersistencia_1_1input_1_1Driver____Input_a46e7f159cd6fda2de6eaac3cec973963}\label{classpersistencia_1_1input_1_1Driver____Input_a46e7f159cd6fda2de6eaac3cec973963}} 
+\mbox{\Hypertarget{classpersistencia_1_1input_1_1Driver____Input_a0d86ebc99984018efe2b52c6f97de708}\label{classpersistencia_1_1input_1_1Driver____Input_a0d86ebc99984018efe2b52c6f97de708}} 
 \index{persistencia\+::input\+::\+Driver\+\_\+\+\_\+\+Input@{persistencia\+::input\+::\+Driver\+\_\+\+\_\+\+Input}!comprovar\+Excepcions@{comprovar\+Excepcions}}
 \index{comprovar\+Excepcions@{comprovar\+Excepcions}!persistencia\+::input\+::\+Driver\+\_\+\+\_\+\+Input@{persistencia\+::input\+::\+Driver\+\_\+\+\_\+\+Input}}
 \subsubsection{\texorpdfstring{comprovar\+Excepcions()}{comprovarExcepcions()}}
-{\footnotesize\ttfamily private static void persistencia.\+input.\+Driver\+\_\+\+\_\+\+Input.\+comprovar\+Excepcions (\begin{DoxyParamCaption}\item[{\hyperlink{classpersistencia_1_1input_1_1Input}{Input}}]{inp,  }\item[{String}]{linea,  }\item[{String}]{path }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}, {\ttfamily [private]}}
+{\footnotesize\ttfamily private static void persistencia.\+input.\+Driver\+\_\+\+\_\+\+Input.\+comprovar\+Excepcions (\begin{DoxyParamCaption}\item[{String}]{linea,  }\item[{String}]{path }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}, {\ttfamily [private]}}
 
 
 
@@ -47,6 +47,15 @@ Comprovarà les possibles excepcions que puguin apareixer a la classe.
 {\em path} & Path al fitxer \\
 \hline
 \end{DoxyParams}
+
+\begin{DoxyCode}
+65                                                                       \{
+66         \textcolor{keywordtype}{int} op = Integer.parseInt(linea);
+67         \textcolor{keywordflow}{if}(path.equals(\textcolor{stringliteral}{""}) && op < 6 && !linea.equals(\textcolor{stringliteral}{"0"}))\{
+68             \textcolor{keywordflow}{throw} \textcolor{keyword}{new} IllegalArgumentException(\textcolor{stringliteral}{"Debes escoger un path antes"});
+69         \}
+70     \}
+\end{DoxyCode}
 \mbox{\Hypertarget{classpersistencia_1_1input_1_1Driver____Input_a6a020d74862cb62628ab644253271179}\label{classpersistencia_1_1input_1_1Driver____Input_a6a020d74862cb62628ab644253271179}} 
 \index{persistencia\+::input\+::\+Driver\+\_\+\+\_\+\+Input@{persistencia\+::input\+::\+Driver\+\_\+\+\_\+\+Input}!main@{main}}
 \index{main@{main}!persistencia\+::input\+::\+Driver\+\_\+\+\_\+\+Input@{persistencia\+::input\+::\+Driver\+\_\+\+\_\+\+Input}}
@@ -62,6 +71,74 @@ Comprovarà les possibles excepcions que puguin apareixer a la classe.
 {\em args} & \\
 \hline
 \end{DoxyParams}
+
+\begin{DoxyCode}
+77                                            \{
+78         \textcolor{keywordflow}{try} \{
+79             String path = \textcolor{stringliteral}{""};
+80             \hyperlink{classpersistencia_1_1input_1_1Driver____Input_a4f8a0f13847071d675771817ee212f2c}{showOptions}();
+81             BufferedReader reader = \textcolor{keyword}{new} BufferedReader(\textcolor{keyword}{new} InputStreamReader(System.in));
+82             String linea = \textcolor{stringliteral}{""};
+83             \textcolor{keywordflow}{while}(linea != null)\{
+84                 System.out.println(\textcolor{stringliteral}{"Selecciona una opción:"});
+85                 linea = reader.readLine().trim();
+86                 System.out.println(\textcolor{stringliteral}{"Opción: "} + linea + \textcolor{stringliteral}{" seleccionada"});
+87                 \hyperlink{classpersistencia_1_1input_1_1Driver____Input_a0d86ebc99984018efe2b52c6f97de708}{comprovarExcepcions}(linea, path);
+88                 \textcolor{keywordflow}{switch}(linea)\{
+89                     \textcolor{keywordflow}{case} \textcolor{stringliteral}{"1"}:
+90                         Input.initialize(path);
+91                     \textcolor{keywordflow}{break};
+92                     \textcolor{keywordflow}{case} \textcolor{stringliteral}{"2"}:
+93                         System.out.println(\textcolor{stringliteral}{"Escribe un integer que represente el numero de bits que quieres
+       leer"});
+94                         Integer numBits1 = Integer.parseInt(reader.readLine().trim());
+95                         byte a = Input.getInstance().getBits(numBits1);
+96                         System.out.println(a);
+97                     \textcolor{keywordflow}{break};
+98                     \textcolor{keywordflow}{case} \textcolor{stringliteral}{"3"}:
+99                         System.out.println(\textcolor{stringliteral}{"Escribe un integer que represente el numero de bits que quieres
+       leer"});
+100                         Integer numBits2 = Integer.parseInt(reader.readLine().trim());
+101                         ArrayList<Byte> b= Input.getInstance().getMoreBits(numBits2);
+102                         System.out.println(b);
+103                     \textcolor{keywordflow}{break};
+104                     \textcolor{keywordflow}{case} \textcolor{stringliteral}{"4"}:
+105                         String aux = \textcolor{stringliteral}{""};
+106                         \textcolor{keywordflow}{if}(Input.getInstance().finished())\{
+107                             aux = \textcolor{stringliteral}{"Input ha terminado de leer"};
+108                         \}\textcolor{keywordflow}{else}\{
+109                             aux = \textcolor{stringliteral}{"Input aún puede leer"};
+110                         \}
+111                         System.out.println(aux);
+112                     \textcolor{keywordflow}{break};
+113                     \textcolor{keywordflow}{case} \textcolor{stringliteral}{"5"}:
+114                         System.out.println(\textcolor{stringliteral}{"Los dos primeros bits del fichero comprimido indican que se
+       comprimió con el algoritmo "} + Input.getInstance().getDecodeAlg());
+115                     \textcolor{keywordflow}{break};
+116                     \textcolor{keywordflow}{case} \textcolor{stringliteral}{"6"}:
+117                         path = \textcolor{stringliteral}{"../src/persistencia/data/Input1.txt"};
+118                     \textcolor{keywordflow}{break};
+119                     \textcolor{keywordflow}{case} \textcolor{stringliteral}{"7"}:
+120                     path = \textcolor{stringliteral}{"../src/persistencia/data/Input1.lz78"};
+121                     \textcolor{keywordflow}{break};
+122                     \textcolor{keywordflow}{case} \textcolor{stringliteral}{"8"}:
+123                     path = \textcolor{stringliteral}{"../src/persistencia/data/Input1.lzw"};
+124                     \textcolor{keywordflow}{break};
+125                     \textcolor{keywordflow}{case} \textcolor{stringliteral}{"9"}:
+126                     path = \textcolor{stringliteral}{"../src/persistencia/data/Input1.lzss"};
+127                     \textcolor{keywordflow}{break};
+128                     \textcolor{keywordflow}{case} \textcolor{stringliteral}{"0"}:
+129                         \textcolor{keywordflow}{return};
+130                     \textcolor{keywordflow}{default}:
+131                         System.out.println(\textcolor{stringliteral}{"La opción no es válida"});
+132                     \textcolor{keywordflow}{break};
+133                 \}
+134             \}
+135         \} \textcolor{keywordflow}{catch} (Exception e) \{
+136             e.printStackTrace();
+137         \}
+138     \}
+\end{DoxyCode}
 \mbox{\Hypertarget{classpersistencia_1_1input_1_1Driver____Input_a4f8a0f13847071d675771817ee212f2c}\label{classpersistencia_1_1input_1_1Driver____Input_a4f8a0f13847071d675771817ee212f2c}} 
 \index{persistencia\+::input\+::\+Driver\+\_\+\+\_\+\+Input@{persistencia\+::input\+::\+Driver\+\_\+\+\_\+\+Input}!show\+Options@{show\+Options}}
 \index{show\+Options@{show\+Options}!persistencia\+::input\+::\+Driver\+\_\+\+\_\+\+Input@{persistencia\+::input\+::\+Driver\+\_\+\+\_\+\+Input}}
@@ -72,6 +149,43 @@ Comprovarà les possibles excepcions que puguin apareixer a la classe.
 
 Mostra les accions a realitzar durant l\textquotesingle{}execució 
 
+
+\begin{DoxyCode}
+23                                      \{
+24         System.out.println(\textcolor{stringliteral}{"Driver de Input"});
+25         System.out.println(\textcolor{stringliteral}{"Constructores: "});
+26         System.out.println(\textcolor{stringliteral}{"\(\backslash\)t 1. initialize()"});
+27         System.out.println(\textcolor{stringliteral}{"\(\backslash\)t Input: 1"});
+28         System.out.println();
+29 
+30         System.out.println(\textcolor{stringliteral}{"Consultoras: "});
+31         System.out.println(\textcolor{stringliteral}{"\(\backslash\)t 2. getInstance().getBits()"});
+32         System.out.println(\textcolor{stringliteral}{"\(\backslash\)t Input: 2"});
+33         System.out.println(\textcolor{stringliteral}{"\(\backslash\)t 3. getInstance().getMoreBits()"});
+34         System.out.println(\textcolor{stringliteral}{"\(\backslash\)t Input: 3"});
+35         System.out.println(\textcolor{stringliteral}{"\(\backslash\)t 4. getInstance().finished()"});
+36         System.out.println(\textcolor{stringliteral}{"\(\backslash\)t Input: 4"});
+37         System.out.println(\textcolor{stringliteral}{"\(\backslash\)t 5. getInstance().getDecodeAlg()"});
+38         System.out.println(\textcolor{stringliteral}{"\(\backslash\)t Input: 5"});
+39         System.out.println();
+40 
+41         System.out.println(\textcolor{stringliteral}{"Escoge el 'input PATH'"});
+42         System.out.println(\textcolor{stringliteral}{"\(\backslash\)t 6. PATH = Input1.txt"});
+43         System.out.println(\textcolor{stringliteral}{"\(\backslash\)t Input: 6"});
+44         System.out.println(\textcolor{stringliteral}{"\(\backslash\)t 7. PATH = Input1.lz78"});
+45         System.out.println(\textcolor{stringliteral}{"\(\backslash\)t Input: 7"});
+46         System.out.println(\textcolor{stringliteral}{"\(\backslash\)t 8. PATH = Input1.lzW"});
+47         System.out.println(\textcolor{stringliteral}{"\(\backslash\)t Input: 8"});
+48         System.out.println(\textcolor{stringliteral}{"\(\backslash\)t 9. PATH = Input1.lzss"});
+49         System.out.println(\textcolor{stringliteral}{"\(\backslash\)t Input: 9"});
+50         System.out.println();
+51 
+52         System.out.println(\textcolor{stringliteral}{"\(\backslash\)t 0. Sortir"});
+53         System.out.println(\textcolor{stringliteral}{"\(\backslash\)t Input: 0"});
+54 
+55         System.out.println(\textcolor{stringliteral}{"----------------------------------------"});
+56     \}
+\end{DoxyCode}
 
 
 The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
