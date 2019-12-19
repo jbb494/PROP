@@ -18,10 +18,6 @@ import java.io.IOException;
  * Tota la comunicació entre la capa de presentació i la capa de domini relativa a comprimir i descomprimir 
  * passa perquè les classes de la capa de presentació instanciïn la classe Ctrl_FolderFile.
  * 
- * @author Joan Lapeyra
- */
-public class Ctrl_FolderFile {
-    /*
         Una carpeta comprimida (de n fills) té la seguent estructura:
 
          1B 4B                                             
@@ -48,8 +44,11 @@ public class Ctrl_FolderFile {
 
         La responsabilitat de llegir i escriure "nom fill *", "extensio" i "mida" és 
         delegada a Ctrl_Input_Encoded i Ctrl_Output_Encoded, respectivament
-
-    */
+ * 
+ * @author Joan Lapeyra
+ */
+public class Ctrl_FolderFile {
+    
 
 
     /**
@@ -79,7 +78,7 @@ public class Ctrl_FolderFile {
      * @param img_quality és un número del 0 al 100 que representa la qualitat de la compressió JPEG 
      * amb què es compimiran les imatges ppm de la carpeta.
      * Com més gran sigui menys informació es perdrà però més ocuparà el fitxer.
-     * @return el path de sortida
+     * @return Les estadístiques de compressió
      */
     public String EncodeManualFolder(String text_method, double img_quality) {
         if (!text_method.toLowerCase().equals("lz78") && !text_method.toLowerCase().equals("lzss") && !text_method.toLowerCase().equals("lzw"))
@@ -87,9 +86,7 @@ public class Ctrl_FolderFile {
         if (img_quality < 0 || img_quality > 100)
             throw new IllegalArgumentException("img_quality ha de ser un real entre 0 i 100 incolsos");
 
-        if (img_quality > 0 && img_quality < 1)
-            throw new IllegalArgumentException("N'estas segur? Llegeix l'especificació, rata.");
-
+        
         this.auto = false;
         this.text_method = text_method.toLowerCase();
         this.img_quality = img_quality;
@@ -103,7 +100,7 @@ public class Ctrl_FolderFile {
      * @fn public String EncodeManualText(String text_method)
      * @brief Comprimeix un fitxer de text
      * @param text_method és l'algoritme LZ (lz78, lzw, lzss), emprat per comprimir el fitxer.
-     * @return el path de sortida
+     * @return Les estadístiques de compressió
      */
     public String EncodeManualText(String text_method) {
         if (!text_method.toLowerCase().equals("lz78") && !text_method.toLowerCase().equals("lzss") && !text_method.toLowerCase().equals("lzw"))
@@ -122,15 +119,13 @@ public class Ctrl_FolderFile {
      * @param img_quality és un número del 0 al 100 que representa la qualitat de la compressió JPEG 
      * amb què es compimiran la imatge.
      * Com més gran sigui menys informació es perdrà però més ocuparà el fitxer.
-     * @return el path de sortida
+     * @return Les estadístiques de compressió
      */
     public String EncodeManualImg(double img_quality) {
         if (img_quality < 0 || img_quality > 100)
             throw new IllegalArgumentException("img_quality ha de ser un real entre 0 i 100 incolsos");
 
-        if (img_quality > 0 && img_quality < 1)
-            throw new IllegalArgumentException("N'estas segur? Llegeix l'especificació, rata.");
-
+        
         this.auto = false;
         this.text_method = null;
         this.img_quality = img_quality;
@@ -143,7 +138,7 @@ public class Ctrl_FolderFile {
      * @fn public String EncodeAuto()
      * @brief Comprimeix un fitxer o una carpeta en mode automàtic.
      * @note La responsabilitat de decidir amb quin algoritme comprimir els fitxers de text és de Ctrl_Algorithm
-     * @return el path de sortida
+     * @return Les estadístiques de compressió
      */
     public String EncodeAuto() {
         this.auto = true;
@@ -152,14 +147,24 @@ public class Ctrl_FolderFile {
         return Encode();
     }
 
+    /**
+     * @param text_method Algoritme que serà utiitzat en la compressió pels fitxers de tet
+     */
     private String text_method;
+    /**
+     * @param img_quality Nómero entre 0 i 100 que representa la qualitat de compressió de les 
+     * imatges empreada per l'algoritme JPEG
+     */
     private Double img_quality;
+    /**
+     * @param auto és cert si les compressions son en mode automàtic
+     */
     private boolean auto;
 
     /**
      * @fn public String Encode()
      * @brief Comprimeix un fitxer o carpeta
-     * @return el path de sortida
+     * @return Les estadístiques de compressió
      */
     private String Encode() {
         String path_out = get_outPathPrefix() + ".jm";
@@ -175,7 +180,7 @@ public class Ctrl_FolderFile {
     /**
      * @fn private void Encode(String path)
      * @brief Comprimeix un fitxer o carpeta
-     * @param path Path al fitxer o carpeta
+     * @param path del fitxer o carpeta a comprimir
      */
     private void Encode(String path) { //path in
         Ctrl_Output_Encoded out = new Ctrl_Output_Encoded();
@@ -193,7 +198,7 @@ public class Ctrl_FolderFile {
     /**
      * @fn private void EncodeFolder(String path)
      * @brief Comprimeix una carpeta
-     * @param path Path a la carpeta
+     * @param path de la carpeta a comprimir
      */
     private void EncodeFolder(String path) {
         Ctrl_Output_Encoded out = new Ctrl_Output_Encoded();
@@ -212,7 +217,7 @@ public class Ctrl_FolderFile {
     /**
      * @fn private void EncodeFile(String path)
      * @brief Comprimeix un fitxer
-     * @param path Path a fitxer
+     * @param path del fitxer a comprimir
      */
     private void EncodeFile(String path) {
         Ctrl_Output_Encoded out = new Ctrl_Output_Encoded();
@@ -428,6 +433,10 @@ public class Ctrl_FolderFile {
         throw new IllegalArgumentException("No es un comprimit.");
     }
 
+    /**
+     * @fn public String getFile(String pathTemp)
+     * @return Retorna un String amb el valor del fitxer descomprimit.
+     */
     public String getFile(String pathTemp) throws IOException {
         return Ctrl_Input.getFile(pathTemp);
     }

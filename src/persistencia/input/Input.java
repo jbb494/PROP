@@ -14,7 +14,6 @@ import domini.utils.byteToConversion;
 /**
  * @class Input
  * @brief Classe Input
- * Pot llegir fitxers de fins a 2 GB
  * @author Joan Bellavista
  */
 public class Input {
