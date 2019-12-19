@@ -4,7 +4,6 @@ import java.util.*;
 
 import persistencia.input.Ctrl_Input_LZSS;
 import persistencia.input.Ctrl_Input_Text;
-import persistencia.output.Ctrl_Output;
 import domini.utils.ArrayCircular;
 import domini.utils.IntorByte;
 

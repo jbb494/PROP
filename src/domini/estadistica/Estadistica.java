@@ -1,6 +1,5 @@
 package domini.estadistica;
 
-import java.io.File;
 import java.util.Date;
 
 import domini.utils.Pair;

@@ -1,6 +1,5 @@
 package domini.algorithm;
 import persistencia.input.*;
-import persistencia.output.Ctrl_Output;
 import domini.utils.*;
 
 import java.util.*;
