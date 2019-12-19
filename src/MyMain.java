@@ -1,5 +1,6 @@
 import domini.estadistica.Estadistica;
 import domini.folders.Ctrl_FolderFile;
+import domini.utils.*;
 
 public class MyMain {
 
@@ -12,21 +13,22 @@ public class MyMain {
         
         
 
-        for (int q = 0; q <= 100; q += 20) {
-            String in = "persistencia/data/" + args[0] + "_" + Integer.toString(q) + ".ppm";
+        for (int q = 40; q <= 100; q += 30) {
+            String prefix = "C:/Users/Joan/Desktop/UNI/Q5/PROP/REPOSITORI/experiments jpeg/" + args[0] + "_" + Integer.toString(q);
 
 
             System.out.println();
             System.out.println();
             System.out.println("QUALITAT " + q + ":");
 
-            Estadistica est = new Estadistica(true);
-            Ctrl_FolderFile cff = new Ctrl_FolderFile(in);
-            String comp = cff.EncodeManualImg((double)q);
-            est.work_done();
-            est.show_estadistica(in, comp);
             
-            cff = new Ctrl_FolderFile(comp);
+            Ctrl_FolderFile cff = new Ctrl_FolderFile(prefix + ".ppm");
+            String est = cff.EncodeManualImg((double)q);
+            System.out.println(est);
+            System.out.println();
+            
+            
+            cff = new Ctrl_FolderFile(prefix + ".jm");
             cff.Decode();
         }
     }
