@@ -7,35 +7,33 @@ Aquesta és la classe del algoritme \hyperlink{classdomini_1_1algorithm_1_1LZSS}
 
 
 
-Collaboration diagram for domini.\+algorithm.\+L\+Z\+SS\+:\nopagebreak
-\begin{figure}[H]
-\begin{center}
-\leavevmode
-\includegraphics[width=211pt]{classdomini_1_1algorithm_1_1LZSS__coll__graph}
-\end{center}
-\end{figure}
+Inheritance diagram for domini.\+algorithm.\+L\+Z\+SS\+:
+% FIG 0
+
+
+Collaboration diagram for domini.\+algorithm.\+L\+Z\+SS\+:
+% FIG 1
 \subsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\hyperlink{classdomini_1_1algorithm_1_1LZSS_a991f29ccc89ecbb5645ea8f123205e20}{L\+Z\+SS} (String aux, boolean b)
-\begin{DoxyCompactList}\small\item\em El constructor. \end{DoxyCompactList}\item 
-int \hyperlink{classdomini_1_1algorithm_1_1LZSS_a88e88f2bb6e984cadf48e1c71f0234fc}{K\+M\+P\+Search} (Array\+List$<$ Byte $>$ paraula, \hyperlink{classdomini_1_1utils_1_1ArrayCircular}{Array\+Circular} text)
+\hyperlink{classdomini_1_1algorithm_1_1LZSS_a8db81d23b97e401015ec60763ef13aba}{L\+Z\+SS} (String path, boolean b)
+\begin{DoxyCompactList}\small\item\em Constructor de la classe. \end{DoxyCompactList}\item 
+\hyperlink{classdomini_1_1algorithm_1_1LZSS_af1d7db47ad910e8bdeffb59c2f4f1caa}{L\+Z\+SS} (boolean b)
+\begin{DoxyCompactList}\small\item\em Constructor de la classe. \end{DoxyCompactList}\item 
+int \hyperlink{classdomini_1_1algorithm_1_1LZSS_a94b98f9eb4a4f60b9b773ecbf7fba276}{K\+M\+P\+Search} (Array\+List$<$ Byte $>$ paraula, \hyperlink{classdomini_1_1utils_1_1ArrayCircular}{Array\+Circular} text)
 \begin{DoxyCompactList}\small\item\em Mètode auxiliar del compressor utilitzant l\textquotesingle{}algorisme de Knuth-\/\+Morris-\/\+Pratt. \end{DoxyCompactList}\item 
 int \mbox{[}$\,$\mbox{]} \hyperlink{classdomini_1_1algorithm_1_1LZSS_a56733a42f84d7a58cc5db9ea5f67835f}{Fail\+Array} (Array\+List$<$ Byte $>$ paraula, int M)
 \item 
-\hyperlink{classpersistencia_1_1output_1_1Ctrl__Output}{Ctrl\+\_\+\+Output} \hyperlink{classdomini_1_1algorithm_1_1LZSS_a8172ff7c8aefb87c90c648bc1b6b78b9}{print} ()
-\begin{DoxyCompactList}\small\item\em Mètode print. \end{DoxyCompactList}\item 
-void \hyperlink{classdomini_1_1algorithm_1_1LZSS_a385d06ea406b7a0f1168370e9574531a}{Compressor} (\hyperlink{classpersistencia_1_1input_1_1Ctrl__Input__Text}{Ctrl\+\_\+\+Input\+\_\+\+Text} in)
+void \hyperlink{classdomini_1_1algorithm_1_1LZSS_a047f2460b8461cdb044604dd639326a3}{Compressor} ()
 \begin{DoxyCompactList}\small\item\em Mètode principal per a la compressió. \end{DoxyCompactList}\item 
-void \hyperlink{classdomini_1_1algorithm_1_1LZSS_a3fcf941d4301a4a857c585b3770a0ecf}{Decompressor} (\hyperlink{classpersistencia_1_1input_1_1Ctrl__Input__LZSS}{Ctrl\+\_\+\+Input\+\_\+\+L\+Z\+SS} in)
+void \hyperlink{classdomini_1_1algorithm_1_1LZSS_a665ab942951b839e63dc06e707bba1ad}{Decompressor} ()
 \begin{DoxyCompactList}\small\item\em Mètode principal per a la descompressió. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Private Attributes}
 \begin{DoxyCompactItemize}
 \item 
-\hyperlink{classpersistencia_1_1output_1_1Ctrl__Output}{Ctrl\+\_\+\+Output} \hyperlink{classdomini_1_1algorithm_1_1LZSS_ab15cbc33a0590c2ac42127ca16821fef}{Output}
-\item 
 final int \hyperlink{classdomini_1_1algorithm_1_1LZSS_a00d9f2e9bc2baa39513fad040b8e7123}{window} = 2048
 \end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
 
 
 \subsection{Detailed Description}
@@ -53,67 +51,258 @@ Manel Aguilar
 
 
 \subsection{Constructor \& Destructor Documentation}
-\mbox{\Hypertarget{classdomini_1_1algorithm_1_1LZSS_a991f29ccc89ecbb5645ea8f123205e20}\label{classdomini_1_1algorithm_1_1LZSS_a991f29ccc89ecbb5645ea8f123205e20}} 
+\mbox{\Hypertarget{classdomini_1_1algorithm_1_1LZSS_a8db81d23b97e401015ec60763ef13aba}\label{classdomini_1_1algorithm_1_1LZSS_a8db81d23b97e401015ec60763ef13aba}} 
 \index{domini\+::algorithm\+::\+L\+Z\+SS@{domini\+::algorithm\+::\+L\+Z\+SS}!L\+Z\+SS@{L\+Z\+SS}}
 \index{L\+Z\+SS@{L\+Z\+SS}!domini\+::algorithm\+::\+L\+Z\+SS@{domini\+::algorithm\+::\+L\+Z\+SS}}
-\subsubsection{\texorpdfstring{L\+Z\+S\+S()}{LZSS()}}
-{\footnotesize\ttfamily domini.\+algorithm.\+L\+Z\+S\+S.\+L\+Z\+SS (\begin{DoxyParamCaption}\item[{String}]{aux,  }\item[{boolean}]{b }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+\subsubsection{\texorpdfstring{L\+Z\+S\+S()}{LZSS()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily domini.\+algorithm.\+L\+Z\+S\+S.\+L\+Z\+SS (\begin{DoxyParamCaption}\item[{String}]{path,  }\item[{boolean}]{b }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
 
 
 
-El constructor. 
+Constructor de la classe. 
 
 
 \begin{DoxyParams}{Parameters}
-{\em aux} & inicialitza una instància Ctrl\+\_\+\+Output. \\
+{\em path} & Path de sortida \\
 \hline
-{\em b} & Si false comprimeix else descomprimeix. \\
+{\em b} & False si estas comprimint, True si estas descomprimint \\
 \hline
 \end{DoxyParams}
 
+\begin{DoxyCode}
+24                                         \{
+25         super(path, b);
+26         \textcolor{keywordflow}{if} (!b) \{
+27             \hyperlink{classdomini_1_1algorithm_1_1Algorithm_a4de9955411c656325adc391ef570c082}{Output}.\hyperlink{classpersistencia_1_1output_1_1Ctrl__Output_ae6d6857910a023982900ddc857b891f0}{addMetadata}(\textcolor{stringliteral}{"lzss"});
+28         \}
+29     \}
+\end{DoxyCode}
+\mbox{\Hypertarget{classdomini_1_1algorithm_1_1LZSS_af1d7db47ad910e8bdeffb59c2f4f1caa}\label{classdomini_1_1algorithm_1_1LZSS_af1d7db47ad910e8bdeffb59c2f4f1caa}} 
+\index{domini\+::algorithm\+::\+L\+Z\+SS@{domini\+::algorithm\+::\+L\+Z\+SS}!L\+Z\+SS@{L\+Z\+SS}}
+\index{L\+Z\+SS@{L\+Z\+SS}!domini\+::algorithm\+::\+L\+Z\+SS@{domini\+::algorithm\+::\+L\+Z\+SS}}
+\subsubsection{\texorpdfstring{L\+Z\+S\+S()}{LZSS()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily domini.\+algorithm.\+L\+Z\+S\+S.\+L\+Z\+SS (\begin{DoxyParamCaption}\item[{boolean}]{b }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Constructor de la classe. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em b} & False si estas comprimint, True si estas descomprimint \\
+\hline
+\end{DoxyParams}
+\begin{DoxyNote}{Note}
+Es continua escrivint al fitxer que s\textquotesingle{}estava escrivint 
+\end{DoxyNote}
+
+\begin{DoxyCode}
+36                            \{
+37         super(b);
+38         \textcolor{keywordflow}{if} (!b) \{
+39             \hyperlink{classdomini_1_1algorithm_1_1Algorithm_a4de9955411c656325adc391ef570c082}{Output}.\hyperlink{classpersistencia_1_1output_1_1Ctrl__Output_ae6d6857910a023982900ddc857b891f0}{addMetadata}(\textcolor{stringliteral}{"lzss"});
+40         \}
+41     \}
+\end{DoxyCode}
+
 
 \subsection{Member Function Documentation}
-\mbox{\Hypertarget{classdomini_1_1algorithm_1_1LZSS_a385d06ea406b7a0f1168370e9574531a}\label{classdomini_1_1algorithm_1_1LZSS_a385d06ea406b7a0f1168370e9574531a}} 
+\mbox{\Hypertarget{classdomini_1_1algorithm_1_1LZSS_a047f2460b8461cdb044604dd639326a3}\label{classdomini_1_1algorithm_1_1LZSS_a047f2460b8461cdb044604dd639326a3}} 
 \index{domini\+::algorithm\+::\+L\+Z\+SS@{domini\+::algorithm\+::\+L\+Z\+SS}!Compressor@{Compressor}}
 \index{Compressor@{Compressor}!domini\+::algorithm\+::\+L\+Z\+SS@{domini\+::algorithm\+::\+L\+Z\+SS}}
 \subsubsection{\texorpdfstring{Compressor()}{Compressor()}}
-{\footnotesize\ttfamily public void domini.\+algorithm.\+L\+Z\+S\+S.\+Compressor (\begin{DoxyParamCaption}\item[{\hyperlink{classpersistencia_1_1input_1_1Ctrl__Input__Text}{Ctrl\+\_\+\+Input\+\_\+\+Text}}]{in }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+{\footnotesize\ttfamily public void domini.\+algorithm.\+L\+Z\+S\+S.\+Compressor (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
 
 
 
 Mètode principal per a la compressió. 
 
 
-\begin{DoxyParams}{Parameters}
-{\em in} & És per anar agafant informació de la classe Ctrl\+\_\+\+Input\+\_\+\+Text. \\
-\hline
-\end{DoxyParams}
-\mbox{\Hypertarget{classdomini_1_1algorithm_1_1LZSS_a3fcf941d4301a4a857c585b3770a0ecf}\label{classdomini_1_1algorithm_1_1LZSS_a3fcf941d4301a4a857c585b3770a0ecf}} 
+\begin{DoxyCode}
+122     \{
+123         \hyperlink{classdomini_1_1algorithm_1_1Algorithm_a070b7e7dcc453b03751d265beae5306c}{checkCompressor}();
+124         Ctrl\_Input\_Text in = \textcolor{keyword}{new} Ctrl\_Input\_Text();
+125 
+126         ArrayList<Byte> aux = \textcolor{keyword}{new} ArrayList<Byte>();
+127         ArrayCircular vc = \textcolor{keyword}{new} ArrayCircular(\hyperlink{classdomini_1_1algorithm_1_1LZSS_a00d9f2e9bc2baa39513fad040b8e7123}{window});
+128         byte nextByte;
+129         \textcolor{keywordtype}{boolean} first = \textcolor{keyword}{true};
+130         \textcolor{keywordtype}{boolean} found2 = \textcolor{keyword}{false};
+131         \textcolor{keywordtype}{int} punter = 0, pivot = 0, pivnotf = 0, i = 0;
+132         \textcolor{keywordflow}{while}(!in.finished())
+133         \{
+134             nextByte = in.get();
+135             aux.add(nextByte);
+136             \textcolor{keywordflow}{if}(vc.isIn(nextByte))
+137             \{
+138                 \textcolor{keywordflow}{if}(first)
+139                 \{
+140                     first = \textcolor{keyword}{false};
+141                     punter = i;
+142                 \}
+143                 pivot = \hyperlink{classdomini_1_1algorithm_1_1LZSS_a94b98f9eb4a4f60b9b773ecbf7fba276}{KMPSearch}(aux, vc);
+144                 \textcolor{keywordtype}{boolean} found = (pivot != -1);
+145                 \textcolor{keywordflow}{if}(found && aux.size() == 34)
+146                 \{
+147                     \hyperlink{classdomini_1_1algorithm_1_1Algorithm_a4de9955411c656325adc391ef570c082}{Output}.\hyperlink{classpersistencia_1_1output_1_1Ctrl__Output_a8c5aa5a6acb5259faeb1c05c71ddd21c}{add}((byte)1, 1);
+148                     \textcolor{keywordtype}{int} pos = punter - pivot;
+149                     \textcolor{keywordflow}{if}(pos < 0) pos += \hyperlink{classdomini_1_1algorithm_1_1LZSS_a00d9f2e9bc2baa39513fad040b8e7123}{window};
+150                     \hyperlink{classdomini_1_1algorithm_1_1Algorithm_a4de9955411c656325adc391ef570c082}{Output}.\hyperlink{classpersistencia_1_1output_1_1Ctrl__Output_a8c5aa5a6acb5259faeb1c05c71ddd21c}{add}(pos, 11);
+151                     \hyperlink{classdomini_1_1algorithm_1_1Algorithm_a4de9955411c656325adc391ef570c082}{Output}.\hyperlink{classpersistencia_1_1output_1_1Ctrl__Output_a8c5aa5a6acb5259faeb1c05c71ddd21c}{add}(31, 5);
+152                     aux = \textcolor{keyword}{new} ArrayList<Byte>();
+153                     first = \textcolor{keyword}{true};
+154                 \}
+155                 \textcolor{keywordflow}{else} \textcolor{keywordflow}{if}(!found && aux.size() >= 4)
+156                 \{
+157                     \hyperlink{classdomini_1_1algorithm_1_1Algorithm_a4de9955411c656325adc391ef570c082}{Output}.\hyperlink{classpersistencia_1_1output_1_1Ctrl__Output_a8c5aa5a6acb5259faeb1c05c71ddd21c}{add}((byte)1, 1);
+158                     \textcolor{keywordtype}{int} pos = punter - pivnotf;
+159                     \textcolor{keywordflow}{if}(pos < 0) pos += \hyperlink{classdomini_1_1algorithm_1_1LZSS_a00d9f2e9bc2baa39513fad040b8e7123}{window};
+160                     \hyperlink{classdomini_1_1algorithm_1_1Algorithm_a4de9955411c656325adc391ef570c082}{Output}.\hyperlink{classpersistencia_1_1output_1_1Ctrl__Output_a8c5aa5a6acb5259faeb1c05c71ddd21c}{add}(pos, 11);
+161                     punter = ((aux.size() - 1)+punter)%\hyperlink{classdomini_1_1algorithm_1_1LZSS_a00d9f2e9bc2baa39513fad040b8e7123}{window};
+162                     \hyperlink{classdomini_1_1algorithm_1_1Algorithm_a4de9955411c656325adc391ef570c082}{Output}.\hyperlink{classpersistencia_1_1output_1_1Ctrl__Output_a8c5aa5a6acb5259faeb1c05c71ddd21c}{add}(aux.size() - 4, 5);
+163                     aux = \textcolor{keyword}{new} ArrayList<Byte>();
+164                     aux.add(nextByte);
+165                 \}
+166                 \textcolor{keywordflow}{else} \textcolor{keywordflow}{if}(!found && aux.size() < 4)
+167                 \{
+168                     \hyperlink{classdomini_1_1algorithm_1_1Algorithm_a4de9955411c656325adc391ef570c082}{Output}.\hyperlink{classpersistencia_1_1output_1_1Ctrl__Output_a8c5aa5a6acb5259faeb1c05c71ddd21c}{add}((byte)0, 1);
+169                     \hyperlink{classdomini_1_1algorithm_1_1Algorithm_a4de9955411c656325adc391ef570c082}{Output}.\hyperlink{classpersistencia_1_1output_1_1Ctrl__Output_a8c5aa5a6acb5259faeb1c05c71ddd21c}{add}(aux.get(0), 8);
+170                     aux.remove(0);
+171                     punter++;
+172                     \textcolor{keywordflow}{if}(punter == \hyperlink{classdomini_1_1algorithm_1_1LZSS_a00d9f2e9bc2baa39513fad040b8e7123}{window}) punter = 0;
+173                 \}
+174                 found2 = found;
+175             \}
+176             \textcolor{keywordflow}{else}
+177             \{
+178                 \textcolor{keywordflow}{if}(aux.size() >= 4)
+179                 \{
+180                     \hyperlink{classdomini_1_1algorithm_1_1Algorithm_a4de9955411c656325adc391ef570c082}{Output}.\hyperlink{classpersistencia_1_1output_1_1Ctrl__Output_a8c5aa5a6acb5259faeb1c05c71ddd21c}{add}((byte)1, 1);
+181                     \textcolor{keywordtype}{int} pos = punter - pivnotf;
+182                     \textcolor{keywordflow}{if}(pos < 0) pos += \hyperlink{classdomini_1_1algorithm_1_1LZSS_a00d9f2e9bc2baa39513fad040b8e7123}{window};
+183                     \hyperlink{classdomini_1_1algorithm_1_1Algorithm_a4de9955411c656325adc391ef570c082}{Output}.\hyperlink{classpersistencia_1_1output_1_1Ctrl__Output_a8c5aa5a6acb5259faeb1c05c71ddd21c}{add}(pos, 11);
+184                     \hyperlink{classdomini_1_1algorithm_1_1Algorithm_a4de9955411c656325adc391ef570c082}{Output}.\hyperlink{classpersistencia_1_1output_1_1Ctrl__Output_a8c5aa5a6acb5259faeb1c05c71ddd21c}{add}(aux.size() - 4, 5);
+185                     \hyperlink{classdomini_1_1algorithm_1_1Algorithm_a4de9955411c656325adc391ef570c082}{Output}.\hyperlink{classpersistencia_1_1output_1_1Ctrl__Output_a8c5aa5a6acb5259faeb1c05c71ddd21c}{add}((byte)0, 1);
+186                     \hyperlink{classdomini_1_1algorithm_1_1Algorithm_a4de9955411c656325adc391ef570c082}{Output}.\hyperlink{classpersistencia_1_1output_1_1Ctrl__Output_a8c5aa5a6acb5259faeb1c05c71ddd21c}{add}(nextByte, 8);
+187                 \}
+188                 \textcolor{keywordflow}{else}
+189                 \{
+190                     \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int} j = 0; j < aux.size(); j++)
+191                     \{
+192                         \hyperlink{classdomini_1_1algorithm_1_1Algorithm_a4de9955411c656325adc391ef570c082}{Output}.\hyperlink{classpersistencia_1_1output_1_1Ctrl__Output_a8c5aa5a6acb5259faeb1c05c71ddd21c}{add}((byte)0, 1);
+193                         \hyperlink{classdomini_1_1algorithm_1_1Algorithm_a4de9955411c656325adc391ef570c082}{Output}.\hyperlink{classpersistencia_1_1output_1_1Ctrl__Output_a8c5aa5a6acb5259faeb1c05c71ddd21c}{add}(aux.get(j), 8);
+194                     \}
+195                 \}
+196                 aux = \textcolor{keyword}{new} ArrayList<Byte>();
+197                 first = \textcolor{keyword}{true};
+198             \}
+199             vc.setValue(nextByte);
+200             pivnotf = pivot;
+201             i = (++i)%\hyperlink{classdomini_1_1algorithm_1_1LZSS_a00d9f2e9bc2baa39513fad040b8e7123}{window};
+202         \}
+203         \textcolor{keywordflow}{if}(found2 && aux.size() >= 3 && aux.size() < 34)
+204         \{
+205             \hyperlink{classdomini_1_1algorithm_1_1Algorithm_a4de9955411c656325adc391ef570c082}{Output}.\hyperlink{classpersistencia_1_1output_1_1Ctrl__Output_a8c5aa5a6acb5259faeb1c05c71ddd21c}{add}((byte)1, 1);
+206             \textcolor{keywordtype}{int} pos = punter - pivot;
+207             \textcolor{keywordflow}{if}(pos < 0) pos += \hyperlink{classdomini_1_1algorithm_1_1LZSS_a00d9f2e9bc2baa39513fad040b8e7123}{window};
+208             \hyperlink{classdomini_1_1algorithm_1_1Algorithm_a4de9955411c656325adc391ef570c082}{Output}.\hyperlink{classpersistencia_1_1output_1_1Ctrl__Output_a8c5aa5a6acb5259faeb1c05c71ddd21c}{add}(pos, 11);
+209             \hyperlink{classdomini_1_1algorithm_1_1Algorithm_a4de9955411c656325adc391ef570c082}{Output}.\hyperlink{classpersistencia_1_1output_1_1Ctrl__Output_a8c5aa5a6acb5259faeb1c05c71ddd21c}{add}(aux.size()-3, 5);
+210         \}
+211         \textcolor{keywordflow}{else}
+212         \{
+213             \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int} j = 0; j < aux.size(); j++)
+214             \{
+215                 \hyperlink{classdomini_1_1algorithm_1_1Algorithm_a4de9955411c656325adc391ef570c082}{Output}.\hyperlink{classpersistencia_1_1output_1_1Ctrl__Output_a8c5aa5a6acb5259faeb1c05c71ddd21c}{add}((byte)0, 1);
+216                 \hyperlink{classdomini_1_1algorithm_1_1Algorithm_a4de9955411c656325adc391ef570c082}{Output}.\hyperlink{classpersistencia_1_1output_1_1Ctrl__Output_a8c5aa5a6acb5259faeb1c05c71ddd21c}{add}(aux.get(j),8);
+217             \}
+218         \}
+219     \}
+\end{DoxyCode}
+\mbox{\Hypertarget{classdomini_1_1algorithm_1_1LZSS_a665ab942951b839e63dc06e707bba1ad}\label{classdomini_1_1algorithm_1_1LZSS_a665ab942951b839e63dc06e707bba1ad}} 
 \index{domini\+::algorithm\+::\+L\+Z\+SS@{domini\+::algorithm\+::\+L\+Z\+SS}!Decompressor@{Decompressor}}
 \index{Decompressor@{Decompressor}!domini\+::algorithm\+::\+L\+Z\+SS@{domini\+::algorithm\+::\+L\+Z\+SS}}
 \subsubsection{\texorpdfstring{Decompressor()}{Decompressor()}}
-{\footnotesize\ttfamily public void domini.\+algorithm.\+L\+Z\+S\+S.\+Decompressor (\begin{DoxyParamCaption}\item[{\hyperlink{classpersistencia_1_1input_1_1Ctrl__Input__LZSS}{Ctrl\+\_\+\+Input\+\_\+\+L\+Z\+SS}}]{in }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+{\footnotesize\ttfamily public void domini.\+algorithm.\+L\+Z\+S\+S.\+Decompressor (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
 
 
 
 Mètode principal per a la descompressió. 
 
 
-\begin{DoxyParams}{Parameters}
-{\em in} & És per anar agafant informació de la classe Ctrl\+\_\+\+Input\+\_\+\+L\+Z\+SS. \\
-\hline
-\end{DoxyParams}
+\begin{DoxyCode}
+227     \{
+228         \hyperlink{classdomini_1_1algorithm_1_1Algorithm_a6b738342cc7169893fa60d593f5a13db}{checkDecompressor}();
+229         Ctrl\_Input\_LZSS in = \textcolor{keyword}{new} Ctrl\_Input\_LZSS();
+230 
+231         ArrayCircular vc = \textcolor{keyword}{new} ArrayCircular(\hyperlink{classdomini_1_1algorithm_1_1LZSS_a00d9f2e9bc2baa39513fad040b8e7123}{window});
+232         IntorByte ioc;
+233         \textcolor{keywordflow}{while}(!in.finished())
+234         \{
+235             ioc = in.getLZSS();
+236             \textcolor{keywordflow}{if} (in.finished()) \textcolor{keywordflow}{return};
+237             \textcolor{keywordflow}{if}(ioc.IsIntorByte())
+238             \{
+239                 byte c = ioc.GetByte();
+240                 \hyperlink{classdomini_1_1algorithm_1_1Algorithm_a4de9955411c656325adc391ef570c082}{Output}.\hyperlink{classpersistencia_1_1output_1_1Ctrl__Output_a8c5aa5a6acb5259faeb1c05c71ddd21c}{add}(c, 8);
+241                 vc.setValue(c);
+242             \}
+243             \textcolor{keywordflow}{else}
+244             \{
+245                 \textcolor{keywordtype}{int} despl = ioc.GetDespl();
+246                 \textcolor{keywordtype}{int} mida = ioc.GetMida();
+247                 \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int} j = 0; j < mida; j++)
+248                 \{
+249                     byte c = vc.getValueAmbDespl(despl);
+250                     \hyperlink{classdomini_1_1algorithm_1_1Algorithm_a4de9955411c656325adc391ef570c082}{Output}.\hyperlink{classpersistencia_1_1output_1_1Ctrl__Output_a8c5aa5a6acb5259faeb1c05c71ddd21c}{add}(c,8);
+251                     vc.setValue(c);
+252                 \}
+253             \}
+254         \}
+255     \}
+\end{DoxyCode}
 \mbox{\Hypertarget{classdomini_1_1algorithm_1_1LZSS_a56733a42f84d7a58cc5db9ea5f67835f}\label{classdomini_1_1algorithm_1_1LZSS_a56733a42f84d7a58cc5db9ea5f67835f}} 
 \index{domini\+::algorithm\+::\+L\+Z\+SS@{domini\+::algorithm\+::\+L\+Z\+SS}!Fail\+Array@{Fail\+Array}}
 \index{Fail\+Array@{Fail\+Array}!domini\+::algorithm\+::\+L\+Z\+SS@{domini\+::algorithm\+::\+L\+Z\+SS}}
 \subsubsection{\texorpdfstring{Fail\+Array()}{FailArray()}}
 {\footnotesize\ttfamily int \mbox{[}$\,$\mbox{]} domini.\+algorithm.\+L\+Z\+S\+S.\+Fail\+Array (\begin{DoxyParamCaption}\item[{Array\+List$<$ Byte $>$}]{paraula,  }\item[{int}]{M }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
 
-\mbox{\Hypertarget{classdomini_1_1algorithm_1_1LZSS_a88e88f2bb6e984cadf48e1c71f0234fc}\label{classdomini_1_1algorithm_1_1LZSS_a88e88f2bb6e984cadf48e1c71f0234fc}} 
+
+\begin{DoxyCode}
+86     \{ 
+87         
+88         \textcolor{keywordtype}{int} lps[] = \textcolor{keyword}{new} \textcolor{keywordtype}{int}[M]; 
+89         lps[0] = 0;
+90         \textcolor{keywordtype}{int} len = 0; 
+91         \textcolor{keywordtype}{int} i = 1; 
+92         \textcolor{keywordflow}{while} (i < M)
+93         \{ 
+94             \textcolor{keywordflow}{if} (paraula.get(i) == paraula.get(len))
+95             \{ 
+96                 ++len; 
+97                 lps[i] = len; 
+98                 ++i; 
+99             \} 
+100             \textcolor{keywordflow}{else}
+101             \{ 
+102                 \textcolor{keywordflow}{if} (len != 0)
+103                 \{ 
+104                     len = lps[len - 1];
+105                 \} 
+106                 \textcolor{keywordflow}{else}
+107                 \{ 
+108                     lps[i] = len; 
+109                     i++; 
+110                 \} 
+111             \} 
+112         \} 
+113         \textcolor{keywordflow}{return} lps;
+114     \}
+\end{DoxyCode}
+\mbox{\Hypertarget{classdomini_1_1algorithm_1_1LZSS_a94b98f9eb4a4f60b9b773ecbf7fba276}\label{classdomini_1_1algorithm_1_1LZSS_a94b98f9eb4a4f60b9b773ecbf7fba276}} 
 \index{domini\+::algorithm\+::\+L\+Z\+SS@{domini\+::algorithm\+::\+L\+Z\+SS}!K\+M\+P\+Search@{K\+M\+P\+Search}}
 \index{K\+M\+P\+Search@{K\+M\+P\+Search}!domini\+::algorithm\+::\+L\+Z\+SS@{domini\+::algorithm\+::\+L\+Z\+SS}}
 \subsubsection{\texorpdfstring{K\+M\+P\+Search()}{KMPSearch()}}
-{\footnotesize\ttfamily private int domini.\+algorithm.\+L\+Z\+S\+S.\+K\+M\+P\+Search (\begin{DoxyParamCaption}\item[{Array\+List$<$ Byte $>$}]{paraula,  }\item[{\hyperlink{classdomini_1_1utils_1_1ArrayCircular}{Array\+Circular}}]{text }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+{\footnotesize\ttfamily public int domini.\+algorithm.\+L\+Z\+S\+S.\+K\+M\+P\+Search (\begin{DoxyParamCaption}\item[{Array\+List$<$ Byte $>$}]{paraula,  }\item[{\hyperlink{classdomini_1_1utils_1_1ArrayCircular}{Array\+Circular}}]{text }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
 
 
 
@@ -129,33 +318,38 @@ Mètode auxiliar del compressor utilitzant l\textquotesingle{}algorisme de Knuth
 \begin{DoxyReturn}{Returns}
 Retorna l\textquotesingle{}index de la primera posició a text si troba paraula else -\/1. 
 \end{DoxyReturn}
-\mbox{\Hypertarget{classdomini_1_1algorithm_1_1LZSS_a8172ff7c8aefb87c90c648bc1b6b78b9}\label{classdomini_1_1algorithm_1_1LZSS_a8172ff7c8aefb87c90c648bc1b6b78b9}} 
-\index{domini\+::algorithm\+::\+L\+Z\+SS@{domini\+::algorithm\+::\+L\+Z\+SS}!print@{print}}
-\index{print@{print}!domini\+::algorithm\+::\+L\+Z\+SS@{domini\+::algorithm\+::\+L\+Z\+SS}}
-\subsubsection{\texorpdfstring{print()}{print()}}
-{\footnotesize\ttfamily public \hyperlink{classpersistencia_1_1output_1_1Ctrl__Output}{Ctrl\+\_\+\+Output} domini.\+algorithm.\+L\+Z\+S\+S.\+print (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
 
-
-
-Mètode print. 
-
-\begin{DoxyReturn}{Returns}
-Retorna l\textquotesingle{}atribut \char`\"{}\+Output\char`\"{}. 
-\end{DoxyReturn}
+\begin{DoxyCode}
+51     \{
+52         \textcolor{keywordtype}{int} M = paraula.size(); 
+53         \textcolor{keywordtype}{int} N, i;
+54         \textcolor{keywordtype}{int} aux = text.getAfegits();
+55         \textcolor{keywordflow}{if}(aux < \hyperlink{classdomini_1_1algorithm_1_1LZSS_a00d9f2e9bc2baa39513fad040b8e7123}{window})\{ N = aux; i = 0; \}
+56         \textcolor{keywordflow}{else} \{ N = text.getEnd(); i = text.getStart(); \}
+57         \textcolor{keywordtype}{int} j = 0;
+58         \textcolor{keywordtype}{int} lps[] = \hyperlink{classdomini_1_1algorithm_1_1LZSS_a56733a42f84d7a58cc5db9ea5f67835f}{FailArray}(paraula, M);
+59         \textcolor{keywordflow}{while} (i != N) \{ 
+60             \textcolor{keywordflow}{if} (paraula.get(j).equals(text.getValue(i))) \{ 
+61                 ++j; 
+62                 i = (++i)%\hyperlink{classdomini_1_1algorithm_1_1LZSS_a00d9f2e9bc2baa39513fad040b8e7123}{window}; 
+63             \} 
+64             \textcolor{keywordflow}{if} (j == M)
+65             \{
+66                 \textcolor{keywordtype}{int} ret = i-j;
+67                 \textcolor{keywordflow}{if}(ret < 0) ret += \hyperlink{classdomini_1_1algorithm_1_1LZSS_a00d9f2e9bc2baa39513fad040b8e7123}{window};
+68                 \textcolor{keywordflow}{return} ret;
+69             \}
+70             \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (i != N && !paraula.get(j).equals(text.getValue(i))) \{ 
+71                 \textcolor{keywordflow}{if} (j != 0) j = lps[j - 1]; 
+72                 \textcolor{keywordflow}{else} i = (++i)%\hyperlink{classdomini_1_1algorithm_1_1LZSS_a00d9f2e9bc2baa39513fad040b8e7123}{window}; 
+73             \} 
+74         \} 
+75         \textcolor{keywordflow}{return} -1;
+76     \} 
+\end{DoxyCode}
 
 
 \subsection{Member Data Documentation}
-\mbox{\Hypertarget{classdomini_1_1algorithm_1_1LZSS_ab15cbc33a0590c2ac42127ca16821fef}\label{classdomini_1_1algorithm_1_1LZSS_ab15cbc33a0590c2ac42127ca16821fef}} 
-\index{domini\+::algorithm\+::\+L\+Z\+SS@{domini\+::algorithm\+::\+L\+Z\+SS}!Output@{Output}}
-\index{Output@{Output}!domini\+::algorithm\+::\+L\+Z\+SS@{domini\+::algorithm\+::\+L\+Z\+SS}}
-\subsubsection{\texorpdfstring{Output}{Output}}
-{\footnotesize\ttfamily \hyperlink{classpersistencia_1_1output_1_1Ctrl__Output}{Ctrl\+\_\+\+Output} domini.\+algorithm.\+L\+Z\+S\+S.\+Output\hspace{0.3cm}{\ttfamily [private]}}
-
-
-\begin{DoxyParams}{Parameters}
-{\em Output} & Utilitzat per a la compressió i descompressió de fitxers. \\
-\hline
-\end{DoxyParams}
 \mbox{\Hypertarget{classdomini_1_1algorithm_1_1LZSS_a00d9f2e9bc2baa39513fad040b8e7123}\label{classdomini_1_1algorithm_1_1LZSS_a00d9f2e9bc2baa39513fad040b8e7123}} 
 \index{domini\+::algorithm\+::\+L\+Z\+SS@{domini\+::algorithm\+::\+L\+Z\+SS}!window@{window}}
 \index{window@{window}!domini\+::algorithm\+::\+L\+Z\+SS@{domini\+::algorithm\+::\+L\+Z\+SS}}

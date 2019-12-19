@@ -45,12 +45,72 @@ Comprovarà les possibles excepcions que puguin apareixer a la classe.
 {\em linea} & Número de operació realitzada \\
 \hline
 \end{DoxyParams}
+
+\begin{DoxyCode}
+42                                                                                         \{
+43         \textcolor{keywordtype}{int} op = Integer.parseInt(linea);
+44         \textcolor{keywordflow}{if}(ctrl\_algorithm == null && op > 1) \{
+45             \textcolor{keywordflow}{throw} \textcolor{keyword}{new} IllegalArgumentException(\textcolor{stringliteral}{"Debes llamar al constructor antes"});
+46         \}
+47     \}
+\end{DoxyCode}
 \mbox{\Hypertarget{classdomini_1_1algorithm_1_1Driver____Ctrl__Algorithm_a2aa6a8b8f8c0c991a11b30e2bd1f244e}\label{classdomini_1_1algorithm_1_1Driver____Ctrl__Algorithm_a2aa6a8b8f8c0c991a11b30e2bd1f244e}} 
 \index{domini\+::algorithm\+::\+Driver\+\_\+\+\_\+\+Ctrl\+\_\+\+Algorithm@{domini\+::algorithm\+::\+Driver\+\_\+\+\_\+\+Ctrl\+\_\+\+Algorithm}!main@{main}}
 \index{main@{main}!domini\+::algorithm\+::\+Driver\+\_\+\+\_\+\+Ctrl\+\_\+\+Algorithm@{domini\+::algorithm\+::\+Driver\+\_\+\+\_\+\+Ctrl\+\_\+\+Algorithm}}
 \subsubsection{\texorpdfstring{main()}{main()}}
 {\footnotesize\ttfamily static void domini.\+algorithm.\+Driver\+\_\+\+\_\+\+Ctrl\+\_\+\+Algorithm.\+main (\begin{DoxyParamCaption}\item[{String \mbox{[}$\,$\mbox{]}}]{args }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
 
+
+\begin{DoxyCode}
+49                                            \{
+50     \textcolor{keywordflow}{try} \{
+51         Ctrl\_Algorithm ctrl\_algorithm = null;
+52         \hyperlink{classdomini_1_1algorithm_1_1Driver____Ctrl__Algorithm_afad303731ad32c08c8dbffbf63b3fd9f}{showOptions}();
+53         BufferedReader reader = \textcolor{keyword}{new} BufferedReader(\textcolor{keyword}{new} InputStreamReader(System.in));
+54         String linea = \textcolor{stringliteral}{""};
+55         \textcolor{keywordflow}{while}(linea != null)\{
+56             System.out.println(\textcolor{stringliteral}{"Selecciona una opción:"});
+57             linea = reader.readLine().trim();
+58             System.out.println(\textcolor{stringliteral}{"Opción: "} + linea + \textcolor{stringliteral}{" seleccionada"});
+59             \hyperlink{classdomini_1_1algorithm_1_1Driver____Ctrl__Algorithm_a38ad7761ecde80325d83ce2d2597a61b}{comprovarExcepcions}(ctrl\_algorithm, linea);
+60             \textcolor{keywordflow}{switch}(linea)\{
+61                 \textcolor{keywordflow}{case} \textcolor{stringliteral}{"1"}:
+62                     ctrl\_algorithm = \textcolor{keyword}{new} Ctrl\_Algorithm();
+63                 \textcolor{keywordflow}{break};
+64                 \textcolor{keywordflow}{case} \textcolor{stringliteral}{"2"}:
+65                     System.out.println(\textcolor{stringliteral}{"Escribe el path del archivo que quieres hacer la compresión y el
+       metodo, y la calidad de compresion (separado por espacios). "});
+66                     String[] aux = reader.readLine().trim().split(\textcolor{stringliteral}{" "});
+67                     String Path = aux[0];
+68                     String method = aux[1];
+69                     Double img\_quality = Double.parseDouble(aux[2]);
+70                     ctrl\_algorithm.Encode(Path, method, img\_quality);
+71                 \textcolor{keywordflow}{break};
+72                 \textcolor{keywordflow}{case} \textcolor{stringliteral}{"3"}:
+73                     System.out.println(\textcolor{stringliteral}{"Escribe el path del archivo que quieres comprimir."});
+74                     String aux1 = reader.readLine().trim();
+75                     Path = aux1;
+76                     String ret = ctrl\_algorithm.Auto\_Encoder(Path);
+77                     System.err.println(ret);
+78                 \textcolor{keywordflow}{break};
+79                 \textcolor{keywordflow}{case} \textcolor{stringliteral}{"4"}:
+80                     System.out.println(\textcolor{stringliteral}{"escribe el path del archivo comprimido que quieres descomprimir"});
+81                     String[] aux2 = reader.readLine().trim().split(\textcolor{stringliteral}{" "});
+82                     Path = aux2[0];
+83                     ctrl\_algorithm.Decode(Path);
+84                 \textcolor{keywordflow}{break};
+85                 \textcolor{keywordflow}{case} \textcolor{stringliteral}{"0"}:
+86                     \textcolor{keywordflow}{return};
+87                 \textcolor{keywordflow}{default}:
+88                     System.out.println(\textcolor{stringliteral}{"La opción no es válida"});
+89                 \textcolor{keywordflow}{break};
+90             \}
+91         \}
+92     \}\textcolor{keywordflow}{catch} (Exception e) \{
+93         e.printStackTrace();
+94     \}
+95     \}
+\end{DoxyCode}
 \mbox{\Hypertarget{classdomini_1_1algorithm_1_1Driver____Ctrl__Algorithm_afad303731ad32c08c8dbffbf63b3fd9f}\label{classdomini_1_1algorithm_1_1Driver____Ctrl__Algorithm_afad303731ad32c08c8dbffbf63b3fd9f}} 
 \index{domini\+::algorithm\+::\+Driver\+\_\+\+\_\+\+Ctrl\+\_\+\+Algorithm@{domini\+::algorithm\+::\+Driver\+\_\+\+\_\+\+Ctrl\+\_\+\+Algorithm}!show\+Options@{show\+Options}}
 \index{show\+Options@{show\+Options}!domini\+::algorithm\+::\+Driver\+\_\+\+\_\+\+Ctrl\+\_\+\+Algorithm@{domini\+::algorithm\+::\+Driver\+\_\+\+\_\+\+Ctrl\+\_\+\+Algorithm}}
@@ -61,6 +121,28 @@ Comprovarà les possibles excepcions que puguin apareixer a la classe.
 
 Mostra les accions a realitzar durant l\textquotesingle{}execució 
 
+
+\begin{DoxyCode}
+17                                      \{
+18         System.out.println(\textcolor{stringliteral}{"Driver de Ctrl\_Algorithm"});
+19         System.out.println(\textcolor{stringliteral}{"Constructores: "});
+20         System.out.println(\textcolor{stringliteral}{"     1. Ctrl\_Algorithm()"});
+21         System.out.println(\textcolor{stringliteral}{"     Input: 1"});
+22 
+23         System.out.println(\textcolor{stringliteral}{"\(\backslash\)nFunciones: "});
+24         System.out.println(\textcolor{stringliteral}{"     2. Encode(String Path) "});
+25         System.out.println(\textcolor{stringliteral}{"     Input: 2"});
+26         System.out.println(\textcolor{stringliteral}{"     3. Auto\_Encoder(String Path)"});
+27         System.out.println(\textcolor{stringliteral}{"     Input: 3"});
+28         System.out.println(\textcolor{stringliteral}{"     4. Decode(String Path, String method, Integer img\_quality)"});
+29         System.out.println(\textcolor{stringliteral}{"     Input: 4"});
+30         System.out.println();
+31 
+32         System.out.println(\textcolor{stringliteral}{"     0. Sortir"});
+33         System.out.println(\textcolor{stringliteral}{"     Input: 0"});
+34         System.out.println(\textcolor{stringliteral}{"----------------------------------------"});
+35     \}
+\end{DoxyCode}
 
 
 The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}

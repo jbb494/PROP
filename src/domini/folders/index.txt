@@ -1,0 +1,2 @@
+-Clase Ctrl_FolderFile.java: Es el controlador que se comunica con las diferentes capas y contiene todos los tipos de compresion/descompresion.
+-Driver Driver__Ctrl_FolderFile.java: Driver de la clase Ctrl_FolderFile.java.

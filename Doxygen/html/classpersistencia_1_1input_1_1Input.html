@@ -65,27 +65,27 @@ $(function() {
 <div class="header">
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
+<a href="#pub-static-methods">Static Public Member Functions</a> &#124;
 <a href="#pri-methods">Private Member Functions</a> &#124;
 <a href="#pri-attribs">Private Attributes</a> &#124;
+<a href="#pri-static-attribs">Static Private Attributes</a> &#124;
 <a href="classpersistencia_1_1input_1_1Input-members.html">List of all members</a>  </div>
   <div class="headertitle">
 <div class="title">persistencia.input.Input Class Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
 
-<p>Classe <a class="el" href="classpersistencia_1_1input_1_1Input.html" title="Classe Input. ">Input</a>.  
+<p>Classe <a class="el" href="classpersistencia_1_1input_1_1Input.html" title="Classe Input Pot llegir fitxers de fins a 2 GB. ">Input</a> Pot llegir fitxers de fins a 2 GB.  
  <a href="classpersistencia_1_1input_1_1Input.html#details">More...</a></p>
 <div class="dynheader">
 Collaboration diagram for persistencia.input.Input:</div>
 <div class="dyncontent">
 <div class="center"><img src="classpersistencia_1_1input_1_1Input__coll__graph.png" border="0" usemap="#persistencia_8input_8Input_coll__map" alt="Collaboration graph"/></div>
+<!-- MAP 0 -->
 <center><span class="legend">[<a href="graph_legend.html">legend</a>]</span></center></div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a9b30ef8d489a1fc5b4aa04a14474349a"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classpersistencia_1_1input_1_1Input.html#a9b30ef8d489a1fc5b4aa04a14474349a">Input</a> (String path)</td></tr>
-<tr class="memdesc:a9b30ef8d489a1fc5b4aa04a14474349a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructor de la classe.  <a href="#a9b30ef8d489a1fc5b4aa04a14474349a">More...</a><br /></td></tr>
-<tr class="separator:a9b30ef8d489a1fc5b4aa04a14474349a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a3fa5a378b2155a3022a4a4ef38d63a8e"><td class="memItemLeft" align="right" valign="top">byte&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classpersistencia_1_1input_1_1Input.html#a3fa5a378b2155a3022a4a4ef38d63a8e">getBits</a> (int num_bits)</td></tr>
 <tr class="separator:a3fa5a378b2155a3022a4a4ef38d63a8e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a81e96a5ac3ca41b5001ffff9f9acc76a"><td class="memItemLeft" align="right" valign="top">ArrayList&lt; Byte &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classpersistencia_1_1input_1_1Input.html#a81e96a5ac3ca41b5001ffff9f9acc76a">getMoreBits</a> (int num_bits)</td></tr>
@@ -96,30 +96,54 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:a3f0fc057e91430b81f5f2c92f91b8ed7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a95e2068bd17e415f0487f8193f066160"><td class="memItemLeft" align="right" valign="top">String&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classpersistencia_1_1input_1_1Input.html#a95e2068bd17e415f0487f8193f066160">getDecodeAlg</a> ()</td></tr>
 <tr class="separator:a95e2068bd17e415f0487f8193f066160"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2b9b57fce6cb83efe70d5dc205737249"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classpersistencia_1_1input_1_1Input.html#a2b9b57fce6cb83efe70d5dc205737249">ignoreTheRestOfTheByte</a> ()</td></tr>
+<tr class="separator:a2b9b57fce6cb83efe70d5dc205737249"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a619abf26ddafb7a1bde420622d3c7aa5"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classpersistencia_1_1input_1_1Input.html#a619abf26ddafb7a1bde420622d3c7aa5">startFragment</a> (long length)</td></tr>
+<tr class="memdesc:a619abf26ddafb7a1bde420622d3c7aa5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Comença a llegir un fragment. Considerarem que el fragment son els length bytes a partir del byte que estem llegint en aquest moment.  <a href="#a619abf26ddafb7a1bde420622d3c7aa5">More...</a><br /></td></tr>
+<tr class="separator:a619abf26ddafb7a1bde420622d3c7aa5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-static-methods"></a>
+Static Public Member Functions</h2></td></tr>
+<tr class="memitem:aa45459b94e501548a7b223d24b560ad0"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classpersistencia_1_1input_1_1Input.html">Input</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classpersistencia_1_1input_1_1Input.html#aa45459b94e501548a7b223d24b560ad0">getInstance</a> ()</td></tr>
+<tr class="memdesc:aa45459b94e501548a7b223d24b560ad0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Retorna l'única instància de <a class="el" href="classpersistencia_1_1input_1_1Input.html" title="Classe Input Pot llegir fitxers de fins a 2 GB. ">Input</a>, siguint el patró singleton.  <a href="#aa45459b94e501548a7b223d24b560ad0">More...</a><br /></td></tr>
+<tr class="separator:aa45459b94e501548a7b223d24b560ad0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abe53dec7aca98b94d0ec5e3200483513"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classpersistencia_1_1input_1_1Input.html#abe53dec7aca98b94d0ec5e3200483513">initialize</a> (String path)</td></tr>
+<tr class="memdesc:abe53dec7aca98b94d0ec5e3200483513"><td class="mdescLeft">&#160;</td><td class="mdescRight">Reinicialitza l'úniaca instància de <a class="el" href="classpersistencia_1_1input_1_1Input.html" title="Classe Input Pot llegir fitxers de fins a 2 GB. ">Input</a>, com a ampliació del patró singleton.  <a href="#abe53dec7aca98b94d0ec5e3200483513">More...</a><br /></td></tr>
+<tr class="separator:abe53dec7aca98b94d0ec5e3200483513"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-methods"></a>
 Private Member Functions</h2></td></tr>
+<tr class="memitem:a9b30ef8d489a1fc5b4aa04a14474349a"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classpersistencia_1_1input_1_1Input.html#a9b30ef8d489a1fc5b4aa04a14474349a">Input</a> (String path)</td></tr>
+<tr class="memdesc:a9b30ef8d489a1fc5b4aa04a14474349a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructor de la classe.  <a href="#a9b30ef8d489a1fc5b4aa04a14474349a">More...</a><br /></td></tr>
+<tr class="separator:a9b30ef8d489a1fc5b4aa04a14474349a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a24eae4109b4ff4954ff2d7feef2fa4e4"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classpersistencia_1_1input_1_1Input.html#a24eae4109b4ff4954ff2d7feef2fa4e4">read</a> ()</td></tr>
 <tr class="memdesc:a24eae4109b4ff4954ff2d7feef2fa4e4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Llegeix el proxim byte de l'arxiu.  <a href="#a24eae4109b4ff4954ff2d7feef2fa4e4">More...</a><br /></td></tr>
 <tr class="separator:a24eae4109b4ff4954ff2d7feef2fa4e4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-attribs"></a>
 Private Attributes</h2></td></tr>
-<tr class="memitem:a7b25d54d1a6454a58275174eef12a88b"><td class="memItemLeft" align="right" valign="top">DataInputStream&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classpersistencia_1_1input_1_1Input.html#a7b25d54d1a6454a58275174eef12a88b">inputStreamReader</a></td></tr>
-<tr class="separator:a7b25d54d1a6454a58275174eef12a88b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa4b622d30a090256ce05c5082cdb0791"><td class="memItemLeft" align="right" valign="top">BufferedInputStream&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classpersistencia_1_1input_1_1Input.html#aa4b622d30a090256ce05c5082cdb0791">bin</a></td></tr>
+<tr class="separator:aa4b622d30a090256ce05c5082cdb0791"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:abe76388d0ac9eeafdba673ad2138f8dc"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classpersistencia_1_1input_1_1Input.html#abe76388d0ac9eeafdba673ad2138f8dc">punter</a></td></tr>
 <tr class="separator:abe76388d0ac9eeafdba673ad2138f8dc"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a45d4bdcdb96823fc8ffe5c1a430727f2"><td class="memItemLeft" align="right" valign="top">Byte&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classpersistencia_1_1input_1_1Input.html#a45d4bdcdb96823fc8ffe5c1a430727f2">last_byte</a></td></tr>
 <tr class="separator:a45d4bdcdb96823fc8ffe5c1a430727f2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adae91120899054fe5200d5e307840042"><td class="memItemLeft" align="right" valign="top">long&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classpersistencia_1_1input_1_1Input.html#adae91120899054fe5200d5e307840042">frag_length</a></td></tr>
+<tr class="separator:adae91120899054fe5200d5e307840042"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ace2c934234f82fb07ae169b50f71cd32"><td class="memItemLeft" align="right" valign="top">long&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classpersistencia_1_1input_1_1Input.html#ace2c934234f82fb07ae169b50f71cd32">read_bytes</a></td></tr>
+<tr class="separator:ace2c934234f82fb07ae169b50f71cd32"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa986cd4af0178e1a80f551dcd8936125"><td class="memItemLeft" align="right" valign="top">boolean&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classpersistencia_1_1input_1_1Input.html#aa986cd4af0178e1a80f551dcd8936125">end</a></td></tr>
 <tr class="separator:aa986cd4af0178e1a80f551dcd8936125"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad3132949d4ac469b5f4d77373389f9f1"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classpersistencia_1_1input_1_1Input.html#ad3132949d4ac469b5f4d77373389f9f1">illegals</a></td></tr>
 <tr class="separator:ad3132949d4ac469b5f4d77373389f9f1"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a044330fba061b562ab4a537011c044f3"><td class="memItemLeft" align="right" valign="top">Boolean&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classpersistencia_1_1input_1_1Input.html#a044330fba061b562ab4a537011c044f3">gotExtension</a> = false</td></tr>
-<tr class="separator:a044330fba061b562ab4a537011c044f3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-static-attribs"></a>
+Static Private Attributes</h2></td></tr>
+<tr class="memitem:a2e516b1cbef9b704c10fd932b3d11afd"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classpersistencia_1_1input_1_1Input.html">Input</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classpersistencia_1_1input_1_1Input.html#a2e516b1cbef9b704c10fd932b3d11afd">instance</a> = null</td></tr>
+<tr class="separator:a2e516b1cbef9b704c10fd932b3d11afd"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>Classe <a class="el" href="classpersistencia_1_1input_1_1Input.html" title="Classe Input. ">Input</a>. </p>
+<div class="textblock"><p>Classe <a class="el" href="classpersistencia_1_1input_1_1Input.html" title="Classe Input Pot llegir fitxers de fins a 2 GB. ">Input</a> Pot llegir fitxers de fins a 2 GB. </p>
 <dl class="section author"><dt>Author</dt><dd>Joan Bellavista </dd></dl>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="a9b30ef8d489a1fc5b4aa04a14474349a"></a>
@@ -141,7 +165,7 @@ Private Attributes</h2></td></tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">private</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -149,11 +173,17 @@ Private Attributes</h2></td></tr>
 <p>Constructor de la classe. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">path</td><td>Path de l'arxiu d'<a class="el" href="classpersistencia_1_1input_1_1Input.html" title="Classe Input. ">Input</a> </td></tr>
+    <tr><td class="paramname">path</td><td>Path de l'arxiu d'<a class="el" href="classpersistencia_1_1input_1_1Input.html" title="Classe Input Pot llegir fitxers de fins a 2 GB. ">Input</a> </td></tr>
   </table>
   </dd>
 </dl>
-
+<div class="fragment"><div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;                               {</div><div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;        <span class="keywordflow">try</span> {   </div><div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;            <a class="code" href="classpersistencia_1_1input_1_1Input.html#adae91120899054fe5200d5e307840042">frag_length</a> = Long.MAX_VALUE;</div><div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;            <a class="code" href="classpersistencia_1_1input_1_1Input.html#ace2c934234f82fb07ae169b50f71cd32">read_bytes</a> = 0;</div><div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;            <a class="code" href="classpersistencia_1_1input_1_1Input.html#ad3132949d4ac469b5f4d77373389f9f1">illegals</a> = 0;</div><div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;            <a class="code" href="classpersistencia_1_1input_1_1Input.html#aa986cd4af0178e1a80f551dcd8936125">end</a> = <span class="keyword">false</span>;</div><div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;</div><div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;            <a class="code" href="classpersistencia_1_1input_1_1Input.html#abe76388d0ac9eeafdba673ad2138f8dc">punter</a> = 0;</div><div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;            FileInputStream fin = <span class="keyword">new</span> FileInputStream(path);</div><div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;            <a class="code" href="classpersistencia_1_1input_1_1Input.html#aa4b622d30a090256ce05c5082cdb0791">bin</a> = <span class="keyword">new</span> BufferedInputStream(fin);</div><div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;        } <span class="keywordflow">catch</span> (FileNotFoundException e) {</div><div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;            e.printStackTrace();</div><div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;        } <span class="keywordflow">finally</span> {</div><div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;            <span class="keywordflow">try</span> { <span class="comment">//saltaven excepcions fins que he comentat aquestes línies i no entenc per què</span></div><div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;                <span class="comment">//if (inputStreamReader != null);</span></div><div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;                <span class="comment">//    inputStreamReader.close();</span></div><div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;            } <span class="keywordflow">catch</span> (Exception ex2) {</div><div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;                System.out.println(<span class="stringliteral">&quot;Msg 2: &quot;</span> + ex2.getMessage());</div><div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;            }</div><div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;        }</div><div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;</div><div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;    }</div><div class="ttc" id="classpersistencia_1_1input_1_1Input_html_aa986cd4af0178e1a80f551dcd8936125"><div class="ttname"><a href="classpersistencia_1_1input_1_1Input.html#aa986cd4af0178e1a80f551dcd8936125">persistencia.input.Input.end</a></div><div class="ttdeci">boolean end</div><div class="ttdef"><b>Definition:</b> Input.java:52</div></div>
+<div class="ttc" id="classpersistencia_1_1input_1_1Input_html_adae91120899054fe5200d5e307840042"><div class="ttname"><a href="classpersistencia_1_1input_1_1Input.html#adae91120899054fe5200d5e307840042">persistencia.input.Input.frag_length</a></div><div class="ttdeci">long frag_length</div><div class="ttdef"><b>Definition:</b> Input.java:42</div></div>
+<div class="ttc" id="classpersistencia_1_1input_1_1Input_html_ad3132949d4ac469b5f4d77373389f9f1"><div class="ttname"><a href="classpersistencia_1_1input_1_1Input.html#ad3132949d4ac469b5f4d77373389f9f1">persistencia.input.Input.illegals</a></div><div class="ttdeci">int illegals</div><div class="ttdef"><b>Definition:</b> Input.java:57</div></div>
+<div class="ttc" id="classpersistencia_1_1input_1_1Input_html_ace2c934234f82fb07ae169b50f71cd32"><div class="ttname"><a href="classpersistencia_1_1input_1_1Input.html#ace2c934234f82fb07ae169b50f71cd32">persistencia.input.Input.read_bytes</a></div><div class="ttdeci">long read_bytes</div><div class="ttdef"><b>Definition:</b> Input.java:47</div></div>
+<div class="ttc" id="classpersistencia_1_1input_1_1Input_html_abe76388d0ac9eeafdba673ad2138f8dc"><div class="ttname"><a href="classpersistencia_1_1input_1_1Input.html#abe76388d0ac9eeafdba673ad2138f8dc">persistencia.input.Input.punter</a></div><div class="ttdeci">int punter</div><div class="ttdef"><b>Definition:</b> Input.java:31</div></div>
+<div class="ttc" id="classpersistencia_1_1input_1_1Input_html_aa4b622d30a090256ce05c5082cdb0791"><div class="ttname"><a href="classpersistencia_1_1input_1_1Input.html#aa4b622d30a090256ce05c5082cdb0791">persistencia.input.Input.bin</a></div><div class="ttdeci">BufferedInputStream bin</div><div class="ttdef"><b>Definition:</b> Input.java:25</div></div>
+</div><!-- fragment -->
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
@@ -179,8 +209,9 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
-<dl class="section return"><dt>Returns</dt><dd>Retorna si hem arribat al final de l'arxiu o no </dd></dl>
-
+<dl class="section return"><dt>Returns</dt><dd>Indica si hem arribat al final del fitxer o fragment </dd></dl>
+<div class="fragment"><div class="line"><a name="l00200"></a><span class="lineno">  200</span>&#160;                              {</div><div class="line"><a name="l00201"></a><span class="lineno">  201</span>&#160;        <span class="keywordflow">return</span> <a class="code" href="classpersistencia_1_1input_1_1Input.html#aa986cd4af0178e1a80f551dcd8936125">end</a>;</div><div class="line"><a name="l00202"></a><span class="lineno">  202</span>&#160;    }</div><div class="ttc" id="classpersistencia_1_1input_1_1Input_html_aa986cd4af0178e1a80f551dcd8936125"><div class="ttname"><a href="classpersistencia_1_1input_1_1Input.html#aa986cd4af0178e1a80f551dcd8936125">persistencia.input.Input.end</a></div><div class="ttdeci">boolean end</div><div class="ttdef"><b>Definition:</b> Input.java:52</div></div>
+</div><!-- fragment -->
 </div>
 </div>
 <a id="a3fa5a378b2155a3022a4a4ef38d63a8e"></a>
@@ -213,7 +244,13 @@ Private Attributes</h2></td></tr>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>Retorna un byte amb num_bits bits valids </dd></dl>
-
+<div class="fragment"><div class="line"><a name="l00144"></a><span class="lineno">  144</span>&#160;    {</div><div class="line"><a name="l00145"></a><span class="lineno">  145</span>&#160;        <span class="keywordflow">if</span>(num_bits &lt; 1 || num_bits &gt; 8)<span class="keywordflow">throw</span> <span class="keyword">new</span> IllegalArgumentException(<span class="stringliteral">&quot;num_bits tiene que ser un valor entre 1 y 8 incluidos&quot;</span>);</div><div class="line"><a name="l00146"></a><span class="lineno">  146</span>&#160;        <span class="keywordflow">if</span> (<a class="code" href="classpersistencia_1_1input_1_1Input.html#aa986cd4af0178e1a80f551dcd8936125">end</a>) {</div><div class="line"><a name="l00147"></a><span class="lineno">  147</span>&#160;            <a class="code" href="classpersistencia_1_1input_1_1Input.html#ad3132949d4ac469b5f4d77373389f9f1">illegals</a> += num_bits;</div><div class="line"><a name="l00148"></a><span class="lineno">  148</span>&#160;            <span class="keywordflow">return</span> 0;</div><div class="line"><a name="l00149"></a><span class="lineno">  149</span>&#160;        }</div><div class="line"><a name="l00150"></a><span class="lineno">  150</span>&#160;        <span class="keywordflow">if</span> (<a class="code" href="classpersistencia_1_1input_1_1Input.html#abe76388d0ac9eeafdba673ad2138f8dc">punter</a> == 0) {</div><div class="line"><a name="l00151"></a><span class="lineno">  151</span>&#160;            <a class="code" href="classpersistencia_1_1input_1_1Input.html#a24eae4109b4ff4954ff2d7feef2fa4e4">read</a>();</div><div class="line"><a name="l00152"></a><span class="lineno">  152</span>&#160;            <span class="keywordflow">if</span> (<a class="code" href="classpersistencia_1_1input_1_1Input.html#aa986cd4af0178e1a80f551dcd8936125">end</a>) {</div><div class="line"><a name="l00153"></a><span class="lineno">  153</span>&#160;                <a class="code" href="classpersistencia_1_1input_1_1Input.html#ad3132949d4ac469b5f4d77373389f9f1">illegals</a> += num_bits;</div><div class="line"><a name="l00154"></a><span class="lineno">  154</span>&#160;                <span class="keywordflow">return</span> 0;</div><div class="line"><a name="l00155"></a><span class="lineno">  155</span>&#160;            }</div><div class="line"><a name="l00156"></a><span class="lineno">  156</span>&#160;        }</div><div class="line"><a name="l00157"></a><span class="lineno">  157</span>&#160;        </div><div class="line"><a name="l00158"></a><span class="lineno">  158</span>&#160;        byte b = byteToConversion.shift_right_logic(<a class="code" href="classpersistencia_1_1input_1_1Input.html#a45d4bdcdb96823fc8ffe5c1a430727f2">last_byte</a>, <a class="code" href="classpersistencia_1_1input_1_1Input.html#abe76388d0ac9eeafdba673ad2138f8dc">punter</a>);</div><div class="line"><a name="l00159"></a><span class="lineno">  159</span>&#160;        <span class="keywordflow">if</span>(<a class="code" href="classpersistencia_1_1input_1_1Input.html#abe76388d0ac9eeafdba673ad2138f8dc">punter</a> + num_bits &gt; 8) </div><div class="line"><a name="l00160"></a><span class="lineno">  160</span>&#160;        {</div><div class="line"><a name="l00161"></a><span class="lineno">  161</span>&#160;            <span class="keywordtype">int</span> mou = 8 - <a class="code" href="classpersistencia_1_1input_1_1Input.html#abe76388d0ac9eeafdba673ad2138f8dc">punter</a>;</div><div class="line"><a name="l00162"></a><span class="lineno">  162</span>&#160;            <span class="keywordtype">int</span> restants = <a class="code" href="classpersistencia_1_1input_1_1Input.html#abe76388d0ac9eeafdba673ad2138f8dc">punter</a> + num_bits - 8;</div><div class="line"><a name="l00163"></a><span class="lineno">  163</span>&#160;            <a class="code" href="classpersistencia_1_1input_1_1Input.html#abe76388d0ac9eeafdba673ad2138f8dc">punter</a> = 0;</div><div class="line"><a name="l00164"></a><span class="lineno">  164</span>&#160;            b = (byte) (b | (<a class="code" href="classpersistencia_1_1input_1_1Input.html#a3fa5a378b2155a3022a4a4ef38d63a8e">getBits</a>(restants) &lt;&lt; mou));</div><div class="line"><a name="l00165"></a><span class="lineno">  165</span>&#160;        }</div><div class="line"><a name="l00166"></a><span class="lineno">  166</span>&#160;        <span class="keywordflow">else</span> <span class="keywordflow">if</span> (<a class="code" href="classpersistencia_1_1input_1_1Input.html#abe76388d0ac9eeafdba673ad2138f8dc">punter</a> + num_bits == 8) </div><div class="line"><a name="l00167"></a><span class="lineno">  167</span>&#160;        {</div><div class="line"><a name="l00168"></a><span class="lineno">  168</span>&#160;            <a class="code" href="classpersistencia_1_1input_1_1Input.html#abe76388d0ac9eeafdba673ad2138f8dc">punter</a> = 0;</div><div class="line"><a name="l00169"></a><span class="lineno">  169</span>&#160;        }</div><div class="line"><a name="l00170"></a><span class="lineno">  170</span>&#160;        <span class="keywordflow">else</span> <span class="comment">//punter + num_bits &lt; 8</span></div><div class="line"><a name="l00171"></a><span class="lineno">  171</span>&#160;        { </div><div class="line"><a name="l00172"></a><span class="lineno">  172</span>&#160;            b = (byte) (b &amp; ~(byte) (0xff &lt;&lt; num_bits)); <span class="comment">// neteja els bits brossa a posicions altes</span></div><div class="line"><a name="l00173"></a><span class="lineno">  173</span>&#160;            <a class="code" href="classpersistencia_1_1input_1_1Input.html#abe76388d0ac9eeafdba673ad2138f8dc">punter</a> += num_bits;</div><div class="line"><a name="l00174"></a><span class="lineno">  174</span>&#160;        }</div><div class="line"><a name="l00175"></a><span class="lineno">  175</span>&#160;        <span class="keywordflow">return</span> b;</div><div class="line"><a name="l00176"></a><span class="lineno">  176</span>&#160;    }</div><div class="ttc" id="classpersistencia_1_1input_1_1Input_html_aa986cd4af0178e1a80f551dcd8936125"><div class="ttname"><a href="classpersistencia_1_1input_1_1Input.html#aa986cd4af0178e1a80f551dcd8936125">persistencia.input.Input.end</a></div><div class="ttdeci">boolean end</div><div class="ttdef"><b>Definition:</b> Input.java:52</div></div>
+<div class="ttc" id="classpersistencia_1_1input_1_1Input_html_a24eae4109b4ff4954ff2d7feef2fa4e4"><div class="ttname"><a href="classpersistencia_1_1input_1_1Input.html#a24eae4109b4ff4954ff2d7feef2fa4e4">persistencia.input.Input.read</a></div><div class="ttdeci">void read()</div><div class="ttdoc">Llegeix el proxim byte de l&amp;#39;arxiu. </div><div class="ttdef"><b>Definition:</b> Input.java:115</div></div>
+<div class="ttc" id="classpersistencia_1_1input_1_1Input_html_a3fa5a378b2155a3022a4a4ef38d63a8e"><div class="ttname"><a href="classpersistencia_1_1input_1_1Input.html#a3fa5a378b2155a3022a4a4ef38d63a8e">persistencia.input.Input.getBits</a></div><div class="ttdeci">byte getBits(int num_bits)</div><div class="ttdef"><b>Definition:</b> Input.java:142</div></div>
+<div class="ttc" id="classpersistencia_1_1input_1_1Input_html_ad3132949d4ac469b5f4d77373389f9f1"><div class="ttname"><a href="classpersistencia_1_1input_1_1Input.html#ad3132949d4ac469b5f4d77373389f9f1">persistencia.input.Input.illegals</a></div><div class="ttdeci">int illegals</div><div class="ttdef"><b>Definition:</b> Input.java:57</div></div>
+<div class="ttc" id="classpersistencia_1_1input_1_1Input_html_abe76388d0ac9eeafdba673ad2138f8dc"><div class="ttname"><a href="classpersistencia_1_1input_1_1Input.html#abe76388d0ac9eeafdba673ad2138f8dc">persistencia.input.Input.punter</a></div><div class="ttdeci">int punter</div><div class="ttdef"><b>Definition:</b> Input.java:31</div></div>
+<div class="ttc" id="classpersistencia_1_1input_1_1Input_html_a45d4bdcdb96823fc8ffe5c1a430727f2"><div class="ttname"><a href="classpersistencia_1_1input_1_1Input.html#a45d4bdcdb96823fc8ffe5c1a430727f2">persistencia.input.Input.last_byte</a></div><div class="ttdeci">Byte last_byte</div><div class="ttdef"><b>Definition:</b> Input.java:36</div></div>
+</div><!-- fragment -->
 </div>
 </div>
 <a id="a95e2068bd17e415f0487f8193f066160"></a>
@@ -239,7 +276,36 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 <dl class="section return"><dt>Returns</dt><dd>Retorna l'algoritme que hem d'emprar per la descompressio </dd></dl>
+<div class="fragment"><div class="line"><a name="l00217"></a><span class="lineno">  217</span>&#160;    {</div><div class="line"><a name="l00218"></a><span class="lineno">  218</span>&#160;        <span class="comment">/*if(gotExtension) {</span></div><div class="line"><a name="l00219"></a><span class="lineno">  219</span>&#160;<span class="comment">            throw new IllegalArgumentException(&quot;Ya hemos cogido la metada&quot;);</span></div><div class="line"><a name="l00220"></a><span class="lineno">  220</span>&#160;<span class="comment">        }</span></div><div class="line"><a name="l00221"></a><span class="lineno">  221</span>&#160;<span class="comment">        this.gotExtension = true;*/</span></div><div class="line"><a name="l00222"></a><span class="lineno">  222</span>&#160;        byte aux = <a class="code" href="classpersistencia_1_1input_1_1Input.html#a3fa5a378b2155a3022a4a4ef38d63a8e">getBits</a>(2);</div><div class="line"><a name="l00223"></a><span class="lineno">  223</span>&#160;        <span class="keywordflow">if</span>(aux == (byte)0) <span class="keywordflow">return</span> <span class="stringliteral">&quot;lz78&quot;</span>;</div><div class="line"><a name="l00224"></a><span class="lineno">  224</span>&#160;        <span class="keywordflow">else</span> <span class="keywordflow">if</span>(aux == (byte)1) <span class="keywordflow">return</span> <span class="stringliteral">&quot;lzw&quot;</span>;</div><div class="line"><a name="l00225"></a><span class="lineno">  225</span>&#160;        <span class="keywordflow">else</span> <span class="keywordflow">if</span>(aux == (byte)2) <span class="keywordflow">return</span> <span class="stringliteral">&quot;lzss&quot;</span>;</div><div class="line"><a name="l00226"></a><span class="lineno">  226</span>&#160;        <span class="keywordflow">else</span> <span class="keywordflow">return</span> <span class="stringliteral">&quot;jpeg&quot;</span>;</div><div class="line"><a name="l00227"></a><span class="lineno">  227</span>&#160;    }</div><div class="ttc" id="classpersistencia_1_1input_1_1Input_html_a3fa5a378b2155a3022a4a4ef38d63a8e"><div class="ttname"><a href="classpersistencia_1_1input_1_1Input.html#a3fa5a378b2155a3022a4a4ef38d63a8e">persistencia.input.Input.getBits</a></div><div class="ttdeci">byte getBits(int num_bits)</div><div class="ttdef"><b>Definition:</b> Input.java:142</div></div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="aa45459b94e501548a7b223d24b560ad0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa45459b94e501548a7b223d24b560ad0">&#9670;&nbsp;</a></span>getInstance()</h2>
 
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">public static <a class="el" href="classpersistencia_1_1input_1_1Input.html">Input</a> persistencia.input.Input.getInstance </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Retorna l'única instància de <a class="el" href="classpersistencia_1_1input_1_1Input.html" title="Classe Input Pot llegir fitxers de fins a 2 GB. ">Input</a>, siguint el patró singleton. </p>
+<div class="fragment"><div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;                                      {</div><div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;        <span class="keywordflow">if</span>(<a class="code" href="classpersistencia_1_1input_1_1Input.html#a2e516b1cbef9b704c10fd932b3d11afd">instance</a> == null) <span class="keywordflow">throw</span> <span class="keyword">new</span> IllegalArgumentException(<span class="stringliteral">&quot;Input not initialized. You must call initialize(String)&quot;</span>);</div><div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;        <span class="keywordflow">return</span> <a class="code" href="classpersistencia_1_1input_1_1Input.html#a2e516b1cbef9b704c10fd932b3d11afd">instance</a>;</div><div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;    }</div><div class="ttc" id="classpersistencia_1_1input_1_1Input_html_a2e516b1cbef9b704c10fd932b3d11afd"><div class="ttname"><a href="classpersistencia_1_1input_1_1Input.html#a2e516b1cbef9b704c10fd932b3d11afd">persistencia.input.Input.instance</a></div><div class="ttdeci">static Input instance</div><div class="ttdef"><b>Definition:</b> Input.java:64</div></div>
+</div><!-- fragment -->
 </div>
 </div>
 <a id="a81e96a5ac3ca41b5001ffff9f9acc76a"></a>
@@ -272,7 +338,71 @@ Private Attributes</h2></td></tr>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>ArrayList de Bytes amb num_bits bits valids </dd></dl>
+<div class="fragment"><div class="line"><a name="l00185"></a><span class="lineno">  185</span>&#160;    {</div><div class="line"><a name="l00186"></a><span class="lineno">  186</span>&#160;        ArrayList&lt;Byte&gt; al = <span class="keyword">new</span> ArrayList&lt;Byte&gt;();</div><div class="line"><a name="l00187"></a><span class="lineno">  187</span>&#160;        <span class="keywordflow">while</span> (num_bits &gt; 0) {</div><div class="line"><a name="l00188"></a><span class="lineno">  188</span>&#160;            Byte b = <a class="code" href="classpersistencia_1_1input_1_1Input.html#a3fa5a378b2155a3022a4a4ef38d63a8e">getBits</a>(Math.min(num_bits, 8));</div><div class="line"><a name="l00189"></a><span class="lineno">  189</span>&#160;            al.add(b);</div><div class="line"><a name="l00190"></a><span class="lineno">  190</span>&#160;            num_bits -= 8;</div><div class="line"><a name="l00191"></a><span class="lineno">  191</span>&#160;        }</div><div class="line"><a name="l00192"></a><span class="lineno">  192</span>&#160;        <span class="keywordflow">return</span> al;</div><div class="line"><a name="l00193"></a><span class="lineno">  193</span>&#160;    }</div><div class="ttc" id="classpersistencia_1_1input_1_1Input_html_a3fa5a378b2155a3022a4a4ef38d63a8e"><div class="ttname"><a href="classpersistencia_1_1input_1_1Input.html#a3fa5a378b2155a3022a4a4ef38d63a8e">persistencia.input.Input.getBits</a></div><div class="ttdeci">byte getBits(int num_bits)</div><div class="ttdef"><b>Definition:</b> Input.java:142</div></div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="a2b9b57fce6cb83efe70d5dc205737249"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2b9b57fce6cb83efe70d5dc205737249">&#9670;&nbsp;</a></span>ignoreTheRestOfTheByte()</h2>
 
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void persistencia.input.Input.ignoreTheRestOfTheByte </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Si el pròxim bit a llegir no és el primer bit d'un byte, avança la lectura fins a l'inici del proper byte </p>
+<div class="fragment"><div class="line"><a name="l00234"></a><span class="lineno">  234</span>&#160;                                         {</div><div class="line"><a name="l00235"></a><span class="lineno">  235</span>&#160;        <a class="code" href="classpersistencia_1_1input_1_1Input.html#abe76388d0ac9eeafdba673ad2138f8dc">punter</a> = 0;</div><div class="line"><a name="l00236"></a><span class="lineno">  236</span>&#160;    }</div><div class="ttc" id="classpersistencia_1_1input_1_1Input_html_abe76388d0ac9eeafdba673ad2138f8dc"><div class="ttname"><a href="classpersistencia_1_1input_1_1Input.html#abe76388d0ac9eeafdba673ad2138f8dc">persistencia.input.Input.punter</a></div><div class="ttdeci">int punter</div><div class="ttdef"><b>Definition:</b> Input.java:31</div></div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="abe53dec7aca98b94d0ec5e3200483513"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abe53dec7aca98b94d0ec5e3200483513">&#9670;&nbsp;</a></span>initialize()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">public static void persistencia.input.Input.initialize </td>
+          <td>(</td>
+          <td class="paramtype">String&#160;</td>
+          <td class="paramname"><em>path</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Reinicialitza l'úniaca instància de <a class="el" href="classpersistencia_1_1input_1_1Input.html" title="Classe Input Pot llegir fitxers de fins a 2 GB. ">Input</a>, com a ampliació del patró singleton. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">path</td><td>Path de l'arxiu d'<a class="el" href="classpersistencia_1_1input_1_1Input.html" title="Classe Input Pot llegir fitxers de fins a 2 GB. ">Input</a> </td></tr>
+  </table>
+  </dd>
+</dl>
+<div class="fragment"><div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;                                               {</div><div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;        <a class="code" href="classpersistencia_1_1input_1_1Input.html#a2e516b1cbef9b704c10fd932b3d11afd">instance</a> = <span class="keyword">new</span> <a class="code" href="classpersistencia_1_1input_1_1Input.html#a9b30ef8d489a1fc5b4aa04a14474349a">Input</a>(path);</div><div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;    }</div><div class="ttc" id="classpersistencia_1_1input_1_1Input_html_a2e516b1cbef9b704c10fd932b3d11afd"><div class="ttname"><a href="classpersistencia_1_1input_1_1Input.html#a2e516b1cbef9b704c10fd932b3d11afd">persistencia.input.Input.instance</a></div><div class="ttdeci">static Input instance</div><div class="ttdef"><b>Definition:</b> Input.java:64</div></div>
+<div class="ttc" id="classpersistencia_1_1input_1_1Input_html_a9b30ef8d489a1fc5b4aa04a14474349a"><div class="ttname"><a href="classpersistencia_1_1input_1_1Input.html#a9b30ef8d489a1fc5b4aa04a14474349a">persistencia.input.Input.Input</a></div><div class="ttdeci">Input(String path)</div><div class="ttdoc">Constructor de la classe. </div><div class="ttdef"><b>Definition:</b> Input.java:88</div></div>
+</div><!-- fragment -->
 </div>
 </div>
 <a id="a3f0fc057e91430b81f5f2c92f91b8ed7"></a>
@@ -297,8 +427,9 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
-<dl class="section return"><dt>Returns</dt><dd>Retorna el nombre de bits que s'han intentat llegir però queden fora del fitxer </dd></dl>
-
+<dl class="section return"><dt>Returns</dt><dd>Retorna el nombre de bits que s'han intentat llegir però queden fora del fitxer o fragment </dd></dl>
+<div class="fragment"><div class="line"><a name="l00208"></a><span class="lineno">  208</span>&#160;                           { <span class="comment">//nombre de bits que s&#39;han intentat llegir però queden fora del fitxer o fragment</span></div><div class="line"><a name="l00209"></a><span class="lineno">  209</span>&#160;        <span class="keywordflow">return</span> <a class="code" href="classpersistencia_1_1input_1_1Input.html#ad3132949d4ac469b5f4d77373389f9f1">illegals</a>;</div><div class="line"><a name="l00210"></a><span class="lineno">  210</span>&#160;    }</div><div class="ttc" id="classpersistencia_1_1input_1_1Input_html_ad3132949d4ac469b5f4d77373389f9f1"><div class="ttname"><a href="classpersistencia_1_1input_1_1Input.html#ad3132949d4ac469b5f4d77373389f9f1">persistencia.input.Input.illegals</a></div><div class="ttdeci">int illegals</div><div class="ttdef"><b>Definition:</b> Input.java:57</div></div>
+</div><!-- fragment -->
 </div>
 </div>
 <a id="a24eae4109b4ff4954ff2d7feef2fa4e4"></a>
@@ -325,10 +456,80 @@ Private Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Llegeix el proxim byte de l'arxiu. </p>
+<div class="fragment"><div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;                        {</div><div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;        Integer c;</div><div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;        <a class="code" href="classpersistencia_1_1input_1_1Input.html#ace2c934234f82fb07ae169b50f71cd32">read_bytes</a>++;</div><div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;        <span class="keywordflow">if</span> (<a class="code" href="classpersistencia_1_1input_1_1Input.html#ace2c934234f82fb07ae169b50f71cd32">read_bytes</a> &lt;= <a class="code" href="classpersistencia_1_1input_1_1Input.html#adae91120899054fe5200d5e307840042">frag_length</a>) {</div><div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;            <span class="keywordflow">try</span> {</div><div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;                <span class="keywordflow">if</span> ((c = <a class="code" href="classpersistencia_1_1input_1_1Input.html#aa4b622d30a090256ce05c5082cdb0791">bin</a>.read()) != -1) {</div><div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;                    <a class="code" href="classpersistencia_1_1input_1_1Input.html#a45d4bdcdb96823fc8ffe5c1a430727f2">last_byte</a> = c.byteValue();</div><div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;                }</div><div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;                <span class="keywordflow">else</span> {</div><div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;                    <a class="code" href="classpersistencia_1_1input_1_1Input.html#aa986cd4af0178e1a80f551dcd8936125">end</a> = <span class="keyword">true</span>;</div><div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;                }</div><div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;            } <span class="keywordflow">catch</span> (IOException e) {</div><div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;                e.printStackTrace();</div><div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;            }</div><div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;        }</div><div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;        <span class="keywordflow">else</span> {</div><div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;            <a class="code" href="classpersistencia_1_1input_1_1Input.html#aa986cd4af0178e1a80f551dcd8936125">end</a> = <span class="keyword">true</span>;</div><div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;            <a class="code" href="classpersistencia_1_1input_1_1Input.html#a45d4bdcdb96823fc8ffe5c1a430727f2">last_byte</a> = 0;</div><div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;        }</div><div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160;</div><div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160;    }</div><div class="ttc" id="classpersistencia_1_1input_1_1Input_html_aa986cd4af0178e1a80f551dcd8936125"><div class="ttname"><a href="classpersistencia_1_1input_1_1Input.html#aa986cd4af0178e1a80f551dcd8936125">persistencia.input.Input.end</a></div><div class="ttdeci">boolean end</div><div class="ttdef"><b>Definition:</b> Input.java:52</div></div>
+<div class="ttc" id="classpersistencia_1_1input_1_1Input_html_adae91120899054fe5200d5e307840042"><div class="ttname"><a href="classpersistencia_1_1input_1_1Input.html#adae91120899054fe5200d5e307840042">persistencia.input.Input.frag_length</a></div><div class="ttdeci">long frag_length</div><div class="ttdef"><b>Definition:</b> Input.java:42</div></div>
+<div class="ttc" id="classpersistencia_1_1input_1_1Input_html_ace2c934234f82fb07ae169b50f71cd32"><div class="ttname"><a href="classpersistencia_1_1input_1_1Input.html#ace2c934234f82fb07ae169b50f71cd32">persistencia.input.Input.read_bytes</a></div><div class="ttdeci">long read_bytes</div><div class="ttdef"><b>Definition:</b> Input.java:47</div></div>
+<div class="ttc" id="classpersistencia_1_1input_1_1Input_html_a45d4bdcdb96823fc8ffe5c1a430727f2"><div class="ttname"><a href="classpersistencia_1_1input_1_1Input.html#a45d4bdcdb96823fc8ffe5c1a430727f2">persistencia.input.Input.last_byte</a></div><div class="ttdeci">Byte last_byte</div><div class="ttdef"><b>Definition:</b> Input.java:36</div></div>
+<div class="ttc" id="classpersistencia_1_1input_1_1Input_html_aa4b622d30a090256ce05c5082cdb0791"><div class="ttname"><a href="classpersistencia_1_1input_1_1Input.html#aa4b622d30a090256ce05c5082cdb0791">persistencia.input.Input.bin</a></div><div class="ttdeci">BufferedInputStream bin</div><div class="ttdef"><b>Definition:</b> Input.java:25</div></div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="a619abf26ddafb7a1bde420622d3c7aa5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a619abf26ddafb7a1bde420622d3c7aa5">&#9670;&nbsp;</a></span>startFragment()</h2>
 
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">public void persistencia.input.Input.startFragment </td>
+          <td>(</td>
+          <td class="paramtype">long&#160;</td>
+          <td class="paramname"><em>length</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Comença a llegir un fragment. Considerarem que el fragment son els length bytes a partir del byte que estem llegint en aquest moment. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">length</td><td>llargada del fragment </td></tr>
+  </table>
+  </dd>
+</dl>
+<div class="fragment"><div class="line"><a name="l00244"></a><span class="lineno">  244</span>&#160;                                           {</div><div class="line"><a name="l00245"></a><span class="lineno">  245</span>&#160;        <a class="code" href="classpersistencia_1_1input_1_1Input.html#adae91120899054fe5200d5e307840042">frag_length</a> = length;</div><div class="line"><a name="l00246"></a><span class="lineno">  246</span>&#160;        <a class="code" href="classpersistencia_1_1input_1_1Input.html#ace2c934234f82fb07ae169b50f71cd32">read_bytes</a> = 0;</div><div class="line"><a name="l00247"></a><span class="lineno">  247</span>&#160;        <a class="code" href="classpersistencia_1_1input_1_1Input.html#aa986cd4af0178e1a80f551dcd8936125">end</a> = <span class="keyword">false</span>;</div><div class="line"><a name="l00248"></a><span class="lineno">  248</span>&#160;    }</div><div class="ttc" id="classpersistencia_1_1input_1_1Input_html_aa986cd4af0178e1a80f551dcd8936125"><div class="ttname"><a href="classpersistencia_1_1input_1_1Input.html#aa986cd4af0178e1a80f551dcd8936125">persistencia.input.Input.end</a></div><div class="ttdeci">boolean end</div><div class="ttdef"><b>Definition:</b> Input.java:52</div></div>
+<div class="ttc" id="classpersistencia_1_1input_1_1Input_html_adae91120899054fe5200d5e307840042"><div class="ttname"><a href="classpersistencia_1_1input_1_1Input.html#adae91120899054fe5200d5e307840042">persistencia.input.Input.frag_length</a></div><div class="ttdeci">long frag_length</div><div class="ttdef"><b>Definition:</b> Input.java:42</div></div>
+<div class="ttc" id="classpersistencia_1_1input_1_1Input_html_ace2c934234f82fb07ae169b50f71cd32"><div class="ttname"><a href="classpersistencia_1_1input_1_1Input.html#ace2c934234f82fb07ae169b50f71cd32">persistencia.input.Input.read_bytes</a></div><div class="ttdeci">long read_bytes</div><div class="ttdef"><b>Definition:</b> Input.java:47</div></div>
+</div><!-- fragment -->
 </div>
 </div>
 <h2 class="groupheader">Member Data Documentation</h2>
+<a id="aa4b622d30a090256ce05c5082cdb0791"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa4b622d30a090256ce05c5082cdb0791">&#9670;&nbsp;</a></span>bin</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">BufferedInputStream persistencia.input.Input.bin</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">bin</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
 <a id="aa986cd4af0178e1a80f551dcd8936125"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#aa986cd4af0178e1a80f551dcd8936125">&#9670;&nbsp;</a></span>end</h2>
 
@@ -350,15 +551,15 @@ Private Attributes</h2></td></tr>
 </div><div class="memdoc">
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">end</td><td>Indica si hem arribat al final de l'arxiu </td></tr>
+    <tr><td class="paramname">end</td><td>Indica si hem arribat al final de l'arxiu o el fragment </td></tr>
   </table>
   </dd>
 </dl>
 
 </div>
 </div>
-<a id="a044330fba061b562ab4a537011c044f3"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a044330fba061b562ab4a537011c044f3">&#9670;&nbsp;</a></span>gotExtension</h2>
+<a id="adae91120899054fe5200d5e307840042"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#adae91120899054fe5200d5e307840042">&#9670;&nbsp;</a></span>frag_length</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -367,7 +568,7 @@ Private Attributes</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">Boolean persistencia.input.Input.gotExtension = false</td>
+          <td class="memname">long persistencia.input.Input.frag_length</td>
         </tr>
       </table>
   </td>
@@ -378,7 +579,7 @@ Private Attributes</h2></td></tr>
 </div><div class="memdoc">
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">gotExtension</td><td>Indica si l'arxiu te extensió definida per treballar </td></tr>
+    <tr><td class="paramname">frag_length</td><td>llargada del fragment </td></tr>
   </table>
   </dd>
 </dl>
@@ -413,8 +614,8 @@ Private Attributes</h2></td></tr>
 
 </div>
 </div>
-<a id="a7b25d54d1a6454a58275174eef12a88b"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a7b25d54d1a6454a58275174eef12a88b">&#9670;&nbsp;</a></span>inputStreamReader</h2>
+<a id="a2e516b1cbef9b704c10fd932b3d11afd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2e516b1cbef9b704c10fd932b3d11afd">&#9670;&nbsp;</a></span>instance</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -423,18 +624,18 @@ Private Attributes</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">DataInputStream persistencia.input.Input.inputStreamReader</td>
+          <td class="memname"><a class="el" href="classpersistencia_1_1input_1_1Input.html">Input</a> persistencia.input.Input.instance = null</td>
         </tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">private</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">inputStreamReader</td><td></td></tr>
+    <tr><td class="paramname">instance</td><td>Única instància de <a class="el" href="classpersistencia_1_1input_1_1Input.html" title="Classe Input Pot llegir fitxers de fins a 2 GB. ">Input</a>, siguint el patró singleton </td></tr>
   </table>
   </dd>
 </dl>
@@ -495,6 +696,34 @@ Private Attributes</h2></td></tr>
   </dd>
 </dl>
 <dl class="section note"><dt>Note</dt><dd>0 &lt;= punter &lt; 8 </dd></dl>
+
+</div>
+</div>
+<a id="ace2c934234f82fb07ae169b50f71cd32"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ace2c934234f82fb07ae169b50f71cd32">&#9670;&nbsp;</a></span>read_bytes</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">long persistencia.input.Input.read_bytes</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">read_bytes</td><td>nombre de bytes llegits del fragment </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>

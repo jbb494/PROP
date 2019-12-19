@@ -45,12 +45,84 @@ Comprovarà les possibles excepcions que puguin apareixer a la classe.
 {\em linea} & Número de operació realitzada \\
 \hline
 \end{DoxyParams}
+
+\begin{DoxyCode}
+50                                                                               \{
+51         \textcolor{keywordtype}{int} op = Integer.parseInt(linea);
+52         \textcolor{keywordflow}{if}(intorbyte == null && op > 1) \{
+53             \textcolor{keywordflow}{throw} \textcolor{keyword}{new} IllegalArgumentException(\textcolor{stringliteral}{"Debes llamar al constructor antes"});
+54         \}
+55     \}
+\end{DoxyCode}
 \mbox{\Hypertarget{classdomini_1_1utils_1_1Driver____IntorByte_a82ac3bdc9baf9f3fa1b8984733d03240}\label{classdomini_1_1utils_1_1Driver____IntorByte_a82ac3bdc9baf9f3fa1b8984733d03240}} 
 \index{domini\+::utils\+::\+Driver\+\_\+\+\_\+\+Intor\+Byte@{domini\+::utils\+::\+Driver\+\_\+\+\_\+\+Intor\+Byte}!main@{main}}
 \index{main@{main}!domini\+::utils\+::\+Driver\+\_\+\+\_\+\+Intor\+Byte@{domini\+::utils\+::\+Driver\+\_\+\+\_\+\+Intor\+Byte}}
 \subsubsection{\texorpdfstring{main()}{main()}}
 {\footnotesize\ttfamily static void domini.\+utils.\+Driver\+\_\+\+\_\+\+Intor\+Byte.\+main (\begin{DoxyParamCaption}\item[{String \mbox{[}$\,$\mbox{]}}]{args }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
 
+
+\begin{DoxyCode}
+57                                            \{
+58     \textcolor{keywordflow}{try} \{
+59         IntorByte intorbyte = null;
+60         \hyperlink{classdomini_1_1utils_1_1Driver____IntorByte_a4b647dae1760fc058de9a7311595d8dd}{showOptions}();
+61         BufferedReader reader = \textcolor{keyword}{new} BufferedReader(\textcolor{keyword}{new} InputStreamReader(System.in));
+62         String linea = \textcolor{stringliteral}{""};
+63         \textcolor{keywordflow}{while}(linea != null)\{
+64             System.out.println(\textcolor{stringliteral}{"Selecciona una opción:"});
+65             linea = reader.readLine().trim();
+66             System.out.println(\textcolor{stringliteral}{"Opción: "} + linea + \textcolor{stringliteral}{" seleccionada"});
+67             \hyperlink{classdomini_1_1utils_1_1Driver____IntorByte_a3cb28e1e1b318e0b8e4809ebd171c8b2}{comprovarExcepcions}(intorbyte, linea);
+68             \textcolor{keywordflow}{switch}(linea)\{
+69                 \textcolor{keywordflow}{case} \textcolor{stringliteral}{"1"}:
+70                     System.out.println(\textcolor{stringliteral}{"Escribe \(\backslash\)"true\(\backslash\)" si es un byte, \(\backslash\)"false\(\backslash\)" si son dos enteros."});
+71                     String aux1 = reader.readLine().trim();
+72                     Boolean b = aux1.equals(\textcolor{stringliteral}{"true"});
+73                     \textcolor{keywordflow}{if}(!b && !aux1.equals(\textcolor{stringliteral}{"false"}))\textcolor{keywordflow}{throw} \textcolor{keyword}{new} IllegalArgumentException(\textcolor{stringliteral}{"Entrada no valida"});
+74                     intorbyte = \textcolor{keyword}{new} IntorByte(b);
+75                 \textcolor{keywordflow}{break};
+76                 \textcolor{keywordflow}{case} \textcolor{stringliteral}{"2"}:
+77                     System.out.println(\textcolor{stringliteral}{"Escribe un integer que represente el desplazamiento."});
+78                     String aux2 = reader.readLine().trim();
+79                     \textcolor{keywordtype}{int} despl = Integer.parseInt(aux2);
+80                     intorbyte.SetDespl(despl);
+81                 \textcolor{keywordflow}{break};
+82                 \textcolor{keywordflow}{case} \textcolor{stringliteral}{"3"}:
+83                     System.out.println(\textcolor{stringliteral}{"Escribe un integer que represente el tamaño"});
+84                     String aux3 = reader.readLine().trim();
+85                     \textcolor{keywordtype}{int} mida = Integer.parseInt(aux3);
+86                     intorbyte.SetMida(mida);
+87                 \textcolor{keywordflow}{break};
+88                 \textcolor{keywordflow}{case} \textcolor{stringliteral}{"4"}:
+89                     System.out.println(\textcolor{stringliteral}{"Escribe un byte."});
+90                     String aux4 = reader.readLine().trim();
+91                     byte c = Byte.parseByte(aux4);
+92                     intorbyte.SetByte(c);
+93                 \textcolor{keywordflow}{break};
+94                 \textcolor{keywordflow}{case} \textcolor{stringliteral}{"5"}:
+95                     System.out.println(intorbyte.GetDespl());
+96                 \textcolor{keywordflow}{break};
+97                 \textcolor{keywordflow}{case} \textcolor{stringliteral}{"6"}:
+98                     System.out.println(intorbyte.GetMida());
+99                 \textcolor{keywordflow}{break};
+100                 \textcolor{keywordflow}{case} \textcolor{stringliteral}{"7"}:
+101                     System.out.println(intorbyte.GetByte());
+102                 \textcolor{keywordflow}{break};
+103                 \textcolor{keywordflow}{case} \textcolor{stringliteral}{"8"}:
+104                     System.out.println(intorbyte.IsIntorByte() ? \textcolor{stringliteral}{"Es un byte"} : \textcolor{stringliteral}{"Son dos enteros"});
+105                 \textcolor{keywordflow}{break};
+106                 \textcolor{keywordflow}{case} \textcolor{stringliteral}{"0"}:
+107                     \textcolor{keywordflow}{return};
+108                 \textcolor{keywordflow}{default}:
+109                     System.out.println(\textcolor{stringliteral}{"La opción no es válida"});
+110                 \textcolor{keywordflow}{break};
+111             \}
+112         \}
+113     \}\textcolor{keywordflow}{catch} (Exception e) \{
+114         e.printStackTrace();
+115     \}
+116     \}
+\end{DoxyCode}
 \mbox{\Hypertarget{classdomini_1_1utils_1_1Driver____IntorByte_a4b647dae1760fc058de9a7311595d8dd}\label{classdomini_1_1utils_1_1Driver____IntorByte_a4b647dae1760fc058de9a7311595d8dd}} 
 \index{domini\+::utils\+::\+Driver\+\_\+\+\_\+\+Intor\+Byte@{domini\+::utils\+::\+Driver\+\_\+\+\_\+\+Intor\+Byte}!show\+Options@{show\+Options}}
 \index{show\+Options@{show\+Options}!domini\+::utils\+::\+Driver\+\_\+\+\_\+\+Intor\+Byte@{domini\+::utils\+::\+Driver\+\_\+\+\_\+\+Intor\+Byte}}
@@ -61,6 +133,36 @@ Comprovarà les possibles excepcions que puguin apareixer a la classe.
 
 Mostra les accions a realitzar durant l\textquotesingle{}execució 
 
+
+\begin{DoxyCode}
+17                                      \{
+18         System.out.println(\textcolor{stringliteral}{"Driver de IntorByte"});
+19         System.out.println(\textcolor{stringliteral}{"Constructores: "});
+20         System.out.println(\textcolor{stringliteral}{"     1. IntorByte(boolean b)"});
+21         System.out.println(\textcolor{stringliteral}{"     Input: 1"});
+22 
+23         System.out.println(\textcolor{stringliteral}{"Funciones: "});
+24         System.out.println(\textcolor{stringliteral}{"     2. SetDespl(int despl)"});
+25         System.out.println(\textcolor{stringliteral}{"     Input: 2"});
+26         System.out.println(\textcolor{stringliteral}{"     3. SetMida(int mida)"});
+27         System.out.println(\textcolor{stringliteral}{"     Input: 3"});
+28         System.out.println(\textcolor{stringliteral}{"     4. SetByte(byte c)"});
+29         System.out.println(\textcolor{stringliteral}{"     Input: 4"});
+30         System.out.println(\textcolor{stringliteral}{"     5. GetDespl()"});
+31         System.out.println(\textcolor{stringliteral}{"     Input: 5"});
+32         System.out.println(\textcolor{stringliteral}{"     6. GetMida()"});
+33         System.out.println(\textcolor{stringliteral}{"     Input: 6"});
+34         System.out.println(\textcolor{stringliteral}{"     7. GetByte()"});
+35         System.out.println(\textcolor{stringliteral}{"     Input: 7"});
+36         System.out.println(\textcolor{stringliteral}{"     8. IsIntorByte()"});
+37         System.out.println(\textcolor{stringliteral}{"     Input: 8"});
+38         System.out.println();
+39 
+40         System.out.println(\textcolor{stringliteral}{"     0. Sortir"});
+41         System.out.println(\textcolor{stringliteral}{"     Input: 0"});
+42         System.out.println(\textcolor{stringliteral}{"----------------------------------------"});
+43     \}
+\end{DoxyCode}
 
 
 The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}

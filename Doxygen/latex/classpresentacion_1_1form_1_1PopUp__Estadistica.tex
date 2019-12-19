@@ -1,0 +1,183 @@
+\hypertarget{classpresentacion_1_1form_1_1PopUp__Estadistica}{}\section{presentacion.\+form.\+Pop\+Up\+\_\+\+Estadistica Class Reference}
+\label{classpresentacion_1_1form_1_1PopUp__Estadistica}\index{presentacion.\+form.\+Pop\+Up\+\_\+\+Estadistica@{presentacion.\+form.\+Pop\+Up\+\_\+\+Estadistica}}
+
+
+Esta es la clase del form que abre las estadísticas.  
+
+
+
+
+Inheritance diagram for presentacion.\+form.\+Pop\+Up\+\_\+\+Estadistica\+:
+% FIG 0
+
+
+Collaboration diagram for presentacion.\+form.\+Pop\+Up\+\_\+\+Estadistica\+:
+% FIG 1
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classpresentacion_1_1form_1_1PopUp__Estadistica_a7f2277129654afa8b98cf5c48427b023}{Pop\+Up\+\_\+\+Estadistica} (String s)
+\begin{DoxyCompactList}\small\item\em Constructor de la classe. \end{DoxyCompactList}\item 
+J\+Component \hyperlink{classpresentacion_1_1form_1_1PopUp__Estadistica_afce5f0f85c8ea9dd27b7744063f3da6f}{\$ \$get\+Root\+Component} ()
+\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+J\+Panel \hyperlink{classpresentacion_1_1form_1_1PopUp__Estadistica_ac276266d42b873f89883dd3a869feadf}{panel1}
+\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{classpresentacion_1_1form_1_1PopUp__Estadistica_a3d9efe7430fbea6b3db7fc7fa7ca89ee}{\$ \$setup\+UI} ()
+\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+J\+Label \hyperlink{classpresentacion_1_1form_1_1PopUp__Estadistica_ac61ead9dea9a28c411062fdc951b4df8}{lab}
+\item 
+J\+Button \hyperlink{classpresentacion_1_1form_1_1PopUp__Estadistica_aad708c3569f3d964b09867708ba60bf6}{cerrar\+Button}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Esta es la clase del form que abre las estadísticas. 
+
+\begin{DoxyAuthor}{Author}
+
+\end{DoxyAuthor}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classpresentacion_1_1form_1_1PopUp__Estadistica_a7f2277129654afa8b98cf5c48427b023}\label{classpresentacion_1_1form_1_1PopUp__Estadistica_a7f2277129654afa8b98cf5c48427b023}} 
+\index{presentacion\+::form\+::\+Pop\+Up\+\_\+\+Estadistica@{presentacion\+::form\+::\+Pop\+Up\+\_\+\+Estadistica}!Pop\+Up\+\_\+\+Estadistica@{Pop\+Up\+\_\+\+Estadistica}}
+\index{Pop\+Up\+\_\+\+Estadistica@{Pop\+Up\+\_\+\+Estadistica}!presentacion\+::form\+::\+Pop\+Up\+\_\+\+Estadistica@{presentacion\+::form\+::\+Pop\+Up\+\_\+\+Estadistica}}
+\subsubsection{\texorpdfstring{Pop\+Up\+\_\+\+Estadistica()}{PopUp\_Estadistica()}}
+{\footnotesize\ttfamily presentacion.\+form.\+Pop\+Up\+\_\+\+Estadistica.\+Pop\+Up\+\_\+\+Estadistica (\begin{DoxyParamCaption}\item[{String}]{s }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Constructor de la classe. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em s} & Indica el texto a mostrar en el form \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyCode}
+29                                        \{
+30         super();
+31         setModal(\textcolor{keyword}{false});
+32         setResizable(\textcolor{keyword}{false});
+33         $$$setupUI$$$();
+34         \hyperlink{classpresentacion_1_1form_1_1PopUp__Estadistica_ac61ead9dea9a28c411062fdc951b4df8}{lab}.setText(s);
+35 
+36         \hyperlink{classpresentacion_1_1form_1_1PopUp__Estadistica_aad708c3569f3d964b09867708ba60bf6}{cerrarButton}.addActionListener(\textcolor{keyword}{new} ActionListener() \{
+37             @Override
+38             \textcolor{keyword}{public} \textcolor{keywordtype}{void} actionPerformed(ActionEvent actionEvent) \{
+39                 dispose();
+40             \}
+41         \});
+42     \}
+\end{DoxyCode}
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classpresentacion_1_1form_1_1PopUp__Estadistica_afce5f0f85c8ea9dd27b7744063f3da6f}\label{classpresentacion_1_1form_1_1PopUp__Estadistica_afce5f0f85c8ea9dd27b7744063f3da6f}} 
+\index{presentacion\+::form\+::\+Pop\+Up\+\_\+\+Estadistica@{presentacion\+::form\+::\+Pop\+Up\+\_\+\+Estadistica}!\$ \$get\+Root\+Component@{\$ \$get\+Root\+Component}}
+\index{\$ \$get\+Root\+Component@{\$ \$get\+Root\+Component}!presentacion\+::form\+::\+Pop\+Up\+\_\+\+Estadistica@{presentacion\+::form\+::\+Pop\+Up\+\_\+\+Estadistica}}
+\subsubsection{\texorpdfstring{\$ \$get\+Root\+Component()}{$ $getRootComponent()}}
+{\footnotesize\ttfamily J\+Component presentacion.\+form.\+Pop\+Up\+\_\+\+Estadistica.\$ \$get\+Root\+Component (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+A\+LL 
+\begin{DoxyCode}
+76                                                \{
+77         \textcolor{keywordflow}{return} \hyperlink{classpresentacion_1_1form_1_1PopUp__Estadistica_ac276266d42b873f89883dd3a869feadf}{panel1};
+78     \}
+\end{DoxyCode}
+\mbox{\Hypertarget{classpresentacion_1_1form_1_1PopUp__Estadistica_a3d9efe7430fbea6b3db7fc7fa7ca89ee}\label{classpresentacion_1_1form_1_1PopUp__Estadistica_a3d9efe7430fbea6b3db7fc7fa7ca89ee}} 
+\index{presentacion\+::form\+::\+Pop\+Up\+\_\+\+Estadistica@{presentacion\+::form\+::\+Pop\+Up\+\_\+\+Estadistica}!\$ \$setup\+UI@{\$ \$setup\+UI}}
+\index{\$ \$setup\+UI@{\$ \$setup\+UI}!presentacion\+::form\+::\+Pop\+Up\+\_\+\+Estadistica@{presentacion\+::form\+::\+Pop\+Up\+\_\+\+Estadistica}}
+\subsubsection{\texorpdfstring{\$ \$setup\+U\+I()}{$ $setupUI()}}
+{\footnotesize\ttfamily void presentacion.\+form.\+Pop\+Up\+\_\+\+Estadistica.\$ \$setup\+UI (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [private]}}
+
+Method generated by IntelliJ I\+D\+EA G\+UI Designer \begin{quote}
+\begin{quote}
+\begin{quote}
+I\+M\+P\+O\+R\+T\+A\+N\+T!! $<$$<$$<$ \end{quote}
+\end{quote}
+\end{quote}
+DO N\+OT edit this method OR call it in your code!
+
+A\+LL 
+\begin{DoxyCode}
+52                                  \{
+53         \hyperlink{classpresentacion_1_1form_1_1PopUp__Estadistica_ac276266d42b873f89883dd3a869feadf}{panel1} = \textcolor{keyword}{new} JPanel();
+54         \hyperlink{classpresentacion_1_1form_1_1PopUp__Estadistica_ac276266d42b873f89883dd3a869feadf}{panel1}.setLayout(\textcolor{keyword}{new} com.intellij.uiDesigner.core.GridLayoutManager(2, 1, \textcolor{keyword}{new} Insets(20, 20, 
+      20, 20), -1, -1));
+55         \hyperlink{classpresentacion_1_1form_1_1PopUp__Estadistica_ac276266d42b873f89883dd3a869feadf}{panel1}.setBackground(\textcolor{keyword}{new} Color(-14013910));
+56         \hyperlink{classpresentacion_1_1form_1_1PopUp__Estadistica_ac276266d42b873f89883dd3a869feadf}{panel1}.setEnabled(\textcolor{keyword}{false});
+57         \hyperlink{classpresentacion_1_1form_1_1PopUp__Estadistica_ac276266d42b873f89883dd3a869feadf}{panel1}.setPreferredSize(\textcolor{keyword}{new} Dimension(500, 200));
+58         \hyperlink{classpresentacion_1_1form_1_1PopUp__Estadistica_ac276266d42b873f89883dd3a869feadf}{panel1}.setBorder(BorderFactory.createTitledBorder(BorderFactory.createLoweredBevelBorder(), 
+      null));
+59         \hyperlink{classpresentacion_1_1form_1_1PopUp__Estadistica_aad708c3569f3d964b09867708ba60bf6}{cerrarButton} = \textcolor{keyword}{new} JButton();
+60         \hyperlink{classpresentacion_1_1form_1_1PopUp__Estadistica_aad708c3569f3d964b09867708ba60bf6}{cerrarButton}.setBackground(\textcolor{keyword}{new} Color(-12961222));
+61         \hyperlink{classpresentacion_1_1form_1_1PopUp__Estadistica_aad708c3569f3d964b09867708ba60bf6}{cerrarButton}.setBorderPainted(\textcolor{keyword}{false});
+62         \hyperlink{classpresentacion_1_1form_1_1PopUp__Estadistica_aad708c3569f3d964b09867708ba60bf6}{cerrarButton}.setFocusPainted(\textcolor{keyword}{false});
+63         \hyperlink{classpresentacion_1_1form_1_1PopUp__Estadistica_aad708c3569f3d964b09867708ba60bf6}{cerrarButton}.setForeground(\textcolor{keyword}{new} Color(-1));
+64         \hyperlink{classpresentacion_1_1form_1_1PopUp__Estadistica_aad708c3569f3d964b09867708ba60bf6}{cerrarButton}.setText(\textcolor{stringliteral}{"Cerrar"});
+65         \hyperlink{classpresentacion_1_1form_1_1PopUp__Estadistica_ac276266d42b873f89883dd3a869feadf}{panel1}.add(\hyperlink{classpresentacion_1_1form_1_1PopUp__Estadistica_aad708c3569f3d964b09867708ba60bf6}{cerrarButton}, \textcolor{keyword}{new} com.intellij.uiDesigner.core.GridConstraints(1, 0, 1
+      , 1, com.intellij.uiDesigner.core.GridConstraints.ANCHOR\_CENTER, com.intellij.uiDesigner.core.
+      GridConstraints.FILL\_NONE, com.intellij.uiDesigner.core.GridConstraints.SIZEPOLICY\_FIXED, com.intellij.uiDesigner.core.
+      GridConstraints.SIZEPOLICY\_FIXED, null, \textcolor{keyword}{new} Dimension(10, 20), null, 0, \textcolor{keyword}{false}));
+66         \hyperlink{classpresentacion_1_1form_1_1PopUp__Estadistica_ac61ead9dea9a28c411062fdc951b4df8}{lab} = \textcolor{keyword}{new} JLabel();
+67         \hyperlink{classpresentacion_1_1form_1_1PopUp__Estadistica_ac61ead9dea9a28c411062fdc951b4df8}{lab}.setBackground(\textcolor{keyword}{new} Color(-14013910));
+68         \hyperlink{classpresentacion_1_1form_1_1PopUp__Estadistica_ac61ead9dea9a28c411062fdc951b4df8}{lab}.setForeground(\textcolor{keyword}{new} Color(-1));
+69         \hyperlink{classpresentacion_1_1form_1_1PopUp__Estadistica_ac61ead9dea9a28c411062fdc951b4df8}{lab}.setText(\textcolor{stringliteral}{"Label"});
+70         \hyperlink{classpresentacion_1_1form_1_1PopUp__Estadistica_ac276266d42b873f89883dd3a869feadf}{panel1}.add(\hyperlink{classpresentacion_1_1form_1_1PopUp__Estadistica_ac61ead9dea9a28c411062fdc951b4df8}{lab}, \textcolor{keyword}{new} com.intellij.uiDesigner.core.GridConstraints(0, 0, 1, 1, com.intellij.
+      uiDesigner.core.GridConstraints.ANCHOR\_CENTER, com.intellij.uiDesigner.core.GridConstraints.FILL\_NONE, com.
+      intellij.uiDesigner.core.GridConstraints.SIZEPOLICY\_FIXED, com.intellij.uiDesigner.core.GridConstraints.
+      SIZEPOLICY\_FIXED, null, null, null, 0, \textcolor{keyword}{false}));
+71     \}
+\end{DoxyCode}
+
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{classpresentacion_1_1form_1_1PopUp__Estadistica_aad708c3569f3d964b09867708ba60bf6}\label{classpresentacion_1_1form_1_1PopUp__Estadistica_aad708c3569f3d964b09867708ba60bf6}} 
+\index{presentacion\+::form\+::\+Pop\+Up\+\_\+\+Estadistica@{presentacion\+::form\+::\+Pop\+Up\+\_\+\+Estadistica}!cerrar\+Button@{cerrar\+Button}}
+\index{cerrar\+Button@{cerrar\+Button}!presentacion\+::form\+::\+Pop\+Up\+\_\+\+Estadistica@{presentacion\+::form\+::\+Pop\+Up\+\_\+\+Estadistica}}
+\subsubsection{\texorpdfstring{cerrar\+Button}{cerrarButton}}
+{\footnotesize\ttfamily J\+Button presentacion.\+form.\+Pop\+Up\+\_\+\+Estadistica.\+cerrar\+Button\hspace{0.3cm}{\ttfamily [private]}}
+
+
+\begin{DoxyParams}{Parameters}
+{\em cerrar\+Button} & Botón para cerrar el form. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classpresentacion_1_1form_1_1PopUp__Estadistica_ac61ead9dea9a28c411062fdc951b4df8}\label{classpresentacion_1_1form_1_1PopUp__Estadistica_ac61ead9dea9a28c411062fdc951b4df8}} 
+\index{presentacion\+::form\+::\+Pop\+Up\+\_\+\+Estadistica@{presentacion\+::form\+::\+Pop\+Up\+\_\+\+Estadistica}!lab@{lab}}
+\index{lab@{lab}!presentacion\+::form\+::\+Pop\+Up\+\_\+\+Estadistica@{presentacion\+::form\+::\+Pop\+Up\+\_\+\+Estadistica}}
+\subsubsection{\texorpdfstring{lab}{lab}}
+{\footnotesize\ttfamily J\+Label presentacion.\+form.\+Pop\+Up\+\_\+\+Estadistica.\+lab\hspace{0.3cm}{\ttfamily [private]}}
+
+
+\begin{DoxyParams}{Parameters}
+{\em lab} & Label mostrando las estadísticas. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classpresentacion_1_1form_1_1PopUp__Estadistica_ac276266d42b873f89883dd3a869feadf}\label{classpresentacion_1_1form_1_1PopUp__Estadistica_ac276266d42b873f89883dd3a869feadf}} 
+\index{presentacion\+::form\+::\+Pop\+Up\+\_\+\+Estadistica@{presentacion\+::form\+::\+Pop\+Up\+\_\+\+Estadistica}!panel1@{panel1}}
+\index{panel1@{panel1}!presentacion\+::form\+::\+Pop\+Up\+\_\+\+Estadistica@{presentacion\+::form\+::\+Pop\+Up\+\_\+\+Estadistica}}
+\subsubsection{\texorpdfstring{panel1}{panel1}}
+{\footnotesize\ttfamily J\+Panel presentacion.\+form.\+Pop\+Up\+\_\+\+Estadistica.\+panel1}
+
+
+\begin{DoxyParams}{Parameters}
+{\em panel1} & Panel principal del form. \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+src/presentacion/form/\hyperlink{PopUp__Estadistica_8java}{Pop\+Up\+\_\+\+Estadistica.\+java}\end{DoxyCompactItemize}

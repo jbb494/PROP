@@ -1,0 +1,12 @@
+digraph "domini.algorithm.LZWTest"
+{
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  Node1 [label="domini.algorithm.LZWTest",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black"];
+  Node2 -> Node1 [dir="back",color="darkorchid3",fontsize="10",style="dashed",label=" lzw" ,fontname="Helvetica"];
+  Node2 [label="domini.algorithm.LZW",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classdomini_1_1algorithm_1_1LZW.html",tooltip="Compressió i descompressió pel mètode LZW. "];
+  Node3 -> Node2 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node3 [label="domini.algorithm.Algorithm",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classdomini_1_1algorithm_1_1Algorithm.html",tooltip="Classe de Algorithm És la superclasse de tots els algoritmes ce compressió: JPEG, LZ78..."];
+  Node4 -> Node3 [dir="back",color="darkorchid3",fontsize="10",style="dashed",label=" Output" ,fontname="Helvetica"];
+  Node4 [label="persistencia.output.Ctrl\l_Output",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classpersistencia_1_1output_1_1Ctrl__Output.html",tooltip="Classe Ctrl_Output. "];
+}

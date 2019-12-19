@@ -432,12 +432,4 @@ public class Ctrl_FolderFile {
         if (magic_word == (byte)0xF0) return "";
         throw new IllegalArgumentException("No es un comprimit.");
     }
-
-    /**
-     * @fn public String getFile(String pathTemp)
-     * @return Retorna un String amb el valor del fitxer descomprimit.
-     */
-    public String getFile(String pathTemp) throws IOException {
-        return Ctrl_Input.getFile(pathTemp);
-    }
 }

@@ -94,7 +94,7 @@ Private Attributes</h2></td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Clase de <a class="el" href="classdomini_1_1utils_1_1Trie.html" title="Clase de Trie. ">Trie</a>. </p>
-<p>Esta clase es una implementación general de la estructura de datos <a class="el" href="classdomini_1_1utils_1_1Trie.html" title="Clase de Trie. ">Trie</a>. Cada nodo representa una seqüencias de carácetres. Cada conexión entre nodos (padre-hijo), representa un carácter. Y un nodo es la seqüencia de carácteres desde él hasta la raiz. Además, cada nodo tiene un entero que identifica su seqüencia. (esto será útil para el compresor)</p>
+<p>Aquesta classe és una implementació general de l'estructura de dades <a class="el" href="classdomini_1_1utils_1_1Trie.html" title="Clase de Trie. ">Trie</a>. Cada node representa una seqüencia de Bytes. Cada connexió entre nodes (pare-fill), representa un caràcter. I un node representa la seqüència de caràcters des d'ell fins a l'arrel. A més, cada node té un enter que identifica la seva seqüència. (això serà útil per al compressor). Tot i que aquesta classe està implementada de forma general (), parlarem com si fos un <a class="el" href="classdomini_1_1utils_1_1Trie.html" title="Clase de Trie. ">Trie</a>, ja que és com l'utilitzarem sempre en aquest projecte.</p>
 <dl class="section author"><dt>Author</dt><dd>Joan Bellavista </dd></dl>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="aa47b21b235e9dab115f3f97726837d5f"></a>
@@ -121,7 +121,8 @@ Private Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Constructor de la clase. </p>
-
+<div class="fragment"><div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;                  {</div><div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;        <a class="code" href="classdomini_1_1utils_1_1Trie.html#a60ef63a6c55d07710d33892ccc899bce">root</a> = <span class="keyword">new</span> TrieNode&lt;T&gt;(-1);</div><div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;    }</div><div class="ttc" id="classdomini_1_1utils_1_1Trie_html_a60ef63a6c55d07710d33892ccc899bce"><div class="ttname"><a href="classdomini_1_1utils_1_1Trie.html#a60ef63a6c55d07710d33892ccc899bce">domini.utils.Trie.root</a></div><div class="ttdeci">TrieNode&lt; T &gt; root</div><div class="ttdef"><b>Definition:</b> Trie.java:22</div></div>
+</div><!-- fragment -->
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
@@ -157,7 +158,8 @@ Private Attributes</h2></td></tr>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>Devuelve el indice de la lista "list" si esta. O -1 si no esta. </dd></dl>
-
+<div class="fragment"><div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;                                                {</div><div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;        TrieNode&lt;T&gt; actual = this.<a class="code" href="classdomini_1_1utils_1_1Trie.html#a60ef63a6c55d07710d33892ccc899bce">root</a>;</div><div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; list.size(); i++) {</div><div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;            T ch = list.get(i);</div><div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;            TrieNode&lt;T&gt; node = actual.getChildren().get(ch);</div><div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;            <span class="keywordflow">if</span> (node == null) {</div><div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;                <span class="keywordflow">return</span> -1;</div><div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;            }</div><div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;            actual = node;</div><div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;        }</div><div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;        <span class="keywordflow">return</span> actual.getIndex();</div><div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;    }</div><div class="ttc" id="classdomini_1_1utils_1_1Trie_html_a60ef63a6c55d07710d33892ccc899bce"><div class="ttname"><a href="classdomini_1_1utils_1_1Trie.html#a60ef63a6c55d07710d33892ccc899bce">domini.utils.Trie.root</a></div><div class="ttdeci">TrieNode&lt; T &gt; root</div><div class="ttdef"><b>Definition:</b> Trie.java:22</div></div>
+</div><!-- fragment -->
 </div>
 </div>
 <a id="a3599001d9b056f0b54ab7eabb9d3510b"></a>
@@ -202,7 +204,8 @@ Private Attributes</h2></td></tr>
   </table>
   </dd>
 </dl>
-
+<div class="fragment"><div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;                                                         {</div><div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;        TrieNode&lt;T&gt; actual = <a class="code" href="classdomini_1_1utils_1_1Trie.html#a60ef63a6c55d07710d33892ccc899bce">root</a>;</div><div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;</div><div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; list.size(); i++) {</div><div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;            actual = actual.getChildren()</div><div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;                .computeIfAbsent(list.get(i), c -&gt; <span class="keyword">new</span> TrieNode&lt;T&gt;(index)); </div><div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;                <span class="comment">// Solo deberia computar el ultimo.</span></div><div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;        }</div><div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;    }</div><div class="ttc" id="classdomini_1_1utils_1_1Trie_html_a60ef63a6c55d07710d33892ccc899bce"><div class="ttname"><a href="classdomini_1_1utils_1_1Trie.html#a60ef63a6c55d07710d33892ccc899bce">domini.utils.Trie.root</a></div><div class="ttdeci">TrieNode&lt; T &gt; root</div><div class="ttdef"><b>Definition:</b> Trie.java:22</div></div>
+</div><!-- fragment -->
 </div>
 </div>
 <h2 class="groupheader">Member Data Documentation</h2>

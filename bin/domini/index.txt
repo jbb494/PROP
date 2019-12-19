@@ -1,4 +1,0 @@
--Carpeta algorithm: Contiene los algoritmos de compresión de texto y el de imagen, con sus respectivos drivers.
--Carpeta estadistica: Contiene la clase y driver de las estadisticas de la compresion/descompresion.
--Carpeta folders: Contiene la clase Ctrl_FolderFile que gestiona todo lo relacionado con la gestion de compresion/descompresion.
--Carpeta utils: Contiene las estructuras de datos utilizadas por los algoritmos.

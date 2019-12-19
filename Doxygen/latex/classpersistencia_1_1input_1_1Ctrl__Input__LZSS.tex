@@ -16,17 +16,14 @@ Inheritance diagram for persistencia.\+input.\+Ctrl\+\_\+\+Input\+\_\+\+L\+Z\+SS
 \end{figure}
 
 
-Collaboration diagram for persistencia.\+input.\+Ctrl\+\_\+\+Input\+\_\+\+L\+Z\+SS\+:\nopagebreak
-\begin{figure}[H]
-\begin{center}
-\leavevmode
-\includegraphics[width=227pt]{classpersistencia_1_1input_1_1Ctrl__Input__LZSS__coll__graph}
-\end{center}
-\end{figure}
+Collaboration diagram for persistencia.\+input.\+Ctrl\+\_\+\+Input\+\_\+\+L\+Z\+SS\+:
+% FIG 0
 \subsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
 \hyperlink{classpersistencia_1_1input_1_1Ctrl__Input__LZSS_a00d5d178971cfd1d15604f97584368d5}{Ctrl\+\_\+\+Input\+\_\+\+L\+Z\+SS} (String path)
+\begin{DoxyCompactList}\small\item\em El constructor on es crida a la classe pare. \end{DoxyCompactList}\item 
+\hyperlink{classpersistencia_1_1input_1_1Ctrl__Input__LZSS_a5f83902014e0f60a116380a6e8724960}{Ctrl\+\_\+\+Input\+\_\+\+L\+Z\+SS} ()
 \begin{DoxyCompactList}\small\item\em El constructor on es crida a la classe pare. \end{DoxyCompactList}\item 
 \hyperlink{classdomini_1_1utils_1_1IntorByte}{Intor\+Byte} \hyperlink{classpersistencia_1_1input_1_1Ctrl__Input__LZSS_a204d4d68a1d94725d9017b71bac0288e}{get\+L\+Z\+SS} ()
 \begin{DoxyCompactList}\small\item\em Mètode per aconseguir la unitat mínima necessària. \end{DoxyCompactList}\end{DoxyCompactItemize}
@@ -47,7 +44,7 @@ Manel Aguilar
 \mbox{\Hypertarget{classpersistencia_1_1input_1_1Ctrl__Input__LZSS_a00d5d178971cfd1d15604f97584368d5}\label{classpersistencia_1_1input_1_1Ctrl__Input__LZSS_a00d5d178971cfd1d15604f97584368d5}} 
 \index{persistencia\+::input\+::\+Ctrl\+\_\+\+Input\+\_\+\+L\+Z\+SS@{persistencia\+::input\+::\+Ctrl\+\_\+\+Input\+\_\+\+L\+Z\+SS}!Ctrl\+\_\+\+Input\+\_\+\+L\+Z\+SS@{Ctrl\+\_\+\+Input\+\_\+\+L\+Z\+SS}}
 \index{Ctrl\+\_\+\+Input\+\_\+\+L\+Z\+SS@{Ctrl\+\_\+\+Input\+\_\+\+L\+Z\+SS}!persistencia\+::input\+::\+Ctrl\+\_\+\+Input\+\_\+\+L\+Z\+SS@{persistencia\+::input\+::\+Ctrl\+\_\+\+Input\+\_\+\+L\+Z\+SS}}
-\subsubsection{\texorpdfstring{Ctrl\+\_\+\+Input\+\_\+\+L\+Z\+S\+S()}{Ctrl\_Input\_LZSS()}}
+\subsubsection{\texorpdfstring{Ctrl\+\_\+\+Input\+\_\+\+L\+Z\+S\+S()}{Ctrl\_Input\_LZSS()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
 {\footnotesize\ttfamily persistencia.\+input.\+Ctrl\+\_\+\+Input\+\_\+\+L\+Z\+S\+S.\+Ctrl\+\_\+\+Input\+\_\+\+L\+Z\+SS (\begin{DoxyParamCaption}\item[{String}]{path }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
 
 
@@ -56,9 +53,35 @@ El constructor on es crida a la classe pare.
 
 
 \begin{DoxyParams}{Parameters}
-{\em path} & Conté el path del arxiu. \\
+{\em path} & Conté el path del arxiu que coemança a llegir. \\
 \hline
 \end{DoxyParams}
+
+\begin{DoxyCode}
+15                                         \{
+16         super(path);
+17         \hyperlink{classpersistencia_1_1input_1_1Ctrl__Input_a46e05fce164a6803820c02565c1769c8}{getMetadata}();
+18     \}
+\end{DoxyCode}
+\mbox{\Hypertarget{classpersistencia_1_1input_1_1Ctrl__Input__LZSS_a5f83902014e0f60a116380a6e8724960}\label{classpersistencia_1_1input_1_1Ctrl__Input__LZSS_a5f83902014e0f60a116380a6e8724960}} 
+\index{persistencia\+::input\+::\+Ctrl\+\_\+\+Input\+\_\+\+L\+Z\+SS@{persistencia\+::input\+::\+Ctrl\+\_\+\+Input\+\_\+\+L\+Z\+SS}!Ctrl\+\_\+\+Input\+\_\+\+L\+Z\+SS@{Ctrl\+\_\+\+Input\+\_\+\+L\+Z\+SS}}
+\index{Ctrl\+\_\+\+Input\+\_\+\+L\+Z\+SS@{Ctrl\+\_\+\+Input\+\_\+\+L\+Z\+SS}!persistencia\+::input\+::\+Ctrl\+\_\+\+Input\+\_\+\+L\+Z\+SS@{persistencia\+::input\+::\+Ctrl\+\_\+\+Input\+\_\+\+L\+Z\+SS}}
+\subsubsection{\texorpdfstring{Ctrl\+\_\+\+Input\+\_\+\+L\+Z\+S\+S()}{Ctrl\_Input\_LZSS()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily persistencia.\+input.\+Ctrl\+\_\+\+Input\+\_\+\+L\+Z\+S\+S.\+Ctrl\+\_\+\+Input\+\_\+\+L\+Z\+SS (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+El constructor on es crida a la classe pare. 
+
+\begin{DoxyNote}{Note}
+Continua llegint el fitxer que s\textquotesingle{}estava llegint. Assumeix que la metadata ja ha estat llegida. 
+\end{DoxyNote}
+
+\begin{DoxyCode}
+24                              \{
+25         super();
+26     \}
+\end{DoxyCode}
 
 
 \subsection{Member Function Documentation}
@@ -75,6 +98,37 @@ Mètode per aconseguir la unitat mínima necessària.
 \begin{DoxyReturn}{Returns}
 Tracta d\textquotesingle{}obtenir o bé un Byte o bé dos Integers. 
 \end{DoxyReturn}
+
+\begin{DoxyCode}
+34     \{
+35 
+36         byte aux = Input.getInstance().getBits(1);
+37         IntorByte ioc;
+38         \textcolor{keywordflow}{if}(aux == (byte)0) \textcolor{comment}{//char}
+39         \{
+40             aux = Input.getInstance().getBits(8);
+41             ioc = \textcolor{keyword}{new} IntorByte(\textcolor{keyword}{true});
+42             ioc.SetByte(aux);
+43         \}
+44         \textcolor{keywordflow}{else}
+45         \{
+46             List<Byte> lb = \textcolor{keyword}{new} ArrayList<Byte>();
+47             aux = Input.getInstance().getBits(3);
+48             lb.add(aux);
+49             aux = Input.getInstance().getBits(8);
+50             lb.add(aux);
+51             \textcolor{keywordtype}{int} despl = byteToConversion.byteToInteger(lb);
+52             ioc = \textcolor{keyword}{new} IntorByte(\textcolor{keyword}{false});
+53             ioc.SetDespl(despl);
+54             aux = Input.getInstance().getBits(5);
+55             lb = \textcolor{keyword}{new} ArrayList<Byte>();
+56             lb.add(aux);
+57             \textcolor{keywordtype}{int} mida = byteToConversion.byteToInteger(lb) + 3;
+58             ioc.SetMida(mida);
+59         \}
+60         \textcolor{keywordflow}{return} ioc;
+61     \}
+\end{DoxyCode}
 
 
 The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}

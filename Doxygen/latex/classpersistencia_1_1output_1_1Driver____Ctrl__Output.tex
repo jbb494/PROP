@@ -47,6 +47,16 @@ Comprovarà les possibles excepcions que puguin apareixer a la classe.
 {\em method} & Mètode de compressio/descompressio emprat \\
 \hline
 \end{DoxyParams}
+
+\begin{DoxyCode}
+68                                                                                               \{
+69         \textcolor{keywordtype}{int} op = Integer.parseInt(linea);
+70         \textcolor{keywordflow}{if}(ctrl\_out == null && !linea.equals(\textcolor{stringliteral}{"1"}) && !linea.equals(\textcolor{stringliteral}{"0"}) && op < 6) \{
+71             \textcolor{keywordflow}{throw} \textcolor{keyword}{new} IllegalArgumentException(\textcolor{stringliteral}{"Debes llamar al constructor antes"});
+72         \}
+73         
+74     \}
+\end{DoxyCode}
 \mbox{\Hypertarget{classpersistencia_1_1output_1_1Driver____Ctrl__Output_ab5a20df1417ca8ac83a4c754c284599c}\label{classpersistencia_1_1output_1_1Driver____Ctrl__Output_ab5a20df1417ca8ac83a4c754c284599c}} 
 \index{persistencia\+::output\+::\+Driver\+\_\+\+\_\+\+Ctrl\+\_\+\+Output@{persistencia\+::output\+::\+Driver\+\_\+\+\_\+\+Ctrl\+\_\+\+Output}!main@{main}}
 \index{main@{main}!persistencia\+::output\+::\+Driver\+\_\+\+\_\+\+Ctrl\+\_\+\+Output@{persistencia\+::output\+::\+Driver\+\_\+\+\_\+\+Ctrl\+\_\+\+Output}}
@@ -62,6 +72,85 @@ Comprovarà les possibles excepcions que puguin apareixer a la classe.
 {\em args} & \\
 \hline
 \end{DoxyParams}
+
+\begin{DoxyCode}
+81                                            \{
+82         \textcolor{keywordflow}{try} \{
+83             Ctrl\_Output ctrl\_out = null;
+84             String method = \textcolor{stringliteral}{""};
+85             String path = \textcolor{stringliteral}{"../src/persistencia/output/Driver\_\_Ctrl\_Output.out"};
+86             \hyperlink{classpersistencia_1_1output_1_1Driver____Ctrl__Output_aceadcc132060c8491487c7d20a382c5b}{showOptions}();
+87             BufferedReader reader = \textcolor{keyword}{new} BufferedReader(\textcolor{keyword}{new} InputStreamReader(System.in));
+88             String linea = \textcolor{stringliteral}{""};
+89             \textcolor{keywordflow}{while}(linea != null)\{
+90                 System.out.println(\textcolor{stringliteral}{"Selecciona una opción:"});
+91                 linea = reader.readLine().trim();
+92                 System.out.println(\textcolor{stringliteral}{"Opción: "} + linea + \textcolor{stringliteral}{" seleccionada"});
+93                 \hyperlink{classpersistencia_1_1output_1_1Driver____Ctrl__Output_a19885299457cf4049efde8b78a0f7627}{comprovarExcepcions}(ctrl\_out, linea, method);
+94                 \textcolor{keywordflow}{switch}(linea)\{
+95                     \textcolor{keywordflow}{case} \textcolor{stringliteral}{"1"}:
+96                         ctrl\_out = \textcolor{keyword}{new} Ctrl\_Output(path);
+97                     \textcolor{keywordflow}{break};
+98                     \textcolor{keywordflow}{case} \textcolor{stringliteral}{"2"}:
+99                         System.out.println(\textcolor{stringliteral}{"Escribe un byte y un integer"});
+100                         String[] aux = reader.readLine().trim().split(\textcolor{stringliteral}{" "});
+101                         Integer numBits1 = Integer.parseInt(aux[0]);
+102                         Byte a = (byte)Integer.parseInt(aux[1]);
+103                         ctrl\_out.add(a, numBits1);
+104                     \textcolor{keywordflow}{break};
+105                     \textcolor{keywordflow}{case} \textcolor{stringliteral}{"3"}:
+106                         System.out.println(\textcolor{stringliteral}{"Escribe una string"});
+107                         ctrl\_out.add(reader.readLine());
+108                     \textcolor{keywordflow}{break};
+109                     \textcolor{keywordflow}{case} \textcolor{stringliteral}{"4"}:
+110                         System.out.println(\textcolor{stringliteral}{"Escribe una character"});
+111                         ctrl\_out.add(reader.readLine().charAt(0));
+112                     \textcolor{keywordflow}{break};
+113                     \textcolor{keywordflow}{case} \textcolor{stringliteral}{"5"}:
+114                         System.out.println(\textcolor{stringliteral}{"Escribe una Integer"});
+115                         ctrl\_out.add(Integer.parseInt(reader.readLine()));
+116                     \textcolor{keywordflow}{break};
+117                     \textcolor{keywordflow}{case} \textcolor{stringliteral}{"6"}:
+118                         System.out.println(\textcolor{stringliteral}{"Escribe un Integer y su tamaño"});
+119                         String[] aux1 = reader.readLine().split(\textcolor{stringliteral}{" "});
+120                         ctrl\_out.add(Integer.parseInt(aux1[0]), Integer.parseInt(aux1[1]));
+121                     \textcolor{keywordflow}{break};
+122                     \textcolor{keywordflow}{case} \textcolor{stringliteral}{"7"}:
+123                         System.out.println(\textcolor{stringliteral}{"Escribe un Integer y su tamaño"});
+124                         aux1 = reader.readLine().split(\textcolor{stringliteral}{" "});
+125                         ctrl\_out.add2(Integer.parseInt(aux1[0]), Integer.parseInt(aux1[1]));
+126                     \textcolor{keywordflow}{break};
+127                     \textcolor{keywordflow}{case} \textcolor{stringliteral}{"8"}:
+128                         ctrl\_out.print();
+129                     \textcolor{keywordflow}{break};
+130                     \textcolor{keywordflow}{case} \textcolor{stringliteral}{"9"}:
+131                         method = \textcolor{stringliteral}{"jpeg"};
+132                         ctrl\_out.addMetadata(method);
+133                     \textcolor{keywordflow}{break};
+134                     \textcolor{keywordflow}{case} \textcolor{stringliteral}{"10"}:
+135                         method = \textcolor{stringliteral}{"lz78"};
+136                         ctrl\_out.addMetadata(method);
+137                     \textcolor{keywordflow}{break};
+138                     \textcolor{keywordflow}{case} \textcolor{stringliteral}{"11"}:
+139                         method = \textcolor{stringliteral}{"lzw"};
+140                         ctrl\_out.addMetadata(method);
+141                     \textcolor{keywordflow}{break};
+142                     \textcolor{keywordflow}{case} \textcolor{stringliteral}{"12"}:
+143                         method = \textcolor{stringliteral}{"lzss"};
+144                         ctrl\_out.addMetadata(method);
+145                     \textcolor{keywordflow}{break};
+146                     \textcolor{keywordflow}{case} \textcolor{stringliteral}{"0"}:
+147                         \textcolor{keywordflow}{return};
+148                     \textcolor{keywordflow}{default}:
+149                         System.out.println(\textcolor{stringliteral}{"La opción no es válida"});
+150                     \textcolor{keywordflow}{break};
+151                 \}
+152             \}
+153         \} \textcolor{keywordflow}{catch} (Exception e) \{
+154             e.printStackTrace();
+155         \}
+156     \}
+\end{DoxyCode}
 \mbox{\Hypertarget{classpersistencia_1_1output_1_1Driver____Ctrl__Output_aceadcc132060c8491487c7d20a382c5b}\label{classpersistencia_1_1output_1_1Driver____Ctrl__Output_aceadcc132060c8491487c7d20a382c5b}} 
 \index{persistencia\+::output\+::\+Driver\+\_\+\+\_\+\+Ctrl\+\_\+\+Output@{persistencia\+::output\+::\+Driver\+\_\+\+\_\+\+Ctrl\+\_\+\+Output}!show\+Options@{show\+Options}}
 \index{show\+Options@{show\+Options}!persistencia\+::output\+::\+Driver\+\_\+\+\_\+\+Ctrl\+\_\+\+Output@{persistencia\+::output\+::\+Driver\+\_\+\+\_\+\+Ctrl\+\_\+\+Output}}
@@ -72,6 +161,52 @@ Comprovarà les possibles excepcions que puguin apareixer a la classe.
 
 Mostra les accions a realitzar durant l\textquotesingle{}execució 
 
+
+\begin{DoxyCode}
+17                                      \{
+18         System.out.println(\textcolor{stringliteral}{"Driver de Ctrl\_Output"});
+19         System.out.println(\textcolor{stringliteral}{"Constructores: "});
+20         System.out.println(\textcolor{stringliteral}{"\(\backslash\)t 1. Ctrl\_Output(String path)"});
+21         System.out.println(\textcolor{stringliteral}{"\(\backslash\)t Input: 1"});
+22         System.out.println();
+23 
+24         System.out.println(\textcolor{stringliteral}{"Modificadores: "});
+25         System.out.println(\textcolor{stringliteral}{"\(\backslash\)t 2. add(Byte b, Integer n\_bits)"});
+26         System.out.println(\textcolor{stringliteral}{"\(\backslash\)t Input: 2"});
+27         System.out.println(\textcolor{stringliteral}{"\(\backslash\)t 3. add(String s)"});
+28         System.out.println(\textcolor{stringliteral}{"\(\backslash\)t Input: 3"});
+29         System.out.println(\textcolor{stringliteral}{"\(\backslash\)t 4. add(Byte c)"});
+30         System.out.println(\textcolor{stringliteral}{"\(\backslash\)t Input: 4"});
+31         System.out.println(\textcolor{stringliteral}{"\(\backslash\)t 5. add(Integer x)"});
+32         System.out.println(\textcolor{stringliteral}{"\(\backslash\)t Input: 5"});
+33         System.out.println(\textcolor{stringliteral}{"\(\backslash\)t 6. add(Integer x, Integer mida)"});
+34         System.out.println(\textcolor{stringliteral}{"\(\backslash\)t Input: 6"});
+35         System.out.println(\textcolor{stringliteral}{"\(\backslash\)t 7. add2(Integer x, Integer mida)"});
+36         System.out.println(\textcolor{stringliteral}{"\(\backslash\)t Input: 7"});
+37         System.out.println();
+38 
+39         System.out.println(\textcolor{stringliteral}{"Consultoras: "});
+40         System.out.println(\textcolor{stringliteral}{"\(\backslash\)t 8. print()"});
+41         System.out.println(\textcolor{stringliteral}{"\(\backslash\)t Input: 8"});
+42         System.out.println();
+43 
+44         System.out.println(\textcolor{stringliteral}{"Escoge si el output es un descomprimido o comprimido. Y el método"});
+45         System.out.println(\textcolor{stringliteral}{"\(\backslash\)t 9. addMetadata(jpeg)"});
+46         System.out.println(\textcolor{stringliteral}{"\(\backslash\)t Input: 9"});
+47         System.out.println(\textcolor{stringliteral}{"\(\backslash\)t 10. addMetadata(lz78)"});
+48         System.out.println(\textcolor{stringliteral}{"\(\backslash\)t Input: 10"});
+49         System.out.println(\textcolor{stringliteral}{"\(\backslash\)t 11. addMetadata(lzw)"});
+50         System.out.println(\textcolor{stringliteral}{"\(\backslash\)t Input: 11"});
+51         System.out.println(\textcolor{stringliteral}{"\(\backslash\)t 12. addMetadata(lzss)"});
+52         System.out.println(\textcolor{stringliteral}{"\(\backslash\)t Input: 12"});
+53 
+54 
+55         System.out.println(\textcolor{stringliteral}{"\(\backslash\)t 0. Sortir"});
+56         System.out.println(\textcolor{stringliteral}{"\(\backslash\)t Input: 0"});
+57 
+58         System.out.println(\textcolor{stringliteral}{"----------------------------------------"});
+59     \}
+\end{DoxyCode}
 
 
 The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}

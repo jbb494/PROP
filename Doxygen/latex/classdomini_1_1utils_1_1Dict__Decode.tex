@@ -68,6 +68,14 @@ Inicialitzem el vector
 \hline
 \end{DoxyParams}
 
+\begin{DoxyCode}
+32                                                                      \{
+33         \hyperlink{classdomini_1_1utils_1_1Dict__Decode_a351bb8836b391e5e21ebc9cc1943a22d}{v} = \textcolor{keyword}{new} ArrayList<Pair<Integer,Byte> >();
+34         \hyperlink{classdomini_1_1utils_1_1Dict__Decode_a635432505df1ceaa58a987bb80c6b0a3}{reset\_dictionary}(inicializeAscii);
+35         this.\hyperlink{classdomini_1_1utils_1_1Dict__Decode_a6ef2d17f449cf7a658a4bf983e2fb474}{valorNeutre} = \hyperlink{classdomini_1_1utils_1_1Dict__Decode_a6ef2d17f449cf7a658a4bf983e2fb474}{valorNeutre};
+36     \}
+\end{DoxyCode}
+
 
 \subsection{Member Function Documentation}
 \mbox{\Hypertarget{classdomini_1_1utils_1_1Dict__Decode_a077011e4507db308d143ea9b7146abb9}\label{classdomini_1_1utils_1_1Dict__Decode_a077011e4507db308d143ea9b7146abb9}} 
@@ -87,6 +95,12 @@ Afegeix un element al vector de la classe.
 {\em c} & Byte actual \\
 \hline
 \end{DoxyParams}
+
+\begin{DoxyCode}
+87                                        \{
+88         \hyperlink{classdomini_1_1utils_1_1Dict__Decode_a351bb8836b391e5e21ebc9cc1943a22d}{v}.add( \textcolor{keyword}{new} Pair<Integer,Byte>(i,c) );
+89     \}
+\end{DoxyCode}
 \mbox{\Hypertarget{classdomini_1_1utils_1_1Dict__Decode_aac69020c3515649e8c2d70e2908e3f3e}\label{classdomini_1_1utils_1_1Dict__Decode_aac69020c3515649e8c2d70e2908e3f3e}} 
 \index{domini\+::utils\+::\+Dict\+\_\+\+Decode@{domini\+::utils\+::\+Dict\+\_\+\+Decode}!get\+Size@{get\+Size}}
 \index{get\+Size@{get\+Size}!domini\+::utils\+::\+Dict\+\_\+\+Decode@{domini\+::utils\+::\+Dict\+\_\+\+Decode}}
@@ -96,6 +110,12 @@ Afegeix un element al vector de la classe.
 \begin{DoxyReturn}{Returns}
 Size del vector 
 \end{DoxyReturn}
+
+\begin{DoxyCode}
+77                              \{
+78         \textcolor{keywordflow}{return} \hyperlink{classdomini_1_1utils_1_1Dict__Decode_a351bb8836b391e5e21ebc9cc1943a22d}{v}.size();
+79     \}
+\end{DoxyCode}
 \mbox{\Hypertarget{classdomini_1_1utils_1_1Dict__Decode_a0f6457460aefe9df50f0cad48f58feee}\label{classdomini_1_1utils_1_1Dict__Decode_a0f6457460aefe9df50f0cad48f58feee}} 
 \index{domini\+::utils\+::\+Dict\+\_\+\+Decode@{domini\+::utils\+::\+Dict\+\_\+\+Decode}!get\+Word@{get\+Word}}
 \index{get\+Word@{get\+Word}!domini\+::utils\+::\+Dict\+\_\+\+Decode@{domini\+::utils\+::\+Dict\+\_\+\+Decode}}
@@ -114,6 +134,21 @@ Retorna la paraula que correspon a la seqüència encadenada a partir d\textquot
 \begin{DoxyReturn}{Returns}
 Retorna la paraula corresponent a l\textquotesingle{}enter 
 \end{DoxyReturn}
+
+\begin{DoxyCode}
+60                                               \{
+61         ArrayList<Byte> result = \textcolor{keyword}{new} ArrayList<>();
+62         result.clear();
+63         \textcolor{comment}{//result.ensureCapacity(Limit);}
+64         Integer diff = this.\hyperlink{classdomini_1_1utils_1_1Dict__Decode_a6ef2d17f449cf7a658a4bf983e2fb474}{valorNeutre} +1;
+65         \textcolor{keywordflow}{while} (i != this.\hyperlink{classdomini_1_1utils_1_1Dict__Decode_a6ef2d17f449cf7a658a4bf983e2fb474}{valorNeutre}) \{
+66             result.add(0, \hyperlink{classdomini_1_1utils_1_1Dict__Decode_a351bb8836b391e5e21ebc9cc1943a22d}{v}.get(i-diff).getRight());
+67             i = \hyperlink{classdomini_1_1utils_1_1Dict__Decode_a351bb8836b391e5e21ebc9cc1943a22d}{v}.get(i-diff).getLeft();
+68         \}
+69 
+70         \textcolor{keywordflow}{return} result;
+71     \}
+\end{DoxyCode}
 \mbox{\Hypertarget{classdomini_1_1utils_1_1Dict__Decode_a635432505df1ceaa58a987bb80c6b0a3}\label{classdomini_1_1utils_1_1Dict__Decode_a635432505df1ceaa58a987bb80c6b0a3}} 
 \index{domini\+::utils\+::\+Dict\+\_\+\+Decode@{domini\+::utils\+::\+Dict\+\_\+\+Decode}!reset\+\_\+dictionary@{reset\+\_\+dictionary}}
 \index{reset\+\_\+dictionary@{reset\+\_\+dictionary}!domini\+::utils\+::\+Dict\+\_\+\+Decode@{domini\+::utils\+::\+Dict\+\_\+\+Decode}}
@@ -132,6 +167,17 @@ Es crida quan sigui ple o si es instanciat a la construcció.
 {\em b} & Es true si volem inicialitzar el diccionari amb la taula A\+S\+C\+II \\
 \hline
 \end{DoxyParams}
+
+\begin{DoxyCode}
+43                                             \{
+44         \hyperlink{classdomini_1_1utils_1_1Dict__Decode_a351bb8836b391e5e21ebc9cc1943a22d}{v}.clear();
+45         \textcolor{comment}{//v.ensureCapacity(Limit);}
+46         \textcolor{keywordflow}{if}(!b)return ;
+47         \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i = 0; i < 256; ++i) \{
+48             \hyperlink{classdomini_1_1utils_1_1Dict__Decode_a351bb8836b391e5e21ebc9cc1943a22d}{v}.add( \textcolor{keyword}{new} Pair<Integer,Byte>(-1, (byte)i) );
+49         \}
+50     \}
+\end{DoxyCode}
 
 
 \subsection{Member Data Documentation}

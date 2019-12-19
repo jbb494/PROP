@@ -7,31 +7,29 @@ Compressió i descompressió pel mètode \hyperlink{classdomini_1_1algorithm_1_1
 
 
 
-Collaboration diagram for domini.\+algorithm.\+L\+ZW\+:\nopagebreak
-\begin{figure}[H]
-\begin{center}
-\leavevmode
-\includegraphics[width=211pt]{classdomini_1_1algorithm_1_1LZW__coll__graph}
-\end{center}
-\end{figure}
+Inheritance diagram for domini.\+algorithm.\+L\+ZW\+:
+% FIG 0
+
+
+Collaboration diagram for domini.\+algorithm.\+L\+ZW\+:
+% FIG 1
 \subsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\hyperlink{classdomini_1_1algorithm_1_1LZW_a00bd43f0691ac9679e6232b701e535ec}{L\+ZW} (String aux, boolean b)
-\begin{DoxyCompactList}\small\item\em Constructor de la clase \hyperlink{classdomini_1_1algorithm_1_1LZW}{L\+ZW}. \end{DoxyCompactList}\item 
-void \hyperlink{classdomini_1_1algorithm_1_1LZW_a79ce338289c3e8fcdd111ca029cfb45b}{compression} (\hyperlink{classpersistencia_1_1input_1_1Ctrl__Input__Text}{Ctrl\+\_\+\+Input\+\_\+\+Text} inp)
-\begin{DoxyCompactList}\small\item\em Comprimim un text amb l\textquotesingle{}algoritme \hyperlink{classdomini_1_1algorithm_1_1LZW}{L\+ZW}. \end{DoxyCompactList}\item 
-void \hyperlink{classdomini_1_1algorithm_1_1LZW_a1c7f66a62ed475a72a49f294c41f54fa}{decompression} (\hyperlink{classpersistencia_1_1input_1_1Ctrl__Input__LZW}{Ctrl\+\_\+\+Input\+\_\+\+L\+ZW} inp)
-\begin{DoxyCompactList}\small\item\em Descomprimim un fitxer amb l\textquotesingle{}algoritme \hyperlink{classdomini_1_1algorithm_1_1LZW}{L\+ZW}. \end{DoxyCompactList}\item 
-\hyperlink{classpersistencia_1_1output_1_1Ctrl__Output}{Ctrl\+\_\+\+Output} \hyperlink{classdomini_1_1algorithm_1_1LZW_a57ba5129e7f26d4cc066195e3d6c9c8c}{print} ()
-\begin{DoxyCompactList}\small\item\em La funció serà cridada quan volguem obtenir el resultat d\textquotesingle{}una compressio o descompressio. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\hyperlink{classdomini_1_1algorithm_1_1LZW_ab596afb13b224da41ee590a08df642a9}{L\+ZW} (String path, boolean b)
+\begin{DoxyCompactList}\small\item\em Constructor de la classe. \end{DoxyCompactList}\item 
+\hyperlink{classdomini_1_1algorithm_1_1LZW_ad8feac199454cb47321930e6d737360e}{L\+ZW} (boolean b)
+\begin{DoxyCompactList}\small\item\em Constructor de la classe. \end{DoxyCompactList}\item 
+void \hyperlink{classdomini_1_1algorithm_1_1LZW_a04a13292c78f6d958270fec8bc6975be}{Compressor} ()
+\item 
+void \hyperlink{classdomini_1_1algorithm_1_1LZW_a6a5d986396443691861ac9ba41b2dd33}{Decompressor} ()
+\end{DoxyCompactItemize}
 \subsection*{Package Attributes}
 \begin{DoxyCompactItemize}
 \item 
 final Integer \hyperlink{classdomini_1_1algorithm_1_1LZW_a6d83dbcda4939db767fa0522d40fcc0a}{Limit} = Integer.\+M\+A\+X\+\_\+\+V\+A\+L\+UE
-\item 
-\hyperlink{classpersistencia_1_1output_1_1Ctrl__Output}{Ctrl\+\_\+\+Output} \hyperlink{classdomini_1_1algorithm_1_1LZW_a22cd522a89b5226a3fb3424ffe122f72}{Output}
 \end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
 
 
 \subsection{Detailed Description}
@@ -43,73 +41,143 @@ Miguel Paracuellos Ocaña
 
 
 \subsection{Constructor \& Destructor Documentation}
-\mbox{\Hypertarget{classdomini_1_1algorithm_1_1LZW_a00bd43f0691ac9679e6232b701e535ec}\label{classdomini_1_1algorithm_1_1LZW_a00bd43f0691ac9679e6232b701e535ec}} 
+\mbox{\Hypertarget{classdomini_1_1algorithm_1_1LZW_ab596afb13b224da41ee590a08df642a9}\label{classdomini_1_1algorithm_1_1LZW_ab596afb13b224da41ee590a08df642a9}} 
 \index{domini\+::algorithm\+::\+L\+ZW@{domini\+::algorithm\+::\+L\+ZW}!L\+ZW@{L\+ZW}}
 \index{L\+ZW@{L\+ZW}!domini\+::algorithm\+::\+L\+ZW@{domini\+::algorithm\+::\+L\+ZW}}
-\subsubsection{\texorpdfstring{L\+Z\+W()}{LZW()}}
-{\footnotesize\ttfamily domini.\+algorithm.\+L\+Z\+W.\+L\+ZW (\begin{DoxyParamCaption}\item[{String}]{aux,  }\item[{boolean}]{b }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+\subsubsection{\texorpdfstring{L\+Z\+W()}{LZW()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily domini.\+algorithm.\+L\+Z\+W.\+L\+ZW (\begin{DoxyParamCaption}\item[{String}]{path,  }\item[{boolean}]{b }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
 
 
 
-Constructor de la clase \hyperlink{classdomini_1_1algorithm_1_1LZW}{L\+ZW}. 
+Constructor de la classe. 
 
 
 \begin{DoxyParams}{Parameters}
-{\em aux} & Path de sortida \\
+{\em path} & Path de sortida \\
+\hline
+{\em b} & False si estas comprimint, True si estas descomprimint \\
 \hline
 \end{DoxyParams}
+
+\begin{DoxyCode}
+39                                        \{
+40         super(path, b);
+41         \textcolor{keywordflow}{if} (!b) \{
+42             \hyperlink{classdomini_1_1algorithm_1_1Algorithm_a4de9955411c656325adc391ef570c082}{Output}.\hyperlink{classpersistencia_1_1output_1_1Ctrl__Output_ae6d6857910a023982900ddc857b891f0}{addMetadata}(\textcolor{stringliteral}{"lzw"});
+43         \}
+44     \}
+\end{DoxyCode}
+\mbox{\Hypertarget{classdomini_1_1algorithm_1_1LZW_ad8feac199454cb47321930e6d737360e}\label{classdomini_1_1algorithm_1_1LZW_ad8feac199454cb47321930e6d737360e}} 
+\index{domini\+::algorithm\+::\+L\+ZW@{domini\+::algorithm\+::\+L\+ZW}!L\+ZW@{L\+ZW}}
+\index{L\+ZW@{L\+ZW}!domini\+::algorithm\+::\+L\+ZW@{domini\+::algorithm\+::\+L\+ZW}}
+\subsubsection{\texorpdfstring{L\+Z\+W()}{LZW()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily domini.\+algorithm.\+L\+Z\+W.\+L\+ZW (\begin{DoxyParamCaption}\item[{boolean}]{b }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Constructor de la classe. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em b} & False si estas comprimint, True si estas descomprimint \\
+\hline
+\end{DoxyParams}
+\begin{DoxyNote}{Note}
+Es continua escrivint al fitxer que s\textquotesingle{}estava escrivint 
+\end{DoxyNote}
+
+\begin{DoxyCode}
+51                           \{
+52         super(b);
+53         \textcolor{keywordflow}{if} (!b) \{
+54             \hyperlink{classdomini_1_1algorithm_1_1Algorithm_a4de9955411c656325adc391ef570c082}{Output}.\hyperlink{classpersistencia_1_1output_1_1Ctrl__Output_ae6d6857910a023982900ddc857b891f0}{addMetadata}(\textcolor{stringliteral}{"lzw"});
+55         \}
+56     \}
+\end{DoxyCode}
 
 
 \subsection{Member Function Documentation}
-\mbox{\Hypertarget{classdomini_1_1algorithm_1_1LZW_a79ce338289c3e8fcdd111ca029cfb45b}\label{classdomini_1_1algorithm_1_1LZW_a79ce338289c3e8fcdd111ca029cfb45b}} 
-\index{domini\+::algorithm\+::\+L\+ZW@{domini\+::algorithm\+::\+L\+ZW}!compression@{compression}}
-\index{compression@{compression}!domini\+::algorithm\+::\+L\+ZW@{domini\+::algorithm\+::\+L\+ZW}}
-\subsubsection{\texorpdfstring{compression()}{compression()}}
-{\footnotesize\ttfamily public Array\+List$<$ Integer $>$ domini.\+algorithm.\+L\+Z\+W.\+compression (\begin{DoxyParamCaption}\item[{\hyperlink{classpersistencia_1_1input_1_1Ctrl__Input__Text}{Ctrl\+\_\+\+Input\+\_\+\+Text}}]{inp }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+\mbox{\Hypertarget{classdomini_1_1algorithm_1_1LZW_a04a13292c78f6d958270fec8bc6975be}\label{classdomini_1_1algorithm_1_1LZW_a04a13292c78f6d958270fec8bc6975be}} 
+\index{domini\+::algorithm\+::\+L\+ZW@{domini\+::algorithm\+::\+L\+ZW}!Compressor@{Compressor}}
+\index{Compressor@{Compressor}!domini\+::algorithm\+::\+L\+ZW@{domini\+::algorithm\+::\+L\+ZW}}
+\subsubsection{\texorpdfstring{Compressor()}{Compressor()}}
+{\footnotesize\ttfamily void domini.\+algorithm.\+L\+Z\+W.\+Compressor (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
 
 
-
-Comprimim un text amb l\textquotesingle{}algoritme \hyperlink{classdomini_1_1algorithm_1_1LZW}{L\+ZW}. 
-
-
-\begin{DoxyParams}{Parameters}
-{\em inp} & accés al Controlador d\textquotesingle{}Input per el text \\
-\hline
-\end{DoxyParams}
-\begin{DoxyReturn}{Returns}
-llista amb els enters que representen el text 
-\end{DoxyReturn}
-\mbox{\Hypertarget{classdomini_1_1algorithm_1_1LZW_a1c7f66a62ed475a72a49f294c41f54fa}\label{classdomini_1_1algorithm_1_1LZW_a1c7f66a62ed475a72a49f294c41f54fa}} 
-\index{domini\+::algorithm\+::\+L\+ZW@{domini\+::algorithm\+::\+L\+ZW}!decompression@{decompression}}
-\index{decompression@{decompression}!domini\+::algorithm\+::\+L\+ZW@{domini\+::algorithm\+::\+L\+ZW}}
-\subsubsection{\texorpdfstring{decompression()}{decompression()}}
-{\footnotesize\ttfamily public String domini.\+algorithm.\+L\+Z\+W.\+decompression (\begin{DoxyParamCaption}\item[{\hyperlink{classpersistencia_1_1input_1_1Ctrl__Input__LZW}{Ctrl\+\_\+\+Input\+\_\+\+L\+ZW}}]{inp }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
-
-
-
-Descomprimim un fitxer amb l\textquotesingle{}algoritme \hyperlink{classdomini_1_1algorithm_1_1LZW}{L\+ZW}. 
-
-
-\begin{DoxyParams}{Parameters}
-{\em inp} & accés al Controlador d\textquotesingle{}Input pel fitxer comprimit \\
-\hline
-\end{DoxyParams}
-\begin{DoxyReturn}{Returns}
-text que representa el fitxer descomprimit 
-\end{DoxyReturn}
-\mbox{\Hypertarget{classdomini_1_1algorithm_1_1LZW_a57ba5129e7f26d4cc066195e3d6c9c8c}\label{classdomini_1_1algorithm_1_1LZW_a57ba5129e7f26d4cc066195e3d6c9c8c}} 
-\index{domini\+::algorithm\+::\+L\+ZW@{domini\+::algorithm\+::\+L\+ZW}!print@{print}}
-\index{print@{print}!domini\+::algorithm\+::\+L\+ZW@{domini\+::algorithm\+::\+L\+ZW}}
-\subsubsection{\texorpdfstring{print()}{print()}}
-{\footnotesize\ttfamily public \hyperlink{classpersistencia_1_1output_1_1Ctrl__Output}{Ctrl\+\_\+\+Output} domini.\+algorithm.\+L\+Z\+W.\+print (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+\begin{DoxyCode}
+64                              \{
+65 
+66         \hyperlink{classdomini_1_1algorithm_1_1Algorithm_a070b7e7dcc453b03751d265beae5306c}{checkCompressor}();
+67         Ctrl\_Input\_Text inp = \textcolor{keyword}{new} Ctrl\_Input\_Text();
+68 
+69         \textcolor{comment}{//We initialize the attributes we need}
+70         Dict\_Encode table = \textcolor{keyword}{new} Dict\_Encode();
+71         Integer i = -1;
+72         
+73         \textcolor{keywordflow}{while} (!inp.finished()) \{
+74             byte c = inp.get();
+75 
+76             Integer aux = i;
+77 
+78             \textcolor{keywordflow}{if} ( (i = table.search\_and\_insert\_BST(aux, c)) == -1) \{
+79                 \hyperlink{classdomini_1_1algorithm_1_1Algorithm_a4de9955411c656325adc391ef570c082}{Output}.\hyperlink{classpersistencia_1_1output_1_1Ctrl__Output_a8c5aa5a6acb5259faeb1c05c71ddd21c}{add}(aux);
+80                 i = table.Ascii\_value(c);
+81             \}
+82         \}
+83 
+84         
+85         \textcolor{keywordflow}{if} (i != -1) \{
+86             \hyperlink{classdomini_1_1algorithm_1_1Algorithm_a4de9955411c656325adc391ef570c082}{Output}.\hyperlink{classpersistencia_1_1output_1_1Ctrl__Output_a8c5aa5a6acb5259faeb1c05c71ddd21c}{add}(i); 
+87         \}
+88     \}
+\end{DoxyCode}
+\mbox{\Hypertarget{classdomini_1_1algorithm_1_1LZW_a6a5d986396443691861ac9ba41b2dd33}\label{classdomini_1_1algorithm_1_1LZW_a6a5d986396443691861ac9ba41b2dd33}} 
+\index{domini\+::algorithm\+::\+L\+ZW@{domini\+::algorithm\+::\+L\+ZW}!Decompressor@{Decompressor}}
+\index{Decompressor@{Decompressor}!domini\+::algorithm\+::\+L\+ZW@{domini\+::algorithm\+::\+L\+ZW}}
+\subsubsection{\texorpdfstring{Decompressor()}{Decompressor()}}
+{\footnotesize\ttfamily void domini.\+algorithm.\+L\+Z\+W.\+Decompressor (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
 
 
-
-La funció serà cridada quan volguem obtenir el resultat d\textquotesingle{}una compressio o descompressio. 
-
-\begin{DoxyReturn}{Returns}
-Controlador d\textquotesingle{}Output per poder esciure el resultat 
-\end{DoxyReturn}
+\begin{DoxyCode}
+94                                \{
+95 
+96         \hyperlink{classdomini_1_1algorithm_1_1Algorithm_a6b738342cc7169893fa60d593f5a13db}{checkDecompressor}();
+97         Ctrl\_Input\_LZW inp = \textcolor{keyword}{new} Ctrl\_Input\_LZW();
+98         
+99         Dict\_Decode table = \textcolor{keyword}{new} Dict\_Decode(\textcolor{keyword}{true}, -1);
+100         Integer i = -1;
+101         
+102         \textcolor{keywordflow}{while} (!inp.finished()) \{
+103             Integer k = inp.get();
+104             
+105             \textcolor{keywordflow}{if} (inp.finished()) \textcolor{keywordflow}{return};
+106             
+107             Integer sz = table.getSize();
+108             ArrayList<Byte> s = \textcolor{keyword}{new} ArrayList<>();
+109 
+110             \textcolor{comment}{//Dictionary's maximum size -> Reset it}
+111             \textcolor{keywordflow}{if} (sz == \hyperlink{classdomini_1_1algorithm_1_1LZW_a6d83dbcda4939db767fa0522d40fcc0a}{Limit}) \{ 
+112                 table.reset\_dictionary(\textcolor{keyword}{true});
+113             \}               
+114             \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (k > sz) \{
+115                 \textcolor{keywordflow}{throw} \textcolor{keyword}{new} IllegalArgumentException(\textcolor{stringliteral}{"El text no està ben comprimit"});
+116             \}       
+117             \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (k < sz) \{
+118                 s = table.getWord(k);
+119 
+120                 \textcolor{keywordflow}{if} (i != -1) \{
+121                     table.add(i, s.get(0));
+122                 \}
+123             \}
+124             \textcolor{keywordflow}{else} \{
+125                 table.add(i, table.getWord(i).get(0));
+126                 s = table.getWord(k);
+127             \}
+128             \hyperlink{classdomini_1_1algorithm_1_1Algorithm_a4de9955411c656325adc391ef570c082}{Output}.\hyperlink{classpersistencia_1_1output_1_1Ctrl__Output_a8c5aa5a6acb5259faeb1c05c71ddd21c}{add}(s);
+129             i = k;
+130         \}
+131     \}
+\end{DoxyCode}
 
 
 \subsection{Member Data Documentation}
@@ -122,17 +190,6 @@ Controlador d\textquotesingle{}Output per poder esciure el resultat
 
 \begin{DoxyParams}{Parameters}
 {\em Limit} & Màxim nombre d\textquotesingle{}entrades del diccionari \\
-\hline
-\end{DoxyParams}
-\mbox{\Hypertarget{classdomini_1_1algorithm_1_1LZW_a22cd522a89b5226a3fb3424ffe122f72}\label{classdomini_1_1algorithm_1_1LZW_a22cd522a89b5226a3fb3424ffe122f72}} 
-\index{domini\+::algorithm\+::\+L\+ZW@{domini\+::algorithm\+::\+L\+ZW}!Output@{Output}}
-\index{Output@{Output}!domini\+::algorithm\+::\+L\+ZW@{domini\+::algorithm\+::\+L\+ZW}}
-\subsubsection{\texorpdfstring{Output}{Output}}
-{\footnotesize\ttfamily \hyperlink{classpersistencia_1_1output_1_1Ctrl__Output}{Ctrl\+\_\+\+Output} domini.\+algorithm.\+L\+Z\+W.\+Output\hspace{0.3cm}{\ttfamily [package]}}
-
-
-\begin{DoxyParams}{Parameters}
-{\em Output} & Del tipus Ctrl\+\_\+\+Output, li passarem el text processat \\
 \hline
 \end{DoxyParams}
 

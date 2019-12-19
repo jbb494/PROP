@@ -89,6 +89,8 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a83904c6ebf931ba29a134be5f29a66c7"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classdomini_1_1utils_1_1BinTree.html#a83904c6ebf931ba29a134be5f29a66c7">BinTree</a> (int data)</td></tr>
 <tr class="memdesc:a83904c6ebf931ba29a134be5f29a66c7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructora: es crea un arbre amb un sol node que té valor.  <a href="#a83904c6ebf931ba29a134be5f29a66c7">More...</a><br /></td></tr>
 <tr class="separator:a83904c6ebf931ba29a134be5f29a66c7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a27e66345747234352bf37b604519001a"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classdomini_1_1utils_1_1BinTree.html#a27e66345747234352bf37b604519001a">BinTree</a> (<a class="el" href="classdomini_1_1utils_1_1BinTree.html">BinTree</a> bt)</td></tr>
+<tr class="separator:a27e66345747234352bf37b604519001a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a30f097b37ebea20379d9c2930e8fa27f"><td class="memItemLeft" align="right" valign="top">boolean&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classdomini_1_1utils_1_1BinTree.html#a30f097b37ebea20379d9c2930e8fa27f">wellDefined</a> ()</td></tr>
 <tr class="memdesc:a30f097b37ebea20379d9c2930e8fa27f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Indica si l'arbre està ben deninit, és a dir, si tots els nodes estan inicialitzats.  <a href="#a30f097b37ebea20379d9c2930e8fa27f">More...</a><br /></td></tr>
 <tr class="separator:a30f097b37ebea20379d9c2930e8fa27f"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -138,7 +140,7 @@ Private Attributes</h2></td></tr>
 <dl class="section author"><dt>Author</dt><dd>Joan Lapeyra Amat </dd></dl>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="a46082da82a1186c5a99ae68eee6ece13"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a46082da82a1186c5a99ae68eee6ece13">&#9670;&nbsp;</a></span>BinTree() <span class="overload">[1/2]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a46082da82a1186c5a99ae68eee6ece13">&#9670;&nbsp;</a></span>BinTree() <span class="overload">[1/3]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -161,11 +163,13 @@ Private Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Constructora: es crea un arbre amb un sol node que té els dos fills indefinits. </p>
-
+<div class="fragment"><div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;                     {</div><div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;        <a class="code" href="classdomini_1_1utils_1_1BinTree.html#a357bcbcf07ba7fcb99d11b237d189e65">arr</a> = <span class="keyword">new</span> ArrayList&lt;Integer&gt;();</div><div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;        <a class="code" href="classdomini_1_1utils_1_1BinTree.html#a357bcbcf07ba7fcb99d11b237d189e65">arr</a>.add(-1);</div><div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;        <a class="code" href="classdomini_1_1utils_1_1BinTree.html#a357bcbcf07ba7fcb99d11b237d189e65">arr</a>.add(-1);</div><div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;        <a class="code" href="classdomini_1_1utils_1_1BinTree.html#a36f1212262c353accbc0a0385fa45a8d">num_undefs</a> = 2;</div><div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;    }</div><div class="ttc" id="classdomini_1_1utils_1_1BinTree_html_a36f1212262c353accbc0a0385fa45a8d"><div class="ttname"><a href="classdomini_1_1utils_1_1BinTree.html#a36f1212262c353accbc0a0385fa45a8d">domini.utils.BinTree.num_undefs</a></div><div class="ttdeci">int num_undefs</div><div class="ttdef"><b>Definition:</b> BinTree.java:32</div></div>
+<div class="ttc" id="classdomini_1_1utils_1_1BinTree_html_a357bcbcf07ba7fcb99d11b237d189e65"><div class="ttname"><a href="classdomini_1_1utils_1_1BinTree.html#a357bcbcf07ba7fcb99d11b237d189e65">domini.utils.BinTree.arr</a></div><div class="ttdeci">ArrayList&lt; Integer &gt; arr</div><div class="ttdef"><b>Definition:</b> BinTree.java:26</div></div>
+</div><!-- fragment -->
 </div>
 </div>
 <a id="a83904c6ebf931ba29a134be5f29a66c7"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a83904c6ebf931ba29a134be5f29a66c7">&#9670;&nbsp;</a></span>BinTree() <span class="overload">[2/2]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a83904c6ebf931ba29a134be5f29a66c7">&#9670;&nbsp;</a></span>BinTree() <span class="overload">[2/3]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -195,7 +199,37 @@ Private Attributes</h2></td></tr>
   </table>
   </dd>
 </dl>
+<div class="fragment"><div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;                             {</div><div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;        <a class="code" href="classdomini_1_1utils_1_1BinTree.html#a357bcbcf07ba7fcb99d11b237d189e65">arr</a> = <span class="keyword">new</span> ArrayList&lt;Integer&gt;();</div><div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;        <a class="code" href="classdomini_1_1utils_1_1BinTree.html#a357bcbcf07ba7fcb99d11b237d189e65">arr</a>.add(-2);</div><div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;        <a class="code" href="classdomini_1_1utils_1_1BinTree.html#a357bcbcf07ba7fcb99d11b237d189e65">arr</a>.add(data);</div><div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;        <a class="code" href="classdomini_1_1utils_1_1BinTree.html#a36f1212262c353accbc0a0385fa45a8d">num_undefs</a> = 0;</div><div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;    }</div><div class="ttc" id="classdomini_1_1utils_1_1BinTree_html_a36f1212262c353accbc0a0385fa45a8d"><div class="ttname"><a href="classdomini_1_1utils_1_1BinTree.html#a36f1212262c353accbc0a0385fa45a8d">domini.utils.BinTree.num_undefs</a></div><div class="ttdeci">int num_undefs</div><div class="ttdef"><b>Definition:</b> BinTree.java:32</div></div>
+<div class="ttc" id="classdomini_1_1utils_1_1BinTree_html_a357bcbcf07ba7fcb99d11b237d189e65"><div class="ttname"><a href="classdomini_1_1utils_1_1BinTree.html#a357bcbcf07ba7fcb99d11b237d189e65">domini.utils.BinTree.arr</a></div><div class="ttdeci">ArrayList&lt; Integer &gt; arr</div><div class="ttdef"><b>Definition:</b> BinTree.java:26</div></div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="a27e66345747234352bf37b604519001a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a27e66345747234352bf37b604519001a">&#9670;&nbsp;</a></span>BinTree() <span class="overload">[3/3]</span></h2>
 
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">domini.utils.BinTree.BinTree </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classdomini_1_1utils_1_1BinTree.html">BinTree</a>&#160;</td>
+          <td class="paramname"><em>bt</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<div class="fragment"><div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;                               {</div><div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;        <a class="code" href="classdomini_1_1utils_1_1BinTree.html#a357bcbcf07ba7fcb99d11b237d189e65">arr</a> = <span class="keyword">new</span> ArrayList&lt;Integer&gt;(bt.arr);</div><div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;        <a class="code" href="classdomini_1_1utils_1_1BinTree.html#a36f1212262c353accbc0a0385fa45a8d">num_undefs</a> = bt.num_undefs;</div><div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;    }</div><div class="ttc" id="classdomini_1_1utils_1_1BinTree_html_a36f1212262c353accbc0a0385fa45a8d"><div class="ttname"><a href="classdomini_1_1utils_1_1BinTree.html#a36f1212262c353accbc0a0385fa45a8d">domini.utils.BinTree.num_undefs</a></div><div class="ttdeci">int num_undefs</div><div class="ttdef"><b>Definition:</b> BinTree.java:32</div></div>
+<div class="ttc" id="classdomini_1_1utils_1_1BinTree_html_a357bcbcf07ba7fcb99d11b237d189e65"><div class="ttname"><a href="classdomini_1_1utils_1_1BinTree.html#a357bcbcf07ba7fcb99d11b237d189e65">domini.utils.BinTree.arr</a></div><div class="ttdeci">ArrayList&lt; Integer &gt; arr</div><div class="ttdef"><b>Definition:</b> BinTree.java:26</div></div>
+</div><!-- fragment -->
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
@@ -230,7 +264,8 @@ Private Attributes</h2></td></tr>
   </table>
   </dd>
 </dl>
-
+<div class="fragment"><div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;                                  {</div><div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;        <span class="keywordflow">if</span> (2*x &gt;= <a class="code" href="classdomini_1_1utils_1_1BinTree.html#a357bcbcf07ba7fcb99d11b237d189e65">arr</a>.size() || x &lt; 0) <span class="keywordflow">throw</span> <span class="keyword">new</span> IllegalArgumentException(Integer.toString(x)+<span class="stringliteral">&quot; is an invalid node&quot;</span>);</div><div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;    }</div><div class="ttc" id="classdomini_1_1utils_1_1BinTree_html_a357bcbcf07ba7fcb99d11b237d189e65"><div class="ttname"><a href="classdomini_1_1utils_1_1BinTree.html#a357bcbcf07ba7fcb99d11b237d189e65">domini.utils.BinTree.arr</a></div><div class="ttdeci">ArrayList&lt; Integer &gt; arr</div><div class="ttdef"><b>Definition:</b> BinTree.java:26</div></div>
+</div><!-- fragment -->
 </div>
 </div>
 <a id="aee1ed36b9433869f94a6ee8a6815d872"></a>
@@ -276,7 +311,9 @@ Private Attributes</h2></td></tr>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>el fill del costat left_right del node x </dd></dl>
-
+<div class="fragment"><div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160;                                               {</div><div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160;        <span class="keywordflow">if</span> (<a class="code" href="classdomini_1_1utils_1_1BinTree.html#a37030e961f5613a5c74984ac002d965b">isLeaf</a>(x)) <span class="keywordflow">throw</span> <span class="keyword">new</span> IllegalArgumentException(<span class="stringliteral">&quot;Leaf nodes have no children&quot;</span>);</div><div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160;        <span class="keywordtype">int</span> despl = <a class="code" href="classdomini_1_1utils_1_1BinTree.html#a357bcbcf07ba7fcb99d11b237d189e65">arr</a>.get(2*x + (left_right&amp;1));</div><div class="line"><a name="l00137"></a><span class="lineno">  137</span>&#160;        <span class="keywordflow">if</span> (despl==-1) <span class="keywordflow">return</span> -1;</div><div class="line"><a name="l00138"></a><span class="lineno">  138</span>&#160;        <span class="keywordflow">return</span> x + despl;</div><div class="line"><a name="l00139"></a><span class="lineno">  139</span>&#160;    }</div><div class="ttc" id="classdomini_1_1utils_1_1BinTree_html_a357bcbcf07ba7fcb99d11b237d189e65"><div class="ttname"><a href="classdomini_1_1utils_1_1BinTree.html#a357bcbcf07ba7fcb99d11b237d189e65">domini.utils.BinTree.arr</a></div><div class="ttdeci">ArrayList&lt; Integer &gt; arr</div><div class="ttdef"><b>Definition:</b> BinTree.java:26</div></div>
+<div class="ttc" id="classdomini_1_1utils_1_1BinTree_html_a37030e961f5613a5c74984ac002d965b"><div class="ttname"><a href="classdomini_1_1utils_1_1BinTree.html#a37030e961f5613a5c74984ac002d965b">domini.utils.BinTree.isLeaf</a></div><div class="ttdeci">boolean isLeaf(int x)</div><div class="ttdoc">Indica si un node és una fulla amb valor. </div><div class="ttdef"><b>Definition:</b> BinTree.java:99</div></div>
+</div><!-- fragment -->
 </div>
 </div>
 <a id="ad8734786aa8ba40815e4b782264aef64"></a>
@@ -311,7 +348,9 @@ Private Attributes</h2></td></tr>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>el valor de la fulla x </dd></dl>
-
+<div class="fragment"><div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;                              {</div><div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;        <span class="keywordflow">if</span> (!<a class="code" href="classdomini_1_1utils_1_1BinTree.html#a37030e961f5613a5c74984ac002d965b">isLeaf</a>(x)) <span class="keywordflow">throw</span> <span class="keyword">new</span> IllegalArgumentException(<span class="stringliteral">&quot;Non-leaf nodes don&#39;t contain data&quot;</span>);</div><div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;        <span class="keywordflow">return</span> <a class="code" href="classdomini_1_1utils_1_1BinTree.html#a357bcbcf07ba7fcb99d11b237d189e65">arr</a>.get(2*x + 1);</div><div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;    }</div><div class="ttc" id="classdomini_1_1utils_1_1BinTree_html_a357bcbcf07ba7fcb99d11b237d189e65"><div class="ttname"><a href="classdomini_1_1utils_1_1BinTree.html#a357bcbcf07ba7fcb99d11b237d189e65">domini.utils.BinTree.arr</a></div><div class="ttdeci">ArrayList&lt; Integer &gt; arr</div><div class="ttdef"><b>Definition:</b> BinTree.java:26</div></div>
+<div class="ttc" id="classdomini_1_1utils_1_1BinTree_html_a37030e961f5613a5c74984ac002d965b"><div class="ttname"><a href="classdomini_1_1utils_1_1BinTree.html#a37030e961f5613a5c74984ac002d965b">domini.utils.BinTree.isLeaf</a></div><div class="ttdeci">boolean isLeaf(int x)</div><div class="ttdoc">Indica si un node és una fulla amb valor. </div><div class="ttdef"><b>Definition:</b> BinTree.java:99</div></div>
+</div><!-- fragment -->
 </div>
 </div>
 <a id="aefcc4df5059f9893eba9998cb267eced"></a>
@@ -346,7 +385,9 @@ Private Attributes</h2></td></tr>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>true &lt;-&gt; x està inicialitzat </dd></dl>
-
+<div class="fragment"><div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;                                 {</div><div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;        <a class="code" href="classdomini_1_1utils_1_1BinTree.html#a32b3e2ad7dfee3425e0b1f6f8b5100f5">checkNode</a>(x);</div><div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;        <span class="keywordflow">return</span> <a class="code" href="classdomini_1_1utils_1_1BinTree.html#a357bcbcf07ba7fcb99d11b237d189e65">arr</a>.get(2*x) != -1 || <a class="code" href="classdomini_1_1utils_1_1BinTree.html#a357bcbcf07ba7fcb99d11b237d189e65">arr</a>.get(2*x+1) != -1;</div><div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;    }</div><div class="ttc" id="classdomini_1_1utils_1_1BinTree_html_a357bcbcf07ba7fcb99d11b237d189e65"><div class="ttname"><a href="classdomini_1_1utils_1_1BinTree.html#a357bcbcf07ba7fcb99d11b237d189e65">domini.utils.BinTree.arr</a></div><div class="ttdeci">ArrayList&lt; Integer &gt; arr</div><div class="ttdef"><b>Definition:</b> BinTree.java:26</div></div>
+<div class="ttc" id="classdomini_1_1utils_1_1BinTree_html_a32b3e2ad7dfee3425e0b1f6f8b5100f5"><div class="ttname"><a href="classdomini_1_1utils_1_1BinTree.html#a32b3e2ad7dfee3425e0b1f6f8b5100f5">domini.utils.BinTree.checkNode</a></div><div class="ttdeci">void checkNode(int x)</div><div class="ttdoc">Salta una excepció si x no representa un node de l&amp;#39;arbre. </div><div class="ttdef"><b>Definition:</b> BinTree.java:64</div></div>
+</div><!-- fragment -->
 </div>
 </div>
 <a id="a37030e961f5613a5c74984ac002d965b"></a>
@@ -381,7 +422,9 @@ Private Attributes</h2></td></tr>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>true &lt;-&gt; x és una fula amb valor </dd></dl>
-
+<div class="fragment"><div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;                                 {</div><div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;        <a class="code" href="classdomini_1_1utils_1_1BinTree.html#a32b3e2ad7dfee3425e0b1f6f8b5100f5">checkNode</a>(x);</div><div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;        <span class="keywordflow">return</span> <a class="code" href="classdomini_1_1utils_1_1BinTree.html#a357bcbcf07ba7fcb99d11b237d189e65">arr</a>.get(2*x) == -2;</div><div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;    }</div><div class="ttc" id="classdomini_1_1utils_1_1BinTree_html_a357bcbcf07ba7fcb99d11b237d189e65"><div class="ttname"><a href="classdomini_1_1utils_1_1BinTree.html#a357bcbcf07ba7fcb99d11b237d189e65">domini.utils.BinTree.arr</a></div><div class="ttdeci">ArrayList&lt; Integer &gt; arr</div><div class="ttdef"><b>Definition:</b> BinTree.java:26</div></div>
+<div class="ttc" id="classdomini_1_1utils_1_1BinTree_html_a32b3e2ad7dfee3425e0b1f6f8b5100f5"><div class="ttname"><a href="classdomini_1_1utils_1_1BinTree.html#a32b3e2ad7dfee3425e0b1f6f8b5100f5">domini.utils.BinTree.checkNode</a></div><div class="ttdeci">void checkNode(int x)</div><div class="ttdoc">Salta una excepció si x no representa un node de l&amp;#39;arbre. </div><div class="ttdef"><b>Definition:</b> BinTree.java:64</div></div>
+</div><!-- fragment -->
 </div>
 </div>
 <a id="a47c913594a3116b2e602c87fa4afc5c3"></a>
@@ -417,7 +460,11 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
-
+<div class="fragment"><div class="line"><a name="l00185"></a><span class="lineno">  185</span>&#160;                                        {</div><div class="line"><a name="l00186"></a><span class="lineno">  186</span>&#160;        <span class="keywordflow">if</span> (x == -1) {</div><div class="line"><a name="l00187"></a><span class="lineno">  187</span>&#160;            <span class="keywordflow">for</span>(<span class="keywordtype">int</span> i = 0; i &lt; tabs; ++i) System.out.print(<span class="stringliteral">&quot;  &quot;</span>);</div><div class="line"><a name="l00188"></a><span class="lineno">  188</span>&#160;            System.out.println(<span class="stringliteral">&quot; -&quot;</span>);</div><div class="line"><a name="l00189"></a><span class="lineno">  189</span>&#160;            <span class="keywordflow">return</span>;</div><div class="line"><a name="l00190"></a><span class="lineno">  190</span>&#160;        }</div><div class="line"><a name="l00191"></a><span class="lineno">  191</span>&#160;        <span class="comment">//System.out.println(x);</span></div><div class="line"><a name="l00192"></a><span class="lineno">  192</span>&#160;        <span class="keywordflow">for</span>(<span class="keywordtype">int</span> i = 0; i &lt; tabs; ++i) System.out.print(<span class="stringliteral">&quot;  &quot;</span>);</div><div class="line"><a name="l00193"></a><span class="lineno">  193</span>&#160;        <span class="keywordflow">if</span> (<a class="code" href="classdomini_1_1utils_1_1BinTree.html#a37030e961f5613a5c74984ac002d965b">isLeaf</a>(x)) System.out.println(<span class="stringliteral">&quot;leaf: &quot;</span>+Integer.toString(<a class="code" href="classdomini_1_1utils_1_1BinTree.html#ad8734786aa8ba40815e4b782264aef64">getData</a>(x)));</div><div class="line"><a name="l00194"></a><span class="lineno">  194</span>&#160;        <span class="keywordflow">else</span> {</div><div class="line"><a name="l00195"></a><span class="lineno">  195</span>&#160;            System.out.println(<span class="stringliteral">&quot;-&gt;0&quot;</span>);</div><div class="line"><a name="l00196"></a><span class="lineno">  196</span>&#160;            <a class="code" href="classdomini_1_1utils_1_1BinTree.html#a0dc4daeb2d0e221cc8fc702d1d0ec795">print</a>(tabs+1, <a class="code" href="classdomini_1_1utils_1_1BinTree.html#aee1ed36b9433869f94a6ee8a6815d872">getChild</a>(x, 0));</div><div class="line"><a name="l00197"></a><span class="lineno">  197</span>&#160;            <span class="keywordflow">for</span>(<span class="keywordtype">int</span> i = 0; i &lt; tabs; ++i) System.out.print(<span class="stringliteral">&quot;  &quot;</span>);</div><div class="line"><a name="l00198"></a><span class="lineno">  198</span>&#160;            System.out.println(<span class="stringliteral">&quot;-&gt;1&quot;</span>);</div><div class="line"><a name="l00199"></a><span class="lineno">  199</span>&#160;            <a class="code" href="classdomini_1_1utils_1_1BinTree.html#a0dc4daeb2d0e221cc8fc702d1d0ec795">print</a>(tabs+1, <a class="code" href="classdomini_1_1utils_1_1BinTree.html#aee1ed36b9433869f94a6ee8a6815d872">getChild</a>(x, 1));</div><div class="line"><a name="l00200"></a><span class="lineno">  200</span>&#160;</div><div class="line"><a name="l00201"></a><span class="lineno">  201</span>&#160;        }</div><div class="line"><a name="l00202"></a><span class="lineno">  202</span>&#160;    }</div><div class="ttc" id="classdomini_1_1utils_1_1BinTree_html_ad8734786aa8ba40815e4b782264aef64"><div class="ttname"><a href="classdomini_1_1utils_1_1BinTree.html#ad8734786aa8ba40815e4b782264aef64">domini.utils.BinTree.getData</a></div><div class="ttdeci">int getData(int x)</div><div class="ttdoc">Retorna el valor d&amp;#39;un node. </div><div class="ttdef"><b>Definition:</b> BinTree.java:110</div></div>
+<div class="ttc" id="classdomini_1_1utils_1_1BinTree_html_a0dc4daeb2d0e221cc8fc702d1d0ec795"><div class="ttname"><a href="classdomini_1_1utils_1_1BinTree.html#a0dc4daeb2d0e221cc8fc702d1d0ec795">domini.utils.BinTree.print</a></div><div class="ttdeci">void print()</div><div class="ttdoc">Imprimeix el subarbre dels descendents de x en preordre inicant cada fill amb un 0 o un 1 segons s&amp;#39;es...</div><div class="ttdef"><b>Definition:</b> BinTree.java:209</div></div>
+<div class="ttc" id="classdomini_1_1utils_1_1BinTree_html_aee1ed36b9433869f94a6ee8a6815d872"><div class="ttname"><a href="classdomini_1_1utils_1_1BinTree.html#aee1ed36b9433869f94a6ee8a6815d872">domini.utils.BinTree.getChild</a></div><div class="ttdeci">int getChild(int x, int left_right)</div><div class="ttdoc">Retorna el node fill d&amp;#39;un node. </div><div class="ttdef"><b>Definition:</b> BinTree.java:134</div></div>
+<div class="ttc" id="classdomini_1_1utils_1_1BinTree_html_a37030e961f5613a5c74984ac002d965b"><div class="ttname"><a href="classdomini_1_1utils_1_1BinTree.html#a37030e961f5613a5c74984ac002d965b">domini.utils.BinTree.isLeaf</a></div><div class="ttdeci">boolean isLeaf(int x)</div><div class="ttdoc">Indica si un node és una fulla amb valor. </div><div class="ttdef"><b>Definition:</b> BinTree.java:99</div></div>
+</div><!-- fragment -->
 </div>
 </div>
 <a id="a0dc4daeb2d0e221cc8fc702d1d0ec795"></a>
@@ -451,7 +498,8 @@ Private Attributes</h2></td></tr>
   </table>
   </dd>
 </dl>
-
+<div class="fragment"><div class="line"><a name="l00209"></a><span class="lineno">  209</span>&#160;                        {</div><div class="line"><a name="l00210"></a><span class="lineno">  210</span>&#160;        <a class="code" href="classdomini_1_1utils_1_1BinTree.html#a0dc4daeb2d0e221cc8fc702d1d0ec795">print</a>(0,0);</div><div class="line"><a name="l00211"></a><span class="lineno">  211</span>&#160;    }</div><div class="ttc" id="classdomini_1_1utils_1_1BinTree_html_a0dc4daeb2d0e221cc8fc702d1d0ec795"><div class="ttname"><a href="classdomini_1_1utils_1_1BinTree.html#a0dc4daeb2d0e221cc8fc702d1d0ec795">domini.utils.BinTree.print</a></div><div class="ttdeci">void print()</div><div class="ttdoc">Imprimeix el subarbre dels descendents de x en preordre inicant cada fill amb un 0 o un 1 segons s&amp;#39;es...</div><div class="ttdef"><b>Definition:</b> BinTree.java:209</div></div>
+</div><!-- fragment -->
 </div>
 </div>
 <a id="adbbdac6bb04a03f8f13c9152940ebbc6"></a>
@@ -504,7 +552,12 @@ Private Attributes</h2></td></tr>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>el fill afegit. </dd></dl>
-
+<div class="fragment"><div class="line"><a name="l00149"></a><span class="lineno">  149</span>&#160;                                                              {</div><div class="line"><a name="l00150"></a><span class="lineno">  150</span>&#160;        <span class="keywordflow">if</span> (<a class="code" href="classdomini_1_1utils_1_1BinTree.html#a37030e961f5613a5c74984ac002d965b">isLeaf</a>(x)) <span class="keywordflow">throw</span> <span class="keyword">new</span> IllegalArgumentException(<span class="stringliteral">&quot;Leaf nodes can&#39;t have children&quot;</span>);</div><div class="line"><a name="l00151"></a><span class="lineno">  151</span>&#160;        <span class="keywordflow">if</span> (<a class="code" href="classdomini_1_1utils_1_1BinTree.html#a357bcbcf07ba7fcb99d11b237d189e65">arr</a>.get(2*x + (left_right&amp;1)) != -1)</div><div class="line"><a name="l00152"></a><span class="lineno">  152</span>&#160;            <span class="keywordflow">throw</span> <span class="keyword">new</span> IllegalArgumentException(<span class="stringliteral">&quot;This node has alredy a child on this side&quot;</span>);</div><div class="line"><a name="l00153"></a><span class="lineno">  153</span>&#160;        <span class="keywordtype">int</span> pos = <a class="code" href="classdomini_1_1utils_1_1BinTree.html#afb98cb560c437784fe3ce1b8d6aa046e">size</a>();</div><div class="line"><a name="l00154"></a><span class="lineno">  154</span>&#160;        <a class="code" href="classdomini_1_1utils_1_1BinTree.html#a357bcbcf07ba7fcb99d11b237d189e65">arr</a>.addAll(child.arr);</div><div class="line"><a name="l00155"></a><span class="lineno">  155</span>&#160;        <a class="code" href="classdomini_1_1utils_1_1BinTree.html#a32b3e2ad7dfee3425e0b1f6f8b5100f5">checkNode</a>(pos);</div><div class="line"><a name="l00156"></a><span class="lineno">  156</span>&#160;        <a class="code" href="classdomini_1_1utils_1_1BinTree.html#a357bcbcf07ba7fcb99d11b237d189e65">arr</a>.set(2*x + (left_right&amp;1), pos-x);</div><div class="line"><a name="l00157"></a><span class="lineno">  157</span>&#160;        <a class="code" href="classdomini_1_1utils_1_1BinTree.html#a36f1212262c353accbc0a0385fa45a8d">num_undefs</a> += child.num_undefs - 1;</div><div class="line"><a name="l00158"></a><span class="lineno">  158</span>&#160;        <span class="keywordflow">return</span> pos;</div><div class="line"><a name="l00159"></a><span class="lineno">  159</span>&#160;    }</div><div class="ttc" id="classdomini_1_1utils_1_1BinTree_html_a36f1212262c353accbc0a0385fa45a8d"><div class="ttname"><a href="classdomini_1_1utils_1_1BinTree.html#a36f1212262c353accbc0a0385fa45a8d">domini.utils.BinTree.num_undefs</a></div><div class="ttdeci">int num_undefs</div><div class="ttdef"><b>Definition:</b> BinTree.java:32</div></div>
+<div class="ttc" id="classdomini_1_1utils_1_1BinTree_html_afb98cb560c437784fe3ce1b8d6aa046e"><div class="ttname"><a href="classdomini_1_1utils_1_1BinTree.html#afb98cb560c437784fe3ce1b8d6aa046e">domini.utils.BinTree.size</a></div><div class="ttdeci">int size()</div><div class="ttdoc">Indica la mida de l&amp;#39;arbre. </div><div class="ttdef"><b>Definition:</b> BinTree.java:80</div></div>
+<div class="ttc" id="classdomini_1_1utils_1_1BinTree_html_a357bcbcf07ba7fcb99d11b237d189e65"><div class="ttname"><a href="classdomini_1_1utils_1_1BinTree.html#a357bcbcf07ba7fcb99d11b237d189e65">domini.utils.BinTree.arr</a></div><div class="ttdeci">ArrayList&lt; Integer &gt; arr</div><div class="ttdef"><b>Definition:</b> BinTree.java:26</div></div>
+<div class="ttc" id="classdomini_1_1utils_1_1BinTree_html_a32b3e2ad7dfee3425e0b1f6f8b5100f5"><div class="ttname"><a href="classdomini_1_1utils_1_1BinTree.html#a32b3e2ad7dfee3425e0b1f6f8b5100f5">domini.utils.BinTree.checkNode</a></div><div class="ttdeci">void checkNode(int x)</div><div class="ttdoc">Salta una excepció si x no representa un node de l&amp;#39;arbre. </div><div class="ttdef"><b>Definition:</b> BinTree.java:64</div></div>
+<div class="ttc" id="classdomini_1_1utils_1_1BinTree_html_a37030e961f5613a5c74984ac002d965b"><div class="ttname"><a href="classdomini_1_1utils_1_1BinTree.html#a37030e961f5613a5c74984ac002d965b">domini.utils.BinTree.isLeaf</a></div><div class="ttdeci">boolean isLeaf(int x)</div><div class="ttdoc">Indica si un node és una fulla amb valor. </div><div class="ttdef"><b>Definition:</b> BinTree.java:99</div></div>
+</div><!-- fragment -->
 </div>
 </div>
 <a id="a785c86fc21b251e2252455ab4ec2b3e1"></a>
@@ -548,7 +601,10 @@ Private Attributes</h2></td></tr>
   </table>
   </dd>
 </dl>
-
+<div class="fragment"><div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;                                         {</div><div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;        <span class="keywordflow">if</span> (<a class="code" href="classdomini_1_1utils_1_1BinTree.html#aefcc4df5059f9893eba9998cb267eced">isInit</a>(x)) <span class="keywordflow">throw</span> <span class="keyword">new</span> IllegalArgumentException(<span class="stringliteral">&quot;This node has been alredy initialized&quot;</span>);;</div><div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;        <a class="code" href="classdomini_1_1utils_1_1BinTree.html#a357bcbcf07ba7fcb99d11b237d189e65">arr</a>.set(2*x, -2);</div><div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;        <a class="code" href="classdomini_1_1utils_1_1BinTree.html#a357bcbcf07ba7fcb99d11b237d189e65">arr</a>.set(2*x+1, data);</div><div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;        <a class="code" href="classdomini_1_1utils_1_1BinTree.html#a36f1212262c353accbc0a0385fa45a8d">num_undefs</a> -= 2;</div><div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;    }</div><div class="ttc" id="classdomini_1_1utils_1_1BinTree_html_a36f1212262c353accbc0a0385fa45a8d"><div class="ttname"><a href="classdomini_1_1utils_1_1BinTree.html#a36f1212262c353accbc0a0385fa45a8d">domini.utils.BinTree.num_undefs</a></div><div class="ttdeci">int num_undefs</div><div class="ttdef"><b>Definition:</b> BinTree.java:32</div></div>
+<div class="ttc" id="classdomini_1_1utils_1_1BinTree_html_a357bcbcf07ba7fcb99d11b237d189e65"><div class="ttname"><a href="classdomini_1_1utils_1_1BinTree.html#a357bcbcf07ba7fcb99d11b237d189e65">domini.utils.BinTree.arr</a></div><div class="ttdeci">ArrayList&lt; Integer &gt; arr</div><div class="ttdef"><b>Definition:</b> BinTree.java:26</div></div>
+<div class="ttc" id="classdomini_1_1utils_1_1BinTree_html_aefcc4df5059f9893eba9998cb267eced"><div class="ttname"><a href="classdomini_1_1utils_1_1BinTree.html#aefcc4df5059f9893eba9998cb267eced">domini.utils.BinTree.isInit</a></div><div class="ttdeci">boolean isInit(int x)</div><div class="ttdoc">Indica si un node està inicialitzat. </div><div class="ttdef"><b>Definition:</b> BinTree.java:89</div></div>
+</div><!-- fragment -->
 </div>
 </div>
 <a id="afb98cb560c437784fe3ce1b8d6aa046e"></a>
@@ -576,7 +632,8 @@ Private Attributes</h2></td></tr>
 
 <p>Indica la mida de l'arbre. </p>
 <dl class="section return"><dt>Returns</dt><dd>el nombre de nodes </dd></dl>
-
+<div class="fragment"><div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;                      {</div><div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;        <span class="keywordflow">return</span> <a class="code" href="classdomini_1_1utils_1_1BinTree.html#a357bcbcf07ba7fcb99d11b237d189e65">arr</a>.size()/2;</div><div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;    }</div><div class="ttc" id="classdomini_1_1utils_1_1BinTree_html_a357bcbcf07ba7fcb99d11b237d189e65"><div class="ttname"><a href="classdomini_1_1utils_1_1BinTree.html#a357bcbcf07ba7fcb99d11b237d189e65">domini.utils.BinTree.arr</a></div><div class="ttdeci">ArrayList&lt; Integer &gt; arr</div><div class="ttdef"><b>Definition:</b> BinTree.java:26</div></div>
+</div><!-- fragment -->
 </div>
 </div>
 <a id="a30f097b37ebea20379d9c2930e8fa27f"></a>
@@ -604,7 +661,8 @@ Private Attributes</h2></td></tr>
 
 <p>Indica si l'arbre està ben deninit, és a dir, si tots els nodes estan inicialitzats. </p>
 <dl class="section return"><dt>Returns</dt><dd>true &lt;-&gt; l'arbre està ben deninit </dd></dl>
-
+<div class="fragment"><div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;                                 {</div><div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;        <span class="keywordflow">return</span> <a class="code" href="classdomini_1_1utils_1_1BinTree.html#a36f1212262c353accbc0a0385fa45a8d">num_undefs</a> == 0;</div><div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;    }</div><div class="ttc" id="classdomini_1_1utils_1_1BinTree_html_a36f1212262c353accbc0a0385fa45a8d"><div class="ttname"><a href="classdomini_1_1utils_1_1BinTree.html#a36f1212262c353accbc0a0385fa45a8d">domini.utils.BinTree.num_undefs</a></div><div class="ttdeci">int num_undefs</div><div class="ttdef"><b>Definition:</b> BinTree.java:32</div></div>
+</div><!-- fragment -->
 </div>
 </div>
 <h2 class="groupheader">Member Data Documentation</h2>
@@ -657,7 +715,7 @@ Private Attributes</h2></td></tr>
 </div><div class="memdoc">
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">num_undefs</td><td>és el número de fills indefinits en el global desl nodes </td></tr>
+    <tr><td class="paramname">num_undefs</td><td>és el número de fills indefinits en el global dels nodes </td></tr>
   </table>
   </dd>
 </dl>

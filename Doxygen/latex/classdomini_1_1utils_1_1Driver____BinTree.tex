@@ -51,30 +51,196 @@ Fa saltar una excepció si es vol accedir a una \hyperlink{classdomini_1_1utils_
 {\em linea} & Número de operació realitzada \\
 \hline
 \end{DoxyParams}
+
+\begin{DoxyCode}
+66                                                                           \{
+67         \textcolor{keywordtype}{int} op = Integer.parseInt(linea);
+68         \textcolor{keywordflow}{if}(op > 2 && constructed == 0)\{
+69             \textcolor{keywordflow}{throw} \textcolor{keyword}{new} IllegalArgumentException(\textcolor{stringliteral}{"Debes llamar al constructor antes"});
+70         \}
+71     \}
+\end{DoxyCode}
 \mbox{\Hypertarget{classdomini_1_1utils_1_1Driver____BinTree_a08875cef02b7a770a105b0b6b976a681}\label{classdomini_1_1utils_1_1Driver____BinTree_a08875cef02b7a770a105b0b6b976a681}} 
 \index{domini\+::utils\+::\+Driver\+\_\+\+\_\+\+Bin\+Tree@{domini\+::utils\+::\+Driver\+\_\+\+\_\+\+Bin\+Tree}!main@{main}}
 \index{main@{main}!domini\+::utils\+::\+Driver\+\_\+\+\_\+\+Bin\+Tree@{domini\+::utils\+::\+Driver\+\_\+\+\_\+\+Bin\+Tree}}
 \subsubsection{\texorpdfstring{main()}{main()}}
 {\footnotesize\ttfamily static void domini.\+utils.\+Driver\+\_\+\+\_\+\+Bin\+Tree.\+main (\begin{DoxyParamCaption}\item[{String \mbox{[}$\,$\mbox{]}}]{args }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
 
+
+\begin{DoxyCode}
+95                                            \{
+96         \textcolor{keywordflow}{try} \{
+97             ArrayList<BinTree> arr = \textcolor{keyword}{new} ArrayList<BinTree>();
+98             \hyperlink{classdomini_1_1utils_1_1Driver____BinTree_aadd7535430d353033b6f35b6d466e018}{showOptions}();
+99             BufferedReader reader = \textcolor{keyword}{new} BufferedReader(\textcolor{keyword}{new} InputStreamReader(System.in));
+100             String linea = \textcolor{stringliteral}{""};
+101             \textcolor{keywordflow}{while}(linea != null)\{
+102                 System.out.println();
+103                 System.out.println(\textcolor{stringliteral}{"Selecciona una opcion:"});
+104                 linea = reader.readLine().trim();
+105                 System.out.println(\textcolor{stringliteral}{"Opcion: "} + linea + \textcolor{stringliteral}{" seleccionada"});
+106                 \hyperlink{classdomini_1_1utils_1_1Driver____BinTree_a06b6edeb965f3677c7ebb085d512f568}{comprovarExcepcions}(arr.size(), linea);
+107 
+108                 BinTree bt; \textcolor{keywordtype}{int} n, x, data, left\_right; String s;
+109                 \textcolor{keywordflow}{switch}(linea) \{
+110                     \textcolor{keywordflow}{case} \textcolor{stringliteral}{"1"}:
+111                         n = arr.size();
+112                         bt = \textcolor{keyword}{new} BinTree();
+113                         arr.add(bt);
+114                         \hyperlink{classdomini_1_1utils_1_1Driver____BinTree_a434e26afb3eb701558d81b0fd1c29dcb}{print\_res}(\textcolor{stringliteral}{"BinTree numero "}, n, \textcolor{stringliteral}{" creado."});
+115                     \textcolor{keywordflow}{break};
+116                     \textcolor{keywordflow}{case} \textcolor{stringliteral}{"2"}:
+117                         System.out.println(\textcolor{stringliteral}{"Introduce el valor de la raiz (data) del nuevo BinTree"});
+118                         data = Integer.parseInt(reader.readLine().trim());
+119                         n = arr.size();
+120                         bt = \textcolor{keyword}{new} BinTree(data);
+121                         arr.add(bt);
+122                         \hyperlink{classdomini_1_1utils_1_1Driver____BinTree_a434e26afb3eb701558d81b0fd1c29dcb}{print\_res}(\textcolor{stringliteral}{"BinTree numero "}, n, \textcolor{stringliteral}{" creado."});
+123                     \textcolor{keywordflow}{break};
+124                     \textcolor{keywordflow}{case} \textcolor{stringliteral}{"3"}:
+125                         \hyperlink{classdomini_1_1utils_1_1Driver____BinTree_a0d90bf2cb928174547e712140b5a4fe5}{selecciona\_bintree}(arr.size());
+126                         n = Integer.parseInt(reader.readLine().trim());
+127                         \textcolor{keywordflow}{if} (arr.get(n).wellDefined())
+128                             System.out.println(\textcolor{stringliteral}{"\(\backslash\)t El BinTree esta bien definido."});
+129                         \textcolor{keywordflow}{else} 
+130                             System.out.println(\textcolor{stringliteral}{"\(\backslash\)t El BinTree tiene elementos indefinidos."});
+131                     \textcolor{keywordflow}{break};
+132                     \textcolor{keywordflow}{case} \textcolor{stringliteral}{"4"}:
+133                         \hyperlink{classdomini_1_1utils_1_1Driver____BinTree_a0d90bf2cb928174547e712140b5a4fe5}{selecciona\_bintree}(arr.size());
+134                         n = Integer.parseInt(reader.readLine().trim());
+135                         \hyperlink{classdomini_1_1utils_1_1Driver____BinTree_a434e26afb3eb701558d81b0fd1c29dcb}{print\_res}(\textcolor{stringliteral}{"El BinTree tiene "}, arr.get(n).size(),\textcolor{stringliteral}{" nodos."});
+136                     \textcolor{keywordflow}{break};
+137                     \textcolor{keywordflow}{case} \textcolor{stringliteral}{"5"}:
+138                         \hyperlink{classdomini_1_1utils_1_1Driver____BinTree_a0d90bf2cb928174547e712140b5a4fe5}{selecciona\_bintree}(arr.size());
+139                         n = Integer.parseInt(reader.readLine().trim());
+140                         System.out.println(\textcolor{stringliteral}{"Indica un nodo"});
+141                         x = Integer.parseInt(reader.readLine().trim());
+142                         \textcolor{keywordflow}{if} (arr.get(n).isInit(x))
+143                             \hyperlink{classdomini_1_1utils_1_1Driver____BinTree_a434e26afb3eb701558d81b0fd1c29dcb}{print\_res}(\textcolor{stringliteral}{"El nodo "},x,\textcolor{stringliteral}{" está inicializado."});
+144                         \textcolor{keywordflow}{else} 
+145                             \hyperlink{classdomini_1_1utils_1_1Driver____BinTree_a434e26afb3eb701558d81b0fd1c29dcb}{print\_res}(\textcolor{stringliteral}{"El nodo "},x,\textcolor{stringliteral}{" no está inicializado: sus dos hijos estan
+       indefinidos."});
+146                     \textcolor{keywordflow}{break};
+147                     \textcolor{keywordflow}{case} \textcolor{stringliteral}{"6"}:
+148                         \hyperlink{classdomini_1_1utils_1_1Driver____BinTree_a0d90bf2cb928174547e712140b5a4fe5}{selecciona\_bintree}(arr.size());
+149                         n = Integer.parseInt(reader.readLine().trim());
+150                         System.out.println(\textcolor{stringliteral}{"Indica un nodo"});
+151                         x = Integer.parseInt(reader.readLine().trim());
+152                         \textcolor{keywordflow}{if} (arr.get(n).isLeaf(x))
+153                             \hyperlink{classdomini_1_1utils_1_1Driver____BinTree_a434e26afb3eb701558d81b0fd1c29dcb}{print\_res}(\textcolor{stringliteral}{"El nodo "},x,\textcolor{stringliteral}{" es una hoja (tiene valor)."});
+154                         \textcolor{keywordflow}{else} 
+155                             \hyperlink{classdomini_1_1utils_1_1Driver____BinTree_a434e26afb3eb701558d81b0fd1c29dcb}{print\_res}(\textcolor{stringliteral}{"El nodo "},x,\textcolor{stringliteral}{" no es una hoja (no tiene valor)."});
+156                     \textcolor{keywordflow}{break};
+157                     \textcolor{keywordflow}{case} \textcolor{stringliteral}{"7"}:
+158                         \hyperlink{classdomini_1_1utils_1_1Driver____BinTree_a0d90bf2cb928174547e712140b5a4fe5}{selecciona\_bintree}(arr.size());
+159                         n = Integer.parseInt(reader.readLine().trim());
+160                         System.out.println(\textcolor{stringliteral}{"Indica un nodo"});
+161                         x = Integer.parseInt(reader.readLine().trim());
+162                         \hyperlink{classdomini_1_1utils_1_1Driver____BinTree_a434e26afb3eb701558d81b0fd1c29dcb}{print\_res}(\textcolor{stringliteral}{"El valor de la hoja "},x,\textcolor{stringliteral}{" es "},arr.get(n).getData(x),\textcolor{stringliteral}{"."});
+163                     \textcolor{keywordflow}{break};
+164                     \textcolor{keywordflow}{case} \textcolor{stringliteral}{"8"}:
+165                         \hyperlink{classdomini_1_1utils_1_1Driver____BinTree_a0d90bf2cb928174547e712140b5a4fe5}{selecciona\_bintree}(arr.size());
+166                         n = Integer.parseInt(reader.readLine().trim());
+167                         System.out.println(\textcolor{stringliteral}{"Indica un nodo"});
+168                         x = Integer.parseInt(reader.readLine().trim());
+169                         System.out.println(\textcolor{stringliteral}{"Indica si quieres consultar el hijo izquierdo (0) o derecho(1)"}
+      );
+170                         left\_right = Integer.parseInt(reader.readLine().trim());
+171                         \textcolor{keywordflow}{if} (left\_right%2 == 0) s = \textcolor{stringliteral}{"izquierdo"};
+172                         \textcolor{keywordflow}{else} s = \textcolor{stringliteral}{"derecho"};
+173                         \hyperlink{classdomini_1_1utils_1_1Driver____BinTree_a434e26afb3eb701558d81b0fd1c29dcb}{print\_res}(\textcolor{stringliteral}{"El hijo "}+s+\textcolor{stringliteral}{" del nodo "},x,\textcolor{stringliteral}{" es el nodo "},arr.get(n).getChild(x
+      , left\_right),\textcolor{stringliteral}{""});
+174                     \textcolor{keywordflow}{break};
+175                     \textcolor{keywordflow}{case} \textcolor{stringliteral}{"9"}:
+176                         \hyperlink{classdomini_1_1utils_1_1Driver____BinTree_a0d90bf2cb928174547e712140b5a4fe5}{selecciona\_bintree}(arr.size());
+177                         n = Integer.parseInt(reader.readLine().trim());
+178                         System.out.println(\textcolor{stringliteral}{"Indica un nodo"});
+179                         x = Integer.parseInt(reader.readLine().trim());
+180                         System.out.println(\textcolor{stringliteral}{"Indica el valor que quiere introducir"});
+181                         data = Integer.parseInt(reader.readLine().trim());
+182                         arr.get(n).setData(x, data);
+183                         \hyperlink{classdomini_1_1utils_1_1Driver____BinTree_a434e26afb3eb701558d81b0fd1c29dcb}{print\_res}(\textcolor{stringliteral}{"El valor de la nueva hoja "},x,\textcolor{stringliteral}{" es "},arr.get(n).getData(x),\textcolor{stringliteral}{"."})
+      ;
+184                     \textcolor{keywordflow}{break};
+185                     \textcolor{keywordflow}{case} \textcolor{stringliteral}{"10"}:
+186                         \hyperlink{classdomini_1_1utils_1_1Driver____BinTree_a0d90bf2cb928174547e712140b5a4fe5}{selecciona\_bintree}(arr.size());
+187                         n = Integer.parseInt(reader.readLine().trim());
+188                         System.out.println(\textcolor{stringliteral}{"Indica un nodo"});
+189                         x = Integer.parseInt(reader.readLine().trim());
+190                         System.out.println(\textcolor{stringliteral}{"Indica si quieres añadir el hijo izquierdo (0) o derecho(1)"});
+191                         left\_right = Integer.parseInt(reader.readLine().trim());
+192                         \textcolor{keywordflow}{if} (left\_right%2 == 0) s = \textcolor{stringliteral}{"izquierdo"};
+193                         \textcolor{keywordflow}{else} s = \textcolor{stringliteral}{"derecho"};
+194                         System.out.println(\textcolor{stringliteral}{"Indica el numero de BinTree creado que quieres añadir como hijo
+      "});
+195                         data = Integer.parseInt(reader.readLine().trim());
+196                         bt = arr.get(data);
+197                         \hyperlink{classdomini_1_1utils_1_1Driver____BinTree_a434e26afb3eb701558d81b0fd1c29dcb}{print\_res}(\textcolor{stringliteral}{"El nuevo hijo "}+s+\textcolor{stringliteral}{" del nodo "},x,\textcolor{stringliteral}{" es el nodo "},arr.get(n).
+      setChild(x, left\_right, bt),\textcolor{stringliteral}{"."});
+198                     \textcolor{keywordflow}{break};
+199                     \textcolor{keywordflow}{case} \textcolor{stringliteral}{"11"}:
+200                         \hyperlink{classdomini_1_1utils_1_1Driver____BinTree_a0d90bf2cb928174547e712140b5a4fe5}{selecciona\_bintree}(arr.size());
+201                         n = Integer.parseInt(reader.readLine().trim());
+202                         arr.get(n).print();
+203                     \textcolor{keywordflow}{break};
+204                     \textcolor{keywordflow}{case} \textcolor{stringliteral}{"0"}:
+205                         \textcolor{keywordflow}{return};
+206                     \textcolor{keywordflow}{default}:
+207                         System.out.println(\textcolor{stringliteral}{"La opción no es valida"});
+208                     \textcolor{keywordflow}{break};
+209                 \}
+210             \}
+211         \} \textcolor{keywordflow}{catch} (Exception e) \{
+212             e.printStackTrace();
+213         \}
+214     \}
+\end{DoxyCode}
 \mbox{\Hypertarget{classdomini_1_1utils_1_1Driver____BinTree_a434e26afb3eb701558d81b0fd1c29dcb}\label{classdomini_1_1utils_1_1Driver____BinTree_a434e26afb3eb701558d81b0fd1c29dcb}} 
 \index{domini\+::utils\+::\+Driver\+\_\+\+\_\+\+Bin\+Tree@{domini\+::utils\+::\+Driver\+\_\+\+\_\+\+Bin\+Tree}!print\+\_\+res@{print\+\_\+res}}
 \index{print\+\_\+res@{print\+\_\+res}!domini\+::utils\+::\+Driver\+\_\+\+\_\+\+Bin\+Tree@{domini\+::utils\+::\+Driver\+\_\+\+\_\+\+Bin\+Tree}}
 \subsubsection{\texorpdfstring{print\+\_\+res()}{print\_res()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
 {\footnotesize\ttfamily static void domini.\+utils.\+Driver\+\_\+\+\_\+\+Bin\+Tree.\+print\+\_\+res (\begin{DoxyParamCaption}\item[{String}]{s1,  }\item[{int}]{i,  }\item[{String}]{s2 }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}, {\ttfamily [private]}}
 
+
+\begin{DoxyCode}
+73                                                                \{
+74         System.out.print(\textcolor{stringliteral}{"\(\backslash\)t "});
+75         System.out.print(s1);
+76         System.out.print(i);
+77         System.out.println(s2);
+78     \}
+\end{DoxyCode}
 \mbox{\Hypertarget{classdomini_1_1utils_1_1Driver____BinTree_a2d59fc46084a11fab2c22ce35c693f60}\label{classdomini_1_1utils_1_1Driver____BinTree_a2d59fc46084a11fab2c22ce35c693f60}} 
 \index{domini\+::utils\+::\+Driver\+\_\+\+\_\+\+Bin\+Tree@{domini\+::utils\+::\+Driver\+\_\+\+\_\+\+Bin\+Tree}!print\+\_\+res@{print\+\_\+res}}
 \index{print\+\_\+res@{print\+\_\+res}!domini\+::utils\+::\+Driver\+\_\+\+\_\+\+Bin\+Tree@{domini\+::utils\+::\+Driver\+\_\+\+\_\+\+Bin\+Tree}}
 \subsubsection{\texorpdfstring{print\+\_\+res()}{print\_res()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
 {\footnotesize\ttfamily static void domini.\+utils.\+Driver\+\_\+\+\_\+\+Bin\+Tree.\+print\+\_\+res (\begin{DoxyParamCaption}\item[{String}]{s1,  }\item[{int}]{i1,  }\item[{String}]{s2,  }\item[{int}]{i2,  }\item[{String}]{s3 }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}, {\ttfamily [private]}}
 
+
+\begin{DoxyCode}
+80                                                                                    \{
+81         System.out.print(\textcolor{stringliteral}{"\(\backslash\)t "});
+82         System.out.print(s1);
+83         System.out.print(i1);
+84         System.out.print(s2);
+85         System.out.print(i2);
+86         System.out.println(s3);
+87     \}
+\end{DoxyCode}
 \mbox{\Hypertarget{classdomini_1_1utils_1_1Driver____BinTree_a0d90bf2cb928174547e712140b5a4fe5}\label{classdomini_1_1utils_1_1Driver____BinTree_a0d90bf2cb928174547e712140b5a4fe5}} 
 \index{domini\+::utils\+::\+Driver\+\_\+\+\_\+\+Bin\+Tree@{domini\+::utils\+::\+Driver\+\_\+\+\_\+\+Bin\+Tree}!selecciona\+\_\+bintree@{selecciona\+\_\+bintree}}
 \index{selecciona\+\_\+bintree@{selecciona\+\_\+bintree}!domini\+::utils\+::\+Driver\+\_\+\+\_\+\+Bin\+Tree@{domini\+::utils\+::\+Driver\+\_\+\+\_\+\+Bin\+Tree}}
 \subsubsection{\texorpdfstring{selecciona\+\_\+bintree()}{selecciona\_bintree()}}
 {\footnotesize\ttfamily static void domini.\+utils.\+Driver\+\_\+\+\_\+\+Bin\+Tree.\+selecciona\+\_\+bintree (\begin{DoxyParamCaption}\item[{int}]{n }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}, {\ttfamily [private]}}
 
+
+\begin{DoxyCode}
+89                                                   \{
+90         System.out.print(\textcolor{stringliteral}{"Introduce numero de BinTree creado sobre el que quieres operar (entre 0 y "});
+91         System.out.print(n-1);
+92         System.out.println(\textcolor{stringliteral}{")"});
+93     \}
+\end{DoxyCode}
 \mbox{\Hypertarget{classdomini_1_1utils_1_1Driver____BinTree_aadd7535430d353033b6f35b6d466e018}\label{classdomini_1_1utils_1_1Driver____BinTree_aadd7535430d353033b6f35b6d466e018}} 
 \index{domini\+::utils\+::\+Driver\+\_\+\+\_\+\+Bin\+Tree@{domini\+::utils\+::\+Driver\+\_\+\+\_\+\+Bin\+Tree}!show\+Options@{show\+Options}}
 \index{show\+Options@{show\+Options}!domini\+::utils\+::\+Driver\+\_\+\+\_\+\+Bin\+Tree@{domini\+::utils\+::\+Driver\+\_\+\+\_\+\+Bin\+Tree}}
@@ -85,6 +251,48 @@ Fa saltar una excepció si es vol accedir a una \hyperlink{classdomini_1_1utils_
 
 Mostra les accions a realitzar durant l\textquotesingle{}execució 
 
+
+\begin{DoxyCode}
+20                                      \{
+21         System.out.println(\textcolor{stringliteral}{"Driver de BinTree"});
+22         System.out.println(\textcolor{stringliteral}{"Constructores: "});
+23         System.out.println(\textcolor{stringliteral}{"\(\backslash\)t 1. BinTree()"});
+24         System.out.println(\textcolor{stringliteral}{"\(\backslash\)t Input: 1"});
+25         System.out.println(\textcolor{stringliteral}{"\(\backslash\)t 2. BinTree(int data)"});
+26         System.out.println(\textcolor{stringliteral}{"\(\backslash\)t Input: 2"});
+27         System.out.println();
+28 
+29         System.out.println(\textcolor{stringliteral}{"Consultoras: "});
+30         System.out.println(\textcolor{stringliteral}{"\(\backslash\)t 3. wellDefined()"});
+31         System.out.println(\textcolor{stringliteral}{"\(\backslash\)t Input: 3"});
+32         System.out.println(\textcolor{stringliteral}{"\(\backslash\)t 4. size()"});
+33         System.out.println(\textcolor{stringliteral}{"\(\backslash\)t Input: 4"});
+34         System.out.println(\textcolor{stringliteral}{"\(\backslash\)t 5. isInit(int x)"});
+35         System.out.println(\textcolor{stringliteral}{"\(\backslash\)t Input: 5"});
+36         System.out.println(\textcolor{stringliteral}{"\(\backslash\)t 6. isLeaf(int x)"});
+37         System.out.println(\textcolor{stringliteral}{"\(\backslash\)t Input: 6"});
+38         System.out.println(\textcolor{stringliteral}{"\(\backslash\)t 7. getData(int x)"});
+39         System.out.println(\textcolor{stringliteral}{"\(\backslash\)t Input: 7"});
+40         System.out.println(\textcolor{stringliteral}{"\(\backslash\)t 8. getChild(int x, int left\_right)"});
+41         System.out.println(\textcolor{stringliteral}{"\(\backslash\)t Input: 8"});
+42         System.out.println();
+43 
+44         System.out.println(\textcolor{stringliteral}{"\(\backslash\)t 9. setData(int x, int data)"});
+45         System.out.println(\textcolor{stringliteral}{"\(\backslash\)t Input: 9"});
+46         System.out.println(\textcolor{stringliteral}{"\(\backslash\)t 10. setChild(int x, int left\_right, BinTree child)"});
+47         System.out.println(\textcolor{stringliteral}{"\(\backslash\)t Input: 10"});
+48         System.out.println();
+49 
+50         System.out.println(\textcolor{stringliteral}{"\(\backslash\)t 11. print()"});
+51         System.out.println(\textcolor{stringliteral}{"\(\backslash\)t Input: 11"});
+52         System.out.println();
+53 
+54         System.out.println(\textcolor{stringliteral}{"\(\backslash\)t 0. Salir"});
+55         System.out.println(\textcolor{stringliteral}{"\(\backslash\)t Input: 0"});
+56 
+57         System.out.println(\textcolor{stringliteral}{"----------------------------------------"});
+58     \}
+\end{DoxyCode}
 
 
 The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}

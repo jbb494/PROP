@@ -1,0 +1,85 @@
+\hypertarget{classpresentacion_1_1form_1_1components_1_1browserTree_1_1modelBrowser}{}\section{presentacion.\+form.\+components.\+browser\+Tree.\+model\+Browser Class Reference}
+\label{classpresentacion_1_1form_1_1components_1_1browserTree_1_1modelBrowser}\index{presentacion.\+form.\+components.\+browser\+Tree.\+model\+Browser@{presentacion.\+form.\+components.\+browser\+Tree.\+model\+Browser}}
+
+
+Collaboration diagram for presentacion.\+form.\+components.\+browser\+Tree.\+model\+Browser\+:
+% FIG 0
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classpresentacion_1_1form_1_1components_1_1browserTree_1_1modelBrowser_afe4a3636c2b53161acb015dde9bfa58e}{model\+Browser} ()
+\item 
+Default\+Mutable\+Tree\+Node \hyperlink{classpresentacion_1_1form_1_1components_1_1browserTree_1_1modelBrowser_afcbfb73081526954d46d410be9821848}{ini\+Tree\+Node} (String t)
+\item 
+Default\+Mutable\+Tree\+Node \hyperlink{classpresentacion_1_1form_1_1components_1_1browserTree_1_1modelBrowser_ad0362719968bd949b1b1639eba9c2e3b}{get\+Model} ()
+\end{DoxyCompactItemize}
+\subsection*{Package Attributes}
+\begin{DoxyCompactItemize}
+\item 
+Default\+Mutable\+Tree\+Node \hyperlink{classpresentacion_1_1form_1_1components_1_1browserTree_1_1modelBrowser_a9fc1c6e81c509d87948fb3e47b79204b}{top}
+\end{DoxyCompactItemize}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classpresentacion_1_1form_1_1components_1_1browserTree_1_1modelBrowser_afe4a3636c2b53161acb015dde9bfa58e}\label{classpresentacion_1_1form_1_1components_1_1browserTree_1_1modelBrowser_afe4a3636c2b53161acb015dde9bfa58e}} 
+\index{presentacion\+::form\+::components\+::browser\+Tree\+::model\+Browser@{presentacion\+::form\+::components\+::browser\+Tree\+::model\+Browser}!model\+Browser@{model\+Browser}}
+\index{model\+Browser@{model\+Browser}!presentacion\+::form\+::components\+::browser\+Tree\+::model\+Browser@{presentacion\+::form\+::components\+::browser\+Tree\+::model\+Browser}}
+\subsubsection{\texorpdfstring{model\+Browser()}{modelBrowser()}}
+{\footnotesize\ttfamily presentacion.\+form.\+components.\+browser\+Tree.\+model\+Browser.\+model\+Browser (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+\begin{DoxyCode}
+9                           \{
+10         \hyperlink{classpresentacion_1_1form_1_1components_1_1browserTree_1_1modelBrowser_a9fc1c6e81c509d87948fb3e47b79204b}{top} = \hyperlink{classpresentacion_1_1form_1_1components_1_1browserTree_1_1modelBrowser_afcbfb73081526954d46d410be9821848}{iniTreeNode}(\textcolor{stringliteral}{"/home"});
+11     \}
+\end{DoxyCode}
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classpresentacion_1_1form_1_1components_1_1browserTree_1_1modelBrowser_ad0362719968bd949b1b1639eba9c2e3b}\label{classpresentacion_1_1form_1_1components_1_1browserTree_1_1modelBrowser_ad0362719968bd949b1b1639eba9c2e3b}} 
+\index{presentacion\+::form\+::components\+::browser\+Tree\+::model\+Browser@{presentacion\+::form\+::components\+::browser\+Tree\+::model\+Browser}!get\+Model@{get\+Model}}
+\index{get\+Model@{get\+Model}!presentacion\+::form\+::components\+::browser\+Tree\+::model\+Browser@{presentacion\+::form\+::components\+::browser\+Tree\+::model\+Browser}}
+\subsubsection{\texorpdfstring{get\+Model()}{getModel()}}
+{\footnotesize\ttfamily Default\+Mutable\+Tree\+Node presentacion.\+form.\+components.\+browser\+Tree.\+model\+Browser.\+get\+Model (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+\begin{DoxyCode}
+26                                              \{
+27         \textcolor{keywordflow}{return} \hyperlink{classpresentacion_1_1form_1_1components_1_1browserTree_1_1modelBrowser_a9fc1c6e81c509d87948fb3e47b79204b}{top};
+28     \}
+\end{DoxyCode}
+\mbox{\Hypertarget{classpresentacion_1_1form_1_1components_1_1browserTree_1_1modelBrowser_afcbfb73081526954d46d410be9821848}\label{classpresentacion_1_1form_1_1components_1_1browserTree_1_1modelBrowser_afcbfb73081526954d46d410be9821848}} 
+\index{presentacion\+::form\+::components\+::browser\+Tree\+::model\+Browser@{presentacion\+::form\+::components\+::browser\+Tree\+::model\+Browser}!ini\+Tree\+Node@{ini\+Tree\+Node}}
+\index{ini\+Tree\+Node@{ini\+Tree\+Node}!presentacion\+::form\+::components\+::browser\+Tree\+::model\+Browser@{presentacion\+::form\+::components\+::browser\+Tree\+::model\+Browser}}
+\subsubsection{\texorpdfstring{ini\+Tree\+Node()}{iniTreeNode()}}
+{\footnotesize\ttfamily Default\+Mutable\+Tree\+Node presentacion.\+form.\+components.\+browser\+Tree.\+model\+Browser.\+ini\+Tree\+Node (\begin{DoxyParamCaption}\item[{String}]{t }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+\begin{DoxyCode}
+13                                                         \{
+14         File f = \textcolor{keyword}{new} File(t);
+15         DefaultMutableTreeNode ret = \textcolor{keyword}{new} DefaultMutableTreeNode(f.getName());
+16         \textcolor{comment}{// System.out.println(t + ": " + (f.isDirectory() ? "is directory" : "is not directory"));}
+17         \textcolor{keywordflow}{if} (f.isDirectory()) \{
+18             String[] l = f.list();
+19             \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i = 0; i < l.length; i++) \{
+20                 ret.add(\hyperlink{classpresentacion_1_1form_1_1components_1_1browserTree_1_1modelBrowser_afcbfb73081526954d46d410be9821848}{iniTreeNode}(t + \textcolor{stringliteral}{"/"} + l[i]));
+21             \}
+22         \}
+23         \textcolor{keywordflow}{return} ret;
+24     \}
+\end{DoxyCode}
+
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{classpresentacion_1_1form_1_1components_1_1browserTree_1_1modelBrowser_a9fc1c6e81c509d87948fb3e47b79204b}\label{classpresentacion_1_1form_1_1components_1_1browserTree_1_1modelBrowser_a9fc1c6e81c509d87948fb3e47b79204b}} 
+\index{presentacion\+::form\+::components\+::browser\+Tree\+::model\+Browser@{presentacion\+::form\+::components\+::browser\+Tree\+::model\+Browser}!top@{top}}
+\index{top@{top}!presentacion\+::form\+::components\+::browser\+Tree\+::model\+Browser@{presentacion\+::form\+::components\+::browser\+Tree\+::model\+Browser}}
+\subsubsection{\texorpdfstring{top}{top}}
+{\footnotesize\ttfamily Default\+Mutable\+Tree\+Node presentacion.\+form.\+components.\+browser\+Tree.\+model\+Browser.\+top\hspace{0.3cm}{\ttfamily [package]}}
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+src/presentacion/form/components/browser\+Tree/\hyperlink{modelBrowser_8java}{model\+Browser.\+java}\end{DoxyCompactItemize}

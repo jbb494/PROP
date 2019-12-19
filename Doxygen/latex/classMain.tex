@@ -9,7 +9,7 @@ Classe \hyperlink{classMain}{Main}.
 \begin{DoxyCompactItemize}
 \item 
 static void \hyperlink{classMain_a8a5d0f827edddff706cc0e6740d0579a}{main} (String\mbox{[}$\,$\mbox{]} args)
-\begin{DoxyCompactList}\small\item\em \hyperlink{classMain}{Main} de la classe. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em \hyperlink{classMain}{Main} del projecte. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \subsection{Detailed Description}
@@ -29,13 +29,26 @@ Joan Lapeyra
 
 
 
-\hyperlink{classMain}{Main} de la classe. 
+\hyperlink{classMain}{Main} del projecte. 
 
 
 \begin{DoxyParams}{Parameters}
 {\em args} & \\
 \hline
 \end{DoxyParams}
+
+\begin{DoxyCode}
+15     \{
+16         java.awt.EventQueue.invokeLater (
+17                 \textcolor{keyword}{new} Runnable() \{
+18                     \textcolor{keyword}{public} \textcolor{keywordtype}{void} run() \{
+19                         \hyperlink{classpresentacion_1_1form_1_1mainForm}{mainForm} frame = \textcolor{keyword}{new} \hyperlink{classpresentacion_1_1form_1_1mainForm}{mainForm}();
+20                         frame.\hyperlink{classpresentacion_1_1form_1_1mainForm_aae4c847b58c5d50945fa1dd27d534319}{inicialitza\_panel}();
+21                     \}
+22                 \}
+23         );
+24     \}
+\end{DoxyCode}
 
 
 The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}

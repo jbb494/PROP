@@ -1,0 +1,116 @@
+\hypertarget{classpresentacion_1_1form_1_1components_1_1ProgressBar}{}\section{presentacion.\+form.\+components.\+Progress\+Bar Class Reference}
+\label{classpresentacion_1_1form_1_1components_1_1ProgressBar}\index{presentacion.\+form.\+components.\+Progress\+Bar@{presentacion.\+form.\+components.\+Progress\+Bar}}
+
+
+Inheritance diagram for presentacion.\+form.\+components.\+Progress\+Bar\+:
+% FIG 0
+
+
+Collaboration diagram for presentacion.\+form.\+components.\+Progress\+Bar\+:
+% FIG 1
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classpresentacion_1_1form_1_1components_1_1ProgressBar_a1deb4ce0d79cfafe36be10ff9087b392}{Progress\+Bar} (int min, int max)
+\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+int \hyperlink{classpresentacion_1_1form_1_1components_1_1ProgressBar_ad4a771a1e071efde0956a8984ad91eb1}{get\+Valor} ()
+\item 
+void \hyperlink{classpresentacion_1_1form_1_1components_1_1ProgressBar_af0d9d64e51ca6cf141e76ecfa189de29}{set\+Valor} (int val)
+\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+int \hyperlink{classpresentacion_1_1form_1_1components_1_1ProgressBar_a3f6a2544b74d1b12812202c794bd0495}{M\+AX}
+\item 
+Action\+Listener \hyperlink{classpresentacion_1_1form_1_1components_1_1ProgressBar_a9adac61cfc9de30406abd2bdce99b897}{update\+Bar}
+\item 
+Timer \hyperlink{classpresentacion_1_1form_1_1components_1_1ProgressBar_a6be2ec470ec1683c37b1d6c44c3981ca}{timer} = new Timer(50, \hyperlink{classpresentacion_1_1form_1_1components_1_1ProgressBar_a9adac61cfc9de30406abd2bdce99b897}{update\+Bar})
+\end{DoxyCompactItemize}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classpresentacion_1_1form_1_1components_1_1ProgressBar_a1deb4ce0d79cfafe36be10ff9087b392}\label{classpresentacion_1_1form_1_1components_1_1ProgressBar_a1deb4ce0d79cfafe36be10ff9087b392}} 
+\index{presentacion\+::form\+::components\+::\+Progress\+Bar@{presentacion\+::form\+::components\+::\+Progress\+Bar}!Progress\+Bar@{Progress\+Bar}}
+\index{Progress\+Bar@{Progress\+Bar}!presentacion\+::form\+::components\+::\+Progress\+Bar@{presentacion\+::form\+::components\+::\+Progress\+Bar}}
+\subsubsection{\texorpdfstring{Progress\+Bar()}{ProgressBar()}}
+{\footnotesize\ttfamily presentacion.\+form.\+components.\+Progress\+Bar.\+Progress\+Bar (\begin{DoxyParamCaption}\item[{int}]{min,  }\item[{int}]{max }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+\begin{DoxyCode}
+25     \{
+26         super(min, max);
+27         this.\hyperlink{classpresentacion_1_1form_1_1components_1_1ProgressBar_a3f6a2544b74d1b12812202c794bd0495}{MAX} = max;
+28         \hyperlink{classpresentacion_1_1form_1_1components_1_1ProgressBar_a6be2ec470ec1683c37b1d6c44c3981ca}{timer}.start();
+29     \}
+\end{DoxyCode}
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classpresentacion_1_1form_1_1components_1_1ProgressBar_ad4a771a1e071efde0956a8984ad91eb1}\label{classpresentacion_1_1form_1_1components_1_1ProgressBar_ad4a771a1e071efde0956a8984ad91eb1}} 
+\index{presentacion\+::form\+::components\+::\+Progress\+Bar@{presentacion\+::form\+::components\+::\+Progress\+Bar}!get\+Valor@{get\+Valor}}
+\index{get\+Valor@{get\+Valor}!presentacion\+::form\+::components\+::\+Progress\+Bar@{presentacion\+::form\+::components\+::\+Progress\+Bar}}
+\subsubsection{\texorpdfstring{get\+Valor()}{getValor()}}
+{\footnotesize\ttfamily int presentacion.\+form.\+components.\+Progress\+Bar.\+get\+Valor (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [private]}}
+
+
+\begin{DoxyCode}
+32     \{
+33         \textcolor{keywordflow}{return} this.getValue();
+34     \}
+\end{DoxyCode}
+\mbox{\Hypertarget{classpresentacion_1_1form_1_1components_1_1ProgressBar_af0d9d64e51ca6cf141e76ecfa189de29}\label{classpresentacion_1_1form_1_1components_1_1ProgressBar_af0d9d64e51ca6cf141e76ecfa189de29}} 
+\index{presentacion\+::form\+::components\+::\+Progress\+Bar@{presentacion\+::form\+::components\+::\+Progress\+Bar}!set\+Valor@{set\+Valor}}
+\index{set\+Valor@{set\+Valor}!presentacion\+::form\+::components\+::\+Progress\+Bar@{presentacion\+::form\+::components\+::\+Progress\+Bar}}
+\subsubsection{\texorpdfstring{set\+Valor()}{setValor()}}
+{\footnotesize\ttfamily void presentacion.\+form.\+components.\+Progress\+Bar.\+set\+Valor (\begin{DoxyParamCaption}\item[{int}]{val }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [private]}}
+
+
+\begin{DoxyCode}
+37     \{
+38         this.setValue(val);
+39     \}
+\end{DoxyCode}
+
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{classpresentacion_1_1form_1_1components_1_1ProgressBar_a3f6a2544b74d1b12812202c794bd0495}\label{classpresentacion_1_1form_1_1components_1_1ProgressBar_a3f6a2544b74d1b12812202c794bd0495}} 
+\index{presentacion\+::form\+::components\+::\+Progress\+Bar@{presentacion\+::form\+::components\+::\+Progress\+Bar}!M\+AX@{M\+AX}}
+\index{M\+AX@{M\+AX}!presentacion\+::form\+::components\+::\+Progress\+Bar@{presentacion\+::form\+::components\+::\+Progress\+Bar}}
+\subsubsection{\texorpdfstring{M\+AX}{MAX}}
+{\footnotesize\ttfamily int presentacion.\+form.\+components.\+Progress\+Bar.\+M\+AX\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classpresentacion_1_1form_1_1components_1_1ProgressBar_a6be2ec470ec1683c37b1d6c44c3981ca}\label{classpresentacion_1_1form_1_1components_1_1ProgressBar_a6be2ec470ec1683c37b1d6c44c3981ca}} 
+\index{presentacion\+::form\+::components\+::\+Progress\+Bar@{presentacion\+::form\+::components\+::\+Progress\+Bar}!timer@{timer}}
+\index{timer@{timer}!presentacion\+::form\+::components\+::\+Progress\+Bar@{presentacion\+::form\+::components\+::\+Progress\+Bar}}
+\subsubsection{\texorpdfstring{timer}{timer}}
+{\footnotesize\ttfamily Timer presentacion.\+form.\+components.\+Progress\+Bar.\+timer = new Timer(50, \hyperlink{classpresentacion_1_1form_1_1components_1_1ProgressBar_a9adac61cfc9de30406abd2bdce99b897}{update\+Bar})\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classpresentacion_1_1form_1_1components_1_1ProgressBar_a9adac61cfc9de30406abd2bdce99b897}\label{classpresentacion_1_1form_1_1components_1_1ProgressBar_a9adac61cfc9de30406abd2bdce99b897}} 
+\index{presentacion\+::form\+::components\+::\+Progress\+Bar@{presentacion\+::form\+::components\+::\+Progress\+Bar}!update\+Bar@{update\+Bar}}
+\index{update\+Bar@{update\+Bar}!presentacion\+::form\+::components\+::\+Progress\+Bar@{presentacion\+::form\+::components\+::\+Progress\+Bar}}
+\subsubsection{\texorpdfstring{update\+Bar}{updateBar}}
+{\footnotesize\ttfamily Action\+Listener presentacion.\+form.\+components.\+Progress\+Bar.\+update\+Bar\hspace{0.3cm}{\ttfamily [private]}}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}
+= \textcolor{keyword}{new} ActionListener() \{
+        @Override
+        \textcolor{keyword}{public} \textcolor{keywordtype}{void} actionPerformed(ActionEvent actionEvent) \{
+            \textcolor{keywordtype}{int} val = \hyperlink{classpresentacion_1_1form_1_1components_1_1ProgressBar_ad4a771a1e071efde0956a8984ad91eb1}{getValor}();
+            \textcolor{keywordflow}{if}(val >= \hyperlink{classpresentacion_1_1form_1_1components_1_1ProgressBar_a3f6a2544b74d1b12812202c794bd0495}{MAX})
+            \{
+                \hyperlink{classpresentacion_1_1form_1_1components_1_1ProgressBar_a6be2ec470ec1683c37b1d6c44c3981ca}{timer}.stop();
+                \textcolor{keywordflow}{return};
+            \}
+            \hyperlink{classpresentacion_1_1form_1_1components_1_1ProgressBar_af0d9d64e51ca6cf141e76ecfa189de29}{setValor}(++val);
+        \}
+    \}
+\end{DoxyCode}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+src/presentacion/form/components/\hyperlink{ProgressBar_8java}{Progress\+Bar.\+java}\end{DoxyCompactItemize}

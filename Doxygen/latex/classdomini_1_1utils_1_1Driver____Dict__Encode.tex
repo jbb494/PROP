@@ -45,12 +45,72 @@ Comprovarà les possibles excepcions que puguin apareixer a la classe.
 {\em linea} & Número de operació realitzada \\
 \hline
 \end{DoxyParams}
+
+\begin{DoxyCode}
+44                                                                                   \{
+45         \textcolor{keywordtype}{int} op = Integer.parseInt(linea);
+46         \textcolor{keywordflow}{if}(dict\_encode == null && op > 1) \{
+47             \textcolor{keywordflow}{throw} \textcolor{keyword}{new} IllegalArgumentException(\textcolor{stringliteral}{"Debes llamar al constructor antes"});
+48         \}
+49     \}
+\end{DoxyCode}
 \mbox{\Hypertarget{classdomini_1_1utils_1_1Driver____Dict__Encode_a67a9ab54d3335c433791b823d192ac8f}\label{classdomini_1_1utils_1_1Driver____Dict__Encode_a67a9ab54d3335c433791b823d192ac8f}} 
 \index{domini\+::utils\+::\+Driver\+\_\+\+\_\+\+Dict\+\_\+\+Encode@{domini\+::utils\+::\+Driver\+\_\+\+\_\+\+Dict\+\_\+\+Encode}!main@{main}}
 \index{main@{main}!domini\+::utils\+::\+Driver\+\_\+\+\_\+\+Dict\+\_\+\+Encode@{domini\+::utils\+::\+Driver\+\_\+\+\_\+\+Dict\+\_\+\+Encode}}
 \subsubsection{\texorpdfstring{main()}{main()}}
 {\footnotesize\ttfamily static void domini.\+utils.\+Driver\+\_\+\+\_\+\+Dict\+\_\+\+Encode.\+main (\begin{DoxyParamCaption}\item[{String \mbox{[}$\,$\mbox{]}}]{args }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
 
+
+\begin{DoxyCode}
+51                                            \{
+52     \textcolor{keywordflow}{try} \{
+53         Dict\_Encode dict\_encode = null;
+54         \hyperlink{classdomini_1_1utils_1_1Driver____Dict__Encode_a8b24c280193457c6620b2b5906018c34}{showOptions}();
+55         BufferedReader reader = \textcolor{keyword}{new} BufferedReader(\textcolor{keyword}{new} InputStreamReader(System.in));
+56         String linea = \textcolor{stringliteral}{""};
+57         \textcolor{keywordflow}{while}(linea != null)\{
+58             System.out.println(\textcolor{stringliteral}{"Selecciona una opción:"});
+59             linea = reader.readLine().trim();
+60             System.out.println(\textcolor{stringliteral}{"Opción: "} + linea + \textcolor{stringliteral}{" seleccionada"});
+61             \hyperlink{classdomini_1_1utils_1_1Driver____Dict__Encode_ab67e87f26a75c12e50130a5e5facb52e}{comprovarExcepcions}(dict\_encode, linea);
+62             \textcolor{keywordflow}{switch}(linea)\{
+63                 \textcolor{keywordflow}{case} \textcolor{stringliteral}{"1"}:
+64                     dict\_encode = \textcolor{keyword}{new} Dict\_Encode();
+65                 \textcolor{keywordflow}{break};
+66                 \textcolor{keywordflow}{case} \textcolor{stringliteral}{"2"}:
+67                     dict\_encode.reset\_dictionary();
+68                     System.out.println(\textcolor{stringliteral}{"El diccionari ha sigut reiniciat"});
+69                 \textcolor{keywordflow}{break};
+70                 \textcolor{keywordflow}{case} \textcolor{stringliteral}{"3"}:
+71                     System.out.println(\textcolor{stringliteral}{"Escribe un byte."});
+72                     String aux3 = reader.readLine().trim();
+73                     byte c = Byte.parseByte(aux3);
+74                     System.out.println(dict\_encode.Ascii\_value(c));
+75                 \textcolor{keywordflow}{break};
+76                 \textcolor{keywordflow}{case} \textcolor{stringliteral}{"4"}:
+77                     System.out.println(\textcolor{stringliteral}{"Escribe un entero que represente el puntero a una cadena de
+       caracteres. Separado de un espacio escribe un byte"});
+78                     String[] aux4 = reader.readLine().trim().split(\textcolor{stringliteral}{" "});
+79                     Integer i = Integer.parseInt(aux4[0]);
+80                     c = Byte.parseByte(aux4[1]);
+81                     Integer ret = dict\_encode.search\_and\_insert\_BST(i, c);
+82                     System.out.println(ret == -1 ? \textcolor{stringliteral}{"no existe"} : ret);
+83                 \textcolor{keywordflow}{break};
+84                 \textcolor{keywordflow}{case} \textcolor{stringliteral}{"5"}:
+85                     dict\_encode.getLimit();
+86                 \textcolor{keywordflow}{break};
+87                 \textcolor{keywordflow}{case} \textcolor{stringliteral}{"0"}:
+88                     \textcolor{keywordflow}{return};
+89                 \textcolor{keywordflow}{default}:
+90                     System.out.println(\textcolor{stringliteral}{"La opción no es válida"});
+91                 \textcolor{keywordflow}{break};
+92             \}
+93         \}
+94     \}\textcolor{keywordflow}{catch} (Exception e) \{
+95         e.printStackTrace();
+96     \}
+97     \}
+\end{DoxyCode}
 \mbox{\Hypertarget{classdomini_1_1utils_1_1Driver____Dict__Encode_a8b24c280193457c6620b2b5906018c34}\label{classdomini_1_1utils_1_1Driver____Dict__Encode_a8b24c280193457c6620b2b5906018c34}} 
 \index{domini\+::utils\+::\+Driver\+\_\+\+\_\+\+Dict\+\_\+\+Encode@{domini\+::utils\+::\+Driver\+\_\+\+\_\+\+Dict\+\_\+\+Encode}!show\+Options@{show\+Options}}
 \index{show\+Options@{show\+Options}!domini\+::utils\+::\+Driver\+\_\+\+\_\+\+Dict\+\_\+\+Encode@{domini\+::utils\+::\+Driver\+\_\+\+\_\+\+Dict\+\_\+\+Encode}}
@@ -61,6 +121,30 @@ Comprovarà les possibles excepcions que puguin apareixer a la classe.
 
 Mostra les accions a realitzar durant l\textquotesingle{}execució 
 
+
+\begin{DoxyCode}
+17                                      \{
+18         System.out.println(\textcolor{stringliteral}{"Driver de Dict\_Encode"});
+19         System.out.println(\textcolor{stringliteral}{"Constructores: "});
+20         System.out.println(\textcolor{stringliteral}{"     1. Dict\_Encode()"});
+21         System.out.println(\textcolor{stringliteral}{"     Input: 1"});
+22 
+23         System.out.println(\textcolor{stringliteral}{"Funciones: "});
+24         System.out.println(\textcolor{stringliteral}{"     2. reset\_dictionary() "});
+25         System.out.println(\textcolor{stringliteral}{"     Input: 2"});
+26         System.out.println(\textcolor{stringliteral}{"     3. Ascii\_value(byte c) "});
+27         System.out.println(\textcolor{stringliteral}{"     Input: 3"});
+28         System.out.println(\textcolor{stringliteral}{"     4. search\_and\_insert\_BST(Integer i, byte c) "});
+29         System.out.println(\textcolor{stringliteral}{"     Input: 4"});
+30         System.out.println(\textcolor{stringliteral}{"     5. getLimit() "});
+31         System.out.println(\textcolor{stringliteral}{"     Input: 5"});
+32         System.out.println();
+33 
+34         System.out.println(\textcolor{stringliteral}{"     0. Sortir"});
+35         System.out.println(\textcolor{stringliteral}{"     Input: 0"});
+36         System.out.println(\textcolor{stringliteral}{"----------------------------------------"});
+37     \}
+\end{DoxyCode}
 
 
 The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}

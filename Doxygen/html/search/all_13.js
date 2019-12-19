@@ -1,13 +1,15 @@
 var searchData=
 [
-  ['testcompression',['testCompression',['../classdomini_1_1algorithm_1_1LZWTest.html#ae43f1a846dc9672b04c707314006a878',1,'domini::algorithm::LZWTest']]],
-  ['testconstructor',['testConstructor',['../classdomini_1_1algorithm_1_1LZWTest.html#a7a5e6784e3489ec90147d5ce83503671',1,'domini::algorithm::LZWTest']]],
-  ['testdecompression',['testDecompression',['../classdomini_1_1algorithm_1_1LZWTest.html#aa9f013d2d8e008768c6c7b8fe319b534',1,'domini::algorithm::LZWTest']]],
-  ['testreturn',['testReturn',['../classdomini_1_1algorithm_1_1LZWTest.html#a09032ce55ab1c698899b14d2a944a65f',1,'domini::algorithm::LZWTest']]],
-  ['time',['time',['../classdomini_1_1estadistica_1_1Estadistica.html#a7587e21e3f7f177afe0dd36483c8fe5d',1,'domini::estadistica::Estadistica']]],
-  ['tree',['tree',['../classdomini_1_1algorithm_1_1Huffman.html#a6c010fa777f5601b7be908f8c876cf8e',1,'domini::algorithm::Huffman']]],
-  ['trie',['Trie',['../classdomini_1_1utils_1_1Trie.html',1,'domini.utils.Trie&lt; T &gt;'],['../classdomini_1_1utils_1_1Trie.html#aa47b21b235e9dab115f3f97726837d5f',1,'domini.utils.Trie.Trie()']]],
-  ['trie_2ejava',['Trie.java',['../Trie_8java.html',1,'']]],
-  ['trienode',['TrieNode',['../classdomini_1_1utils_1_1TrieNode.html',1,'domini.utils.TrieNode&lt; T &gt;'],['../classdomini_1_1utils_1_1TrieNode.html#af9a18353151b5e3dea5966f50629319a',1,'domini.utils.TrieNode.TrieNode()']]],
-  ['trienode_2ejava',['TrieNode.java',['../TrieNode_8java.html',1,'']]]
+  ['r',['R',['../classdomini_1_1utils_1_1Pair.html#aebf54d48000999b84e5e24a2c62088d4',1,'domini::utils::Pair']]],
+  ['randomaccessoutput',['RandomAccessOutput',['../classpersistencia_1_1output_1_1RandomAccessOutput.html',1,'persistencia::output']]],
+  ['randomaccessoutput_2ejava',['RandomAccessOutput.java',['../RandomAccessOutput_8java.html',1,'']]],
+  ['read',['read',['../classpersistencia_1_1input_1_1Input.html#a24eae4109b4ff4954ff2d7feef2fa4e4',1,'persistencia::input::Input']]],
+  ['read_5fbytes',['read_bytes',['../classpersistencia_1_1input_1_1Input.html#ace2c934234f82fb07ae169b50f71cd32',1,'persistencia::input::Input']]],
+  ['readme_2emd',['README.md',['../README_8md.html',1,'']]],
+  ['reset_5fdictionary',['reset_dictionary',['../classdomini_1_1utils_1_1Dict__Decode.html#a635432505df1ceaa58a987bb80c6b0a3',1,'domini.utils.Dict_Decode.reset_dictionary()'],['../classdomini_1_1utils_1_1Dict__Encode.html#a6c3016286b3bb242d12799f8e7ebb585',1,'domini.utils.Dict_Encode.reset_dictionary()']]],
+  ['resetquality',['resetQuality',['../classdomini_1_1algorithm_1_1JPEG.html#a860d6166ef8edc40b0ffb61942589e5d',1,'domini::algorithm::JPEG']]],
+  ['right',['Right',['../classdomini_1_1utils_1_1Node.html#a73c97e595bad2513ee0a06ee4620236a',1,'domini::utils::Node']]],
+  ['root',['root',['../classdomini_1_1utils_1_1Trie.html#a60ef63a6c55d07710d33892ccc899bce',1,'domini::utils::Trie']]],
+  ['round',['round',['../classdomini_1_1algorithm_1_1JPEG.html#aa9c52789d61d5eebdeb13ee39f8e817d',1,'domini::algorithm::JPEG']]],
+  ['rows',['rows',['../classpersistencia_1_1input_1_1Ctrl__Input__Img.html#a1288870f941a6730df2aadbb767f6e6f',1,'persistencia.input.Ctrl_Input_Img.rows()'],['../classpersistencia_1_1output_1_1Ctrl__Output__Img.html#a586ee8128a26b6786471e040a705bdbc',1,'persistencia.output.Ctrl_Output_Img.rows()']]]
 ];

@@ -1,0 +1,677 @@
+\hypertarget{classdomini_1_1folders_1_1Ctrl__FolderFile}{}\section{domini.\+folders.\+Ctrl\+\_\+\+Folder\+File Class Reference}
+\label{classdomini_1_1folders_1_1Ctrl__FolderFile}\index{domini.\+folders.\+Ctrl\+\_\+\+Folder\+File@{domini.\+folders.\+Ctrl\+\_\+\+Folder\+File}}
+
+
+Classe \hyperlink{classdomini_1_1folders_1_1Ctrl__FolderFile}{Ctrl\+\_\+\+Folder\+File} Tota la comunicació entre la capa de presentació i la capa de domini relativa a comprimir i descomprimir passa perquè les classes de la capa de presentació instanciïn la classe \hyperlink{classdomini_1_1folders_1_1Ctrl__FolderFile}{Ctrl\+\_\+\+Folder\+File}.  
+
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classdomini_1_1folders_1_1Ctrl__FolderFile_aabe2038931ca63100a2fc4b12936142d}{Ctrl\+\_\+\+Folder\+File} (String path\+\_\+input)
+\begin{DoxyCompactList}\small\item\em Constructor de la classe. \end{DoxyCompactList}\item 
+String \hyperlink{classdomini_1_1folders_1_1Ctrl__FolderFile_a8cb5f1a979d5882dd244d69806d5b237}{Encode\+Manual\+Folder} (String \hyperlink{classdomini_1_1folders_1_1Ctrl__FolderFile_a75ef571be454360b835f552d2cf20741}{text\+\_\+method}, double \hyperlink{classdomini_1_1folders_1_1Ctrl__FolderFile_a7990a74c394d53a58ebbf4a7872c700d}{img\+\_\+quality})
+\begin{DoxyCompactList}\small\item\em Comprimeix una carpeta. \end{DoxyCompactList}\item 
+String \hyperlink{classdomini_1_1folders_1_1Ctrl__FolderFile_a77b9d8244dd36e77516a9dc43ec50ed8}{Encode\+Manual\+Text} (String \hyperlink{classdomini_1_1folders_1_1Ctrl__FolderFile_a75ef571be454360b835f552d2cf20741}{text\+\_\+method})
+\begin{DoxyCompactList}\small\item\em Comprimeix un fitxer de text. \end{DoxyCompactList}\item 
+String \hyperlink{classdomini_1_1folders_1_1Ctrl__FolderFile_aa12af32101598eebcaaad4d0dbe69902}{Encode\+Manual\+Img} (double \hyperlink{classdomini_1_1folders_1_1Ctrl__FolderFile_a7990a74c394d53a58ebbf4a7872c700d}{img\+\_\+quality})
+\begin{DoxyCompactList}\small\item\em Comprimeix una imatge ppm. \end{DoxyCompactList}\item 
+String \hyperlink{classdomini_1_1folders_1_1Ctrl__FolderFile_aa88b27fc271590c8c16642db5c1bb329}{Encode\+Auto} ()
+\begin{DoxyCompactList}\small\item\em Comprimeix un fitxer o una carpeta en mode automàtic. \end{DoxyCompactList}\item 
+global.\+type \hyperlink{classdomini_1_1folders_1_1Ctrl__FolderFile_a9e2ef751bdcb99083831c6b4e4761169}{get\+Type} (String Path)
+\item 
+String \hyperlink{classdomini_1_1folders_1_1Ctrl__FolderFile_a5d28ac7f5223ecd40a242148e86447c1}{Decode} ()
+\begin{DoxyCompactList}\small\item\em Descomprimeix un fitxer o una carpeta. \end{DoxyCompactList}\item 
+String \hyperlink{classdomini_1_1folders_1_1Ctrl__FolderFile_afa0f6968113855feccccfdbacc00444e}{Decode\+Temp} ()
+\item 
+boolean \hyperlink{classdomini_1_1folders_1_1Ctrl__FolderFile_a47a7ad955f1c579384dfba08bc7be8e0}{is\+Encoded} ()
+\item 
+boolean \hyperlink{classdomini_1_1folders_1_1Ctrl__FolderFile_a095e6037e5cdf9a43806a308ca028791}{is\+Encoded\+Folder} ()
+\item 
+boolean \hyperlink{classdomini_1_1folders_1_1Ctrl__FolderFile_a3198690e1ecc46e00431f35d87080d79}{is\+Encoded\+File} ()
+\item 
+String \hyperlink{classdomini_1_1folders_1_1Ctrl__FolderFile_a61d9dfde0932787a2398af3ddf99c34b}{get\+Encoded\+Extension} ()
+\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+String \hyperlink{classdomini_1_1folders_1_1Ctrl__FolderFile_a11c6b1b4a25d12b8091c7c96b3da1ea7}{get\+\_\+out\+Path\+Prefix} ()
+\item 
+String \hyperlink{classdomini_1_1folders_1_1Ctrl__FolderFile_a7c47fd5127ae6f713a4fa7f75002a6f6}{Encode} ()
+\begin{DoxyCompactList}\small\item\em Comprimeix un fitxer o carpeta. \end{DoxyCompactList}\item 
+void \hyperlink{classdomini_1_1folders_1_1Ctrl__FolderFile_ac2cb74a86677ce947b403cc63b91e874}{Encode} (String path)
+\begin{DoxyCompactList}\small\item\em Comprimeix un fitxer o carpeta. \end{DoxyCompactList}\item 
+void \hyperlink{classdomini_1_1folders_1_1Ctrl__FolderFile_a6b18175639009f0186307710fb88a18f}{Encode\+Folder} (String path)
+\begin{DoxyCompactList}\small\item\em Comprimeix una carpeta. \end{DoxyCompactList}\item 
+void \hyperlink{classdomini_1_1folders_1_1Ctrl__FolderFile_a0b2b642b6c23124539d0306955be7f0c}{Encode\+File} (String path)
+\begin{DoxyCompactList}\small\item\em Comprimeix un fitxer. \end{DoxyCompactList}\item 
+String \hyperlink{classdomini_1_1folders_1_1Ctrl__FolderFile_ababd536f11319589ce3c371e3701afc6}{Decode} (String path)
+\begin{DoxyCompactList}\small\item\em Descomprimeix un fitxer o una carpeta. Continua llegint el comprimit que estava llegint. \end{DoxyCompactList}\item 
+String \hyperlink{classdomini_1_1folders_1_1Ctrl__FolderFile_ae8f46feaced983c27c6537794f823dd8}{Decode\+Folder} (String path)
+\begin{DoxyCompactList}\small\item\em Descomprimeix una carpeta. Continua llegint el comprimit que estava llegint. \end{DoxyCompactList}\item 
+String \hyperlink{classdomini_1_1folders_1_1Ctrl__FolderFile_aa12178fff5fbb832759b7328cbdb4415}{Decode\+File} (String prefix)
+\begin{DoxyCompactList}\small\item\em Descomprimeix un fitxer o una carpeta. Continua llegint el comprimit que estava llegint. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+String \hyperlink{classdomini_1_1folders_1_1Ctrl__FolderFile_a0d3946bb2832a1f34d0c2227df5c71c4}{path\+\_\+in}
+\item 
+String \hyperlink{classdomini_1_1folders_1_1Ctrl__FolderFile_a75ef571be454360b835f552d2cf20741}{text\+\_\+method}
+\item 
+Double \hyperlink{classdomini_1_1folders_1_1Ctrl__FolderFile_a7990a74c394d53a58ebbf4a7872c700d}{img\+\_\+quality}
+\item 
+boolean \hyperlink{classdomini_1_1folders_1_1Ctrl__FolderFile_a522ecbf2a1426984671134e062491b75}{auto}
+\item 
+boolean \hyperlink{classdomini_1_1folders_1_1Ctrl__FolderFile_a0db81590abe27b21a9b8c37633c86fa6}{temporal\+\_\+output}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Classe \hyperlink{classdomini_1_1folders_1_1Ctrl__FolderFile}{Ctrl\+\_\+\+Folder\+File} Tota la comunicació entre la capa de presentació i la capa de domini relativa a comprimir i descomprimir passa perquè les classes de la capa de presentació instanciïn la classe \hyperlink{classdomini_1_1folders_1_1Ctrl__FolderFile}{Ctrl\+\_\+\+Folder\+File}. 
+
+\begin{DoxyAuthor}{Author}
+Joan Lapeyra 
+\end{DoxyAuthor}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classdomini_1_1folders_1_1Ctrl__FolderFile_aabe2038931ca63100a2fc4b12936142d}\label{classdomini_1_1folders_1_1Ctrl__FolderFile_aabe2038931ca63100a2fc4b12936142d}} 
+\index{domini\+::folders\+::\+Ctrl\+\_\+\+Folder\+File@{domini\+::folders\+::\+Ctrl\+\_\+\+Folder\+File}!Ctrl\+\_\+\+Folder\+File@{Ctrl\+\_\+\+Folder\+File}}
+\index{Ctrl\+\_\+\+Folder\+File@{Ctrl\+\_\+\+Folder\+File}!domini\+::folders\+::\+Ctrl\+\_\+\+Folder\+File@{domini\+::folders\+::\+Ctrl\+\_\+\+Folder\+File}}
+\subsubsection{\texorpdfstring{Ctrl\+\_\+\+Folder\+File()}{Ctrl\_FolderFile()}}
+{\footnotesize\ttfamily domini.\+folders.\+Ctrl\+\_\+\+Folder\+File.\+Ctrl\+\_\+\+Folder\+File (\begin{DoxyParamCaption}\item[{String}]{path\+\_\+input }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Constructor de la classe. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em path\+\_\+input} & es el path al fitxer o directori a comprimir o descomprimir \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyCode}
+59                                               \{
+60         Ctrl\_Browser brow = \textcolor{keyword}{new} Ctrl\_Browser(path\_input);
+61         \textcolor{keywordflow}{if} (!brow.exists()) \textcolor{keywordflow}{throw} \textcolor{keyword}{new} IllegalArgumentException(path\_input+\textcolor{stringliteral}{" no existeix"});
+62 
+63 
+64         this.\hyperlink{classdomini_1_1folders_1_1Ctrl__FolderFile_a0d3946bb2832a1f34d0c2227df5c71c4}{path\_in} = brow.getAbsolutePath();
+65     \}
+\end{DoxyCode}
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classdomini_1_1folders_1_1Ctrl__FolderFile_a5d28ac7f5223ecd40a242148e86447c1}\label{classdomini_1_1folders_1_1Ctrl__FolderFile_a5d28ac7f5223ecd40a242148e86447c1}} 
+\index{domini\+::folders\+::\+Ctrl\+\_\+\+Folder\+File@{domini\+::folders\+::\+Ctrl\+\_\+\+Folder\+File}!Decode@{Decode}}
+\index{Decode@{Decode}!domini\+::folders\+::\+Ctrl\+\_\+\+Folder\+File@{domini\+::folders\+::\+Ctrl\+\_\+\+Folder\+File}}
+\subsubsection{\texorpdfstring{Decode()}{Decode()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily public String domini.\+folders.\+Ctrl\+\_\+\+Folder\+File.\+Decode (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Descomprimeix un fitxer o una carpeta. 
+
+Descomprimeix un fitxer. Guarda el descomprimit en un fitxer temporal, que serà eliminat un cop el programa hagi acabat.
+
+\begin{DoxyReturn}{Returns}
+el path de sortida 
+\end{DoxyReturn}
+
+\begin{DoxyCode}
+269                            \{
+270         \textcolor{keyword}{new} Ctrl\_Input\_Encoded(\hyperlink{classdomini_1_1folders_1_1Ctrl__FolderFile_a0d3946bb2832a1f34d0c2227df5c71c4}{path\_in});
+271         \hyperlink{classdomini_1_1folders_1_1Ctrl__FolderFile_a0db81590abe27b21a9b8c37633c86fa6}{temporal\_output} = \textcolor{keyword}{false};
+272 
+273         Estadistica est = \textcolor{keyword}{new} Estadistica(\textcolor{keyword}{false});
+274         String path\_out = \hyperlink{classdomini_1_1folders_1_1Ctrl__FolderFile_a5d28ac7f5223ecd40a242148e86447c1}{Decode}(null);
+275         est.work\_done();
+276 
+277         \textcolor{keywordflow}{return} est.show\_estadistica(\hyperlink{classdomini_1_1folders_1_1Ctrl__FolderFile_a0d3946bb2832a1f34d0c2227df5c71c4}{path\_in}, path\_out);
+278     \}
+\end{DoxyCode}
+\mbox{\Hypertarget{classdomini_1_1folders_1_1Ctrl__FolderFile_ababd536f11319589ce3c371e3701afc6}\label{classdomini_1_1folders_1_1Ctrl__FolderFile_ababd536f11319589ce3c371e3701afc6}} 
+\index{domini\+::folders\+::\+Ctrl\+\_\+\+Folder\+File@{domini\+::folders\+::\+Ctrl\+\_\+\+Folder\+File}!Decode@{Decode}}
+\index{Decode@{Decode}!domini\+::folders\+::\+Ctrl\+\_\+\+Folder\+File@{domini\+::folders\+::\+Ctrl\+\_\+\+Folder\+File}}
+\subsubsection{\texorpdfstring{Decode()}{Decode()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily String domini.\+folders.\+Ctrl\+\_\+\+Folder\+File.\+Decode (\begin{DoxyParamCaption}\item[{String}]{path }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [private]}}
+
+
+
+Descomprimeix un fitxer o una carpeta. Continua llegint el comprimit que estava llegint. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em path} & si (path != null) El descomprimit es guardarà a path\mbox{[}.extensio\mbox{]} si (path == null) El path de sortida es genera a partir del path d\textquotesingle{}entrada. o serà un path a un fitxer temporal, si es dona el cas \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+el path de sortida 
+\end{DoxyReturn}
+
+\begin{DoxyCode}
+308                                        \{ \textcolor{comment}{//path out}
+309         Ctrl\_Input\_Encoded in = \textcolor{keyword}{new} Ctrl\_Input\_Encoded();
+310 
+311         byte magic\_word = in.getByte();
+312         \textcolor{keywordflow}{if} (magic\_word == (byte)0xF0)
+313             \textcolor{keywordflow}{return} \hyperlink{classdomini_1_1folders_1_1Ctrl__FolderFile_ae8f46feaced983c27c6537794f823dd8}{DecodeFolder}(path);
+314         \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (magic\_word == (byte)0xF1) 
+315             \textcolor{keywordflow}{return} \hyperlink{classdomini_1_1folders_1_1Ctrl__FolderFile_aa12178fff5fbb832759b7328cbdb4415}{DecodeFile}(path);
+316         \textcolor{keywordflow}{else}
+317             \textcolor{keywordflow}{throw} \textcolor{keyword}{new} IllegalArgumentException(\hyperlink{classdomini_1_1folders_1_1Ctrl__FolderFile_a0d3946bb2832a1f34d0c2227df5c71c4}{path\_in}+\textcolor{stringliteral}{" no es un comprimit."});
+318     \}
+\end{DoxyCode}
+\mbox{\Hypertarget{classdomini_1_1folders_1_1Ctrl__FolderFile_aa12178fff5fbb832759b7328cbdb4415}\label{classdomini_1_1folders_1_1Ctrl__FolderFile_aa12178fff5fbb832759b7328cbdb4415}} 
+\index{domini\+::folders\+::\+Ctrl\+\_\+\+Folder\+File@{domini\+::folders\+::\+Ctrl\+\_\+\+Folder\+File}!Decode\+File@{Decode\+File}}
+\index{Decode\+File@{Decode\+File}!domini\+::folders\+::\+Ctrl\+\_\+\+Folder\+File@{domini\+::folders\+::\+Ctrl\+\_\+\+Folder\+File}}
+\subsubsection{\texorpdfstring{Decode\+File()}{DecodeFile()}}
+{\footnotesize\ttfamily String domini.\+folders.\+Ctrl\+\_\+\+Folder\+File.\+Decode\+File (\begin{DoxyParamCaption}\item[{String}]{prefix }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [private]}}
+
+
+
+Descomprimeix un fitxer o una carpeta. Continua llegint el comprimit que estava llegint. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em prefix} & si (prefix != null) El descomprimit es guardarà a prefix\mbox{[}.extensio\mbox{]} si (prefix == null) El path de sortida es genera a partir del path d\textquotesingle{}entrada o serà un path a un fitxer temporal, si es dona el cas \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+el path de sortida 
+\end{DoxyReturn}
+
+\begin{DoxyCode}
+353                                              \{ \textcolor{comment}{//path out}
+354         Ctrl\_Input\_Encoded in = \textcolor{keyword}{new} Ctrl\_Input\_Encoded();
+355         String extension = in.getWord();
+356         \textcolor{keywordflow}{if} (prefix == null) \{
+357             \textcolor{keywordflow}{if} (\hyperlink{classdomini_1_1folders_1_1Ctrl__FolderFile_a0db81590abe27b21a9b8c37633c86fa6}{temporal\_output}) \{
+358                 String aux = Ctrl\_Browser.createTempFile(extension);
+359                 prefix = FileNames.getPrefix(aux);
+360             \}
+361             \textcolor{keywordflow}{else}
+362                 prefix = \hyperlink{classdomini_1_1folders_1_1Ctrl__FolderFile_a11c6b1b4a25d12b8091c7c96b3da1ea7}{get\_outPathPrefix}();
+363         \}
+364         String path = FileNames.getPath(prefix, extension);
+365 
+366         in.startSubfile();
+367         Ctrl\_Algorithm CAlg = \textcolor{keyword}{new} Ctrl\_Algorithm();
+368         CAlg.Decode(path);
+369         in.endSubfile();
+370 
+371         \textcolor{keywordflow}{return} path;
+372     \}
+\end{DoxyCode}
+\mbox{\Hypertarget{classdomini_1_1folders_1_1Ctrl__FolderFile_ae8f46feaced983c27c6537794f823dd8}\label{classdomini_1_1folders_1_1Ctrl__FolderFile_ae8f46feaced983c27c6537794f823dd8}} 
+\index{domini\+::folders\+::\+Ctrl\+\_\+\+Folder\+File@{domini\+::folders\+::\+Ctrl\+\_\+\+Folder\+File}!Decode\+Folder@{Decode\+Folder}}
+\index{Decode\+Folder@{Decode\+Folder}!domini\+::folders\+::\+Ctrl\+\_\+\+Folder\+File@{domini\+::folders\+::\+Ctrl\+\_\+\+Folder\+File}}
+\subsubsection{\texorpdfstring{Decode\+Folder()}{DecodeFolder()}}
+{\footnotesize\ttfamily String domini.\+folders.\+Ctrl\+\_\+\+Folder\+File.\+Decode\+Folder (\begin{DoxyParamCaption}\item[{String}]{path }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [private]}}
+
+
+
+Descomprimeix una carpeta. Continua llegint el comprimit que estava llegint. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em path} & si (path != null) El descomprimit es guardarà a path si (path == null) El path de sortida es genera a partir del path d\textquotesingle{}entrada \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+el path de sortida 
+\end{DoxyReturn}
+
+\begin{DoxyCode}
+327                                              \{ \textcolor{comment}{//path out }
+328         Ctrl\_Input\_Encoded in = \textcolor{keyword}{new} Ctrl\_Input\_Encoded();
+329         \textcolor{keywordflow}{if} (path == null) \{
+330             \textcolor{keywordflow}{if} (\hyperlink{classdomini_1_1folders_1_1Ctrl__FolderFile_a0db81590abe27b21a9b8c37633c86fa6}{temporal\_output})
+331                 \textcolor{keywordflow}{throw} \textcolor{keyword}{new} IllegalArgumentException(\textcolor{stringliteral}{"No podem desar directoris temporals."});
+332             \textcolor{keywordflow}{else}
+333                 path = \hyperlink{classdomini_1_1folders_1_1Ctrl__FolderFile_a11c6b1b4a25d12b8091c7c96b3da1ea7}{get\_outPathPrefix}();
+334         \}
+335         Ctrl\_Browser out = \textcolor{keyword}{new} Ctrl\_Browser(path);
+336         out.mkdir();
+337         \textcolor{keywordtype}{int} n = in.getInt();
+338         \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i = 0; i < n; ++i) \{
+339             String name = in.getWord();
+340             \hyperlink{classdomini_1_1folders_1_1Ctrl__FolderFile_a5d28ac7f5223ecd40a242148e86447c1}{Decode}(path + \textcolor{stringliteral}{"/"} + name);
+341         \}
+342         \textcolor{keywordflow}{return} path;
+343     \}
+\end{DoxyCode}
+\mbox{\Hypertarget{classdomini_1_1folders_1_1Ctrl__FolderFile_afa0f6968113855feccccfdbacc00444e}\label{classdomini_1_1folders_1_1Ctrl__FolderFile_afa0f6968113855feccccfdbacc00444e}} 
+\index{domini\+::folders\+::\+Ctrl\+\_\+\+Folder\+File@{domini\+::folders\+::\+Ctrl\+\_\+\+Folder\+File}!Decode\+Temp@{Decode\+Temp}}
+\index{Decode\+Temp@{Decode\+Temp}!domini\+::folders\+::\+Ctrl\+\_\+\+Folder\+File@{domini\+::folders\+::\+Ctrl\+\_\+\+Folder\+File}}
+\subsubsection{\texorpdfstring{Decode\+Temp()}{DecodeTemp()}}
+{\footnotesize\ttfamily String domini.\+folders.\+Ctrl\+\_\+\+Folder\+File.\+Decode\+Temp (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+\begin{DoxyCode}
+286                                \{
+287         \textcolor{keyword}{new} Ctrl\_Input\_Encoded(\hyperlink{classdomini_1_1folders_1_1Ctrl__FolderFile_a0d3946bb2832a1f34d0c2227df5c71c4}{path\_in});
+288         \hyperlink{classdomini_1_1folders_1_1Ctrl__FolderFile_a0db81590abe27b21a9b8c37633c86fa6}{temporal\_output} = \textcolor{keyword}{true};
+289         \textcolor{keywordflow}{return} \hyperlink{classdomini_1_1folders_1_1Ctrl__FolderFile_a5d28ac7f5223ecd40a242148e86447c1}{Decode}(null);
+290     \}
+\end{DoxyCode}
+\mbox{\Hypertarget{classdomini_1_1folders_1_1Ctrl__FolderFile_a7c47fd5127ae6f713a4fa7f75002a6f6}\label{classdomini_1_1folders_1_1Ctrl__FolderFile_a7c47fd5127ae6f713a4fa7f75002a6f6}} 
+\index{domini\+::folders\+::\+Ctrl\+\_\+\+Folder\+File@{domini\+::folders\+::\+Ctrl\+\_\+\+Folder\+File}!Encode@{Encode}}
+\index{Encode@{Encode}!domini\+::folders\+::\+Ctrl\+\_\+\+Folder\+File@{domini\+::folders\+::\+Ctrl\+\_\+\+Folder\+File}}
+\subsubsection{\texorpdfstring{Encode()}{Encode()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily public String domini.\+folders.\+Ctrl\+\_\+\+Folder\+File.\+Encode (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [private]}}
+
+
+
+Comprimeix un fitxer o carpeta. 
+
+\begin{DoxyReturn}{Returns}
+el path de sortida 
+\end{DoxyReturn}
+
+\begin{DoxyCode}
+164                             \{
+165         String path\_out = \hyperlink{classdomini_1_1folders_1_1Ctrl__FolderFile_a11c6b1b4a25d12b8091c7c96b3da1ea7}{get\_outPathPrefix}() + \textcolor{stringliteral}{".jm"};
+166         \textcolor{keyword}{new} Ctrl\_Output\_Encoded(path\_out);
+167 
+168         Estadistica est = \textcolor{keyword}{new} Estadistica(\textcolor{keyword}{true});
+169         \hyperlink{classdomini_1_1folders_1_1Ctrl__FolderFile_a7c47fd5127ae6f713a4fa7f75002a6f6}{Encode}(\hyperlink{classdomini_1_1folders_1_1Ctrl__FolderFile_a0d3946bb2832a1f34d0c2227df5c71c4}{path\_in});
+170         est.work\_done();
+171 
+172         \textcolor{keywordflow}{return} est.show\_estadistica(\hyperlink{classdomini_1_1folders_1_1Ctrl__FolderFile_a0d3946bb2832a1f34d0c2227df5c71c4}{path\_in},path\_out);
+173     \}
+\end{DoxyCode}
+\mbox{\Hypertarget{classdomini_1_1folders_1_1Ctrl__FolderFile_ac2cb74a86677ce947b403cc63b91e874}\label{classdomini_1_1folders_1_1Ctrl__FolderFile_ac2cb74a86677ce947b403cc63b91e874}} 
+\index{domini\+::folders\+::\+Ctrl\+\_\+\+Folder\+File@{domini\+::folders\+::\+Ctrl\+\_\+\+Folder\+File}!Encode@{Encode}}
+\index{Encode@{Encode}!domini\+::folders\+::\+Ctrl\+\_\+\+Folder\+File@{domini\+::folders\+::\+Ctrl\+\_\+\+Folder\+File}}
+\subsubsection{\texorpdfstring{Encode()}{Encode()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily private void domini.\+folders.\+Ctrl\+\_\+\+Folder\+File.\+Encode (\begin{DoxyParamCaption}\item[{String}]{path }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [private]}}
+
+
+
+Comprimeix un fitxer o carpeta. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em path} & Path al fitxer o carpeta \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyCode}
+180                                      \{ \textcolor{comment}{//path in}
+181         Ctrl\_Output\_Encoded out = \textcolor{keyword}{new} Ctrl\_Output\_Encoded();
+182         Ctrl\_Browser in = \textcolor{keyword}{new} Ctrl\_Browser(path);
+183         \textcolor{keywordflow}{if} (in.isDirectory()) \{
+184             out.add((byte)0xF0, 8);
+185             \hyperlink{classdomini_1_1folders_1_1Ctrl__FolderFile_a6b18175639009f0186307710fb88a18f}{EncodeFolder}(path);
+186         \}
+187         \textcolor{keywordflow}{else} \{
+188             out.add((byte)0xF1, 8);
+189             \hyperlink{classdomini_1_1folders_1_1Ctrl__FolderFile_a0b2b642b6c23124539d0306955be7f0c}{EncodeFile}(path);
+190         \}
+191     \}
+\end{DoxyCode}
+\mbox{\Hypertarget{classdomini_1_1folders_1_1Ctrl__FolderFile_aa88b27fc271590c8c16642db5c1bb329}\label{classdomini_1_1folders_1_1Ctrl__FolderFile_aa88b27fc271590c8c16642db5c1bb329}} 
+\index{domini\+::folders\+::\+Ctrl\+\_\+\+Folder\+File@{domini\+::folders\+::\+Ctrl\+\_\+\+Folder\+File}!Encode\+Auto@{Encode\+Auto}}
+\index{Encode\+Auto@{Encode\+Auto}!domini\+::folders\+::\+Ctrl\+\_\+\+Folder\+File@{domini\+::folders\+::\+Ctrl\+\_\+\+Folder\+File}}
+\subsubsection{\texorpdfstring{Encode\+Auto()}{EncodeAuto()}}
+{\footnotesize\ttfamily public String domini.\+folders.\+Ctrl\+\_\+\+Folder\+File.\+Encode\+Auto (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Comprimeix un fitxer o una carpeta en mode automàtic. 
+
+\begin{DoxyNote}{Note}
+La responsabilitat de decidir amb quin algoritme comprimir els fitxers de text és de Ctrl\+\_\+\+Algorithm 
+\end{DoxyNote}
+\begin{DoxyReturn}{Returns}
+el path de sortida 
+\end{DoxyReturn}
+
+\begin{DoxyCode}
+148                                \{
+149         this.\textcolor{keyword}{auto} = \textcolor{keyword}{true};
+150         this.\hyperlink{classdomini_1_1folders_1_1Ctrl__FolderFile_a7990a74c394d53a58ebbf4a7872c700d}{img\_quality} = 50.0;
+151 
+152         \textcolor{keywordflow}{return} \hyperlink{classdomini_1_1folders_1_1Ctrl__FolderFile_a7c47fd5127ae6f713a4fa7f75002a6f6}{Encode}();
+153     \}
+\end{DoxyCode}
+\mbox{\Hypertarget{classdomini_1_1folders_1_1Ctrl__FolderFile_a0b2b642b6c23124539d0306955be7f0c}\label{classdomini_1_1folders_1_1Ctrl__FolderFile_a0b2b642b6c23124539d0306955be7f0c}} 
+\index{domini\+::folders\+::\+Ctrl\+\_\+\+Folder\+File@{domini\+::folders\+::\+Ctrl\+\_\+\+Folder\+File}!Encode\+File@{Encode\+File}}
+\index{Encode\+File@{Encode\+File}!domini\+::folders\+::\+Ctrl\+\_\+\+Folder\+File@{domini\+::folders\+::\+Ctrl\+\_\+\+Folder\+File}}
+\subsubsection{\texorpdfstring{Encode\+File()}{EncodeFile()}}
+{\footnotesize\ttfamily private void domini.\+folders.\+Ctrl\+\_\+\+Folder\+File.\+Encode\+File (\begin{DoxyParamCaption}\item[{String}]{path }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [private]}}
+
+
+
+Comprimeix un fitxer. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em path} & Path a fitxer \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyCode}
+217                                          \{
+218         Ctrl\_Output\_Encoded out = \textcolor{keyword}{new} Ctrl\_Output\_Encoded();
+219 
+220         String extension = FileNames.getExtension(path);
+221         out.add(extension);
+222         out.startSubfile();
+223         Ctrl\_Algorithm CAlg = \textcolor{keyword}{new} Ctrl\_Algorithm();
+224         String method;
+225         \textcolor{keywordflow}{if} (\textcolor{keyword}{auto}) \{
+226             method = CAlg.Auto\_Encoder(path);
+227         \}
+228         \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (extension.toLowerCase().equals(\textcolor{stringliteral}{"ppm"})) \{
+229             method = \textcolor{stringliteral}{"jpeg"};
+230         \}
+231         \textcolor{keywordflow}{else} \{
+232             method = \hyperlink{classdomini_1_1folders_1_1Ctrl__FolderFile_a75ef571be454360b835f552d2cf20741}{text\_method};
+233         \}
+234         CAlg.Encode(path, method, \hyperlink{classdomini_1_1folders_1_1Ctrl__FolderFile_a7990a74c394d53a58ebbf4a7872c700d}{img\_quality});
+235         out.endSubfile();
+236     \}
+\end{DoxyCode}
+\mbox{\Hypertarget{classdomini_1_1folders_1_1Ctrl__FolderFile_a6b18175639009f0186307710fb88a18f}\label{classdomini_1_1folders_1_1Ctrl__FolderFile_a6b18175639009f0186307710fb88a18f}} 
+\index{domini\+::folders\+::\+Ctrl\+\_\+\+Folder\+File@{domini\+::folders\+::\+Ctrl\+\_\+\+Folder\+File}!Encode\+Folder@{Encode\+Folder}}
+\index{Encode\+Folder@{Encode\+Folder}!domini\+::folders\+::\+Ctrl\+\_\+\+Folder\+File@{domini\+::folders\+::\+Ctrl\+\_\+\+Folder\+File}}
+\subsubsection{\texorpdfstring{Encode\+Folder()}{EncodeFolder()}}
+{\footnotesize\ttfamily private void domini.\+folders.\+Ctrl\+\_\+\+Folder\+File.\+Encode\+Folder (\begin{DoxyParamCaption}\item[{String}]{path }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [private]}}
+
+
+
+Comprimeix una carpeta. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em path} & Path a la carpeta \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyCode}
+198                                            \{
+199         Ctrl\_Output\_Encoded out = \textcolor{keyword}{new} Ctrl\_Output\_Encoded();
+200         Ctrl\_Browser in = \textcolor{keyword}{new} Ctrl\_Browser(path);
+201 
+202         String[] children = in.list();
+203         \textcolor{keywordtype}{int} n = children.length;
+204         out.add(n);
+205         \textcolor{keywordflow}{for} (String name : children) \{
+206             String name\_prefix = FileNames.getPrefix(name);
+207             out.add(name\_prefix);
+208             \hyperlink{classdomini_1_1folders_1_1Ctrl__FolderFile_a7c47fd5127ae6f713a4fa7f75002a6f6}{Encode}(path + \textcolor{stringliteral}{"/"} + name);
+209         \}
+210     \}
+\end{DoxyCode}
+\mbox{\Hypertarget{classdomini_1_1folders_1_1Ctrl__FolderFile_a8cb5f1a979d5882dd244d69806d5b237}\label{classdomini_1_1folders_1_1Ctrl__FolderFile_a8cb5f1a979d5882dd244d69806d5b237}} 
+\index{domini\+::folders\+::\+Ctrl\+\_\+\+Folder\+File@{domini\+::folders\+::\+Ctrl\+\_\+\+Folder\+File}!Encode\+Manual\+Folder@{Encode\+Manual\+Folder}}
+\index{Encode\+Manual\+Folder@{Encode\+Manual\+Folder}!domini\+::folders\+::\+Ctrl\+\_\+\+Folder\+File@{domini\+::folders\+::\+Ctrl\+\_\+\+Folder\+File}}
+\subsubsection{\texorpdfstring{Encode\+Manual\+Folder()}{EncodeManualFolder()}}
+{\footnotesize\ttfamily public String domini.\+folders.\+Ctrl\+\_\+\+Folder\+File.\+Encode\+Manual\+Folder (\begin{DoxyParamCaption}\item[{String}]{text\+\_\+method,  }\item[{double}]{img\+\_\+quality }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Comprimeix una carpeta. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em text\+\_\+method} & és l\textquotesingle{}algoritme LZ (lz78, lzw, lzss), emprat per comprimir els fitxers txt de la carpeta. \\
+\hline
+{\em img\+\_\+quality} & és un número del 0 al 100 que representa la qualitat de la compressió J\+P\+EG amb què es compimiran les imatges ppm de la carpeta. Com més gran sigui menys informació es perdrà però més ocuparà el fitxer. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+el path de sortida 
+\end{DoxyReturn}
+
+\begin{DoxyCode}
+84                                                                              \{
+85         \textcolor{keywordflow}{if} (!\hyperlink{classdomini_1_1folders_1_1Ctrl__FolderFile_a75ef571be454360b835f552d2cf20741}{text\_method}.toLowerCase().equals(\textcolor{stringliteral}{"lz78"}) && !\hyperlink{classdomini_1_1folders_1_1Ctrl__FolderFile_a75ef571be454360b835f552d2cf20741}{text\_method}.toLowerCase().
+      equals(\textcolor{stringliteral}{"lzss"}) && !\hyperlink{classdomini_1_1folders_1_1Ctrl__FolderFile_a75ef571be454360b835f552d2cf20741}{text\_method}.toLowerCase().equals(\textcolor{stringliteral}{"lzw"}))
+86             \textcolor{keywordflow}{throw} \textcolor{keyword}{new} IllegalArgumentException(\textcolor{stringliteral}{"text\_method ha de ser lz78, lzss o lzw"});
+87         \textcolor{keywordflow}{if} (img\_quality < 0 || img\_quality > 100)
+88             \textcolor{keywordflow}{throw} \textcolor{keyword}{new} IllegalArgumentException(\textcolor{stringliteral}{"img\_quality ha de ser un real entre 0 i 100 incolsos"});
+89 
+90         \textcolor{keywordflow}{if} (\hyperlink{classdomini_1_1folders_1_1Ctrl__FolderFile_a7990a74c394d53a58ebbf4a7872c700d}{img\_quality} > 0 && \hyperlink{classdomini_1_1folders_1_1Ctrl__FolderFile_a7990a74c394d53a58ebbf4a7872c700d}{img\_quality} < 1)
+91             \textcolor{keywordflow}{throw} \textcolor{keyword}{new} IllegalArgumentException(\textcolor{stringliteral}{"N'estas segur? Llegeix l'especificació, rata."});
+92 
+93         this.\textcolor{keyword}{auto} = \textcolor{keyword}{false};
+94         this.\hyperlink{classdomini_1_1folders_1_1Ctrl__FolderFile_a75ef571be454360b835f552d2cf20741}{text\_method} = \hyperlink{classdomini_1_1folders_1_1Ctrl__FolderFile_a75ef571be454360b835f552d2cf20741}{text\_method}.toLowerCase();
+95         this.\hyperlink{classdomini_1_1folders_1_1Ctrl__FolderFile_a7990a74c394d53a58ebbf4a7872c700d}{img\_quality} = \hyperlink{classdomini_1_1folders_1_1Ctrl__FolderFile_a7990a74c394d53a58ebbf4a7872c700d}{img\_quality};
+96         
+97 
+98         \textcolor{keywordflow}{return} \hyperlink{classdomini_1_1folders_1_1Ctrl__FolderFile_a7c47fd5127ae6f713a4fa7f75002a6f6}{Encode}();          
+99         
+100     \}
+\end{DoxyCode}
+\mbox{\Hypertarget{classdomini_1_1folders_1_1Ctrl__FolderFile_aa12af32101598eebcaaad4d0dbe69902}\label{classdomini_1_1folders_1_1Ctrl__FolderFile_aa12af32101598eebcaaad4d0dbe69902}} 
+\index{domini\+::folders\+::\+Ctrl\+\_\+\+Folder\+File@{domini\+::folders\+::\+Ctrl\+\_\+\+Folder\+File}!Encode\+Manual\+Img@{Encode\+Manual\+Img}}
+\index{Encode\+Manual\+Img@{Encode\+Manual\+Img}!domini\+::folders\+::\+Ctrl\+\_\+\+Folder\+File@{domini\+::folders\+::\+Ctrl\+\_\+\+Folder\+File}}
+\subsubsection{\texorpdfstring{Encode\+Manual\+Img()}{EncodeManualImg()}}
+{\footnotesize\ttfamily public String domini.\+folders.\+Ctrl\+\_\+\+Folder\+File.\+Encode\+Manual\+Img (\begin{DoxyParamCaption}\item[{double}]{img\+\_\+quality }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Comprimeix una imatge ppm. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em img\+\_\+quality} & és un número del 0 al 100 que representa la qualitat de la compressió J\+P\+EG amb què es compimiran la imatge. Com més gran sigui menys informació es perdrà però més ocuparà el fitxer. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+el path de sortida 
+\end{DoxyReturn}
+
+\begin{DoxyCode}
+127                                                       \{
+128         \textcolor{keywordflow}{if} (img\_quality < 0 || img\_quality > 100)
+129             \textcolor{keywordflow}{throw} \textcolor{keyword}{new} IllegalArgumentException(\textcolor{stringliteral}{"img\_quality ha de ser un real entre 0 i 100 incolsos"});
+130 
+131         \textcolor{keywordflow}{if} (\hyperlink{classdomini_1_1folders_1_1Ctrl__FolderFile_a7990a74c394d53a58ebbf4a7872c700d}{img\_quality} > 0 && \hyperlink{classdomini_1_1folders_1_1Ctrl__FolderFile_a7990a74c394d53a58ebbf4a7872c700d}{img\_quality} < 1)
+132             \textcolor{keywordflow}{throw} \textcolor{keyword}{new} IllegalArgumentException(\textcolor{stringliteral}{"N'estas segur? Llegeix l'especificació, rata."});
+133 
+134         this.\textcolor{keyword}{auto} = \textcolor{keyword}{false};
+135         this.\hyperlink{classdomini_1_1folders_1_1Ctrl__FolderFile_a75ef571be454360b835f552d2cf20741}{text\_method} = null;
+136         this.\hyperlink{classdomini_1_1folders_1_1Ctrl__FolderFile_a7990a74c394d53a58ebbf4a7872c700d}{img\_quality} = \hyperlink{classdomini_1_1folders_1_1Ctrl__FolderFile_a7990a74c394d53a58ebbf4a7872c700d}{img\_quality};
+137 
+138         \textcolor{keywordflow}{return} \hyperlink{classdomini_1_1folders_1_1Ctrl__FolderFile_a7c47fd5127ae6f713a4fa7f75002a6f6}{Encode}();
+139     \}
+\end{DoxyCode}
+\mbox{\Hypertarget{classdomini_1_1folders_1_1Ctrl__FolderFile_a77b9d8244dd36e77516a9dc43ec50ed8}\label{classdomini_1_1folders_1_1Ctrl__FolderFile_a77b9d8244dd36e77516a9dc43ec50ed8}} 
+\index{domini\+::folders\+::\+Ctrl\+\_\+\+Folder\+File@{domini\+::folders\+::\+Ctrl\+\_\+\+Folder\+File}!Encode\+Manual\+Text@{Encode\+Manual\+Text}}
+\index{Encode\+Manual\+Text@{Encode\+Manual\+Text}!domini\+::folders\+::\+Ctrl\+\_\+\+Folder\+File@{domini\+::folders\+::\+Ctrl\+\_\+\+Folder\+File}}
+\subsubsection{\texorpdfstring{Encode\+Manual\+Text()}{EncodeManualText()}}
+{\footnotesize\ttfamily public String domini.\+folders.\+Ctrl\+\_\+\+Folder\+File.\+Encode\+Manual\+Text (\begin{DoxyParamCaption}\item[{String}]{text\+\_\+method }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Comprimeix un fitxer de text. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em text\+\_\+method} & és l\textquotesingle{}algoritme LZ (lz78, lzw, lzss), emprat per comprimir el fitxer. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+el path de sortida 
+\end{DoxyReturn}
+
+\begin{DoxyCode}
+108                                                        \{
+109         \textcolor{keywordflow}{if} (!\hyperlink{classdomini_1_1folders_1_1Ctrl__FolderFile_a75ef571be454360b835f552d2cf20741}{text\_method}.toLowerCase().equals(\textcolor{stringliteral}{"lz78"}) && !\hyperlink{classdomini_1_1folders_1_1Ctrl__FolderFile_a75ef571be454360b835f552d2cf20741}{text\_method}.toLowerCase().
+      equals(\textcolor{stringliteral}{"lzss"}) && !\hyperlink{classdomini_1_1folders_1_1Ctrl__FolderFile_a75ef571be454360b835f552d2cf20741}{text\_method}.toLowerCase().equals(\textcolor{stringliteral}{"lzw"}))
+110             \textcolor{keywordflow}{throw} \textcolor{keyword}{new} IllegalArgumentException(\textcolor{stringliteral}{"text\_method ha de ser lz78, lzss o lzw"});
+111 
+112         this.\textcolor{keyword}{auto} = \textcolor{keyword}{false};
+113         this.\hyperlink{classdomini_1_1folders_1_1Ctrl__FolderFile_a75ef571be454360b835f552d2cf20741}{text\_method} = \hyperlink{classdomini_1_1folders_1_1Ctrl__FolderFile_a75ef571be454360b835f552d2cf20741}{text\_method}.toLowerCase();
+114         this.\hyperlink{classdomini_1_1folders_1_1Ctrl__FolderFile_a7990a74c394d53a58ebbf4a7872c700d}{img\_quality} = null; \textcolor{comment}{//valor invàlid}
+115 
+116         \textcolor{keywordflow}{return} \hyperlink{classdomini_1_1folders_1_1Ctrl__FolderFile_a7c47fd5127ae6f713a4fa7f75002a6f6}{Encode}();
+117     \}
+\end{DoxyCode}
+\mbox{\Hypertarget{classdomini_1_1folders_1_1Ctrl__FolderFile_a11c6b1b4a25d12b8091c7c96b3da1ea7}\label{classdomini_1_1folders_1_1Ctrl__FolderFile_a11c6b1b4a25d12b8091c7c96b3da1ea7}} 
+\index{domini\+::folders\+::\+Ctrl\+\_\+\+Folder\+File@{domini\+::folders\+::\+Ctrl\+\_\+\+Folder\+File}!get\+\_\+out\+Path\+Prefix@{get\+\_\+out\+Path\+Prefix}}
+\index{get\+\_\+out\+Path\+Prefix@{get\+\_\+out\+Path\+Prefix}!domini\+::folders\+::\+Ctrl\+\_\+\+Folder\+File@{domini\+::folders\+::\+Ctrl\+\_\+\+Folder\+File}}
+\subsubsection{\texorpdfstring{get\+\_\+out\+Path\+Prefix()}{get\_outPathPrefix()}}
+{\footnotesize\ttfamily String domini.\+folders.\+Ctrl\+\_\+\+Folder\+File.\+get\+\_\+out\+Path\+Prefix (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [private]}}
+
+
+\begin{DoxyCode}
+69                                        \{
+70         \textcolor{keywordflow}{return} FileNames.getPrefix(\hyperlink{classdomini_1_1folders_1_1Ctrl__FolderFile_a0d3946bb2832a1f34d0c2227df5c71c4}{path\_in});
+71     \}
+\end{DoxyCode}
+\mbox{\Hypertarget{classdomini_1_1folders_1_1Ctrl__FolderFile_a61d9dfde0932787a2398af3ddf99c34b}\label{classdomini_1_1folders_1_1Ctrl__FolderFile_a61d9dfde0932787a2398af3ddf99c34b}} 
+\index{domini\+::folders\+::\+Ctrl\+\_\+\+Folder\+File@{domini\+::folders\+::\+Ctrl\+\_\+\+Folder\+File}!get\+Encoded\+Extension@{get\+Encoded\+Extension}}
+\index{get\+Encoded\+Extension@{get\+Encoded\+Extension}!domini\+::folders\+::\+Ctrl\+\_\+\+Folder\+File@{domini\+::folders\+::\+Ctrl\+\_\+\+Folder\+File}}
+\subsubsection{\texorpdfstring{get\+Encoded\+Extension()}{getEncodedExtension()}}
+{\footnotesize\ttfamily public String domini.\+folders.\+Ctrl\+\_\+\+Folder\+File.\+get\+Encoded\+Extension (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\begin{DoxyReturn}{Returns}
+L\textquotesingle{}extensió que tenia un comprimit abans de ser comprimit. 
+\end{DoxyReturn}
+
+\begin{DoxyCode}
+422                                         \{
+423         \textcolor{keywordflow}{if} (!FileNames.getExtension(\hyperlink{classdomini_1_1folders_1_1Ctrl__FolderFile_a0d3946bb2832a1f34d0c2227df5c71c4}{path\_in}).equals(\textcolor{stringliteral}{"jm"})) \textcolor{keywordflow}{throw} \textcolor{keyword}{new} IllegalArgumentException(\textcolor{stringliteral}{"No es
+       un comprimit."});
+424         Ctrl\_Input\_Encoded in = \textcolor{keyword}{new} Ctrl\_Input\_Encoded(\hyperlink{classdomini_1_1folders_1_1Ctrl__FolderFile_a0d3946bb2832a1f34d0c2227df5c71c4}{path\_in});
+425         byte magic\_word = in.getByte();
+426         \textcolor{keywordflow}{if} (magic\_word == (byte)0xF1) \textcolor{keywordflow}{return} in.getWord();
+427         \textcolor{keywordflow}{if} (magic\_word == (byte)0xF0) \textcolor{keywordflow}{return} \textcolor{stringliteral}{""};
+428         \textcolor{keywordflow}{throw} \textcolor{keyword}{new} IllegalArgumentException(\textcolor{stringliteral}{"No es un comprimit."});
+429     \}
+\end{DoxyCode}
+\mbox{\Hypertarget{classdomini_1_1folders_1_1Ctrl__FolderFile_a9e2ef751bdcb99083831c6b4e4761169}\label{classdomini_1_1folders_1_1Ctrl__FolderFile_a9e2ef751bdcb99083831c6b4e4761169}} 
+\index{domini\+::folders\+::\+Ctrl\+\_\+\+Folder\+File@{domini\+::folders\+::\+Ctrl\+\_\+\+Folder\+File}!get\+Type@{get\+Type}}
+\index{get\+Type@{get\+Type}!domini\+::folders\+::\+Ctrl\+\_\+\+Folder\+File@{domini\+::folders\+::\+Ctrl\+\_\+\+Folder\+File}}
+\subsubsection{\texorpdfstring{get\+Type()}{getType()}}
+{\footnotesize\ttfamily public \hyperlink{classglobal_1_1global}{global} type domini.\+folders.\+Ctrl\+\_\+\+Folder\+File.\+get\+Type (\begin{DoxyParamCaption}\item[{String}]{Path }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+\begin{DoxyParams}{Parameters}
+{\em Path} & Path al fixer o carpeta \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Retorna una enumeration indicant el tipus de Path 
+\end{DoxyReturn}
+
+\begin{DoxyCode}
+243                                            \{
+244 
+245         \hyperlink{namespaceglobal}{global}.type file = FolderOrFile.getType(Path);
+246         \textcolor{keywordflow}{if} (file == \hyperlink{namespaceglobal}{global}.type.comprimit) \{
+247             \textcolor{keywordflow}{if} (\hyperlink{classdomini_1_1folders_1_1Ctrl__FolderFile_a3198690e1ecc46e00431f35d87080d79}{isEncodedFile}()) \{
+248                 \textcolor{keywordflow}{if} (\hyperlink{classdomini_1_1folders_1_1Ctrl__FolderFile_a61d9dfde0932787a2398af3ddf99c34b}{getEncodedExtension}().equals(\textcolor{stringliteral}{"ppm"})) \{
+249                     \textcolor{keywordflow}{return} \hyperlink{namespaceglobal}{global}.type.imageComprimit;
+250                 \}\textcolor{keywordflow}{else} \{
+251                     \textcolor{keywordflow}{return} \hyperlink{namespaceglobal}{global}.type.textComprimit;
+252                 \}
+253             \}\textcolor{keywordflow}{else} \textcolor{keywordflow}{if}(\hyperlink{classdomini_1_1folders_1_1Ctrl__FolderFile_a095e6037e5cdf9a43806a308ca028791}{isEncodedFolder}()) \{
+254                 \textcolor{keywordflow}{return} \hyperlink{namespaceglobal}{global}.type.folderComprimit;
+255             \}
+256         \}
+257         \textcolor{keywordflow}{return} file;
+258     \}
+\end{DoxyCode}
+\mbox{\Hypertarget{classdomini_1_1folders_1_1Ctrl__FolderFile_a47a7ad955f1c579384dfba08bc7be8e0}\label{classdomini_1_1folders_1_1Ctrl__FolderFile_a47a7ad955f1c579384dfba08bc7be8e0}} 
+\index{domini\+::folders\+::\+Ctrl\+\_\+\+Folder\+File@{domini\+::folders\+::\+Ctrl\+\_\+\+Folder\+File}!is\+Encoded@{is\+Encoded}}
+\index{is\+Encoded@{is\+Encoded}!domini\+::folders\+::\+Ctrl\+\_\+\+Folder\+File@{domini\+::folders\+::\+Ctrl\+\_\+\+Folder\+File}}
+\subsubsection{\texorpdfstring{is\+Encoded()}{isEncoded()}}
+{\footnotesize\ttfamily public boolean domini.\+folders.\+Ctrl\+\_\+\+Folder\+File.\+is\+Encoded (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\begin{DoxyReturn}{Returns}
+retorna true $<$=$>$ el path que s\textquotesingle{}ha passat al constructor és a un comprimit. 
+\end{DoxyReturn}
+
+\begin{DoxyCode}
+389                                \{
+390         \textcolor{keywordflow}{if} (!FileNames.getExtension(\hyperlink{classdomini_1_1folders_1_1Ctrl__FolderFile_a0d3946bb2832a1f34d0c2227df5c71c4}{path\_in}).equals(\textcolor{stringliteral}{"jm"})) \textcolor{keywordflow}{return} \textcolor{keyword}{false};
+391         Ctrl\_Input\_Encoded in = \textcolor{keyword}{new} Ctrl\_Input\_Encoded(\hyperlink{classdomini_1_1folders_1_1Ctrl__FolderFile_a0d3946bb2832a1f34d0c2227df5c71c4}{path\_in});
+392         byte magic\_word = in.getByte();
+393         \textcolor{keywordflow}{return} (magic\_word == (byte)0xF0) || (magic\_word == (byte)0xF1);
+394     \}
+\end{DoxyCode}
+\mbox{\Hypertarget{classdomini_1_1folders_1_1Ctrl__FolderFile_a3198690e1ecc46e00431f35d87080d79}\label{classdomini_1_1folders_1_1Ctrl__FolderFile_a3198690e1ecc46e00431f35d87080d79}} 
+\index{domini\+::folders\+::\+Ctrl\+\_\+\+Folder\+File@{domini\+::folders\+::\+Ctrl\+\_\+\+Folder\+File}!is\+Encoded\+File@{is\+Encoded\+File}}
+\index{is\+Encoded\+File@{is\+Encoded\+File}!domini\+::folders\+::\+Ctrl\+\_\+\+Folder\+File@{domini\+::folders\+::\+Ctrl\+\_\+\+Folder\+File}}
+\subsubsection{\texorpdfstring{is\+Encoded\+File()}{isEncodedFile()}}
+{\footnotesize\ttfamily boolean domini.\+folders.\+Ctrl\+\_\+\+Folder\+File.\+is\+Encoded\+File (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+\begin{DoxyCode}
+411                                    \{
+412         \textcolor{keywordflow}{if} (!FileNames.getExtension(\hyperlink{classdomini_1_1folders_1_1Ctrl__FolderFile_a0d3946bb2832a1f34d0c2227df5c71c4}{path\_in}).equals(\textcolor{stringliteral}{"jm"})) \textcolor{keywordflow}{return} \textcolor{keyword}{false};
+413         Ctrl\_Input\_Encoded in = \textcolor{keyword}{new} Ctrl\_Input\_Encoded(\hyperlink{classdomini_1_1folders_1_1Ctrl__FolderFile_a0d3946bb2832a1f34d0c2227df5c71c4}{path\_in});
+414         byte magic\_word = in.getByte();
+415         \textcolor{keywordflow}{return} (magic\_word == (byte)0xF1);
+416     \}
+\end{DoxyCode}
+\mbox{\Hypertarget{classdomini_1_1folders_1_1Ctrl__FolderFile_a095e6037e5cdf9a43806a308ca028791}\label{classdomini_1_1folders_1_1Ctrl__FolderFile_a095e6037e5cdf9a43806a308ca028791}} 
+\index{domini\+::folders\+::\+Ctrl\+\_\+\+Folder\+File@{domini\+::folders\+::\+Ctrl\+\_\+\+Folder\+File}!is\+Encoded\+Folder@{is\+Encoded\+Folder}}
+\index{is\+Encoded\+Folder@{is\+Encoded\+Folder}!domini\+::folders\+::\+Ctrl\+\_\+\+Folder\+File@{domini\+::folders\+::\+Ctrl\+\_\+\+Folder\+File}}
+\subsubsection{\texorpdfstring{is\+Encoded\+Folder()}{isEncodedFolder()}}
+{\footnotesize\ttfamily public boolean domini.\+folders.\+Ctrl\+\_\+\+Folder\+File.\+is\+Encoded\+Folder (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\begin{DoxyReturn}{Returns}
+retorna true $<$=$>$ el path que s\textquotesingle{}ha passat al constructor és a una carpeta comprimida.
+
+retorna true $<$=$>$ el path que s\textquotesingle{}ha passat al constructor és a un fitxer comprimit. 
+\end{DoxyReturn}
+
+\begin{DoxyCode}
+400                                      \{
+401         \textcolor{keywordflow}{if} (!FileNames.getExtension(\hyperlink{classdomini_1_1folders_1_1Ctrl__FolderFile_a0d3946bb2832a1f34d0c2227df5c71c4}{path\_in}).equals(\textcolor{stringliteral}{"jm"})) \textcolor{keywordflow}{return} \textcolor{keyword}{false};
+402         Ctrl\_Input\_Encoded in = \textcolor{keyword}{new} Ctrl\_Input\_Encoded(\hyperlink{classdomini_1_1folders_1_1Ctrl__FolderFile_a0d3946bb2832a1f34d0c2227df5c71c4}{path\_in});
+403         byte magic\_word = in.getByte();
+404         \textcolor{keywordflow}{return} (magic\_word == (byte)0xF0);
+405     \}
+\end{DoxyCode}
+
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{classdomini_1_1folders_1_1Ctrl__FolderFile_a522ecbf2a1426984671134e062491b75}\label{classdomini_1_1folders_1_1Ctrl__FolderFile_a522ecbf2a1426984671134e062491b75}} 
+\index{domini\+::folders\+::\+Ctrl\+\_\+\+Folder\+File@{domini\+::folders\+::\+Ctrl\+\_\+\+Folder\+File}!auto@{auto}}
+\index{auto@{auto}!domini\+::folders\+::\+Ctrl\+\_\+\+Folder\+File@{domini\+::folders\+::\+Ctrl\+\_\+\+Folder\+File}}
+\subsubsection{\texorpdfstring{auto}{auto}}
+{\footnotesize\ttfamily boolean domini.\+folders.\+Ctrl\+\_\+\+Folder\+File.\+auto\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classdomini_1_1folders_1_1Ctrl__FolderFile_a7990a74c394d53a58ebbf4a7872c700d}\label{classdomini_1_1folders_1_1Ctrl__FolderFile_a7990a74c394d53a58ebbf4a7872c700d}} 
+\index{domini\+::folders\+::\+Ctrl\+\_\+\+Folder\+File@{domini\+::folders\+::\+Ctrl\+\_\+\+Folder\+File}!img\+\_\+quality@{img\+\_\+quality}}
+\index{img\+\_\+quality@{img\+\_\+quality}!domini\+::folders\+::\+Ctrl\+\_\+\+Folder\+File@{domini\+::folders\+::\+Ctrl\+\_\+\+Folder\+File}}
+\subsubsection{\texorpdfstring{img\+\_\+quality}{img\_quality}}
+{\footnotesize\ttfamily Double domini.\+folders.\+Ctrl\+\_\+\+Folder\+File.\+img\+\_\+quality\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classdomini_1_1folders_1_1Ctrl__FolderFile_a0d3946bb2832a1f34d0c2227df5c71c4}\label{classdomini_1_1folders_1_1Ctrl__FolderFile_a0d3946bb2832a1f34d0c2227df5c71c4}} 
+\index{domini\+::folders\+::\+Ctrl\+\_\+\+Folder\+File@{domini\+::folders\+::\+Ctrl\+\_\+\+Folder\+File}!path\+\_\+in@{path\+\_\+in}}
+\index{path\+\_\+in@{path\+\_\+in}!domini\+::folders\+::\+Ctrl\+\_\+\+Folder\+File@{domini\+::folders\+::\+Ctrl\+\_\+\+Folder\+File}}
+\subsubsection{\texorpdfstring{path\+\_\+in}{path\_in}}
+{\footnotesize\ttfamily String domini.\+folders.\+Ctrl\+\_\+\+Folder\+File.\+path\+\_\+in\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classdomini_1_1folders_1_1Ctrl__FolderFile_a0db81590abe27b21a9b8c37633c86fa6}\label{classdomini_1_1folders_1_1Ctrl__FolderFile_a0db81590abe27b21a9b8c37633c86fa6}} 
+\index{domini\+::folders\+::\+Ctrl\+\_\+\+Folder\+File@{domini\+::folders\+::\+Ctrl\+\_\+\+Folder\+File}!temporal\+\_\+output@{temporal\+\_\+output}}
+\index{temporal\+\_\+output@{temporal\+\_\+output}!domini\+::folders\+::\+Ctrl\+\_\+\+Folder\+File@{domini\+::folders\+::\+Ctrl\+\_\+\+Folder\+File}}
+\subsubsection{\texorpdfstring{temporal\+\_\+output}{temporal\_output}}
+{\footnotesize\ttfamily boolean domini.\+folders.\+Ctrl\+\_\+\+Folder\+File.\+temporal\+\_\+output\hspace{0.3cm}{\ttfamily [private]}}
+
+
+\begin{DoxyParams}{Parameters}
+{\em temporal\+\_\+output} & Boolean que indica si hay un output temporal. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classdomini_1_1folders_1_1Ctrl__FolderFile_a75ef571be454360b835f552d2cf20741}\label{classdomini_1_1folders_1_1Ctrl__FolderFile_a75ef571be454360b835f552d2cf20741}} 
+\index{domini\+::folders\+::\+Ctrl\+\_\+\+Folder\+File@{domini\+::folders\+::\+Ctrl\+\_\+\+Folder\+File}!text\+\_\+method@{text\+\_\+method}}
+\index{text\+\_\+method@{text\+\_\+method}!domini\+::folders\+::\+Ctrl\+\_\+\+Folder\+File@{domini\+::folders\+::\+Ctrl\+\_\+\+Folder\+File}}
+\subsubsection{\texorpdfstring{text\+\_\+method}{text\_method}}
+{\footnotesize\ttfamily String domini.\+folders.\+Ctrl\+\_\+\+Folder\+File.\+text\+\_\+method\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+src/domini/folders/\hyperlink{Ctrl__FolderFile_8java}{Ctrl\+\_\+\+Folder\+File.\+java}\end{DoxyCompactItemize}
