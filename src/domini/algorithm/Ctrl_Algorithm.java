@@ -51,7 +51,7 @@ public class Ctrl_Algorithm {
     }
     
 
-    public void Encode(String path_in, String method, Integer img_quality) {
+    public void Encode(String path_in, String method, Double img_quality) {
         
         if (method == null)
             throw new IllegalArgumentException("no s'ha especificat el metode de compressió");
@@ -72,7 +72,7 @@ public class Ctrl_Algorithm {
             alg = new JPEG(false);
             if (img_quality == null) 
                 throw new IllegalArgumentException("no s'ha especificat la qualitat de compressió de la imatge");
-            ((JPEG)alg).resetQuality((int)img_quality);
+            ((JPEG)alg).resetQuality((int)(double)img_quality);
         }
         else {
             throw new IllegalArgumentException(method+" no es correspon a cap dels algorismes.");

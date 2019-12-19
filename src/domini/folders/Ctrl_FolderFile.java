@@ -231,7 +231,7 @@ public class Ctrl_FolderFile {
         else {
             method = text_method;
         }
-        CAlg.Encode(path, method, (int)(double)img_quality);
+        CAlg.Encode(path, method, img_quality);
         out.endSubfile();
     }
 

@@ -66,7 +66,7 @@ public class Driver__Ctrl_Algorithm {
 					String[] aux = reader.readLine().trim().split(" ");
 					String Path = aux[0];
 					String method = aux[1];
-					Integer img_quality = Integer.parseInt(aux[2]);
+					Double img_quality = Double.parseDouble(aux[2]);
 					ctrl_algorithm.Encode(Path, method, img_quality);
 				break;
 				case "3":
