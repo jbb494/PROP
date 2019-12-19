@@ -1,0 +1,13 @@
+-Clase ArrayCircular.java: Estructura de datos siendo una array con politica circular.
+-Clase BinTree.java: Estructura de datos, siendo un arbol binario.
+-Clase byteToConversion.java: Diferentes tipos de conversiones de byte a, por ejemplo, int, char, ...
+-Clase Dict_Decode.java: Clase para descomprimir LZW.
+-Clase Dict_Encode.java: Clase para comprimir LZW.
+-Clase FileNames.java: Nombre del fichero/carpeta con extension o sin extension.
+-Clase IntorByte.java: Contiene la unidad minima de descompresion para el algoritmo LZSS.
+-Clase Node.java: Representa un nodo.
+-Clase Pair.java: Representa la clase pair tipica del lenguaje C++.
+-Clase Trie.java: Estructura de datos usada para comprimir el algoritmo LZ78.
+-Clase TrieNode.java: Nodo de la estructura de datos Trie.
+
+Los archivos restantes son los drivers de las respectivas clases.
