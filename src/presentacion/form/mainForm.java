@@ -475,6 +475,8 @@ public class mainForm extends JFrame {
 
 /** @class mainForm
  *  @brief Clase del form principal de la interfíçicie gráfica
+ * @file
+
  *
  *  En esta clase se trata el form principal.
  *

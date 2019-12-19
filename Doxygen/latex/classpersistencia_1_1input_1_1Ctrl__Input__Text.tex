@@ -16,8 +16,13 @@ Inheritance diagram for persistencia.\+input.\+Ctrl\+\_\+\+Input\+\_\+\+Text\+:\
 \end{figure}
 
 
-Collaboration diagram for persistencia.\+input.\+Ctrl\+\_\+\+Input\+\_\+\+Text\+:
-% FIG 0
+Collaboration diagram for persistencia.\+input.\+Ctrl\+\_\+\+Input\+\_\+\+Text\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=227pt]{classpersistencia_1_1input_1_1Ctrl__Input__Text__coll__graph}
+\end{center}
+\end{figure}
 \subsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
@@ -38,11 +43,6 @@ byte \hyperlink{classpersistencia_1_1input_1_1Ctrl__Input__Text_a533e9e049777411
 \subsection{Detailed Description}
 Classe de \hyperlink{classpersistencia_1_1input_1_1Ctrl__Input__Text}{Ctrl\+\_\+\+Input\+\_\+\+Text}. 
 
-\begin{DoxyAuthor}{Author}
-Miguel Paracuellos 
-\end{DoxyAuthor}
-
-
 \subsection{Constructor \& Destructor Documentation}
 \mbox{\Hypertarget{classpersistencia_1_1input_1_1Ctrl__Input__Text_a945833e6bb2bb3fbdb328ae01392410f}\label{classpersistencia_1_1input_1_1Ctrl__Input__Text_a945833e6bb2bb3fbdb328ae01392410f}} 
 \index{persistencia\+::input\+::\+Ctrl\+\_\+\+Input\+\_\+\+Text@{persistencia\+::input\+::\+Ctrl\+\_\+\+Input\+\_\+\+Text}!Ctrl\+\_\+\+Input\+\_\+\+Text@{Ctrl\+\_\+\+Input\+\_\+\+Text}}
@@ -61,10 +61,10 @@ Constructor de la classe.
 \end{DoxyParams}
 
 \begin{DoxyCode}
-19                                         \{
-20         super(path);
-21         \hyperlink{classpersistencia_1_1input_1_1Ctrl__Input__Text_a533e9e0497774114b57d8dd5a6bbb000}{seguent} = Input.getInstance().getBits(8);
-22     \}
+21                                         \{
+22         super(path);
+23         \hyperlink{classpersistencia_1_1input_1_1Ctrl__Input__Text_a533e9e0497774114b57d8dd5a6bbb000}{seguent} = Input.getInstance().getBits(8);
+24     \}
 \end{DoxyCode}
 \mbox{\Hypertarget{classpersistencia_1_1input_1_1Ctrl__Input__Text_a91bc7bb52bcc996d89134892d5b48523}\label{classpersistencia_1_1input_1_1Ctrl__Input__Text_a91bc7bb52bcc996d89134892d5b48523}} 
 \index{persistencia\+::input\+::\+Ctrl\+\_\+\+Input\+\_\+\+Text@{persistencia\+::input\+::\+Ctrl\+\_\+\+Input\+\_\+\+Text}!Ctrl\+\_\+\+Input\+\_\+\+Text@{Ctrl\+\_\+\+Input\+\_\+\+Text}}
@@ -81,10 +81,10 @@ Continua llegint l\textquotesingle{}arxiu que s\textquotesingle{}estava llegint
 \end{DoxyNote}
 
 \begin{DoxyCode}
-28                              \{
-29         super();
-30         \hyperlink{classpersistencia_1_1input_1_1Ctrl__Input__Text_a533e9e0497774114b57d8dd5a6bbb000}{seguent} = Input.getInstance().getBits(8);
-31     \}
+30                              \{
+31         super();
+32         \hyperlink{classpersistencia_1_1input_1_1Ctrl__Input__Text_a533e9e0497774114b57d8dd5a6bbb000}{seguent} = Input.getInstance().getBits(8);
+33     \}
 \end{DoxyCode}
 
 
@@ -107,11 +107,11 @@ Retorna el proxim byte de l\textquotesingle{}arxiu, en el cas de que no haguem a
 \end{DoxyReturn}
 
 \begin{DoxyCode}
-39                       \{
-40         byte actual = \hyperlink{classpersistencia_1_1input_1_1Ctrl__Input__Text_a533e9e0497774114b57d8dd5a6bbb000}{seguent};
-41         \hyperlink{classpersistencia_1_1input_1_1Ctrl__Input__Text_a533e9e0497774114b57d8dd5a6bbb000}{seguent} = Input.getInstance().getBits(8); 
-42         \textcolor{keywordflow}{return} actual;
-43     \}
+41                       \{
+42         byte actual = \hyperlink{classpersistencia_1_1input_1_1Ctrl__Input__Text_a533e9e0497774114b57d8dd5a6bbb000}{seguent};
+43         \hyperlink{classpersistencia_1_1input_1_1Ctrl__Input__Text_a533e9e0497774114b57d8dd5a6bbb000}{seguent} = Input.getInstance().getBits(8); 
+44         \textcolor{keywordflow}{return} actual;
+45     \}
 \end{DoxyCode}
 
 

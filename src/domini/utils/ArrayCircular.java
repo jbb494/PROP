@@ -122,8 +122,9 @@ public class ArrayCircular {
     }
 }
 
-/** @class ArrayCircular 
+/** @class ArrayCircular
  *  @brief Aquesta és la classe per a estructura de dades del algoritme LZSS.
+  * @file
  *   
  *  Aquesta classe tracta d'utilitzar un vector amb política circular.
  * 

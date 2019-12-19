@@ -12,6 +12,8 @@ import domini.utils.BinTree;
 /**
  * @class Huffman
  * @brief Codificació Huffman
+ * @file
+
  * 
  * Aquesta classe codifica enters mitjançant Huffman.
  * Té dos modes: l'automàtic (codifica mitjançant una taula de huffman per defecte) 

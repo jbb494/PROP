@@ -11,8 +11,13 @@ Inheritance diagram for domini.\+algorithm.\+L\+Z78\+:
 % FIG 0
 
 
-Collaboration diagram for domini.\+algorithm.\+L\+Z78\+:
-% FIG 1
+Collaboration diagram for domini.\+algorithm.\+L\+Z78\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=211pt]{classdomini_1_1algorithm_1_1LZ78__coll__graph}
+\end{center}
+\end{figure}
 \subsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
@@ -29,13 +34,6 @@ void \hyperlink{classdomini_1_1algorithm_1_1LZ78_a0872cb8224ffd478b992490df06f6e
 
 \subsection{Detailed Description}
 Compressió i descompressió pel mètode \hyperlink{classdomini_1_1algorithm_1_1LZ78}{L\+Z78}. 
-
-Aquest algoritme de compresió es basa en utilitzar una estructura de dades (Trie en el meu cas), per guardar seqüencies de bytes i fer referència a aquestes seqüències amb punters al Trie.
-
-\begin{DoxyAuthor}{Author}
-Joan Bellavista Bartroli 
-\end{DoxyAuthor}
-
 
 \subsection{Constructor \& Destructor Documentation}
 \mbox{\Hypertarget{classdomini_1_1algorithm_1_1LZ78_a89c121da8ae75e24f1cf0d06530d0b89}\label{classdomini_1_1algorithm_1_1LZ78_a89c121da8ae75e24f1cf0d06530d0b89}} 
@@ -57,12 +55,12 @@ Constructor de la classe.
 \end{DoxyParams}
 
 \begin{DoxyCode}
-26                                         \{
-27         super(path, b);
-28         \textcolor{keywordflow}{if} (!b) \{
-29             \hyperlink{classdomini_1_1algorithm_1_1Algorithm_a4de9955411c656325adc391ef570c082}{Output}.\hyperlink{classpersistencia_1_1output_1_1Ctrl__Output_ae6d6857910a023982900ddc857b891f0}{addMetadata}(\textcolor{stringliteral}{"lz78"});
-30         \}
-31     \}
+27                                         \{
+28         super(path, b);
+29         \textcolor{keywordflow}{if} (!b) \{
+30             \hyperlink{classdomini_1_1algorithm_1_1Algorithm_a4de9955411c656325adc391ef570c082}{Output}.\hyperlink{classpersistencia_1_1output_1_1Ctrl__Output_ae6d6857910a023982900ddc857b891f0}{addMetadata}(\textcolor{stringliteral}{"lz78"});
+31         \}
+32     \}
 \end{DoxyCode}
 \mbox{\Hypertarget{classdomini_1_1algorithm_1_1LZ78_abdeba774404b53d266e9fbe4aa35f757}\label{classdomini_1_1algorithm_1_1LZ78_abdeba774404b53d266e9fbe4aa35f757}} 
 \index{domini\+::algorithm\+::\+L\+Z78@{domini\+::algorithm\+::\+L\+Z78}!L\+Z78@{L\+Z78}}
@@ -84,12 +82,12 @@ Es continua escrivint al fitxer que s\textquotesingle{}estava escrivint
 \end{DoxyNote}
 
 \begin{DoxyCode}
-38                            \{
-39         super(b);
-40         \textcolor{keywordflow}{if} (!b) \{
-41             \hyperlink{classdomini_1_1algorithm_1_1Algorithm_a4de9955411c656325adc391ef570c082}{Output}.\hyperlink{classpersistencia_1_1output_1_1Ctrl__Output_ae6d6857910a023982900ddc857b891f0}{addMetadata}(\textcolor{stringliteral}{"lz78"});
-42         \}
-43     \}
+39                            \{
+40         super(b);
+41         \textcolor{keywordflow}{if} (!b) \{
+42             \hyperlink{classdomini_1_1algorithm_1_1Algorithm_a4de9955411c656325adc391ef570c082}{Output}.\hyperlink{classpersistencia_1_1output_1_1Ctrl__Output_ae6d6857910a023982900ddc857b891f0}{addMetadata}(\textcolor{stringliteral}{"lz78"});
+43         \}
+44     \}
 \end{DoxyCode}
 
 
@@ -106,48 +104,48 @@ Comprimim un text amb l\textquotesingle{}algoritme \hyperlink{classdomini_1_1alg
 
 
 \begin{DoxyCode}
-50                              \{
-51 
-52         \hyperlink{classdomini_1_1algorithm_1_1Algorithm_a070b7e7dcc453b03751d265beae5306c}{checkCompressor}();
-53         \hyperlink{classpersistencia_1_1input_1_1Ctrl__Input__Text}{Ctrl\_Input\_Text} in = \textcolor{keyword}{new} \hyperlink{classpersistencia_1_1input_1_1Ctrl__Input__Text}{Ctrl\_Input\_Text}();
-54 
-55         \hyperlink{classdomini_1_1utils_1_1Trie}{Trie<Byte>} map = \textcolor{keyword}{new} \hyperlink{classdomini_1_1utils_1_1Trie}{Trie<Byte>}();
-56         Byte nextByte;  
-57         ArrayList<Byte> seq = \textcolor{keyword}{new} ArrayList<Byte>();
-58         Integer punterMap = 0;
-59         \textcolor{keywordflow}{while}(!in.\hyperlink{classpersistencia_1_1input_1_1Ctrl__Input_a5a94d207dce0fd592b5ac17f55154d4f}{finished}()) \{
-60             nextByte = in.\hyperlink{classpersistencia_1_1input_1_1Ctrl__Input__Text_a8b501ae723f8c6f8d63305a56e9720c3}{get}();
-61             ArrayList<Byte> novaEntrada = \textcolor{keyword}{new} ArrayList<Byte> ();
-62             novaEntrada.addAll(seq);
-63             novaEntrada.add(nextByte);
-64             \textcolor{keywordflow}{if}(map.\hyperlink{classdomini_1_1utils_1_1Trie_a5c30e36df9ab804bbc054805358ecf2a}{indexNode}(novaEntrada) != -1) \{
-65                 \textcolor{keywordflow}{if}(in.\hyperlink{classpersistencia_1_1input_1_1Ctrl__Input_a5a94d207dce0fd592b5ac17f55154d4f}{finished}())\{
-66                     Integer punterActual = map.\hyperlink{classdomini_1_1utils_1_1Trie_a5c30e36df9ab804bbc054805358ecf2a}{indexNode}(seq) +1;
-67                     \hyperlink{classdomini_1_1algorithm_1_1Algorithm_a4de9955411c656325adc391ef570c082}{Output}.\hyperlink{classpersistencia_1_1output_1_1Ctrl__Output_a8c5aa5a6acb5259faeb1c05c71ddd21c}{add}((Integer)punterActual, 32);
-68                     \hyperlink{classdomini_1_1algorithm_1_1Algorithm_a4de9955411c656325adc391ef570c082}{Output}.\hyperlink{classpersistencia_1_1output_1_1Ctrl__Output_a8c5aa5a6acb5259faeb1c05c71ddd21c}{add}(nextByte, 8);   
-69                     \textcolor{keywordflow}{return};
-70                 \}
-71                 seq.add(nextByte);
-72             \}\textcolor{keywordflow}{else}
-73             \{                                   
-74                 \textcolor{keywordflow}{if}(seq.size() >= 1)\{
-75                     Integer punterActual = map.\hyperlink{classdomini_1_1utils_1_1Trie_a5c30e36df9ab804bbc054805358ecf2a}{indexNode}(seq) +1;
-76                     
-77                     \hyperlink{classdomini_1_1algorithm_1_1Algorithm_a4de9955411c656325adc391ef570c082}{Output}.\hyperlink{classpersistencia_1_1output_1_1Ctrl__Output_a8c5aa5a6acb5259faeb1c05c71ddd21c}{add}((Integer)punterActual, 32);
-78 
-79                 \}\textcolor{keywordflow}{else}\{
-80                     \hyperlink{classdomini_1_1algorithm_1_1Algorithm_a4de9955411c656325adc391ef570c082}{Output}.\hyperlink{classpersistencia_1_1output_1_1Ctrl__Output_a8c5aa5a6acb5259faeb1c05c71ddd21c}{add}((Integer)0, 32);
-81                 \}
-82                 
-83                 \hyperlink{classdomini_1_1algorithm_1_1Algorithm_a4de9955411c656325adc391ef570c082}{Output}.\hyperlink{classpersistencia_1_1output_1_1Ctrl__Output_a8c5aa5a6acb5259faeb1c05c71ddd21c}{add}(nextByte, 8);
-84 
-85                 map.\hyperlink{classdomini_1_1utils_1_1Trie_a3599001d9b056f0b54ab7eabb9d3510b}{insert}(novaEntrada, punterMap);
-86 
-87                 seq = \textcolor{keyword}{new} ArrayList<Byte>();
-88                 punterMap++;
-89             \}
-90         \}
-91     \}
+51                              \{
+52 
+53         \hyperlink{classdomini_1_1algorithm_1_1Algorithm_a070b7e7dcc453b03751d265beae5306c}{checkCompressor}();
+54         \hyperlink{classpersistencia_1_1input_1_1Ctrl__Input__Text}{Ctrl\_Input\_Text} in = \textcolor{keyword}{new} \hyperlink{classpersistencia_1_1input_1_1Ctrl__Input__Text}{Ctrl\_Input\_Text}();
+55 
+56         \hyperlink{classdomini_1_1utils_1_1Trie}{Trie<Byte>} map = \textcolor{keyword}{new} \hyperlink{classdomini_1_1utils_1_1Trie}{Trie<Byte>}();
+57         Byte nextByte;  
+58         ArrayList<Byte> seq = \textcolor{keyword}{new} ArrayList<Byte>();
+59         Integer punterMap = 0;
+60         \textcolor{keywordflow}{while}(!in.\hyperlink{classpersistencia_1_1input_1_1Ctrl__Input_a5a94d207dce0fd592b5ac17f55154d4f}{finished}()) \{
+61             nextByte = in.\hyperlink{classpersistencia_1_1input_1_1Ctrl__Input__Text_a8b501ae723f8c6f8d63305a56e9720c3}{get}();
+62             ArrayList<Byte> novaEntrada = \textcolor{keyword}{new} ArrayList<Byte> ();
+63             novaEntrada.addAll(seq);
+64             novaEntrada.add(nextByte);
+65             \textcolor{keywordflow}{if}(map.\hyperlink{classdomini_1_1utils_1_1Trie_a5c30e36df9ab804bbc054805358ecf2a}{indexNode}(novaEntrada) != -1) \{
+66                 \textcolor{keywordflow}{if}(in.\hyperlink{classpersistencia_1_1input_1_1Ctrl__Input_a5a94d207dce0fd592b5ac17f55154d4f}{finished}())\{
+67                     Integer punterActual = map.\hyperlink{classdomini_1_1utils_1_1Trie_a5c30e36df9ab804bbc054805358ecf2a}{indexNode}(seq) +1;
+68                     \hyperlink{classdomini_1_1algorithm_1_1Algorithm_a4de9955411c656325adc391ef570c082}{Output}.\hyperlink{classpersistencia_1_1output_1_1Ctrl__Output_a8c5aa5a6acb5259faeb1c05c71ddd21c}{add}((Integer)punterActual, 32);
+69                     \hyperlink{classdomini_1_1algorithm_1_1Algorithm_a4de9955411c656325adc391ef570c082}{Output}.\hyperlink{classpersistencia_1_1output_1_1Ctrl__Output_a8c5aa5a6acb5259faeb1c05c71ddd21c}{add}(nextByte, 8);   
+70                     \textcolor{keywordflow}{return};
+71                 \}
+72                 seq.add(nextByte);
+73             \}\textcolor{keywordflow}{else}
+74             \{                                   
+75                 \textcolor{keywordflow}{if}(seq.size() >= 1)\{
+76                     Integer punterActual = map.\hyperlink{classdomini_1_1utils_1_1Trie_a5c30e36df9ab804bbc054805358ecf2a}{indexNode}(seq) +1;
+77                     
+78                     \hyperlink{classdomini_1_1algorithm_1_1Algorithm_a4de9955411c656325adc391ef570c082}{Output}.\hyperlink{classpersistencia_1_1output_1_1Ctrl__Output_a8c5aa5a6acb5259faeb1c05c71ddd21c}{add}((Integer)punterActual, 32);
+79 
+80                 \}\textcolor{keywordflow}{else}\{
+81                     \hyperlink{classdomini_1_1algorithm_1_1Algorithm_a4de9955411c656325adc391ef570c082}{Output}.\hyperlink{classpersistencia_1_1output_1_1Ctrl__Output_a8c5aa5a6acb5259faeb1c05c71ddd21c}{add}((Integer)0, 32);
+82                 \}
+83                 
+84                 \hyperlink{classdomini_1_1algorithm_1_1Algorithm_a4de9955411c656325adc391ef570c082}{Output}.\hyperlink{classpersistencia_1_1output_1_1Ctrl__Output_a8c5aa5a6acb5259faeb1c05c71ddd21c}{add}(nextByte, 8);
+85 
+86                 map.\hyperlink{classdomini_1_1utils_1_1Trie_a3599001d9b056f0b54ab7eabb9d3510b}{insert}(novaEntrada, punterMap);
+87 
+88                 seq = \textcolor{keyword}{new} ArrayList<Byte>();
+89                 punterMap++;
+90             \}
+91         \}
+92     \}
 \end{DoxyCode}
 \mbox{\Hypertarget{classdomini_1_1algorithm_1_1LZ78_a0872cb8224ffd478b992490df06f6ecf}\label{classdomini_1_1algorithm_1_1LZ78_a0872cb8224ffd478b992490df06f6ecf}} 
 \index{domini\+::algorithm\+::\+L\+Z78@{domini\+::algorithm\+::\+L\+Z78}!Decompressor@{Decompressor}}
@@ -161,24 +159,24 @@ Descomprimim un fitxer amb l\textquotesingle{}algoritme \hyperlink{classdomini_1
 
 
 \begin{DoxyCode}
-97                                \{
-98 
-99         \hyperlink{classdomini_1_1algorithm_1_1Algorithm_a6b738342cc7169893fa60d593f5a13db}{checkDecompressor}();
-100         \hyperlink{classpersistencia_1_1input_1_1Ctrl__Input__LZ78}{Ctrl\_Input\_LZ78} in = \textcolor{keyword}{new} \hyperlink{classpersistencia_1_1input_1_1Ctrl__Input__LZ78}{Ctrl\_Input\_LZ78}();
-101 
-102         \hyperlink{classdomini_1_1utils_1_1Dict__Decode}{Dict\_Decode} map = \textcolor{keyword}{new} \hyperlink{classdomini_1_1utils_1_1Dict__Decode}{Dict\_Decode}(\textcolor{keyword}{false}, 0);
-103         \textcolor{keywordflow}{while}(!in.\hyperlink{classpersistencia_1_1input_1_1Ctrl__Input_a5a94d207dce0fd592b5ac17f55154d4f}{finished}()) \{
-104             \hyperlink{classdomini_1_1utils_1_1Pair}{Pair <Integer, Byte>} entr = in.\hyperlink{classpersistencia_1_1input_1_1Ctrl__Input__LZ78_ae09535962f284be3a76369845c15b78c}{get}();
-105             \textcolor{keywordflow}{if}(in.\hyperlink{classpersistencia_1_1input_1_1Ctrl__Input_a5a94d207dce0fd592b5ac17f55154d4f}{finished}()) \textcolor{keywordflow}{return};
-106             Integer punterMap = entr.\hyperlink{classdomini_1_1utils_1_1Pair_a9439fbd8488cb1fbf00c57f15f093c4b}{getLeft}();
-107             Byte nextByte = entr.\hyperlink{classdomini_1_1utils_1_1Pair_a0dca94eb1a43952258bebe1dca4c84e9}{getRight}();
-108 
-109             ArrayList<Byte> seqPunterMap = map.\hyperlink{classdomini_1_1utils_1_1Dict__Decode_a0f6457460aefe9df50f0cad48f58feee}{getWord}(punterMap);
-110             seqPunterMap.add(nextByte);
-111             map.\hyperlink{classdomini_1_1utils_1_1Dict__Decode_a077011e4507db308d143ea9b7146abb9}{add}(punterMap, nextByte);
-112             \hyperlink{classdomini_1_1algorithm_1_1Algorithm_a4de9955411c656325adc391ef570c082}{Output}.\hyperlink{classpersistencia_1_1output_1_1Ctrl__Output_a8c5aa5a6acb5259faeb1c05c71ddd21c}{add}(seqPunterMap);
-113         \}
-114     \}
+98                                \{
+99 
+100         \hyperlink{classdomini_1_1algorithm_1_1Algorithm_a6b738342cc7169893fa60d593f5a13db}{checkDecompressor}();
+101         \hyperlink{classpersistencia_1_1input_1_1Ctrl__Input__LZ78}{Ctrl\_Input\_LZ78} in = \textcolor{keyword}{new} \hyperlink{classpersistencia_1_1input_1_1Ctrl__Input__LZ78}{Ctrl\_Input\_LZ78}();
+102 
+103         \hyperlink{classdomini_1_1utils_1_1Dict__Decode}{Dict\_Decode} map = \textcolor{keyword}{new} \hyperlink{classdomini_1_1utils_1_1Dict__Decode}{Dict\_Decode}(\textcolor{keyword}{false}, 0);
+104         \textcolor{keywordflow}{while}(!in.\hyperlink{classpersistencia_1_1input_1_1Ctrl__Input_a5a94d207dce0fd592b5ac17f55154d4f}{finished}()) \{
+105             \hyperlink{classdomini_1_1utils_1_1Pair}{Pair <Integer, Byte>} entr = in.\hyperlink{classpersistencia_1_1input_1_1Ctrl__Input__LZ78_ae09535962f284be3a76369845c15b78c}{get}();
+106             \textcolor{keywordflow}{if}(in.\hyperlink{classpersistencia_1_1input_1_1Ctrl__Input_a5a94d207dce0fd592b5ac17f55154d4f}{finished}()) \textcolor{keywordflow}{return};
+107             Integer punterMap = entr.\hyperlink{classdomini_1_1utils_1_1Pair_a9439fbd8488cb1fbf00c57f15f093c4b}{getLeft}();
+108             Byte nextByte = entr.\hyperlink{classdomini_1_1utils_1_1Pair_a0dca94eb1a43952258bebe1dca4c84e9}{getRight}();
+109 
+110             ArrayList<Byte> seqPunterMap = map.\hyperlink{classdomini_1_1utils_1_1Dict__Decode_a0f6457460aefe9df50f0cad48f58feee}{getWord}(punterMap);
+111             seqPunterMap.add(nextByte);
+112             map.\hyperlink{classdomini_1_1utils_1_1Dict__Decode_a077011e4507db308d143ea9b7146abb9}{add}(punterMap, nextByte);
+113             \hyperlink{classdomini_1_1algorithm_1_1Algorithm_a4de9955411c656325adc391ef570c082}{Output}.\hyperlink{classpersistencia_1_1output_1_1Ctrl__Output_a8c5aa5a6acb5259faeb1c05c71ddd21c}{add}(seqPunterMap);
+114         \}
+115     \}
 \end{DoxyCode}
 
 

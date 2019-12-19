@@ -90,5 +90,11 @@ public class Ctrl_Presentacio {
     {
         return type;
     }
-
 }
+
+/** @class Ctrl_Presentacio
+ *  @brief Clase Ctrl_Presentacio
+ * @file
+ *
+ *  @author Joan Bellavista
+ */

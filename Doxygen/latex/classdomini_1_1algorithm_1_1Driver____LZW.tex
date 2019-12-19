@@ -22,11 +22,6 @@ static void \hyperlink{classdomini_1_1algorithm_1_1Driver____LZW_a3f609a2c3a22d0
 \subsection{Detailed Description}
 Driver de \hyperlink{classdomini_1_1algorithm_1_1LZW}{L\+ZW}. 
 
-\begin{DoxyAuthor}{Author}
-Joan Bellavista Bartroli 
-\end{DoxyAuthor}
-
-
 \subsection{Member Function Documentation}
 \mbox{\Hypertarget{classdomini_1_1algorithm_1_1Driver____LZW_a3f609a2c3a22d0c7d11a5ff4e015e433}\label{classdomini_1_1algorithm_1_1Driver____LZW_a3f609a2c3a22d0c7d11a5ff4e015e433}} 
 \index{domini\+::algorithm\+::\+Driver\+\_\+\+\_\+\+L\+ZW@{domini\+::algorithm\+::\+Driver\+\_\+\+\_\+\+L\+ZW}!comprovar\+Excepcions@{comprovar\+Excepcions}}
@@ -47,12 +42,12 @@ Comprovarà les possibles excepcions que puguin apareixer a la classe.
 \end{DoxyParams}
 
 \begin{DoxyCode}
-44                                                                   \{
-45         \textcolor{keywordtype}{int} op = Integer.parseInt(linea);
-46         \textcolor{keywordflow}{if}(lzw == null && op > 1) \{
-47             \textcolor{keywordflow}{throw} \textcolor{keyword}{new} IllegalArgumentException(\textcolor{stringliteral}{"Debes llamar al constructor antes"});
-48         \}
-49     \}
+45                                                                   \{
+46         \textcolor{keywordtype}{int} op = Integer.parseInt(linea);
+47         \textcolor{keywordflow}{if}(lzw == null && op > 1) \{
+48             \textcolor{keywordflow}{throw} \textcolor{keyword}{new} IllegalArgumentException(\textcolor{stringliteral}{"Debes llamar al constructor antes"});
+49         \}
+50     \}
 \end{DoxyCode}
 \mbox{\Hypertarget{classdomini_1_1algorithm_1_1Driver____LZW_a1500b5c33b09cbaad4645f6d87eecc4c}\label{classdomini_1_1algorithm_1_1Driver____LZW_a1500b5c33b09cbaad4645f6d87eecc4c}} 
 \index{domini\+::algorithm\+::\+Driver\+\_\+\+\_\+\+L\+ZW@{domini\+::algorithm\+::\+Driver\+\_\+\+\_\+\+L\+ZW}!main@{main}}
@@ -62,59 +57,59 @@ Comprovarà les possibles excepcions que puguin apareixer a la classe.
 
 
 \begin{DoxyCode}
-51                                            \{
-52     \textcolor{keywordflow}{try} \{
-53         LZW lzw = null;
-54         \hyperlink{classdomini_1_1algorithm_1_1Driver____LZW_ad43ebe1afd0d4e5be51584c71a1789d2}{showOptions}();
-55         BufferedReader reader = \textcolor{keyword}{new} BufferedReader(\textcolor{keyword}{new} InputStreamReader(System.in));
-56         String linea = \textcolor{stringliteral}{""};
-57         \textcolor{keywordflow}{while}(linea != null)\{
-58             System.out.println(\textcolor{stringliteral}{"Selecciona una opción:"});
-59             linea = reader.readLine().trim();
-60             System.out.println(\textcolor{stringliteral}{"Opción: "} + linea + \textcolor{stringliteral}{" seleccionada"});
-61             \hyperlink{classdomini_1_1algorithm_1_1Driver____LZW_a3f609a2c3a22d0c7d11a5ff4e015e433}{comprovarExcepcions}(lzw, linea);
-62             \textcolor{keywordflow}{switch}(linea)\{
-63                 \textcolor{keywordflow}{case} \textcolor{stringliteral}{"1"}:
-64                     System.out.println(\textcolor{stringliteral}{"escribe el path del archivo \(\backslash\)"out\(\backslash\)" separado por espacios. Luego
+52                                            \{
+53     \textcolor{keywordflow}{try} \{
+54         LZW lzw = null;
+55         \hyperlink{classdomini_1_1algorithm_1_1Driver____LZW_ad43ebe1afd0d4e5be51584c71a1789d2}{showOptions}();
+56         BufferedReader reader = \textcolor{keyword}{new} BufferedReader(\textcolor{keyword}{new} InputStreamReader(System.in));
+57         String linea = \textcolor{stringliteral}{""};
+58         \textcolor{keywordflow}{while}(linea != null)\{
+59             System.out.println(\textcolor{stringliteral}{"Selecciona una opción:"});
+60             linea = reader.readLine().trim();
+61             System.out.println(\textcolor{stringliteral}{"Opción: "} + linea + \textcolor{stringliteral}{" seleccionada"});
+62             \hyperlink{classdomini_1_1algorithm_1_1Driver____LZW_a3f609a2c3a22d0c7d11a5ff4e015e433}{comprovarExcepcions}(lzw, linea);
+63             \textcolor{keywordflow}{switch}(linea)\{
+64                 \textcolor{keywordflow}{case} \textcolor{stringliteral}{"1"}:
+65                     System.out.println(\textcolor{stringliteral}{"escribe el path del archivo \(\backslash\)"out\(\backslash\)" separado por espacios. Luego
        escribe \(\backslash\)"true\(\backslash\)" si quieres descomprimir o \(\backslash\)"false\(\backslash\)" si quieres comprimir."});
-65                     String[] aux1 = reader.readLine().trim().split(\textcolor{stringliteral}{" "});
-66                     String aux = aux1[0];
-67                     \textcolor{keywordtype}{boolean} b = aux1[1].equals(\textcolor{stringliteral}{"true"});
-68                     \textcolor{keywordflow}{if}(!b && !aux1[1].equals(\textcolor{stringliteral}{"false"}))\textcolor{keywordflow}{throw} \textcolor{keyword}{new} IllegalArgumentException(\textcolor{stringliteral}{"Entrada no valida
+66                     String[] aux1 = reader.readLine().trim().split(\textcolor{stringliteral}{" "});
+67                     String aux = aux1[0];
+68                     \textcolor{keywordtype}{boolean} b = aux1[1].equals(\textcolor{stringliteral}{"true"});
+69                     \textcolor{keywordflow}{if}(!b && !aux1[1].equals(\textcolor{stringliteral}{"false"}))\textcolor{keywordflow}{throw} \textcolor{keyword}{new} IllegalArgumentException(\textcolor{stringliteral}{"Entrada no valida
       "});
-69                     lzw = \textcolor{keyword}{new} LZW(aux, b);
-70                 \textcolor{keywordflow}{break};
-71                 \textcolor{keywordflow}{case} \textcolor{stringliteral}{"2"}:
-72                     System.out.println(\textcolor{stringliteral}{"escribe el path del archivo que quieres comprimir."});
-73                     String aux2 = reader.readLine().trim();
-74                     String path = aux2;
-75                     Ctrl\_Input.initialize(path);
-76                     lzw.Compressor();
-77                 \textcolor{keywordflow}{break};
-78                 \textcolor{keywordflow}{case} \textcolor{stringliteral}{"3"}:
-79                     System.out.println(\textcolor{stringliteral}{"escribe el path del archivo que quieres descomprimir"});
-80                     String aux3 = reader.readLine().trim();
-81                     path = aux3;
-82                     Ctrl\_Input in2 = \textcolor{keyword}{new} Ctrl\_Input(path);
-83                     System.out.println(\textcolor{stringliteral}{"La metadata del fitxer correspon al tipus "}+in2.getAlg());
-84                     lzw.Decompressor();
-85                 \textcolor{keywordflow}{break};
-86                 \textcolor{keywordflow}{case} \textcolor{stringliteral}{"4"}:
-87                     lzw.print();
-88                     \textcolor{comment}{//a.printString();}
-89                     \textcolor{comment}{// a.print();                   }
-90                 \textcolor{keywordflow}{break};
-91                 \textcolor{keywordflow}{case} \textcolor{stringliteral}{"0"}:
-92                     \textcolor{keywordflow}{return};
-93                 \textcolor{keywordflow}{default}:
-94                     System.out.println(\textcolor{stringliteral}{"La opción no es válida"});
-95                 \textcolor{keywordflow}{break};
-96             \}
-97         \}
-98     \}\textcolor{keywordflow}{catch} (Exception e) \{
-99         e.printStackTrace();
-100     \}
+70                     lzw = \textcolor{keyword}{new} LZW(aux, b);
+71                 \textcolor{keywordflow}{break};
+72                 \textcolor{keywordflow}{case} \textcolor{stringliteral}{"2"}:
+73                     System.out.println(\textcolor{stringliteral}{"escribe el path del archivo que quieres comprimir."});
+74                     String aux2 = reader.readLine().trim();
+75                     String path = aux2;
+76                     Ctrl\_Input.initialize(path);
+77                     lzw.Compressor();
+78                 \textcolor{keywordflow}{break};
+79                 \textcolor{keywordflow}{case} \textcolor{stringliteral}{"3"}:
+80                     System.out.println(\textcolor{stringliteral}{"escribe el path del archivo que quieres descomprimir"});
+81                     String aux3 = reader.readLine().trim();
+82                     path = aux3;
+83                     Ctrl\_Input in2 = \textcolor{keyword}{new} Ctrl\_Input(path);
+84                     System.out.println(\textcolor{stringliteral}{"La metadata del fitxer correspon al tipus "}+in2.getAlg());
+85                     lzw.Decompressor();
+86                 \textcolor{keywordflow}{break};
+87                 \textcolor{keywordflow}{case} \textcolor{stringliteral}{"4"}:
+88                     lzw.print();
+89                     \textcolor{comment}{//a.printString();}
+90                     \textcolor{comment}{// a.print();                   }
+91                 \textcolor{keywordflow}{break};
+92                 \textcolor{keywordflow}{case} \textcolor{stringliteral}{"0"}:
+93                     \textcolor{keywordflow}{return};
+94                 \textcolor{keywordflow}{default}:
+95                     System.out.println(\textcolor{stringliteral}{"La opción no es válida"});
+96                 \textcolor{keywordflow}{break};
+97             \}
+98         \}
+99     \}\textcolor{keywordflow}{catch} (Exception e) \{
+100         e.printStackTrace();
 101     \}
+102     \}
 \end{DoxyCode}
 \mbox{\Hypertarget{classdomini_1_1algorithm_1_1Driver____LZW_ad43ebe1afd0d4e5be51584c71a1789d2}\label{classdomini_1_1algorithm_1_1Driver____LZW_ad43ebe1afd0d4e5be51584c71a1789d2}} 
 \index{domini\+::algorithm\+::\+Driver\+\_\+\+\_\+\+L\+ZW@{domini\+::algorithm\+::\+Driver\+\_\+\+\_\+\+L\+ZW}!show\+Options@{show\+Options}}
@@ -128,25 +123,25 @@ Mostra les accions a realitzar durant l\textquotesingle{}execució
 
 
 \begin{DoxyCode}
-19                                      \{
-20         System.out.println(\textcolor{stringliteral}{"Driver de LZW"});
-21         System.out.println(\textcolor{stringliteral}{"Constructores: "});
-22         System.out.println(\textcolor{stringliteral}{"     1. LZW(String aux, boolean b)"});
-23         System.out.println(\textcolor{stringliteral}{"     Input: 1"});
-24 
-25         System.out.println(\textcolor{stringliteral}{"\(\backslash\)nFunciones: "});
-26         System.out.println(\textcolor{stringliteral}{"     2. Compressor() "});
-27         System.out.println(\textcolor{stringliteral}{"     Input: 2"});
-28         System.out.println(\textcolor{stringliteral}{"     3. Decompressor() "});
-29         System.out.println(\textcolor{stringliteral}{"     Input: 3"});
-30         System.out.println(\textcolor{stringliteral}{"     4. print() "});
-31         System.out.println(\textcolor{stringliteral}{"     Input: 4"});
-32         System.out.println();
-33 
-34         System.out.println(\textcolor{stringliteral}{"     0. Sortir"});
-35         System.out.println(\textcolor{stringliteral}{"     Input: 0"});
-36         System.out.println(\textcolor{stringliteral}{"----------------------------------------"});
-37     \}
+20                                      \{
+21         System.out.println(\textcolor{stringliteral}{"Driver de LZW"});
+22         System.out.println(\textcolor{stringliteral}{"Constructores: "});
+23         System.out.println(\textcolor{stringliteral}{"     1. LZW(String aux, boolean b)"});
+24         System.out.println(\textcolor{stringliteral}{"     Input: 1"});
+25 
+26         System.out.println(\textcolor{stringliteral}{"\(\backslash\)nFunciones: "});
+27         System.out.println(\textcolor{stringliteral}{"     2. Compressor() "});
+28         System.out.println(\textcolor{stringliteral}{"     Input: 2"});
+29         System.out.println(\textcolor{stringliteral}{"     3. Decompressor() "});
+30         System.out.println(\textcolor{stringliteral}{"     Input: 3"});
+31         System.out.println(\textcolor{stringliteral}{"     4. print() "});
+32         System.out.println(\textcolor{stringliteral}{"     Input: 4"});
+33         System.out.println();
+34 
+35         System.out.println(\textcolor{stringliteral}{"     0. Sortir"});
+36         System.out.println(\textcolor{stringliteral}{"     Input: 0"});
+37         System.out.println(\textcolor{stringliteral}{"----------------------------------------"});
+38     \}
 \end{DoxyCode}
 
 

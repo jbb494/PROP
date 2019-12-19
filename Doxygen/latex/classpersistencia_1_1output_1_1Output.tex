@@ -7,8 +7,13 @@ Classe \hyperlink{classpersistencia_1_1output_1_1Output}{Output}.
 
 
 
-Collaboration diagram for persistencia.\+output.\+Output\+:
-% FIG 0
+Collaboration diagram for persistencia.\+output.\+Output\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=211pt]{classpersistencia_1_1output_1_1Output__coll__graph}
+\end{center}
+\end{figure}
 \subsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
@@ -62,11 +67,6 @@ static \hyperlink{classpersistencia_1_1output_1_1Output}{Output} \hyperlink{clas
 \subsection{Detailed Description}
 Classe \hyperlink{classpersistencia_1_1output_1_1Output}{Output}. 
 
-\begin{DoxyAuthor}{Author}
-Manel Aguilar 
-\end{DoxyAuthor}
-
-
 \subsection{Constructor \& Destructor Documentation}
 \mbox{\Hypertarget{classpersistencia_1_1output_1_1Output_acbb70ea9eabb2a6d0b2d7bd2f3c9009a}\label{classpersistencia_1_1output_1_1Output_acbb70ea9eabb2a6d0b2d7bd2f3c9009a}} 
 \index{persistencia\+::output\+::\+Output@{persistencia\+::output\+::\+Output}!Output@{Output}}
@@ -85,20 +85,20 @@ Constructor de la classe.
 \end{DoxyParams}
 
 \begin{DoxyCode}
-72                                 \{
-73         \hyperlink{classpersistencia_1_1output_1_1Output_a3709182600423f7e57644ccdd0016f22}{Pos} = 0;
-74         this.\hyperlink{classpersistencia_1_1output_1_1Output_aebef717882f3bcc7080dec014c6714c9}{path} = \hyperlink{classpersistencia_1_1output_1_1Output_aebef717882f3bcc7080dec014c6714c9}{path};
-75         \hyperlink{classpersistencia_1_1output_1_1Output_aca83082ef84ec2e169b6fa34618d0773}{next\_byte} = 0;
-76 
-77         \hyperlink{classpersistencia_1_1output_1_1Output_ae8f22fd92b020c318f6f377cf3ac39de}{buff} = null;
-78         \textcolor{keywordflow}{try} \{
-79             System.out.println(\hyperlink{classpersistencia_1_1output_1_1Output_aebef717882f3bcc7080dec014c6714c9}{path});
-80             FileOutputStream fout = \textcolor{keyword}{new} FileOutputStream(\hyperlink{classpersistencia_1_1output_1_1Output_aebef717882f3bcc7080dec014c6714c9}{path});
-81             \hyperlink{classpersistencia_1_1output_1_1Output_ae8f22fd92b020c318f6f377cf3ac39de}{buff} = \textcolor{keyword}{new} BufferedOutputStream(fout);
-82         \} \textcolor{keywordflow}{catch} (FileNotFoundException e) \{
-83             e.printStackTrace();
-84         \}
-85     \}
+74                                 \{
+75         \hyperlink{classpersistencia_1_1output_1_1Output_a3709182600423f7e57644ccdd0016f22}{Pos} = 0;
+76         this.\hyperlink{classpersistencia_1_1output_1_1Output_aebef717882f3bcc7080dec014c6714c9}{path} = \hyperlink{classpersistencia_1_1output_1_1Output_aebef717882f3bcc7080dec014c6714c9}{path};
+77         \hyperlink{classpersistencia_1_1output_1_1Output_aca83082ef84ec2e169b6fa34618d0773}{next\_byte} = 0;
+78 
+79         \hyperlink{classpersistencia_1_1output_1_1Output_ae8f22fd92b020c318f6f377cf3ac39de}{buff} = null;
+80         \textcolor{keywordflow}{try} \{
+81             System.out.println(\hyperlink{classpersistencia_1_1output_1_1Output_aebef717882f3bcc7080dec014c6714c9}{path});
+82             FileOutputStream fout = \textcolor{keyword}{new} FileOutputStream(\hyperlink{classpersistencia_1_1output_1_1Output_aebef717882f3bcc7080dec014c6714c9}{path});
+83             \hyperlink{classpersistencia_1_1output_1_1Output_ae8f22fd92b020c318f6f377cf3ac39de}{buff} = \textcolor{keyword}{new} BufferedOutputStream(fout);
+84         \} \textcolor{keywordflow}{catch} (FileNotFoundException e) \{
+85             e.printStackTrace();
+86         \}
+87     \}
 \end{DoxyCode}
 
 
@@ -125,34 +125,34 @@ Pre\+: 0 $<$= n\+\_\+bits $<$= 8
 \end{DoxyNote}
 
 \begin{DoxyCode}
-113     \{
-114         \textcolor{keywordflow}{if}(n\_bits != 0)
-115         \{
-116             byte aux;
-117             b = (byte)(b & ~(0xff << n\_bits)); \textcolor{comment}{//neteja dels els bits no vàlids a posicions altes}
-118             aux = (byte)(b << \hyperlink{classpersistencia_1_1output_1_1Output_a3709182600423f7e57644ccdd0016f22}{Pos});
-119             \hyperlink{classpersistencia_1_1output_1_1Output_aca83082ef84ec2e169b6fa34618d0773}{next\_byte} = (byte)(aux | \hyperlink{classpersistencia_1_1output_1_1Output_aca83082ef84ec2e169b6fa34618d0773}{next\_byte});
-120             
-121             \textcolor{keywordflow}{if} (\hyperlink{classpersistencia_1_1output_1_1Output_a3709182600423f7e57644ccdd0016f22}{Pos} + n\_bits > 8) 
-122             \{
-123                 \hyperlink{classpersistencia_1_1output_1_1Output_a57be8c4ed429f03caa5c2bcc97e2260d}{write}();
-124                 \textcolor{keywordtype}{int} restants = n\_bits - (8-\hyperlink{classpersistencia_1_1output_1_1Output_a3709182600423f7e57644ccdd0016f22}{Pos});
-125                 \textcolor{keywordtype}{int} despl = 8-\hyperlink{classpersistencia_1_1output_1_1Output_a3709182600423f7e57644ccdd0016f22}{Pos};
-126                 aux = byteToConversion.shift\_right\_logic(b, despl);
-127                 \hyperlink{classpersistencia_1_1output_1_1Output_a3709182600423f7e57644ccdd0016f22}{Pos} = 0;
-128                 \hyperlink{classpersistencia_1_1output_1_1Output_adc03a0dd7a94da21fe8432064a4eec09}{add}(aux, restants);
-129             \}
-130             \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (\hyperlink{classpersistencia_1_1output_1_1Output_a3709182600423f7e57644ccdd0016f22}{Pos} + n\_bits == 8) 
-131             \{
-132                 \hyperlink{classpersistencia_1_1output_1_1Output_a57be8c4ed429f03caa5c2bcc97e2260d}{write}();
-133                 \hyperlink{classpersistencia_1_1output_1_1Output_a3709182600423f7e57644ccdd0016f22}{Pos} = 0;
-134             \}
-135             \textcolor{keywordflow}{else} \textcolor{comment}{// Pos + n\_bits < 8}
-136             \{
-137                 \hyperlink{classpersistencia_1_1output_1_1Output_a3709182600423f7e57644ccdd0016f22}{Pos} += n\_bits;
-138             \}
-139         \}
-140     \}
+115     \{
+116         \textcolor{keywordflow}{if}(n\_bits != 0)
+117         \{
+118             byte aux;
+119             b = (byte)(b & ~(0xff << n\_bits)); \textcolor{comment}{//neteja dels els bits no vàlids a posicions altes}
+120             aux = (byte)(b << \hyperlink{classpersistencia_1_1output_1_1Output_a3709182600423f7e57644ccdd0016f22}{Pos});
+121             \hyperlink{classpersistencia_1_1output_1_1Output_aca83082ef84ec2e169b6fa34618d0773}{next\_byte} = (byte)(aux | \hyperlink{classpersistencia_1_1output_1_1Output_aca83082ef84ec2e169b6fa34618d0773}{next\_byte});
+122             
+123             \textcolor{keywordflow}{if} (\hyperlink{classpersistencia_1_1output_1_1Output_a3709182600423f7e57644ccdd0016f22}{Pos} + n\_bits > 8) 
+124             \{
+125                 \hyperlink{classpersistencia_1_1output_1_1Output_a57be8c4ed429f03caa5c2bcc97e2260d}{write}();
+126                 \textcolor{keywordtype}{int} restants = n\_bits - (8-\hyperlink{classpersistencia_1_1output_1_1Output_a3709182600423f7e57644ccdd0016f22}{Pos});
+127                 \textcolor{keywordtype}{int} despl = 8-\hyperlink{classpersistencia_1_1output_1_1Output_a3709182600423f7e57644ccdd0016f22}{Pos};
+128                 aux = byteToConversion.shift\_right\_logic(b, despl);
+129                 \hyperlink{classpersistencia_1_1output_1_1Output_a3709182600423f7e57644ccdd0016f22}{Pos} = 0;
+130                 \hyperlink{classpersistencia_1_1output_1_1Output_adc03a0dd7a94da21fe8432064a4eec09}{add}(aux, restants);
+131             \}
+132             \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (\hyperlink{classpersistencia_1_1output_1_1Output_a3709182600423f7e57644ccdd0016f22}{Pos} + n\_bits == 8) 
+133             \{
+134                 \hyperlink{classpersistencia_1_1output_1_1Output_a57be8c4ed429f03caa5c2bcc97e2260d}{write}();
+135                 \hyperlink{classpersistencia_1_1output_1_1Output_a3709182600423f7e57644ccdd0016f22}{Pos} = 0;
+136             \}
+137             \textcolor{keywordflow}{else} \textcolor{comment}{// Pos + n\_bits < 8}
+138             \{
+139                 \hyperlink{classpersistencia_1_1output_1_1Output_a3709182600423f7e57644ccdd0016f22}{Pos} += n\_bits;
+140             \}
+141         \}
+142     \}
 \end{DoxyCode}
 \mbox{\Hypertarget{classpersistencia_1_1output_1_1Output_a0882482880e36bf5dc9bd78bb36cec75}\label{classpersistencia_1_1output_1_1Output_a0882482880e36bf5dc9bd78bb36cec75}} 
 \index{persistencia\+::output\+::\+Output@{persistencia\+::output\+::\+Output}!get\+Instance@{get\+Instance}}
@@ -166,11 +166,11 @@ Retorna l\textquotesingle{}única instància de \hyperlink{classpersistencia_1_1
 
 
 \begin{DoxyCode}
-54                                        \{
-55         \textcolor{keywordflow}{if}(\hyperlink{classpersistencia_1_1output_1_1Output_aaadf14a03c4f3f585170abdc7524b63d}{instance} == null) \textcolor{keywordflow}{throw} \textcolor{keyword}{new} IllegalArgumentException(\textcolor{stringliteral}{"Output not initialized. You must
+56                                        \{
+57         \textcolor{keywordflow}{if}(\hyperlink{classpersistencia_1_1output_1_1Output_aaadf14a03c4f3f585170abdc7524b63d}{instance} == null) \textcolor{keywordflow}{throw} \textcolor{keyword}{new} IllegalArgumentException(\textcolor{stringliteral}{"Output not initialized. You must
        call initialize(String)"});
-56         \textcolor{keywordflow}{return} \hyperlink{classpersistencia_1_1output_1_1Output_aaadf14a03c4f3f585170abdc7524b63d}{instance};
-57     \}
+58         \textcolor{keywordflow}{return} \hyperlink{classpersistencia_1_1output_1_1Output_aaadf14a03c4f3f585170abdc7524b63d}{instance};
+59     \}
 \end{DoxyCode}
 \mbox{\Hypertarget{classpersistencia_1_1output_1_1Output_a646d510d52039785f485d42e675cdfee}\label{classpersistencia_1_1output_1_1Output_a646d510d52039785f485d42e675cdfee}} 
 \index{persistencia\+::output\+::\+Output@{persistencia\+::output\+::\+Output}!get\+Length@{get\+Length}}
@@ -183,9 +183,9 @@ el nombre de bytes escrits al fitxers
 \end{DoxyReturn}
 
 \begin{DoxyCode}
-178                             \{
-179         \textcolor{keywordflow}{return} \hyperlink{classpersistencia_1_1output_1_1Output_a028761929614fdc2b88f9ebe0e2313ef}{file\_length};
-180     \}
+180                             \{
+181         \textcolor{keywordflow}{return} \hyperlink{classpersistencia_1_1output_1_1Output_a028761929614fdc2b88f9ebe0e2313ef}{file\_length};
+182     \}
 \end{DoxyCode}
 \mbox{\Hypertarget{classpersistencia_1_1output_1_1Output_ae33fc52334f791b6d4d7aebf2931df8d}\label{classpersistencia_1_1output_1_1Output_ae33fc52334f791b6d4d7aebf2931df8d}} 
 \index{persistencia\+::output\+::\+Output@{persistencia\+::output\+::\+Output}!get\+Path@{get\+Path}}
@@ -198,9 +198,9 @@ Retorna el path de l\textquotesingle{}arxiu
 \end{DoxyReturn}
 
 \begin{DoxyCode}
-170                             \{
-171         \textcolor{keywordflow}{return} \hyperlink{classpersistencia_1_1output_1_1Output_aebef717882f3bcc7080dec014c6714c9}{path};
-172     \}
+172                             \{
+173         \textcolor{keywordflow}{return} \hyperlink{classpersistencia_1_1output_1_1Output_aebef717882f3bcc7080dec014c6714c9}{path};
+174     \}
 \end{DoxyCode}
 \mbox{\Hypertarget{classpersistencia_1_1output_1_1Output_a01f862217e01efb59bc2eff3fe54006f}\label{classpersistencia_1_1output_1_1Output_a01f862217e01efb59bc2eff3fe54006f}} 
 \index{persistencia\+::output\+::\+Output@{persistencia\+::output\+::\+Output}!get\+Pos@{get\+Pos}}
@@ -213,9 +213,9 @@ Retorna la posició del pròxim bit a ecriure dins del byte a escriure
 \end{DoxyReturn}
 
 \begin{DoxyCode}
-162                             \{
-163         \textcolor{keywordflow}{return} \hyperlink{classpersistencia_1_1output_1_1Output_a3709182600423f7e57644ccdd0016f22}{Pos};
-164     \}
+164                             \{
+165         \textcolor{keywordflow}{return} \hyperlink{classpersistencia_1_1output_1_1Output_a3709182600423f7e57644ccdd0016f22}{Pos};
+166     \}
 \end{DoxyCode}
 \mbox{\Hypertarget{classpersistencia_1_1output_1_1Output_a3c6c71990389c7142f5f362906c44f1a}\label{classpersistencia_1_1output_1_1Output_a3c6c71990389c7142f5f362906c44f1a}} 
 \index{persistencia\+::output\+::\+Output@{persistencia\+::output\+::\+Output}!initialize@{initialize}}
@@ -234,9 +234,9 @@ Reinicialitza l\textquotesingle{}úniaca instància de \hyperlink{classpersisten
 \end{DoxyParams}
 
 \begin{DoxyCode}
-64                                                \{
-65         \hyperlink{classpersistencia_1_1output_1_1Output_aaadf14a03c4f3f585170abdc7524b63d}{instance} = \textcolor{keyword}{new} \hyperlink{classpersistencia_1_1output_1_1Output_acbb70ea9eabb2a6d0b2d7bd2f3c9009a}{Output}(\hyperlink{classpersistencia_1_1output_1_1Output_aebef717882f3bcc7080dec014c6714c9}{path});
-66     \}
+66                                                \{
+67         \hyperlink{classpersistencia_1_1output_1_1Output_aaadf14a03c4f3f585170abdc7524b63d}{instance} = \textcolor{keyword}{new} \hyperlink{classpersistencia_1_1output_1_1Output_acbb70ea9eabb2a6d0b2d7bd2f3c9009a}{Output}(\hyperlink{classpersistencia_1_1output_1_1Output_aebef717882f3bcc7080dec014c6714c9}{path});
+68     \}
 \end{DoxyCode}
 \mbox{\Hypertarget{classpersistencia_1_1output_1_1Output_a416850e57f55bd371d60b2aae8e7e983}\label{classpersistencia_1_1output_1_1Output_a416850e57f55bd371d60b2aae8e7e983}} 
 \index{persistencia\+::output\+::\+Output@{persistencia\+::output\+::\+Output}!print@{print}}
@@ -250,16 +250,16 @@ Crea el fitxer de sortida a path.
 
 
 \begin{DoxyCode}
-147     \{
-148         \textcolor{keywordflow}{if} (\hyperlink{classpersistencia_1_1output_1_1Output_a3709182600423f7e57644ccdd0016f22}{Pos} > 0) \hyperlink{classpersistencia_1_1output_1_1Output_a57be8c4ed429f03caa5c2bcc97e2260d}{write}();
-149         \hyperlink{classpersistencia_1_1output_1_1Output_a3709182600423f7e57644ccdd0016f22}{Pos} = 0;
-150         \textcolor{keywordflow}{try} \{
-151             \hyperlink{classpersistencia_1_1output_1_1Output_ae8f22fd92b020c318f6f377cf3ac39de}{buff}.flush();
-152         \}
-153         \textcolor{keywordflow}{catch} (IOException e) \{
-154             e.printStackTrace();
-155         \}
-156     \}
+149     \{
+150         \textcolor{keywordflow}{if} (\hyperlink{classpersistencia_1_1output_1_1Output_a3709182600423f7e57644ccdd0016f22}{Pos} > 0) \hyperlink{classpersistencia_1_1output_1_1Output_a57be8c4ed429f03caa5c2bcc97e2260d}{write}();
+151         \hyperlink{classpersistencia_1_1output_1_1Output_a3709182600423f7e57644ccdd0016f22}{Pos} = 0;
+152         \textcolor{keywordflow}{try} \{
+153             \hyperlink{classpersistencia_1_1output_1_1Output_ae8f22fd92b020c318f6f377cf3ac39de}{buff}.flush();
+154         \}
+155         \textcolor{keywordflow}{catch} (IOException e) \{
+156             e.printStackTrace();
+157         \}
+158     \}
 \end{DoxyCode}
 \mbox{\Hypertarget{classpersistencia_1_1output_1_1Output_a57be8c4ed429f03caa5c2bcc97e2260d}\label{classpersistencia_1_1output_1_1Output_a57be8c4ed429f03caa5c2bcc97e2260d}} 
 \index{persistencia\+::output\+::\+Output@{persistencia\+::output\+::\+Output}!write@{write}}
@@ -273,18 +273,18 @@ Escribe en el buffer el siguiente byte.
 
 
 \begin{DoxyCode}
-91                          \{
-92         \hyperlink{classpersistencia_1_1output_1_1Output_a028761929614fdc2b88f9ebe0e2313ef}{file\_length}++;
-93 
-94         \textcolor{keywordflow}{try} \{
-95             byte[] aux = \{(byte)\hyperlink{classpersistencia_1_1output_1_1Output_aca83082ef84ec2e169b6fa34618d0773}{next\_byte}\};
-96             \hyperlink{classpersistencia_1_1output_1_1Output_ae8f22fd92b020c318f6f377cf3ac39de}{buff}.write(aux, 0, 1);
-97             \textcolor{comment}{//buff.flush();}
-98             \hyperlink{classpersistencia_1_1output_1_1Output_aca83082ef84ec2e169b6fa34618d0773}{next\_byte} = 0;
-99         \} \textcolor{keywordflow}{catch} (IOException e) \{
-100             e.printStackTrace();
-101         \}
-102     \}
+93                          \{
+94         \hyperlink{classpersistencia_1_1output_1_1Output_a028761929614fdc2b88f9ebe0e2313ef}{file\_length}++;
+95 
+96         \textcolor{keywordflow}{try} \{
+97             byte[] aux = \{(byte)\hyperlink{classpersistencia_1_1output_1_1Output_aca83082ef84ec2e169b6fa34618d0773}{next\_byte}\};
+98             \hyperlink{classpersistencia_1_1output_1_1Output_ae8f22fd92b020c318f6f377cf3ac39de}{buff}.write(aux, 0, 1);
+99             \textcolor{comment}{//buff.flush();}
+100             \hyperlink{classpersistencia_1_1output_1_1Output_aca83082ef84ec2e169b6fa34618d0773}{next\_byte} = 0;
+101         \} \textcolor{keywordflow}{catch} (IOException e) \{
+102             e.printStackTrace();
+103         \}
+104     \}
 \end{DoxyCode}
 
 

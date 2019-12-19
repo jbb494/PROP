@@ -6,6 +6,8 @@ import java.io.InputStreamReader;
 /**
  * @class Driver__Dict_Encode
  * @brief Driver de Dict_Encode
+ * @file
+
  * @author Joan Bellavista Bartroli
  */
 public class Driver__Dict_Encode {

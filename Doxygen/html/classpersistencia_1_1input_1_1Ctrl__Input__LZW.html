@@ -85,7 +85,10 @@ Inheritance diagram for persistencia.input.Ctrl_Input_LZW:</div>
 Collaboration diagram for persistencia.input.Ctrl_Input_LZW:</div>
 <div class="dyncontent">
 <div class="center"><img src="classpersistencia_1_1input_1_1Ctrl__Input__LZW__coll__graph.png" border="0" usemap="#persistencia_8input_8Ctrl__Input__LZW_coll__map" alt="Collaboration graph"/></div>
-<!-- MAP 0 -->
+<map name="persistencia_8input_8Ctrl__Input__LZW_coll__map" id="persistencia_8input_8Ctrl__Input__LZW_coll__map">
+<area shape="rect" id="node2" href="classpersistencia_1_1input_1_1Ctrl__Input.html" title="Classe de Ctrl_Input. " alt="" coords="9,184,159,225"/>
+<area shape="rect" id="node3" href="classpersistencia_1_1input_1_1Input.html" title="Classe Input. " alt="" coords="5,95,163,121"/>
+</map>
 <center><span class="legend">[<a href="graph_legend.html">legend</a>]</span></center></div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
@@ -127,7 +130,6 @@ Additional Inherited Members</h2></td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Acces a un arxiu comprimit amb LZW. </p>
-<dl class="section author"><dt>Author</dt><dd>Miguel Paracuellos Ocana </dd></dl>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="a31503f303ac443e110379322e851791a"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a31503f303ac443e110379322e851791a">&#9670;&nbsp;</a></span>Ctrl_Input_LZW() <span class="overload">[1/2]</span></h2>
@@ -160,7 +162,7 @@ Additional Inherited Members</h2></td></tr>
   </table>
   </dd>
 </dl>
-<div class="fragment"><div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;                                       {</div><div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;        super(path);</div><div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;        <a class="code" href="classpersistencia_1_1input_1_1Ctrl__Input.html#a46e05fce164a6803820c02565c1769c8">getMetadata</a>();</div><div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;    }</div><div class="ttc" id="classpersistencia_1_1input_1_1Ctrl__Input_html_a46e05fce164a6803820c02565c1769c8"><div class="ttname"><a href="classpersistencia_1_1input_1_1Ctrl__Input.html#a46e05fce164a6803820c02565c1769c8">persistencia.input.Ctrl_Input.getMetadata</a></div><div class="ttdeci">int getMetadata()</div><div class="ttdoc">Llegeix el dos primers bits de l&amp;#39;arxiu comprimit per saber amb quin algoritme ha sigut tractat...</div><div class="ttdef"><b>Definition:</b> Ctrl_Input.java:89</div></div>
+<div class="fragment"><div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;                                       {</div><div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;        super(path);</div><div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;        <a class="code" href="classpersistencia_1_1input_1_1Ctrl__Input.html#a46e05fce164a6803820c02565c1769c8">getMetadata</a>();</div><div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;    }</div><div class="ttc" id="classpersistencia_1_1input_1_1Ctrl__Input_html_a46e05fce164a6803820c02565c1769c8"><div class="ttname"><a href="classpersistencia_1_1input_1_1Ctrl__Input.html#a46e05fce164a6803820c02565c1769c8">persistencia.input.Ctrl_Input.getMetadata</a></div><div class="ttdeci">int getMetadata()</div><div class="ttdoc">Llegeix el dos primers bits de l&amp;#39;arxiu comprimit per saber amb quin algoritme ha sigut tractat...</div><div class="ttdef"><b>Definition:</b> Ctrl_Input.java:91</div></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -189,7 +191,7 @@ Additional Inherited Members</h2></td></tr>
 
 <p>El constructor on es crida a la classe pare. </p>
 <dl class="section note"><dt>Note</dt><dd>Continua llegint el fitxer que s'estava llegint. Assumeix que la metadata ja ha estat llegida. </dd></dl>
-<div class="fragment"><div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;                            {</div><div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;        super();</div><div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;    }</div></div><!-- fragment -->
+<div class="fragment"><div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;                            {</div><div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;        super();</div><div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;    }</div></div><!-- fragment -->
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
@@ -216,7 +218,7 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 <dl class="section return"><dt>Returns</dt><dd>Primer enter no llegit de l'arxiu comprimit amb LZW </dd></dl>
-<div class="fragment"><div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;                         {</div><div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;        <span class="comment">//ATM los valores codificados son de 4 bytes, en un futuro serán de tamaño variable</span></div><div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;        <span class="comment">//y por lo tanto tendremos que tratarlos de la manera optima.</span></div><div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;        </div><div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;        List&lt;Byte&gt; arrayByte = <span class="keyword">new</span> ArrayList&lt;&gt;();</div><div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;</div><div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; 4; ++i) </div><div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;            arrayByte.add(Input.getInstance().getBits(8));</div><div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;        </div><div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;        <span class="keywordflow">return</span> byteToConversion.byteToInteger(arrayByte);</div><div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;    }</div></div><!-- fragment -->
+<div class="fragment"><div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;                         {</div><div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;        <span class="comment">//ATM los valores codificados son de 4 bytes, en un futuro serán de tamaño variable</span></div><div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;        <span class="comment">//y por lo tanto tendremos que tratarlos de la manera optima.</span></div><div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;        </div><div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;        List&lt;Byte&gt; arrayByte = <span class="keyword">new</span> ArrayList&lt;&gt;();</div><div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;</div><div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; 4; ++i) </div><div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;            arrayByte.add(Input.getInstance().getBits(8));</div><div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;        </div><div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;        <span class="keywordflow">return</span> byteToConversion.byteToInteger(arrayByte);</div><div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;    }</div></div><!-- fragment -->
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following file:<ul>

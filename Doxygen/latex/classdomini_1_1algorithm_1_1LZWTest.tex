@@ -7,8 +7,13 @@ Junit de la classe \hyperlink{classdomini_1_1algorithm_1_1LZW}{L\+ZW}.
 
 
 
-Collaboration diagram for domini.\+algorithm.\+L\+Z\+W\+Test\+:
-% FIG 0
+Collaboration diagram for domini.\+algorithm.\+L\+Z\+W\+Test\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=211pt]{classdomini_1_1algorithm_1_1LZWTest__coll__graph}
+\end{center}
+\end{figure}
 \subsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
@@ -39,11 +44,6 @@ String \hyperlink{classdomini_1_1algorithm_1_1LZWTest_a4194ade234060b69729a0380f
 \subsection{Detailed Description}
 Junit de la classe \hyperlink{classdomini_1_1algorithm_1_1LZW}{L\+ZW}. 
 
-\begin{DoxyAuthor}{Author}
-Miguel Paracuellos Ocaña 
-\end{DoxyAuthor}
-
-
 \subsection{Member Function Documentation}
 \mbox{\Hypertarget{classdomini_1_1algorithm_1_1LZWTest_acf4cac88aafa2144dc8ce3a80453fa90}\label{classdomini_1_1algorithm_1_1LZWTest_acf4cac88aafa2144dc8ce3a80453fa90}} 
 \index{domini\+::algorithm\+::\+L\+Z\+W\+Test@{domini\+::algorithm\+::\+L\+Z\+W\+Test}!initialize@{initialize}}
@@ -64,9 +64,9 @@ Inicialitza l\textquotesingle{}atribut lzw.
 \end{DoxyParams}
 
 \begin{DoxyCode}
-35                                                     \{
-36         \hyperlink{classdomini_1_1algorithm_1_1LZWTest_a591c1bb9b927631d0e60a2853e502d20}{lzw} = \textcolor{keyword}{new} LZW(path, b);
-37     \}
+37                                                     \{
+38         \hyperlink{classdomini_1_1algorithm_1_1LZWTest_a591c1bb9b927631d0e60a2853e502d20}{lzw} = \textcolor{keyword}{new} LZW(path, b);
+39     \}
 \end{DoxyCode}
 \mbox{\Hypertarget{classdomini_1_1algorithm_1_1LZWTest_ae43f1a846dc9672b04c707314006a878}\label{classdomini_1_1algorithm_1_1LZWTest_ae43f1a846dc9672b04c707314006a878}} 
 \index{domini\+::algorithm\+::\+L\+Z\+W\+Test@{domini\+::algorithm\+::\+L\+Z\+W\+Test}!test\+Compression@{test\+Compression}}
@@ -80,45 +80,45 @@ Comprovació del correcte funcionament de la compressio per \hyperlink{classdomi
 
 
 \begin{DoxyCode}
-44                                   \{
-45         System.out.println(\textcolor{stringliteral}{"Comprovació de la compressio amb LZW: "});
-46 
-47         Ctrl\_Output aux = \textcolor{keyword}{new} Ctrl\_Output(\hyperlink{classdomini_1_1algorithm_1_1LZWTest_a25a37b8cd7cb0756531c39e7ebc60db0}{path\_lzw\_check});
-48         aux.addMetadata(\textcolor{stringliteral}{"lzw"});
-49         Integer[] compr = \{66,65,256,257,65,260\};
-50         \textcolor{keywordflow}{for} (Integer x : compr) 
-51             aux.add(x);
-52         aux.print();
-53 
-54         \hyperlink{classdomini_1_1algorithm_1_1LZWTest_acf4cac88aafa2144dc8ce3a80453fa90}{initialize}(\hyperlink{classdomini_1_1algorithm_1_1LZWTest_af5091e6df88845c585e92165f2fae2dc}{path\_lzw}, \textcolor{keyword}{false});
-55         Ctrl\_Input.initialize(\hyperlink{classdomini_1_1algorithm_1_1LZWTest_a4194ade234060b69729a0380ff4ae33d}{path\_txt});
-56         \hyperlink{classdomini_1_1algorithm_1_1LZWTest_a591c1bb9b927631d0e60a2853e502d20}{lzw}.\hyperlink{classdomini_1_1algorithm_1_1LZW_a04a13292c78f6d958270fec8bc6975be}{Compressor}();
-57         \hyperlink{classdomini_1_1algorithm_1_1LZWTest_a591c1bb9b927631d0e60a2853e502d20}{lzw}.\hyperlink{classdomini_1_1algorithm_1_1Algorithm_a5546f991f9d71d012d6ded5f2d4181cb}{print}();
-58 
-59         Ctrl\_Input\_LZW in = \textcolor{keyword}{new} Ctrl\_Input\_LZW(\hyperlink{classdomini_1_1algorithm_1_1LZWTest_af5091e6df88845c585e92165f2fae2dc}{path\_lzw});
-60         ArrayList<Integer> arr1 = \textcolor{keyword}{new} ArrayList<>();
-61         \textcolor{keywordflow}{while} (\textcolor{keyword}{true}) \{
-62             Integer kk = in.get();
-63             \textcolor{keywordflow}{if} (in.finished()) \textcolor{keywordflow}{break};
-64             arr1.add(kk);
-65         \}
-66 
-67         in = \textcolor{keyword}{new} Ctrl\_Input\_LZW(\hyperlink{classdomini_1_1algorithm_1_1LZWTest_af5091e6df88845c585e92165f2fae2dc}{path\_lzw});
-68         ArrayList<Integer> arr2 = \textcolor{keyword}{new} ArrayList<>();
-69         \textcolor{keywordflow}{while} (\textcolor{keyword}{true}) \{
-70             Integer kk = in.get();
-71             \textcolor{keywordflow}{if} (in.finished()) \textcolor{keywordflow}{break};
-72             arr2.add(kk);
-73         \}
-74         
-75         assertEquals(\textcolor{stringliteral}{"El contigut no és l'esperat"}, arr1.size(), arr2.size());
-76         \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i = 0; i < arr1.size(); ++i) \{
-77             assertEquals(\textcolor{stringliteral}{"El contigut no és l'esperat"},arr1.get(i), arr2.get(i));
-78         \}
-79 
-80         System.out.println(\textcolor{stringliteral}{"Ok."});
+46                                   \{
+47         System.out.println(\textcolor{stringliteral}{"Comprovació de la compressio amb LZW: "});
+48 
+49         Ctrl\_Output aux = \textcolor{keyword}{new} Ctrl\_Output(\hyperlink{classdomini_1_1algorithm_1_1LZWTest_a25a37b8cd7cb0756531c39e7ebc60db0}{path\_lzw\_check});
+50         aux.addMetadata(\textcolor{stringliteral}{"lzw"});
+51         Integer[] compr = \{66,65,256,257,65,260\};
+52         \textcolor{keywordflow}{for} (Integer x : compr) 
+53             aux.add(x);
+54         aux.print();
+55 
+56         \hyperlink{classdomini_1_1algorithm_1_1LZWTest_acf4cac88aafa2144dc8ce3a80453fa90}{initialize}(\hyperlink{classdomini_1_1algorithm_1_1LZWTest_af5091e6df88845c585e92165f2fae2dc}{path\_lzw}, \textcolor{keyword}{false});
+57         Ctrl\_Input.initialize(\hyperlink{classdomini_1_1algorithm_1_1LZWTest_a4194ade234060b69729a0380ff4ae33d}{path\_txt});
+58         \hyperlink{classdomini_1_1algorithm_1_1LZWTest_a591c1bb9b927631d0e60a2853e502d20}{lzw}.\hyperlink{classdomini_1_1algorithm_1_1LZW_a04a13292c78f6d958270fec8bc6975be}{Compressor}();
+59         \hyperlink{classdomini_1_1algorithm_1_1LZWTest_a591c1bb9b927631d0e60a2853e502d20}{lzw}.\hyperlink{classdomini_1_1algorithm_1_1Algorithm_a5546f991f9d71d012d6ded5f2d4181cb}{print}();
+60 
+61         Ctrl\_Input\_LZW in = \textcolor{keyword}{new} Ctrl\_Input\_LZW(\hyperlink{classdomini_1_1algorithm_1_1LZWTest_af5091e6df88845c585e92165f2fae2dc}{path\_lzw});
+62         ArrayList<Integer> arr1 = \textcolor{keyword}{new} ArrayList<>();
+63         \textcolor{keywordflow}{while} (\textcolor{keyword}{true}) \{
+64             Integer kk = in.get();
+65             \textcolor{keywordflow}{if} (in.finished()) \textcolor{keywordflow}{break};
+66             arr1.add(kk);
+67         \}
+68 
+69         in = \textcolor{keyword}{new} Ctrl\_Input\_LZW(\hyperlink{classdomini_1_1algorithm_1_1LZWTest_af5091e6df88845c585e92165f2fae2dc}{path\_lzw});
+70         ArrayList<Integer> arr2 = \textcolor{keyword}{new} ArrayList<>();
+71         \textcolor{keywordflow}{while} (\textcolor{keyword}{true}) \{
+72             Integer kk = in.get();
+73             \textcolor{keywordflow}{if} (in.finished()) \textcolor{keywordflow}{break};
+74             arr2.add(kk);
+75         \}
+76         
+77         assertEquals(\textcolor{stringliteral}{"El contigut no és l'esperat"}, arr1.size(), arr2.size());
+78         \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i = 0; i < arr1.size(); ++i) \{
+79             assertEquals(\textcolor{stringliteral}{"El contigut no és l'esperat"},arr1.get(i), arr2.get(i));
+80         \}
 81 
-82     \}
+82         System.out.println(\textcolor{stringliteral}{"Ok."});
+83 
+84     \}
 \end{DoxyCode}
 \mbox{\Hypertarget{classdomini_1_1algorithm_1_1LZWTest_aa9f013d2d8e008768c6c7b8fe319b534}\label{classdomini_1_1algorithm_1_1LZWTest_aa9f013d2d8e008768c6c7b8fe319b534}} 
 \index{domini\+::algorithm\+::\+L\+Z\+W\+Test@{domini\+::algorithm\+::\+L\+Z\+W\+Test}!test\+Decompression@{test\+Decompression}}
@@ -132,43 +132,43 @@ Comprovació del correcte funcionament de la descompressio per \hyperlink{classd
 
 
 \begin{DoxyCode}
-89                                     \{
-90         System.out.println(\textcolor{stringliteral}{"Comprovació de la descompressio amb LZW: "});
-91         
-92         Ctrl\_Output aux = \textcolor{keyword}{new} Ctrl\_Output(\hyperlink{classdomini_1_1algorithm_1_1LZWTest_add9dbf2d86413bf9f7bcdd23b268c288}{path\_txt\_check});
-93         byte[] decomp = \{66,65,66,65,65,66,65,65,65\};
-94         \textcolor{keywordflow}{for} (byte x : decomp) 
-95             aux.add(x,8);
-96         aux.print();
-97         
-98         \hyperlink{classdomini_1_1algorithm_1_1LZWTest_acf4cac88aafa2144dc8ce3a80453fa90}{initialize}(\hyperlink{classdomini_1_1algorithm_1_1LZWTest_a4194ade234060b69729a0380ff4ae33d}{path\_txt}, \textcolor{keyword}{true});
-99 
-100         \textcolor{keyword}{new} Ctrl\_Input\_LZW(\hyperlink{classdomini_1_1algorithm_1_1LZWTest_af5091e6df88845c585e92165f2fae2dc}{path\_lzw});
-101         \hyperlink{classdomini_1_1algorithm_1_1LZWTest_a591c1bb9b927631d0e60a2853e502d20}{lzw}.\hyperlink{classdomini_1_1algorithm_1_1LZW_a6a5d986396443691861ac9ba41b2dd33}{Decompressor}();
-102         \hyperlink{classdomini_1_1algorithm_1_1LZWTest_a591c1bb9b927631d0e60a2853e502d20}{lzw}.\hyperlink{classdomini_1_1algorithm_1_1Algorithm_a5546f991f9d71d012d6ded5f2d4181cb}{print}();
-103 
-104         Ctrl\_Input\_Text in = \textcolor{keyword}{new} Ctrl\_Input\_Text(\hyperlink{classdomini_1_1algorithm_1_1LZWTest_a4194ade234060b69729a0380ff4ae33d}{path\_txt});
-105         ArrayList<Byte> arr1 = \textcolor{keyword}{new} ArrayList<>();
-106         \textcolor{keywordflow}{while} (\textcolor{keyword}{true}) \{
-107             Byte kk = in.get();
-108             \textcolor{keywordflow}{if} (in.finished()) \textcolor{keywordflow}{break};
-109             arr1.add(kk);
-110         \}
-111 
-112         in = \textcolor{keyword}{new} Ctrl\_Input\_Text(\hyperlink{classdomini_1_1algorithm_1_1LZWTest_add9dbf2d86413bf9f7bcdd23b268c288}{path\_txt\_check});
-113         ArrayList<Byte> arr2 = \textcolor{keyword}{new} ArrayList<>();
-114         \textcolor{keywordflow}{while} (\textcolor{keyword}{true}) \{
-115             Byte kk = in.get();
-116             \textcolor{keywordflow}{if} (in.finished()) \textcolor{keywordflow}{break};
-117             arr2.add(kk);
-118         \}
-119         
-120         assertEquals(\textcolor{stringliteral}{"El contigut no és l'esperat"}, arr1.size(), arr2.size());
-121         \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i = 0; i < arr1.size(); ++i) \{
-122             assertEquals(\textcolor{stringliteral}{"El contigut no és l'esperat"},arr1.get(i), arr2.get(i));
-123         \}
-124         System.out.println(\textcolor{stringliteral}{"Ok."});
-125     \}
+91                                     \{
+92         System.out.println(\textcolor{stringliteral}{"Comprovació de la descompressio amb LZW: "});
+93         
+94         Ctrl\_Output aux = \textcolor{keyword}{new} Ctrl\_Output(\hyperlink{classdomini_1_1algorithm_1_1LZWTest_add9dbf2d86413bf9f7bcdd23b268c288}{path\_txt\_check});
+95         byte[] decomp = \{66,65,66,65,65,66,65,65,65\};
+96         \textcolor{keywordflow}{for} (byte x : decomp) 
+97             aux.add(x,8);
+98         aux.print();
+99         
+100         \hyperlink{classdomini_1_1algorithm_1_1LZWTest_acf4cac88aafa2144dc8ce3a80453fa90}{initialize}(\hyperlink{classdomini_1_1algorithm_1_1LZWTest_a4194ade234060b69729a0380ff4ae33d}{path\_txt}, \textcolor{keyword}{true});
+101 
+102         \textcolor{keyword}{new} Ctrl\_Input\_LZW(\hyperlink{classdomini_1_1algorithm_1_1LZWTest_af5091e6df88845c585e92165f2fae2dc}{path\_lzw});
+103         \hyperlink{classdomini_1_1algorithm_1_1LZWTest_a591c1bb9b927631d0e60a2853e502d20}{lzw}.\hyperlink{classdomini_1_1algorithm_1_1LZW_a6a5d986396443691861ac9ba41b2dd33}{Decompressor}();
+104         \hyperlink{classdomini_1_1algorithm_1_1LZWTest_a591c1bb9b927631d0e60a2853e502d20}{lzw}.\hyperlink{classdomini_1_1algorithm_1_1Algorithm_a5546f991f9d71d012d6ded5f2d4181cb}{print}();
+105 
+106         Ctrl\_Input\_Text in = \textcolor{keyword}{new} Ctrl\_Input\_Text(\hyperlink{classdomini_1_1algorithm_1_1LZWTest_a4194ade234060b69729a0380ff4ae33d}{path\_txt});
+107         ArrayList<Byte> arr1 = \textcolor{keyword}{new} ArrayList<>();
+108         \textcolor{keywordflow}{while} (\textcolor{keyword}{true}) \{
+109             Byte kk = in.get();
+110             \textcolor{keywordflow}{if} (in.finished()) \textcolor{keywordflow}{break};
+111             arr1.add(kk);
+112         \}
+113 
+114         in = \textcolor{keyword}{new} Ctrl\_Input\_Text(\hyperlink{classdomini_1_1algorithm_1_1LZWTest_add9dbf2d86413bf9f7bcdd23b268c288}{path\_txt\_check});
+115         ArrayList<Byte> arr2 = \textcolor{keyword}{new} ArrayList<>();
+116         \textcolor{keywordflow}{while} (\textcolor{keyword}{true}) \{
+117             Byte kk = in.get();
+118             \textcolor{keywordflow}{if} (in.finished()) \textcolor{keywordflow}{break};
+119             arr2.add(kk);
+120         \}
+121         
+122         assertEquals(\textcolor{stringliteral}{"El contigut no és l'esperat"}, arr1.size(), arr2.size());
+123         \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i = 0; i < arr1.size(); ++i) \{
+124             assertEquals(\textcolor{stringliteral}{"El contigut no és l'esperat"},arr1.get(i), arr2.get(i));
+125         \}
+126         System.out.println(\textcolor{stringliteral}{"Ok."});
+127     \}
 \end{DoxyCode}
 
 

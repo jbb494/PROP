@@ -16,8 +16,13 @@ Inheritance diagram for persistencia.\+input.\+Ctrl\+\_\+\+Input\+\_\+\+L\+ZW\+:
 \end{figure}
 
 
-Collaboration diagram for persistencia.\+input.\+Ctrl\+\_\+\+Input\+\_\+\+L\+ZW\+:
-% FIG 0
+Collaboration diagram for persistencia.\+input.\+Ctrl\+\_\+\+Input\+\_\+\+L\+ZW\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=227pt]{classpersistencia_1_1input_1_1Ctrl__Input__LZW__coll__graph}
+\end{center}
+\end{figure}
 \subsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
@@ -32,11 +37,6 @@ Integer \hyperlink{classpersistencia_1_1input_1_1Ctrl__Input__LZW_a821592197863e
 
 \subsection{Detailed Description}
 Acces a un arxiu comprimit amb L\+ZW. 
-
-\begin{DoxyAuthor}{Author}
-Miguel Paracuellos Ocana 
-\end{DoxyAuthor}
-
 
 \subsection{Constructor \& Destructor Documentation}
 \mbox{\Hypertarget{classpersistencia_1_1input_1_1Ctrl__Input__LZW_a31503f303ac443e110379322e851791a}\label{classpersistencia_1_1input_1_1Ctrl__Input__LZW_a31503f303ac443e110379322e851791a}} 
@@ -56,10 +56,10 @@ Constructor de la classe.
 \end{DoxyParams}
 
 \begin{DoxyCode}
-18                                        \{
-19         super(path);
-20         \hyperlink{classpersistencia_1_1input_1_1Ctrl__Input_a46e05fce164a6803820c02565c1769c8}{getMetadata}();
-21     \}
+20                                        \{
+21         super(path);
+22         \hyperlink{classpersistencia_1_1input_1_1Ctrl__Input_a46e05fce164a6803820c02565c1769c8}{getMetadata}();
+23     \}
 \end{DoxyCode}
 \mbox{\Hypertarget{classpersistencia_1_1input_1_1Ctrl__Input__LZW_a1b5319954e229993f11201438c72fe34}\label{classpersistencia_1_1input_1_1Ctrl__Input__LZW_a1b5319954e229993f11201438c72fe34}} 
 \index{persistencia\+::input\+::\+Ctrl\+\_\+\+Input\+\_\+\+L\+ZW@{persistencia\+::input\+::\+Ctrl\+\_\+\+Input\+\_\+\+L\+ZW}!Ctrl\+\_\+\+Input\+\_\+\+L\+ZW@{Ctrl\+\_\+\+Input\+\_\+\+L\+ZW}}
@@ -76,9 +76,9 @@ Continua llegint el fitxer que s\textquotesingle{}estava llegint. Assumeix que l
 \end{DoxyNote}
 
 \begin{DoxyCode}
-27                             \{
-28         super();
-29     \}
+29                             \{
+30         super();
+31     \}
 \end{DoxyCode}
 
 
@@ -94,17 +94,17 @@ Primer enter no llegit de l\textquotesingle{}arxiu comprimit amb L\+ZW
 \end{DoxyReturn}
 
 \begin{DoxyCode}
-35                          \{
-36         \textcolor{comment}{//ATM los valores codificados son de 4 bytes, en un futuro serán de tamaño variable}
-37         \textcolor{comment}{//y por lo tanto tendremos que tratarlos de la manera optima.}
-38         
-39         List<Byte> arrayByte = \textcolor{keyword}{new} ArrayList<>();
-40 
-41         \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i = 0; i < 4; ++i) 
-42             arrayByte.add(Input.getInstance().getBits(8));
-43         
-44         \textcolor{keywordflow}{return} byteToConversion.byteToInteger(arrayByte);
-45     \}
+37                          \{
+38         \textcolor{comment}{//ATM los valores codificados son de 4 bytes, en un futuro serán de tamaño variable}
+39         \textcolor{comment}{//y por lo tanto tendremos que tratarlos de la manera optima.}
+40         
+41         List<Byte> arrayByte = \textcolor{keyword}{new} ArrayList<>();
+42 
+43         \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i = 0; i < 4; ++i) 
+44             arrayByte.add(Input.getInstance().getBits(8));
+45         
+46         \textcolor{keywordflow}{return} byteToConversion.byteToInteger(arrayByte);
+47     \}
 \end{DoxyCode}
 
 

@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['width',['width',['../classpersistencia_1_1input_1_1Ctrl__Input__Img.html#a51dd0b9243b854aa25ac4532acca4524',1,'persistencia.input.Ctrl_Input_Img.width()'],['../classpersistencia_1_1input_1_1Ctrl__Input__JPEG.html#a07d902b25b54941dc0444398c7d380e7',1,'persistencia.input.Ctrl_Input_JPEG.width()'],['../classpersistencia_1_1output_1_1Ctrl__Output__Img.html#ae4a01ec459078cece4815d2fe7db8a64',1,'persistencia.output.Ctrl_Output_Img.width()']]],
-  ['window',['window',['../classdomini_1_1algorithm_1_1LZSS.html#a00d9f2e9bc2baa39513fad040b8e7123',1,'domini::algorithm::LZSS']]]
+  ['zigzag_5fx',['zigZag_X',['../classdomini_1_1algorithm_1_1JPEG.html#a7d3829cbffd758c087341a8da13dd2ca',1,'domini::algorithm::JPEG']]],
+  ['zigzag_5fy',['zigZag_Y',['../classdomini_1_1algorithm_1_1JPEG.html#ad886d8aa00a40cb151b446534f0d1bcc',1,'domini::algorithm::JPEG']]]
 ];

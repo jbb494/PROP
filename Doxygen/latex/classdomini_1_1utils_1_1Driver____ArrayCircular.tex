@@ -22,11 +22,6 @@ static void \hyperlink{classdomini_1_1utils_1_1Driver____ArrayCircular_a0f5f42c5
 \subsection{Detailed Description}
 Driver de \hyperlink{classdomini_1_1utils_1_1ArrayCircular}{Array\+Circular}. 
 
-\begin{DoxyAuthor}{Author}
-Joan Bellavista Bartroli 
-\end{DoxyAuthor}
-
-
 \subsection{Member Function Documentation}
 \mbox{\Hypertarget{classdomini_1_1utils_1_1Driver____ArrayCircular_a0f5f42c5ace9176cfcae4dfe9717f380}\label{classdomini_1_1utils_1_1Driver____ArrayCircular_a0f5f42c5ace9176cfcae4dfe9717f380}} 
 \index{domini\+::utils\+::\+Driver\+\_\+\+\_\+\+Array\+Circular@{domini\+::utils\+::\+Driver\+\_\+\+\_\+\+Array\+Circular}!comprovar\+Excepcions@{comprovar\+Excepcions}}
@@ -47,12 +42,12 @@ Comprovarà les possibles excepcions que puguin apareixer a la classe.
 \end{DoxyParams}
 
 \begin{DoxyCode}
-49                                                                                       \{
-50         \textcolor{keywordtype}{int} op = Integer.parseInt(linea);
-51         \textcolor{keywordflow}{if}(arraycircular == null && op > 1) \{
-52             \textcolor{keywordflow}{throw} \textcolor{keyword}{new} IllegalArgumentException(\textcolor{stringliteral}{"Debes llamar al constructor antes"});
-53         \}
-54     \}
+51                                                                                       \{
+52         \textcolor{keywordtype}{int} op = Integer.parseInt(linea);
+53         \textcolor{keywordflow}{if}(arraycircular == null && op > 1) \{
+54             \textcolor{keywordflow}{throw} \textcolor{keyword}{new} IllegalArgumentException(\textcolor{stringliteral}{"Debes llamar al constructor antes"});
+55         \}
+56     \}
 \end{DoxyCode}
 \mbox{\Hypertarget{classdomini_1_1utils_1_1Driver____ArrayCircular_adf8b1dedd521248da8a5f1425dd27af8}\label{classdomini_1_1utils_1_1Driver____ArrayCircular_adf8b1dedd521248da8a5f1425dd27af8}} 
 \index{domini\+::utils\+::\+Driver\+\_\+\+\_\+\+Array\+Circular@{domini\+::utils\+::\+Driver\+\_\+\+\_\+\+Array\+Circular}!main@{main}}
@@ -62,68 +57,68 @@ Comprovarà les possibles excepcions que puguin apareixer a la classe.
 
 
 \begin{DoxyCode}
-56                                            \{
-57     \textcolor{keywordflow}{try} \{
-58         ArrayCircular arraycircular = null;
-59         \hyperlink{classdomini_1_1utils_1_1Driver____ArrayCircular_afac5a37f91b2914e692993e71c2d393c}{showOptions}();
-60         BufferedReader reader = \textcolor{keyword}{new} BufferedReader(\textcolor{keyword}{new} InputStreamReader(System.in));
-61         String linea = \textcolor{stringliteral}{""};
-62         \textcolor{keywordflow}{while}(linea != null)\{
-63             System.out.println(\textcolor{stringliteral}{"Selecciona una opción:"});
-64             linea = reader.readLine().trim();
-65             System.out.println(\textcolor{stringliteral}{"Opción: "} + linea + \textcolor{stringliteral}{" seleccionada"});
-66             \hyperlink{classdomini_1_1utils_1_1Driver____ArrayCircular_a0f5f42c5ace9176cfcae4dfe9717f380}{comprovarExcepcions}(arraycircular, linea);
-67             \textcolor{keywordflow}{switch}(linea)\{
-68                 \textcolor{keywordflow}{case} \textcolor{stringliteral}{"1"}:
-69                     System.out.println(\textcolor{stringliteral}{"Pon un entero que representará el tamaño"});
-70                     String aux = reader.readLine().trim();
-71                     \textcolor{keywordtype}{int} mida = Integer.parseInt(aux);
-72                     arraycircular = \textcolor{keyword}{new} ArrayCircular(mida);
-73                 \textcolor{keywordflow}{break};
-74                 \textcolor{keywordflow}{case} \textcolor{stringliteral}{"2"}:
-75                     System.out.println(\textcolor{stringliteral}{"Pon un Byte para añadir a la ArrayCircular"});
-76                     aux = reader.readLine().trim();
-77                     byte value = Byte.parseByte(aux);
-78                     arraycircular.setValue(value);
-79                 \textcolor{keywordflow}{break};
-80                 \textcolor{keywordflow}{case} \textcolor{stringliteral}{"3"}:
-81                     System.out.println(\textcolor{stringliteral}{"Pon un entero para conseguir el valor en esa posición"});
-82                     aux = reader.readLine().trim();
-83                     \textcolor{keywordtype}{int} index = Integer.parseInt(aux);
-84                     System.out.println(arraycircular.getValue(index));;
-85                 \textcolor{keywordflow}{break};
-86                 \textcolor{keywordflow}{case} \textcolor{stringliteral}{"4"}:
-87                     System.out.println(\textcolor{stringliteral}{"Pon un entero"});
-88                     aux = reader.readLine().trim();
-89                     \textcolor{keywordtype}{int} despl = Integer.parseInt(aux);
-90                     System.out.println(arraycircular.getValueAmbDespl(despl));;
-91                 \textcolor{keywordflow}{break};
-92                 \textcolor{keywordflow}{case} \textcolor{stringliteral}{"5"}:
-93                     System.out.println(arraycircular.getStart());;
-94                 \textcolor{keywordflow}{break};
-95                 \textcolor{keywordflow}{case} \textcolor{stringliteral}{"6"}:
-96                     System.out.println(arraycircular.getEnd());;
-97                 \textcolor{keywordflow}{break};
-98                 \textcolor{keywordflow}{case} \textcolor{stringliteral}{"7"}:
-99                     System.out.println(\textcolor{stringliteral}{"Pon un Byte para saber si está en la Array"});
-100                     aux = reader.readLine().trim();
-101                     value = Byte.parseByte(aux);
-102                     System.out.println(arraycircular.isIn(value));;
-103                 \textcolor{keywordflow}{break};
-104                 \textcolor{keywordflow}{case} \textcolor{stringliteral}{"8"}:
-105                     System.out.println(arraycircular.getAfegits());
-106                 \textcolor{keywordflow}{break};
-107                 \textcolor{keywordflow}{case} \textcolor{stringliteral}{"0"}:
-108                     \textcolor{keywordflow}{return};
-109                 \textcolor{keywordflow}{default}:
-110                     System.out.println(\textcolor{stringliteral}{"La opción no es válida"});
-111                 \textcolor{keywordflow}{break};
-112             \}
-113         \}
-114     \}\textcolor{keywordflow}{catch} (Exception e) \{
-115         e.printStackTrace();
-116     \}
-117     \}
+58                                            \{
+59     \textcolor{keywordflow}{try} \{
+60         ArrayCircular arraycircular = null;
+61         \hyperlink{classdomini_1_1utils_1_1Driver____ArrayCircular_afac5a37f91b2914e692993e71c2d393c}{showOptions}();
+62         BufferedReader reader = \textcolor{keyword}{new} BufferedReader(\textcolor{keyword}{new} InputStreamReader(System.in));
+63         String linea = \textcolor{stringliteral}{""};
+64         \textcolor{keywordflow}{while}(linea != null)\{
+65             System.out.println(\textcolor{stringliteral}{"Selecciona una opción:"});
+66             linea = reader.readLine().trim();
+67             System.out.println(\textcolor{stringliteral}{"Opción: "} + linea + \textcolor{stringliteral}{" seleccionada"});
+68             \hyperlink{classdomini_1_1utils_1_1Driver____ArrayCircular_a0f5f42c5ace9176cfcae4dfe9717f380}{comprovarExcepcions}(arraycircular, linea);
+69             \textcolor{keywordflow}{switch}(linea)\{
+70                 \textcolor{keywordflow}{case} \textcolor{stringliteral}{"1"}:
+71                     System.out.println(\textcolor{stringliteral}{"Pon un entero que representará el tamaño"});
+72                     String aux = reader.readLine().trim();
+73                     \textcolor{keywordtype}{int} mida = Integer.parseInt(aux);
+74                     arraycircular = \textcolor{keyword}{new} ArrayCircular(mida);
+75                 \textcolor{keywordflow}{break};
+76                 \textcolor{keywordflow}{case} \textcolor{stringliteral}{"2"}:
+77                     System.out.println(\textcolor{stringliteral}{"Pon un Byte para añadir a la ArrayCircular"});
+78                     aux = reader.readLine().trim();
+79                     byte value = Byte.parseByte(aux);
+80                     arraycircular.setValue(value);
+81                 \textcolor{keywordflow}{break};
+82                 \textcolor{keywordflow}{case} \textcolor{stringliteral}{"3"}:
+83                     System.out.println(\textcolor{stringliteral}{"Pon un entero para conseguir el valor en esa posición"});
+84                     aux = reader.readLine().trim();
+85                     \textcolor{keywordtype}{int} index = Integer.parseInt(aux);
+86                     System.out.println(arraycircular.getValue(index));;
+87                 \textcolor{keywordflow}{break};
+88                 \textcolor{keywordflow}{case} \textcolor{stringliteral}{"4"}:
+89                     System.out.println(\textcolor{stringliteral}{"Pon un entero"});
+90                     aux = reader.readLine().trim();
+91                     \textcolor{keywordtype}{int} despl = Integer.parseInt(aux);
+92                     System.out.println(arraycircular.getValueAmbDespl(despl));;
+93                 \textcolor{keywordflow}{break};
+94                 \textcolor{keywordflow}{case} \textcolor{stringliteral}{"5"}:
+95                     System.out.println(arraycircular.getStart());;
+96                 \textcolor{keywordflow}{break};
+97                 \textcolor{keywordflow}{case} \textcolor{stringliteral}{"6"}:
+98                     System.out.println(arraycircular.getEnd());;
+99                 \textcolor{keywordflow}{break};
+100                 \textcolor{keywordflow}{case} \textcolor{stringliteral}{"7"}:
+101                     System.out.println(\textcolor{stringliteral}{"Pon un Byte para saber si está en la Array"});
+102                     aux = reader.readLine().trim();
+103                     value = Byte.parseByte(aux);
+104                     System.out.println(arraycircular.isIn(value));;
+105                 \textcolor{keywordflow}{break};
+106                 \textcolor{keywordflow}{case} \textcolor{stringliteral}{"8"}:
+107                     System.out.println(arraycircular.getAfegits());
+108                 \textcolor{keywordflow}{break};
+109                 \textcolor{keywordflow}{case} \textcolor{stringliteral}{"0"}:
+110                     \textcolor{keywordflow}{return};
+111                 \textcolor{keywordflow}{default}:
+112                     System.out.println(\textcolor{stringliteral}{"La opción no es válida"});
+113                 \textcolor{keywordflow}{break};
+114             \}
+115         \}
+116     \}\textcolor{keywordflow}{catch} (Exception e) \{
+117         e.printStackTrace();
+118     \}
+119     \}
 \end{DoxyCode}
 \mbox{\Hypertarget{classdomini_1_1utils_1_1Driver____ArrayCircular_afac5a37f91b2914e692993e71c2d393c}\label{classdomini_1_1utils_1_1Driver____ArrayCircular_afac5a37f91b2914e692993e71c2d393c}} 
 \index{domini\+::utils\+::\+Driver\+\_\+\+\_\+\+Array\+Circular@{domini\+::utils\+::\+Driver\+\_\+\+\_\+\+Array\+Circular}!show\+Options@{show\+Options}}
@@ -137,32 +132,32 @@ Mostra les accions a realitzar durant l\textquotesingle{}execució
 
 
 \begin{DoxyCode}
-17                                      \{
-18         System.out.println(\textcolor{stringliteral}{"Driver de ArrayCircular"});
-19         System.out.println(\textcolor{stringliteral}{"Constructores: "});
-20         System.out.println(\textcolor{stringliteral}{"     1. ArrayCircular(int mida)"});
-21         System.out.println(\textcolor{stringliteral}{"     Input: 1"});
-22         System.out.println(\textcolor{stringliteral}{"\(\backslash\)nFunciones: "});
-23         System.out.println(\textcolor{stringliteral}{"     2. setValue(byte value)"});
-24         System.out.println(\textcolor{stringliteral}{"     Input: 2"});
-25         System.out.println(\textcolor{stringliteral}{"     3. getValue(int index)"});
-26         System.out.println(\textcolor{stringliteral}{"     Input: 3"});
-27         System.out.println(\textcolor{stringliteral}{"     4. getValueAmbDespl(int despl)"});
-28         System.out.println(\textcolor{stringliteral}{"     Input: 4"});
-29         System.out.println(\textcolor{stringliteral}{"     5. getStart()"});
-30         System.out.println(\textcolor{stringliteral}{"     Input: 5"});
-31         System.out.println(\textcolor{stringliteral}{"     6. getEnd()"});
-32         System.out.println(\textcolor{stringliteral}{"     Input: 6"});
-33         System.out.println(\textcolor{stringliteral}{"     7. isIn(byte value)"});
-34         System.out.println(\textcolor{stringliteral}{"     Input: 7"});
-35         System.out.println(\textcolor{stringliteral}{"     8. getAfegits()"});
-36         System.out.println(\textcolor{stringliteral}{"     Input: 8"});
-37         System.out.println();
-38 
-39         System.out.println(\textcolor{stringliteral}{"     0. Sortir"});
-40         System.out.println(\textcolor{stringliteral}{"     Input: 0"});
-41         System.out.println(\textcolor{stringliteral}{"----------------------------------------"});
-42     \}
+19                                      \{
+20         System.out.println(\textcolor{stringliteral}{"Driver de ArrayCircular"});
+21         System.out.println(\textcolor{stringliteral}{"Constructores: "});
+22         System.out.println(\textcolor{stringliteral}{"     1. ArrayCircular(int mida)"});
+23         System.out.println(\textcolor{stringliteral}{"     Input: 1"});
+24         System.out.println(\textcolor{stringliteral}{"\(\backslash\)nFunciones: "});
+25         System.out.println(\textcolor{stringliteral}{"     2. setValue(byte value)"});
+26         System.out.println(\textcolor{stringliteral}{"     Input: 2"});
+27         System.out.println(\textcolor{stringliteral}{"     3. getValue(int index)"});
+28         System.out.println(\textcolor{stringliteral}{"     Input: 3"});
+29         System.out.println(\textcolor{stringliteral}{"     4. getValueAmbDespl(int despl)"});
+30         System.out.println(\textcolor{stringliteral}{"     Input: 4"});
+31         System.out.println(\textcolor{stringliteral}{"     5. getStart()"});
+32         System.out.println(\textcolor{stringliteral}{"     Input: 5"});
+33         System.out.println(\textcolor{stringliteral}{"     6. getEnd()"});
+34         System.out.println(\textcolor{stringliteral}{"     Input: 6"});
+35         System.out.println(\textcolor{stringliteral}{"     7. isIn(byte value)"});
+36         System.out.println(\textcolor{stringliteral}{"     Input: 7"});
+37         System.out.println(\textcolor{stringliteral}{"     8. getAfegits()"});
+38         System.out.println(\textcolor{stringliteral}{"     Input: 8"});
+39         System.out.println();
+40 
+41         System.out.println(\textcolor{stringliteral}{"     0. Sortir"});
+42         System.out.println(\textcolor{stringliteral}{"     Input: 0"});
+43         System.out.println(\textcolor{stringliteral}{"----------------------------------------"});
+44     \}
 \end{DoxyCode}
 
 

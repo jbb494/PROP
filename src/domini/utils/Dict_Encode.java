@@ -6,6 +6,8 @@ import java.util.ArrayList;
 /**
  * @class Dict_Encode
  * @brief Diccionari (amb els mètodes corresponents) emprat per a la compressió.
+ * @file
+
  * 
  * Estructura de dades on cada posició representarà una seqüencia de bytes b0,b1,...,bn-1,bn. Per entendre com 
  * es genera i s'obté aquesta seqüencia es recomanable mirar la descripció de la classe Node donat que es l'estructura

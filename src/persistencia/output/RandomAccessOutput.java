@@ -10,6 +10,8 @@ import domini.utils.byteToConversion;
 /**
  * @class RandomAccessOutput
  * @brief Classe RandomAccessOutput
+ * @file
+
  * @author Joan Lapeyra
  */
 public class RandomAccessOutput {

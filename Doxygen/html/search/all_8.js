@@ -40,7 +40,6 @@ var searchData=
   ['getmetadata',['getMetadata',['../classpersistencia_1_1input_1_1Ctrl__Input.html#a46e05fce164a6803820c02565c1769c8',1,'persistencia::input::Ctrl_Input']]],
   ['getmethod',['getMethod',['../classpresentacion_1_1form_1_1PopUp__Comp.html#ab63511cd207f6a9f6e4f8b52f0b66523',1,'presentacion::form::PopUp_Comp']]],
   ['getmida',['GetMida',['../classdomini_1_1utils_1_1IntorByte.html#abccf2f9cda2f62acdf0c1342f9acdead',1,'domini::utils::IntorByte']]],
-  ['getmodel',['getModel',['../classpresentacion_1_1form_1_1components_1_1browserTree_1_1modelBrowser.html#ad0362719968bd949b1b1639eba9c2e3b',1,'presentacion::form::components::browserTree::modelBrowser']]],
   ['getmorebits',['getMoreBits',['../classpersistencia_1_1input_1_1Input.html#a81e96a5ac3ca41b5001ffff9f9acc76a',1,'persistencia::input::Input']]],
   ['getname',['getName',['../classdomini_1_1utils_1_1FileNames.html#ade42cac265a0eb6d3bbccc671f669253',1,'domini::utils::FileNames']]],
   ['getpath',['getPath',['../classdomini_1_1utils_1_1FileNames.html#a12c91817013f1485a2318621f3fc1312',1,'domini.utils.FileNames.getPath()'],['../classpersistencia_1_1output_1_1Output.html#ae33fc52334f791b6d4d7aebf2931df8d',1,'persistencia.output.Output.getPath()'],['../classpresentacion_1_1form_1_1FileChooser__Form.html#a599510439b2d28102d3b34f589919500',1,'presentacion.form.FileChooser_Form.getPath()']]],
@@ -52,12 +51,11 @@ var searchData=
   ['getstart',['getStart',['../classdomini_1_1utils_1_1ArrayCircular.html#a3527e861f31137d21dd09e4fe452badd',1,'domini::utils::ArrayCircular']]],
   ['getthread',['getThread',['../classpresentacion_1_1form_1_1mainForm.html#ac6348f8bdef39bfa651f145c00664320',1,'presentacion::form::mainForm']]],
   ['gettype',['getType',['../classdomini_1_1folders_1_1Ctrl__FolderFile.html#a9e2ef751bdcb99083831c6b4e4761169',1,'domini.folders.Ctrl_FolderFile.getType()'],['../classpersistencia_1_1Utils_1_1FolderOrFile.html#a57af4d14d71521f8a9b2b1aaad891fb0',1,'persistencia.Utils.FolderOrFile.getType()'],['../classpresentacion_1_1Ctrl__Presentacio_1_1Ctrl__Presentacio.html#a029db5d77bf1e81be0811816a74d81a0',1,'presentacion.Ctrl_Presentacio.Ctrl_Presentacio.getType()']]],
-  ['getvalor',['getValor',['../classpresentacion_1_1form_1_1components_1_1ProgressBar.html#ad4a771a1e071efde0956a8984ad91eb1',1,'presentacion::form::components::ProgressBar']]],
   ['getvalue',['getValue',['../classdomini_1_1utils_1_1ArrayCircular.html#acbed36ebcc550922c4485c19ce5be53e',1,'domini::utils::ArrayCircular']]],
   ['getvalueambdespl',['getValueAmbDespl',['../classdomini_1_1utils_1_1ArrayCircular.html#aa36c40061ff0f3ea0ae15f5b06900e94',1,'domini::utils::ArrayCircular']]],
   ['getwidth',['getWidth',['../classpersistencia_1_1input_1_1Ctrl__Input__Img.html#ab4cda237a52c99efb4411e0e86f3d3a2',1,'persistencia.input.Ctrl_Input_Img.getWidth()'],['../classpersistencia_1_1input_1_1Ctrl__Input__JPEG.html#ab4cd4c26db5bd1ce89f6e53458c99ba8',1,'persistencia.input.Ctrl_Input_JPEG.getWidth()'],['../classpersistencia_1_1output_1_1Ctrl__Output__Img.html#ab6e88e466e6b7d7d847be2ac9c26c529',1,'persistencia.output.Ctrl_Output_Img.getWidth()']]],
   ['getword',['getWord',['../classdomini_1_1utils_1_1Dict__Decode.html#a0f6457460aefe9df50f0cad48f58feee',1,'domini.utils.Dict_Decode.getWord()'],['../classpersistencia_1_1input_1_1Ctrl__Input__Encoded.html#a87ebc4b52c5884ba9c397558668e67d7',1,'persistencia.input.Ctrl_Input_Encoded.getWord()'],['../classpersistencia_1_1input_1_1Ctrl__Input__Img.html#a17676e8616da5821ca2323da4691d240',1,'persistencia.input.Ctrl_Input_Img.getWord()']]],
-  ['global',['global',['../classglobal_1_1global.html',1,'global.global'],['../classglobal.html',1,'global'],['../namespaceglobal.html',1,'global']]],
+  ['global',['global',['../classglobal.html',1,'global'],['../classglobal_1_1global.html',1,'global.global'],['../namespaceglobal.html',1,'global']]],
   ['global_2ejava',['global.java',['../global_8java.html',1,'']]],
   ['gradojpeg',['GradoJPEG',['../classpresentacion_1_1form_1_1PopUp__Comp.html#acf726751a39641f547274bfe8176fedd',1,'presentacion::form::PopUp_Comp']]]
 ];

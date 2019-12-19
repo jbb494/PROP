@@ -1,11 +1,13 @@
 package domini.algorithm;
 
 
+import persistencia.browser.Ctrl_Browser;
 import persistencia.input.Ctrl_Input;
 
 /**
  * @class Ctrl_Algorithm
  * @brief Classe de Ctrl_Algorithm
+ * @file
  * @author Manel Aguilar
  */
 public class Ctrl_Algorithm {
@@ -29,9 +31,13 @@ public class Ctrl_Algorithm {
         String ext = Path.substring(i+1);
         if (ext.toLowerCase().equals("ppm")) 
             return "jpeg";
-        else  
+        else{  
+            Ctrl_Browser aux = new Ctrl_Browser(Path);
+            if (aux.length() < 1*Math.pow(10,6))
+                return "lzss";
             return "lzw";
-	    //else throw new IllegalArgumentException("Format no reconegut");
+        }
+            //else throw new IllegalArgumentException("Format no reconegut");
     }
 
     /**

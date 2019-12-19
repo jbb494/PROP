@@ -7,6 +7,8 @@ import java.util.ArrayList;
 /**
  * @class Driver__Dict_Decode
  * @brief Driver de Dict_Decode
+ * @file
+
  * @author Joan Bellavista Bartroli
  */
 public class Driver__Dict_Decode {

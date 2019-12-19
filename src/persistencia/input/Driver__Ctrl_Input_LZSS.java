@@ -8,6 +8,8 @@ import domini.utils.IntorByte;
 /**
  * @class Driver__Ctrl_Input_LZSS
  * @brief Driver de Ctrl_Input_LZSS
+ * @file
+
  * @author Manel Aguilar
  */
 public class Driver__Ctrl_Input_LZSS {

@@ -11,8 +11,13 @@ Inheritance diagram for domini.\+algorithm.\+L\+ZW\+:
 % FIG 0
 
 
-Collaboration diagram for domini.\+algorithm.\+L\+ZW\+:
-% FIG 1
+Collaboration diagram for domini.\+algorithm.\+L\+ZW\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=211pt]{classdomini_1_1algorithm_1_1LZW__coll__graph}
+\end{center}
+\end{figure}
 \subsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
@@ -35,11 +40,6 @@ final Integer \hyperlink{classdomini_1_1algorithm_1_1LZW_a6d83dbcda4939db767fa05
 \subsection{Detailed Description}
 Compressió i descompressió pel mètode \hyperlink{classdomini_1_1algorithm_1_1LZW}{L\+ZW}. 
 
-El mètode \hyperlink{classdomini_1_1algorithm_1_1LZW}{L\+ZW} crea sobre la marxa, de manera automàtica i en una única passada un diccionari de cadenes que es trobin dins del text a comprimir mentre al mateix temps es procedeix a la seva codificació. Aquest diccionari no és transmès amb el text comprimit, ja que el descompressor pot reconstruir-\/lo usant la mateixa lògica amb què el fa el compressor i, si està codificat correctament, tindrà exactament les mateixes cadenes que el diccionari del compressor tenia. \begin{DoxyAuthor}{Author}
-Miguel Paracuellos Ocaña 
-\end{DoxyAuthor}
-
-
 \subsection{Constructor \& Destructor Documentation}
 \mbox{\Hypertarget{classdomini_1_1algorithm_1_1LZW_ab596afb13b224da41ee590a08df642a9}\label{classdomini_1_1algorithm_1_1LZW_ab596afb13b224da41ee590a08df642a9}} 
 \index{domini\+::algorithm\+::\+L\+ZW@{domini\+::algorithm\+::\+L\+ZW}!L\+ZW@{L\+ZW}}
@@ -60,12 +60,12 @@ Constructor de la classe.
 \end{DoxyParams}
 
 \begin{DoxyCode}
-39                                        \{
-40         super(path, b);
-41         \textcolor{keywordflow}{if} (!b) \{
-42             \hyperlink{classdomini_1_1algorithm_1_1Algorithm_a4de9955411c656325adc391ef570c082}{Output}.\hyperlink{classpersistencia_1_1output_1_1Ctrl__Output_ae6d6857910a023982900ddc857b891f0}{addMetadata}(\textcolor{stringliteral}{"lzw"});
-43         \}
-44     \}
+40                                        \{
+41         super(path, b);
+42         \textcolor{keywordflow}{if} (!b) \{
+43             \hyperlink{classdomini_1_1algorithm_1_1Algorithm_a4de9955411c656325adc391ef570c082}{Output}.\hyperlink{classpersistencia_1_1output_1_1Ctrl__Output_ae6d6857910a023982900ddc857b891f0}{addMetadata}(\textcolor{stringliteral}{"lzw"});
+44         \}
+45     \}
 \end{DoxyCode}
 \mbox{\Hypertarget{classdomini_1_1algorithm_1_1LZW_ad8feac199454cb47321930e6d737360e}\label{classdomini_1_1algorithm_1_1LZW_ad8feac199454cb47321930e6d737360e}} 
 \index{domini\+::algorithm\+::\+L\+ZW@{domini\+::algorithm\+::\+L\+ZW}!L\+ZW@{L\+ZW}}
@@ -87,12 +87,12 @@ Es continua escrivint al fitxer que s\textquotesingle{}estava escrivint
 \end{DoxyNote}
 
 \begin{DoxyCode}
-51                           \{
-52         super(b);
-53         \textcolor{keywordflow}{if} (!b) \{
-54             \hyperlink{classdomini_1_1algorithm_1_1Algorithm_a4de9955411c656325adc391ef570c082}{Output}.\hyperlink{classpersistencia_1_1output_1_1Ctrl__Output_ae6d6857910a023982900ddc857b891f0}{addMetadata}(\textcolor{stringliteral}{"lzw"});
-55         \}
-56     \}
+52                           \{
+53         super(b);
+54         \textcolor{keywordflow}{if} (!b) \{
+55             \hyperlink{classdomini_1_1algorithm_1_1Algorithm_a4de9955411c656325adc391ef570c082}{Output}.\hyperlink{classpersistencia_1_1output_1_1Ctrl__Output_ae6d6857910a023982900ddc857b891f0}{addMetadata}(\textcolor{stringliteral}{"lzw"});
+56         \}
+57     \}
 \end{DoxyCode}
 
 
@@ -105,31 +105,31 @@ Es continua escrivint al fitxer que s\textquotesingle{}estava escrivint
 
 
 \begin{DoxyCode}
-64                              \{
-65 
-66         \hyperlink{classdomini_1_1algorithm_1_1Algorithm_a070b7e7dcc453b03751d265beae5306c}{checkCompressor}();
-67         Ctrl\_Input\_Text inp = \textcolor{keyword}{new} Ctrl\_Input\_Text();
-68 
-69         \textcolor{comment}{//We initialize the attributes we need}
-70         Dict\_Encode table = \textcolor{keyword}{new} Dict\_Encode();
-71         Integer i = -1;
-72         
-73         \textcolor{keywordflow}{while} (!inp.finished()) \{
-74             byte c = inp.get();
-75 
-76             Integer aux = i;
-77 
-78             \textcolor{keywordflow}{if} ( (i = table.search\_and\_insert\_BST(aux, c)) == -1) \{
-79                 \hyperlink{classdomini_1_1algorithm_1_1Algorithm_a4de9955411c656325adc391ef570c082}{Output}.\hyperlink{classpersistencia_1_1output_1_1Ctrl__Output_a8c5aa5a6acb5259faeb1c05c71ddd21c}{add}(aux);
-80                 i = table.Ascii\_value(c);
-81             \}
-82         \}
-83 
-84         
-85         \textcolor{keywordflow}{if} (i != -1) \{
-86             \hyperlink{classdomini_1_1algorithm_1_1Algorithm_a4de9955411c656325adc391ef570c082}{Output}.\hyperlink{classpersistencia_1_1output_1_1Ctrl__Output_a8c5aa5a6acb5259faeb1c05c71ddd21c}{add}(i); 
-87         \}
-88     \}
+65                              \{
+66 
+67         \hyperlink{classdomini_1_1algorithm_1_1Algorithm_a070b7e7dcc453b03751d265beae5306c}{checkCompressor}();
+68         Ctrl\_Input\_Text inp = \textcolor{keyword}{new} Ctrl\_Input\_Text();
+69 
+70         \textcolor{comment}{//We initialize the attributes we need}
+71         Dict\_Encode table = \textcolor{keyword}{new} Dict\_Encode();
+72         Integer i = -1;
+73         
+74         \textcolor{keywordflow}{while} (!inp.finished()) \{
+75             byte c = inp.get();
+76 
+77             Integer aux = i;
+78 
+79             \textcolor{keywordflow}{if} ( (i = table.search\_and\_insert\_BST(aux, c)) == -1) \{
+80                 \hyperlink{classdomini_1_1algorithm_1_1Algorithm_a4de9955411c656325adc391ef570c082}{Output}.\hyperlink{classpersistencia_1_1output_1_1Ctrl__Output_a8c5aa5a6acb5259faeb1c05c71ddd21c}{add}(aux);
+81                 i = table.Ascii\_value(c);
+82             \}
+83         \}
+84 
+85         
+86         \textcolor{keywordflow}{if} (i != -1) \{
+87             \hyperlink{classdomini_1_1algorithm_1_1Algorithm_a4de9955411c656325adc391ef570c082}{Output}.\hyperlink{classpersistencia_1_1output_1_1Ctrl__Output_a8c5aa5a6acb5259faeb1c05c71ddd21c}{add}(i); 
+88         \}
+89     \}
 \end{DoxyCode}
 \mbox{\Hypertarget{classdomini_1_1algorithm_1_1LZW_a6a5d986396443691861ac9ba41b2dd33}\label{classdomini_1_1algorithm_1_1LZW_a6a5d986396443691861ac9ba41b2dd33}} 
 \index{domini\+::algorithm\+::\+L\+ZW@{domini\+::algorithm\+::\+L\+ZW}!Decompressor@{Decompressor}}
@@ -139,44 +139,44 @@ Es continua escrivint al fitxer que s\textquotesingle{}estava escrivint
 
 
 \begin{DoxyCode}
-94                                \{
-95 
-96         \hyperlink{classdomini_1_1algorithm_1_1Algorithm_a6b738342cc7169893fa60d593f5a13db}{checkDecompressor}();
-97         Ctrl\_Input\_LZW inp = \textcolor{keyword}{new} Ctrl\_Input\_LZW();
-98         
-99         Dict\_Decode table = \textcolor{keyword}{new} Dict\_Decode(\textcolor{keyword}{true}, -1);
-100         Integer i = -1;
-101         
-102         \textcolor{keywordflow}{while} (!inp.finished()) \{
-103             Integer k = inp.get();
-104             
-105             \textcolor{keywordflow}{if} (inp.finished()) \textcolor{keywordflow}{return};
-106             
-107             Integer sz = table.getSize();
-108             ArrayList<Byte> s = \textcolor{keyword}{new} ArrayList<>();
-109 
-110             \textcolor{comment}{//Dictionary's maximum size -> Reset it}
-111             \textcolor{keywordflow}{if} (sz == \hyperlink{classdomini_1_1algorithm_1_1LZW_a6d83dbcda4939db767fa0522d40fcc0a}{Limit}) \{ 
-112                 table.reset\_dictionary(\textcolor{keyword}{true});
-113             \}               
-114             \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (k > sz) \{
-115                 \textcolor{keywordflow}{throw} \textcolor{keyword}{new} IllegalArgumentException(\textcolor{stringliteral}{"El text no està ben comprimit"});
-116             \}       
-117             \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (k < sz) \{
-118                 s = table.getWord(k);
-119 
-120                 \textcolor{keywordflow}{if} (i != -1) \{
-121                     table.add(i, s.get(0));
-122                 \}
-123             \}
-124             \textcolor{keywordflow}{else} \{
-125                 table.add(i, table.getWord(i).get(0));
-126                 s = table.getWord(k);
-127             \}
-128             \hyperlink{classdomini_1_1algorithm_1_1Algorithm_a4de9955411c656325adc391ef570c082}{Output}.\hyperlink{classpersistencia_1_1output_1_1Ctrl__Output_a8c5aa5a6acb5259faeb1c05c71ddd21c}{add}(s);
-129             i = k;
-130         \}
-131     \}
+95                                \{
+96 
+97         \hyperlink{classdomini_1_1algorithm_1_1Algorithm_a6b738342cc7169893fa60d593f5a13db}{checkDecompressor}();
+98         Ctrl\_Input\_LZW inp = \textcolor{keyword}{new} Ctrl\_Input\_LZW();
+99         
+100         Dict\_Decode table = \textcolor{keyword}{new} Dict\_Decode(\textcolor{keyword}{true}, -1);
+101         Integer i = -1;
+102         
+103         \textcolor{keywordflow}{while} (!inp.finished()) \{
+104             Integer k = inp.get();
+105             
+106             \textcolor{keywordflow}{if} (inp.finished()) \textcolor{keywordflow}{return};
+107             
+108             Integer sz = table.getSize();
+109             ArrayList<Byte> s = \textcolor{keyword}{new} ArrayList<>();
+110 
+111             \textcolor{comment}{//Dictionary's maximum size -> Reset it}
+112             \textcolor{keywordflow}{if} (sz == \hyperlink{classdomini_1_1algorithm_1_1LZW_a6d83dbcda4939db767fa0522d40fcc0a}{Limit}) \{ 
+113                 table.reset\_dictionary(\textcolor{keyword}{true});
+114             \}               
+115             \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (k > sz) \{
+116                 \textcolor{keywordflow}{throw} \textcolor{keyword}{new} IllegalArgumentException(\textcolor{stringliteral}{"El text no està ben comprimit"});
+117             \}       
+118             \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (k < sz) \{
+119                 s = table.getWord(k);
+120 
+121                 \textcolor{keywordflow}{if} (i != -1) \{
+122                     table.add(i, s.get(0));
+123                 \}
+124             \}
+125             \textcolor{keywordflow}{else} \{
+126                 table.add(i, table.getWord(i).get(0));
+127                 s = table.getWord(k);
+128             \}
+129             \hyperlink{classdomini_1_1algorithm_1_1Algorithm_a4de9955411c656325adc391ef570c082}{Output}.\hyperlink{classpersistencia_1_1output_1_1Ctrl__Output_a8c5aa5a6acb5259faeb1c05c71ddd21c}{add}(s);
+130             i = k;
+131         \}
+132     \}
 \end{DoxyCode}
 
 

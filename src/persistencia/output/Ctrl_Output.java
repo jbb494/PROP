@@ -7,6 +7,8 @@ import java.util.ArrayList;
 /**
  * @class Ctrl_Output
  * @brief Classe Ctrl_Output
+ * @file
+
  * 
  * Cal tenir en compte que no es poden escriure dos fitxers simultàniament.
  * El fitxer que escriuen les instàncies de Ctrl_Output i els seus fills s'inicialitza 

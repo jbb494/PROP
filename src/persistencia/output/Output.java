@@ -11,6 +11,8 @@ import domini.utils.byteToConversion;
 /**
  * @class Output
  * @brief Classe Output
+ * @file
+
  * @author Manel Aguilar
  */
 public class Output {

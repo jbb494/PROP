@@ -5,6 +5,8 @@ import java.util.ArrayList;
 /**
  * @class Dict_Decode
  * @brief Diccionari (amb els mètodes corresponents) emprat per a la descompressió.
+ * @file
+
  *
  * Estructura de dades on cada posició indicarà una seqüencia de bytes b0,b1,...,bn-1,bn. El primer valor indica 
  * la posició del següent bytes de la subcadena b0,...,bn-1 mentre que el segon valor és bn. 

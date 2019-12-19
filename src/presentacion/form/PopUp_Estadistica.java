@@ -81,6 +81,7 @@ public class PopUp_Estadistica extends JDialog {
 
 /** @class PopUp_Estadistica
  *  @brief Esta es la clase del form que abre las estadísticas.
+  * @file
  *
  *  @author
  */
