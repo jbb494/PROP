@@ -299,7 +299,7 @@ class Huffman {
         set_code_sizes();
         initialize_from_code_sizes();
 
-        ///////////////////////////////////////////////
+        /*/////////////////////////////////////////////
         tree.print();
         System.out.println();
         for (int i = 0; i < code_sizes.size(); ++i) {
@@ -309,7 +309,7 @@ class Huffman {
             }
             System.out.println();
         }
-        /////////////////////////////////////////////////
+        ///////////////////////////////////////////////*/
 
         
     }

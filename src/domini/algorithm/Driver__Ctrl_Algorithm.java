@@ -21,11 +21,11 @@ public class Driver__Ctrl_Algorithm {
 		System.out.println("	 Input: 1");
 
 		System.out.println("\nFunciones: ");
-		System.out.println("	 2. Choose_Encoder(String Path, String method) ");
+		System.out.println("	 2. Encode(String Path) ");
 		System.out.println("	 Input: 2");
-		System.out.println("	 3. [NO IMPLEMENTADO] Auto_Encoder(String Path)");
+		System.out.println("	 3. Auto_Encoder(String Path)");
 		System.out.println("	 Input: 3");
-		System.out.println("	 4. Auto_Decoder(String Path, String method)");
+		System.out.println("	 4. Decode(String Path, String method, Integer img_quality)");
 		System.out.println("	 Input: 4");
 		System.out.println();
 
@@ -62,27 +62,25 @@ public class Driver__Ctrl_Algorithm {
 					ctrl_algorithm = new Ctrl_Algorithm();
 				break;
 				case "2":
-					System.out.println("Escribe el path del archivo que quieres hacer la compresión y el metodo separado por espacios. ");
+					System.out.println("Escribe el path del archivo que quieres hacer la compresión y el metodo, y la calidad de compresion (separado por espacios). ");
 					String[] aux = reader.readLine().trim().split(" ");
 					String Path = aux[0];
 					String method = aux[1];
-					String ret = ctrl_algorithm.Choose_Encoder(Path, method);
-					System.out.println(ret);
+					Integer img_quality = Integer.parseInt(aux[2]);
+					ctrl_algorithm.Encode(Path, method, img_quality);
 				break;
 				case "3":
-					System.out.println("[NO IMPLEMENTADO] Escribe el path del archivo que quieres comprimir.");
+					System.out.println("Escribe el path del archivo que quieres comprimir.");
 					String aux1 = reader.readLine().trim();
 					Path = aux1;
-					ret = ctrl_algorithm.Auto_Encoder(Path);
+					String ret = ctrl_algorithm.Auto_Encoder(Path);
 					System.err.println(ret);
 				break;
 				case "4":
-					System.out.println("escribe el path del archivo comprimido que quieres descomprimir y el metodo con el que ha sido comprimido separado por espacios.");
+					System.out.println("escribe el path del archivo comprimido que quieres descomprimir");
 					String[] aux2 = reader.readLine().trim().split(" ");
 					Path = aux2[0];
-					method = aux2[1];
-					ret = ctrl_algorithm.Auto_Decoder(Path).getRight();
-					System.out.println(ret);
+					ctrl_algorithm.Decode(Path);
 				break;
 				case "0":
 					return;

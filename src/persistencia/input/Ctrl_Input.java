@@ -10,7 +10,7 @@ import java.util.regex.Pattern;
  * 
  * Cal tenir en compte que no es poden llegir dos fitxers simultàniament.
  * El fitxer que llegeixen les instàncies de Ctrl_Input i els seus fills s'inicialitza 
- * cada cop que es crida a initialize(String path) o Ctrl_Input*(String path), 
+ * cada cop que es crida a Input.initialize(String path) o Ctrl_Input*(String path), 
  * on Ctrl_Input* és Ctrl_Input o un dels seus fills.
  * @author Joan Lapeyra
  */
