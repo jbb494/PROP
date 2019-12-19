@@ -427,8 +427,4 @@ public class Ctrl_FolderFile {
         if (magic_word == (byte)0xF0) return "";
         throw new IllegalArgumentException("No es un comprimit.");
     }
-
-    public String getFile(String pathTemp) throws IOException {
-        return Ctrl_Input.getFile(pathTemp);
-    }
 }
