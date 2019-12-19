@@ -1,6 +1,0 @@
--Carpeta domini: Contiene toda la informacion de la capa de dominio.
--Carpeta global: Contiene una clase enumeration de uso global para todas las capas.
--Carpeta persistencia: Contiene toda la informacion de la capa de persistencia.
--Carpeta presentacion: Contiene toda la informacion de la capa de presentacion.
--Script compileAndRun.sh: Es el ejecutable del proyecto.
--Clase Main.java: Es el main del proyecto.

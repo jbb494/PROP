@@ -28,7 +28,7 @@ elif [[ $1 == "-etest" ]]; then
 elif [[ $1 == "-clean" || $1 == "-remove" ]]; then
     echo "Borrem els seguents arxius: "
     cd ../bin
-    ArxiusABorrar=$(find | grep "\.class" | sed "/\.\/presentacion/ d;" | tr "\n" " ")
+    ArxiusABorrar=$(find | grep "\.class" | tr "\n" " ")
     echo $ArxiusABorrar | sed "s/ /\n/g;"
     rm $ArxiusABorrar
     cd ../src
