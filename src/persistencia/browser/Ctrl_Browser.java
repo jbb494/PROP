@@ -48,7 +48,6 @@ public class Ctrl_Browser {
     /**
      * @fn public String mkdir(String name)
      * @brief Crea un directori en el el path referenciat per this
-     * @param name nom del nou directori
      */
     public void mkdir() {
         file.mkdir();
