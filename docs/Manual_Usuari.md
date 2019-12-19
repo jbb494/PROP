@@ -26,13 +26,3 @@ Una vez tengamos un fichero seleccionado podremos escoger
 
 
 
-Redimensionar la ventana?
-
-Previsualizar sirve? Previsualizar ppm?
-
-Junit como sobrevivo?
-
-Discos?
-
-Index.txt / directorio
-
