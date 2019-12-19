@@ -1,70 +1,88 @@
 Joan Bellavista: 
 
-./domini/estadistica/Driver__Estadistica.java
-./domini/utils/Trie.java
-./domini/utils/TrieNode.java
-./domini/utils/Driver__TrieNode.java
-./domini/utils/Driver__ArrayCircular.java
-./domini/utils/Driver__Trie.java
-./domini/utils/Driver__IntorByte.java
-./domini/utils/byteToConversion.java
-./domini/utils/Driver__byteToConversion.java
-./domini/utils/Driver__Node.java
-./domini/utils/Driver__Pair.java
-./domini/algorithm/Driver__Ctrl_Algorithm.java
-./domini/algorithm/LZ78.java
-./domini/utils/Driver__Dict_Encode.java
-./domini/utils/Driver__Dict_Decode.java
-./domini/algorithm/Driver__LZ78.java
-./domini/algorithm/Driver__LZW.java
-./persistencia/input/Input.java
-./persistencia/input/Driver__Input.java
-./persistencia/input/Ctrl_Input_LZ78.java
-./persistencia/output/Driver__Output.java
-./persistencia/output/Driver__Ctrl_Output.java
+./src/presentacion/form/mainForm.java
+./src/presentacion/Ctrl_Presentacio/Ctrl_Presentacio.java
+./src/domini/algorithm/Driver__LZW.java
+./src/domini/algorithm/LZ78.java
+./src/domini/algorithm/Driver__LZ78.java
+./src/domini/algorithm/Driver__Ctrl_Algorithm.java
+./src/domini/utils/Driver__TrieNode.java
+./src/domini/utils/Driver__ArrayCircular.java
+./src/domini/utils/Driver__Pair.java
+./src/domini/utils/Trie.java
+./src/domini/utils/Driver__byteToConversion.java
+./src/domini/utils/Driver__IntorByte.java
+./src/domini/utils/byteToConversion.java
+./src/domini/utils/TrieNode.java
+./src/domini/utils/Driver__Trie.java
+./src/domini/utils/Driver__Node.java
+./src/domini/utils/Driver__Dict_Encode.java
+./src/domini/utils/Driver__Dict_Decode.java
+./src/domini/folders/Driver__Ctrl_FolderFile.java
+./src/domini/estadistica/Driver__Estadistica.java
+./src/global/global.java
+./src/persistencia/output/Driver__Output.java
+./src/persistencia/output/Driver__Ctrl_Output.java
+./src/persistencia/input/Input.java
+./src/persistencia/input/Driver__Input.java
+./src/persistencia/input/Ctrl_Input_LZ78.java
 
 Miguel Paracuellos: 
 
-./presentacion/master/Ctrl_Master.java
-./domini/utils/Dict_Encode.java
-./domini/utils/Dict_Decode.java
-./domini/utils/Pair.java
-./domini/utils/Node.java
-./domini/algorithm/LZW.java
-./domini/algorithm/LZWTest.java
-./persistencia/input/Ctrl_Input_Text.java
-./persistencia/input/Ctrl_Input_LZW.java
-./persistencia/output/Ctrl_Output.java
-Dels jocs de proves dels drivers ("Drivers joc_proves.txt"), els últims 21.
-
+./src/presentacion/form/PopUp_Comp.java
+./src/presentacion/form/FileChooser_Form.java
+./src/presentacion/form/PopUp_Estadistica.java
+./src/domini/algorithm/LZW.java
+./src/domini/algorithm/LZWTest.java
+./src/domini/utils/Node.java
+./src/domini/utils/Dict_Encode.java
+./src/domini/utils/Pair.java
+./src/domini/utils/Dict_Decode.java
+./src/persistencia/output/Ctrl_Output.java
+./src/persistencia/input/Ctrl_Input_Text.java
+./src/persistencia/input/Ctrl_Input_LZW.java
 
 Joan Lapeyra: 
 
-./Main.java
-./domini/utils/stringConversion.java
-./persistencia/input/Ctrl_Input.java
-./domini/algorithm/JPEG.java
-./domini/utils/BinTree.java
-./domini/utils/Driver__BinTree.java
-./domini/algorithm/Huffman.java
-./persistencia/input/Ctrl_Input_Img.java
-./persistencia/input/Ctrl_Input_JPEG.java
-./persistencia/output/Ctrl_Output_Img.java
-
+./src/domini/algorithm/Huffman.java
+./src/domini/algorithm/JPEG.java
+./src/domini/algorithm/Algorithm.java
+./src/domini/algorithm/Driver__JPEG.java
+./src/domini/algorithm/Driver__Huffman.java
+./src/domini/utils/FileNames.java
+./src/domini/utils/Driver__BinTree.java
+./src/domini/utils/BinTree.java
+./src/domini/folders/Ctrl_FolderFile.java
+./src/persistencia/output/Ctrl_Output_Encoded.java
+./src/persistencia/output/RandomAccessOutput.java
+./src/persistencia/output/Ctrl_Output_Img.java
+./src/persistencia/output/Driver__Ctrl_Output_Img.java
+./src/persistencia/browser/Ctrl_Browser.java
+./src/persistencia/input/Ctrl_Input.java
+./src/persistencia/input/Ctrl_Input_JPEG.java
+./src/persistencia/input/Driver__Ctrl_Input_Img.java
+./src/persistencia/input/Ctrl_Input_Encoded.java
+./src/persistencia/input/Ctrl_Input_Img.java
+./src/persistencia/input/Driver__Ctrl_Input_JPEG.java
+./src/Main.java
 
 Manel Aguilar: 
 
-./presentacion/master/Driver__Ctrl_Master.java
-./domini/estadistica/Estadistica.java
-./domini/utils/IntorByte.java
-./domini/utils/ArrayCircular.java
-./domini/algorithm/LZSS.java
-./domini/algorithm/Driver__LZSS.java
-./domini/algorithm/Ctrl_Algorithm.java
-./persistencia/input/Ctrl_Input_LZSS.java
-./persistencia/input/Driver__Ctrl_Input_LZ78.java
-./persistencia/input/Driver__Ctrl_Input_LZW.java
-./persistencia/input/Driver__Ctrl_Input_LZSS.java
-./persistencia/input/Driver__Ctrl_Input_Text.java
-./persistencia/output/Output.java
-Dels jocs de proves dels drivers ("Drivers joc_proves.txt"), els primers 21.
+./src/presentacion/form/mainForm.java
+./src/domini/algorithm/Driver__LZSS.java
+./src/domini/algorithm/LZSS.java
+./src/domini/algorithm/Ctrl_Algorithm.java
+./src/domini/utils/ArrayCircular.java
+./src/domini/utils/IntorByte.java
+./src/domini/estadistica/Estadistica.java
+./src/persistencia/output/Output.java
+./src/persistencia/input/Driver__Ctrl_Input_Text.java
+./src/persistencia/input/Driver__Ctrl_Input_LZSS.java
+./src/persistencia/input/Ctrl_Input_LZSS.java
+./src/persistencia/input/Driver__Ctrl_Input_LZW.java
+./src/persistencia/input/Driver__Ctrl_Input_LZ78.java
+./src/persistencia/Utils/FolderOrFile.java
+
+Ningu: 
+
+

@@ -82,5 +82,5 @@ public class FileChooser_Form extends JFrame {
  * @file
 
  *
- *  @author
+ *  @author Miguel Paracuellos
  */
