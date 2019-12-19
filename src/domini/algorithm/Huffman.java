@@ -500,7 +500,7 @@ class Huffman {
 
 
 
-    public static void main(String[] args) {
+    /*public static void main(String[] args) {
         Map<Integer,Integer> m = new HashMap<Integer,Integer>();
         m.put(91, 11);
         m.put(92, 6);
@@ -525,6 +525,6 @@ class Huffman {
             int sz = h.getSize(x);
             System.out.println(x +" -> "+ Integer.toBinaryString(cd) +","+ sz +" -> "+ h.getSymbol(cd));
         }
-    }
+    }*/
 
 }

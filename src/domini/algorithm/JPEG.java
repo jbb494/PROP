@@ -3,9 +3,7 @@ package domini.algorithm;
 
 import persistencia.input.Ctrl_Input_Img;
 import persistencia.input.Ctrl_Input_JPEG;
-import persistencia.output.Ctrl_Output;
 import persistencia.output.Ctrl_Output_Img;
-import java.util.Random;
 
 /**
  * @class JPEG
