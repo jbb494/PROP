@@ -47,7 +47,7 @@ Com que JPEG és lossy les imatges no es poden comparar amb la comanda *diff* si
 
 ## Carpetes
 
-src/persistencia/data/carpeta és un exemple de carpeta bastant complet pensar per sé comprimit.
+src/persistencia/data/carpeta és un exemple de carpeta bastant complet pensada per ser comprimida.
 Conté:
 - *house.ppm*, una imatge petita
 - *sage.ppm*, una imatge gran
