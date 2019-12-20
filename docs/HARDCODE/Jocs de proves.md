@@ -2,13 +2,13 @@
 
 Introduirem a continuació una petita descripció de cada joc de proves, per a la compressió i descompressió, amb l'objectiu rere el contingut de cada fitxer.
 
+## Fitxers txt 
+
 Els arxius de InputX.txt estan a la carpeta src/persistencia/data
 
-Per a cada arxiu XXX.txt existeix una copia del qual anomenada XXXCheck.txt, la qual farem servir per comprovar que el resultat obtingut de la compressió -> descompressió és el desitjat.
+Per a cada arxiu XXX.txt existeix una copia del qual anomenada XXXCheck.txt, la qual farem servir per comprovar que el resultat obtingut de la compressió -> descompressió és el desitjat. Cal tenir en compte que si comprimim XXX.txt se'ns genera XXX.jm. I si després comprimim XXX.jm se sobreescriu XXX.txt.
 
 *Recomanem el comandament "diff XXX.txt XXXCheck.txt" de Linux per comprovar el correcte funcionament del codi.*
-
-## Fitxers txt 
 
 ### Input1.txt
 
@@ -34,9 +34,32 @@ En tots els casos anteriors estàvem treballant sobre textos en català/castell�
 
 A últim moment ens va sorgir el dubte sobre qué passaria si el fitxer estava completament buit, així que vam crear aquest sisé joc de proves.
 
-##Junit
 
-### junit.txt - junit.lzw
+## Imatges ppm
 
-Emprem aquests dos fitxers per la comprovació de la classe LZW amb Junit.
+A src/persistencia/data/imatges_grans hi ha imatges d'entre 1,4 MB i 2,3 MB.
+
+A src/persistencia/data/imatges_petites hi ha imatges d'entre 12 kB i 232 kB.
+
+Per a cada arxiu XXX.ppm existeix una copia del qual anomenada XXXCheck.ppm, la qual farem servir per comparar  que el resultat obtingut de la compressió -> descompressió és el desitjat. Cal tenir en compte que si comprimim XXX.ppm se'ns genera XXX.jm. I si després comprimim XXX.jm se sobreescriu XXX.ppm.
+
+Com que JPEG és lossy les imatges no es poden comparar amb la comanda *diff* sinó que s'ha de fer a ull.
+
+## Carpetes
+
+src/persistencia/data/carpeta és un exemple de carpeta bastant complet pensar per sé comprimit.
+Conté:
+- *house.ppm*, una imatge petita
+- *sage.ppm*, una imatge gran
+- *subcarpeta*, una carpeta amb:
+  - *curt.txt*, un fitxer de text curt
+  - *llarg.txt*, un fitxer de text llarg
+  - *max.cc*, el codi d'un programa en C++. Serà comprimit amb un algoritme LZ, igual que els fitxers txt.
+  
+src/persistencia/data/carpetaCHECK és una còpia de la carpeta per comprovar que el procés compressió->descompressió s'hagi fet correctament.
+
+
+## Junit
+
+Els quatre fitxers que hi ha a src/persistencia/data/junit (junit.jm, junit.txt, junit_check.jm i junit_check.txt) son emprats per la comprovació de la classe LZW amb Junit. Per tal que funioni la comprovació no han de ser modificats per cap actor que no sigui el programa encarregat de fer la comprovació.
 
