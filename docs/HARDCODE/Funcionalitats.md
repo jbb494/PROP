@@ -1,65 +1,40 @@
-# Introducció
+# Funcionalitats
 
-Introduirem a continuació una petita descripció de cada joc de proves, per a la compressió i descompressió, amb l'objectiu rere el contingut de cada fitxer.
+## Comprimir i descomprimir fitxers txt
 
-## Fitxers txt 
+Ho fa mitjançant algoritmes LZ. 
 
-Els arxius de InputX.txt estan a la carpeta src/persistencia/data
+Si l'usuari escull el mode manual pot triar quin algorisme emprar entre els LZ78, LZSS i LZW.
 
-Per a cada arxiu XXX.txt existeix una copia del qual anomenada XXXCheck.txt, la qual farem servir per comprovar que el resultat obtingut de la compressió -> descompressió és el desitjat. Cal tenir en compte que si comprimim XXX.txt se'ns genera XXX.jm. I si després comprimim XXX.jm se sobreescriu XXX.txt.
+Si escull el mode automàtic el nostre programa tria l'algorisme en funció de la mida del fitxer: LZSS per a fitxers de menys de 1MB i LZW per a fitxers més grans. Aquesta heurística és nova d'aquesta entrega ja que a la primera entrega el mode automàtic sempre comprimia amb LZW.
 
-*Recomanem la comanda "diff XXX.txt XXXCheck.txt" de Linux per comprovar el correcte funcionament del codi.*
+## Comprimir i descomprimir imatges ppm
 
-### Input1.txt
+Ho fa mitjançant l'algoritme JPEG.
 
-Es tracta d'un fitxer de 4.4 MB en el que es repeteix un cert paràgraf un nombre determinat de vegades. Ens centrem en intentar maximitzar el grau de compressió de l'arxiu.
+A més, si l'usuari escull mode manual, pot triar la qualitat amb què es comprimeix. Com més qualitat menys grau de compressió i com menys qualitat més grau de compressió.
 
-### Input2.txt
+Si l'usuari escull mode automàtic la qualitat serà del 50%.
 
-En aquest cas estem treballant amb un fitxer de 5.5 MB, amb el que busquem veure si la velocitat de compressió dels nostres algorismes es veu greument perjudicada amb un augment de la mida o si es manté dintre d'uns marges raonables degut a que l'algorisme en qüestió segueix el grau de complexitat esperat.
+La funcionalitat de triar la qualitat de compressió és nova respecte la primera entrega
 
-### Input3.txt
+## Comrpimir i descomprimir qualsevol fitxer (funcionalitat nova)
 
-Tornem a tenir un fitxer de menys de 1.5 MB (1.1 MB concretament), però en aquest cas no estem repetint de manera intencionada el seu contingut. La intenció es veure com es comporten els nostres algorismes amb un text de mida raonable.
+Si el fitxer que l'usuari vol comprimir no és ni ppm ni txt, es comprimirà amb un algoritme LZ, de la mateixa manera que si fos txt.
 
-### Input4.txt
+En descomprimir-se, recuperarà l'extensió original gràcies a la metadata del comprimit.
 
-Vam afegir un tercer text de mida similar al Input1/3 per comprovar si el grau de compressió es mantenia per sobre de 1 en textos de tamany superior a 1 MB.
+## Comprimir i descomprimir carpetes (funcionalitat nova)
 
-### Input5.txt
+També es poden comprimir i descomprimir carpetes. Per cada fitxer que contingui:
+- Si és ppm serà comrpimit amb l'algoritme JPEG amb la qualitat que demani l'usuari (en cas de compressió manual) o amb una qualitat del 50% (en cas de compressió automàtica)
+- Altrament, serà comrpimit amb un algoritme LZ, el que especifiqui l'usuari (en cas de compressió manual) o el que decideixi el programa mitjançant l'heurística explicada més amunt (en cas de compressió automàtica).
 
-En tots els casos anteriors estàvem treballant sobre textos en català/castellà, fet que no ens acabava de convèncer per assegurar el correcte funcionament de la compressió/descompressió de textos utf8, per tant vam generar un fitxer amb codificació Koreana. 
+## Visualitzar fitxers de text (funcionalitat nova)
 
-### Input6.txt
-
-A últim moment ens va sorgir el dubte sobre qué passaria si el fitxer estava completament buit, així que vam crear aquest sisé joc de proves.
-
-
-## Imatges ppm
-
-A src/persistencia/data/imatges_grans hi ha imatges d'entre 1,4 MB i 2,3 MB.
-
-A src/persistencia/data/imatges_petites hi ha imatges d'entre 12 kB i 232 kB.
-
-Per a cada arxiu XXX.ppm existeix una copia del qual anomenada XXXCHECK.ppm, la qual farem servir per comparar  que el resultat obtingut de la compressió -> descompressió és el desitjat. Cal tenir en compte que si comprimim XXX.ppm se'ns genera XXX.jm. I si després comprimim XXX.jm se sobreescriu XXX.ppm.
-
-Com que JPEG és lossy les imatges no es poden comparar amb la comanda *diff* sinó que s'ha de fer a ull.
-
-## Carpetes
-
-src/persistencia/data/carpeta és un exemple de carpeta bastant complet pensada per ser comprimida.
-Conté:
-- *house.ppm*, una imatge petita
-- *sage.ppm*, una imatge gran
-- *subcarpeta*, una carpeta amb:
-  - *curt.txt*, un fitxer de text curt
-  - *llarg.txt*, un fitxer de text llarg
-  - *max.cc*, el codi d'un programa en C++. Serà comprimit amb un algoritme LZ, igual que els fitxers txt.
-  
-src/persistencia/data/carpetaCHECK és una còpia de la carpeta per comprovar que el procés compressió->descompressió s'hagi fet correctament.
+El nostre programa permet visualitxar fitxer de text. Si el fitxer de text que es volvisualitzar està comprimit, es descomprimeix automàticament (en un fitxer temporal) per poder ser mostrat a la interfície gràfica d'usuari.
 
 
-## Junit
+## Extensió única (funcionalitat nova)
 
-Els quatre fitxers que hi ha a src/persistencia/data/junit (junit.jm, junit.txt, junit_check.jm i junit_check.txt) son emprats per la comprovació de la classe LZW amb Junit. Per tal que funioni la comprovació no han de ser modificats per cap actor que no sigui el programa encarregat de fer la comprovació.
-
+Tots els comprimits generats pel nostre programa tenen la mateixa extensió: .jm, a diferència de la primera entrega, en què l'extensió representava l'algorisme amb què s'havia comprimit. Ara el programa sap amb quin algorisme s'ha comprimit gràcies a la metadata del comprimit.
