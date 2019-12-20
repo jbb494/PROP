@@ -296,7 +296,7 @@ Si tenim una tira se bits amb un codi de Huffman i volem obtenir el símbol que 
 
 >initSearchSymbol()
 >
->mentre no haguem trobat el símbol o tinguem la certesa que el codi no és vàlid:
+>mentre no haguem trobat el símbol i no tinguem la certesa que el codi no és vàlid:
 >
 >>llegim un bit
 >>
