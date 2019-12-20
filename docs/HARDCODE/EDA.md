@@ -194,19 +194,15 @@ Sigui (y, cb, cr) la tripleta que representa un píxel en format YCbCr.
 
 Per transformar de RGB a YCbCr en un rang de 0 a 255 he utilitzat les següents assignacions:
 
-y = 16 + (65.738r + 129.057g + 25.064b)/256;
-
-cb = 128 + (-37.945r - 74.494g + 112.439b)/256;
-
-cr = 128 + (112.439r - 94.154g - 18.285b)/256;
+>y = 16 + (65.738r + 129.057g + 25.064b)/256;
+>cb = 128 + (-37.945r - 74.494g + 112.439b)/256;
+>cr = 128 + (112.439r - 94.154g - 18.285b)/256;
 
 Per transformar de YCbCr a RGB en un rang de 0 a 255 he utilitzat les següents assignacions:
 
-r = 255/219\*(y-16) + 255/224 1.402 (cr-128.);
-
-g = 255/219\*(y-16) + 255/224 (1.772 \* 0.114/0.587 \* (cb-128) - 1.402 \* 0.299/0.587 (cr-128));
-
-b = 255/219\*(y-16) + 255/224 \* 1.772 (cb-128);
+>r = 255/219\*(y-16) + 255/224 1.402 (cr-128.);
+>g = 255/219\*(y-16) + 255/224 (1.772 \* 0.114/0.587 \* (cb-128) - 1.402 \* 0.299/0.587 (cr-128));
+>b = 255/219\*(y-16) + 255/224 \* 1.772 (cb-128);
 
 
 Vaig voler comprovar el bon funcionament de la transformació fent el següent: per diversos colors RGB, transformar-los a YCbCr, tornar-los a transformar a RGB i comparant els valors inicials de RGB amb els finals. Vaig veure que no eren exactament les mateixes però que les peites diferències eren imperceptibles a l’ull humà a l’hora de visualitzat el color. Tanmateix era preocupant que alguns valors sortissin del rang (0, 255) ja que això no permetria representar-los bé en el fitxer ppm. Per això en després d’aplicar la transformació de YCbCr si algun valor era negatiu forçava que fos 0 i si algun valor sobrepassava 255 forçava que fos 255.
