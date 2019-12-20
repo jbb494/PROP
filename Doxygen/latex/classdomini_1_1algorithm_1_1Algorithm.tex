@@ -8,3 +8,242 @@ Classe de \hyperlink{classdomini_1_1algorithm_1_1Algorithm}{Algorithm}.
 
 
 Inheritance diagram for domini.\+algorithm.\+Algorithm\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classdomini_1_1algorithm_1_1Algorithm__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for domini.\+algorithm.\+Algorithm\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=212pt]{classdomini_1_1algorithm_1_1Algorithm__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classdomini_1_1algorithm_1_1Algorithm_a154c4e8cb723815bb8d8b5186ee93ec2}{Algorithm} (String path, boolean b)
+\begin{DoxyCompactList}\small\item\em Constructor de la clase. \end{DoxyCompactList}\item 
+\hyperlink{classdomini_1_1algorithm_1_1Algorithm_a53e4ed336c98702ebc2a44a5fdb5f4b5}{Algorithm} (boolean b)
+\begin{DoxyCompactList}\small\item\em Constructor de la classe. \end{DoxyCompactList}\item 
+\hyperlink{classdomini_1_1algorithm_1_1Algorithm_ad67a7c097eb86c4fc033f8deecb845a4}{Algorithm} ()
+\begin{DoxyCompactList}\small\item\em Constructor de la classe. \end{DoxyCompactList}\item 
+abstract void \hyperlink{classdomini_1_1algorithm_1_1Algorithm_afed9609e38c82431e0631fd84dbc89e4}{Compressor} ()
+\begin{DoxyCompactList}\small\item\em Comprimeix el fitxer que s\textquotesingle{}està llegint. \end{DoxyCompactList}\item 
+abstract void \hyperlink{classdomini_1_1algorithm_1_1Algorithm_ae712f08ef4b86cb625a9e00057ad8836}{Decompressor} ()
+\begin{DoxyCompactList}\small\item\em Descomprimeix el fitxer que s\textquotesingle{}està llegint. \end{DoxyCompactList}\item 
+void \hyperlink{classdomini_1_1algorithm_1_1Algorithm_a5546f991f9d71d012d6ded5f2d4181cb}{print} ()
+\begin{DoxyCompactList}\small\item\em Escriu a l\textquotesingle{}output el que quedava per escriure. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{classdomini_1_1algorithm_1_1Algorithm_a070b7e7dcc453b03751d265beae5306c}{check\+Compressor} ()
+\begin{DoxyCompactList}\small\item\em Llança una excepció si la instància no és compressora. \end{DoxyCompactList}\item 
+void \hyperlink{classdomini_1_1algorithm_1_1Algorithm_a6b738342cc7169893fa60d593f5a13db}{check\+Decompressor} ()
+\begin{DoxyCompactList}\small\item\em Llança una excepció si la instància no és descompressora. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classpersistencia_1_1output_1_1Ctrl__Output}{Ctrl\+\_\+\+Output} \hyperlink{classdomini_1_1algorithm_1_1Algorithm_a4de9955411c656325adc391ef570c082}{Output}
+\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+boolean \hyperlink{classdomini_1_1algorithm_1_1Algorithm_a0ec73147fb68a16e53801ea5da35b089}{decompressing}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Classe de \hyperlink{classdomini_1_1algorithm_1_1Algorithm}{Algorithm}. 
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classdomini_1_1algorithm_1_1Algorithm_a154c4e8cb723815bb8d8b5186ee93ec2}\label{classdomini_1_1algorithm_1_1Algorithm_a154c4e8cb723815bb8d8b5186ee93ec2}} 
+\index{domini\+::algorithm\+::\+Algorithm@{domini\+::algorithm\+::\+Algorithm}!Algorithm@{Algorithm}}
+\index{Algorithm@{Algorithm}!domini\+::algorithm\+::\+Algorithm@{domini\+::algorithm\+::\+Algorithm}}
+\subsubsection{\texorpdfstring{Algorithm()}{Algorithm()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily domini.\+algorithm.\+Algorithm.\+Algorithm (\begin{DoxyParamCaption}\item[{String}]{path,  }\item[{boolean}]{b }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Constructor de la clase. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em path} & Path del fitxer de sortida que es començarà a escriure \\
+\hline
+{\em b} & False si estas comprimint, True si estas descomprimint \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyCode}
+29                                              \{
+30         \hyperlink{classdomini_1_1algorithm_1_1Algorithm_a4de9955411c656325adc391ef570c082}{Output} = \textcolor{keyword}{new} Ctrl\_Output(path);
+31         \hyperlink{classdomini_1_1algorithm_1_1Algorithm_a0ec73147fb68a16e53801ea5da35b089}{decompressing} = b;
+32     \}
+\end{DoxyCode}
+\mbox{\Hypertarget{classdomini_1_1algorithm_1_1Algorithm_a53e4ed336c98702ebc2a44a5fdb5f4b5}\label{classdomini_1_1algorithm_1_1Algorithm_a53e4ed336c98702ebc2a44a5fdb5f4b5}} 
+\index{domini\+::algorithm\+::\+Algorithm@{domini\+::algorithm\+::\+Algorithm}!Algorithm@{Algorithm}}
+\index{Algorithm@{Algorithm}!domini\+::algorithm\+::\+Algorithm@{domini\+::algorithm\+::\+Algorithm}}
+\subsubsection{\texorpdfstring{Algorithm()}{Algorithm()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily domini.\+algorithm.\+Algorithm.\+Algorithm (\begin{DoxyParamCaption}\item[{boolean}]{b }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Constructor de la classe. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em b} & False si estas comprimint, True si estas descomprimint \\
+\hline
+\end{DoxyParams}
+\begin{DoxyNote}{Note}
+Es continuarà escivint al fitxer on s\textquotesingle{}estava escrivint. 
+\end{DoxyNote}
+
+\begin{DoxyCode}
+39                                 \{
+40         \hyperlink{classdomini_1_1algorithm_1_1Algorithm_a4de9955411c656325adc391ef570c082}{Output} = \textcolor{keyword}{new} Ctrl\_Output();
+41         \hyperlink{classdomini_1_1algorithm_1_1Algorithm_a0ec73147fb68a16e53801ea5da35b089}{decompressing} = b;
+42     \}
+\end{DoxyCode}
+\mbox{\Hypertarget{classdomini_1_1algorithm_1_1Algorithm_ad67a7c097eb86c4fc033f8deecb845a4}\label{classdomini_1_1algorithm_1_1Algorithm_ad67a7c097eb86c4fc033f8deecb845a4}} 
+\index{domini\+::algorithm\+::\+Algorithm@{domini\+::algorithm\+::\+Algorithm}!Algorithm@{Algorithm}}
+\index{Algorithm@{Algorithm}!domini\+::algorithm\+::\+Algorithm@{domini\+::algorithm\+::\+Algorithm}}
+\subsubsection{\texorpdfstring{Algorithm()}{Algorithm()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily domini.\+algorithm.\+Algorithm.\+Algorithm (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Constructor de la classe. 
+
+\begin{DoxyNote}{Note}
+Es continuarà escivint al fitxer on s\textquotesingle{}estava escrivint. 
+\end{DoxyNote}
+
+\begin{DoxyCode}
+48                        \{
+49         \hyperlink{classdomini_1_1algorithm_1_1Algorithm_a4de9955411c656325adc391ef570c082}{Output} = \textcolor{keyword}{new} Ctrl\_Output();
+50         \hyperlink{classdomini_1_1algorithm_1_1Algorithm_a0ec73147fb68a16e53801ea5da35b089}{decompressing} = \textcolor{keyword}{true};
+51     \}
+\end{DoxyCode}
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classdomini_1_1algorithm_1_1Algorithm_a070b7e7dcc453b03751d265beae5306c}\label{classdomini_1_1algorithm_1_1Algorithm_a070b7e7dcc453b03751d265beae5306c}} 
+\index{domini\+::algorithm\+::\+Algorithm@{domini\+::algorithm\+::\+Algorithm}!check\+Compressor@{check\+Compressor}}
+\index{check\+Compressor@{check\+Compressor}!domini\+::algorithm\+::\+Algorithm@{domini\+::algorithm\+::\+Algorithm}}
+\subsubsection{\texorpdfstring{check\+Compressor()}{checkCompressor()}}
+{\footnotesize\ttfamily protected void domini.\+algorithm.\+Algorithm.\+check\+Compressor (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}}
+
+
+
+Llança una excepció si la instància no és compressora. 
+
+
+\begin{DoxyCode}
+72                                      \{
+73         \textcolor{keywordflow}{if} (\hyperlink{classdomini_1_1algorithm_1_1Algorithm_a0ec73147fb68a16e53801ea5da35b089}{decompressing}) \{
+74             \textcolor{keywordflow}{throw} \textcolor{keyword}{new} IllegalArgumentException(
+75                 \textcolor{stringliteral}{"S'ha intentat comprimir des d'una instància inicialitzada com a descompressora."}
+76             );
+77         \}
+78     \}
+\end{DoxyCode}
+\mbox{\Hypertarget{classdomini_1_1algorithm_1_1Algorithm_a6b738342cc7169893fa60d593f5a13db}\label{classdomini_1_1algorithm_1_1Algorithm_a6b738342cc7169893fa60d593f5a13db}} 
+\index{domini\+::algorithm\+::\+Algorithm@{domini\+::algorithm\+::\+Algorithm}!check\+Decompressor@{check\+Decompressor}}
+\index{check\+Decompressor@{check\+Decompressor}!domini\+::algorithm\+::\+Algorithm@{domini\+::algorithm\+::\+Algorithm}}
+\subsubsection{\texorpdfstring{check\+Decompressor()}{checkDecompressor()}}
+{\footnotesize\ttfamily protected void domini.\+algorithm.\+Algorithm.\+check\+Decompressor (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}}
+
+
+
+Llança una excepció si la instància no és descompressora. 
+
+
+\begin{DoxyCode}
+83                                        \{
+84         \textcolor{keywordflow}{if} (!\hyperlink{classdomini_1_1algorithm_1_1Algorithm_a0ec73147fb68a16e53801ea5da35b089}{decompressing}) \{
+85             \textcolor{keywordflow}{throw} \textcolor{keyword}{new} IllegalArgumentException(
+86                 \textcolor{stringliteral}{"S'ha intentat descomprimir des d'una instància inicialitzada com a compressora."}
+87             );
+88         \}
+89     \}
+\end{DoxyCode}
+\mbox{\Hypertarget{classdomini_1_1algorithm_1_1Algorithm_afed9609e38c82431e0631fd84dbc89e4}\label{classdomini_1_1algorithm_1_1Algorithm_afed9609e38c82431e0631fd84dbc89e4}} 
+\index{domini\+::algorithm\+::\+Algorithm@{domini\+::algorithm\+::\+Algorithm}!Compressor@{Compressor}}
+\index{Compressor@{Compressor}!domini\+::algorithm\+::\+Algorithm@{domini\+::algorithm\+::\+Algorithm}}
+\subsubsection{\texorpdfstring{Compressor()}{Compressor()}}
+{\footnotesize\ttfamily public abstract void domini.\+algorithm.\+Algorithm.\+Compressor (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [abstract]}}
+
+
+
+Comprimeix el fitxer que s\textquotesingle{}està llegint. 
+
+\begin{DoxyNote}{Note}
+L\textquotesingle{}algorisme emprat depèn de la subclasse 
+\end{DoxyNote}
+\mbox{\Hypertarget{classdomini_1_1algorithm_1_1Algorithm_ae712f08ef4b86cb625a9e00057ad8836}\label{classdomini_1_1algorithm_1_1Algorithm_ae712f08ef4b86cb625a9e00057ad8836}} 
+\index{domini\+::algorithm\+::\+Algorithm@{domini\+::algorithm\+::\+Algorithm}!Decompressor@{Decompressor}}
+\index{Decompressor@{Decompressor}!domini\+::algorithm\+::\+Algorithm@{domini\+::algorithm\+::\+Algorithm}}
+\subsubsection{\texorpdfstring{Decompressor()}{Decompressor()}}
+{\footnotesize\ttfamily public abstract void domini.\+algorithm.\+Algorithm.\+Decompressor (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [abstract]}}
+
+
+
+Descomprimeix el fitxer que s\textquotesingle{}està llegint. 
+
+\begin{DoxyNote}{Note}
+L\textquotesingle{}algorisme emprat depèn de la subclasse 
+\end{DoxyNote}
+\mbox{\Hypertarget{classdomini_1_1algorithm_1_1Algorithm_a5546f991f9d71d012d6ded5f2d4181cb}\label{classdomini_1_1algorithm_1_1Algorithm_a5546f991f9d71d012d6ded5f2d4181cb}} 
+\index{domini\+::algorithm\+::\+Algorithm@{domini\+::algorithm\+::\+Algorithm}!print@{print}}
+\index{print@{print}!domini\+::algorithm\+::\+Algorithm@{domini\+::algorithm\+::\+Algorithm}}
+\subsubsection{\texorpdfstring{print()}{print()}}
+{\footnotesize\ttfamily public \hyperlink{classpersistencia_1_1output_1_1Ctrl__Output}{Ctrl\+\_\+\+Output} domini.\+algorithm.\+Algorithm.\+print (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Escriu a l\textquotesingle{}output el que quedava per escriure. 
+
+
+\begin{DoxyCode}
+95                         \{
+96         \hyperlink{classdomini_1_1algorithm_1_1Algorithm_a4de9955411c656325adc391ef570c082}{Output}.\hyperlink{classpersistencia_1_1output_1_1Ctrl__Output_a908955c29bfecc7ebac86613bc75e9ed}{print}();
+97     \}
+\end{DoxyCode}
+
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{classdomini_1_1algorithm_1_1Algorithm_a0ec73147fb68a16e53801ea5da35b089}\label{classdomini_1_1algorithm_1_1Algorithm_a0ec73147fb68a16e53801ea5da35b089}} 
+\index{domini\+::algorithm\+::\+Algorithm@{domini\+::algorithm\+::\+Algorithm}!decompressing@{decompressing}}
+\index{decompressing@{decompressing}!domini\+::algorithm\+::\+Algorithm@{domini\+::algorithm\+::\+Algorithm}}
+\subsubsection{\texorpdfstring{decompressing}{decompressing}}
+{\footnotesize\ttfamily boolean domini.\+algorithm.\+Algorithm.\+decompressing\hspace{0.3cm}{\ttfamily [private]}}
+
+
+\begin{DoxyParams}{Parameters}
+{\em decompressing} & indica si és descompressió (true) o descompressió (false) \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classdomini_1_1algorithm_1_1Algorithm_a4de9955411c656325adc391ef570c082}\label{classdomini_1_1algorithm_1_1Algorithm_a4de9955411c656325adc391ef570c082}} 
+\index{domini\+::algorithm\+::\+Algorithm@{domini\+::algorithm\+::\+Algorithm}!Output@{Output}}
+\index{Output@{Output}!domini\+::algorithm\+::\+Algorithm@{domini\+::algorithm\+::\+Algorithm}}
+\subsubsection{\texorpdfstring{Output}{Output}}
+{\footnotesize\ttfamily \hyperlink{classpersistencia_1_1output_1_1Ctrl__Output}{Ctrl\+\_\+\+Output} domini.\+algorithm.\+Algorithm.\+Output\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+\begin{DoxyParams}{Parameters}
+{\em Output} & on escriu la compressió o descompressió \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+src/domini/algorithm/\hyperlink{Algorithm_8java}{Algorithm.\+java}\end{DoxyCompactItemize}

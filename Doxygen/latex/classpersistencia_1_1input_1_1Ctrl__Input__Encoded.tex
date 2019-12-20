@@ -8,11 +8,23 @@ Classe \hyperlink{classpersistencia_1_1input_1_1Ctrl__Input__Encoded}{Ctrl\+\_\+
 
 
 Inheritance diagram for persistencia.\+input.\+Ctrl\+\_\+\+Input\+\_\+\+Encoded\+:
-% FIG 0
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=192pt]{classpersistencia_1_1input_1_1Ctrl__Input__Encoded__inherit__graph}
+\end{center}
+\end{figure}
 
 
 Collaboration diagram for persistencia.\+input.\+Ctrl\+\_\+\+Input\+\_\+\+Encoded\+:
-% FIG 1
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=192pt]{classpersistencia_1_1input_1_1Ctrl__Input__Encoded__coll__graph}
+\end{center}
+\end{figure}
 \subsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
@@ -54,9 +66,9 @@ Constructor de la classe.
 \end{DoxyParams}
 
 \begin{DoxyCode}
-19                                            \{
-20         super(path);
-21     \}
+20                                            \{
+21         super(path);
+22     \}
 \end{DoxyCode}
 \mbox{\Hypertarget{classpersistencia_1_1input_1_1Ctrl__Input__Encoded_a393b9c1ed55f9d46669f2c50db948cc5}\label{classpersistencia_1_1input_1_1Ctrl__Input__Encoded_a393b9c1ed55f9d46669f2c50db948cc5}} 
 \index{persistencia\+::input\+::\+Ctrl\+\_\+\+Input\+\_\+\+Encoded@{persistencia\+::input\+::\+Ctrl\+\_\+\+Input\+\_\+\+Encoded}!Ctrl\+\_\+\+Input\+\_\+\+Encoded@{Ctrl\+\_\+\+Input\+\_\+\+Encoded}}
@@ -73,9 +85,9 @@ Continua llegint l\textquotesingle{}arxiu que s\textquotesingle{}estava llegint
 \end{DoxyNote}
 
 \begin{DoxyCode}
-27                                 \{
-28         super();
-29     \}
+28                                 \{
+29         super();
+30     \}
 \end{DoxyCode}
 
 
@@ -92,11 +104,11 @@ Acaba de llegir el subfixer que s\textquotesingle{}estava llegint. Un subfitxer 
 
 
 \begin{DoxyCode}
-50                              \{
-51         \textcolor{keywordflow}{while} (!\hyperlink{classpersistencia_1_1input_1_1Ctrl__Input_a5a94d207dce0fd592b5ac17f55154d4f}{finished}()) \hyperlink{classpersistencia_1_1input_1_1Ctrl__Input__Encoded_a38ede6bc49251e77ae4be30ccc06457d}{getByte}();
-52         Input.getInstance().ignoreTheRestOfTheByte();
-53         Input.getInstance().startFragment(Long.MAX\_VALUE);
-54     \}
+51                              \{
+52         \textcolor{keywordflow}{while} (!\hyperlink{classpersistencia_1_1input_1_1Ctrl__Input_a5a94d207dce0fd592b5ac17f55154d4f}{finished}()) \hyperlink{classpersistencia_1_1input_1_1Ctrl__Input__Encoded_a38ede6bc49251e77ae4be30ccc06457d}{getByte}();
+53         Input.getInstance().ignoreTheRestOfTheByte();
+54         Input.getInstance().startFragment(Long.MAX\_VALUE);
+55     \}
 \end{DoxyCode}
 \mbox{\Hypertarget{classpersistencia_1_1input_1_1Ctrl__Input__Encoded_a38ede6bc49251e77ae4be30ccc06457d}\label{classpersistencia_1_1input_1_1Ctrl__Input__Encoded_a38ede6bc49251e77ae4be30ccc06457d}} 
 \index{persistencia\+::input\+::\+Ctrl\+\_\+\+Input\+\_\+\+Encoded@{persistencia\+::input\+::\+Ctrl\+\_\+\+Input\+\_\+\+Encoded}!get\+Byte@{get\+Byte}}
@@ -109,9 +121,9 @@ Retorna un byte del \hyperlink{classpersistencia_1_1input_1_1Input}{Input}.
 \end{DoxyReturn}
 
 \begin{DoxyCode}
-77                           \{
-78         \textcolor{keywordflow}{return} Input.getInstance().getBits(8);
-79     \}
+78                           \{
+79         \textcolor{keywordflow}{return} Input.getInstance().getBits(8);
+80     \}
 \end{DoxyCode}
 \mbox{\Hypertarget{classpersistencia_1_1input_1_1Ctrl__Input__Encoded_aed32b42778121e7e55d8338d9eaaddb9}\label{classpersistencia_1_1input_1_1Ctrl__Input__Encoded_aed32b42778121e7e55d8338d9eaaddb9}} 
 \index{persistencia\+::input\+::\+Ctrl\+\_\+\+Input\+\_\+\+Encoded@{persistencia\+::input\+::\+Ctrl\+\_\+\+Input\+\_\+\+Encoded}!get\+Int@{get\+Int}}
@@ -124,10 +136,10 @@ Retorna un int del \hyperlink{classpersistencia_1_1input_1_1Input}{Input}.
 \end{DoxyReturn}
 
 \begin{DoxyCode}
-85                         \{ \textcolor{comment}{//big endian}
-86         ArrayList<Byte> al = Input.getInstance().getMoreBits(32);
-87         \textcolor{keywordflow}{return} byteToConversion.byteToInteger(al);
-88     \}
+86                         \{ \textcolor{comment}{//big endian}
+87         ArrayList<Byte> al = Input.getInstance().getMoreBits(32);
+88         \textcolor{keywordflow}{return} byteToConversion.byteToInteger(al);
+89     \}
 \end{DoxyCode}
 \mbox{\Hypertarget{classpersistencia_1_1input_1_1Ctrl__Input__Encoded_a87ebc4b52c5884ba9c397558668e67d7}\label{classpersistencia_1_1input_1_1Ctrl__Input__Encoded_a87ebc4b52c5884ba9c397558668e67d7}} 
 \index{persistencia\+::input\+::\+Ctrl\+\_\+\+Input\+\_\+\+Encoded@{persistencia\+::input\+::\+Ctrl\+\_\+\+Input\+\_\+\+Encoded}!get\+Word@{get\+Word}}
@@ -140,18 +152,18 @@ Retorna l\textquotesingle{}String cridant al mètode \hyperlink{classpersistenci
 \end{DoxyReturn}
 
 \begin{DoxyCode}
-60                             \{
-61         
-62         \textcolor{keywordtype}{int} mida = (int)\hyperlink{classpersistencia_1_1input_1_1Ctrl__Input__Encoded_a38ede6bc49251e77ae4be30ccc06457d}{getByte}();
-63         \textcolor{keywordflow}{if} (mida < 0) mida += 256;
-64         byte[] arr = \textcolor{keyword}{new} byte[mida];
-65 
-66         \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i = 0; i < mida; ++i) \{
-67             arr[i] = \hyperlink{classpersistencia_1_1input_1_1Ctrl__Input__Encoded_a38ede6bc49251e77ae4be30ccc06457d}{getByte}();
-68         \}
-69 
-70         \textcolor{keywordflow}{return} \textcolor{keyword}{new} String(arr);
-71     \}
+61                             \{
+62         
+63         \textcolor{keywordtype}{int} mida = (int)\hyperlink{classpersistencia_1_1input_1_1Ctrl__Input__Encoded_a38ede6bc49251e77ae4be30ccc06457d}{getByte}();
+64         \textcolor{keywordflow}{if} (mida < 0) mida += 256;
+65         byte[] arr = \textcolor{keyword}{new} byte[mida];
+66 
+67         \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i = 0; i < mida; ++i) \{
+68             arr[i] = \hyperlink{classpersistencia_1_1input_1_1Ctrl__Input__Encoded_a38ede6bc49251e77ae4be30ccc06457d}{getByte}();
+69         \}
+70 
+71         \textcolor{keywordflow}{return} \textcolor{keyword}{new} String(arr);
+72     \}
 \end{DoxyCode}
 \mbox{\Hypertarget{classpersistencia_1_1input_1_1Ctrl__Input__Encoded_ababb8ac0798194f61c4a77d1ddf5947e}\label{classpersistencia_1_1input_1_1Ctrl__Input__Encoded_ababb8ac0798194f61c4a77d1ddf5947e}} 
 \index{persistencia\+::input\+::\+Ctrl\+\_\+\+Input\+\_\+\+Encoded@{persistencia\+::input\+::\+Ctrl\+\_\+\+Input\+\_\+\+Encoded}!start\+Subfile@{start\+Subfile}}
@@ -165,11 +177,11 @@ Comença a llegir un subfitxer Un subfitxer és un conjunt de bytes d\textquotes
 
 
 \begin{DoxyCode}
-39                                \{
-40         ArrayList<Byte> al = Input.getInstance().getMoreBits(64);
-41         \textcolor{keywordtype}{long} length = byteToConversion.byteToLong(al);
-42         Input.getInstance().startFragment(length);
-43     \}
+40                                \{
+41         ArrayList<Byte> al = Input.getInstance().getMoreBits(64);
+42         \textcolor{keywordtype}{long} length = byteToConversion.byteToLong(al);
+43         Input.getInstance().startFragment(length);
+44     \}
 \end{DoxyCode}
 
 

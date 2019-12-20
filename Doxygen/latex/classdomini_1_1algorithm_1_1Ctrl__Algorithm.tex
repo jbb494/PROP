@@ -12,10 +12,10 @@ Classe de \hyperlink{classdomini_1_1algorithm_1_1Ctrl__Algorithm}{Ctrl\+\_\+\+Al
 \begin{DoxyCompactList}\small\item\em Constructor de la classe. \end{DoxyCompactList}\item 
 String \hyperlink{classdomini_1_1algorithm_1_1Ctrl__Algorithm_a6f7a706e07d4e6f8c1ea293d06e17318}{Auto\+\_\+\+Encoder} (String Path)
 \begin{DoxyCompactList}\small\item\em Determina de manera automàtica quin compressor utilitzar. \end{DoxyCompactList}\item 
-void \hyperlink{classdomini_1_1algorithm_1_1Ctrl__Algorithm_a344b213ee2eb3e0ed3306883624c5128}{Decode} (String path\+\_\+out)
-\item 
+void \hyperlink{classdomini_1_1algorithm_1_1Ctrl__Algorithm_a6c3c10937741891cfeae31043b64a975}{Decode} (String path\+\_\+out)
+\begin{DoxyCompactList}\small\item\em Llegeix els dos bits de la metadata que indiquen amb quin algoritme descomprimir i descomprimeix amb tal algorisme. \end{DoxyCompactList}\item 
 void \hyperlink{classdomini_1_1algorithm_1_1Ctrl__Algorithm_ac03e09b1fd22f0857bf766fc692efc33}{Encode} (String path\+\_\+in, String method, Double img\+\_\+quality)
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Comprimeix un fitxer. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \subsection{Detailed Description}
@@ -34,7 +34,7 @@ Constructor de la classe.
 
 
 \begin{DoxyCode}
-17 \{\}
+18 \{\}
 \end{DoxyCode}
 
 
@@ -59,38 +59,54 @@ Nom del mètode a emprar
 \end{DoxyReturn}
 
 \begin{DoxyCode}
-28     \{
-29         \textcolor{keywordtype}{int} i = Path.lastIndexOf(\textcolor{stringliteral}{"."});
-30         String ext = Path.substring(i+1);
-31         \textcolor{keywordflow}{if} (ext.toLowerCase().equals(\textcolor{stringliteral}{"ppm"})) 
-32             \textcolor{keywordflow}{return} \textcolor{stringliteral}{"jpeg"};
-33         \textcolor{keywordflow}{else}  
-34             \textcolor{keywordflow}{return} \textcolor{stringliteral}{"lzw"};
-35         \textcolor{comment}{//else throw new IllegalArgumentException("Format no reconegut");}
-36     \}
+29     \{
+30         \textcolor{keywordtype}{int} i = Path.lastIndexOf(\textcolor{stringliteral}{"."});
+31         String ext = Path.substring(i+1);
+32         \textcolor{keywordflow}{if} (ext.toLowerCase().equals(\textcolor{stringliteral}{"ppm"})) 
+33             \textcolor{keywordflow}{return} \textcolor{stringliteral}{"jpeg"};
+34         \textcolor{keywordflow}{else}\{  
+35             Ctrl\_Browser aux = \textcolor{keyword}{new} Ctrl\_Browser(Path);
+36             \textcolor{keywordflow}{if} (aux.length() < 1*Math.pow(10,6))
+37                 \textcolor{keywordflow}{return} \textcolor{stringliteral}{"lzss"};
+38             \textcolor{keywordflow}{return} \textcolor{stringliteral}{"lzw"};
+39         \}
+40             \textcolor{comment}{//else throw new IllegalArgumentException("Format no reconegut");}
+41     \}
 \end{DoxyCode}
-\mbox{\Hypertarget{classdomini_1_1algorithm_1_1Ctrl__Algorithm_a344b213ee2eb3e0ed3306883624c5128}\label{classdomini_1_1algorithm_1_1Ctrl__Algorithm_a344b213ee2eb3e0ed3306883624c5128}} 
+\mbox{\Hypertarget{classdomini_1_1algorithm_1_1Ctrl__Algorithm_a6c3c10937741891cfeae31043b64a975}\label{classdomini_1_1algorithm_1_1Ctrl__Algorithm_a6c3c10937741891cfeae31043b64a975}} 
 \index{domini\+::algorithm\+::\+Ctrl\+\_\+\+Algorithm@{domini\+::algorithm\+::\+Ctrl\+\_\+\+Algorithm}!Decode@{Decode}}
 \index{Decode@{Decode}!domini\+::algorithm\+::\+Ctrl\+\_\+\+Algorithm@{domini\+::algorithm\+::\+Ctrl\+\_\+\+Algorithm}}
 \subsubsection{\texorpdfstring{Decode()}{Decode()}}
-{\footnotesize\ttfamily void domini.\+algorithm.\+Ctrl\+\_\+\+Algorithm.\+Decode (\begin{DoxyParamCaption}\item[{String}]{path\+\_\+out }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+{\footnotesize\ttfamily public void domini.\+algorithm.\+Ctrl\+\_\+\+Algorithm.\+Decode (\begin{DoxyParamCaption}\item[{String}]{path\+\_\+out }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
 
+
+
+Llegeix els dos bits de la metadata que indiquen amb quin algoritme descomprimir i descomprimeix amb tal algorisme. 
+
+\begin{DoxyNote}{Note}
+Segueix llegint del fitxer d\textquotesingle{}on s\textquotesingle{}estava llegint. 
+\end{DoxyNote}
+
+\begin{DoxyParams}{Parameters}
+{\em path\+\_\+out} & path on es guarda el descomrpimit. \\
+\hline
+\end{DoxyParams}
 
 \begin{DoxyCode}
-39                                         \{
-40 
-41         Ctrl\_Input inP2 = \textcolor{keyword}{new} Ctrl\_Input();
-42         \textcolor{keywordtype}{int} metadata\_alg = inP2.getMetadata();
-43 
-44         Algorithm alg;
-45         \textcolor{keywordflow}{if}      (metadata\_alg == 3)   alg = \textcolor{keyword}{new} JPEG(path\_out, \textcolor{keyword}{true});
-46         \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (metadata\_alg == 2)   alg = \textcolor{keyword}{new} LZSS(path\_out, \textcolor{keyword}{true});
-47         \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (metadata\_alg == 1)   alg = \textcolor{keyword}{new} LZW(path\_out, \textcolor{keyword}{true});
-48         \textcolor{keywordflow}{else} \textcolor{comment}{/* (metadata\_alg == 0)*/} alg = \textcolor{keyword}{new} LZ78(path\_out, \textcolor{keyword}{true});
-49         
-50         alg.Decompressor();      
-51         alg.print();
-52     \}
+50                                         \{
+51 
+52         Ctrl\_Input inP2 = \textcolor{keyword}{new} Ctrl\_Input();
+53         \textcolor{keywordtype}{int} metadata\_alg = inP2.getMetadata();
+54 
+55         Algorithm alg;
+56         \textcolor{keywordflow}{if}      (metadata\_alg == 3)   alg = \textcolor{keyword}{new} JPEG(path\_out, \textcolor{keyword}{true});
+57         \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (metadata\_alg == 2)   alg = \textcolor{keyword}{new} LZSS(path\_out, \textcolor{keyword}{true});
+58         \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (metadata\_alg == 1)   alg = \textcolor{keyword}{new} LZW(path\_out, \textcolor{keyword}{true});
+59         \textcolor{keywordflow}{else} \textcolor{comment}{/* (metadata\_alg == 0)*/} alg = \textcolor{keyword}{new} LZ78(path\_out, \textcolor{keyword}{true});
+60         
+61         alg.Decompressor();      
+62         alg.print();
+63     \}
 \end{DoxyCode}
 \mbox{\Hypertarget{classdomini_1_1algorithm_1_1Ctrl__Algorithm_ac03e09b1fd22f0857bf766fc692efc33}\label{classdomini_1_1algorithm_1_1Ctrl__Algorithm_ac03e09b1fd22f0857bf766fc692efc33}} 
 \index{domini\+::algorithm\+::\+Ctrl\+\_\+\+Algorithm@{domini\+::algorithm\+::\+Ctrl\+\_\+\+Algorithm}!Encode@{Encode}}
@@ -99,38 +115,54 @@ Nom del mètode a emprar
 {\footnotesize\ttfamily void domini.\+algorithm.\+Ctrl\+\_\+\+Algorithm.\+Encode (\begin{DoxyParamCaption}\item[{String}]{path\+\_\+in,  }\item[{String}]{method,  }\item[{Double}]{img\+\_\+quality }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
 
 
+
+Comprimeix un fitxer. 
+
+\begin{DoxyNote}{Note}
+Escriu el comprimit al fitxer on s\textquotesingle{}estava escrivint. 
+\end{DoxyNote}
+
+\begin{DoxyParams}{Parameters}
+{\em path\+\_\+in} & Fitxer a comrpimir. \\
+\hline
+{\em method} & Algorisme amb el qual descomprimr. \\
+\hline
+{\em img\+\_\+quality} & Valor entre 0 i 100 que representa la qualitat de descompressió de l\textquotesingle{}algorisme \hyperlink{classdomini_1_1algorithm_1_1JPEG}{J\+P\+EG}. Aquest valor només es farà servir si method = \char`\"{}jpeg\char`\"{} \\
+\hline
+\end{DoxyParams}
+
 \begin{DoxyCode}
-55                                                                           \{
-56         
-57         \textcolor{keywordflow}{if} (method == null)
-58             \textcolor{keywordflow}{throw} \textcolor{keyword}{new} IllegalArgumentException(\textcolor{stringliteral}{"no s'ha especificat el metode de compressió"});
-59 
-60         \textcolor{comment}{//System.out.println(method);}
-61 
-62         Algorithm alg;
-63         \textcolor{keywordflow}{if}(method.toLowerCase().equals(\textcolor{stringliteral}{"lzss"})) \{
-64             alg = \textcolor{keyword}{new} LZSS(\textcolor{keyword}{false});
-65         \}
-66         \textcolor{keywordflow}{else} \textcolor{keywordflow}{if}(method.toLowerCase().equals(\textcolor{stringliteral}{"lzw"})) \{
-67             alg = \textcolor{keyword}{new} LZW(\textcolor{keyword}{false});
-68         \}
-69         \textcolor{keywordflow}{else} \textcolor{keywordflow}{if}(method.toLowerCase().equals(\textcolor{stringliteral}{"lz78"})) \{
-70             alg = \textcolor{keyword}{new} LZ78(\textcolor{keyword}{false});
-71         \}
-72         \textcolor{keywordflow}{else} \textcolor{keywordflow}{if}(method.toLowerCase().equals(\textcolor{stringliteral}{"jpeg"})) \{
-73             alg = \textcolor{keyword}{new} JPEG(\textcolor{keyword}{false});
-74             \textcolor{keywordflow}{if} (img\_quality == null) 
-75                 \textcolor{keywordflow}{throw} \textcolor{keyword}{new} IllegalArgumentException(\textcolor{stringliteral}{"no s'ha especificat la qualitat de compressió de la
+73                                                                           \{
+74         
+75         \textcolor{keywordflow}{if} (method == null)
+76             \textcolor{keywordflow}{throw} \textcolor{keyword}{new} IllegalArgumentException(\textcolor{stringliteral}{"no s'ha especificat el metode de compressió"});
+77 
+78         \textcolor{comment}{//System.out.println(method);}
+79 
+80         Algorithm alg;
+81         \textcolor{keywordflow}{if}(method.toLowerCase().equals(\textcolor{stringliteral}{"lzss"})) \{
+82             alg = \textcolor{keyword}{new} LZSS(\textcolor{keyword}{false});
+83         \}
+84         \textcolor{keywordflow}{else} \textcolor{keywordflow}{if}(method.toLowerCase().equals(\textcolor{stringliteral}{"lzw"})) \{
+85             alg = \textcolor{keyword}{new} LZW(\textcolor{keyword}{false});
+86         \}
+87         \textcolor{keywordflow}{else} \textcolor{keywordflow}{if}(method.toLowerCase().equals(\textcolor{stringliteral}{"lz78"})) \{
+88             alg = \textcolor{keyword}{new} LZ78(\textcolor{keyword}{false});
+89         \}
+90         \textcolor{keywordflow}{else} \textcolor{keywordflow}{if}(method.toLowerCase().equals(\textcolor{stringliteral}{"jpeg"})) \{
+91             alg = \textcolor{keyword}{new} JPEG(\textcolor{keyword}{false});
+92             \textcolor{keywordflow}{if} (img\_quality == null) 
+93                 \textcolor{keywordflow}{throw} \textcolor{keyword}{new} IllegalArgumentException(\textcolor{stringliteral}{"no s'ha especificat la qualitat de compressió de la
        imatge"});
-76             ((JPEG)alg).resetQuality((\textcolor{keywordtype}{int})(\textcolor{keywordtype}{double})img\_quality);
-77         \}
-78         \textcolor{keywordflow}{else} \{
-79             \textcolor{keywordflow}{throw} \textcolor{keyword}{new} IllegalArgumentException(method+\textcolor{stringliteral}{" no es correspon a cap dels algorismes."});
-80         \}
-81         
-82         Ctrl\_Input.initialize(path\_in);
-83         alg.Compressor();
-84     \}
+94             ((JPEG)alg).resetQuality((\textcolor{keywordtype}{int})(\textcolor{keywordtype}{double})img\_quality);
+95         \}
+96         \textcolor{keywordflow}{else} \{
+97             \textcolor{keywordflow}{throw} \textcolor{keyword}{new} IllegalArgumentException(method+\textcolor{stringliteral}{" no es correspon a cap dels algorismes."});
+98         \}
+99         
+100         Ctrl\_Input.initialize(path\_in);
+101         alg.Compressor();
+102     \}
 \end{DoxyCode}
 
 

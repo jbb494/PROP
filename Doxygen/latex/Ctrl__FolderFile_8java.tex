@@ -13,7 +13,34 @@ package \hyperlink{namespacedomini_1_1folders}{domini.\+folders}
 
 
 \subsection{Detailed Description}
-Tota la comunicació entre la capa de presentació i la capa de domini relativa a comprimir i descomprimir passa perquè les classes de la capa de presentació instanciïn la classe Ctrl\+\_\+\+Folder\+File.
+Tota la comunicació entre la capa de presentació i la capa de domini relativa a comprimir i descomprimir passa perquè les classes de la capa de presentació instanciïn la classe Ctrl\+\_\+\+Folder\+File. \begin{DoxyVerb} Una carpeta comprimida (de n fills) té la seguent estructura:
+
+  1B 4B                                             
+ +--+---+------------+--------+---------+------------+--------+
+ |F0| n | nom fill 1 | fill 1 |   ...   | nom fill n | fill n |
+ +--+---+------------+--------+---------+------------+--------+
+
+ "nom fill *" és el nom del fill * sense extensió
+ "fill *" pot ser una carpeta comprimida o un fitxer comprimit.
+
+ Un fitxer comprimit te la següent estructura.
+
+  1B              8B         size B
+ +--+----------+------+-------------------+
+ |F1| extensio | size |       DATA        |
+ +--+----------+------+-------------------+
+
+ La mida de tot element de l'estrura descrita (nom fill 1, fill 1, DATA, etc)  
+ és un nombre enter de bytes.
+
+ "n" i "size" estan escrits en big endian.
+
+ La responsabilitat de llegir i escriure DATA és delegada a Ctrl_Algorithm.
+
+ La responsabilitat de llegir i escriure "nom fill *", "extensio" i "mida" és 
+ delegada a Ctrl_Input_Encoded i Ctrl_Output_Encoded, respectivament
+\end{DoxyVerb}
+
 
 \begin{DoxyAuthor}{Author}
 Joan Lapeyra 

@@ -83,8 +83,33 @@ Packages</h2></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>Tota la comunicació entre la capa de presentació i la capa de domini relativa a comprimir i descomprimir passa perquè les classes de la capa de presentació instanciïn la classe Ctrl_FolderFile.</p>
-<dl class="section author"><dt>Author</dt><dd>Joan Lapeyra </dd></dl>
+<div class="textblock"><p>Tota la comunicació entre la capa de presentació i la capa de domini relativa a comprimir i descomprimir passa perquè les classes de la capa de presentació instanciïn la classe Ctrl_FolderFile. </p><pre class="fragment"> Una carpeta comprimida (de n fills) té la seguent estructura:
+
+  1B 4B                                             
+ +--+---+------------+--------+---------+------------+--------+
+ |F0| n | nom fill 1 | fill 1 |   ...   | nom fill n | fill n |
+ +--+---+------------+--------+---------+------------+--------+
+
+ "nom fill *" és el nom del fill * sense extensió
+ "fill *" pot ser una carpeta comprimida o un fitxer comprimit.
+
+ Un fitxer comprimit te la següent estructura.
+
+  1B              8B         size B
+ +--+----------+------+-------------------+
+ |F1| extensio | size |       DATA        |
+ +--+----------+------+-------------------+
+
+ La mida de tot element de l'estrura descrita (nom fill 1, fill 1, DATA, etc)  
+ és un nombre enter de bytes.
+
+ "n" i "size" estan escrits en big endian.
+
+ La responsabilitat de llegir i escriure DATA és delegada a Ctrl_Algorithm.
+
+ La responsabilitat de llegir i escriure "nom fill *", "extensio" i "mida" és 
+ delegada a Ctrl_Input_Encoded i Ctrl_Output_Encoded, respectivament
+</pre><dl class="section author"><dt>Author</dt><dd>Joan Lapeyra </dd></dl>
 </div></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
