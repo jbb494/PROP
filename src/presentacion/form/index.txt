@@ -1,0 +1,8 @@
+-Archivo FileChooser_Form.form: Contiene el diseño en IntelliJ del form FileChooser_Form.java.
+-Archivo FileChooser_Form.java: Contiene las funcionalidades para poder seleccionar un path mediante interficie grafica.
+-Archivo mainForm.form: Contiene el diseño en IntelliJ del form mainForm.java.
+-Archivo mainForm.java: Contiene el form principal de la interficie, donde se pueden encontrar los botones de comprimir, descomprimir, ...
+-Archivo PopUp_Comp.form: Contiene el diseño en IntelliJ del form PopUp_Comp.java.
+-Archivo PopUp_Comp.java: Contiene el form para la eleccion de una compresion manual, es decir, escoger el algoritmo de compresion, grado de compresion, ...
+-Archivo PopUp_Estadistica.form: Contiene el diseño en IntelliJ del form PopUp_Estadistica.java.
+-Archivo PopUp_Estadistica.java: Contiene el form de cuando se muestran las estadisticas de la compresion/descompresion.
