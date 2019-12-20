@@ -174,13 +174,16 @@ L'estructura de dades emperada a la descompressió ha estat *Dict_Decode* (la qu
 
 D'aquesta manera el que farem es anar generant de nou un diccionari a mesura que anem descomprimint cada byte i retornant la cadena que representa cada decodificació.
 
+
 ## JPEG (Joint Photographic Experts Group)
 
 Explicaré simultàniament la compressió i la descompressió ja que els passos d’un son els inversos dels passos de l’altre en ordre invers.
 
 ### Block splitting
 
-El fet d’haver de treballar en blocs 8x8 fa que el compressor processa els píxels en el mateix ordre en què es llegeixen i el descompressor no processa els píxels en el mateix ordre en què s’escriuen. Això és així perquè en una imatge PPM entre una fila de píxels d’un bloc i la següent hi ha n files d’altres blocs, on n = (amplada de la imatge)/8. Per això la unitat mínima de lectura i escriptura d’una imatge PPM per a l’algoritme JPEG és el conjunt dels n blocs que comparteixen files entre ells, concretament una matriu nx8x8x3, diguem-ne mat, on mat[b][i][j][k] és la quantitat de color #k (color #0 és red; color #1 és green; color #2 és blue) del píxel (i, j) del bloc b.
+El fet d’haver de treballar en blocs 8x8 fa que el compressor processa els píxels en el mateix ordre en què es llegeixen i el descompressor no processa els píxels en el mateix ordre en què s’escriuen. Això és així perquè en una imatge PPM entre una fila de píxels d’un bloc i la següent hi ha n files d’altres blocs, on n és l'enter superior a (amplada de la imatge)/8. Per això la unitat mínima de lectura i escriptura d’una imatge PPM per a l’algoritme JPEG és el conjunt dels n blocs que comparteixen files entre ells, concretament una matriu nx8x8x3, diguem-ne mat, on mat[b][i][j][k] és la quantitat de color #k (color #0 és red; color #1 és green; color #2 és blue) del píxel (i, j) del bloc b.
+
+Si l'amplada o alçada son múltiples de 8 l'últim bloc de cada fila i l'última fila de blocs contindrà valors que no representen a cap píxel de la imatg però son necessaris per tal que l'algoritme JPEG pugui processar els valors d'aquests blos que sí que representen píxels de la imatge.
 
 En el compressor, un cop llegida aquesta matriu, ja es pot processar cadascun dels n blocs per separat. En el descompressor un cop processats cadascun dels n blocs per separat ja es pot escriure aquesta matriu. Les classes Ctrl_Input_Img i Ctrl_Output_Img s’encarreguen de llegir i escriure, respectivament, en el format d’aquesta matriu. 
 
@@ -195,15 +198,12 @@ cb = 128 + (-37.945r - 74.494g + 112.439b)/256;
 cr = 128 + (112.439r - 94.154g - 18.285b)/256;
 
 Per transformar de YCbCr a RGB en un rang de 0 a 255 he utilitzat les següents assignacions:
-r = 255./219.(y-16) + 255./224. 1.402 (cr-128.);
-g = 255./219.(y-16) + 255./224. (1.772 0.114/0.587 (cb-128) - 1.402 0.299/0.587 (cr-128));
-b = 255./219.(y-16) + 255./224. 1.772 (cb-128);
+r = 255/219\*(y-16) + 255/224 1.402 (cr-128.);
+g = 255/219\*(y-16) + 255/224 (1.772 \* 0.114/0.587 \* (cb-128) - 1.402 \* 0.299/0.587 (cr-128));
+b = 255/219\*(y-16) + 255/224 \* 1.772 (cb-128);
 
 Vaig voler comprovar el bon funcionament de la transformació fent el següent: per diversos colors RGB, transformar-los a YCbCr, tornar-los a transformar a RGB i comparant els valors inicials de RGB amb els finals. Vaig veure que no eren exactament les mateixes però que les peites diferències eren imperceptibles a l’ull humà a l’hora de visualitzat el color. Tanmateix era preocupant que alguns valors sortissin del rang (0, 255) ja que això no permetria representar-los bé en el fitxer ppm. Per això en després d’aplicar la transformació de YCbCr si algun valor era negatiu forçava que fos 0 i si algun valor sobrepassava 255 forçava que fos 255.
 
-### Downsampling
-
-Per aquesta entrega no he aplicat downsampling, ja que vaig llegir que no era un pas necessari. Tot i que estic satisfet amb el factor de compressió que he aconseguit sense fer downsampling em plantejaré fer-ne per la segona entrega.
 
 ### Discrete cosine transformation
 
@@ -211,8 +211,11 @@ Per cada canal YCbCr vaig aplicar DCT en la compressió i DCT inversa en la desc
 
 ### Quantization
 
-La matriu de quantització que he utilitzat és la següent:
+La matriu de quantització dependrà de l'atribut de classe anomenat quality, que és un enter entre 0 i 100.
 
+Si quality == 0 cada valor de la matriu de quantització serà infinit, per tant, en dividir tots els valors resultants d'aquest procés seran 0, per tant, no s'estarà guardant cap informació més enllà de les dimensions de la imatge.
+
+Si quality == 50 la matriu de quantització serà la següent:
 {
 	{16, 11, 10, 16, 24, 40, 51, 61},
 	{12, 12, 14, 19, 26, 58, 60, 55},
@@ -223,23 +226,35 @@ La matriu de quantització que he utilitzat és la següent:
 	{49, 64, 78, 87, 103, 121, 120, 101},
 	{72, 92, 95, 98, 112, 100, 103, 99}
 };
+Aquesta és la que anomeno "mariu base". Totes les matrius de quantització es calculen a partir d'aquesta matriu i del paràmetre quality.
 
-La vaig trobar a https://en.wikipedia.org/wiki/JPEG#Quantization , on explica que genera comprimits amb una qualitat d’un 50%.
+Si quality == 100 cada valor de la matriu de quantitació son 1, per tant no hi haurà cap pèrdua d'informació en el procés de quantització. Per tant la compressió serà gairebé loseless. Dic gairebé perquè altres processos de l'algorisme poden generar petites pèrdues d'informació que son quasi imperceptibles a l'ull humà.
 
-Provoca un factor de compressió notable i una qualitat acceptable per imatges grans. Tot i que per imatges petites (d’un centenar de píxels d’alçada i amplada) hi falta qualitat.
+El procés de calcular la matriu de quantització a partir d'un paràmetre de qualitat no és universal. Jo he utlitzat el que he trobat a la següent url: https://stackoverflow.com/questions/29215879/how-can-i-generalize-the-quantization-matrix-in-jpeg-compression
 
-Per la segona entrega faré que es pugui reglar la qualitat.
+El valor de quality i la consegüent matriu de quantització es fixen quan es crida el mètode públic anomenat reserQuality(int q). Per tant la responsabilitat d'escollir aquest valor no és de l'algoritme JPEG.
+
+- Si l'usuari decideix comprimir en mode automàtic quality serà 50.
+- Si l'usuari decideix comprimir amb un factor de compressió baix quality serà 100
+- Si l'usuari decideix comprimir amb un factor de compressió mitjà quality serà 70
+- Si l'usuari decideix comprimir amb un factor de compressió alt quality serà 40
+
+Aquests valors s'han decidit després de comprimir diverses imatges de diverses mides per diferens valors de qualitats i observant la qualitat visual dels descomprimits i el factor de compressió.
+
 
 ### Entropy coding
 
 La codificació de Huffman se n’encarrega una classe específica, que genera un codi de Huffman per cada possible valor que pugui prendre el que jo anomeno “símbol 1 de entropy coding”, proporciona un codi de Huffman d’una mida determinada. També fa la transformació inversa: per cada codi de Huffman proporciona el un valor pel símbol 1 de entropy coding.
-El que jo anomeno “símbol 1 de entropy coding” és un byte que conté la rinlength als 4 bits de més pes i la size (mida del símbol 2 de entropy coding) als 4 bits de menys pes, tal com explica https://en.wikipedia.org/wiki/JPEG#Entropy_coding .
+El que jo anomeno “símbol 1 de entropy coding” és un byte que conté la runlength als 4 bits de més pes i la size (mida del símbol 2 de entropy coding) als 4 bits de menys pes, tal com explica https://en.wikipedia.org/wiki/JPEG#Entropy_coding .
 
 Un atribut de la classe JPEG és una instància de la classe Huffman.
 
 El símbol 2 de la entropy coding depèn del valor de la posició en qüestiò de la matriu que resulta de la quantització i té mida variable. He fet aquesta conversió de la manera que explica la següent web: https://www.impulseadventure.com/photo/jpeg-huffman-coding.html .
 
 Per la descompressió, com que el símbol 2 té mida variable cal anar llegint del fitxer .jpeg bit a bit i anar preguntant a la instància de la classe Huffman si pels bits llegits fins al moment s’ha trobat un símbol pel codi format pels bits llegits fins al moment i seguir llegint bits fins a trobar-lo.
+
+Entropy coding utilitza una taula de huffman predeterminada, és a dir, la instància huffman és amb mode automàtic. Per la segona entrega em vaig plantejar que la taula de huffman fos generada a partir de les freqüències de cada símbol. Tot i així 
+
 
 ## Huffman
 
