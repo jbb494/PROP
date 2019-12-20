@@ -6,7 +6,7 @@ import persistencia.output.Ctrl_Output;
  * @class Algorithm
  * @brief Classe de Algorithm
  * @file
- * És la superclasse de tots els algoritmes ce compressió: JPEG, LZ78, LZW i LZSS
+ * És la superclasse de tots els algoritmes de compressió: JPEG, LZ78, LZW i LZSS
  * @author Joan Lapeyra Amat
  */
 public abstract class Algorithm {

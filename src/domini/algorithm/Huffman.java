@@ -18,8 +18,6 @@ import domini.utils.BinTree;
  * Aquesta classe codifica enters mitjançant Huffman.
  * Té dos modes: l'automàtic (codifica mitjançant una taula de huffman per defecte) 
  * i manual (assigna codis en funció de la freqüència dels enters).
- * El mode manual encara no està disponible. La intenció és que estigui disponible
- * per la segona entrega.
  * 
  * @author Joan Lapeyra Amat
  */
