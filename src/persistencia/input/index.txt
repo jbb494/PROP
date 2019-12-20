@@ -1,0 +1,9 @@
+-Clase Ctrl_Input.java: Se encarga de gestionar la clase input.
+-Clase Ctrl_Input_Encoded.java: Es un tipo de gestion especifica para las compresiones.
+-Clase Ctrl_Input_Img.java: Es un tipo de gestion especifica para las imagenes.
+-Clase Ctrl_Input_JPEG.java: Gestion especifica para el algoritmo JPEG.
+-Clase Ctrl_Input_LZ78.java: Gestion especifica para el algoritmo LZ78.
+-Clase Ctrl_Input_LZSS.java: Gestion especifica para el algoritmo LZSS.
+-Clase Ctrl_Input_LZW.java: Gestion especifica para el algoritmo LZW.
+-Clase Ctrl_Input_Text.java: Es un tipo de gestion especifica para los textos.
+-Clase Input.java: Clase que se encarga de recibir bytes de un fichero de entrada.
