@@ -64,10 +64,10 @@ $(function() {
 </div><!--header-->
 <div class="contents">
 <div class="textblock"><p>Introduirem a continuació una petita descripció de cada joc de proves, per a la compressió i descompressió, amb l'objectiu rere el contingut de cada fitxer.</p>
-<p>Els arxius de InputX.txt estan a la carpeta src/persistencia/data</p>
-<p>Per a cada arxiu XXX.txt existeix una copia del qual anomenada XXXCheck.txt, la qual farem servir per comprovar que el resultat obtingut de la compressió -&gt; descompressió és el desitjat.</p>
-<p><em>Recomanem el comandament "diff XXX.txt XXXCheck.txt" de Linux per comprovar el correcte funcionament del codi.</em></p>
 <h2>Fitxers txt</h2>
+<p>Els arxius de InputX.txt estan a la carpeta src/persistencia/data</p>
+<p>Per a cada arxiu XXX.txt existeix una copia del qual anomenada XXXCheck.txt, la qual farem servir per comprovar que el resultat obtingut de la compressió -&gt; descompressió és el desitjat. Cal tenir en compte que si comprimim XXX.txt se'ns genera XXX.jm. I si després comprimim XXX.jm se sobreescriu XXX.txt.</p>
+<p><em>Recomanem la comanda "diff XXX.txt XXXCheck.txt" de Linux per comprovar el correcte funcionament del codi.</em></p>
 <h3>Input1.txt</h3>
 <p>Es tracta d'un fitxer de 4.4 MB en el que es repeteix un cert paràgraf un nombre determinat de vegades. Ens centrem en intentar maximitzar el grau de compressió de l'arxiu.</p>
 <h3>Input2.txt</h3>
@@ -80,9 +80,25 @@ $(function() {
 <p>En tots els casos anteriors estàvem treballant sobre textos en català/castellà, fet que no ens acabava de convèncer per assegurar el correcte funcionament de la compressió/descompressió de textos utf8, per tant vam generar un fitxer amb codificació Koreana.</p>
 <h3>Input6.txt</h3>
 <p>A últim moment ens va sorgir el dubte sobre qué passaria si el fitxer estava completament buit, així que vam crear aquest sisé joc de proves.</p>
+<h2>Imatges ppm</h2>
+<p>A src/persistencia/data/imatges_grans hi ha imatges d'entre 1,4 MB i 2,3 MB.</p>
+<p>A src/persistencia/data/imatges_petites hi ha imatges d'entre 12 kB i 232 kB.</p>
+<p>Per a cada arxiu XXX.ppm existeix una copia del qual anomenada XXXCHECK.ppm, la qual farem servir per comparar que el resultat obtingut de la compressió -&gt; descompressió és el desitjat. Cal tenir en compte que si comprimim XXX.ppm se'ns genera XXX.jm. I si després comprimim XXX.jm se sobreescriu XXX.ppm.</p>
+<p>Com que JPEG és lossy les imatges no es poden comparar amb la comanda <em>diff</em> sinó que s'ha de fer a ull.</p>
+<h2>Carpetes</h2>
+<p>src/persistencia/data/carpeta és un exemple de carpeta bastant complet pensada per ser comprimida. Conté:</p><ul>
+<li><em>house.ppm</em>, una imatge petita</li>
+<li><em>sage.ppm</em>, una imatge gran</li>
+<li><em>subcarpeta</em>, una carpeta amb:<ul>
+<li><em>curt.txt</em>, un fitxer de text curt</li>
+<li><em>llarg.txt</em>, un fitxer de text llarg</li>
+<li><em>max.cc</em>, el codi d'un programa en C++. Serà comprimit amb un algoritme LZ, igual que els fitxers txt.</li>
+</ul>
+</li>
+</ul>
+<p>src/persistencia/data/carpetaCHECK és una còpia de la carpeta per comprovar que el procés compressió-&gt;descompressió s'hagi fet correctament.</p>
 <h2>Junit</h2>
-<h3>junit.txt - junit.lzw</h3>
-<p>Emprem aquests dos fitxers per la comprovació de la classe LZW amb Junit. </p>
+<p>Els quatre fitxers que hi ha a src/persistencia/data/junit (junit.jm, junit.txt, junit_check.jm i junit_check.txt) son emprats per la comprovació de la classe LZW amb Junit. Per tal que funioni la comprovació no han de ser modificats per cap actor que no sigui el programa encarregat de fer la comprovació. </p>
 </div></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>

@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.13"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>PROP Grup 12.1: src/domini/algorithm/Huffman.java File Reference</title>
+<title>PROP Grup 12.1: Funcionalitats</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -57,27 +57,33 @@ $(function() {
 </iframe>
 </div>
 
-<div id="nav-path" class="navpath">
-  <ul>
-<li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="dir_94fa3fe37cc3e109ef6fc394a8c74d21.html">domini</a></li><li class="navelem"><a class="el" href="dir_56d6516cd249c3510ae82a2021487cf1.html">algorithm</a></li>  </ul>
-</div>
 </div><!-- top -->
 <div class="header">
-  <div class="summary">
-<a href="#namespaces">Packages</a>  </div>
   <div class="headertitle">
-<div class="title">Huffman.java File Reference</div>  </div>
+<div class="title">Funcionalitats </div>  </div>
 </div><!--header-->
 <div class="contents">
-<table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="namespaces"></a>
-Packages</h2></td></tr>
-<tr class="memitem:namespacedomini_1_1algorithm"><td class="memItemLeft" align="right" valign="top">package &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacedomini_1_1algorithm.html">domini.algorithm</a></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table>
-<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>Aquesta classe codifica enters mitjançant <a class="el" href="classHuffman.html" title="Codificació Huffman. ">Huffman</a>. Té dos modes: l'automàtic (codifica mitjançant una taula de huffman per defecte) i manual (assigna codis en funció de la freqüència dels enters).</p>
-<dl class="section author"><dt>Author</dt><dd>Joan Lapeyra Amat </dd></dl>
+<div class="textblock"><h2>Comprimir i descomprimir fitxers txt</h2>
+<p>Ho fa mitjançant algoritmes LZ.</p>
+<p>Si l'usuari escull el mode manual pot triar quin algorisme emprar entre els LZ78, LZSS i LZW.</p>
+<p>Si escull el mode automàtic el nostre programa tria l'algorisme en funció de la mida del fitxer: LZSS per a fitxers de menys de 1MB i LZW per a fitxers més grans. Aquesta heurística és nova d'aquesta entrega ja que a la primera entrega el mode automàtic sempre comprimia amb LZW.</p>
+<h2>Comprimir i descomprimir imatges ppm</h2>
+<p>Ho fa mitjançant l'algoritme JPEG.</p>
+<p>A més, si l'usuari escull mode manual, pot triar la qualitat amb què es comprimeix. Com més qualitat menys grau de compressió i com menys qualitat més grau de compressió.</p>
+<p>Si l'usuari escull mode automàtic la qualitat serà del 50%.</p>
+<p>La funcionalitat de triar la qualitat de compressió és nova respecte la primera entrega</p>
+<h2>Comrpimir i descomprimir qualsevol fitxer (funcionalitat nova)</h2>
+<p>Si el fitxer que l'usuari vol comprimir no és ni ppm ni txt, es comprimirà amb un algoritme LZ, de la mateixa manera que si fos txt.</p>
+<p>En descomprimir-se, recuperarà l'extensió original gràcies a la metadata del comprimit.</p>
+<h2>Comprimir i descomprimir carpetes (funcionalitat nova)</h2>
+<p>També es poden comprimir i descomprimir carpetes. Per cada fitxer que contingui:</p><ul>
+<li>Si és ppm serà comrpimit amb l'algoritme JPEG amb la qualitat que demani l'usuari (en cas de compressió manual) o amb una qualitat del 50% (en cas de compressió automàtica)</li>
+<li>Altrament, serà comrpimit amb un algoritme LZ, el que especifiqui l'usuari (en cas de compressió manual) o el que decideixi el programa mitjançant l'heurística explicada més amunt (en cas de compressió automàtica).</li>
+</ul>
+<h2>Visualitzar fitxers de text (funcionalitat nova)</h2>
+<p>El nostre programa permet visualitxar fitxer de text. Si el fitxer de text que es volvisualitzar està comprimit, es descomprimeix automàticament (en un fitxer temporal) per poder ser mostrat a la interfície gràfica d'usuari.</p>
+<h2>Extensió única (funcionalitat nova)</h2>
+<p>Tots els comprimits generats pel nostre programa tenen la mateixa extensió: .jm, a diferència de la primera entrega, en què l'extensió representava l'algorisme amb què s'havia comprimit. Ara el programa sap amb quin algorisme s'ha comprimit gràcies a la metadata del comprimit. </p>
 </div></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>

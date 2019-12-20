@@ -14,5 +14,7 @@ var searchData=
   ['folderorfile',['FolderOrFile',['../classpersistencia_1_1Utils_1_1FolderOrFile.html',1,'persistencia::Utils']]],
   ['folderorfile_2ejava',['FolderOrFile.java',['../FolderOrFile_8java.html',1,'']]],
   ['force255',['force255',['../classdomini_1_1algorithm_1_1JPEG.html#af86bdbb6b6f5671abff6bc6bd5f6349d',1,'domini::algorithm::JPEG']]],
-  ['frag_5flength',['frag_length',['../classpersistencia_1_1input_1_1Input.html#adae91120899054fe5200d5e307840042',1,'persistencia::input::Input']]]
+  ['frag_5flength',['frag_length',['../classpersistencia_1_1input_1_1Input.html#adae91120899054fe5200d5e307840042',1,'persistencia::input::Input']]],
+  ['funcionalitats_2emd',['Funcionalitats.md',['../Funcionalitats_8md.html',1,'']]],
+  ['funcionalitats',['Funcionalitats',['../md_docs_HARDCODE_Funcionalitats.html',1,'']]]
 ];
