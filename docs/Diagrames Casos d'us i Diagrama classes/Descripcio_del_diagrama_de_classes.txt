@@ -45,6 +45,7 @@ proporcionar dades bàsiques d'alguns fitxers i crear fitxers temporals.
 
 
 ~~~~~~~~~~~~~~~~~~~~~~ DOMINI ~~~~~~~~~~~~~~~~~~~~~~~~~~
+
 Ctrl_FolferFile s'encarrega de comprimir i descomprimir fitxers o 
 carpetes. És responsable de llegir i bona part de la metadata 
 (extensió original, mida, etc) i delega a Ctrl_Algorithm la feina
@@ -59,6 +60,7 @@ a Algorithm.
 
 Algorithm és la classe pare dels algoritmes JPEG, LZ78, LZSS, LZW,
 que s'encarrequen d'aplicar els algoritmes corresponents.
+JPEG delega la part de Huffman a la classe Huffman.
 
 Algunes classes necessiten fer ús de funcions o estoctures de 
 dades que no proporciona Java, com per exemple arbres binaris,
@@ -69,6 +71,7 @@ segons les necessitats de dites classes.
 
 
 ~~~~~~~~~~~~~~~~~~~~~~ PRESENTACIÓ ~~~~~~~~~~~~~~~~~~~~~~~~~~
+
 A la capa de presentació tenim la classe Main, que conté el main del
 programa.
 
@@ -80,6 +83,8 @@ de domini.
 
 
 ~~~~~~~~~~~~~~~~~~~~~~~~ GLOBAL ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
 La classe global (src/global/global.java), que no petany a cap capa,
 s'encarrega de definir alguns tipus mitjançant enum. Aquests tipus
 son utilitzats per algunes classes.
+
