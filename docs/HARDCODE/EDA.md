@@ -242,7 +242,7 @@ Si quality == 100 cada valor de la matriu de quantitació son 1, per tant no hi 
 
 El procés de calcular la matriu de quantització a partir d'un paràmetre de qualitat no és universal. Jo he utlitzat el que he trobat a la següent url: https://stackoverflow.com/questions/29215879/how-can-i-generalize-the-quantization-matrix-in-jpeg-compression
 
-El valor de quality i la consegüent matriu de quantització es fixen quan es crida el mètode públic anomenat reserQuality(int q). Per tant la responsabilitat d'escollir aquest valor no és de l'algoritme JPEG.
+El valor de quality i la consegüent matriu de quantització es fixen quan es crida el mètode públic anomenat resetQuality(int q). Per tant la responsabilitat d'escollir aquest valor no és de l'algoritme JPEG.
 
 - Si l'usuari decideix comprimir en mode automàtic quality serà 50.
 - Si l'usuari decideix comprimir amb un factor de compressió baix quality serà 100
