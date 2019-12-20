@@ -42,6 +42,9 @@ format concret.
 Per altra banda, la classe Browser s'encarrega de navegar per carpetes,
 proporcionar dades bàsiques d'alguns fitxers i crear fitxers temporals.
 
+I finalment, la classe FolderOfFile s'encarrega d'indicar el tipus
+de fitxer comrpimit
+
 
 
 ~~~~~~~~~~~~~~~~~~~~~~ DOMINI ~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -62,11 +65,11 @@ Algorithm és la classe pare dels algoritmes JPEG, LZ78, LZSS, LZW,
 que s'encarrequen d'aplicar els algoritmes corresponents.
 JPEG delega la part de Huffman a la classe Huffman.
 
-Algunes classes necessiten fer ús de funcions o estoctures de 
+Algunes classes necessiten fer ús de funcions o estuctures de 
 dades que no proporciona Java, com per exemple arbres binaris,
 parells o arrays circulars. Aquestes estroctures de dades i 
-funcions són les que hem deixat a la capeta utils i s'han creat
-segons les necessitats de dites classes.
+funcions són les que hem deixat a src/domini/utils
+i s'han creat segons les necessitats de dites classes.
 
 
 
