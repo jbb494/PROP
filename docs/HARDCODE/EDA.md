@@ -87,11 +87,11 @@ El primer que se’m va acudir per representar un arbre binari és que contingu�
 Per tant vaig buscar una alternativa: assignaria un enter que identifiqués cada node i l’accés a un node amb al seu identificador seria directe: es podria obtenir en cost constant sabre si és fulla, saber el seu valor (en cas de ser fulla) i sabre l’identificador dels seus fills.
 
 L’atribut principal de BinTree és arr, que funciona de la següent manera:
-sigui x un node
-      si arr[2x] = -2, x és una fulla i arr[2x+1] és el valor de x
-      altrament x+arr[2x] i x+arr[2x+1] són els fills de x (-1 significa indefinit)
-      Un node no està inicialitzat <-> els dos fills son indefinits
-      El node arrel és 0
+- sigui x un node
+	- si arr[2x] = -2, x és una fulla i arr[2x+1] és el valor de x
+	- altrament x+arr[2x] i x+arr[2x+1] són els fills de x (-1 significa indefinit)
+- Un node no està inicialitzat <-> els dos fills son indefinits
+- El node arrel és 0
 
 Per afegit un fill a un node identificat per x passem per paràmetre el subarbre que inclou el node fill a afegir amb tots els seus descendents. Com que la informació dels fills s’emmagatzema a l’atribut arr com a distància relativa entre l’índex del pare i l’índex del fill, no cal modificar l’arr del subarbre i només cal afegir-lo al final de l’arr de l’arbre al qual afegim i assignar a arr[2x] (si és fill esquerre) o a arr[2x+1] (si és fill dret) la distància relativa entre pare i fill.
 
