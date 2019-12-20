@@ -8,7 +8,7 @@ Els arxius de InputX.txt estan a la carpeta src/persistencia/data
 
 Per a cada arxiu XXX.txt existeix una copia del qual anomenada XXXCheck.txt, la qual farem servir per comprovar que el resultat obtingut de la compressió -> descompressió és el desitjat. Cal tenir en compte que si comprimim XXX.txt se'ns genera XXX.jm. I si després comprimim XXX.jm se sobreescriu XXX.txt.
 
-*Recomanem el comandament "diff XXX.txt XXXCheck.txt" de Linux per comprovar el correcte funcionament del codi.*
+*Recomanem la comanda "diff XXX.txt XXXCheck.txt" de Linux per comprovar el correcte funcionament del codi.*
 
 ### Input1.txt
 
@@ -41,7 +41,7 @@ A src/persistencia/data/imatges_grans hi ha imatges d'entre 1,4 MB i 2,3 MB.
 
 A src/persistencia/data/imatges_petites hi ha imatges d'entre 12 kB i 232 kB.
 
-Per a cada arxiu XXX.ppm existeix una copia del qual anomenada XXXCheck.ppm, la qual farem servir per comparar  que el resultat obtingut de la compressió -> descompressió és el desitjat. Cal tenir en compte que si comprimim XXX.ppm se'ns genera XXX.jm. I si després comprimim XXX.jm se sobreescriu XXX.ppm.
+Per a cada arxiu XXX.ppm existeix una copia del qual anomenada XXXCHECK.ppm, la qual farem servir per comparar  que el resultat obtingut de la compressió -> descompressió és el desitjat. Cal tenir en compte que si comprimim XXX.ppm se'ns genera XXX.jm. I si després comprimim XXX.jm se sobreescriu XXX.ppm.
 
 Com que JPEG és lossy les imatges no es poden comparar amb la comanda *diff* sinó que s'ha de fer a ull.
 
