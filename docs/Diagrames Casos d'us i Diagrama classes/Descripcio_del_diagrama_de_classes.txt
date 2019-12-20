@@ -76,3 +76,10 @@ A la carpeta form hi ha les classes que representen elements d'interfície.
 
 I també tenim Ctrl_Presntaico, que s'encarrega de comunicar-se amb la capa
 de domini.
+
+
+
+~~~~~~~~~~~~~~~~~~~~~~~~ GLOBAL ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+La classe global (src/global/global.java), que no petany a cap capa,
+s'encarrega de definir alguns tipus mitjançant enum. Aquests tipus
+son utilitzats per algunes classes.
