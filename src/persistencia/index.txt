@@ -2,4 +2,4 @@
 -Carpeta data: Contiene todos los ficheros e imagenes para poder comprimirlas/descomprimirlas.
 -Carpeta input: Contiene las entradas para leer ficheros.
 -Carpeta output: Contiene las salidas para escribir ficheros.
--Carpeta Utils: Contiene una clase para poder consultar informacion sobre un tipo de path.
+-Carpeta Utils: Contiene una clase para poder consultar informacion sobre un tipo de path, es decir, si es un comprimido, una imagen, un texto o una carpeta.

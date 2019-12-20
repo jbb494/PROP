@@ -1,0 +1,3 @@
+-Carpeta Ctrl_Presentacio: Contiene las gestion entre capas entre dentro de la capa de presentacion y las otras capas.
+-Carpeta form: Contiene los diferentes forms de la interficie grafica.
+-Carpeta imatgesInterficie: Contiene las imagenes utilizadas en la interficie.
