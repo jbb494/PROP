@@ -7,3 +7,5 @@
 -Clase Ctrl_Input_LZW.java: Gestion especifica para el algoritmo LZW.
 -Clase Ctrl_Input_Text.java: Es un tipo de gestion especifica para los textos.
 -Clase Input.java: Clase que se encarga de recibir bytes de un fichero de entrada.
+
+Los ficheros restantes son los drivers de las respectivas clases.

@@ -1,0 +1,7 @@
+-Clase Ctrl_Output.java: Se encarga de gestionar la clase Output.
+-Clase Ctrl_Output_Encoded.java: Tipo especifico de gestion para las compresiones.
+-Clase Ctrl_Output_Img.java: Tipo especifico de gestion para las imagenes.
+-Clase Output.java: Gestion por bytes bufferizados de un output en un path especifico.
+-Clase RandomAccessOutput.java: Guarda 8 bytes de datos en una posicion especifica del path.
+
+Los archivos restantes son los drivers de dichas clases.
