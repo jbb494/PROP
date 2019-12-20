@@ -8,7 +8,13 @@ Classe \hyperlink{classpersistencia_1_1browser_1_1Ctrl__Browser}{Ctrl\+\_\+\+Bro
 
 
 Collaboration diagram for persistencia.\+browser.\+Ctrl\+\_\+\+Browser\+:
-% FIG 0
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=205pt]{classpersistencia_1_1browser_1_1Ctrl__Browser__coll__graph}
+\end{center}
+\end{figure}
 \subsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
@@ -86,17 +92,17 @@ path del fitxer creat
 \end{DoxyReturn}
 
 \begin{DoxyCode}
-88                                                           \{
-89         File f = null;
-90         \textcolor{keywordflow}{try} \{
-91             f = File.createTempFile(\textcolor{stringliteral}{"temporal"}, \textcolor{stringliteral}{"."}+extension);
-92             f.deleteOnExit();
-93         \}
-94         \textcolor{keywordflow}{catch} (IOException e) \{
-95             e.printStackTrace();
-96         \}
-97         \textcolor{keywordflow}{return} f.getAbsolutePath();
-98     \}
+87                                                           \{
+88         File f = null;
+89         \textcolor{keywordflow}{try} \{
+90             f = File.createTempFile(\textcolor{stringliteral}{"temporal"}, \textcolor{stringliteral}{"."}+extension);
+91             f.deleteOnExit();
+92         \}
+93         \textcolor{keywordflow}{catch} (IOException e) \{
+94             e.printStackTrace();
+95         \}
+96         \textcolor{keywordflow}{return} f.getAbsolutePath();
+97     \}
 \end{DoxyCode}
 \mbox{\Hypertarget{classpersistencia_1_1browser_1_1Ctrl__Browser_ac79782a4f7fd5207498fe37e952f9b8b}\label{classpersistencia_1_1browser_1_1Ctrl__Browser_ac79782a4f7fd5207498fe37e952f9b8b}} 
 \index{persistencia\+::browser\+::\+Ctrl\+\_\+\+Browser@{persistencia\+::browser\+::\+Ctrl\+\_\+\+Browser}!exists@{exists}}
@@ -154,15 +160,15 @@ La mida del fitxer o carpeta, entenient la mida de la carpeta com la suma de les
 \end{DoxyReturn}
 
 \begin{DoxyCode}
-72                          \{
-73         \textcolor{keywordflow}{if} (!\hyperlink{classpersistencia_1_1browser_1_1Ctrl__Browser_a72c151aed575c0848f7dbb1609b373c8}{file}.isDirectory()) \textcolor{keywordflow}{return} \hyperlink{classpersistencia_1_1browser_1_1Ctrl__Browser_a72c151aed575c0848f7dbb1609b373c8}{file}.length();
-74         \textcolor{keywordtype}{long} len = \hyperlink{classpersistencia_1_1browser_1_1Ctrl__Browser_a72c151aed575c0848f7dbb1609b373c8}{file}.length();
-75         \textcolor{keywordflow}{for} (File f : \hyperlink{classpersistencia_1_1browser_1_1Ctrl__Browser_a72c151aed575c0848f7dbb1609b373c8}{file}.listFiles()) \{
-76             \hyperlink{classpersistencia_1_1browser_1_1Ctrl__Browser_a6cd8687a9748fc4c169d1d72be7081b1}{Ctrl\_Browser} browser = \textcolor{keyword}{new} \hyperlink{classpersistencia_1_1browser_1_1Ctrl__Browser_a6cd8687a9748fc4c169d1d72be7081b1}{Ctrl\_Browser}(f.getAbsolutePath());
-77             len += browser.length();
-78         \}
-79         \textcolor{keywordflow}{return} len;
-80     \}
+71                          \{
+72         \textcolor{keywordflow}{if} (!\hyperlink{classpersistencia_1_1browser_1_1Ctrl__Browser_a72c151aed575c0848f7dbb1609b373c8}{file}.isDirectory()) \textcolor{keywordflow}{return} \hyperlink{classpersistencia_1_1browser_1_1Ctrl__Browser_a72c151aed575c0848f7dbb1609b373c8}{file}.length();
+73         \textcolor{keywordtype}{long} len = \hyperlink{classpersistencia_1_1browser_1_1Ctrl__Browser_a72c151aed575c0848f7dbb1609b373c8}{file}.length();
+74         \textcolor{keywordflow}{for} (File f : \hyperlink{classpersistencia_1_1browser_1_1Ctrl__Browser_a72c151aed575c0848f7dbb1609b373c8}{file}.listFiles()) \{
+75             \hyperlink{classpersistencia_1_1browser_1_1Ctrl__Browser_a6cd8687a9748fc4c169d1d72be7081b1}{Ctrl\_Browser} browser = \textcolor{keyword}{new} \hyperlink{classpersistencia_1_1browser_1_1Ctrl__Browser_a6cd8687a9748fc4c169d1d72be7081b1}{Ctrl\_Browser}(f.getAbsolutePath());
+76             len += browser.length();
+77         \}
+78         \textcolor{keywordflow}{return} len;
+79     \}
 \end{DoxyCode}
 \mbox{\Hypertarget{classpersistencia_1_1browser_1_1Ctrl__Browser_abbf52c645a931fb8e5f727c2c99af97a}\label{classpersistencia_1_1browser_1_1Ctrl__Browser_abbf52c645a931fb8e5f727c2c99af97a}} 
 \index{persistencia\+::browser\+::\+Ctrl\+\_\+\+Browser@{persistencia\+::browser\+::\+Ctrl\+\_\+\+Browser}!list@{list}}
@@ -172,11 +178,11 @@ La mida del fitxer o carpeta, entenient la mida de la carpeta com la suma de les
 
 
 \begin{DoxyCode}
-61                            \{
-62         \textcolor{keywordflow}{if} (!\hyperlink{classpersistencia_1_1browser_1_1Ctrl__Browser_abdf13ea9a8d928b1efc6f3a69e18f6c6}{isDirectory}()) \textcolor{keywordflow}{throw} \textcolor{keyword}{new} IllegalArgumentException(
-63             \textcolor{stringliteral}{"Aquesta instància de Ctrl\_Browser no fa referènca a un directori"});
-64         \textcolor{keywordflow}{return} \hyperlink{classpersistencia_1_1browser_1_1Ctrl__Browser_a72c151aed575c0848f7dbb1609b373c8}{file}.list();
-65     \}
+60                            \{
+61         \textcolor{keywordflow}{if} (!\hyperlink{classpersistencia_1_1browser_1_1Ctrl__Browser_abdf13ea9a8d928b1efc6f3a69e18f6c6}{isDirectory}()) \textcolor{keywordflow}{throw} \textcolor{keyword}{new} IllegalArgumentException(
+62             \textcolor{stringliteral}{"Aquesta instància de Ctrl\_Browser no fa referènca a un directori"});
+63         \textcolor{keywordflow}{return} \hyperlink{classpersistencia_1_1browser_1_1Ctrl__Browser_a72c151aed575c0848f7dbb1609b373c8}{file}.list();
+64     \}
 \end{DoxyCode}
 \mbox{\Hypertarget{classpersistencia_1_1browser_1_1Ctrl__Browser_a947773ee38a780bae338aa0e4f396f6f}\label{classpersistencia_1_1browser_1_1Ctrl__Browser_a947773ee38a780bae338aa0e4f396f6f}} 
 \index{persistencia\+::browser\+::\+Ctrl\+\_\+\+Browser@{persistencia\+::browser\+::\+Ctrl\+\_\+\+Browser}!mkdir@{mkdir}}
@@ -189,15 +195,10 @@ La mida del fitxer o carpeta, entenient la mida de la carpeta com la suma de les
 Crea un directori en el el path referenciat per this. 
 
 
-\begin{DoxyParams}{Parameters}
-{\em name} & nom del nou directori \\
-\hline
-\end{DoxyParams}
-
 \begin{DoxyCode}
-53                         \{
-54         \hyperlink{classpersistencia_1_1browser_1_1Ctrl__Browser_a72c151aed575c0848f7dbb1609b373c8}{file}.mkdir();
-55     \}
+52                         \{
+53         \hyperlink{classpersistencia_1_1browser_1_1Ctrl__Browser_a72c151aed575c0848f7dbb1609b373c8}{file}.mkdir();
+54     \}
 \end{DoxyCode}
 
 
