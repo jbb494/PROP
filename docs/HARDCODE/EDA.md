@@ -224,6 +224,7 @@ La matriu de quantització dependrà de l'atribut de classe anomenat quality, qu
 Si quality == 0 cada valor de la matriu de quantització serà infinit, per tant, en dividir tots els valors resultants d'aquest procés seran 0, per tant, no s'estarà guardant cap informació més enllà de les dimensions de la imatge.
 
 Si quality == 50 la matriu de quantització serà la següent:
+
 {
 	{16, 11, 10, 16, 24, 40, 51, 61},
 	{12, 12, 14, 19, 26, 58, 60, 55},
@@ -234,6 +235,7 @@ Si quality == 50 la matriu de quantització serà la següent:
 	{49, 64, 78, 87, 103, 121, 120, 101},
 	{72, 92, 95, 98, 112, 100, 103, 99}
 };
+
 Aquesta és la que anomeno "mariu base". Totes les matrius de quantització es calculen a partir d'aquesta matriu i del paràmetre quality.
 
 Si quality == 100 cada valor de la matriu de quantitació son 1, per tant no hi haurà cap pèrdua d'informació en el procés de quantització. Per tant la compressió serà gairebé loseless. Dic gairebé perquè altres processos de l'algorisme poden generar petites pèrdues d'informació que son quasi imperceptibles a l'ull humà.
