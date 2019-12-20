@@ -251,6 +251,8 @@ El valor de quality i la consegüent matriu de quantització es fixen quan es cr
 
 Aquests valors s'han decidit després de comprimir diverses imatges de diverses mides per diferens valors de qualitats i observant la qualitat visual dels descomprimits i el factor de compressió.
 
+El factor de compressió depèn de cada imatge indivisual però oscil·la entre 20 (per una qualitat de 40%) i 2,3 (per una qualitat del 100%), aproximadament.
+
 
 ### Entropy coding
 
@@ -263,32 +265,44 @@ El símbol 2 de la entropy coding depèn del valor de la posició en qüestiò d
 
 Per la descompressió, com que el símbol 2 té mida variable cal anar llegint del fitxer .jpeg bit a bit i anar preguntant a la instància de la classe Huffman si pels bits llegits fins al moment s’ha trobat un símbol pel codi format pels bits llegits fins al moment i seguir llegint bits fins a trobar-lo.
 
-Entropy coding utilitza una taula de huffman predeterminada, és a dir, la instància huffman és amb mode automàtic. Per la segona entrega em vaig plantejar que la taula de huffman fos generada a partir de les freqüències de cada símbol. Tot i així 
+Entropy coding utilitza una taula de huffman predeterminada, és a dir, la instància huffman és amb mode automàtic. Per la segona entrega em vaig plantejar que la taula de huffman fos generada a partir de les freqüències de cada símbol. Això provocaria dos inconvenients:
+
+- Com que cal guardar les freqüències dels símbols caldria recórrer tota la imatge guardar-se la informació de tots els blocs i després generar la taula de Huffman. Això implicaria que la compressió tindrà un cosst espacial lineal respecte la mida de la imatge comprimida. Si la imatge és gran l'increment de cost espacial podria fer incrementar el cost temporal.
+- Caldria escriure la taula de Huffman a al imatge comprimida perquè el decompressor la pugués interpretarà bé. Aquest increment de la mida del comprimit no està clar que sigui compensat pel fer que la codificació de Huffman fos òptima.
+
+Vaig implementar JPEG amb taules de Huffman generades a partir de les freqüències i els resultats no van ser satisfactoris per tant, vaig daixar-lo amb taules de Huffman automàtiques.
 
 
 ## Huffman
 
-Aquesta classe se’n carrega de de proporcionar la relació de codis de Huffman per una sèrie de símbols.
+Aquesta classe se’n carrega de de proporcionar la relació de codis de Huffman per una sèrie de símbols, que son enters.
 
-Per aquesta primera entrega he optat per utilitzar una taula de Huffman predeterminada, especialment pensada per l’algoritme JPEG. És la que vaig trobar en el següent link: https://www.ece.ucdavis.edu/cerl/reliablejpeg/coding/ .
+Segons com s'inicialitzi la instància esterem en mode manual o automàtic:
+- **Mode automàtic**: Si la inicialitzem sense passar cap paràmetre a la constructora estarem en mode automàtic. Aquest mode utilitza una taula de Huffman predeterminada especialment pensada per l’algoritme JPEG. És la que vaig trobar en el següent link: https://www.ece.ucdavis.edu/cerl/reliablejpeg/coding/ .
+- **Mode manual**: Cal passar per paràmetre de la constuctora un map, on les claus son els símbols a codificar i els valors son les freqüències da cada símbol. Genera una codificació òptama mitjançant la tècnica que vaig trobar el el següent link: https://en.wikipedia.org/wiki/Huffman_coding#Basic_technique . Tot i que al final JPEG utilitza Huffman en mode automàtic m'ha semblat interessant deixar la implementació de Huffman pel mode manual.
 
-Per la segona entrega em plantejaré fer dependre la taula de Huffman de les freqüències amb què apareixen els símbols.
 
-La classe Huffman té un atribut que el vector auto_codes. Donat un símbol x, Donat un enter x, code(auto_codes[x]) és la codificació de x, que té una mida de size(auto_codes[x]). size(long) i code(long) són funcions estàtiques i privades de la classe.
+La classe Huffman té un atribut anomenat auto_codes (long[]) i un altre anomentat man_codes (HashMap<Integer, Long>). Donat un símbol x:
+- En mode automàtic code(auto_codes[x]) és la codificació de x, que té una mida de size(auto_codes[x]). 
+- En mode manual code(man_codes.get(x)) és la codificació de x, que té una mida de size(man_codes.get(x))
+
+size(long) i code(long) són funcions estàtiques i privades de la classe.
 
 Un altre atribut és tree, que és l’arbre de Huffman i és de tipus BinTree, una classe especialment creada per ser utilitzada per Huffman.
-
-La constructora de la classe té coma paràmetre un booleà que indica si Huffman serà automàtic o manual. De moment, només funciona el mode automàtic, ja que per aquesta entrega he fet que la taula de Huffman sigui predeterminada. A la constructora s’inicialitza el vector auto_codes amb els valors de la taula de Huffman predeterminada i es genera tree en funció de auto_codes.
 
 Per obtenir un codi de Huffman a partir d’un símbol, es fa amb les funcions getCode(int symbol) i getSize(int symbol) i és tan fàcil com consultat la posició symbol del vector auto_codes.
 
 Si tenim una tira se bits amb un codi de Huffman i volem obtenir el símbol que representen podem utilitzar getSymbol(int code) però com que possiblement no sabrem on acaba el codi i no volem llegir més bits dels necessaris podem seguir el següent procés:
 
-initSearchSymbol()
-mentre no haguem trobat el símbol o tinguem la certesa que el codi no és vàlid:
-	llegim un bit
-	executem searchSymbol(int bit), que ens indicarà si s’ha trobat el símbol, cal seguir buscant o el codi no és vàlid
-si s’ha trobat un símbol l’obtenim amb la funció getFoundSymbol()
+>initSearchSymbol()
+>
+>mentre no haguem trobat el símbol o tinguem la certesa que el codi no és vàlid:
+>
+>>llegim un bit
+>>
+>>executem searchSymbol(int bit), que ens indicarà si s’ha trobat el símbol, cal seguir buscant o el codi no és vàlid
+>
+>si s’ha trobat un símbol l’obtenim amb la funció getFoundSymbol()
 
 Aquest procés funciona gràcies a un atribut privat de la classe que identifica un node de l’arbre de Huffman i fuciona com a punter.
 
