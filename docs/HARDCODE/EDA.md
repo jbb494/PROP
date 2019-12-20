@@ -87,11 +87,11 @@ El primer que se’m va acudir per representar un arbre binari és que contingu�
 Per tant vaig buscar una alternativa: assignaria un enter que identifiqués cada node i l’accés a un node amb al seu identificador seria directe: es podria obtenir en cost constant sabre si és fulla, saber el seu valor (en cas de ser fulla) i sabre l’identificador dels seus fills.
 
 L’atribut principal de BinTree és arr, que funciona de la següent manera:
-sigui x un node
-      si arr[2x] = -2, x és una fulla i arr[2x+1] és el valor de x
-      altrament x+arr[2x] i x+arr[2x+1] són els fills de x (-1 significa indefinit)
-      Un node no està inicialitzat <-> els dos fills son indefinits
-      El node arrel és 0
+- sigui x un node
+	- si arr[2x] = -2, x és una fulla i arr[2x+1] és el valor de x
+	- altrament x+arr[2x] i x+arr[2x+1] són els fills de x (-1 significa indefinit)
+- Un node no està inicialitzat <-> els dos fills son indefinits
+- El node arrel és 0
 
 Per afegit un fill a un node identificat per x passem per paràmetre el subarbre que inclou el node fill a afegir amb tots els seus descendents. Com que la informació dels fills s’emmagatzema a l’atribut arr com a distància relativa entre l’índex del pare i l’índex del fill, no cal modificar l’arr del subarbre i només cal afegir-lo al final de l’arr de l’arbre al qual afegim i assignar a arr[2x] (si és fill esquerre) o a arr[2x+1] (si és fill dret) la distància relativa entre pare i fill.
 
@@ -174,13 +174,16 @@ L'estructura de dades emperada a la descompressió ha estat *Dict_Decode* (la qu
 
 D'aquesta manera el que farem es anar generant de nou un diccionari a mesura que anem descomprimint cada byte i retornant la cadena que representa cada decodificació.
 
+
 ## JPEG (Joint Photographic Experts Group)
 
 Explicaré simultàniament la compressió i la descompressió ja que els passos d’un son els inversos dels passos de l’altre en ordre invers.
 
 ### Block splitting
 
-El fet d’haver de treballar en blocs 8x8 fa que el compressor processa els píxels en el mateix ordre en què es llegeixen i el descompressor no processa els píxels en el mateix ordre en què s’escriuen. Això és així perquè en una imatge PPM entre una fila de píxels d’un bloc i la següent hi ha n files d’altres blocs, on n = (amplada de la imatge)/8. Per això la unitat mínima de lectura i escriptura d’una imatge PPM per a l’algoritme JPEG és el conjunt dels n blocs que comparteixen files entre ells, concretament una matriu nx8x8x3, diguem-ne mat, on mat[b][i][j][k] és la quantitat de color #k (color #0 és red; color #1 és green; color #2 és blue) del píxel (i, j) del bloc b.
+El fet d’haver de treballar en blocs 8x8 fa que el compressor processa els píxels en el mateix ordre en què es llegeixen i el descompressor no processa els píxels en el mateix ordre en què s’escriuen. Això és així perquè en una imatge PPM entre una fila de píxels d’un bloc i la següent hi ha n files d’altres blocs, on n és l'enter superior a (amplada de la imatge)/8. Per això la unitat mínima de lectura i escriptura d’una imatge PPM per a l’algoritme JPEG és el conjunt dels n blocs que comparteixen files entre ells, concretament una matriu nx8x8x3, diguem-ne mat, on mat[b][i][j][k] és la quantitat de color #k (color #0 és red; color #1 és green; color #2 és blue) del píxel (i, j) del bloc b.
+
+Si l'amplada o alçada son múltiples de 8 l'últim bloc de cada fila i l'última fila de blocs contindrà valors que no representen a cap píxel de la imatg però son necessaris per tal que l'algoritme JPEG pugui processar els valors d'aquests blos que sí que representen píxels de la imatge.
 
 En el compressor, un cop llegida aquesta matriu, ja es pot processar cadascun dels n blocs per separat. En el descompressor un cop processats cadascun dels n blocs per separat ja es pot escriure aquesta matriu. Les classes Ctrl_Input_Img i Ctrl_Output_Img s’encarreguen de llegir i escriure, respectivament, en el format d’aquesta matriu. 
 
@@ -190,20 +193,25 @@ Sigui (r, g, b) la tripleta que representa un píxel en format RGB
 Sigui (y, cb, cr) la tripleta que representa un píxel en format YCbCr.
 
 Per transformar de RGB a YCbCr en un rang de 0 a 255 he utilitzat les següents assignacions:
-y = 16 + (65.738r + 129.057g + 25.064b)/256;
-cb = 128 + (-37.945r - 74.494g + 112.439b)/256;
-cr = 128 + (112.439r - 94.154g - 18.285b)/256;
+
+>y = 16 + (65.738r + 129.057g + 25.064b)/256;
+>
+>cb = 128 + (-37.945r - 74.494g + 112.439b)/256;
+>
+>cr = 128 + (112.439r - 94.154g - 18.285b)/256;
+
 
 Per transformar de YCbCr a RGB en un rang de 0 a 255 he utilitzat les següents assignacions:
-r = 255./219.(y-16) + 255./224. 1.402 (cr-128.);
-g = 255./219.(y-16) + 255./224. (1.772 0.114/0.587 (cb-128) - 1.402 0.299/0.587 (cr-128));
-b = 255./219.(y-16) + 255./224. 1.772 (cb-128);
+
+>r = 255/219\*(y-16) + 255/224 1.402 (cr-128);
+>
+>g = 255/219\*(y-16) + 255/224 (1.772 \* 0.114/0.587 \* (cb-128) - 1.402 \* 0.299/0.587 (cr-128));
+>
+>b = 255/219\*(y-16) + 255/224 \* 1.772 (cb-128);
+
 
 Vaig voler comprovar el bon funcionament de la transformació fent el següent: per diversos colors RGB, transformar-los a YCbCr, tornar-los a transformar a RGB i comparant els valors inicials de RGB amb els finals. Vaig veure que no eren exactament les mateixes però que les peites diferències eren imperceptibles a l’ull humà a l’hora de visualitzat el color. Tanmateix era preocupant que alguns valors sortissin del rang (0, 255) ja que això no permetria representar-los bé en el fitxer ppm. Per això en després d’aplicar la transformació de YCbCr si algun valor era negatiu forçava que fos 0 i si algun valor sobrepassava 255 forçava que fos 255.
 
-### Downsampling
-
-Per aquesta entrega no he aplicat downsampling, ja que vaig llegir que no era un pas necessari. Tot i que estic satisfet amb el factor de compressió que he aconseguit sense fer downsampling em plantejaré fer-ne per la segona entrega.
 
 ### Discrete cosine transformation
 
@@ -211,9 +219,13 @@ Per cada canal YCbCr vaig aplicar DCT en la compressió i DCT inversa en la desc
 
 ### Quantization
 
-La matriu de quantització que he utilitzat és la següent:
+La matriu de quantització dependrà de l'atribut de classe anomenat quality, que és un enter entre 0 i 100.
 
-{
+Si quality == 0 cada valor de la matriu de quantització serà infinit, per tant, en dividir tots els valors resultants d'aquest procés seran 0, per tant, no s'estarà guardant cap informació més enllà de les dimensions de la imatge.
+
+Si quality == 50 la matriu de quantització serà la següent:
+
+>{
 	{16, 11, 10, 16, 24, 40, 51, 61},
 	{12, 12, 14, 19, 26, 58, 60, 55},
 	{14, 13, 16, 24, 40, 57, 69, 56},
@@ -224,16 +236,28 @@ La matriu de quantització que he utilitzat és la següent:
 	{72, 92, 95, 98, 112, 100, 103, 99}
 };
 
-La vaig trobar a https://en.wikipedia.org/wiki/JPEG#Quantization , on explica que genera comprimits amb una qualitat d’un 50%.
+Aquesta és la que anomeno "mariu base". Totes les matrius de quantització es calculen a partir d'aquesta matriu i del paràmetre quality.
 
-Provoca un factor de compressió notable i una qualitat acceptable per imatges grans. Tot i que per imatges petites (d’un centenar de píxels d’alçada i amplada) hi falta qualitat.
+Si quality == 100 cada valor de la matriu de quantitació son 1, per tant no hi haurà cap pèrdua d'informació en el procés de quantització. Per tant la compressió serà gairebé loseless. Dic gairebé perquè altres processos de l'algorisme poden generar petites pèrdues d'informació que son quasi imperceptibles a l'ull humà.
 
-Per la segona entrega faré que es pugui reglar la qualitat.
+El procés de calcular la matriu de quantització a partir d'un paràmetre de qualitat no és universal. Jo he utlitzat el que he trobat a la següent url: https://stackoverflow.com/questions/29215879/how-can-i-generalize-the-quantization-matrix-in-jpeg-compression
+
+El valor de quality i la consegüent matriu de quantització es fixen quan es crida el mètode públic anomenat resetQuality(int q). Per tant la responsabilitat d'escollir aquest valor no és de l'algoritme JPEG.
+
+- Si l'usuari decideix comprimir en mode automàtic quality serà 50.
+- Si l'usuari decideix comprimir amb un factor de compressió baix quality serà 100
+- Si l'usuari decideix comprimir amb un factor de compressió mitjà quality serà 70
+- Si l'usuari decideix comprimir amb un factor de compressió alt quality serà 40
+
+Aquests valors s'han decidit després de comprimir diverses imatges de diverses mides per diferens valors de qualitats i observant la qualitat visual dels descomprimits i el factor de compressió.
+
+El factor de compressió depèn de cada imatge indivisual però oscil·la entre 20 (per una qualitat de 40%) i 2,3 (per una qualitat del 100%), aproximadament.
+
 
 ### Entropy coding
 
 La codificació de Huffman se n’encarrega una classe específica, que genera un codi de Huffman per cada possible valor que pugui prendre el que jo anomeno “símbol 1 de entropy coding”, proporciona un codi de Huffman d’una mida determinada. També fa la transformació inversa: per cada codi de Huffman proporciona el un valor pel símbol 1 de entropy coding.
-El que jo anomeno “símbol 1 de entropy coding” és un byte que conté la rinlength als 4 bits de més pes i la size (mida del símbol 2 de entropy coding) als 4 bits de menys pes, tal com explica https://en.wikipedia.org/wiki/JPEG#Entropy_coding .
+El que jo anomeno “símbol 1 de entropy coding” és un byte que conté la runlength als 4 bits de més pes i la size (mida del símbol 2 de entropy coding) als 4 bits de menys pes, tal com explica https://en.wikipedia.org/wiki/JPEG#Entropy_coding .
 
 Un atribut de la classe JPEG és una instància de la classe Huffman.
 
@@ -241,29 +265,44 @@ El símbol 2 de la entropy coding depèn del valor de la posició en qüestiò d
 
 Per la descompressió, com que el símbol 2 té mida variable cal anar llegint del fitxer .jpeg bit a bit i anar preguntant a la instància de la classe Huffman si pels bits llegits fins al moment s’ha trobat un símbol pel codi format pels bits llegits fins al moment i seguir llegint bits fins a trobar-lo.
 
+Entropy coding utilitza una taula de huffman predeterminada, és a dir, la instància huffman és amb mode automàtic. Per la segona entrega em vaig plantejar que la taula de huffman fos generada a partir de les freqüències de cada símbol. Això provocaria dos inconvenients:
+
+- Com que cal guardar les freqüències dels símbols caldria recórrer tota la imatge guardar-se la informació de tots els blocs i després generar la taula de Huffman. Això implicaria que la compressió tindrà un cosst espacial lineal respecte la mida de la imatge comprimida. Si la imatge és gran l'increment de cost espacial podria fer incrementar el cost temporal.
+- Caldria escriure la taula de Huffman a al imatge comprimida perquè el decompressor la pugués interpretarà bé. Aquest increment de la mida del comprimit no està clar que sigui compensat pel fer que la codificació de Huffman fos òptima.
+
+Vaig implementar JPEG amb taules de Huffman generades a partir de les freqüències i els resultats no van ser satisfactoris per tant, vaig daixar-lo amb taules de Huffman automàtiques.
+
+
 ## Huffman
 
-Aquesta classe se’n carrega de de proporcionar la relació de codis de Huffman per una sèrie de símbols.
+Aquesta classe se’n carrega de de proporcionar la relació de codis de Huffman per una sèrie de símbols, que son enters.
 
-Per aquesta primera entrega he optat per utilitzar una taula de Huffman predeterminada, especialment pensada per l’algoritme JPEG. És la que vaig trobar en el següent link: https://www.ece.ucdavis.edu/cerl/reliablejpeg/coding/ .
+Segons com s'inicialitzi la instància esterem en mode manual o automàtic:
+- **Mode automàtic**: Si la inicialitzem sense passar cap paràmetre a la constructora estarem en mode automàtic. Aquest mode utilitza una taula de Huffman predeterminada especialment pensada per l’algoritme JPEG. És la que vaig trobar en el següent link: https://www.ece.ucdavis.edu/cerl/reliablejpeg/coding/ .
+- **Mode manual**: Cal passar per paràmetre de la constuctora un map, on les claus son els símbols a codificar i els valors son les freqüències da cada símbol. Genera una codificació òptama mitjançant la tècnica que vaig trobar el el següent link: https://en.wikipedia.org/wiki/Huffman_coding#Basic_technique . Tot i que al final JPEG utilitza Huffman en mode automàtic m'ha semblat interessant deixar la implementació de Huffman pel mode manual.
 
-Per la segona entrega em plantejaré fer dependre la taula de Huffman de les freqüències amb què apareixen els símbols.
 
-La classe Huffman té un atribut que el vector auto_codes. Donat un símbol x, Donat un enter x, code(auto_codes[x]) és la codificació de x, que té una mida de size(auto_codes[x]). size(long) i code(long) són funcions estàtiques i privades de la classe.
+La classe Huffman té un atribut anomenat auto_codes (long[]) i un altre anomentat man_codes (HashMap<Integer, Long>). Donat un símbol x:
+- En mode automàtic code(auto_codes[x]) és la codificació de x, que té una mida de size(auto_codes[x]). 
+- En mode manual code(man_codes.get(x)) és la codificació de x, que té una mida de size(man_codes.get(x))
+
+size(long) i code(long) són funcions estàtiques i privades de la classe.
 
 Un altre atribut és tree, que és l’arbre de Huffman i és de tipus BinTree, una classe especialment creada per ser utilitzada per Huffman.
-
-La constructora de la classe té coma paràmetre un booleà que indica si Huffman serà automàtic o manual. De moment, només funciona el mode automàtic, ja que per aquesta entrega he fet que la taula de Huffman sigui predeterminada. A la constructora s’inicialitza el vector auto_codes amb els valors de la taula de Huffman predeterminada i es genera tree en funció de auto_codes.
 
 Per obtenir un codi de Huffman a partir d’un símbol, es fa amb les funcions getCode(int symbol) i getSize(int symbol) i és tan fàcil com consultat la posició symbol del vector auto_codes.
 
 Si tenim una tira se bits amb un codi de Huffman i volem obtenir el símbol que representen podem utilitzar getSymbol(int code) però com que possiblement no sabrem on acaba el codi i no volem llegir més bits dels necessaris podem seguir el següent procés:
 
-initSearchSymbol()
-mentre no haguem trobat el símbol o tinguem la certesa que el codi no és vàlid:
-	llegim un bit
-	executem searchSymbol(int bit), que ens indicarà si s’ha trobat el símbol, cal seguir buscant o el codi no és vàlid
-si s’ha trobat un símbol l’obtenim amb la funció getFoundSymbol()
+>initSearchSymbol()
+>
+>mentre no haguem trobat el símbol i no tinguem la certesa que el codi no és vàlid:
+>
+>>llegim un bit
+>>
+>>executem searchSymbol(int bit), que ens indicarà si s’ha trobat el símbol, cal seguir buscant o el codi no és vàlid
+>
+>si s’ha trobat un símbol l’obtenim amb la funció getFoundSymbol()
 
 Aquest procés funciona gràcies a un atribut privat de la classe que identifica un node de l’arbre de Huffman i fuciona com a punter.
 
