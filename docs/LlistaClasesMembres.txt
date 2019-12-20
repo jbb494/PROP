@@ -82,7 +82,3 @@ Manel Aguilar:
 ./src/persistencia/input/Driver__Ctrl_Input_LZW.java
 ./src/persistencia/input/Driver__Ctrl_Input_LZ78.java
 ./src/persistencia/Utils/FolderOrFile.java
-
-Ningu: 
-
-
